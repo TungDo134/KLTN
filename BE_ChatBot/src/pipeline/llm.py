@@ -1,0 +1,51 @@
+"""
+Factory to create a object (llm )
+"""
+import os
+
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
+
+
+
+from dotenv import load_dotenv
+
+# Load .env
+load_dotenv()
+
+
+class LLM:
+    def __init__(self) -> None:
+        self.system_prompt_path = os.getenv('SYSTEM_PROMPT')
+
+    # --- AI Configuration ---
+    def _load_system_prompt(self) -> str | None:
+        """Đọc system prompt từ file. Trả về None nếu không tìm thấy."""
+        if not self.system_prompt_path:
+            return None
+        try:
+            with open(self.system_prompt_path, "r", encoding="utf-8") as f:
+                content = f.read()
+                print(f"✅ System prompt loaded from: {self.system_prompt_path}")
+                return content
+        except FileNotFoundError:
+            print(f"⚠️  System prompt file not found: {self.system_prompt_path}. Proceeding without it.")
+            return None
+
+    def get_llm(self) -> ChatNVIDIA:
+        system_prompt = self._load_system_prompt()
+        nvidia_api_key = os.getenv("NVIDIA_API_KEY")
+        if not nvidia_api_key:
+            raise ValueError("NVIDIA_API_KEY environment variable not set.")
+
+        llm = ChatNVIDIA(
+            model="meta/llama-3.1-405b-instruct",
+            api_key=nvidia_api_key,
+            temperature=0.5,
+            max_tokens=1024,
+        )
+
+        # Gắn system prompt qua bind nếu có
+        if system_prompt:
+            llm = llm.bind(system=system_prompt)
+
+        return llm

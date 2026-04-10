@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Componet timeline result */
+@layer components {
+  .vertical-timeline-element-date {
+    margin: 0px 10px;
+  }
+}
