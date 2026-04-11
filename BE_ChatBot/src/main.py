@@ -1,17 +1,25 @@
+"""
+MAIN APPLICATION - END POINT
+"""
+
+# --- App Initialization ---
+from dotenv import load_dotenv
+load_dotenv()
+
+# --- Import ---
 import os
 from contextlib import asynccontextmanager
 
 import gradio as gr
 import uvicorn
-from dotenv import load_dotenv
+
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from .pipeline.inference import RAGInference
 
-# --- App Initialization ---
-load_dotenv()
+
 
 # Quản lý vòng đời app
 inference_instance = None

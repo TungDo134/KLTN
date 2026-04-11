@@ -1,16 +1,15 @@
 """
-Factory to create a object (llm )
+Factory to create a object (LLM)
 """
-import os
 
-from langchain_nvidia_ai_endpoints import ChatNVIDIA
-
-
-
+# --- LOAD .env ---
 from dotenv import load_dotenv
 
-# Load .env
 load_dotenv()
+
+# --- IMPORT ---
+import os
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
 
 
 class LLM:

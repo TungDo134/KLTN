@@ -1,40 +1,51 @@
-import os
-import shutil
-import torch
+"""
+INGESTION + RETRIEVE PIPELINE
+"""
+from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+# --- LOAD .env ---
 from dotenv import load_dotenv
 
-# langchain
+load_dotenv()
+
+# --- IMPORT ---
+import os
+import torch
+
+# Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_chroma import Chroma
+
 # Embedding model
 from langchain_huggingface import HuggingFaceEmbeddings
-
-
+from langchain_ollama import OllamaEmbeddings
 
 """
-Hướng dẫn nạp data:
- Nếu muốn nạp data, bạn chỉ cần tạo 1 file lẻ nhỏ và gọi:
- RAGStorage().build_vector_db("./thu_muc_chua_pdf_du_lich")
+=========== Hướng dẫn bổ sung data =========== 
+- Nếu muốn thêm data, bạn chỉ cần chạy file notebook build_vector_db:
 """
-
-load_dotenv()
 
 # --- Auto-detect GPU ---
 _DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# --- Get global var from .env
+# --- Get global var from .env (UNUSED)
 model_name = os.getenv("MODEL_NAME")
 cache_folder = os.getenv("CACHE_FOLDER")
 
 
 # --- Create Embedding Model ---
+
+# HuggingFaceEmbeddings
 def _build_embedding_model() -> HuggingFaceEmbeddings:
     return HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_name="AITeamVN/Vietnamese_Embedding",
         model_kwargs={"device": _DEVICE},
         encode_kwargs={"normalize_embeddings": True},
         cache_folder="src/model/embeddings")
+
+# OllamaEmbeddings
+# def _build_embedding_model() -> OllamaEmbeddings:
+#     return OllamaEmbeddings(model='bge-m3')
 
 
 # --- FUNCTION LOAD DOCUMENT ---
@@ -94,7 +105,8 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
 
 
 # --- CREATE VECTOR DB (CHROMA) ---
-def create_vector_store(chunks, persist_directory: str, embedding_model: HuggingFaceEmbeddings) -> Chroma:
+def create_vector_store(chunks, persist_directory: str,
+                        embedding_model: HuggingFaceEmbeddings) -> Chroma:
     print("Creating embeddings and storing in ChromaDB...")
 
     batch_size = 100
