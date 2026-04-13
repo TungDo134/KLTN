@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+lxml
+jsonschema
+python-dotenv
+langchain-chroma
+langchain-huggingface
+torch

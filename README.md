@@ -1,6 +1,18 @@
-# 🇻🇳 Vietnam Travel ChatBot — RAG + LLM + React
+# Vietnam Travel ChatBot — RAG + LLM + Recommend + Planning + React
 
-Vietnam travel consulting chatbot using **LLM (Llama 3.1 - Present)** + **RAG** + **ChromaDB**, backend **FastAPI**, frontend **React + Vite + TailwindCSS**.
+## ✨ Overview
+
+This repo is an intelligent travel consulting chatbot that combines the power of Generative AI with optimized planning systems. The project leverages the **latest state-of-the-art** to deliver a highly personalized experience for travelers
+
+- **Core AI:** `Llama 3.1` (via **NVIDIA NIM**)
+- **Knowledge Base:** `RAG` + `ChromaDB`
+- **Intelligence:** `Recommender System` + `Graph-based Planning`
+- **Backend:** `FastAPI`
+- **Frontend:** `React` + `Vite` + `TailwindCSS`
+
+## 🗺️ Roadmap
+
+[ ] `Recommend + Planning` Module: Currently a skeleton framework slated for intensive development. The underlying algorithms are provisional and subject to change as we optimize the system logic in upcoming phases.
 
 ---
 
@@ -8,56 +20,74 @@ Vietnam travel consulting chatbot using **LLM (Llama 3.1 - Present)** + **RAG** 
 
 ```
 Project/
-├── BE_ChatBot/                        ← Backend (FastAPI + RAG)
+├── BE_ChatBot/                              ← Backend (FastAPI + Full Pipeline)
 │   ├── src/
-│   │   ├── core/                      ← Factory Pattern — abstraction layer
-│   │   │   ├── base.py                ← Abstract class ModelLLMPlatform (achat interface)
-│   │   │   ├── base_embed_model.py    ← Factory: get_embedding_model() with EmbeddingProvider enum
-│   │   │   └── llama_nvidia.py        ← (Planned) LlamaNvidia impl — currently unused
-│   │   ├── pipeline/
-│   │   │   ├── inference.py           ← RAG chain (Retriever → Prompt → LLM)
-│   │   │   ├── llm.py                 ← Factory creating ChatNVIDIA object
-│   │   │   └── rag_pipline.py         ← Ingestion & Retriever (uses core/base_embed_model)
+│   │   ├── core/                            ← Shared schemas / DTOs
+│   │   │   ├── schemas.py                   ← TripRequest, Place, TripPlan, DayPlan, ...
+│   │   │   ├── base.py                      ← Abstract class ModelLLMPlatform
+│   │   │   └── base_embed_model.py          ← Factory: get_embedding_model() + EmbeddingProvider
+│   │   │
+│   │   ├── pipeline/                        ← Orchestration layer
+│   │   │   ├── orchestrator.py              ← Master pipeline (6 bước đầy đủ)
+│   │   │   ├── query_analyzer.py            ← LLM extract: raw query → TripRequest
+│   │   │   ├── reranker.py                  ← RAG top-20 → multi-signal rerank → top-15
+│   │   │   ├── inference.py                 ← Backward-compatible wrapper cho FastAPI
+│   │   │   ├── llm.py                       ← Factory tạo ChatNVIDIA object
+│   │   │   └── rag_pipline.py               ← Ingestion & Retriever (ChromaDB)
+│   │   │
+│   │   ├── recommend/                       ← Recommender System module
+│   │   │   ├── base_recommender.py          ← Abstract base (Strategy Pattern)
+│   │   │   ├── content_based.py             ← Content-Based: Jaccard similarity trên tags
+│   │   │   ├── location_based.py            ← Location-Based: Haversine centroid proximity
+│   │   │   └── hybrid_recommender.py        ← Hybrid: content (0.6) + location (0.4)
+│   │   │
+│   │   ├── planning/                        ← Graph-based Planning module
+│   │   │   ├── graph_builder.py             ← Xây weighted graph (adjacency dict)
+│   │   │   ├── route_optimizer.py           ← Greedy / Dijkstra / 2-opt
+│   │   │   ├── scheduler.py                 ← Chia ngày + gán giờ HH:MM
+│   │   │   └── planner.py                   ← Facade: Graph → Route → Schedule → TripPlan
+│   │   │
 │   │   ├── model/
-│   │   │   └── embeddings/            ← HuggingFace embedding model cache (auto-downloaded)
+│   │   │   └── embeddings/                  ← HuggingFace embedding model cache
 │   │   ├── prompts/
-│   │   │   └── system.txt             ← System prompt for LLM
-│   │   ├── db/                        ← ChromaDB vector store (auto-created)
+│   │   │   └── system.txt                   ← System prompt cho LLM
+│   │   ├── db/                              ← ChromaDB vector store (auto-created)
 │   │   └── source_data/
-│   │       └── docs/                  ← ⬅ Put PDF files here
-│   ├── build_rag_vector_db.ipynb      ← Run once to create vector DB
-│   ├── run.bat                        ← Windows: kill old process & restart
-│   ├── .env                           ← Create from .env.example
+│   │       └── docs/                        ← ⬅ Đặt file PDF tại đây
+│   │
+│   ├── build_rag_vector_db.ipynb            ← Chạy một lần để tạo vector DB
+│   ├── run.bat                              ← Windows: kill process cũ & restart
+│   ├── .env                                 ← Tạo từ .env.example
 │   └── requirements.txt
 │
-└── FE_ChatBot/                        ← Frontend (React + Vite + TailwindCSS)
+└── FE_ChatBot/                              ← Frontend (React + Vite + TailwindCSS)
     ├── src/
     │   ├── api/
-    │   │   └── axiosClient.js         ← Axios instance (baseURL + auth interceptor)
+    │   │   └── axiosClient.js               ← Axios instance (baseURL + auth interceptor)
     │   ├── services/
-    │   │   └── chatApi.js             ← API calls (POST /chat)
+    │   │   └── chatApi.js                   ← API calls (POST /chat)
     │   ├── features/
     │   │   ├── navigation/
-    │   │   │   ├── Sidebar.jsx        ← Sidebar (chat history, user menu)
-    │   │   │   ├── TopBar.jsx         ← Top navigation bar
-    │   │   │   ├── ModelDropdown.jsx  ← Model selection dropdown
-    │   │   │   └── PlusMenu.jsx       ← Plus action menu
+    │   │   │   ├── Sidebar.jsx
+    │   │   │   ├── TopBar.jsx
+    │   │   │   ├── ModelDropdown.jsx
+    │   │   │   └── PlusMenu.jsx
     │   │   └── result-visualize/
-    │   │       ├── ResultSwitcher.jsx ← Toggle between Text/Timeline/Mindmap
-    │   │       ├── BotResult.jsx      ← Bot response wrapper
-    │   │       ├── TextResult.jsx     ← Plain text display
-    │   │       ├── TimelineResult.jsx ← Vertical timeline view
-    │   │       └── MindmapResult.jsx  ← Mindmap / ReactFlow view
+    │   │       ├── ResultSwitcher.jsx        ← Toggle Text / Timeline / Mindmap
+    │   │       ├── BotResult.jsx
+    │   │       ├── TextResult.jsx
+    │   │       ├── TimelineResult.jsx
+    │   │       └── MindmapResult.jsx
     │   ├── ui/
-    │   │   ├── AppLayout.jsx          ← Root layout (Sidebar + Topbar + Outlet)
-    │   │   ├── ChatArea.jsx           ← Main chat page (messages + input)
-    │   │   ├── ChatInput.jsx          ← User input bar
-    │   │   └── Message.jsx            ← Single message bubble
+    │   │   ├── AppLayout.jsx
+    │   │   ├── ChatArea.jsx
+    │   │   ├── ChatInput.jsx
+    │   │   └── Message.jsx
     │   ├── helper/
-    │   │   └── extractJsonFromText.js ← Parse JSON trip plan from LLM response
-    │   ├── App.jsx                    ← React Router setup
-    │   ├── main.jsx                   ← Entry point
-    │   └── index.css                  ← Global styles
+    │   │   └── extractJsonFromText.js       ← Parse JSON trip plan từ LLM response
+    │   ├── App.jsx
+    │   ├── main.jsx
+    │   └── index.css
     ├── index.html
     ├── vite.config.js
     └── package.json
@@ -65,34 +95,76 @@ Project/
 
 ---
 
-## ⚙️ System Requirements
+## 🏗️ System Architecture
 
-| Requirement | Details |
-|---|---|
-| Python | >= 3.10 |
-| pip | >= 23.0 |
-| Node.js | >= 18.x |
-| npm | >= 9.x |
-| RAM | >= 4GB |
-| API Key | [NVIDIA NIM](https://build.nvidia.com) (required) |
-| HF Token | [HuggingFace](https://huggingface.co/settings/tokens) (recommended) |
+```
+User (Browser)
+    ↓  http://localhost:5173
+React Frontend (Vite)
+    ├── ChatArea → ChatInput → gửi prompt
+    ↓  POST http://127.0.0.1:8000/chat
+FastAPI Backend
+    ↓
+TripOrchestrator.run()
+    │
+    ├── [1] QueryAnalyzer
+    │       └── LLM extract: region, days, tags, budget → TripRequest
+    │
+    ├── [2] RAGStorage (ChromaDB)
+    │       └── Embedding search → top-20 Place
+    │
+    ├── [3] Reranker
+    │       └── rag_score + rating + tag_overlap → top-15 Place
+    │
+    ├── [4] HybridRecommender
+    │       ├── ContentBasedRecommender  (Example: Jaccard similarity, weight 0.6)
+    │       └── LocationBasedRecommender (Example: Haversine proximity, weight 0.4)
+    │           → top-10 Place
+    │
+    ├── [5] TripPlanner
+    │       ├── GraphBuilder      → weighted adjacency graph
+    │       ├── RouteOptimizer    → Example: Greedy Nearest Neighbor / Dijkstra
+    │       └── Scheduler         → DayPlan với giờ HH:MM cụ thể → TripPlan
+    │
+    └── [6] LLM Generation
+            └── TripPlan → natural language response (tiếng Việt) + JSON
+                ↓
+JSON Response → Frontend
+    ├── TextResult      (plain text)
+    ├── TimelineResult  (structured trip plan)
+    └── MindmapResult   (node graph)
+```
 
 ---
 
-## 🚀 Installation Guide (End-to-End)
+## ⚙️ System Requirements
 
-### Step 1 — Clone Project
+| Yêu cầu  | Chi tiết                                                            |
+| -------- | ------------------------------------------------------------------- |
+| Python   | >= 3.10                                                             |
+| pip      | >= 23.0                                                             |
+| Node.js  | >= 18.x                                                             |
+| npm      | >= 9.x                                                              |
+| RAM      | >= 4GB                                                              |
+| API Key  | [NVIDIA NIM](https://build.nvidia.com) (bắt buộc)                   |
+| HF Token | [HuggingFace](https://huggingface.co/settings/tokens) (khuyến nghị) |
+
+---
+
+## 🚀 Hướng Dẫn Cài Đặt
+
+### Bước 1 — Clone Project
 
 ```bash
-git clone https://github.com/<your-username>/Vietnam-Travel-ChatBot.git
-cd Vietnam-Travel-ChatBot
+https://github.com/TungDo134/KLTN.git
+cd KLTN
 ```
 
 ---
 
 ## 🐍 Backend Setup (BE_ChatBot)
 
-### Step 2 — Create & Activate Virtual Environment
+### Bước 2 — Tạo & Kích hoạt Virtual Environment
 
 ```bash
 cd BE_ChatBot
@@ -106,21 +178,21 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-> ✅ After activation, the terminal will display `(.venv)` at the beginning of the line.
+> ✅ Sau khi kích hoạt, terminal sẽ hiển thị `(.venv)` ở đầu dòng.
 
 ---
 
-### Step 3 — Install Backend Dependencies
+### Bước 3 — Cài Đặt Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> ⏳ First time may take 3–5 minutes (LangChain, ChromaDB, HuggingFace...).
+> ⏳ Lần đầu có thể mất 3–5 phút (LangChain, ChromaDB, HuggingFace...).
 
 ---
 
-### Step 4 — Create `.env` File
+### Bước 4 — Tạo file `.env`
 
 ```bash
 # Windows
@@ -130,58 +202,60 @@ copy .env.example .env
 cp .env.example .env
 ```
 
-Open `.env` and fill in:
+Mở `.env` và điền thông tin:
 
 ```env
-# === REQUIRED ===
-NVIDIA_API_KEY=nvapi-xxxxxxxxxxxxxxxxxxxx   # Get at https://build.nvidia.com
+# === BẮT BUỘC ===
+NVIDIA_API_KEY=nvapi-xxxxxxxxxxxxxxxxxxxx   # Lấy tại https://build.nvidia.com
 
-# === RECOMMENDED ===
-HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxx            # Get at https://huggingface.co/settings/tokens
+# === KHUYẾN NGHỊ ===
+HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxx            # Lấy tại https://huggingface.co/settings/tokens
 
-# === PATH CONFIGURATION ===
-PERSIST_DIRECTORY=db/                       # Where ChromaDB stores vectors
-SOURCE_DATA=src/source_data/docs            # Folder containing PDF files
+# === CẤU HÌNH ĐƯỜNG DẪN ===
+PERSIST_DIRECTORY=db/
+SOURCE_DATA=src/source_data/docs
 
-# === SYSTEM PROMPT (optional) ===
+# === SYSTEM PROMPT (tùy chọn) ===
 SYSTEM_PROMPT=src/prompts/system.txt
 
-# === FRONTEND (React frontend URL for CORS) ===
+# === FRONTEND URL (cho CORS) ===
 FRONTEND_URL=http://localhost:5173
 ```
 
 ---
 
-### Step 5 — Add PDF Data
+### Bước 5 — Thêm Dữ Liệu PDF
 
-Put travel document PDF files into:
+Đặt file PDF tài liệu du lịch vào thư mục:
 
 ```
 src/source_data/docs/
-├── dia_diem_ha_noi.pdf
-├── da_lat_travel.pdf
+├── dia_diem_da_lat.pdf
+├── ha_noi_travel.pdf
 └── ...
 ```
 
-> 📌 Only `.pdf` files are supported. At least 1 file is required to build the vector DB.
+> 📌 Chỉ hỗ trợ file `.pdf`. Cần ít nhất 1 file để build vector DB.
+>
+> ⚠️ **Lưu ý metadata:** Mỗi địa điểm trong PDF nên có thông tin `lat`, `lon`, `tags`, `rating`, `duration` để pipeline Recommend & Planning hoạt động chính xác.
 
 ---
 
-### Step 6 — Build Vector Database (run once only)
+### Bước 6 — Build Vector Database (chỉ chạy một lần)
 
-Open and run the entire notebook:
+Mở và chạy toàn bộ notebook:
 
 ```
 build_rag_vector_db.ipynb
 ```
 
-Or via command line:
+Hoặc qua command line:
 
 ```bash
 jupyter nbconvert --to notebook --execute build_rag_vector_db.ipynb
 ```
 
-**Expected output:**
+**Output mong đợi:**
 
 ```
 Loading embedding model on device using: 'cpu'...
@@ -193,20 +267,21 @@ Total inserted: XX chunks
 ✅ Ingestion complete! Your documents are stored in Chroma DB and ready for RAG queries.
 ```
 
-> ⚠️ Only re-run when adding new PDFs to the `docs/` folder.
+> ⚠️ Chỉ chạy lại khi thêm PDF mới vào thư mục `docs/`.
 
 ---
 
-### Step 7 — Start API Server
+### Bước 7 — Khởi Động API Server
 
 ```bash
 uvicorn src.main:app --reload
 ```
 
-**Expected output:**
+**Output mong đợi:**
 
 ```
 App starting — loading RAG Pipeline...
+⚙️ Đang khởi tạo Full Trip Planning Pipeline...
 Loading embedding model on device using: 'cpu'...
 Loading Chroma database from db/...
 ✅ System prompt loaded from: src/prompts/system.txt
@@ -218,114 +293,154 @@ INFO:     Uvicorn running on http://127.0.0.1:8000
 
 ## ⚛️ Frontend Setup (FE_ChatBot)
 
-### Step 8 — Install Frontend Dependencies
+### Bước 8 — Cài Đặt Dependencies
 
 ```bash
 cd ../FE_ChatBot
 npm install
 ```
 
----
-
-### Step 9 — Start Development Server
+### Bước 9 — Khởi Động Dev Server
 
 ```bash
 npm run dev
 ```
 
-**Expected output:**
+**Output mong đợi:**
 
 ```
   VITE v7.x.x  ready in xxx ms
 
   ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
 ```
-
-> ✅ Open `http://localhost:5173` in your browser to use the chatbot UI.
 
 ---
 
-## 🌐 Endpoints (after running backend)
+## 🌐 API Endpoints
 
-| URL | Description |
-|---|---|
-| `http://127.0.0.1:8000/` | Chat interface **Gradio** (legacy) |
-| `http://127.0.0.1:8000/chat` | REST API endpoint `(POST)` |
-| `http://127.0.0.1:8000/docs` | Swagger UI — test API directly |
-| `http://127.0.0.1:8000/redoc` | ReDoc documentation |
-| `http://localhost:5173/` | React Frontend (main UI) |
+| URL                           | Mô tả                          |
+| ----------------------------- | ------------------------------ |
+| `http://127.0.0.1:8000/`      | Chat interface Gradio (legacy) |
+| `http://127.0.0.1:8000/chat`  | REST API endpoint `(POST)`     |
+| `http://127.0.0.1:8000/docs`  | Swagger UI                     |
+| `http://127.0.0.1:8000/redoc` | ReDoc documentation            |
+| `http://localhost:5173/`      | React Frontend (main UI)       |
 
-### Example REST API Call
+### Ví dụ gọi API
 
 ```bash
 curl -X POST http://localhost:8000/chat \
   -H "Content-Type: application/json" \
-  -d '{"prompt": "Famous tourist destinations in Da Lat?"}'
+  -d '{"prompt": "Tôi muốn đi Đà Lạt 2 ngày, thích cafe và thác nước, budget 3 triệu"}'
 ```
+
+**Response:**
+
+```json
+{
+  "response": "Đây là lịch trình 2 ngày tại Đà Lạt dành cho bạn...",
+  "trip_plan": {
+    "days": [
+      {
+        "day": 1,
+        "places": [
+          {
+            "name": "Thác Datanla",
+            "arrival": "08:30",
+            "departure": "10:00",
+            "tags": ["thác nước", "thiên nhiên"]
+          },
+          {
+            "name": "Cafe The Married Beans",
+            "arrival": "10:30",
+            "departure": "11:30",
+            "tags": ["cafe", "view"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+## 🧩 Module Chi Tiết
+
+### Pipeline Flow
+
+```
+raw_query (str)
+    ↓ [1] QueryAnalyzer     → TripRequest {region, days, tags, budget}
+    ↓ [2] RAGStorage        → top-20 Place (ChromaDB cosine similarity)
+    ↓ [3] Reranker          → top-15 Place (rag_score + rating + tag_overlap)
+    ↓ [4] HybridRecommender → top-10 Place (content + location scoring)
+    ↓ [5] TripPlanner       → TripPlan (graph + route + schedule)
+    ↓ [6] LLM Generation    → text response + JSON trip plan
+```
+
+### Recommender System
+
+| Chiến lược     | File                    | Mô tả                                                        |
+| -------------- | ----------------------- | ------------------------------------------------------------ |
+| Content-Based  | `content_based.py`      | Jaccard similarity giữa tags của place và tags trong request |
+| Location-Based | `location_based.py`     | Haversine distance đến centroid — ưu tiên địa điểm gần nhau  |
+| Hybrid         | `hybrid_recommender.py` | Kết hợp: `content × 0.6 + location × 0.4`                    |
+
+### Graph-based Planning
+
+| Component      | File                 | Mô tả                                                                  |
+| -------------- | -------------------- | ---------------------------------------------------------------------- |
+| GraphBuilder   | `graph_builder.py`   | Xây complete weighted graph — edge weight = thời gian di chuyển (phút) |
+| RouteOptimizer | `route_optimizer.py` | Greedy Nearest Neighbor (mặc định), Dijkstra, 2-opt improvement        |
+| Scheduler      | `scheduler.py`       | Chia places vào N ngày, gán giờ HH:MM từ 08:00 đến 21:00               |
+| TripPlanner    | `planner.py`         | Facade kết hợp 3 component trên → `TripPlan`                           |
 
 ---
 
 ## 🖥️ Frontend Features
 
-The React frontend (`FE_ChatBot`) provides a modern chat interface with the following capabilities:
-
 ### 💬 Chat Interface
-- **ChatArea** — Main conversation page. Sends user messages to `POST /chat` and renders responses.
-- **ChatInput** — Text input bar with send button. Disabled while waiting for a bot response.
-- **Message** — Renders each message bubble (user vs bot), with error state styling.
 
-### 🗂️ Navigation
-- **Sidebar** — Displays chat history list, search bar, and user account menu (upgrade, settings, logout).
-- **TopBar** — Top action bar with model selector and additional controls.
-- **ModelDropdown** — Lets the user switch between available LLM models.
-- **PlusMenu** — Quick-action menu for starting new conversations or uploading files.
+- **ChatArea** — Gửi prompt tới `POST /chat`, render phản hồi.
+- **ChatInput** — Input bar, disable khi đang chờ bot.
+- **Message** — Bubble user vs bot, có error state styling.
 
 ### 📊 Result Visualization
-When the LLM returns a structured JSON trip plan, the UI can render it in multiple views:
 
-| View | Component | Description |
-|---|---|---|
-| **Text** | `TextResult.jsx` | Plain markdown/text response |
-| **Timeline** | `TimelineResult.jsx` | Vertical timeline (react-vertical-timeline-component) |
-| **Mindmap** | `MindmapResult.jsx` | Interactive node graph (ReactFlow) |
-
-The `ResultSwitcher` component provides toggle buttons to switch between views.
-
-### 🔌 API Integration
-- **axiosClient** — Axios instance pointing to `http://127.0.0.1:8000`. Automatically attaches `Authorization: Bearer <token>` from `localStorage` on every request.
-- **chatApi** — Thin service wrapper: `chatApi.sendMessage(prompt)` → `POST /chat`.
+| View         | Component            | Mô tả                              |
+| ------------ | -------------------- | ---------------------------------- |
+| **Text**     | `TextResult.jsx`     | Plain markdown/text                |
+| **Timeline** | `TimelineResult.jsx` | Vertical timeline theo ngày        |
+| **Mindmap**  | `MindmapResult.jsx`  | Interactive node graph (ReactFlow) |
 
 ### 🌐 Tech Stack (Frontend)
 
-| Technology | Version | Purpose |
-|---|---|---|
-| React | ^19.2.0 | UI framework |
-| Vite | ^7.x | Build tool & dev server |
-| TailwindCSS | ^4.x | Utility-first styling |
-| React Router DOM | ^7.x | Client-side routing |
-| Axios | ^1.x | HTTP client |
-| React Icons | ^5.x | Icon library |
-| ReactFlow | ^11.x | Mindmap / node graph |
-| react-vertical-timeline-component | ^4.x | Timeline visualization |
+| Technology                        | Version | Mục đích                |
+| --------------------------------- | ------- | ----------------------- |
+| React                             | ^19.x   | UI framework            |
+| Vite                              | ^7.x    | Build tool & dev server |
+| TailwindCSS                       | ^4.x    | Utility-first styling   |
+| React Router DOM                  | ^7.x    | Client-side routing     |
+| Axios                             | ^1.x    | HTTP client             |
+| ReactFlow                         | ^11.x   | Mindmap / node graph    |
+| react-vertical-timeline-component | ^4.x    | Timeline visualization  |
 
 ---
 
-## 🔄 Add New Documents to the DB
+## 🔄 Thêm Tài Liệu Mới vào DB
 
-1. Add a new PDF file into `BE_ChatBot/src/source_data/docs/`
-2. Re-run the notebook or call directly in Python:
+1. Thêm file PDF vào `BE_ChatBot/src/source_data/docs/`
+2. Chạy lại ingestion:
 
 ```python
 from src.pipeline.rag_pipline import RAGStorage
-RAGStorage().build_vector_db()  # Automatically detects existing DB and only adds new data
+RAGStorage().build_vector_db()
 ```
 
 ---
 
 ## 📦 Regenerate `requirements.txt`
-
-If you install new Python packages:
 
 ```bash
 pip freeze > requirements.txt
@@ -333,69 +448,37 @@ pip freeze > requirements.txt
 
 ---
 
-## ❓ Common Troubleshooting
+## ❓ Xử Lý Lỗi Thường Gặp
 
 **`ModuleNotFoundError: No module named 'src'`**
+
 ```bash
-# Run from the root of BE_ChatBot (where src/ is located)
 cd BE_ChatBot
 uvicorn src.main:app --reload
 ```
 
-**`PERSIST_DIRECTORY not set`** → Check that `.env` has been created and `PERSIST_DIRECTORY=db/` is filled.
+**`PERSIST_DIRECTORY not set`** → Kiểm tra `.env` đã có `PERSIST_DIRECTORY=db/`.
 
-**`Documents directory does not exist`** → Check that `SOURCE_DATA` in `.env` points to the correct folder containing PDFs.
+**`Documents directory does not exist`** → Kiểm tra `SOURCE_DATA` trong `.env` trỏ đúng thư mục chứa PDF.
 
-**`NVIDIA_API_KEY environment variable not set`** → Fill `NVIDIA_API_KEY` in `.env`. Get the key at https://build.nvidia.com.
+**`NVIDIA_API_KEY environment variable not set`** → Điền `NVIDIA_API_KEY` trong `.env`. Lấy key tại https://build.nvidia.com.
 
-**Embedding model freezes on first run** → Normal — the model (~90MB) is downloading to `src/model/embeddings/`. Add `HF_TOKEN` to `.env` to speed up.
+**Embedding model treo lần đầu chạy** → Bình thường — model (~90MB) đang tải về `src/model/embeddings/`. Thêm `HF_TOKEN` vào `.env` để tăng tốc.
 
-**CORS error in browser** → Make sure `FRONTEND_URL=http://localhost:5173` is set in `BE_ChatBot/.env` and the FastAPI app has CORS middleware configured for that origin.
+**CORS error trên browser** → Đảm bảo `FRONTEND_URL=http://localhost:5173` đã được set trong `.env`.
 
-**Cannot shutdown with Ctrl+C / Port 8000 already in use** → Use `run.bat` (Windows):
+**Port 8000 đang bị chiếm** → Dùng `run.bat` (Windows):
 
 ```bat
 @echo off
-echo Killing all Python processes...
 taskkill /IM python.exe /F >nul 2>&1
-
-echo Starting FastAPI...
 uvicorn src.main:app --reload
 ```
 
-**Frontend blank screen / cannot connect** → Make sure the backend is running on `http://127.0.0.1:8000` before starting the frontend. Check `axiosClient.js` if the base URL differs.
-
----
-
-## 🏗️ System Architecture
-
-```
-User (Browser)
-    ↓  http://localhost:5173
-React Frontend (Vite)
-    ├── ChatArea → ChatInput → sends prompt
-    ↓  POST http://127.0.0.1:8000/chat
-FastAPI Backend
-    ↓
-RAGInference.predict_async()
-    ↓
-[1] ChromaDB Retriever
-    └── Question embedding → find top-k chunks
-    ↓
-[2] Prompt Template
-    └── {context} + {question}
-    ↓
-[3] Llama 3.1 405B (NVIDIA NIM API)
-    └── Generate Vietnamese answer
-    ↓
-JSON Response → Frontend
-    ├── TextResult     (plain text)
-    ├── TimelineResult (structured trip plan)
-    └── MindmapResult  (node graph)
-```
+**Frontend blank screen** → Đảm bảo backend đang chạy trên `http://127.0.0.1:8000` trước khi start frontend.
 
 ---
 
 ## 📄 License
 
-This project is for academic/thesis (KLTN) purposes.
+Dự án phục vụ mục đích học thuật / khóa luận tốt nghiệp (KLTN).

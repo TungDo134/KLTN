@@ -1,0 +1,41 @@
+{
+  "place_id": "VN-DL-001",
+  "name": "Thác Datanla",
+  "region": "Đà Lạt",
+  "province": "Lâm Đồng",
+  "category": "thiên nhiên",
+  "tags": ["thác nước", "dã ngoại", "gia đình"],
+  "description": "Thác Datanla nằm cách trung tâm Đà Lạt 7km...",
+
+  "location": {
+    "lat": 11.9137,
+    "lon": 108.4272,
+    "address": "Đường Prenn, Phường 3, Đà Lạt"
+  },
+
+  "duration_minutes": 120,
+
+  "opening_hours": {
+    "weekday": "07:00 - 17:30",
+    "weekend": "07:00 - 18:00",
+    "closed_days": []
+  },
+
+  "price": {
+    "adult": 50000,
+    "child": 30000,
+    "currency": "VND",
+    "budget_level": "low"
+  },
+
+  "rating": 4.3,
+  "review_count": 1250,
+  "popularity_score": 0.85,
+
+  "best_time": ["sáng sớm", "chiều mát"],
+  "suitable_for": ["gia đình", "cặp đôi", "nhóm bạn"],
+
+  "source": "tripadvisor",
+  "source_url": "https://www.tripadvisor.com/Attraction-g293922-d456789",
+  "last_updated": "2025-01-15"
+}
