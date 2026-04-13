@@ -1,15 +1,11 @@
 """
 INGESTION + RETRIEVE PIPELINE
 """
-from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
-# --- LOAD .env ---
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # --- IMPORT ---
 import os
 import torch
+from dotenv import load_dotenv
 
 # Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -17,8 +13,10 @@ from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_chroma import Chroma
 
 # Embedding model
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_ollama import OllamaEmbeddings
+from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
+
+# --- LOAD .env ---
+load_dotenv()
 
 """
 =========== Hướng dẫn bổ sung data =========== 
@@ -35,13 +33,16 @@ cache_folder = os.getenv("CACHE_FOLDER")
 
 # --- Create Embedding Model ---
 
+
 # HuggingFaceEmbeddings
-def _build_embedding_model() -> HuggingFaceEmbeddings:
-    return HuggingFaceEmbeddings(
-        model_name="AITeamVN/Vietnamese_Embedding",
-        model_kwargs={"device": _DEVICE},
-        encode_kwargs={"normalize_embeddings": True},
-        cache_folder="src/model/embeddings")
+# def _build_embedding_model() -> HuggingFaceEmbeddings:
+#     return HuggingFaceEmbeddings(
+#         model_name="AITeamVN/Vietnamese_Embedding",
+#         model_kwargs={"device": _DEVICE},
+#         encode_kwargs={"normalize_embeddings": True},
+#         cache_folder="src/model/embeddings",
+#     )
+
 
 # OllamaEmbeddings
 # def _build_embedding_model() -> OllamaEmbeddings:
@@ -54,16 +55,17 @@ def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
 
     # check exists
     if not os.path.exists(source_data):
-        raise FileNotFoundError(f'Documents directory does not exist: {source_data}')
+        raise FileNotFoundError(f"Documents directory does not exist: {source_data}")
 
     # load files
-    loader = DirectoryLoader(path=source_data,
-                             glob='*.pdf', loader_cls=PyPDFLoader)
+    loader = DirectoryLoader(path=source_data, glob="*.pdf", loader_cls=PyPDFLoader)
 
     documents = loader.load()
 
     if len(documents) == 0:
-        raise FileNotFoundError(f"No .pdf files found in {source_data}. Please add your company documents.")
+        raise FileNotFoundError(
+            f"No .pdf files found in {source_data}. Please add your company documents."
+        )
 
     for i, doc in enumerate(documents[:2]):  # Show first 2 documents
         print(f"\nDocument {i + 1}:")
@@ -82,14 +84,12 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
     print("Splitting documents into chunks...")
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap
+        chunk_size=chunk_size, chunk_overlap=chunk_overlap
     )
 
     chunks = text_splitter.split_documents(documents)
 
     if chunks:
-
         for i, chunk in enumerate(chunks[:5]):
             print(f"\n--- Chunk {i + 1} ---")
             print(f"Source: {chunk.metadata['source']}")
@@ -105,8 +105,9 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
 
 
 # --- CREATE VECTOR DB (CHROMA) ---
-def create_vector_store(chunks, persist_directory: str,
-                        embedding_model: HuggingFaceEmbeddings) -> Chroma:
+def create_vector_store(
+        chunks, persist_directory: str, embedding_model
+) -> Chroma:
     print("Creating embeddings and storing in ChromaDB...")
 
     batch_size = 100
@@ -120,10 +121,10 @@ def create_vector_store(chunks, persist_directory: str,
         first_batch = chunks[:batch_size]
         vectorstore = Chroma.from_documents(
             documents=first_batch,
-            collection_name='kltn_chatbot',
+            collection_name="kltn_chatbot",
             embedding=embedding_model,  # ← đổi 'embedding' thành 'embedding_function'
             persist_directory=persist_directory,
-            collection_metadata={"hnsw:space": "cosine"}
+            collection_metadata={"hnsw:space": "cosine"},
         )
         remaining = chunks[batch_size:]
     else:
@@ -137,7 +138,7 @@ def create_vector_store(chunks, persist_directory: str,
 
     # Add các batch còn lại
     for i in range(0, len(remaining), batch_size):
-        batch = remaining[i:i + batch_size]
+        batch = remaining[i: i + batch_size]
         print(f"  Inserting batch ({len(batch)} chunks)...")
         vectorstore.add_documents(batch)
 
@@ -146,13 +147,14 @@ def create_vector_store(chunks, persist_directory: str,
 
 
 class RAGStorage:
-    def __init__(self):
+    def __init__(self, provider: EmbeddingProvider = EmbeddingProvider.HUGGINGFACE):
         self.persist_directory = os.getenv("PERSIST_DIRECTORY")
         if not self.persist_directory:
             raise ValueError(f"PERSIST_DIRECTORY environment variable is not set.")
 
         print(f"Loading embedding model on device using: '{_DEVICE}'...")
-        self.embedding_model = _build_embedding_model()
+        # self.embedding_model = _build_embedding_model()
+        self.embedding_model = get_embedding_model(provider=provider)
 
     # --- HÀM 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  ---
     def build_vector_db(self):
@@ -164,9 +166,13 @@ class RAGStorage:
         chunks = split_documents(documents)
 
         # 3. Embedding and Storing in Vector DB
-        vectorstore = create_vector_store(chunks, self.persist_directory, self.embedding_model)
+        vectorstore = create_vector_store(
+            chunks, self.persist_directory, self.embedding_model
+        )
 
-        print("\n Ingestion complete! Your documents are stored in Chroma DB and ready for RAG queries.")
+        print(
+            "\n Ingestion complete! Your documents are stored in Chroma DB and ready for RAG queries."
+        )
 
         return vectorstore
 
@@ -183,3 +189,11 @@ class RAGStorage:
         )
         # top_k
         return vectorstore.as_retriever(search_kwargs={"k": 5})
+
+
+def test_embedding():
+    get_embedding_model(provider=EmbeddingProvider.HUGGINGFACE)
+    print("=" * 50)
+
+
+test_embedding()

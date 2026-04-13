@@ -10,12 +10,16 @@ Vietnam travel consulting chatbot using **LLM (Llama 3.1 - Present)** + **RAG** 
 Project/
 ├── BE_ChatBot/                        ← Backend (FastAPI + RAG)
 │   ├── src/
+│   │   ├── core/                      ← Factory Pattern — abstraction layer
+│   │   │   ├── base.py                ← Abstract class ModelLLMPlatform (achat interface)
+│   │   │   ├── base_embed_model.py    ← Factory: get_embedding_model() with EmbeddingProvider enum
+│   │   │   └── llama_nvidia.py        ← (Planned) LlamaNvidia impl — currently unused
 │   │   ├── pipeline/
 │   │   │   ├── inference.py           ← RAG chain (Retriever → Prompt → LLM)
 │   │   │   ├── llm.py                 ← Factory creating ChatNVIDIA object
-│   │   │   └── rag_pipeline.py        ← Ingestion & Retriever
+│   │   │   └── rag_pipline.py         ← Ingestion & Retriever (uses core/base_embed_model)
 │   │   ├── model/
-│   │   │   └── llama_nvidia.py        ← (Legacy, not used)
+│   │   │   └── embeddings/            ← HuggingFace embedding model cache (auto-downloaded)
 │   │   ├── prompts/
 │   │   │   └── system.txt             ← System prompt for LLM
 │   │   ├── db/                        ← ChromaDB vector store (auto-created)
