@@ -35,7 +35,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[260px] bg-(--bg-sidebar) flex flex-col h-full relative text-[var(--text-main)]">
+    <div className="w-[260px] bg-(--bg-sidebar) flex flex-col h-full relative text-(--text-main)">
       {/* Header */}
       <div className="px-4 py-3 flex items-center justify-between">
         <h1 className="font-serif text-[19px] tracking-wide font-medium">
