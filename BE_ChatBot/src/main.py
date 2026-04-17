@@ -10,7 +10,7 @@ load_dotenv()
 import os
 from contextlib import asynccontextmanager
 
-import gradio as gr
+import gradio as gr   # Tạm thời tắt Gradio — dùng React Frontend
 import uvicorn
 
 from fastapi import Depends, FastAPI, HTTPException, Request
@@ -42,9 +42,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Vietnam Travel RAG API", lifespan=lifespan)
 
 # Cors
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # port Vite
+    allow_origins=[frontend_url],  # Đọc từ biến môi trường
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=True
@@ -62,8 +64,8 @@ class ChatResponse(BaseModel):
 
 # --- API Endpoints ---
 # @app.get("/")
-# async def root(request: Request):
-#     return {"API IS RUNNING"}
+# async def root():
+#     return {"status": "Vietnam Travel RAG API is running 🚀"}
 
 def get_inference_service(request: Request) -> RAGInference:  # ← thêm request
     inference = getattr(request.app.state, "inference", None)
@@ -78,7 +80,7 @@ async def chat(request: ChatRequest, engine: RAGInference = Depends(get_inferenc
     return ChatResponse(response=response_text)
 
 
-# --- Gradio ChatInterface ---
+# --- Gradio ChatInterface (Tạm thời tắt — dùng React Frontend) ---
 
 async def gradio_predict(message: str, history: list) -> str:
     """Hàm này được Gradio gọi mỗi khi user gửi tin nhắn."""

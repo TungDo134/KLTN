@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+:root {
+  /* =========================================
+     CẤU HÌNH MÀU SẮC GIAO DIỆN (THEME COLORS)
+     ========================================= */
+  
+  /* Nền (Backgrounds) */
+  --bg-main: #171A21;       /* Nền khu vực chat chính */
+  --bg-sidebar: #0F1115;    /* Nền thanh điều hướng trái */
+  --bg-panel: #212631;      /* Nền cho input box, dropdown, bong bóng chat của user */
+  --bg-hover: #2D3446;      /* Nền khi hover vào các nút, item */
+  
+  /* Viền (Borders) */
+  --border-main: #374151;   /* Viền chung cho input, menu, nút */
+  
+  /* Chữ (Text) */
+  --text-main: #F3F4F6;     /* Chữ chính (tiêu đề, nội dung chat) */
+  --text-muted: #9CA3AF;    /* Chữ phụ (danh sách chat, nút chức năng) */
+  --text-dark: #6B7280;     /* Chữ rất nhạt (disclaimer, ghi chú nhỏ) */
+  
+  /* Thương hiệu (Brand/Accent) */
+  --accent-color: #60A5FA;  /* Màu nhấn (icon mặt trời, điểm nhấn) */
+}
+
 /* Componet timeline result */
 @layer components {
   .vertical-timeline-element-date {

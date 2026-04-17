@@ -191,9 +191,4 @@ class RAGStorage:
         return vectorstore.as_retriever(search_kwargs={"k": 5})
 
 
-def test_embedding():
-    get_embedding_model(provider=EmbeddingProvider.HUGGINGFACE)
-    print("=" * 50)
 
-
-test_embedding()

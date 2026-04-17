@@ -10,15 +10,44 @@ function ChatArea() {
   const bottomRef = useRef(null);
 
   const handleSend = async (text) => {
+    if (!text.trim()) return;
+
     // Thêm message của user
     setMessages((prev) => [...prev, { text, sender: "user" }]);
     setLoading(true);
 
+    // Chuẩn bị sẵn một message rỗng cho bot để nhận stream
+    setMessages((prev) => [
+      ...prev,
+      { text: "", sender: "bot", isStreaming: true },
+    ]);
+
     try {
-      const res = await chatApi.sendMessage(text);
+      const res = await chatApi.sendMessageStream(
+        text,
+        (chunk, fullTextSoFar) => {
+          // Tắt loading indicator (3 dấu chấm) khi nhận ký tự đầu tiên
+          setLoading(false);
+          // Cập nhật text liên tục cho tin nhắn bot cuối cùng
+          setMessages((prev) => {
+            const newMsgs = [...prev];
+            const lastIndex = newMsgs.length - 1;
+
+            // Loại bỏ khối ```json... để chỉ stream ngôn ngữ tự nhiên
+            const cleanStreamingText = fullTextSoFar.replace(/```json[\s\S]*/i, "").trim();
+
+            newMsgs[lastIndex] = {
+              ...newMsgs[lastIndex],
+              text: cleanStreamingText,
+            };
+            return newMsgs;
+          });
+        },
+      );
+
       const responseText = res?.data?.response ?? "";
 
-      // Nếu LLM trả về JSON trip plan, parse để dùng cho timeline/mindmap
+      // Stream hoàn tất: Nếu LLM trả về JSON trip plan, parse để hiển thị UI
       let tripData = null;
       try {
         const jsonText = extractJsonFromText(responseText);
@@ -27,21 +56,54 @@ function ChatArea() {
         tripData = null;
       }
 
-      // Thêm response của bot
-      setMessages((prev) => [
-        ...prev,
-        { text: responseText, sender: "bot", tripData },
-      ]);
+      // Xóa hẳn khối JSON ra khỏi ngôn ngữ tự nhiên hiển thị
+      const finalCleanText = responseText.replace(/```json[\s\S]*?```/i, "").trim();
+
+      if (tripData) {
+        // Đặt trạng thái đang tạo giao diện (chưa có tripData)
+        setMessages((prev) => {
+          const newMsgs = [...prev];
+          const lastIndex = newMsgs.length - 1;
+          newMsgs[lastIndex] = {
+            ...newMsgs[lastIndex],
+            text: finalCleanText,
+            isBuildingUI: true,
+            isStreaming: false,
+          };
+          return newMsgs;
+        });
+
+        // Tạm khóa thao tác (loading = true) và dừng 1.5s để show thông báo tạo giao diện
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
+
+      // Cập nhật lại lần cuối cùng, thêm tripData để Message component chuyển sang UI
+      setMessages((prev) => {
+        const newMsgs = [...prev];
+        const lastIndex = newMsgs.length - 1;
+
+        newMsgs[lastIndex] = {
+          ...newMsgs[lastIndex],
+          text: finalCleanText,
+          tripData,
+          isBuildingUI: false,
+          isStreaming: false,
+        };
+        return newMsgs;
+      });
     } catch (err) {
-      // Thêm thông báo lỗi như 1 message của bot
-      setMessages((prev) => [
-        ...prev,
-        {
+      // Cập nhật tin nhắn lỗi
+      setMessages((prev) => {
+        const newMsgs = [...prev];
+        const lastIndex = newMsgs.length - 1;
+        newMsgs[lastIndex] = {
           text: err.response?.data?.detail || "Có lỗi xảy ra, thử lại nhé!",
           sender: "bot",
           isError: true,
-        },
-      ]);
+          isStreaming: false,
+        };
+        return newMsgs;
+      });
     } finally {
       setLoading(false);
     }
@@ -56,11 +118,51 @@ function ChatArea() {
   return (
     <div className="flex flex-col h-full">
       {isEmpty ? (
-        <div className="flex flex-1 flex-col items-center justify-center gap-6">
-          <h1 className="text-2xl font-semibold text-neutral-300">
-            Hỏi bất kỳ điều gì về du lịch
-          </h1>
-          <ChatInput onSend={handleSend} />
+        <div className="flex flex-1 flex-col items-center justify-center p-4 h-full">
+          <div className="w-full max-w-3xl flex flex-col items-center justify-center mt-[-10vh]">
+            {/* Greeting */}
+            <div className="flex items-center gap-3 mb-8">
+              <img
+                src="/favicon.ico"
+                alt="Logo"
+                className="w-[60px] h-[50px]"
+              />
+              <h1 className="text-[32px] font-serif text-(--text-main) font-medium tracking-wide">
+                {`Happy ${
+                  [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                  ][new Date().getDay()]
+                }, Tung Do`}
+              </h1>
+            </div>
+
+            {/* Input */}
+            <div className="w-full relative max-w-[800px]">
+              <ChatInput onSend={handleSend} isEmptyState={true} />
+            </div>
+
+            {/* Quick Actions */}
+            <div className="flex justify-center gap-3 mt-5 w-full max-w-[800px]">
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+                <span className="text-gray-400">{"</>"}</span> Code
+              </button>
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+                <span className="text-gray-400">🎓</span> Learn
+              </button>
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+                <span className="text-gray-400">🖊️</span> Write
+              </button>
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+                <span className="text-gray-400">☕</span> Relax
+              </button>
+            </div>
+          </div>
         </div>
       ) : (
         <>
@@ -70,10 +172,12 @@ function ChatArea() {
                 <Message key={index} {...msg} />
               ))}
 
-              {/* Hiển thị loading khi đang chờ bot */}
+              {/* Hiển thị placeholder loading khi đang chờ bot */}
               {loading && (
-                <div className="text-neutral-400 text-sm animate-pulse">
-                  Đang xử lý...
+                <div className="mr-auto mb-6 flex items-center gap-1.5 py-3 px-2">
+                  <div className="w-2 h-2 bg-(--text-muted) rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                  <div className="w-2 h-2 bg-(--text-muted) rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                  <div className="w-2 h-2 bg-(--text-muted) rounded-full animate-bounce"></div>
                 </div>
               )}
 
@@ -81,9 +185,19 @@ function ChatArea() {
             </div>
           </div>
 
-          <div className="border-t border-neutral-800 p-4 bg-[#212121]">
-            {/* Disable input khi đang loading */}
-            <ChatInput onSend={handleSend} disabled={loading} />
+          <div className="px-4 pb-4 bg-(--bg-main)">
+            <div className="max-w-3xl mx-auto w-full relative">
+              {/* Disable input khi đang loading */}
+              <ChatInput
+                onSend={handleSend}
+                disabled={loading}
+                isEmptyState={false}
+              />
+              <p className="text-center text-[11px] text-(--text-dark) mt-3">
+                Mellow is AI and can make mistakes. Please double-check
+                responses.
+              </p>
+            </div>
           </div>
         </>
       )}

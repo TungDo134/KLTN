@@ -1,7 +1,16 @@
 import axios from "axios";
 
+// Đọc từ .env (VITE_FASTAPI_URL), fallback về localhost nếu chưa set
+const BASE_URL = import.meta.env.VITE_FASTAPI_URL;
+
+if (!BASE_URL) {
+  throw new Error("VITE_FASTAPI_URL not found");
+} else {
+  console.log("Base URL: ", BASE_URL);
+}
+
 const axiosClient = axios.create({
-  baseURL: "http://127.0.0.1:8000",
+  baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },

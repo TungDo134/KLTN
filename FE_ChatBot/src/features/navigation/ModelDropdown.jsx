@@ -3,7 +3,7 @@ import { FiChevronDown } from "react-icons/fi";
 
 export default function ModelDropdown() {
   const [open, setOpen] = useState(false);
-  const [model, setModel] = useState("ChatGPT");
+  const [model, setModel] = useState("Sonnet 4.6");
 
   // Click ra ngoài tự đóng
   useEffect(() => {
@@ -15,13 +15,13 @@ export default function ModelDropdown() {
   //   Fake content choose model
   const models = [
     {
-      name: "ChatGPT Plus",
+      name: "Sonnet 4.6",
       desc: "Most capable for ambitious work",
-      upgrade: true,
     },
     {
-      name: "ChatGPT Go",
+      name: "Opus 3",
       desc: "Most efficient for everyday tasks",
+      upgrade: true,
     },
     {
       name: "Haiku 4.5",
@@ -38,7 +38,7 @@ export default function ModelDropdown() {
           e.stopPropagation();
           setOpen(!open);
         }}
-        className="flex items-center gap-1 bg-neutral-900 px-3 py-1 rounded-lg text-sm hover:bg-neutral-800"
+        className="flex items-center gap-1 bg-[var(--bg-panel)] px-3 py-1 rounded-lg text-sm hover:bg-[var(--bg-hover)]"
       >
         {model}
         <FiChevronDown size={14} />
@@ -46,7 +46,7 @@ export default function ModelDropdown() {
 
       {/* dropdown choose model */}
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-72 bg-[#2a2a2a] border border-neutral-700 rounded-xl shadow-xl p-2">
+        <div className="absolute right-0 top-full mt-2 w-72 bg-[var(--bg-panel)] border border-[var(--border-main)] rounded-xl shadow-xl p-2 z-50">
           {models.map((m) => (
             <div
               key={m.name}
@@ -54,21 +54,21 @@ export default function ModelDropdown() {
                 setModel(m.name);
                 setOpen(false);
               }}
-              className={`p-3 rounded-lg cursor-pointer hover:bg-neutral-800 transition
-              ${model === m.name ? "border border-blue-500" : ""}
+              className={`p-3 rounded-lg cursor-pointer hover:bg-[var(--bg-hover)] transition
+              ${model === m.name ? "border border-[var(--border-main)] bg-[var(--bg-hover)]" : ""}
               `}
             >
               <div className="flex justify-between">
                 <span>{m.name}</span>
 
                 {m.upgrade && (
-                  <span className="text-sm bg-[#212121] px-2 py-0.5 rounded-xl">
+                  <span className="text-sm bg-[var(--bg-main)] text-[var(--text-muted)] px-2 py-0.5 rounded-xl">
                     Upgrade
                   </span>
                 )}
               </div>
 
-              <p className="text-xs text-neutral-400 mt-1">{m.desc}</p>
+              <p className="text-xs text-[var(--text-muted)] mt-1">{m.desc}</p>
             </div>
           ))}
         </div>

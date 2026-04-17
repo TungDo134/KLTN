@@ -1,11 +1,13 @@
 import { useState } from "react";
-
 import { FiPlus } from "react-icons/fi";
+import { HiOutlineMicrophone } from "react-icons/hi";
 
 import ModelDropdown from "../features/navigation/ModelDropdown";
+// Import or keep PlusMenu, but we might just use a simple button if we want exact Claude look.
+// Claude uses a + icon button on the left.
 import PlusMenu from "../features/navigation/PlusMenu";
 
-function ChatInput({ onSend, disabled }) {
+function ChatInput({ onSend, disabled, isEmptyState }) {
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
@@ -17,21 +19,43 @@ function ChatInput({ onSend, disabled }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative w-full max-w-3xl mx-auto">
-      <div className="bg-[#2f2f2f] rounded-3xl px-4 py-4 flex items-center gap-3 border border-neutral-700">
-        <PlusMenu />
-
+    <form onSubmit={handleSubmit} className="relative w-full w-full mx-auto">
+      {/* Container - if isEmptyState it could be taller, but let's keep it uniform for now */}
+      <div
+        className={`bg-[var(--bg-panel)] rounded-2xl border border-[var(--border-main)] flex flex-col transition-all focus-within:border-[var(--text-muted)] ${isEmptyState ? "min-h-[120px] p-3" : "min-h-[60px] p-2"}`}
+      >
+        {/* Input area */}
         <input
           type="text"
-          placeholder="Hôm nay bạn muốn đi đâu nào ?"
+          placeholder="How can I help you today?"
           value={input}
-          disabled={disabled} // ✅ Disable input khi loading
+          disabled={disabled}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-1 bg-transparent outline-none text-sm"
+          className={`flex-1 bg-transparent outline-none text-[var(--text-main)] w-full resize-none ${isEmptyState ? "pt-2 px-2 text-base" : "px-3 py-2 text-sm"}`}
         />
 
-        {/* choose model */}
-        <ModelDropdown />
+        {/* Bottom actions within the input box */}
+        <div className="flex items-center justify-between mt-auto pt-2">
+          <div className="flex items-center">
+            {/* The + button for attachments */}
+            <button
+              type="button"
+              className="p-1.5 text-gray-400 hover:text-gray-200 hover:bg-[var(--bg-hover)] rounded-lg transition-colors"
+            >
+              <FiPlus size={20} />
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <ModelDropdown />
+            <button
+              type="button"
+              className="p-1.5 text-gray-400 hover:text-gray-200 hover:bg-[var(--bg-hover)] rounded-lg transition-colors"
+            >
+              <HiOutlineMicrophone size={20} />
+            </button>
+          </div>
+        </div>
       </div>
     </form>
   );

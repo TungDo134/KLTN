@@ -11,7 +11,7 @@ import "../index.css";
 
 function AppLayout() {
   return (
-    <div className="flex h-screen bg-[#212121] text-white">
+    <div className="flex h-screen bg-[var(--bg-main)] text-[var(--text-main)]">
       {/* Sidebar */}
       <Sidebar />
 

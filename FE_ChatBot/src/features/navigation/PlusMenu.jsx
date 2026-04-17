@@ -36,25 +36,25 @@ export default function PlusMenu() {
           e.stopPropagation();
           setOpen(!open);
         }}
-        className="p-2 rounded-full hover:bg-neutral-700 transition"
+        className="p-2 rounded-full hover:bg-[var(--bg-hover)] transition"
       >
         <FiPlus size={18} />
       </button>
 
       {/* dropdown plus */}
       {open && (
-        <div className="absolute bottom-full mb-2 left-0 w-64 bg-[#2f2f2f] border border-neutral-700 rounded-2xl shadow-xl p-2 z-50">
+        <div className="absolute bottom-full mb-2 left-0 w-64 bg-[var(--bg-panel)] border border-[var(--border-main)] rounded-2xl shadow-xl p-2 z-50">
           {items.map((item, index) =>
             item.divider ? (
-              <div key={index} className="border-t border-neutral-700 my-2" />
+              <div key={index} className="border-t border-[var(--border-main)] my-2" />
             ) : (
               <div
                 key={index}
-                className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-neutral-700 cursor-pointer transition"
+                className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--bg-hover)] cursor-pointer transition"
               >
-                <span className="text-lg text-neutral-300">{item.icon}</span>
+                <span className="text-lg text-[var(--text-muted)]">{item.icon}</span>
 
-                <span className="text-sm text-neutral-200">{item.label}</span>
+                <span className="text-sm text-[var(--text-main)]">{item.label}</span>
               </div>
             ),
           )}
