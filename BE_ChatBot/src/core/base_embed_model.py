@@ -10,8 +10,13 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaEmbeddings
 from langchain_core.embeddings import Embeddings
 
-# --- Auto-detect GPU ---
-_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+# ========== Check detect GPU if CPU --> Stop ==========
+if not torch.cuda.is_available():
+    raise EnvironmentError(
+        "GPU not found. This project requires CUDA.\n"
+    )
+
+_DEVICE = "cuda"
 
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Thư mục chứa file này
 _DEFAULT_CACHE = os.path.normpath(os.path.join(_BASE_DIR, "..", "model", "embeddings"))  # Điều chỉnh ../ cho phù hợp

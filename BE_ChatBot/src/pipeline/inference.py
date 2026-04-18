@@ -1,6 +1,6 @@
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.runnables import RunnablePassthrough, RunnableSequence
 
 # Import các module
 from .llm import LLM
@@ -16,31 +16,34 @@ class RAGInference:
     def __init__(self):
         print("⚙️ Đang khởi tạo RAG Inference Pipeline...")
 
-        # 1. Khởi tạo các Component
-        self.llm = LLM().get_llm()
+        # Khởi tạo các Component
+        llm_factory = LLM()  # → Cần object này để lấy system_prompt
+        self.llm = LLM.get_llm()  # → Cần ChatNVIDIA để chạy chain
         self.retriever = RAGStorage().get_retriever()
 
-        # 2. Xây dựng Prompt Template
-        template = """Bạn là trợ lý du lịch ảo thông minh ở VIỆT NAM. 
-        Hãy trả lời câu hỏi của người dùng CHỈ dựa trên ngữ cảnh được cung cấp dưới đây.
-        Nếu không thể trả lời, hãy nói "Tôi không thể trả lời do không tìm thấy thông tin này trong dữ liệu của mình".
+        # Lấy system prompt từ LLM factory
+        system_prompt = llm_factory.system_prompt or "You are a Vietnamese travel assistant."
 
-        Ngữ cảnh:
-        {context}
+        # Xây dựng Prompt Template đúng role
+        system_template = f"""{system_prompt}
 
-        Câu hỏi: {question}
-        Trả lời:"""
+Hãy trả lời câu hỏi của người dùng CHỈ dựa trên ngữ cảnh được cung cấp dưới đây.
+Nếu không thể trả lời, hãy nói "Tôi không thể trả lời do không tìm thấy thông tin này trong dữ liệu của mình".
 
-        self.prompt = ChatPromptTemplate.from_template(template)
+Ngữ cảnh:
+{{context}}"""
 
-        # 3. Lắp ráp dây chuyền (LCEL)
-        # Khi user hỏi -> Đưa câu hỏi cho Retriever tìm Document
-        # -> Bỏ Document vào {context} -> Nạp vào Prompt -> Gọi LLM -> Trả ra Text
-        self.chain = (
-            {"context": self.retriever, "question": RunnablePassthrough()}
-            | self.prompt
-            | self.llm
-            | StrOutputParser()
+        self.prompt = ChatPromptTemplate.from_messages([
+            ("system", system_template),  # ← Đúng role, LLM sẽ ưu tiên tuân thủ
+            ("human", "{question}"),
+        ])
+
+        # 4. Lắp ráp chain
+        self.chain = RunnableSequence(
+            {"context": self.retriever, "question": RunnablePassthrough()},
+            self.prompt,
+            self.llm,
+            StrOutputParser()
         )
 
     # 4. Hàm thực thi Async để API gọi
@@ -48,7 +51,6 @@ class RAGInference:
         # ainvoke giúp server không bị treo khi chờ LLM
         response = await self.chain.ainvoke(question)
         return response
-
 
 # TODO: ======================================= NEW INFERENCE (IMPLEMENT LATER) =======================================
 # """
