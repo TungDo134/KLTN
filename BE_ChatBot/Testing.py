@@ -1,4 +1,7 @@
+from functools import partial
+
 from dotenv import load_dotenv
+from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, TextLoader
 
 load_dotenv()
 
@@ -81,4 +84,22 @@ Test xem nó run bằng cpu hay gpu
 #     embedding_model_name="bge-m3"
 # )
 
+
+"""
+- Test hàm load file pdf + text  
+"""
+# def _test_func(source_data=os.getenv("SOURCE_DATA")):
+#     pdf_loader = DirectoryLoader(path=source_data, glob="*.pdf", loader_cls=PyPDFLoader)
+#     txt_loader = DirectoryLoader(path=source_data, glob="*.txt", loader_cls=TextLoader,
+#                                  loader_kwargs={"encoding": "utf-8"})
+#
+#     # documents = loader.load()
+#     documents = pdf_loader.load() + txt_loader.load()
+#     print(f"Tổng documents: {len(documents)}")
+#     for doc in documents:
+#         print(doc.metadata['source'])
+#
+#
+# if __name__ == '__main__':
+#     _test_func()
 

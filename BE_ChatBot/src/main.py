@@ -11,7 +11,6 @@ import os
 from contextlib import asynccontextmanager
 
 import gradio as gr   # Tạm thời tắt Gradio — dùng React Frontend
-import uvicorn
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -28,14 +27,13 @@ inference_instance = None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Khởi tạo RAGInference 1 lần khi app start, giải phóng khi app stop."""
-    print("=" * 60)
-    print("App starting — loading RAG Pipeline...")
+    print("================ APP STARTING ================")
     app.state.inference = RAGInference()
     print("=" * 60)
     print("App is ready to serve requests.")
 
     yield
-    print("App shutting down.")
+    print("================ APP SHUTTING DOWN - SEE YOU LATER ================")
     app.state.inference = None
 
 

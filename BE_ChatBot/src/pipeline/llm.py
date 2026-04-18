@@ -11,10 +11,13 @@ load_dotenv()
 import os
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
 
+model_name = 'meta/llama-3.3-70b-instruct'
+
 
 class LLM:
     def __init__(self) -> None:
         self.system_prompt_path = os.getenv('SYSTEM_PROMPT')
+        self.system_prompt = self._load_system_prompt()
 
     # --- AI Configuration ---
     def _load_system_prompt(self) -> str | None:
@@ -30,21 +33,17 @@ class LLM:
             print(f"⚠️  System prompt file not found: {self.system_prompt_path}. Proceeding without it.")
             return None
 
-    def get_llm(self) -> ChatNVIDIA:
-        system_prompt = self._load_system_prompt()
+    @staticmethod
+    def get_llm() -> ChatNVIDIA:
         nvidia_api_key = os.getenv("NVIDIA_API_KEY")
         if not nvidia_api_key:
             raise ValueError("NVIDIA_API_KEY environment variable not set.")
 
         llm = ChatNVIDIA(
-            model="meta/llama-3.1-405b-instruct",
+            # model="meta/llama-3.1-405b-instruct",
+            model=model_name,
             api_key=nvidia_api_key,
             temperature=0.5,
             max_tokens=1024,
         )
-
-        # Gắn system prompt qua bind nếu có
-        if system_prompt:
-            llm = llm.bind(system=system_prompt)
-
         return llm
