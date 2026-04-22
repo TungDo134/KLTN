@@ -91,3 +91,12 @@ Thumbs.db
 # Data (tuỳ chọn commit hay không)
 # -----------------------------------------------------------------------
 src/source_data/
+
+# Added by code-review-graph
+.code-review-graph/
+.claude/
+AGENTS.md
+GEMINI.md
+
+# Create skill 
+huong_dan_tao_skills.md
