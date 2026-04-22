@@ -5,7 +5,10 @@ FLOW:
       ↓
   [1] Rewrite question thành standalone (nếu có history)
       ↓
-  [2] ChromaDB Retrieval (dùng câu hỏi đã rewrite)
+  [2] Multi-Query Retrieval
+        ↓ LLM sinh N variations
+        ↓ Search ChromaDB với từng variation
+        ↓ Deduplicate → List[Document]
       ↓
   [3] Build prompt = system + chat_history + context + question
       ↓
@@ -18,9 +21,6 @@ FLOW:
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough, RunnableSequence
 
 # Import các module
 from .llm import LLM
@@ -32,12 +32,14 @@ _MAX_HISTORY_TURNS = 10  # 1 turn = 1 HumanMessage + 1 AIMessage
 
 class RAGInference:
     def __init__(self):
-        print("⚙️ Đang khởi tạo RAG Inference Pipeline...")
+        print("\n⚙️ Đang khởi tạo RAG Inference Pipeline")
 
         # ========= COMPONENTS =========
         llm_factory = LLM()  # → Cần object này để lấy system_prompt
         self.llm = LLM.get_llm()  # → Cần ChatNVIDIA để chạy chain
-        self.retriever = RAGStorage().get_retriever()
+        # self.retriever = RAGStorage().get_retriever()
+        # Dùng Multi query thay vì base RAG
+        self.retriever = RAGStorage().get_multi_query_retriever()  # multi query
 
         #  System prompt
         self.system_prompt = llm_factory.system_prompt or "You are a Vietnamese travel assistant."
@@ -81,21 +83,21 @@ class RAGInference:
 
         result = await self.llm.ainvoke(messages)
         rewritten = result.content.strip()
-        print(f"🔄 Rewritten question: {rewritten}")
+        print(f"\n🔄 Viết lại câu hỏi (history chat): {rewritten}")
         return rewritten
 
     # Query Chroma => response context: String
     async def _retrieve_context(self, search_question: str) -> str:
         """Truy vấn ChromaDB, trả về context dạng string."""
         docs = await self.retriever.ainvoke(search_question)
-        print(f"========= Found {len(docs)} relevant docs from ChromaDB =========")
+        print(f"========= Tìm thấy {len(docs)} tài liệu liên quan sau khi Multi-Query =========")
 
         for i, doc in enumerate(docs, 1):
             # Lấy tối đa 2 dòng đầu, bỏ dòng rỗng
             lines = [l.strip() for l in doc.page_content.split('\n') if l.strip()][:2]
-            # Gộp thành 1 dòng để tránh lỗi hiển thị
+            # Gộp thành 1 dòng
             preview = ' '.join(lines)
-            print(f"📄 Doc {i}: {preview}...")
+            print(f"\n 📄 Doc {i}: {preview}...")
 
         context = "\n\n".join(doc.page_content for doc in docs)
         return context
@@ -138,7 +140,7 @@ class RAGInference:
             session_id: str = "default",
     ) -> str:
         """
-        Main entry point — gọi từ FastAPI / Gradio.
+        Main entry point — gọi từ FastAPI
 
         Args:
             question:   Câu hỏi của user.
