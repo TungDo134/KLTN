@@ -91,3 +91,9 @@ Thumbs.db
 # Data (tuỳ chọn commit hay không)
 # -----------------------------------------------------------------------
 src/source_data/
+
+# AI agent (Antigravity)
+.claude/
+AGENTS.md
+GEMINI.md
+huong_dan_tao_skills.md
