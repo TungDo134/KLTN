@@ -4,22 +4,28 @@ INGESTION + RETRIEVE PIPELINE
 
 # --- IMPORT ---
 import os
-from functools import partial
+from typing import List
 
 import torch
 from dotenv import load_dotenv
-
+from langchain_chroma import Chroma
+from langchain_community.document_loaders import (
+    PyPDFLoader,
+    DirectoryLoader,
+    TextLoader,
+)
+from langchain_core.documents import Document
 # Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, TextLoader
-from langchain_chroma import Chroma
+from pydantic import BaseModel, Field
 
 # Embedding model
 from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
+from .llm import LLM
 
 # --- LOAD .env ---
-load_dotenv()
 
+load_dotenv()
 """
 =========== Hướng dẫn bổ sung data =========== 
 - Nếu muốn thêm data, bạn chỉ cần chạy file notebook build_vector_db:
@@ -32,25 +38,14 @@ _DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 model_name = os.getenv("MODEL_NAME")
 cache_folder = os.getenv("CACHE_FOLDER")
 
-"""# --- Create Embedding Model ---
-# HuggingFaceEmbeddings
-# def _build_embedding_model() -> HuggingFaceEmbeddings:
-#     return HuggingFaceEmbeddings(
-#         model_name="AITeamVN/Vietnamese_Embedding",
-#         model_kwargs={"device": _DEVICE},
-#         encode_kwargs={"normalize_embeddings": True},
-#         cache_folder="src/model/embeddings",
-#     )
 
-
-# OllamaEmbeddings
-# def _build_embedding_model() -> OllamaEmbeddings:
-#     return OllamaEmbeddings(model='bge-m3')"""
-
+# ============================================================
+# PHASE 1: INGEST PIPELINE
+# ============================================================
 
 # --- STEP 1: FUNCTION LOAD DOCUMENT ---
 def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
-    """Load all document in SOURCE_DATA: 'src/source_data/docs' """
+    """Load all document in SOURCE_DATA: 'src/source_data/docs'"""
     print(f"Loading document from {source_data}")
 
     # check exists
@@ -60,8 +55,12 @@ def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
     # load pdf + text files
 
     pdf_loader = DirectoryLoader(path=source_data, glob="*.pdf", loader_cls=PyPDFLoader)  # type: ignore
-    txt_loader = DirectoryLoader(path=source_data, glob="*.txt",
-                                 loader_cls=TextLoader, loader_kwargs={"encoding": "utf-8"})
+    txt_loader = DirectoryLoader(
+        path=source_data,
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"encoding": "utf-8"},
+    )
 
     # documents = loader.load()
     documents = pdf_loader.load() + txt_loader.load()
@@ -75,7 +74,7 @@ def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
     print("=" * 60)
     print(f"Tổng documents: {len(documents)}")
     for doc in documents:
-        print(doc.metadata['source'])
+        print(doc.metadata["source"])
 
     return documents
 
@@ -95,61 +94,20 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
     if chunks:
         print(f"Split into {len(chunks)} chunks")
         for i, chunk in enumerate(chunks[:3]):
-            print(f"\n[Chunk {i + 1}] {chunk.metadata['source']} | {len(chunk.page_content)} chars")
+            print(
+                f"\n[Chunk {i + 1}] {chunk.metadata['source']} | {len(chunk.page_content)} chars"
+            )
             print(chunk.page_content[:100] + "...")
 
     return chunks
 
 
-# --- CREATE VECTOR DB (CHROMA) ---
-"""def create_vector_store_v1(chunks, persist_directory: str, embedding_model) -> Chroma:
- 
-    print("-" * 60)
-    print("Creating embeddings and storing in ChromaDB...")
-
-    # Lần đầu tiên: DB chưa tồn tại → tạo mới bằng from_documents
-    # Các lần sau: DB đã có → load lên rồi add vào
-    db_exists = os.path.exists(persist_directory) and os.listdir(persist_directory)
-
-    print("-" * 60)
-
-    batch_size = 100
-    if not db_exists:
-        print("📦 DB chưa tồn tại, tạo mới...")
-        first_batch = chunks[:batch_size]
-        vectorstore = Chroma.from_documents(
-            documents=first_batch,
-            collection_name="kltn_chatbot",
-            embedding=embedding_model,
-            persist_directory=persist_directory,
-            collection_metadata={"hnsw:space": "cosine"},
-        )
-        remaining = chunks[batch_size:]
-    else:
-        print("📦 DB đã tồn tại, load lên và bổ sung...")
-        vectorstore = Chroma(
-            persist_directory=persist_directory,
-            embedding_function=embedding_model,
-            collection_name="kltn_chatbot",
-        )
-        remaining = chunks
-
-    # Add các batch còn lại
-    for i in range(0, len(remaining), batch_size):
-        batch = remaining[i: i + batch_size]
-        print(f"Inserting batch ({len(batch)} chunks)...")
-        vectorstore.add_documents(batch)
-
-    print(f"Total inserted: {vectorstore._collection.count()} chunks")
-    return vectorstore
-"""
-
-
+# --- STEP 3: FUNCTION CREATE/UPDATE VECTOR DB ---
 def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chroma:
     """
-     - Embed model handle chunk to vector
-     - Send all to db can time out --> Divide into parts (100 chunk/time)
-     """
+    - Embed model handle chunk to vector
+    - Send all to db can time out --> Divide into parts (100 chunk/time)
+    """
     print("=" * 60)
     batch_size = 100
     is_new_db = False
@@ -163,7 +121,7 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
             collection_name="kltn_chatbot",
             collection_metadata={"hnsw:space": "cosine"},
         )
-        existing_count = vectorstore._collection.count()
+        existing_count = len(vectorstore.get()["ids"])
 
         if existing_count == 0:
             raise ValueError("DB rỗng, chuẩn bị tạo mới")
@@ -186,9 +144,7 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
     # Lọc chunk trùng dựa theo source + content
     # Lọc theo tên file != theo chunk
     if existing_count > 0:
-        existing_sources = set(
-            m["source"] for m in vectorstore.get()["metadatas"]
-        )
+        existing_sources = set(m["source"] for m in vectorstore.get()["metadatas"])
         chunks = [c for c in chunks if c.metadata["source"] not in existing_sources]
         print(f"⚙️  Sau lọc trùng: {len(chunks)} chunks mới cần insert")
 
@@ -210,9 +166,121 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
             print(f"  Batch {i // batch_size + 1}: ❌ lỗi - {e}")
             continue
 
-    print(f"\nHoàn tất: {success} inserted, {failed} failed | Tổng DB: {vectorstore._collection.count()}")
+    print(
+        f"\nHoàn tất: {success} inserted, {failed} failed | Tổng DB: {len(vectorstore.get()["ids"])}"
+    )
     return vectorstore
 
+
+# ============================================================
+# PHASE 2: MULTI-QUERY RETRIEVER
+# ============================================================
+
+# --- Structured output schema ---
+class QueryVariations(BaseModel):
+    """LLM sẽ trả về đúng format này."""
+    queries: List[str] = Field(
+        description="Danh sách các câu hỏi biến thể để tìm kiếm tài liệu du lịch"
+    )
+
+
+# --- Implement multi query ---
+class MultiQueryRetriever:
+    """
+    Custom Multi-Query Retriever cho domain du lịch Việt Nam.
+    Flow:
+        original_query
+            ↓
+        LLM sinh N query variations (tiếng Việt, structured output)
+            ↓
+        Search ChromaDB với từng variation
+            ↓
+        Deduplicate theo page_content
+            ↓
+        Trả về list[Document] không trùng
+    """
+
+    # Prompt template
+    _PROMPT_TEMPLATE = """Bạn là trợ lý hỗ trợ tìm kiếm thông tin du lịch Việt Nam.
+    Hãy tạo ra {num_variations} câu hỏi biến thể từ câu hỏi gốc dưới đây.
+    Mỗi biến thể nên tiếp cận từ góc độ khác nhau để tìm được nhiều tài liệu liên quan hơn.
+
+    Câu hỏi gốc: {original_query}
+
+    Yêu cầu:
+    1. Tất cả phải bằng tiếng Việt
+    2. Giữ nguyên ý nghĩa chính và cốt lõi của câu hỏi gốc
+    3. Mỗi câu phải KHÁC NHAU RÕ RỆT theo một trong các hướng:
+        - Paraphrase (diễn đạt lại)
+        - Dùng từ đồng nghĩa / từ khóa liên quan
+        - Mở rộng ngữ nghĩa (semantic expansion)
+        - Thay đổi cách diễn đạt, từ khóa, góc nhìn
+    4. Ngắn gọn, súc tích, phù hợp để tìm kiếm
+    5. Tránh lặp lại hoặc quá giống nhau"""
+
+    def __init__(self,
+                 retriever,  # base retriever từ RAGStorage.get_retriever()
+                 llm,  # ChatNVIDIA từ LLM.get_llm()
+                 num_variations: int = 3,  # số query variations
+                 ):
+        self.retriever = retriever
+        self.num_variations = num_variations
+
+        # Dùng structured output để đảm bảo LLM trả về đúng format
+        self.llm_structured = llm.with_structured_output(QueryVariations)
+
+    #  ======= Step 1: Build prompt =======
+    def _build_prompt(self, original_query: str):
+        return self._PROMPT_TEMPLATE.format(num_variations=self.num_variations,
+                                            original_query=original_query)
+
+    #  ======= Step 2: Check duplicate =======
+    @staticmethod
+    def _deduplicate(all_docs: List[List[Document]]) -> List[Document]:
+        """Loại bỏ document trùng dựa theo 100 ký tự đầu của page_content."""
+        seen = set()
+        unique_docs = []
+        for docs in all_docs:
+            for doc in docs:
+                key = doc.page_content[:100].strip()
+                if key not in seen:
+                    seen.add(key)
+                    unique_docs.append(doc)
+        return unique_docs
+
+    #  ======= Step 3: Run chain =======
+    async def ainvoke(self, query: str) -> List[Document]:
+        """Hàm này sẽ gọi bên inference"""
+        # 1. Tạo variations
+        response: QueryVariations = await self.llm_structured.ainvoke(self._build_prompt(query))
+        variations = response.queries
+
+        print(f"\n🔀 Câu hỏi gốc: '{query}'")
+        print(f"\n🔄 Các câu hỏi (query) được viết lại:")
+        for i, v in enumerate(variations, 1):
+            print(f"   {i}. {v}")
+
+        # 2. Search từng variation
+        print(f"\n🔀 Relevant Docs từng câu hỏi:")
+        all_results: List[List[Document]] = []
+        for i, variation in enumerate(variations, 1):
+            docs = await self.retriever.ainvoke(variation)
+            all_results.append(docs)
+            print(f"   Query {i}: {len(docs)} relevant docs")
+
+        # 3. Remove duplicate
+        print(f"\n❌ Loại bỏ các docs mang tính trùng lặp")
+        unique_docs = self._deduplicate(all_results)
+        total = sum(len(r) for r in all_results)
+        print(f"\n➡️ Tổng docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
+
+        # 4. Trả về các relevant docs sau khi multi query
+        return unique_docs
+
+
+# ============================================================
+# PHASE 3: RETRIVAL PIPELINE
+# ============================================================
 
 class RAGStorage:
     def __init__(self, provider: EmbeddingProvider = EmbeddingProvider.HUGGINGFACE):
@@ -220,11 +288,11 @@ class RAGStorage:
         if not self.persist_directory:
             raise ValueError(f"PERSIST_DIRECTORY environment variable is not set.")
 
-        print(f"Loading embedding model on device using: '{_DEVICE}'...")
+        print(f"\n- Chạy embedding model bằng: '{_DEVICE}' \n")
         # --- Create Embedding Model ---
         self.embedding_model = get_embedding_model(provider=provider)
 
-    # --- HÀM 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  ---
+    # --- FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  ---
     def build_vector_db(self):
         """Only re-run when adding new PDFs || Texts into the docs/ folder."""
         # 1. Loading the files
@@ -244,11 +312,10 @@ class RAGStorage:
 
         return vectorstore
 
-    # --- HÀM 2: TRUY XUẤT TÀI LIỆU (API) ---
+    # --- FUNC 2: TRUY XUẤT TÀI LIỆU ---
     def get_retriever(self):
         # Load database in "persist_directory"
-        print("=" * 60)
-        print(f"Loading Chroma database from {self.persist_directory}...")
+        print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
 
         vectorstore = Chroma(
             persist_directory=self.persist_directory,
@@ -257,3 +324,14 @@ class RAGStorage:
         )
         # top_k
         return vectorstore.as_retriever(search_kwargs={"k": 5})
+
+    def get_multi_query_retriever(self) -> MultiQueryRetriever:
+        """Trả về MultiQueryRetriever bọc ngoài base retriever."""
+        base_retriever = self.get_retriever()
+        llm = LLM.get_llm()
+
+        return MultiQueryRetriever(
+            retriever=base_retriever,
+            llm=llm,
+            num_variations=3,
+        )
