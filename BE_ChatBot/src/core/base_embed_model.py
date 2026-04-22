@@ -20,7 +20,7 @@ _DEVICE = "cuda"
 
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Thư mục chứa file này
 _DEFAULT_CACHE = os.path.normpath(os.path.join(_BASE_DIR, "..", "model", "embeddings"))  # Điều chỉnh ../ cho phù hợp
-print(f"📁 Cache dir: {_DEFAULT_CACHE}")
+print(f"\n📁 Cache dir embedding model: {_DEFAULT_CACHE} \n")
 
 
 class EmbeddingProvider(str, Enum):
@@ -37,7 +37,6 @@ def get_embedding_model(
 ) -> Embeddings:
     model_kwargs = model_kwargs or {"device": _DEVICE}
     encode_kwargs = encode_kwargs or {"normalize_embeddings": True}
-
     print(f"🔧 Provider : {provider.value}")
     print(f"🔧 Model    : {model_name}")
     print(f"🔧 Device   : {model_kwargs.get('device', 'N/A')}")
