@@ -21,7 +21,7 @@ from pydantic import BaseModel, Field
 
 # Embedding model
 from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
-from .llm import LLM
+from src.core.llm_container import get_llm
 
 # --- LOAD .env ---
 
@@ -31,13 +31,13 @@ load_dotenv()
 - Nếu muốn thêm data, bạn chỉ cần chạy file notebook build_vector_db:
 """
 
-# --- Auto-detect GPU ---
-_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+# ========== Check detect GPU if CPU --> Stop ==========
+if not torch.cuda.is_available():
+    raise EnvironmentError(
+        "Không tìm thấy GPU. Dự án này cần CUDA để cho ra hiệu suất tốt nhất."
+    )
 
-# --- Get global var from .env (UNUSED)
-model_name = os.getenv("MODEL_NAME")
-cache_folder = os.getenv("CACHE_FOLDER")
-
+_DEVICE = "cuda"
 
 # ============================================================
 # PHASE 1: INGEST PIPELINE
@@ -272,9 +272,9 @@ class MultiQueryRetriever:
         print(f"\n❌ Loại bỏ các docs mang tính trùng lặp")
         unique_docs = self._deduplicate(all_results)
         total = sum(len(r) for r in all_results)
-        print(f"\n➡️ Tổng docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
+        print(f"\n➡️ Tổng số docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
 
-        # 4. Trả về các relevant docs sau khi multi query
+        # 4. Trả về các relevant docs sau khi multi query + handle duplicate
         return unique_docs
 
 
@@ -314,7 +314,7 @@ class RAGStorage:
 
     # --- FUNC 2: TRUY XUẤT TÀI LIỆU ---
     def get_retriever(self):
-        # Load database in "persist_directory"
+        # Tải db từ "persist_directory"- mong muốn: "src/db/chroma_db"
         print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
 
         vectorstore = Chroma(
@@ -328,10 +328,9 @@ class RAGStorage:
     def get_multi_query_retriever(self) -> MultiQueryRetriever:
         """Trả về MultiQueryRetriever bọc ngoài base retriever."""
         base_retriever = self.get_retriever()
-        llm = LLM.get_llm()
 
         return MultiQueryRetriever(
             retriever=base_retriever,
-            llm=llm,
+            llm=get_llm(),
             num_variations=3,
         )

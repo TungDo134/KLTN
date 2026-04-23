@@ -18,13 +18,15 @@ FLOW:
       ↓
   Return answer ✅
 """
+import os
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
+from src.core.llm_container import get_llm, get_system_prompt
 # Import các module
-from .llm import LLM
 from .rag_pipline import RAGStorage
+from ..core.base_llm_model import LLMProvider
 
 # Limit turns tránh vượt quá context window LLM
 _MAX_HISTORY_TURNS = 10  # 1 turn = 1 HumanMessage + 1 AIMessage
@@ -35,14 +37,10 @@ class RAGInference:
         print("\n⚙️ Đang khởi tạo RAG Inference Pipeline")
 
         # ========= COMPONENTS =========
-        llm_factory = LLM()  # → Cần object này để lấy system_prompt
-        self.llm = LLM.get_llm()  # → Cần ChatNVIDIA để chạy chain
-        # self.retriever = RAGStorage().get_retriever()
-        # Dùng Multi query thay vì base RAG
-        self.retriever = RAGStorage().get_multi_query_retriever()  # multi query
-
-        #  System prompt
-        self.system_prompt = llm_factory.system_prompt or "You are a Vietnamese travel assistant."
+        print(f'\n- LLM cho response user (core)')
+        self.llm = get_llm()  # Chạy chain
+        self.retriever = RAGStorage().get_multi_query_retriever()  # multi query instead of base RAG
+        self.system_prompt = get_system_prompt()  # System prompt
 
         # ------------------------------------------------------------------ #
         # Chat history store: { session_id → [HumanMessage, AIMessage, ...] }
@@ -129,9 +127,9 @@ class RAGInference:
         self._history[session_id].append(HumanMessage(content=question))
         self._history[session_id].append(AIMessage(content=answer))
 
-    # ---------------------------------------------------------------------- #
+    # ============================================================ #
     # PUBLIC API
-    # ---------------------------------------------------------------------- #
+    # ============================================================ #
 
     # ========= Hàm Async để gọi API =========
     async def predict_async(
