@@ -2,6 +2,10 @@ from functools import partial
 
 from dotenv import load_dotenv
 from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, TextLoader
+from langchain_core.messages import HumanMessage
+
+from src.core.base_llm_model import LLMProvider
+from src.core.llm_container import get_llm
 
 load_dotenv()
 
@@ -13,7 +17,6 @@ from langchain_ollama import OllamaEmbeddings
 """
 Test xem nó run bằng cpu hay gpu
 """
-
 # print(torch.cuda.is_available())  # True ✅
 # print(torch.cuda.get_device_name(0))  # NVIDIA GeForce RTX 3050 ✅
 # print(torch.__version__)  # 2.x.x+cu124 ✅
@@ -103,3 +106,35 @@ Test xem nó run bằng cpu hay gpu
 # if __name__ == '__main__':
 #     _test_func()
 
+
+"""
+- Test LLM
+"""
+
+
+def _llm_test(provider: LLMProvider):
+    llm = get_llm(provider=provider)
+
+    # Nhập input vào terminal để test
+    user_input = input("You: ")
+
+    if not user_input.strip():
+        print("⚠️ Input is empty.")
+        return
+
+    response = llm.invoke([HumanMessage(content=user_input)])
+    print(f"[{provider}]: {response.content}")
+
+
+if __name__ == "__main__":
+    _llm_test(LLMProvider.GROQ)  # or GROQ, NVIDIA, OLLAMA
+
+# Synthetic Questions:
+# 1. "What was NVIDIA's first graphics accelerator called?"
+# 2. "Which company did NVIDIA acquire to enter the mobile processor market?"
+# 3. "What was Microsoft's first hardware product release?"
+# 4. "How much did Microsoft pay to acquire GitHub?"
+# 5. "In what year did Tesla begin production of the Roadster?"
+# 6. "Who succeeded Ze'ev Drori as CEO in October 2008?"
+# 7. "What was the name of the autonomous spaceport drone ship that achieved the first successful sea landing?"
+# 8. "What was the original name of Microsoft before it became Microsoft?"

@@ -92,6 +92,15 @@ Thumbs.db
 # -----------------------------------------------------------------------
 src/source_data/
 
+# Added by code-review-graph
+.code-review-graph/
+.claude/
+AGENTS.md
+GEMINI.md
+
+# Create skill 
+huong_dan_tao_skills.md
+
 # AI agent (Antigravity)
 .claude/
 AGENTS.md

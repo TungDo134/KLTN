@@ -18,13 +18,15 @@ FLOW:
       ↓
   Return answer ✅
 """
+import os
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
+from src.core.llm_container import get_llm, get_system_prompt, get_model_info
 # Import các module
-from .llm import LLM
 from .rag_pipline import RAGStorage
+from ..core.base_llm_model import LLMProvider
 
 # Limit turns tránh vượt quá context window LLM
 _MAX_HISTORY_TURNS = 10  # 1 turn = 1 HumanMessage + 1 AIMessage
@@ -35,20 +37,27 @@ class RAGInference:
         print("\n⚙️ Đang khởi tạo RAG Inference Pipeline")
 
         # ========= COMPONENTS =========
-        llm_factory = LLM()  # → Cần object này để lấy system_prompt
-        self.llm = LLM.get_llm()  # → Cần ChatNVIDIA để chạy chain
-        # self.retriever = RAGStorage().get_retriever()
-        # Dùng Multi query thay vì base RAG
-        self.retriever = RAGStorage().get_multi_query_retriever()  # multi query
+        print(f'\n- LLM cho response user (core)')
+        self.llm = get_llm()  # LLM chạy chain (core)
 
-        #  System prompt
-        self.system_prompt = llm_factory.system_prompt or "You are a Vietnamese travel assistant."
+        print(f'\n- LLM cho rewrite question (hisory chat)')
+        self.llm_rewrite = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2)  # LLM rewrite
+
+        self.retriever = RAGStorage().get_multi_query_retriever()  # multi query instead of base RAG
+        self.system_prompt = get_system_prompt()  # System prompt
 
         # ------------------------------------------------------------------ #
         # Chat history store: { session_id → [HumanMessage, AIMessage, ...] }
         # Dùng defaultdict(list) => không cần khởi tạo thủ công từng session.
         # ------------------------------------------------------------------ #
         self._history: dict[str, list] = defaultdict(list)
+
+        # ------------------------------------------------------------------ #
+        # Save model info - Just in case "WRAP" something else later.
+        # Example: method ".with_structured_output" in rag_pipeline
+        # ------------------------------------------------------------------ #
+        self.model_info_core = get_model_info(self.llm)
+        self.model_info_rewrite = get_model_info(self.llm_rewrite)
 
     def _get_history(self, session_id: str) -> list:
         """Trả về lịch sử hội thoại dựa vào session_id (cắt bớt nếu quá dài)."""
@@ -81,9 +90,12 @@ class RAGInference:
                 + [HumanMessage(content=f"New question: {question}")]
         )
 
-        result = await self.llm.ainvoke(messages)
+        # result = await self.llm.ainvoke(messages)
+        result = await self.llm_rewrite.ainvoke(messages)
         rewritten = result.content.strip()
-        print(f"\n🔄 Viết lại câu hỏi (history chat): {rewritten}")
+
+        print(f"\n🔄 Viết lại câu hỏi (history chat) bởi [{self.model_info_rewrite}]:")
+        print(f"   {rewritten}")
         return rewritten
 
     # Query Chroma => response context: String
@@ -129,9 +141,9 @@ class RAGInference:
         self._history[session_id].append(HumanMessage(content=question))
         self._history[session_id].append(AIMessage(content=answer))
 
-    # ---------------------------------------------------------------------- #
+    # ============================================================ #
     # PUBLIC API
-    # ---------------------------------------------------------------------- #
+    # ============================================================ #
 
     # ========= Hàm Async để gọi API =========
     async def predict_async(
@@ -225,13 +237,3 @@ class RAGInference:
 #         """
 #         # TODO: implement
 #         pass
-
-# Synthetic Questions:
-# 1. "What was NVIDIA's first graphics accelerator called?"
-# 2. "Which company did NVIDIA acquire to enter the mobile processor market?"
-# 3. "What was Microsoft's first hardware product release?"
-# 4. "How much did Microsoft pay to acquire GitHub?"
-# 5. "In what year did Tesla begin production of the Roadster?"
-# 6. "Who succeeded Ze'ev Drori as CEO in October 2008?"
-# 7. "What was the name of the autonomous spaceport drone ship that achieved the first successful sea landing?"
-# 8. "What was the original name of Microsoft before it became Microsoft?"

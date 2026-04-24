@@ -21,7 +21,8 @@ from pydantic import BaseModel, Field
 
 # Embedding model
 from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
-from .llm import LLM
+from src.core.base_llm_model import LLMProvider
+from src.core.llm_container import get_llm, get_model_info
 
 # --- LOAD .env ---
 
@@ -31,12 +32,13 @@ load_dotenv()
 - Nếu muốn thêm data, bạn chỉ cần chạy file notebook build_vector_db:
 """
 
-# --- Auto-detect GPU ---
-_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+# ========== Check detect GPU if CPU --> Stop ==========
+if not torch.cuda.is_available():
+    raise EnvironmentError(
+        "Không tìm thấy GPU. Dự án này cần CUDA để cho ra hiệu suất tốt nhất."
+    )
 
-# --- Get global var from .env (UNUSED)
-model_name = os.getenv("MODEL_NAME")
-cache_folder = os.getenv("CACHE_FOLDER")
+_DEVICE = "cuda"
 
 
 # ============================================================
@@ -216,7 +218,9 @@ class MultiQueryRetriever:
         - Mở rộng ngữ nghĩa (semantic expansion)
         - Thay đổi cách diễn đạt, từ khóa, góc nhìn
     4. Ngắn gọn, súc tích, phù hợp để tìm kiếm
-    5. Tránh lặp lại hoặc quá giống nhau"""
+    5. Tránh lặp lại hoặc quá giống nhau
+    6. Trả về ĐÚNG {num_variations} câu hỏi, không hơn không kém
+    """
 
     def __init__(self,
                  retriever,  # base retriever từ RAGStorage.get_retriever()
@@ -226,7 +230,11 @@ class MultiQueryRetriever:
         self.retriever = retriever
         self.num_variations = num_variations
 
+        # Lưu model info TRƯỚC khi wrap — sau khi wrap thành RunnableSequence sẽ mất attribute
+        self._model_info = get_model_info(llm)
+
         # Dùng structured output để đảm bảo LLM trả về đúng format
+        print(f'\n- LLM cho multi query')
         self.llm_structured = llm.with_structured_output(QueryVariations)
 
     #  ======= Step 1: Build prompt =======
@@ -256,7 +264,7 @@ class MultiQueryRetriever:
         variations = response.queries
 
         print(f"\n🔀 Câu hỏi gốc: '{query}'")
-        print(f"\n🔄 Các câu hỏi (query) được viết lại:")
+        print(f"\n🔄 Các câu hỏi được tạo thêm (multi query) bởi [{self._model_info}]:")
         for i, v in enumerate(variations, 1):
             print(f"   {i}. {v}")
 
@@ -272,9 +280,9 @@ class MultiQueryRetriever:
         print(f"\n❌ Loại bỏ các docs mang tính trùng lặp")
         unique_docs = self._deduplicate(all_results)
         total = sum(len(r) for r in all_results)
-        print(f"\n➡️ Tổng docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
+        print(f"\n➡️ Tổng số docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
 
-        # 4. Trả về các relevant docs sau khi multi query
+        # 4. Trả về các relevant docs sau khi multi query + handle duplicate
         return unique_docs
 
 
@@ -314,7 +322,7 @@ class RAGStorage:
 
     # --- FUNC 2: TRUY XUẤT TÀI LIỆU ---
     def get_retriever(self):
-        # Load database in "persist_directory"
+        # Tải db từ "persist_directory"- mong muốn: "src/db/chroma_db"
         print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
 
         vectorstore = Chroma(
@@ -328,10 +336,10 @@ class RAGStorage:
     def get_multi_query_retriever(self) -> MultiQueryRetriever:
         """Trả về MultiQueryRetriever bọc ngoài base retriever."""
         base_retriever = self.get_retriever()
-        llm = LLM.get_llm()
+        llm_multi_query = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")))  # Chạy multi query
 
         return MultiQueryRetriever(
             retriever=base_retriever,
-            llm=llm,
+            llm=llm_multi_query,
             num_variations=3,
         )
