@@ -3,8 +3,9 @@ FACTORY CLASS TO CREATE LLM MODELS
 
 Supported providers:
   - NVIDIA  (ChatNVIDIA via langchain-nvidia-ai-endpoints)
-  - OLLAMA  (ChatOllama via langchain-ollama)
+  - GROQ    (ChatGroq via langchain_groq)
   - GEMINI  (ChatGemini via langchain_google_genai)
+  - OLLAMA  (ChatOllama via langchain-ollama)
   - HUGGINGFACE (HuggingFaceEndpoint via langchain-huggingface) - Not implemented
 """
 
@@ -14,6 +15,7 @@ from enum import Enum
 from dotenv import load_dotenv
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
 
 load_dotenv()
@@ -26,6 +28,7 @@ class LLMProvider(str, Enum):
     NVIDIA = "nvidia"
     OLLAMA = "ollama"
     GEMINI = "gemini"
+    GROQ = "groq"
     HUGGINGFACE = "huggingface"
 
 
@@ -36,7 +39,8 @@ class LLMProvider(str, Enum):
 class _NvidiaLLM:
     """
     - Wrap ChatNVIDIA — default provider.
-    - This model should be used for user-facing tasks such as chat and response generation.
+    - Default model: meta/llama-3.3-70b-instruct
+    - Expect: user-facing tasks (chat and response generation).
     """
 
     DEFAULT_MODEL = "meta/llama-3.3-70b-instruct"
@@ -92,8 +96,9 @@ class _OllamaLLM:
 class _GeminiLLM:
     """
     - Wrap ChatGoogleGenerativeAI — Google Gemini API.
+    - Default model: gemini-2.5-flash
     - Due to rate limits, this model should be used for small tasks
-    - Expected: Agentic Chunking, Multi Query
+    - Expected: Agentic Chunking
     """
 
     DEFAULT_MODEL = "gemini-2.5-flash"
@@ -119,6 +124,35 @@ class _GeminiLLM:
         )
 
 
+class _GroqLLM:
+    """
+    - Wrap ChatGroq — Groq Cloud API.
+    - Default model: llama-3.1-8b-instant
+    - Expect: Rewrite standalone for history chat - Multi Query
+    """
+
+    DEFAULT_MODEL = "llama-3.1-8b-instant"
+
+    @staticmethod
+    def build(
+            model_name: str = DEFAULT_MODEL,
+            temperature: float = 0.5,
+            max_tokens: int = 1024,
+    ) -> BaseChatModel:
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            raise ValueError("GROQ_API_KEY is not set in .env")
+
+        print(f"🔧 Provider : groq")
+        print(f"🔧 Model    : {model_name}")
+
+        return ChatGroq(
+            model_name=model_name,
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
+
+
 # ============================================================
 # Public factory function — entry point duy nhất
 # ============================================================
@@ -126,6 +160,7 @@ _PROVIDER_MAP = {
     LLMProvider.NVIDIA: _NvidiaLLM,
     LLMProvider.OLLAMA: _OllamaLLM,
     LLMProvider.GEMINI: _GeminiLLM,
+    LLMProvider.GROQ: _GroqLLM,
     # LLMProvider.HUGGINGFACE: _HuggingFaceLLM,
 }
 
@@ -140,9 +175,10 @@ def get_llm_model(
     Factory function — tạo LLM object theo provider.
 
     Usage:
-        llm = get_llm_model()                                  # NVIDIA default
-        llm = get_llm_model(LLMProvider.GEMINI)                # GEMINI API
-        llm = get_llm_model(LLMProvider.OLLAMA, "llama3.1:8b") # Ollama local
+        llm = get_llm_model()                                           # NVIDIA default
+        llm = get_llm_model(LLMProvider.GEMINI ||
+        os.getenv(LLMProvider(os.getenv("env_value")))       # GEMINI API
+        llm = get_llm_model(LLMProvider.OLLAMA, "llama3.1:8b")          # Ollama local
     """
     builder_cls = _PROVIDER_MAP.get(provider)
     if builder_cls is None:
