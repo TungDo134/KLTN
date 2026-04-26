@@ -203,23 +203,67 @@ class MultiQueryRetriever:
     """
 
     # Prompt template
-    _PROMPT_TEMPLATE = """Bạn là trợ lý hỗ trợ tìm kiếm thông tin du lịch Việt Nam.
-    Hãy tạo ra {num_variations} câu hỏi biến thể từ câu hỏi gốc dưới đây.
-    Mỗi biến thể nên tiếp cận từ góc độ khác nhau để tìm được nhiều tài liệu liên quan hơn.
+    # _PROMPT_TEMPLATE = """Bạn là trợ lý hỗ trợ tìm kiếm thông tin du lịch Việt Nam.
+    # Nhiệm vụ:
+    # Tạo ra CHÍNH XÁC {num_variations} câu hỏi biến thể từ câu hỏi gốc dưới đây.
+    # Mỗi biến thể nên tiếp cận từ góc độ khác nhau để tìm được nhiều tài liệu liên quan hơn.
+    #
+    # Câu hỏi gốc: {original_query}
+    #
+    #
+    # ⚠️ QUAN TRỌNG:
+    # Chỉ trả về JSON hợp lệ theo format:
+    # {{
+    #   "queries": [
+    #     "câu hỏi 1",
+    #     "câu hỏi 2",
+    #     "câu hỏi 3"
+    #   ]
+    # }}
+    #
+    # Yêu cầu:
+    # 1. Tất cả phải bằng tiếng Việt
+    # 2. Giữ nguyên ý nghĩa chính và cốt lõi của câu hỏi gốc
+    # 3. Mỗi câu phải KHÁC NHAU RÕ RỆT theo một trong các hướng:
+    #     - Paraphrase (diễn đạt lại)
+    #     - Dùng từ đồng nghĩa / từ khóa liên quan
+    #     - Mở rộng ngữ nghĩa (semantic expansion)
+    #     - Thay đổi cách diễn đạt, từ khóa, góc nhìn
+    # 4. Ngắn gọn, súc tích, phù hợp để tìm kiếm
+    # 5. Tránh lặp lại hoặc quá giống nhau
+    # 6. Trả về ĐÚNG {num_variations} câu hỏi, không hơn không kém
+    #
+    # """
+    _PROMPT_TEMPLATE = """You are an assistant specialized in Vietnamese travel information retrieval.
 
-    Câu hỏi gốc: {original_query}
+    Task:
+    Generate EXACTLY {num_variations} query variations from the original question below.
+    Each variation should approach the query from a different perspective to improve document retrieval.
 
-    Yêu cầu:
-    1. Tất cả phải bằng tiếng Việt
-    2. Giữ nguyên ý nghĩa chính và cốt lõi của câu hỏi gốc
-    3. Mỗi câu phải KHÁC NHAU RÕ RỆT theo một trong các hướng:
-        - Paraphrase (diễn đạt lại)
-        - Dùng từ đồng nghĩa / từ khóa liên quan
-        - Mở rộng ngữ nghĩa (semantic expansion)
-        - Thay đổi cách diễn đạt, từ khóa, góc nhìn
-    4. Ngắn gọn, súc tích, phù hợp để tìm kiếm
-    5. Tránh lặp lại hoặc quá giống nhau
-    6. Trả về ĐÚNG {num_variations} câu hỏi, không hơn không kém
+    Original question: {original_query}
+
+    ⚠️ IMPORTANT:
+    Return ONLY a valid JSON object in the following format:
+    {{
+      "queries": [
+        "query 1",
+        "query 2",
+        "query 3"
+      ]
+    }}
+
+    Requirements:
+    1. ALWAYS use the SAME LANGUAGE as the original question — if original is English, all variations must be English; if Vietnamese, all must be Vietnamese
+    2. Preserve the core meaning of the original question
+    3. Each query must be clearly different using one of these strategies:
+       - Paraphrasing with DIFFERENT sentence structure
+       - Synonyms / related keywords (avoid repeating same words)
+       - Semantic expansion — broaden or narrow the scope
+       - Different perspective or angle of the same topic
+    4. Keep queries concise and optimized for search
+    5. Variations must be NOTICEABLY DIFFERENT from each other — no near-duplicates
+    6. Return EXACTLY {num_variations} queries — no more, no less
+    7. Do NOT include any explanation or text outside the JSON
     """
 
     def __init__(self,
@@ -261,7 +305,11 @@ class MultiQueryRetriever:
         """Hàm này sẽ gọi bên inference"""
         # 1. Tạo variations
         response: QueryVariations = await self.llm_structured.ainvoke(self._build_prompt(query))
-        variations = response.queries
+        variations = response.queries[:self.num_variations]
+
+        if not variations:
+            print("⚠️ LLM không trả query → fallback về query gốc")
+            variations = [query]
 
         print(f"\n🔀 Câu hỏi gốc: '{query}'")
         print(f"\n🔄 Các câu hỏi được tạo thêm (multi query) bởi [{self._model_info}]:")
