@@ -24,15 +24,16 @@ Project/
 │   ├── src/
 │   │   ├── core/                            ← Shared schemas / DTOs
 │   │   │   ├── schemas.py                   ← TripRequest, Place, TripPlan, DayPlan, ...
-│   │   │   ├── base.py                      ← Abstract class ModelLLMPlatform
-│   │   │   └── base_embed_model.py          ← Factory: get_embedding_model() + EmbeddingProvider
+│   │   │   ├── base_embed_model.py          ← Factory: get_embedding_model() + EmbeddingProvider
+│   │   │   ├── base_llm_model.py            ← Factory Class to create LLM models (NVIDIA, GROQ, GEMINI, OLLAMA)
+│   │   │   └── llm_container.py             ← Singleton for loading LLM & System Prompt
 │   │   │
 │   │   ├── pipeline/                        ← Orchestration layer
 │   │   │   ├── orchestrator.py              ← Master pipeline (6 bước đầy đủ)
 │   │   │   ├── query_analyzer.py            ← LLM extract: raw query → TripRequest
 │   │   │   ├── reranker.py                  ← RAG top-20 → multi-signal rerank → top-15
 │   │   │   ├── inference.py                 ← Backward-compatible wrapper cho FastAPI
-│   │   │   ├── llm.py                       ← Factory tạo ChatNVIDIA object
+│   │   │   ├── llm.py                       ← (UNUSED) Change to llm_container.py
 │   │   │   └── rag_pipline.py               ← Ingestion & Retriever (ChromaDB)
 │   │   │
 │   │   ├── recommend/                       ← Recommender System module
@@ -50,10 +51,11 @@ Project/
 │   │   ├── model/
 │   │   │   └── embeddings/                  ← HuggingFace embedding model cache
 │   │   ├── prompts/
-│   │   │   └── system.txt                   ← System prompt cho LLM
-│   │   ├── db/                              ← ChromaDB vector store (auto-created)
+│   │   │   └── system_prompt.md             ← System prompt cho LLM
+│   │   ├── db/
+│   │   │   └── chroma_db/                   ← ChromaDB vector store (auto-created)
 │   │   └── source_data/
-│   │       └── docs/                        ← ⬅ Đặt file PDF tại đây
+│   │       └── docs/                        ← ⬅ Đặt file PDF/TXT tại đây
 │   │
 │   ├── build_rag_vector_db.ipynb            ← Chạy một lần để tạo vector DB
 │   ├── run.bat                              ← Windows: kill process cũ & restart
@@ -216,7 +218,7 @@ PERSIST_DIRECTORY=db/
 SOURCE_DATA=src/source_data/docs
 
 # === SYSTEM PROMPT (tùy chọn) ===
-SYSTEM_PROMPT=src/prompts/system.txt
+SYSTEM_PROMPT=src/prompts/system_prompt.md
 
 # === FRONTEND URL (cho CORS) ===
 FRONTEND_URL=http://localhost:5173
@@ -284,7 +286,7 @@ App starting — loading RAG Pipeline...
 ⚙️ Đang khởi tạo Full Trip Planning Pipeline...
 Loading embedding model on device using: 'cpu'...
 Loading Chroma database from db/...
-✅ System prompt loaded from: src/prompts/system.txt
+✅ System prompt loaded from: src/prompts/system_prompt.md
 App is ready to serve requests.
 INFO:     Uvicorn running on http://127.0.0.1:8000
 ```

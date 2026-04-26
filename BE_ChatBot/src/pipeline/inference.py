@@ -176,6 +176,7 @@ class RAGInference:
         # [4] LLM generate
         result = await self.llm.ainvoke(messages)
         answer = result.content
+        print(f"\n [{get_model_info(self.llm)}]: {answer}")
 
         # [5] Lưu vào history
         self._save_turn(session_id, question, answer)

@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, TextLoader
 from langchain_core.messages import HumanMessage
 
+from src.core.base_embed_model import get_embedding_model
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm
 
@@ -111,23 +112,46 @@ Test xem nó run bằng cpu hay gpu
 - Test LLM
 """
 
+# def _llm_test(provider: LLMProvider):
+#     llm = get_llm(provider=provider)
+#
+#     # Nhập input vào terminal để test
+#     user_input = input("You: ")
+#
+#     if not user_input.strip():
+#         print("⚠️ Input is empty.")
+#         return
+#
+#     response = llm.invoke([HumanMessage(content=user_input)])
+#     print(f"[{provider}]: {response.content}")
 
-def _llm_test(provider: LLMProvider):
-    llm = get_llm(provider=provider)
 
-    # Nhập input vào terminal để test
-    user_input = input("You: ")
+# from langchain_chroma import Chroma
+#
+#
+# # ... khởi tạo embedding model
+# def metadata_db():
+#     vectorstore = Chroma(persist_directory=os.getenv("PERSIST_DIRECTORY"),
+#                          embedding_function=get_embedding_model(),
+#                          collection_name="kltn_chatbot",
+#                          collection_metadata={"hnsw:space": "cosine"})
+#     sample = vectorstore.get(limit=2)
+#     print(sample["metadatas"])
+#     print(sample["documents"][0][:200])
 
-    if not user_input.strip():
-        print("⚠️ Input is empty.")
-        return
+import psutil
 
-    response = llm.invoke([HumanMessage(content=user_input)])
-    print(f"[{provider}]: {response.content}")
+swap = psutil.swap_memory()
+print(f"Pagefile total: {swap.total / 1024**3:.1f} GB")
+print(f"Pagefile used:  {swap.used / 1024**3:.1f} GB")
 
-
-if __name__ == "__main__":
-    _llm_test(LLMProvider.GROQ)  # or GROQ, NVIDIA, OLLAMA
+# Kiểm tra pagefile đang nằm ở ổ nào
+import subprocess
+result = subprocess.run(
+    ["wmic", "pagefile", "list", "full"],
+    capture_output=True, text=True
+)
+print(result.stdout)
 
 # Synthetic Questions:
 # 1. "What was NVIDIA's first graphics accelerator called?"
