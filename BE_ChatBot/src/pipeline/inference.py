@@ -7,7 +7,7 @@ FLOW:
       ↓
   [2] Multi-Query Retrieval
         ↓ LLM sinh N variations
-        ↓ Search ChromaDB với từng variation
+        ↓ Hybrid Search (Vector + BM25) với từng variation
         ↓ Deduplicate → List[Document]
       ↓
   [3] Build prompt = system + chat_history + context + question
@@ -102,7 +102,7 @@ class RAGInference:
     async def _retrieve_context(self, search_question: str) -> str:
         """Truy vấn ChromaDB, trả về context dạng string."""
         docs = await self.retriever.ainvoke(search_question)
-        print(f"========= Tìm thấy {len(docs)} tài liệu liên quan sau khi Multi-Query =========")
+        print(f"========= Tìm thấy {len(docs)} tài liệu liên quan sau khi Multi-Query + Hybrid Search=========")
 
         for i, doc in enumerate(docs, 1):
             # Lấy tối đa 2 dòng đầu, bỏ dòng rỗng

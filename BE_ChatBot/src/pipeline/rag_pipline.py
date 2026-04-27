@@ -8,15 +8,20 @@ from typing import List
 
 import torch
 from dotenv import load_dotenv
+
+# Langchain
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import (
     PyPDFLoader,
     DirectoryLoader,
     TextLoader,
 )
+from langchain_community.retrievers import BM25Retriever
+from langchain_classic.retrievers import EnsembleRetriever
 from langchain_core.documents import Document
-# Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+#
 from pydantic import BaseModel, Field
 
 # Embedding model
@@ -191,84 +196,65 @@ class MultiQueryRetriever:
     """
     Custom Multi-Query Retriever cho domain du lịch Việt Nam.
     Flow:
-        original_query
+        Original Query
             ↓
         LLM sinh N query variations (tiếng Việt, structured output)
             ↓
-        Search ChromaDB với từng variation
+        Hybrid Search (Vector + BM25) với từng variation
             ↓
         Deduplicate theo page_content
             ↓
         Trả về list[Document] không trùng
     """
 
-    # Prompt template
-    # _PROMPT_TEMPLATE = """Bạn là trợ lý hỗ trợ tìm kiếm thông tin du lịch Việt Nam.
-    # Nhiệm vụ:
-    # Tạo ra CHÍNH XÁC {num_variations} câu hỏi biến thể từ câu hỏi gốc dưới đây.
-    # Mỗi biến thể nên tiếp cận từ góc độ khác nhau để tìm được nhiều tài liệu liên quan hơn.
-    #
-    # Câu hỏi gốc: {original_query}
-    #
-    #
-    # ⚠️ QUAN TRỌNG:
-    # Chỉ trả về JSON hợp lệ theo format:
-    # {{
-    #   "queries": [
-    #     "câu hỏi 1",
-    #     "câu hỏi 2",
-    #     "câu hỏi 3"
-    #   ]
-    # }}
-    #
-    # Yêu cầu:
-    # 1. Tất cả phải bằng tiếng Việt
-    # 2. Giữ nguyên ý nghĩa chính và cốt lõi của câu hỏi gốc
-    # 3. Mỗi câu phải KHÁC NHAU RÕ RỆT theo một trong các hướng:
-    #     - Paraphrase (diễn đạt lại)
-    #     - Dùng từ đồng nghĩa / từ khóa liên quan
-    #     - Mở rộng ngữ nghĩa (semantic expansion)
-    #     - Thay đổi cách diễn đạt, từ khóa, góc nhìn
-    # 4. Ngắn gọn, súc tích, phù hợp để tìm kiếm
-    # 5. Tránh lặp lại hoặc quá giống nhau
-    # 6. Trả về ĐÚNG {num_variations} câu hỏi, không hơn không kém
-    #
-    # """
-    _PROMPT_TEMPLATE = """You are an assistant specialized in Vietnamese travel information retrieval.
+    # Prompt for multi query
+    _PROMPT_TEMPLATE = """You are a search query expansion assistant for a Vietnamese travel knowledge base.
 
-    Task:
-    Generate EXACTLY {num_variations} query variations from the original question below.
-    Each variation should approach the query from a different perspective to improve document retrieval.
+    Your task: Generate EXACTLY {num_variations} search query variations from the original question.
 
     Original question: {original_query}
 
-    ⚠️ IMPORTANT:
-    Return ONLY a valid JSON object in the following format:
+    Apply each strategy EXACTLY ONCE, in order:
+
+    Strategy A — REPHRASE
+    Reword the question using different vocabulary and sentence structure.
+    Same scope, same intent. No new information added.
+    Example input: "What was NVIDIA's first graphics accelerator called?"
+    Example output: "What is the name of NVIDIA's earliest GPU product?"
+
+    Strategy B — ASPECT FOCUS  
+    Zoom into ONE specific angle: historical context, technical specs, geography, user experience, etc.
+    Pick the angle most relevant to the question.
+    Example input: "What was NVIDIA's first graphics accelerator called?"
+    Example output: "What was the historical significance of NVIDIA's debut graphics card launch?"
+
+    Strategy C — SCOPE SHIFT
+    Broaden OR narrow the original question.
+    - Narrow: from general → specific detail
+    - Broaden: from specific product → company/category level
+    Example input: "What was NVIDIA's first graphics accelerator called?"
+    Example output: "What graphics cards did NVIDIA release in its early years?"
+
+    STRICT RULES:
+    1. LANGUAGE: Respond in the EXACT same language as the original question.
+       - English question → English answers ONLY
+       - Vietnamese question → Vietnamese answers ONLY
+    2. Each variation must be clearly distinct — no near-duplicates allowed
+    3. Preserve the core intent of the original question
+    4. Keep queries concise and optimized for semantic search
+    5. Return ONLY valid JSON — no explanation, no markdown, no extra text
+
+    Output format:
     {{
       "queries": [
-        "query 1",
-        "query 2",
-        "query 3"
+        "Strategy A variation here",
+        "Strategy B variation here", 
+        "Strategy C variation here"
       ]
-    }}
-
-    Requirements:
-    1. ALWAYS use the SAME LANGUAGE as the original question — if original is English, all variations must be English; if Vietnamese, all must be Vietnamese
-    2. Preserve the core meaning of the original question
-    3. Each query must be clearly different using one of these strategies:
-       - Paraphrasing with DIFFERENT sentence structure
-       - Synonyms / related keywords (avoid repeating same words)
-       - Semantic expansion — broaden or narrow the scope
-       - Different perspective or angle of the same topic
-    4. Keep queries concise and optimized for search
-    5. Variations must be NOTICEABLY DIFFERENT from each other — no near-duplicates
-    6. Return EXACTLY {num_variations} queries — no more, no less
-    7. Do NOT include any explanation or text outside the JSON
-    """
-
+    }}"""
     def __init__(self,
-                 retriever,  # base retriever từ RAGStorage.get_retriever()
-                 llm,  # ChatNVIDIA từ LLM.get_llm()
+                 retriever,  # EnsembleRetriever (hybrid) từ RAGStorage.get_hybrid_retriever()
+                 llm,  # LLM from NVIDIA NIMs
                  num_variations: int = 3,  # số query variations
                  ):
         self.retriever = retriever
@@ -283,8 +269,9 @@ class MultiQueryRetriever:
 
     #  ======= Step 1: Build prompt =======
     def _build_prompt(self, original_query: str):
-        return self._PROMPT_TEMPLATE.format(num_variations=self.num_variations,
-                                            original_query=original_query)
+        return (self._PROMPT_TEMPLATE.format
+                (num_variations=self.num_variations,
+                 original_query=original_query))
 
     #  ======= Step 2: Check duplicate =======
     @staticmethod
@@ -316,8 +303,9 @@ class MultiQueryRetriever:
         for i, v in enumerate(variations, 1):
             print(f"   {i}. {v}")
 
-        # 2. Search từng variation
-        print(f"\n🔀 Relevant Docs từng câu hỏi:")
+        # 2. Hybrid search từng variation
+        # EnsembleRetriever xử lý Vector + BM25 bên trong — mỗi variation = 1 lần gọi
+        print(f"\n🔀 Relevant Docs từng câu hỏi (Hybrid Search):")
         all_results: List[List[Document]] = []
         for i, variation in enumerate(variations, 1):
             docs = await self.retriever.ainvoke(variation)
@@ -328,7 +316,7 @@ class MultiQueryRetriever:
         print(f"\n❌ Loại bỏ các docs mang tính trùng lặp")
         unique_docs = self._deduplicate(all_results)
         total = sum(len(r) for r in all_results)
-        print(f"\n➡️ Tổng số docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
+        print(f"\n➡️ Tổng số docs sau khi Multi-Query + Hybrid : {total} docs  → {len(unique_docs)} unique docs\n")
 
         # 4. Trả về các relevant docs sau khi multi query + handle duplicate
         return unique_docs
@@ -345,12 +333,12 @@ class RAGStorage:
             raise ValueError(f"PERSIST_DIRECTORY environment variable is not set.")
 
         print(f"\n- Chạy embedding model bằng: '{_DEVICE}' \n")
-        # --- Create Embedding Model ---
+        # ======= Create Embedding Model =======
         self.embedding_model = get_embedding_model(provider=provider)
 
-    # --- FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  ---
+    # ======= FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  =======
     def build_vector_db(self):
-        """Only re-run when adding new PDFs || Texts into the docs/ folder."""
+        """Only re-run when adding new PDFs || Texts into the folder docs/"""
         # 1. Loading the files
         documents = load_documents()
 
@@ -368,8 +356,9 @@ class RAGStorage:
 
         return vectorstore
 
-    # --- FUNC 2: TRUY XUẤT TÀI LIỆU ---
+    # ======= FUNC 2: TRUY XUẤT TÀI LIỆU =======
     def get_retriever(self):
+        """Vector-only retriever — giữ lại để dùng độc lập nếu cần."""
         # Tải db từ "persist_directory"- mong muốn: "src/db/chroma_db"
         print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
 
@@ -379,15 +368,71 @@ class RAGStorage:
             collection_name="kltn_chatbot",
         )
         # top_k
-        return vectorstore.as_retriever(search_kwargs={"k": 5})
+        return vectorstore.as_retriever(search_kwargs={"k": 20})
 
+    # ======= FUNC 3: HYBRID SEARCH (VECTOR + KEY WORD) =======
+    def get_hybrid_retriever(self, vector_weight: float = 0.6,
+                             bm25_weight: float = 0.4) -> EnsembleRetriever:
+        """
+        Kết hợp Vector Search + BM25 bằng EnsembleRetriever.
+        Flow:
+            ChromaDB (k=20) ─┐
+                              ├─ EnsembleRetriever (weighted merge) → docs
+            BM25     (k=20) ─┘
+
+        BM25 cần load toàn bộ docs từ Chroma để build index trong RAM.
+        Index này được build 1 lần lúc khởi tạo, không rebuild mỗi query.
+
+        Args:
+            vector_weight: trọng số cho vector search (default 0.6)
+            bm25_weight:   trọng số cho BM25 (default 0.4)
+        """
+
+        print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
+        vectorstore = Chroma(
+            persist_directory=self.persist_directory,
+            embedding_function=self.embedding_model,
+            collection_name="kltn_chatbot",
+        )
+        # Vector retriever — k = 20 để có pool đủ lớn cho dedup sau này
+        vector_retriever = vectorstore.as_retriever(search_kwargs={"k": 20})
+
+        # BM25 chạy trên RAM ==> cần List Document => pull toàn bộ từ Chroma
+        print(f"\n- Build BM25 index từ Chroma docs")
+        """
+        Chroma lưu trữ trên disk, trả về dict dạng:
+        {
+           "ids":       ["id1", "id2", ...],
+           "documents": ["nội dung chunk 1", "nội dung chunk 2", ...],
+           "metadatas": [{"source": "..."}, {"source": "..."}, ...]
+         }"""
+        chroma_data = vectorstore.get()
+
+        # Convert sang List[Document] để BM25 hiểu
+        all_docs = [
+            Document(page_content=text, metadata=meta)
+            for text, meta in zip(chroma_data["documents"], chroma_data["metadatas"])
+        ]
+        bm25_retriever = BM25Retriever.from_documents(all_docs)
+        bm25_retriever.k = 20  # k=20 để tương đồng với vector retriever
+
+        print(f"\n✅ BM25 index built: {len(all_docs)} docs")
+        print(f"\n⚖️  Weights — Vector: {vector_weight} | BM25: {bm25_weight}")
+
+        return EnsembleRetriever(
+            retrievers=[vector_retriever, bm25_retriever],
+            weights=[vector_weight, bm25_weight],
+        )
+
+    # ======= FUNC 4: MULTI QUERY =======
     def get_multi_query_retriever(self) -> MultiQueryRetriever:
-        """Trả về MultiQueryRetriever bọc ngoài base retriever."""
-        base_retriever = self.get_retriever()
+        """Trả về MultiQueryRetriever wrapped by base retriever."""
+        # base_retriever = self.get_retriever()
+        hybrid_retriever = self.get_hybrid_retriever()
         llm_multi_query = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")))  # Chạy multi query
 
         return MultiQueryRetriever(
-            retriever=base_retriever,
+            retriever=hybrid_retriever,
             llm=llm_multi_query,
             num_variations=3,
         )
