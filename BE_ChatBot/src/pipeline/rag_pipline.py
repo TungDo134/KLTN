@@ -8,21 +8,30 @@ from typing import List
 
 import torch
 from dotenv import load_dotenv
+
+# Langchain
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import (
     PyPDFLoader,
     DirectoryLoader,
     TextLoader,
 )
+from langchain_community.retrievers import BM25Retriever
+from langchain_classic.retrievers import EnsembleRetriever
 from langchain_core.documents import Document
-# Langchain
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
+from langchain_community.cross_encoders import HuggingFaceCrossEncoder
+
+#
 from pydantic import BaseModel, Field
 
 # Embedding model
 from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm, get_model_info
+
+from tenacity import retry, stop_after_attempt, wait_fixed
 
 # --- LOAD .env ---
 
@@ -42,8 +51,9 @@ _DEVICE = "cuda"
 
 
 # ============================================================
-# PHASE 1: INGEST PIPELINE
+#                       INGEST PIPELINE
 # ============================================================
+
 
 # --- STEP 1: FUNCTION LOAD DOCUMENT ---
 def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
@@ -169,18 +179,37 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
             continue
 
     print(
-        f"\nHoàn tất: {success} inserted, {failed} failed | Tổng DB: {len(vectorstore.get()["ids"])}"
+        f"\nHoàn tất: {success} inserted, {failed} failed | Tổng DB: {len(vectorstore.get()['ids'])}"
     )
     return vectorstore
 
 
 # ============================================================
-# PHASE 2: MULTI-QUERY RETRIEVER
+#                       RERANK CONFIG
 # ============================================================
+class RerankerConfig:
+    """
+    Cấu hình Reranker — chỉnh tại đây
+
+    MODEL OPTIONS (tiếng Việt):
+        BAAI/bge-reranker-v2-m3     ← recommended, multilingual, hỗ trợ tiếng Việt tốt
+        BAAI/bge-reranker-base      ← nhẹ hơn, nhanh hơn, tiếng Anh chủ yếu
+        BAAI/bge-reranker-large     ← nặng hơn, chính xác hơn
+    """
+
+    MODEL_NAME: str = "BAAI/bge-reranker-v2-m3"
+    TOP_N: int = 5  # Số docs giữ lại sau rerank — đưa vào LLM generate
+
+
+# ============================================================
+#                       MULTI-QUERY RETRIEVER
+# ============================================================
+
 
 # --- Structured output schema ---
 class QueryVariations(BaseModel):
     """LLM sẽ trả về đúng format này."""
+
     queries: List[str] = Field(
         description="Danh sách các câu hỏi biến thể để tìm kiếm tài liệu du lịch"
     )
@@ -191,86 +220,71 @@ class MultiQueryRetriever:
     """
     Custom Multi-Query Retriever cho domain du lịch Việt Nam.
     Flow:
-        original_query
+        Original Query
             ↓
         LLM sinh N query variations (tiếng Việt, structured output)
             ↓
-        Search ChromaDB với từng variation
+        Hybrid Search (Vector + BM25) với từng variation
             ↓
         Deduplicate theo page_content
             ↓
         Trả về list[Document] không trùng
     """
 
-    # Prompt template
-    # _PROMPT_TEMPLATE = """Bạn là trợ lý hỗ trợ tìm kiếm thông tin du lịch Việt Nam.
-    # Nhiệm vụ:
-    # Tạo ra CHÍNH XÁC {num_variations} câu hỏi biến thể từ câu hỏi gốc dưới đây.
-    # Mỗi biến thể nên tiếp cận từ góc độ khác nhau để tìm được nhiều tài liệu liên quan hơn.
-    #
-    # Câu hỏi gốc: {original_query}
-    #
-    #
-    # ⚠️ QUAN TRỌNG:
-    # Chỉ trả về JSON hợp lệ theo format:
-    # {{
-    #   "queries": [
-    #     "câu hỏi 1",
-    #     "câu hỏi 2",
-    #     "câu hỏi 3"
-    #   ]
-    # }}
-    #
-    # Yêu cầu:
-    # 1. Tất cả phải bằng tiếng Việt
-    # 2. Giữ nguyên ý nghĩa chính và cốt lõi của câu hỏi gốc
-    # 3. Mỗi câu phải KHÁC NHAU RÕ RỆT theo một trong các hướng:
-    #     - Paraphrase (diễn đạt lại)
-    #     - Dùng từ đồng nghĩa / từ khóa liên quan
-    #     - Mở rộng ngữ nghĩa (semantic expansion)
-    #     - Thay đổi cách diễn đạt, từ khóa, góc nhìn
-    # 4. Ngắn gọn, súc tích, phù hợp để tìm kiếm
-    # 5. Tránh lặp lại hoặc quá giống nhau
-    # 6. Trả về ĐÚNG {num_variations} câu hỏi, không hơn không kém
-    #
-    # """
-    _PROMPT_TEMPLATE = """You are an assistant specialized in Vietnamese travel information retrieval.
+    # Prompt for multi query
+    _PROMPT_TEMPLATE = """You are a search query expansion assistant for a Vietnamese travel knowledge base.
 
-    Task:
-    Generate EXACTLY {num_variations} query variations from the original question below.
-    Each variation should approach the query from a different perspective to improve document retrieval.
+    Your task: Generate EXACTLY {num_variations} search query variations from the original question.
 
     Original question: {original_query}
 
-    ⚠️ IMPORTANT:
-    Return ONLY a valid JSON object in the following format:
+    Apply each strategy EXACTLY ONCE, in order:
+
+    Strategy A — REPHRASE
+    Reword the question using different vocabulary and sentence structure.
+    Same scope, same intent. No new information added.
+    Example input: "What was NVIDIA's first graphics accelerator called?"
+    Example output: "What is the name of NVIDIA's earliest GPU product?"
+
+    Strategy B — ASPECT FOCUS  
+    Zoom into ONE specific angle: historical context, technical specs, geography, user experience, etc.
+    Pick the angle most relevant to the question.
+    Example input: "What was NVIDIA's first graphics accelerator called?"
+    Example output: "What was the historical significance of NVIDIA's debut graphics card launch?"
+
+    Strategy C — SCOPE SHIFT
+    Broaden OR narrow the original question.
+    - Narrow: from general → specific detail
+    - Broaden: from specific product → company/category level
+    Example input: "What was NVIDIA's first graphics accelerator called?"
+    Example output: "What graphics cards did NVIDIA release in its early years?"
+
+    STRICT RULES:
+    1. LANGUAGE: Respond in the EXACT SAME LANGUAGE AS THE ORIGINAL QUESTION (IMPORTANT)
+       - English question → English answers ONLY
+       - Vietnamese question → Vietnamese answers ONLY
+    2. Each variation must be clearly distinct — no near-duplicates allowed
+    3. Preserve the core intent of the original question
+    4. Keep queries concise and optimized for semantic search
+    5. Return ONLY VALID JSON
+    6. DO NOT include explanations, no markdown, no extra text
+    7. DO NOT include function call syntax like <function=...>
+
+    Output format:
     {{
       "queries": [
-        "query 1",
-        "query 2",
-        "query 3"
+        "Strategy A variation here",
+        "Strategy B variation here", 
+        "Strategy C variation here"
       ]
-    }}
+    }}"""
 
-    Requirements:
-    1. ALWAYS use the SAME LANGUAGE as the original question — if original is English, all variations must be English; if Vietnamese, all must be Vietnamese
-    2. Preserve the core meaning of the original question
-    3. Each query must be clearly different using one of these strategies:
-       - Paraphrasing with DIFFERENT sentence structure
-       - Synonyms / related keywords (avoid repeating same words)
-       - Semantic expansion — broaden or narrow the scope
-       - Different perspective or angle of the same topic
-    4. Keep queries concise and optimized for search
-    5. Variations must be NOTICEABLY DIFFERENT from each other — no near-duplicates
-    6. Return EXACTLY {num_variations} queries — no more, no less
-    7. Do NOT include any explanation or text outside the JSON
-    """
-
-    def __init__(self,
-                 retriever,  # base retriever từ RAGStorage.get_retriever()
-                 llm,  # ChatNVIDIA từ LLM.get_llm()
-                 num_variations: int = 3,  # số query variations
-                 ):
+    def __init__(
+            self,
+            retriever,  # EnsembleRetriever (hybrid) từ RAGStorage.get_hybrid_retriever()
+            llm,  # LLM from NVIDIA NIMs
+            num_variations: int = 3,  # số query variations
+    ):
         self.retriever = retriever
         self.num_variations = num_variations
 
@@ -278,13 +292,18 @@ class MultiQueryRetriever:
         self._model_info = get_model_info(llm)
 
         # Dùng structured output để đảm bảo LLM trả về đúng format
-        print(f'\n- LLM cho multi query')
         self.llm_structured = llm.with_structured_output(QueryVariations)
 
     #  ======= Step 1: Build prompt =======
     def _build_prompt(self, original_query: str):
-        return self._PROMPT_TEMPLATE.format(num_variations=self.num_variations,
-                                            original_query=original_query)
+        return self._PROMPT_TEMPLATE.format(
+            num_variations=self.num_variations, original_query=original_query
+        )
+
+    # ===================== RETRY LLM (thử lại tối đa 3 lần - 1s/once) =====================
+    @retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
+    async def _call_llm(self, prompt: str) -> QueryVariations:
+        return await self.llm_structured.ainvoke(prompt)
 
     #  ======= Step 2: Check duplicate =======
     @staticmethod
@@ -304,11 +323,18 @@ class MultiQueryRetriever:
     async def ainvoke(self, query: str) -> List[Document]:
         """Hàm này sẽ gọi bên inference"""
         # 1. Tạo variations
-        response: QueryVariations = await self.llm_structured.ainvoke(self._build_prompt(query))
-        variations = response.queries[:self.num_variations]
+        try:
+            response: QueryVariations = await self.llm_structured.ainvoke(
+                self._build_prompt(query)
+            )
+            variations = response.queries[: self.num_variations]
+        except Exception as e:
+            print(f"❌ Multi-query failed: {e}")
+            print("⚠️ Fallback về query gốc")
+            variations = [query]  # fallback về query gốc
 
         if not variations:
-            print("⚠️ LLM không trả query → fallback về query gốc")
+            print("⚠️ LLM không trả query -> fallback về query gốc")
             variations = [query]
 
         print(f"\n🔀 Câu hỏi gốc: '{query}'")
@@ -316,27 +342,34 @@ class MultiQueryRetriever:
         for i, v in enumerate(variations, 1):
             print(f"   {i}. {v}")
 
-        # 2. Search từng variation
-        print(f"\n🔀 Relevant Docs từng câu hỏi:")
+        # 2. Hybrid search từng variation
+        # EnsembleRetriever xử lý Vector + BM25 bên trong — mỗi variation = 1 lần gọi
+        print(f"\n🔀 Relevant Docs từng câu hỏi (Hybrid Search):")
         all_results: List[List[Document]] = []
         for i, variation in enumerate(variations, 1):
-            docs = await self.retriever.ainvoke(variation)
-            all_results.append(docs)
-            print(f"   Query {i}: {len(docs)} relevant docs")
+            try:
+                docs = await self.retriever.ainvoke(variation)
+                all_results.append(docs)
+                print(f"   Query {i}: {len(docs)} relevant docs")
+            except Exception as e:
+                print(f"⚠️ Retriever fail query {i}: {e}")
 
         # 3. Remove duplicate
         print(f"\n❌ Loại bỏ các docs mang tính trùng lặp")
         unique_docs = self._deduplicate(all_results)
         total = sum(len(r) for r in all_results)
-        print(f"\n➡️ Tổng số docs sau khi Multi-Query : {total} docs  → {len(unique_docs)} unique docs\n")
+        print(
+            f"\n➡️ Tổng số docs sau khi Multi-Query + Hybrid : {total} docs  → {len(unique_docs)} unique docs\n"
+        )
 
         # 4. Trả về các relevant docs sau khi multi query + handle duplicate
         return unique_docs
 
 
 # ============================================================
-# PHASE 3: RETRIVAL PIPELINE
+#                       RETRIVAL PIPELINE
 # ============================================================
+
 
 class RAGStorage:
     def __init__(self, provider: EmbeddingProvider = EmbeddingProvider.HUGGINGFACE):
@@ -345,12 +378,12 @@ class RAGStorage:
             raise ValueError(f"PERSIST_DIRECTORY environment variable is not set.")
 
         print(f"\n- Chạy embedding model bằng: '{_DEVICE}' \n")
-        # --- Create Embedding Model ---
+        # ======= Create Embedding Model =======
         self.embedding_model = get_embedding_model(provider=provider)
 
-    # --- FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  ---
+    # ======= FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  =======
     def build_vector_db(self):
-        """Only re-run when adding new PDFs || Texts into the docs/ folder."""
+        """Only re-run when adding new PDFs || Texts into the folder docs/"""
         # 1. Loading the files
         documents = load_documents()
 
@@ -368,8 +401,9 @@ class RAGStorage:
 
         return vectorstore
 
-    # --- FUNC 2: TRUY XUẤT TÀI LIỆU ---
+    # ======= FUNC 2: TRUY XUẤT TÀI LIỆU =======
     def get_retriever(self):
+        """Vector-only retriever — giữ lại để dùng độc lập nếu cần."""
         # Tải db từ "persist_directory"- mong muốn: "src/db/chroma_db"
         print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
 
@@ -379,15 +413,134 @@ class RAGStorage:
             collection_name="kltn_chatbot",
         )
         # top_k
-        return vectorstore.as_retriever(search_kwargs={"k": 5})
+        return vectorstore.as_retriever(search_kwargs={"k": 20})
 
-    def get_multi_query_retriever(self) -> MultiQueryRetriever:
-        """Trả về MultiQueryRetriever bọc ngoài base retriever."""
-        base_retriever = self.get_retriever()
-        llm_multi_query = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")))  # Chạy multi query
+    # ======= FUNC 3: HYBRID SEARCH (VECTOR + KEY WORD) =======
+    def get_hybrid_retriever(
+            self, vector_weight: float = 0.6, bm25_weight: float = 0.4
+    ) -> EnsembleRetriever:
+        """
+        Kết hợp Vector Search + BM25 bằng EnsembleRetriever.
+        Flow:
+            ChromaDB (k=20) ─┐
+                              ├─ EnsembleRetriever (weighted merge) → docs
+            BM25     (k=20) ─┘
 
-        return MultiQueryRetriever(
-            retriever=base_retriever,
+        BM25 cần load toàn bộ docs từ Chroma để build index trong RAM.
+        Index này được build 1 lần lúc khởi tạo, không rebuild mỗi query.
+
+        Args:
+            vector_weight: trọng số cho vector search (default 0.6)
+            bm25_weight:   trọng số cho BM25 (default 0.4)
+        """
+
+        print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
+        vectorstore = Chroma(
+            persist_directory=self.persist_directory,
+            embedding_function=self.embedding_model,
+            collection_name="kltn_chatbot",
+        )
+        # Vector retriever — k = 20 để có pool đủ lớn cho dedup sau này
+        vector_retriever = vectorstore.as_retriever(search_kwargs={"k": 20})
+
+        # BM25 chạy trên RAM ==> cần List Document => pull toàn bộ từ Chroma
+        print(f"\n- Build BM25 index từ Chroma docs")
+        """
+        Chroma lưu trữ trên disk, trả về dict dạng:
+        {
+           "ids":       ["id1", "id2", ...],
+           "documents": ["nội dung chunk 1", "nội dung chunk 2", ...],
+           "metadatas": [{"source": "..."}, {"source": "..."}, ...]
+         }"""
+        chroma_data = vectorstore.get()
+
+        # Convert sang List[Document] để BM25 hiểu
+        all_docs = [
+            Document(page_content=text, metadata=meta)
+            for text, meta in zip(chroma_data["documents"], chroma_data["metadatas"])
+        ]
+        bm25_retriever = BM25Retriever.from_documents(all_docs)
+        bm25_retriever.k = 20  # k=20 để tương đồng với vector retriever
+
+        print(f"\n✅ BM25 index built: {len(all_docs)} docs")
+        print(f"\n[WEIGHTS] Vector: {vector_weight} | BM25: {bm25_weight}")
+
+        """
+        EnsembleRetriever Của langchain đã có RRF_score(doc) = Σ 1 / (k + rank_i)
+        LangChain x weight => score = weight_vector × 1/(60+rank_vector) + weight_bm25 × 1/(60+rank_bm25)
+        Vector = 0.6 (embedding dc train cho TV)
+        BM25   = 0.4 ( keyword matching cho tên địa điểm, món ăn đặc sản — những thứ vector dễ miss)
+        """
+        return EnsembleRetriever(
+            retrievers=[vector_retriever, bm25_retriever],
+            weights=[vector_weight, bm25_weight],
+        )
+
+    # ======= FUNC 4: MULTI QUERY =======
+    def get_multi_query_retriever(
+            self,
+    ) -> tuple[MultiQueryRetriever, CrossEncoderReranker]:
+        """
+        Trả về cặp (MultiQueryRetriever, Reranker).
+        Tách ra để inference.py tự quyết định khi nào rerank.
+        """
+        # base_retriever = self.get_retriever() # base
+        hybrid_retriever = self.get_hybrid_retriever()  # hybrid
+
+        print(f"\n- LLM cho multi query")
+        llm_multi_query = get_llm(
+            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER"))
+        )  # Chạy multi query
+        reranker = self.get_reranker()
+
+        multi_query = MultiQueryRetriever(
+            retriever=hybrid_retriever,
             llm=llm_multi_query,
             num_variations=3,
         )
+        return multi_query, reranker
+
+    # ======= FUNC 5: RERANKER  =======
+    @staticmethod
+    def get_reranker() -> CrossEncoderReranker:
+        """
+        Khởi tạo BGE Reranker chạy local trên GPU.
+
+        Flow:
+            XX unique docs sample-68 (từ MultiQueryRetriever)
+                ↓
+            CrossEncoder tính score từng cặp (query, doc)
+                ↓
+            Sắp xếp lại theo score
+                ↓
+            Giữ lại top-N docs → đưa vào LLM generate
+
+        CrossEncoder khác Embedding:
+            - Embedding:    encode query và doc RIÊNG → so sánh vector
+            - CrossEncoder: nhìn query + doc CÙNG LÚC → score chính xác hơn
+                            nhưng chậm hơn (O(n) calls thay vì O(1))
+        """
+        print(f"\n========= Khởi tạo BGE Reranker: {RerankerConfig.MODEL_NAME} =========")
+        print(f"\n- Top-N sau rerank: {RerankerConfig.TOP_N}")
+
+        _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        _DEFAULT_RERANKER_CACHE = os.path.normpath(
+            os.path.join(_BASE_DIR, "..", "model", "reranker")
+        )
+        print(f"\n📁 Cache dir reranker model: {_DEFAULT_RERANKER_CACHE} \n")
+
+        encoder = HuggingFaceCrossEncoder(
+            model_name=RerankerConfig.MODEL_NAME,
+            model_kwargs={
+                "device": _DEVICE,  # chạy = gpu
+                "cache_folder": _DEFAULT_RERANKER_CACHE,  # lưu model rank
+            },
+        )
+
+        reranker = CrossEncoderReranker(
+            model=encoder,
+            top_n=RerankerConfig.TOP_N,
+        )
+
+        print("\n✅ Model Reranker sẵn sàng\n")
+        return reranker

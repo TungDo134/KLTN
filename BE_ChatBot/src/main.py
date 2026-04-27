@@ -27,13 +27,12 @@ inference_instance = None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Khởi tạo RAGInference 1 lần khi app start, giải phóng khi app stop."""
-    print("================ KHỞI ĐỘNG ỨNG DỤNG ================")
+    print("\n ================ KHỞI ĐỘNG ỨNG DỤNG - HẾ LÔ ================")
     app.state.inference = RAGInference()
-    print("=" * 60)
-    print("Ứng dụng sẵn sàng")
+    print("\n ================ ỨNG DỤNG SẴN SÀNG - HỎI ĐI TUI TRẢ LỜI CHO ================")
 
     yield
-    print("================ TẮT ỨNG DỤNG - HẸN GẶP LẠI ================")
+    print("\n ================ TẮT ỨNG DỤNG - BÁI BAI NHA ================ \n")
     app.state.inference = None
 
 

@@ -7,7 +7,7 @@ FLOW:
       ↓
   [2] Multi-Query Retrieval
         ↓ LLM sinh N variations
-        ↓ Search ChromaDB với từng variation
+        ↓ Hybrid Search (Vector + BM25) với từng variation
         ↓ Deduplicate → List[Document]
       ↓
   [3] Build prompt = system + chat_history + context + question
@@ -18,12 +18,14 @@ FLOW:
       ↓
   Return answer ✅
 """
+
 import os
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 from src.core.llm_container import get_llm, get_system_prompt, get_model_info
+
 # Import các module
 from .rag_pipline import RAGStorage
 from ..core.base_llm_model import LLMProvider
@@ -37,13 +39,18 @@ class RAGInference:
         print("\n⚙️ Đang khởi tạo RAG Inference Pipeline")
 
         # ========= COMPONENTS =========
-        print(f'\n- LLM cho response user (core)')
+        print(f"\n- LLM cho response user (core)")
         self.llm = get_llm()  # LLM chạy chain (core)
 
-        print(f'\n- LLM cho rewrite question (hisory chat)')
-        self.llm_rewrite = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2)  # LLM rewrite
+        print(f"\n- LLM cho rewrite question (hisory chat)")
+        self.llm_rewrite = get_llm(
+            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2
+        )  # LLM rewrite
 
-        self.retriever = RAGStorage().get_multi_query_retriever()  # multi query instead of base RAG
+
+        self.retriever, self.reranker = (
+            RAGStorage().get_multi_query_retriever()
+        )  # multi query instead of base RAG
         self.system_prompt = get_system_prompt()  # System prompt
 
         # ------------------------------------------------------------------ #
@@ -81,13 +88,17 @@ class RAGInference:
             return question  # Không có history -> giữ nguyên
 
         messages = (
-                [SystemMessage(content=(
-                    "Given the chat history below, rewrite the new question to be "
-                    "completely standalone and searchable without needing the history. "
-                    "Return ONLY the rewritten question, nothing else."
-                ))]
-                + history
-                + [HumanMessage(content=f"New question: {question}")]
+            [
+                SystemMessage(
+                    content=(
+                        "Given the chat history below, rewrite the new question to be "
+                        "completely standalone and searchable without needing the history. "
+                        "Return ONLY the rewritten question, nothing else."
+                    )
+                )
+            ]
+            + history
+            + [HumanMessage(content=f"New question: {question}")]
         )
 
         # result = await self.llm.ainvoke(messages)
@@ -100,18 +111,32 @@ class RAGInference:
 
     # Query Chroma => response context: String
     async def _retrieve_context(self, search_question: str) -> str:
-        """Truy vấn ChromaDB, trả về context dạng string."""
-        docs = await self.retriever.ainvoke(search_question)
-        print(f"========= Tìm thấy {len(docs)} tài liệu liên quan sau khi Multi-Query =========")
+        """Truy vấn ChromaDB, rerank, trả về context dạng string."""
 
-        for i, doc in enumerate(docs, 1):
-            # Lấy tối đa 2 dòng đầu, bỏ dòng rỗng
-            lines = [l.strip() for l in doc.page_content.split('\n') if l.strip()][:2]
-            # Gộp thành 1 dòng
-            preview = ' '.join(lines)
+        # 1. Multi-Query + Hybrid Search
+        docs = await self.retriever.ainvoke(search_question)
+        print(
+            f"========= Tìm thấy {len(docs)} tài liệu liên quan (Multi-Query + Hybrid Search) ========="
+        )
+
+        # 2. Rerank → top-k min (5)
+        print("\n========= Reranking tài liệu ... =========")
+        reranked_docs = self.reranker.compress_documents(docs, search_question)
+        print(
+            f"\n========= Sau Rerank: {len(reranked_docs)} tài liệu đưa vào LLM ========="
+        )
+
+        for i, doc in enumerate(reranked_docs, 1):
+            # Xóa các ký tự \r, \n gây lỗi hiển thị đè chữ trên terminal (đặc biệt là Powershell)
+            clean_text = doc.page_content.replace("\r", "").replace("\n", " ")
+            # Gom nhiều khoảng trắng liên tiếp thành 1 khoảng trắng
+            clean_text = " ".join(clean_text.split())
+
+            # Lấy 150 ký tự đầu làm preview
+            preview = clean_text[:150]
             print(f"\n 📄 Doc {i}: {preview}...")
 
-        context = "\n\n".join(doc.page_content for doc in docs)
+        context = "\n\n".join(doc.page_content for doc in reranked_docs)
         return context
 
     # Ghép prompt lại
@@ -131,9 +156,9 @@ class RAGInference:
     {context}"""
 
         return (
-                [SystemMessage(content=system_content)]
-                + history
-                + [HumanMessage(content=question)]
+            [SystemMessage(content=system_content)]
+            + history
+            + [HumanMessage(content=question)]
         )
 
     def _save_turn(self, session_id: str, question: str, answer: str) -> None:
@@ -147,9 +172,9 @@ class RAGInference:
 
     # ========= Hàm Async để gọi API =========
     async def predict_async(
-            self,
-            question: str,
-            session_id: str = "default",
+        self,
+        question: str,
+        session_id: str = "default",
     ) -> str:
         """
         Main entry point — gọi từ FastAPI
@@ -193,6 +218,7 @@ class RAGInference:
     def get_history_length(self, session_id: str = "default") -> int:
         """Trả về số lượt hội thoại (turns) của session."""
         return len(self._history[session_id]) // 2
+
 
 # TODO: ======================================= NEW INFERENCE (IMPLEMENT LATER) =======================================
 # """

@@ -22,6 +22,7 @@ This repo is an intelligent travel consulting chatbot that combines the power of
 Project/
 ├── BE_ChatBot/                              ← Backend (FastAPI + Full Pipeline)
 │   ├── src/
+│   │   ├── main.py                          ← FastAPI app
 │   │   ├── core/                            ← Shared schemas / DTOs
 │   │   │   ├── schemas.py                   ← TripRequest, Place, TripPlan, DayPlan, ...
 │   │   │   ├── base_embed_model.py          ← Factory: get_embedding_model() + EmbeddingProvider
@@ -33,7 +34,6 @@ Project/
 │   │   │   ├── query_analyzer.py            ← LLM extract: raw query → TripRequest
 │   │   │   ├── reranker.py                  ← RAG top-20 → multi-signal rerank → top-15
 │   │   │   ├── inference.py                 ← Backward-compatible wrapper cho FastAPI
-│   │   │   ├── llm.py                       ← (UNUSED) Change to llm_container.py
 │   │   │   └── rag_pipline.py               ← Ingestion & Retriever (ChromaDB)
 │   │   │
 │   │   ├── recommend/                       ← Recommender System module
@@ -48,16 +48,28 @@ Project/
 │   │   │   ├── scheduler.py                 ← Chia ngày + gán giờ HH:MM
 │   │   │   └── planner.py                   ← Facade: Graph → Route → Schedule → TripPlan
 │   │   │
+│   │   ├── eval/                            ← Evaluation & Metrics
+│   │   │   ├── config.py                    ← Configuration cho việc đánh giá
+│   │   │   ├── ground_truth_builder.py      ← Tạo ground truth
+│   │   │   ├── metrics.py                   ← Các metrics như Precision, Recall, v.v.
+│   │   │   └── rag_eval.ipynb               ← Notebook chạy đánh giá pipeline
+│   │   │
 │   │   ├── model/
-│   │   │   └── embeddings/                  ← HuggingFace embedding model cache
+│   │   │   ├── embeddings/                  ← HuggingFace embedding model cache
+│   │   │   └── reranker/                    ← HuggingFace reranker model cache
+│   │   │
 │   │   ├── prompts/
 │   │   │   └── system_prompt.md             ← System prompt cho LLM
 │   │   ├── db/
 │   │   │   └── chroma_db/                   ← ChromaDB vector store (auto-created)
-│   │   └── source_data/
-│   │       └── docs/                        ← ⬅ Đặt file PDF/TXT tại đây
+│   │   ├── source_data/
+│   │   │   └── docs/                        ← ⬅ Đặt file PDF/TXT tại đây
+│   │   └── static/
+│   │       └── favicon.ico                  ← Web app icon
 │   │
 │   ├── build_rag_vector_db.ipynb            ← Chạy một lần để tạo vector DB
+│   ├── README_BE.md                         ← Docs riêng phần Backend
+│   ├── Testing.py                           ← Script test nhanh
 │   ├── run.bat                              ← Windows: kill process cũ & restart
 │   ├── .env                                 ← Tạo từ .env.example
 │   └── requirements.txt

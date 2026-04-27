@@ -139,19 +139,7 @@ Test xem nó run bằng cpu hay gpu
 #     print(sample["metadatas"])
 #     print(sample["documents"][0][:200])
 
-import psutil
 
-swap = psutil.swap_memory()
-print(f"Pagefile total: {swap.total / 1024**3:.1f} GB")
-print(f"Pagefile used:  {swap.used / 1024**3:.1f} GB")
-
-# Kiểm tra pagefile đang nằm ở ổ nào
-import subprocess
-result = subprocess.run(
-    ["wmic", "pagefile", "list", "full"],
-    capture_output=True, text=True
-)
-print(result.stdout)
 
 # Synthetic Questions:
 # 1. "What was NVIDIA's first graphics accelerator called?"
