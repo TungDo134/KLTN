@@ -24,14 +24,14 @@ from langchain_classic.retrievers.document_compressors import CrossEncoderRerank
 from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 
 #
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ValidationError
 
 # Embedding model
 from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm, get_model_info
 
-from tenacity import retry, stop_after_attempt, wait_fixed
+from tenacity import retry, stop_after_attempt, wait_fixed, wait_exponential, retry_if_exception_type
 
 # --- LOAD .env ---
 
@@ -48,6 +48,7 @@ if not torch.cuda.is_available():
     )
 
 _DEVICE = "cuda"
+_TOP_K = 20
 
 
 # ============================================================
@@ -198,7 +199,7 @@ class RerankerConfig:
     """
 
     MODEL_NAME: str = "BAAI/bge-reranker-v2-m3"
-    TOP_N: int = 5  # Số docs giữ lại sau rerank — đưa vào LLM generate
+    TOP_N: int = 15  # Số docs giữ lại sau rerank — đưa vào LLM generate
 
 
 # ============================================================
@@ -233,31 +234,9 @@ class MultiQueryRetriever:
 
     # Prompt for multi query
     _PROMPT_TEMPLATE = """You are a search query expansion assistant for a Vietnamese travel knowledge base.
+    Generate {num_variations} search query variations for a Vietnamese travel knowledge base.
 
-    Your task: Generate EXACTLY {num_variations} search query variations from the original question.
-
-    Original question: {original_query}
-
-    Apply each strategy EXACTLY ONCE, in order:
-
-    Strategy A — REPHRASE
-    Reword the question using different vocabulary and sentence structure.
-    Same scope, same intent. No new information added.
-    Example input: "What was NVIDIA's first graphics accelerator called?"
-    Example output: "What is the name of NVIDIA's earliest GPU product?"
-
-    Strategy B — ASPECT FOCUS  
-    Zoom into ONE specific angle: historical context, technical specs, geography, user experience, etc.
-    Pick the angle most relevant to the question.
-    Example input: "What was NVIDIA's first graphics accelerator called?"
-    Example output: "What was the historical significance of NVIDIA's debut graphics card launch?"
-
-    Strategy C — SCOPE SHIFT
-    Broaden OR narrow the original question.
-    - Narrow: from general → specific detail
-    - Broaden: from specific product → company/category level
-    Example input: "What was NVIDIA's first graphics accelerator called?"
-    Example output: "What graphics cards did NVIDIA release in its early years?"
+    Original: {original_query}
 
     STRICT RULES:
     1. LANGUAGE: Respond in the EXACT SAME LANGUAGE AS THE ORIGINAL QUESTION (IMPORTANT)
@@ -270,14 +249,9 @@ class MultiQueryRetriever:
     6. DO NOT include explanations, no markdown, no extra text
     7. DO NOT include function call syntax like <function=...>
 
-    Output format:
-    {{
-      "queries": [
-        "Strategy A variation here",
-        "Strategy B variation here", 
-        "Strategy C variation here"
-      ]
-    }}"""
+    Output EXACTLY:
+    {{"queries": ["variation 1", "variation 2", "variation 3"]}}
+"""
 
     def __init__(
             self,
@@ -292,7 +266,7 @@ class MultiQueryRetriever:
         self._model_info = get_model_info(llm)
 
         # Dùng structured output để đảm bảo LLM trả về đúng format
-        self.llm_structured = llm.with_structured_output(QueryVariations)
+        self.llm_structured = llm.with_structured_output(QueryVariations, method="json_mode")
 
     #  ======= Step 1: Build prompt =======
     def _build_prompt(self, original_query: str):
@@ -301,9 +275,18 @@ class MultiQueryRetriever:
         )
 
     # ===================== RETRY LLM (thử lại tối đa 3 lần - 1s/once) =====================
-    @retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
+    @retry(stop=stop_after_attempt(3),
+           # wait_fixed(1):        1s → 1s → 1s   # retry liên tục, dễ bị rate limit
+           # wait_exponential:     1s → 2s → 4s   # tăng dần, tránh hammering API
+           wait=wait_exponential(multiplier=1, min=1, max=4),
+           retry=retry_if_exception_type((ValidationError, ValueError)),
+           reraise=True  # throw exception ra ngoài sau 3 lần
+           )
     async def _call_llm(self, prompt: str) -> QueryVariations:
-        return await self.llm_structured.ainvoke(prompt)
+        response = await self.llm_structured.ainvoke(prompt)
+        if not response.queries:
+            raise ValueError("Empty queries returned")  # trigger retry
+        return response
 
     #  ======= Step 2: Check duplicate =======
     @staticmethod
@@ -321,21 +304,14 @@ class MultiQueryRetriever:
 
     #  ======= Step 3: Run chain =======
     async def ainvoke(self, query: str) -> List[Document]:
-        """Hàm này sẽ gọi bên inference"""
+        """Hàm này được gọi bên orchestrator"""
         # 1. Tạo variations
         try:
-            response: QueryVariations = await self.llm_structured.ainvoke(
-                self._build_prompt(query)
-            )
+            response = await self._call_llm(self._build_prompt(query))  # dùng _call_llm
             variations = response.queries[: self.num_variations]
         except Exception as e:
-            print(f"❌ Multi-query failed: {e}")
-            print("⚠️ Fallback về query gốc")
+            print(f"⚠️ Multi-query failed - Fallback về query gốc: {e}")
             variations = [query]  # fallback về query gốc
-
-        if not variations:
-            print("⚠️ LLM không trả query -> fallback về query gốc")
-            variations = [query]
 
         print(f"\n🔀 Câu hỏi gốc: '{query}'")
         print(f"\n🔄 Các câu hỏi được tạo thêm (multi query) bởi [{self._model_info}]:")
@@ -413,7 +389,7 @@ class RAGStorage:
             collection_name="kltn_chatbot",
         )
         # top_k
-        return vectorstore.as_retriever(search_kwargs={"k": 20})
+        return vectorstore.as_retriever(search_kwargs={"k": _TOP_K})
 
     # ======= FUNC 3: HYBRID SEARCH (VECTOR + KEY WORD) =======
     def get_hybrid_retriever(
@@ -432,6 +408,11 @@ class RAGStorage:
         Args:
             vector_weight: trọng số cho vector search (default 0.6)
             bm25_weight:   trọng số cho BM25 (default 0.4)
+
+        Output:
+        Vượt top_k là chuyện bình thường, ví dụ: top_k = 20
+        Hybrid Search = Vector + BM25, mỗi cái trả về 20 docs
+        → union lại → loại duplicate → ~ 35-38 unique docs.
         """
 
         print(f"\n- Tải CSDL Chroma từ thư mục: {self.persist_directory}")
@@ -441,7 +422,7 @@ class RAGStorage:
             collection_name="kltn_chatbot",
         )
         # Vector retriever — k = 20 để có pool đủ lớn cho dedup sau này
-        vector_retriever = vectorstore.as_retriever(search_kwargs={"k": 20})
+        vector_retriever = vectorstore.as_retriever(search_kwargs={"k": _TOP_K})
 
         # BM25 chạy trên RAM ==> cần List Document => pull toàn bộ từ Chroma
         print(f"\n- Build BM25 index từ Chroma docs")
@@ -460,7 +441,7 @@ class RAGStorage:
             for text, meta in zip(chroma_data["documents"], chroma_data["metadatas"])
         ]
         bm25_retriever = BM25Retriever.from_documents(all_docs)
-        bm25_retriever.k = 20  # k=20 để tương đồng với vector retriever
+        bm25_retriever.k = _TOP_K  # k = 20 để tương đồng với vector retriever
 
         print(f"\n✅ BM25 index built: {len(all_docs)} docs")
         print(f"\n[WEIGHTS] Vector: {vector_weight} | BM25: {bm25_weight}")
@@ -476,42 +457,38 @@ class RAGStorage:
             weights=[vector_weight, bm25_weight],
         )
 
-    # ======= FUNC 4: MULTI QUERY =======
-    def get_multi_query_retriever(
-            self,
-    ) -> tuple[MultiQueryRetriever, CrossEncoderReranker]:
+    # ======= FUNC 4a: BUILD MULTI-QUERY RETRIEVER =======
+    def _build_multi_query_retriever(self) -> MultiQueryRetriever:
         """
-        Trả về cặp (MultiQueryRetriever, Reranker).
-        Tách ra để inference.py tự quyết định khi nào rerank.
+        Khởi tạo MultiQueryRetriever:
+        LLM sinh N query variations → Hybrid Search (Vector + BM25) → Dedup
         """
-        # base_retriever = self.get_retriever() # base
-        hybrid_retriever = self.get_hybrid_retriever()  # hybrid
+        hybrid_retriever = self.get_hybrid_retriever()
 
         print(f"\n- LLM cho multi query")
         llm_multi_query = get_llm(
             LLMProvider(os.getenv("REWRITE_LLM_PROVIDER"))
-        )  # Chạy multi query
-        reranker = self.get_reranker()
+        )
 
-        multi_query = MultiQueryRetriever(
+        return MultiQueryRetriever(
             retriever=hybrid_retriever,
             llm=llm_multi_query,
             num_variations=3,
         )
-        return multi_query, reranker
 
-    # ======= FUNC 5: RERANKER  =======
+    # ======= FUNC 4b: BUILD CROSS-ENCODER RERANKER =======
     @staticmethod
-    def get_reranker() -> CrossEncoderReranker:
+    def _build_cross_encoder_reranker() -> CrossEncoderReranker:
         """
         Khởi tạo BGE Reranker chạy local trên GPU.
+        Nhìn (query, doc) cùng lúc → độ chính xác của docs cao hơn
 
         Flow:
-            XX unique docs sample-68 (từ MultiQueryRetriever)
+            XX unique docs (sample: 68)(từ MultiQueryRetriever)
                 ↓
             CrossEncoder tính score từng cặp (query, doc)
                 ↓
-            Sắp xếp lại theo score
+            Rerank (metadatas) Sắp xếp lại theo score
                 ↓
             Giữ lại top-N docs → đưa vào LLM generate
 
@@ -520,7 +497,9 @@ class RAGStorage:
             - CrossEncoder: nhìn query + doc CÙNG LÚC → score chính xác hơn
                             nhưng chậm hơn (O(n) calls thay vì O(1))
         """
-        print(f"\n========= Khởi tạo BGE Reranker: {RerankerConfig.MODEL_NAME} =========")
+        print(
+            f"\n========= Khởi tạo BGE Reranker: {RerankerConfig.MODEL_NAME} ========="
+        )
         print(f"\n- Top-N sau rerank: {RerankerConfig.TOP_N}")
 
         _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -544,3 +523,15 @@ class RAGStorage:
 
         print("\n✅ Model Reranker sẵn sàng\n")
         return reranker
+
+    # ======= FUNC 5: Trả về cặp (Retriever, Reranker) =======
+    def get_multi_query_retriever(
+            self,
+    ) -> tuple[MultiQueryRetriever, CrossEncoderReranker]:
+        """
+        Trả về cặp (MultiQueryRetriever, CrossEncoderReranker).
+        Tách ra để orchestrator.py tự quyết định khi nào rerank.
+        """
+        retriever = self._build_multi_query_retriever()
+        reranker = self._build_cross_encoder_reranker()
+        return retriever, reranker
