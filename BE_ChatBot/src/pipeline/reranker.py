@@ -1,9 +1,9 @@
 """
 pipeline/reranker.py
-Reranker: lọc & sắp xếp lại top-K documents từ ChromaDB trước khi vào Recommender.
+Reranker - metadata-based:: Lọc về sự phù hợp với chuyến đi (sau khi CrossEncoder rerank xuống top_k (15))
 
 Mục đích:
-  ChromaDB trả về top-20 theo cosine similarity (rag_score).
+  CrossEncoder trong rag_pipeline trả về top_k
   Reranker tinh chỉnh lại thứ tự dựa trên nhiều tín hiệu hơn:
     - rag_score (embedding similarity)
     - rating của địa điểm

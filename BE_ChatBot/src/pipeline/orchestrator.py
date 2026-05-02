@@ -19,53 +19,85 @@ FULL FLOW:
       ↓
   Response (dict)  →  FastAPI / Gradio
 """
+
 from src.core.schemas import TripRequest, TripPlan
 from src.pipeline.query_analyzer import QueryAnalyzer
+from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
 from src.recommend.hybrid_recommender import HybridRecommender
 from src.planning.planner import TripPlanner
 
 
 class TripOrchestrator:
-
-    def __init__(self, llm, retriever, top_k_rerank: int = 15, top_k_recommend: int = 10):
-        self.llm         = llm
-        self.retriever   = retriever
-        self.analyzer    = QueryAnalyzer(llm)
-        self.reranker    = Reranker(top_k=top_k_rerank)
+    def __init__(self, llm, top_k_rerank: int = 15, top_k_recommend: int = 10):
+        self.analyzer = QueryAnalyzer(llm)
+        self.reranker = Reranker(top_k=top_k_recommend)  # metadata-based, top-10
         self.recommender = HybridRecommender(top_k=top_k_recommend)
-        self.planner     = TripPlanner()
+        self.planner = TripPlanner()
+
+        self.llm = llm
+        # retriever              → MultiQueryRetriever (hybrid search, ~30 unique docs)
+        # cross_encoder_reranker → CrossEncoderReranker (top-15 hiện tại)
+        rag = RAGStorage()
+        self.retriever, self.cross_encoder_reranker = rag.get_multi_query_retriever()
 
     async def run(self, raw_query: str) -> dict:
         """
-        Pseudo:
+        Flow Pipeline
 
-        # ── Bước 1: Phân tích câu hỏi ──────────────────────────────
-        trip_request = await analyzer.extract(raw_query)
-
-        # ── Bước 2: RAG — ChromaDB search ──────────────────────────
-        raw_docs = await retriever.ainvoke(raw_query)
-        places   = _docs_to_places(raw_docs)   # convert Document → Place
-
-        # ── Bước 3: Rerank ─────────────────────────────────────────
-        reranked_places = reranker.rerank(places, trip_request)
-
-        # ── Bước 4: Recommend ──────────────────────────────────────
-        recommend_result = recommender.recommend(reranked_places, trip_request)
-
-        # ── Bước 5: Planning ───────────────────────────────────────
-        trip_plan = planner.plan(recommend_result)
-
-        # ── Bước 6: Generation ─────────────────────────────────────
-        response_text = await _generate_response(trip_request, trip_plan)
-
-        return {
-            "text"      : response_text,
-            "trip_plan" : _trip_plan_to_dict(trip_plan),  # JSON cho FE timeline/mindmap
-        }
+        Query → Analyze → Retrieve → Hybrid Rerank (CrossEncoder + metadata-based)
+                        ↓
+        Recommend → Plan → Generate.
         """
-        # TODO: implement
-        pass
+
+        # =========  Bước 1: Phân tích câu hỏi =========
+        trip_request = await self.analyzer.extract(raw_query)
+
+        # =========  Bước 2: Multi-Query + Hybrid Search → ~30 unique docs =========
+        # MultiQueryRetriever: sinh N query variations → Hybrid Search (Vector + BM25) → dedup
+        raw_docs = await self.retriever.ainvoke(raw_query)
+        print(
+            f"========= Tìm thấy {len(raw_docs)} tài liệu liên quan "
+            f"(Multi-Query + Hybrid Search) ========="
+        )
+
+        # =========  Bước 3a: CrossEncoder rerank → top-N docs (ngữ nghĩa) =========
+        # CrossEncoder nhìn (query, doc) cùng lúc →  chính xác hơn embedding
+        print("\n========= Reranking tài liệu (CrossEncoder) =========")
+        reranked_docs = self.cross_encoder_reranker.compress_documents(
+            raw_docs, raw_query
+        )
+        print(f"\n========= Sau Rerank: {len(reranked_docs)} tài liệu =========")
+
+        for i, doc in enumerate(reranked_docs, 1):
+            clean_text = doc.page_content.replace("\r", "").replace("\n", " ")
+            clean_text = " ".join(clean_text.split())
+            preview = clean_text[:150]
+            print(f"\n 📄 Doc {i}: {preview}...")
+
+        return reranked_docs
+
+        # ============================================================ #
+        # LATER
+        # ============================================================ #
+
+        # =========  Bước 3b: Convert → Places rồi metadata rerank → top-10 =========
+        # places = self._docs_to_places(reranked_docs)
+        # reranked_places = self.reranker.rerank(places, trip_request)
+
+        # # =========  Bước 4: Recommend =========
+        # recommend_result = self.recommender.recommend(reranked_places, trip_request)
+
+        # # =========  Bước 5: Planning =========
+        # trip_plan = self.planner.plan(recommend_result)
+
+        # # ── Bước 6: Generation =========
+        # response_text = await self._generate_response(trip_request, trip_plan)
+
+        # return {
+        #     "text": response_text,
+        #     "trip_plan": self._trip_plan_to_dict(trip_plan),
+        # }
 
     def _docs_to_places(self, documents: list) -> list:
         """

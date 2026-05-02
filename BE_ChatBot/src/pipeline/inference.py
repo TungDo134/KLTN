@@ -27,7 +27,7 @@ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from src.core.llm_container import get_llm, get_system_prompt, get_model_info
 
 # Import các module
-from .rag_pipline import RAGStorage
+from .orchestrator import TripOrchestrator
 from ..core.base_llm_model import LLMProvider
 
 # Limit turns tránh vượt quá context window LLM
@@ -47,11 +47,10 @@ class RAGInference:
             LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2
         )  # LLM rewrite
 
-
-        self.retriever, self.reranker = (
-            RAGStorage().get_multi_query_retriever()
-        )  # multi query instead of base RAG
+        # Orchestrator: MultiQuery → CrossEncoder → reranked docs
+        self.orchestrator = TripOrchestrator(llm=self.llm)
         self.system_prompt = get_system_prompt()  # System prompt
+        self.model_info_core = get_model_info(self.llm)
 
         # ------------------------------------------------------------------ #
         # Chat history store: { session_id → [HumanMessage, AIMessage, ...] }
@@ -59,11 +58,6 @@ class RAGInference:
         # ------------------------------------------------------------------ #
         self._history: dict[str, list] = defaultdict(list)
 
-        # ------------------------------------------------------------------ #
-        # Save model info - Just in case "WRAP" something else later.
-        # Example: method ".with_structured_output" in rag_pipeline
-        # ------------------------------------------------------------------ #
-        self.model_info_core = get_model_info(self.llm)
         self.model_info_rewrite = get_model_info(self.llm_rewrite)
 
     def _get_history(self, session_id: str) -> list:
@@ -109,37 +103,6 @@ class RAGInference:
         print(f"   {rewritten}")
         return rewritten
 
-    # Query Chroma => response context: String
-    async def _retrieve_context(self, search_question: str) -> str:
-        """Truy vấn ChromaDB, rerank, trả về context dạng string."""
-
-        # 1. Multi-Query + Hybrid Search
-        docs = await self.retriever.ainvoke(search_question)
-        print(
-            f"========= Tìm thấy {len(docs)} tài liệu liên quan (Multi-Query + Hybrid Search) ========="
-        )
-
-        # 2. Rerank → top-k min (5)
-        print("\n========= Reranking tài liệu ... =========")
-        reranked_docs = self.reranker.compress_documents(docs, search_question)
-        print(
-            f"\n========= Sau Rerank: {len(reranked_docs)} tài liệu đưa vào LLM ========="
-        )
-
-        for i, doc in enumerate(reranked_docs, 1):
-            # Xóa các ký tự \r, \n gây lỗi hiển thị đè chữ trên terminal (đặc biệt là Powershell)
-            clean_text = doc.page_content.replace("\r", "").replace("\n", " ")
-            # Gom nhiều khoảng trắng liên tiếp thành 1 khoảng trắng
-            clean_text = " ".join(clean_text.split())
-
-            # Lấy 150 ký tự đầu làm preview
-            preview = clean_text[:150]
-            print(f"\n 📄 Doc {i}: {preview}...")
-
-        context = "\n\n".join(doc.page_content for doc in reranked_docs)
-        return context
-
-    # Ghép prompt lại
     def _build_messages(self, history: list, context: str, question: str) -> list:
         """
         Ghép prompt hoàn chỉnh:
@@ -192,18 +155,21 @@ class RAGInference:
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)
 
-        # [2] Retrieve từ ChromaDB
-        context = await self._retrieve_context(search_question)
+        # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
+        reranked_docs = await self.orchestrator.run(search_question)
 
-        # [3] Build messages (system + history + question)
+        # [3] Build context từ reranked docs
+        context = "\n\n".join(doc.page_content for doc in reranked_docs)
+
+        # [4] Build messages (system + history + question)
         messages = self._build_messages(history, context, question)
 
-        # [4] LLM generate
+        # [5] LLM generate
         result = await self.llm.ainvoke(messages)
         answer = result.content
-        print(f"\n [{get_model_info(self.llm)}]: {answer}")
+        print(f"\n [{self.model_info_core}]: {answer}")
 
-        # [5] Lưu vào history
+        # [6] Lưu vào history
         self._save_turn(session_id, question, answer)
 
         return answer
@@ -218,49 +184,3 @@ class RAGInference:
     def get_history_length(self, session_id: str = "default") -> int:
         """Trả về số lượt hội thoại (turns) của session."""
         return len(self._history[session_id]) // 2
-
-
-# TODO: ======================================= NEW INFERENCE (IMPLEMENT LATER) =======================================
-# """
-# pipeline/inference.py  (UPDATED)
-# Entry point cho FastAPI — thay RAGInference đơn giản bằng TripOrchestrator.
-#
-# BEFORE (old):  query → ChromaDB → LLM → text
-# AFTER  (new):  query → QueryAnalyzer → RAG → Reranker → Recommend → Planning → LLM → text + JSON
-# """
-# from src.pipeline.llm import LLM
-# from src.pipeline.rag_pipline import RAGStorage
-# from src.pipeline.orchestrator import TripOrchestrator
-#
-#
-# class RAGInference:
-#     """
-#     Backward-compatible wrapper giữ nguyên interface predict_async(question) → str
-#     nhưng bên trong chạy full pipeline qua TripOrchestrator.
-#     """
-#
-#     def __init__(self):
-#         print("⚙️ Đang khởi tạo Full Trip Planning Pipeline...")
-#
-#         llm = LLM().get_llm()
-#         retriever = RAGStorage().get_retriever()
-#
-#         # Thay thế chain đơn giản bằng Orchestrator
-#         self.orchestrator = TripOrchestrator(llm=llm, retriever=retriever)
-#
-#     async def predict_async(self, question: str) -> str:
-#         """
-#         Pseudo:
-#           result = await orchestrator.run(question)
-#
-#           # result = {"text": "...", "trip_plan": {...}}
-#           # FastAPI / Gradio hiện tại chỉ trả text,
-#           # FE sẽ parse trip_plan từ JSON embedded trong text nếu cần.
-#
-#           return result["text"]
-#
-#         NOTE: Khi FE sẵn sàng nhận JSON riêng biệt, đổi endpoint /chat
-#               để trả về ChatResponse(response=text, plan=trip_plan).
-#         """
-#         # TODO: implement
-#         pass
