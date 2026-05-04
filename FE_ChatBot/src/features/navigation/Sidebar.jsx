@@ -3,6 +3,7 @@ import {
   IoAddOutline,
   IoSearchOutline,
   IoChatbubblesOutline,
+  IoCloseOutline,
 } from "react-icons/io5";
 import {
   FiBriefcase,
@@ -18,7 +19,7 @@ import {
   HiOutlineSparkles,
 } from "react-icons/hi";
 
-function Sidebar() {
+function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
   const [openUserMenu, setOpenUserMenu] = useState(false);
 
   // Click ra ngoài tự đóng
@@ -35,15 +36,36 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-[260px] bg-(--bg-sidebar) flex flex-col h-full relative text-(--text-main)">
+    <div
+      className={`
+        w-[260px] bg-(--bg-sidebar) flex flex-col h-full relative text-(--text-main) shrink-0
+        fixed md:static inset-y-0 left-0 z-50
+        transition-all duration-300 ease-in-out
+        ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
+        ${desktopOpen ? "md:ml-0" : "md:-ml-[260px]"}
+        md:translate-x-0
+      `}
+    >
       {/* Header */}
       <div className="px-4 py-3 flex items-center justify-between">
-        <h1 className="font-serif text-[19px] tracking-wide font-medium">
+        <h1 className="font-serif text-[19px] tracking-wide font-medium whitespace-nowrap">
           Mellow AI
         </h1>
-        <button className="p-1.5 hover:bg-(--bg-hover) rounded-md text-gray-400 transition-colors">
-          <FiSidebar size={16} />
-        </button>
+        <div className="flex items-center gap-1">
+          {/* Close button - mobile only */}
+          <button
+            onClick={onMobileClose}
+            className="p-1.5 hover:bg-(--bg-hover) rounded-md text-gray-400 transition-colors md:hidden"
+          >
+            <IoCloseOutline size={20} />
+          </button>
+          <button 
+            onClick={onDesktopToggle}
+            className="p-1.5 hover:bg-(--bg-hover) rounded-md text-gray-400 transition-colors hidden md:block"
+          >
+            <FiSidebar size={16} />
+          </button>
+        </div>
       </div>
 
       {/* Primary Actions */}
