@@ -13,12 +13,12 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
 
   if (isBuildingUI) {
     return (
-      <div className="mr-auto text-(--text-main) mb-6 max-w-3xl w-full">
-        <div className="flex items-center gap-3 p-4 rounded-xl border border-(--border-main) bg-(--bg-panel) w-max">
-          <div className="animate-spin text-(--accent-color)">
-            <FiLoader size={20} />
+      <div className="mr-auto text-(--text-main) mb-4 sm:mb-6 max-w-3xl w-full">
+        <div className="flex items-center gap-3 p-3 sm:p-4 rounded-xl border border-(--border-main) bg-(--bg-panel) w-max max-w-full">
+          <div className="animate-spin text-(--accent-color) shrink-0">
+            <FiLoader size={18} />
           </div>
-          <span className="text-sm font-medium">
+          <span className="text-sm font-medium truncate">
             Đang tạo phản hồi hoàn chỉnh...
           </span>
         </div>
@@ -28,8 +28,8 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
 
   if (isUser) {
     return (
-      <div className="ml-auto max-w-[70%] flex flex-col items-end mb-6">
-        <div className="bg-(--bg-panel) text-(--text-main) px-4 py-3 rounded-2xl text-[15px] leading-relaxed">
+      <div className="ml-auto max-w-[85%] sm:max-w-[70%] flex flex-col items-end mb-4 sm:mb-6">
+        <div className="bg-(--bg-panel) text-(--text-main) px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl text-[14px] sm:text-[15px] leading-relaxed">
           {text}
         </div>
         <div className="flex items-center gap-3 mt-2 text-gray-500 mr-2">
@@ -50,7 +50,7 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
 
   if (tripData) {
     return (
-      <div className="mr-auto text-(--text-main) mb-6 max-w-3xl w-full">
+      <div className="mr-auto text-(--text-main) mb-4 sm:mb-6 max-w-3xl w-full">
         <BotResult tripData={tripData} />
         <div className="flex items-center gap-3 mt-3 text-gray-500">
           <button className="hover:text-gray-300 transition-colors">
@@ -73,7 +73,7 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
   // Bot message text
   return (
     <div
-      className={`mr-auto mb-6 max-w-3xl w-full text-[15px] ${isError ? "text-red-400" : "text-[var(--text-main)]"}`}
+      className={`mr-auto mb-4 sm:mb-6 max-w-3xl w-full text-[14px] sm:text-[15px] ${isError ? "text-red-400" : "text-[var(--text-main)]"}`}
     >
       <div className="whitespace-pre-wrap leading-relaxed">{text}</div>
       <div className="flex items-center gap-3 mt-3 text-gray-500">

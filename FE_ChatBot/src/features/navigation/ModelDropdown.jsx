@@ -46,7 +46,7 @@ export default function ModelDropdown() {
 
       {/* dropdown choose model */}
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-72 bg-[var(--bg-panel)] border border-[var(--border-main)] rounded-xl shadow-xl p-2 z-50">
+        <div className="absolute right-0 bottom-full sm:bottom-auto sm:top-full mb-2 sm:mb-0 sm:mt-2 w-60 sm:w-72 bg-[var(--bg-panel)] border border-[var(--border-main)] rounded-xl shadow-xl p-2 z-50">
           {models.map((m) => (
             <div
               key={m.name}

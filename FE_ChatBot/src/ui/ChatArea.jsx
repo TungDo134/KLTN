@@ -118,16 +118,16 @@ function ChatArea() {
   return (
     <div className="flex flex-col h-full">
       {isEmpty ? (
-        <div className="flex flex-1 flex-col items-center justify-center p-4 h-full">
-          <div className="w-full max-w-3xl flex flex-col items-center justify-center mt-[-10vh]">
+        <div className="flex flex-1 flex-col items-center justify-center px-3 sm:p-4 h-full">
+          <div className="w-full max-w-3xl flex flex-col items-center justify-center mt-[-5vh] sm:mt-[-10vh]">
             {/* Greeting */}
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
               <img
                 src="/favicon.ico"
                 alt="Logo"
-                className="w-[60px] h-[50px]"
+                className="w-[40px] h-[33px] sm:w-[60px] sm:h-[50px]"
               />
-              <h1 className="text-[32px] font-serif text-(--text-main) font-medium tracking-wide">
+              <h1 className="text-[22px] sm:text-[32px] font-serif text-(--text-main) font-medium tracking-wide">
                 {`Happy ${
                   [
                     "Sunday",
@@ -148,17 +148,17 @@ function ChatArea() {
             </div>
 
             {/* Quick Actions */}
-            <div className="flex justify-center gap-3 mt-5 w-full max-w-[800px]">
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-5 w-full max-w-[800px]">
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
                 <span className="text-gray-400">{"</>"}</span> Code
               </button>
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
                 <span className="text-gray-400">🎓</span> Learn
               </button>
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
                 <span className="text-gray-400">🖊️</span> Write
               </button>
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[13px] text-[var(--text-muted)] transition-colors">
+              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
                 <span className="text-gray-400">☕</span> Relax
               </button>
             </div>
@@ -166,7 +166,7 @@ function ChatArea() {
         </div>
       ) : (
         <>
-          <div className="flex-1 overflow-y-auto px-6 pt-6 pb-28">
+          <div className="flex-1 overflow-y-auto px-3 sm:px-6 pt-4 sm:pt-6 pb-28">
             <div className="max-w-3xl mx-auto space-y-4">
               {messages.map((msg, index) => (
                 <Message key={index} {...msg} />
@@ -185,7 +185,7 @@ function ChatArea() {
             </div>
           </div>
 
-          <div className="px-4 pb-4 bg-(--bg-main)">
+          <div className="px-3 sm:px-4 pb-3 sm:pb-4 bg-(--bg-main)">
             <div className="max-w-3xl mx-auto w-full relative">
               {/* Disable input khi đang loading */}
               <ChatInput
@@ -193,7 +193,7 @@ function ChatArea() {
                 disabled={loading}
                 isEmptyState={false}
               />
-              <p className="text-center text-[11px] text-(--text-dark) mt-3">
+              <p className="text-center text-[10px] sm:text-[11px] text-(--text-dark) mt-2 sm:mt-3">
                 Mellow is AI and can make mistakes. Please double-check
                 responses.
               </p>
