@@ -1,498 +1,427 @@
-# Vietnam Travel ChatBot — RAG + LLM + Recommend + Planning + React
+# Vietnam Travel ChatBot - RAG + LLM + React
 
-## ✨ Overview
+## Tổng quan
 
-This repo is an intelligent travel consulting chatbot that combines the power of Generative AI with optimized planning systems. The project leverages the **latest state-of-the-art** to deliver a highly personalized experience for travelers
+Dự án này là chatbot tư vấn du lịch Việt Nam, được xây dựng quanh backend Retrieval-Augmented Generation (RAG) và frontend React. Runtime đang hoạt động hiện tại là một **history-aware RAG chatbot**:
 
-- **Core AI:** `Llama 3.1` (via **NVIDIA NIM**)
-- **Knowledge Base:** `RAG` + `ChromaDB`
-- **Intelligence:** `Recommender System` + `Graph-based Planning`
-- **Backend:** `FastAPI`
-- **Frontend:** `React` + `Vite` + `TailwindCSS`
-
-## 🗺️ Roadmap
-
-[ ] `Recommend + Planning` Module: Currently a skeleton framework slated for intensive development. The underlying algorithms are provisional and subject to change as we optimize the system logic in upcoming phases.
-
----
-
-## 📁 Project Structure
-
+```text
+User question
+ -> FastAPI /chat
+ -> RAGInference
+ -> optional history-aware query rewrite
+ -> Multi-query hybrid retrieval
+ -> Cross-encoder reranking
+ -> LLM answer generation
+ -> React / Gradio response
 ```
+
+Repository cũng có các module khung cho recommendation, route planning và crawler/ingestion workflow. Các module này quan trọng cho hướng phát triển của dự án, nhưng hiện chưa được nối hoàn chỉnh vào runtime.
+
+## Trạng thái hiện tại
+
+| Khu vực               | Trạng thái              | Ghi chú                                                                            |
+| --------------------- | ----------------------- | ---------------------------------------------------------------------------------- |
+| FastAPI backend       | Đang hoạt động          | Endpoint chính là `POST /chat`.                                                    |
+| RAG retrieval         | Đang hoạt động          | Dùng ChromaDB, vector search, BM25, multi-query retrieval và cross-encoder rerank. |
+| Chat history          | Đang hoạt động          | `RAGInference` lưu lịch sử hội thoại ngắn trong memory theo session.               |
+| React frontend        | Đang hoạt động          | Vite + React UI gọi backend `/chat`.                                               |
+| Place data ingestion  | Đang dùng               | Dữ liệu JSON trong `places_data` đã được ingest vào Chroma.                        |
+| Recommendation module | Skeleton                | Class đã có, các method vẫn đang`TODO/pass`.                                       |
+| Planning module       | Skeleton                | Graph/route/schedule facade đã có, các method vẫn đang `TODO/pass`.                |
+| Crawler module        | Skeleton / data support | Cấu trúc folder và data đã có, nhiều crawler/validator/ingest method vẫn là TODO.  |
+
+## Tech Stack
+
+- Backend: FastAPI, LangChain, ChromaDB
+- LLM providers: mặc định dùng NVIDIA NIM, có adapter cho Groq, Gemini và Ollama
+- Retrieval: Chroma vector search + BM25 hybrid retriever
+- Reranking: HuggingFace CrossEncoder (`BAAI/bge-reranker-v2-m3`)
+- Frontend: React 19, Vite 7, TailwindCSS 4, Axios, ReactFlow
+- Data: place JSON files và document/text sources
+
+## Cấu trúc repository
+
+```text
 Project/
-├── BE_ChatBot/                              ← Backend (FastAPI + Full Pipeline)
+├── BE_ChatBot/
 │   ├── src/
-│   │   ├── main.py                          ← FastAPI app
-│   │   ├── core/                            ← Shared schemas / DTOs
-│   │   │   ├── schemas.py                   ← TripRequest, Place, TripPlan, DayPlan, ...
-│   │   │   ├── base_embed_model.py          ← Factory: get_embedding_model() + EmbeddingProvider
-│   │   │   ├── base_llm_model.py            ← Factory Class to create LLM models (NVIDIA, GROQ, GEMINI, OLLAMA)
-│   │   │   └── llm_container.py             ← Singleton for loading LLM & System Prompt
-│   │   │
-│   │   ├── pipeline/                        ← Orchestration layer
-│   │   │   ├── orchestrator.py              ← Master pipeline (6 bước đầy đủ)
-│   │   │   ├── query_analyzer.py            ← LLM extract: raw query → TripRequest
-│   │   │   ├── reranker.py                  ← RAG top-20 → multi-signal rerank → top-15
-│   │   │   ├── inference.py                 ← Backward-compatible wrapper cho FastAPI
-│   │   │   └── rag_pipline.py               ← Ingestion & Retriever (ChromaDB)
-│   │   │
-│   │   ├── recommend/                       ← Recommender System module
-│   │   │   ├── base_recommender.py          ← Abstract base (Strategy Pattern)
-│   │   │   ├── content_based.py             ← Content-Based: Jaccard similarity trên tags
-│   │   │   ├── location_based.py            ← Location-Based: Haversine centroid proximity
-│   │   │   └── hybrid_recommender.py        ← Hybrid: content (0.6) + location (0.4)
-│   │   │
-│   │   ├── planning/                        ← Graph-based Planning module
-│   │   │   ├── graph_builder.py             ← Xây weighted graph (adjacency dict)
-│   │   │   ├── route_optimizer.py           ← Greedy / Dijkstra / 2-opt
-│   │   │   ├── scheduler.py                 ← Chia ngày + gán giờ HH:MM
-│   │   │   └── planner.py                   ← Facade: Graph → Route → Schedule → TripPlan
-│   │   │
-│   │   ├── eval/                            ← Evaluation & Metrics
-│   │   │   ├── config.py                    ← Configuration cho việc đánh giá
-│   │   │   ├── ground_truth_builder.py      ← Tạo ground truth
-│   │   │   ├── metrics.py                   ← Các metrics như Precision, Recall, v.v.
-│   │   │   └── rag_eval.ipynb               ← Notebook chạy đánh giá pipeline
-│   │   │
-│   │   ├── model/
-│   │   │   ├── embeddings/                  ← HuggingFace embedding model cache
-│   │   │   └── reranker/                    ← HuggingFace reranker model cache
-│   │   │
+│   │   ├── main.py
+│   │   ├── core/
+│   │   │   ├── schemas.py
+│   │   │   ├── base_embed_model.py
+│   │   │   ├── base_llm_model.py
+│   │   │   └── llm_container.py
+│   │   ├── pipeline/
+│   │   │   ├── inference.py
+│   │   │   ├── orchestrator.py
+│   │   │   ├── query_analyzer.py
+│   │   │   ├── rag_pipline.py
+│   │   │   └── reranker.py
+│   │   ├── recommend/
+│   │   │   ├── base_recommender.py
+│   │   │   ├── content_based.py
+│   │   │   ├── location_based.py
+│   │   │   └── hybrid_recommender.py
+│   │   ├── planning/
+│   │   │   ├── graph_builder.py
+│   │   │   ├── route_optimizer.py
+│   │   │   ├── scheduler.py
+│   │   │   └── planner.py
+│   │   ├── eval/
 │   │   ├── prompts/
-│   │   │   └── system_prompt.md             ← System prompt cho LLM
-│   │   ├── db/
-│   │   │   └── chroma_db/                   ← ChromaDB vector store (auto-created)
+│   │   │   └── system_prompt.md
 │   │   ├── source_data/
-│   │   │   └── docs/                        ← ⬅ Đặt file PDF/TXT tại đây
+│   │   │   ├── docs/
+│   │   │   └── places_data/
 │   │   └── static/
-│   │       └── favicon.ico                  ← Web app icon
-│   │
-│   ├── build_rag_vector_db.ipynb            ← Chạy một lần để tạo vector DB
-│   ├── README_BE.md                         ← Docs riêng phần Backend
-│   ├── Testing.py                           ← Script test nhanh
-│   ├── run.bat                              ← Windows: kill process cũ & restart
-│   ├── .env                                 ← Tạo từ .env.example
+│   ├── build_rag_vector_db.ipynb
+│   ├── README_BE.md
+│   ├── Testing.py
+│   ├── run.bat
 │   └── requirements.txt
-│
-└── FE_ChatBot/                              ← Frontend (React + Vite + TailwindCSS)
-    ├── src/
-    │   ├── api/
-    │   │   └── axiosClient.js               ← Axios instance (baseURL + auth interceptor)
-    │   ├── services/
-    │   │   └── chatApi.js                   ← API calls (POST /chat)
-    │   ├── features/
-    │   │   ├── navigation/
-    │   │   │   ├── Sidebar.jsx
-    │   │   │   ├── TopBar.jsx
-    │   │   │   ├── ModelDropdown.jsx
-    │   │   │   └── PlusMenu.jsx
-    │   │   └── result-visualize/
-    │   │       ├── ResultSwitcher.jsx        ← Toggle Text / Timeline / Mindmap
-    │   │       ├── BotResult.jsx
-    │   │       ├── TextResult.jsx
-    │   │       ├── TimelineResult.jsx
-    │   │       └── MindmapResult.jsx
-    │   ├── ui/
-    │   │   ├── AppLayout.jsx
-    │   │   ├── ChatArea.jsx
-    │   │   ├── ChatInput.jsx
-    │   │   └── Message.jsx
-    │   ├── helper/
-    │   │   └── extractJsonFromText.js       ← Parse JSON trip plan từ LLM response
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── index.css
-    ├── index.html
-    ├── vite.config.js
-    └── package.json
+├── FE_ChatBot/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── services/
+│   │   ├── features/
+│   │   ├── helper/
+│   │   ├── ui/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+└── CRAWL_DATA_CHATBOT/
+    ├── crawlers/
+    ├── validators/
+    ├── ingest/
+    ├── data/
+    ├── data_pipeline.py
+    └── README_CRAWL_DATA_CHATBOT.md
 ```
 
----
+## Flow runtime của backend
 
-## 🏗️ System Architecture
+### 1. FastAPI entry point
 
-```
-User (Browser)
-    ↓  http://localhost:5173
-React Frontend (Vite)
-    ├── ChatArea → ChatInput → gửi prompt
-    ↓  POST http://127.0.0.1:8000/chat
-FastAPI Backend
-    ↓
-TripOrchestrator.run()
-    │
-    ├── [1] QueryAnalyzer
-    │       └── LLM extract: region, days, tags, budget → TripRequest
-    │
-    ├── [2] RAGStorage (ChromaDB)
-    │       └── Embedding search → top-20 Place
-    │
-    ├── [3] Reranker
-    │       └── rag_score + rating + tag_overlap → top-15 Place
-    │
-    ├── [4] HybridRecommender
-    │       ├── ContentBasedRecommender  (Example: Jaccard similarity, weight 0.6)
-    │       └── LocationBasedRecommender (Example: Haversine proximity, weight 0.4)
-    │           → top-10 Place
-    │
-    ├── [5] TripPlanner
-    │       ├── GraphBuilder      → weighted adjacency graph
-    │       ├── RouteOptimizer    → Example: Greedy Nearest Neighbor / Dijkstra
-    │       └── Scheduler         → DayPlan với giờ HH:MM cụ thể → TripPlan
-    │
-    └── [6] LLM Generation
-            └── TripPlan → natural language response (tiếng Việt) + JSON
-                ↓
-JSON Response → Frontend
-    ├── TextResult      (plain text)
-    ├── TimelineResult  (structured trip plan)
-    └── MindmapResult   (node graph)
+`BE_ChatBot/src/main.py` tạo FastAPI app và khởi tạo `RAGInference` một lần trong lifespan của app.
+
+```text
+uvicorn src.main:app --reload
+ -> lifespan()
+ -> app.state.inference = RAGInference()
 ```
 
----
+Endpoint API chính là:
 
-## ⚙️ System Requirements
-
-| Yêu cầu  | Chi tiết                                                            |
-| -------- | ------------------------------------------------------------------- |
-| Python   | >= 3.10                                                             |
-| pip      | >= 23.0                                                             |
-| Node.js  | >= 18.x                                                             |
-| npm      | >= 9.x                                                              |
-| RAM      | >= 4GB                                                              |
-| API Key  | [NVIDIA NIM](https://build.nvidia.com) (bắt buộc)                   |
-| HF Token | [HuggingFace](https://huggingface.co/settings/tokens) (khuyến nghị) |
-
----
-
-## 🚀 Hướng Dẫn Cài Đặt
-
-### Bước 1 — Clone Project
-
-```bash
-https://github.com/TungDo134/KLTN.git
-cd KLTN
+```text
+POST /chat
+body: { "prompt": "..." }
+response: { "response": "..." }
 ```
 
----
+### 2. RAGInference
 
-## 🐍 Backend Setup (BE_ChatBot)
+`BE_ChatBot/src/pipeline/inference.py` là runtime coordinator hiện tại.
 
-### Bước 2 — Tạo & Kích hoạt Virtual Environment
+Module này thực hiện các bước:
 
-```bash
-cd BE_ChatBot
+1. Load main LLM.
+2. Load một rewrite LLM riêng.
+3. Tạo `TripOrchestrator`.
+4. Giữ chat history trong memory theo `session_id`.
+5. Rewrite câu hỏi follow-up thành câu hỏi standalone khi có history.
+6. Retrieve và rerank documents thông qua orchestrator.
+7. Build final prompt từ system prompt, history, retrieved context và câu hỏi gốc.
+8. Gọi main LLM và trả về answer.
 
-# Windows
+### 3. TripOrchestrator
+
+`BE_ChatBot/src/pipeline/orchestrator.py` được thiết kế để nối RAG, recommendation, planning và generation.
+
+Runtime path hiện tại là:
+
+```text
+raw_query
+ -> QueryAnalyzer.extract(raw_query)
+ -> MultiQueryRetriever.ainvoke(raw_query)
+ -> CrossEncoderReranker.compress_documents(...)
+ -> return reranked_docs
+```
+
+Điểm quan trọng: function hiện đang trả về `reranked_docs` sớm. Các bước bên dưới đã có trong comment/TODO nhưng chưa active:
+
+```text
+docs -> Place[]
+ -> metadata Reranker
+ -> HybridRecommender
+ -> TripPlanner
+ -> LLM trip-plan generation
+```
+
+### 4. RAG pipeline
+
+`BE_ChatBot/src/pipeline/rag_pipline.py` xử lý core retrieval logic:
+
+- `RAGStorage` load ChromaDB từ `PERSIST_DIRECTORY`.
+- `get_hybrid_retriever()` kết hợp:
+  - Chroma vector retriever
+  - BM25 retriever được build từ toàn bộ Chroma documents
+- `MultiQueryRetriever` yêu cầu LLM tạo query variations.
+- Duplicate documents được loại bỏ.
+- BGE cross-encoder rerank các retrieved documents.
+- `RerankerConfig.TOP_N` kiểm soát số documents được giữ lại sau rerank.
+
+Reranker model hiện tại là:
+
+```text
+BAAI/bge-reranker-v2-m3
+```
+
+## Nguồn dữ liệu
+
+### Document data
+
+`BE_ChatBot/src/source_data/docs/` chứa raw text/PDF-style documents dùng cho RAG pipeline.
+
+### Place data
+
+`BE_ChatBot/src/source_data/places_data/` chứa các merged JSON place datasets, gồm:
+
+```text
+dalat_merged.json
+danang_merged.json
+hanoi_merged.json
+hcm_merged.json
+nhatrang_merged.json
+vungtau_merged.json
+```
+
+Các file này chứa place records với các field như:
+
+- `name`
+- `region`
+- `tags`
+- `rating`
+- `description`
+- opening hours / duration / fee metadata nếu có
+
+Dữ liệu này đã được ingest vào Chroma để test RAG. Vì nhiều generated descriptions có dạng template, chất lượng answer phụ thuộc khá nhiều vào metadata và reranker settings. Trong thực tế, `TOP_N` khoảng `5-8` thường cho câu trả lời gọn và sạch hơn so với việc trả về quá nhiều địa điểm tương tự nhau.
+
+## Recommendation và Planning modules
+
+Các module này là một phần của travel-planning pipeline dự kiến, hiện đang trong quá trình xây dựng.
+
+### Recommendation
+
+Files:
+
+- `BE_ChatBot/src/recommend/base_recommender.py`
+- `BE_ChatBot/src/recommend/content_based.py`
+- `BE_ChatBot/src/recommend/location_based.py`
+- `BE_ChatBot/src/recommend/hybrid_recommender.py`
+
+Flow dự kiến:
+
+```text
+Place[]
+ -> ContentBasedRecommender
+ -> LocationBasedRecommender
+ -> HybridRecommender
+ -> RecommendResult
+```
+
+Trạng thái hiện tại: phần lớn scoring methods vẫn là `TODO/pass`.
+
+### Planning
+
+Files:
+
+- `BE_ChatBot/src/planning/graph_builder.py`
+- `BE_ChatBot/src/planning/route_optimizer.py`
+- `BE_ChatBot/src/planning/scheduler.py`
+- `BE_ChatBot/src/planning/planner.py`
+
+Flow dự kiến:
+
+```text
+RecommendResult
+ -> GraphBuilder.build()
+ -> RouteOptimizer.optimize()
+ -> Scheduler.schedule()
+ -> TripPlan
+```
+
+Trạng thái hiện tại: facade và class structure đã có, nhưng các method chính vẫn là `TODO/pass`.
+
+## Crawler / Data Pipeline
+
+`CRAWL_DATA_CHATBOT` là một data-support module riêng, được thiết kế để collect, validate, transform và ingest place data.
+
+Flow dự kiến:
+
+```text
+Crawler
+ -> schema validation
+ -> text_builder
+ -> ChromaDB ingestion
+ -> BE_ChatBot RAG retrieval
+```
+
+Trạng thái hiện tại: chưa up code implement, nhưng data trong `CRAWL_DATA_CHATBOT/data/dataCrawl` đã xài được.
+
+## Cài đặt
+
+### Backend
+
+```powershell
+cd D:\KLTN\Project\BE_ChatBot
 python -m venv .venv
-.venv\Scripts\activate
-
-# macOS / Linux
-python -m venv .venv
-source .venv/bin/activate
-```
-
-> ✅ Sau khi kích hoạt, terminal sẽ hiển thị `(.venv)` ở đầu dòng.
-
----
-
-### Bước 3 — Cài Đặt Dependencies
-
-```bash
+.\.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-> ⏳ Lần đầu có thể mất 3–5 phút (LangChain, ChromaDB, HuggingFace...).
-
----
-
-### Bước 4 — Tạo file `.env`
-
-```bash
-# Windows
-copy .env.example .env
-
-# macOS / Linux
-cp .env.example .env
-```
-
-Mở `.env` và điền thông tin:
+Tạo file `.env` trong `BE_ChatBot/`:
 
 ```env
-# === BẮT BUỘC ===
-NVIDIA_API_KEY=nvapi-xxxxxxxxxxxxxxxxxxxx   # Lấy tại https://build.nvidia.com
+NVIDIA_API_KEY=nvapi-...
+HF_TOKEN=hf_...
 
-# === KHUYẾN NGHỊ ===
-HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxx            # Lấy tại https://huggingface.co/settings/tokens
+LLM_PROVIDER=nvidia
+REWRITE_LLM_PROVIDER=groq
 
-# === CẤU HÌNH ĐƯỜNG DẪN ===
-PERSIST_DIRECTORY=db/
+PERSIST_DIRECTORY=src/db/chroma_db
 SOURCE_DATA=src/source_data/docs
-
-# === SYSTEM PROMPT (tùy chọn) ===
+JSON_DATA_DIR=src/source_data/places_data
 SYSTEM_PROMPT=src/prompts/system_prompt.md
 
-# === FRONTEND URL (cho CORS) ===
 FRONTEND_URL=http://localhost:5173
 ```
 
----
+Hãy chỉnh lại các path cho khớp với Chroma/data folders trên máy của bạn.
 
-### Bước 5 — Thêm Dữ Liệu PDF
+### Chạy backend
 
-Đặt file PDF tài liệu du lịch vào thư mục:
+Chạy từ folder `BE_ChatBot/`:
 
-```
-src/source_data/docs/
-├── dia_diem_da_lat.pdf
-├── ha_noi_travel.pdf
-└── ...
-```
-
-> 📌 Chỉ hỗ trợ file `.pdf`. Cần ít nhất 1 file để build vector DB.
->
-> ⚠️ **Lưu ý metadata:** Mỗi địa điểm trong PDF nên có thông tin `lat`, `lon`, `tags`, `rating`, `duration` để pipeline Recommend & Planning hoạt động chính xác.
-
----
-
-### Bước 6 — Build Vector Database (chỉ chạy một lần)
-
-Mở và chạy toàn bộ notebook:
-
-```
-build_rag_vector_db.ipynb
-```
-
-Hoặc qua command line:
-
-```bash
-jupyter nbconvert --to notebook --execute build_rag_vector_db.ipynb
-```
-
-**Output mong đợi:**
-
-```
-Loading embedding model on device using: 'cpu'...
-Loading document from src/source_data/docs
-Splitting documents into chunks...
-Creating embeddings and storing in ChromaDB...
-📦 DB does not exist, creating new...
-Total inserted: XX chunks
-✅ Ingestion complete! Your documents are stored in Chroma DB and ready for RAG queries.
-```
-
-> ⚠️ Chỉ chạy lại khi thêm PDF mới vào thư mục `docs/`.
-
----
-
-### Bước 7 — Khởi Động API Server
-
-```bash
+```powershell
 uvicorn src.main:app --reload
 ```
 
-**Output mong đợi:**
+Không chạy trực tiếp bằng `python src/main.py`. `main.py` dùng package imports, nên direct execution có thể gây lỗi:
 
-```
-App starting — loading RAG Pipeline...
-⚙️ Đang khởi tạo Full Trip Planning Pipeline...
-Loading embedding model on device using: 'cpu'...
-Loading Chroma database from db/...
-✅ System prompt loaded from: src/prompts/system_prompt.md
-App is ready to serve requests.
-INFO:     Uvicorn running on http://127.0.0.1:8000
+```text
+ImportError: attempted relative import with no known parent package
 ```
 
----
+### Frontend
 
-## ⚛️ Frontend Setup (FE_ChatBot)
-
-### Bước 8 — Cài Đặt Dependencies
-
-```bash
-cd ../FE_ChatBot
+```powershell
+cd D:\KLTN\Project\FE_ChatBot
 npm install
-```
-
-### Bước 9 — Khởi Động Dev Server
-
-```bash
 npm run dev
 ```
 
-**Output mong đợi:**
+Frontend URL mặc định:
 
-```
-  VITE v7.x.x  ready in xxx ms
-
-  ➜  Local:   http://localhost:5173/
+```text
+http://localhost:5173
 ```
 
----
+## API
 
-## 🌐 API Endpoints
+### Chat
 
-| URL                           | Mô tả                          |
-| ----------------------------- | ------------------------------ |
-| `http://127.0.0.1:8000/`      | Chat interface Gradio (legacy) |
-| `http://127.0.0.1:8000/chat`  | REST API endpoint `(POST)`     |
-| `http://127.0.0.1:8000/docs`  | Swagger UI                     |
-| `http://127.0.0.1:8000/redoc` | ReDoc documentation            |
-| `http://localhost:5173/`      | React Frontend (main UI)       |
-
-### Ví dụ gọi API
-
-```bash
-curl -X POST http://localhost:8000/chat \
-  -H "Content-Type: application/json" \
-  -d '{"prompt": "Tôi muốn đi Đà Lạt 2 ngày, thích cafe và thác nước, budget 3 triệu"}'
+```http
+POST http://127.0.0.1:8000/chat
+Content-Type: application/json
 ```
 
-**Response:**
+Request:
 
 ```json
 {
-  "response": "Đây là lịch trình 2 ngày tại Đà Lạt dành cho bạn...",
-  "trip_plan": {
-    "days": [
-      {
-        "day": 1,
-        "places": [
-          {
-            "name": "Thác Datanla",
-            "arrival": "08:30",
-            "departure": "10:00",
-            "tags": ["thác nước", "thiên nhiên"]
-          },
-          {
-            "name": "Cafe The Married Beans",
-            "arrival": "10:30",
-            "departure": "11:30",
-            "tags": ["cafe", "view"]
-          }
-        ]
-      }
-    ]
-  }
+  "prompt": "Ở Đà Lạt có địa điểm nào phù hợp để chill hoặc thư giãn?"
 }
 ```
 
----
+Response:
 
-## 🧩 Module Chi Tiết
-
-### Pipeline Flow
-
-```
-raw_query (str)
-    ↓ [1] QueryAnalyzer     → TripRequest {region, days, tags, budget}
-    ↓ [2] RAGStorage        → top-20 Place (ChromaDB cosine similarity)
-    ↓ [3] Reranker          → top-15 Place (rag_score + rating + tag_overlap)
-    ↓ [4] HybridRecommender → top-10 Place (content + location scoring)
-    ↓ [5] TripPlanner       → TripPlan (graph + route + schedule)
-    ↓ [6] LLM Generation    → text response + JSON trip plan
+```json
+{
+  "response": "..."
+}
 ```
 
-### Recommender System
+### Docs
 
-| Chiến lược     | File                    | Mô tả                                                        |
-| -------------- | ----------------------- | ------------------------------------------------------------ |
-| Content-Based  | `content_based.py`      | Jaccard similarity giữa tags của place và tags trong request |
-| Location-Based | `location_based.py`     | Haversine distance đến centroid — ưu tiên địa điểm gần nhau  |
-| Hybrid         | `hybrid_recommender.py` | Kết hợp: `content × 0.6 + location × 0.4`                    |
-
-### Graph-based Planning
-
-| Component      | File                 | Mô tả                                                                  |
-| -------------- | -------------------- | ---------------------------------------------------------------------- |
-| GraphBuilder   | `graph_builder.py`   | Xây complete weighted graph — edge weight = thời gian di chuyển (phút) |
-| RouteOptimizer | `route_optimizer.py` | Greedy Nearest Neighbor (mặc định), Dijkstra, 2-opt improvement        |
-| Scheduler      | `scheduler.py`       | Chia places vào N ngày, gán giờ HH:MM từ 08:00 đến 21:00               |
-| TripPlanner    | `planner.py`         | Facade kết hợp 3 component trên → `TripPlan`                           |
-
----
-
-## 🖥️ Frontend Features
-
-### 💬 Chat Interface
-
-- **ChatArea** — Gửi prompt tới `POST /chat`, render phản hồi.
-- **ChatInput** — Input bar, disable khi đang chờ bot.
-- **Message** — Bubble user vs bot, có error state styling.
-
-### 📊 Result Visualization
-
-| View         | Component            | Mô tả                              |
-| ------------ | -------------------- | ---------------------------------- |
-| **Text**     | `TextResult.jsx`     | Plain markdown/text                |
-| **Timeline** | `TimelineResult.jsx` | Vertical timeline theo ngày        |
-| **Mindmap**  | `MindmapResult.jsx`  | Interactive node graph (ReactFlow) |
-
-### 🌐 Tech Stack (Frontend)
-
-| Technology                        | Version | Mục đích                |
-| --------------------------------- | ------- | ----------------------- |
-| React                             | ^19.x   | UI framework            |
-| Vite                              | ^7.x    | Build tool & dev server |
-| TailwindCSS                       | ^4.x    | Utility-first styling   |
-| React Router DOM                  | ^7.x    | Client-side routing     |
-| Axios                             | ^1.x    | HTTP client             |
-| ReactFlow                         | ^11.x   | Mindmap / node graph    |
-| react-vertical-timeline-component | ^4.x    | Timeline visualization  |
-
----
-
-## 🔄 Thêm Tài Liệu Mới vào DB
-
-1. Thêm file PDF vào `BE_ChatBot/src/source_data/docs/`
-2. Chạy lại ingestion:
-
-```python
-from src.pipeline.rag_pipline import RAGStorage
-RAGStorage().build_vector_db()
+```text
+http://127.0.0.1:8000/docs
+http://127.0.0.1:8000/redoc
 ```
 
----
+## Câu hỏi test RAG gợi ý
 
-## 📦 Regenerate `requirements.txt`
+Dùng các câu sau để kiểm tra Chroma retrieval và reranking có hoạt động ổn trên `places_data` không:
 
-```bash
-pip freeze > requirements.txt
+```text
+Ở Đà Lạt có địa điểm nào phù hợp để chill hoặc thư giãn?
+Trả về tối đa 5 địa điểm, mỗi địa điểm gồm tên, tags, rating và lý do ngắn dựa trên dữ liệu.
 ```
 
----
+```text
+Tôi muốn đi Hà Nội để tham quan các địa điểm văn hóa hoặc tâm linh, có gợi ý nào không?
+```
 
-## ❓ Xử Lý Lỗi Thường Gặp
+```text
+Ở Nha Trang có những địa điểm biển hoặc nơi tham quan nổi bật nào?
+```
 
-**`ModuleNotFoundError: No module named 'src'`**
+Nếu model bắt đầu tự thêm các mô tả giàu chi tiết nhưng không tồn tại trong source data, hãy siết generation prompt:
 
-```bash
-cd BE_ChatBot
+```text
+Chỉ dùng thông tin có trong dữ liệu. Không tự thêm chi tiết ngoài context.
+```
+
+## Lỗi thường gặp
+
+### `ImportError: attempted relative import with no known parent package`
+
+Chạy backend bằng Uvicorn từ folder `BE_ChatBot/`:
+
+```powershell
+cd D:\KLTN\Project\BE_ChatBot
 uvicorn src.main:app --reload
 ```
 
-**`PERSIST_DIRECTORY not set`** → Kiểm tra `.env` đã có `PERSIST_DIRECTORY=db/`.
+### `PERSIST_DIRECTORY environment variable is not set`
 
-**`Documents directory does not exist`** → Kiểm tra `SOURCE_DATA` trong `.env` trỏ đúng thư mục chứa PDF.
+Kiểm tra `.env` và đảm bảo `PERSIST_DIRECTORY` trỏ đúng tới ChromaDB folder.
 
-**`NVIDIA_API_KEY environment variable not set`** → Điền `NVIDIA_API_KEY` trong `.env`. Lấy key tại https://build.nvidia.com.
+### CUDA requirement
 
-**Embedding model treo lần đầu chạy** → Bình thường — model (~90MB) đang tải về `src/model/embeddings/`. Thêm `HF_TOKEN` vào `.env` để tăng tốc.
+Một số backend modules hiện đang yêu cầu CUDA:
 
-**CORS error trên browser** → Đảm bảo `FRONTEND_URL=http://localhost:5173` đã được set trong `.env`.
+- `core/base_embed_model.py`
+- `pipeline/rag_pipline.py`
 
-**Port 8000 đang bị chiếm** → Dùng `run.bat` (Windows):
+Nếu CUDA không khả dụng, import/runtime có thể fail sớm. Hoặc chạy trên môi trường có CUDA, hoặc chỉnh lại device logic trước khi dùng CPU.
 
-```bat
-@echo off
-taskkill /IM python.exe /F >nul 2>&1
-uvicorn src.main:app --reload
-```
+### Repetitive RAG answers
 
-**Frontend blank screen** → Đảm bảo backend đang chạy trên `http://127.0.0.1:8000` trước khi start frontend.
+Nếu câu trả lời lặp lại nhiều địa điểm tương tự nhau:
 
----
+- giảm `RerankerConfig.TOP_N`
+- yêu cầu trả về tối đa 5 places
+- yêu cầu model hiển thị `name`, `tags` và `rating`
+- tránh yêu cầu model diễn giải dài nếu descriptions trong data có dạng template
 
-## 📄 License
+## Ghi chú phát triển
 
-Dự án phục vụ mục đích học thuật / khóa luận tốt nghiệp (KLTN).
+- Graph và onboarding context được generate bằng Understand Anything trong `.understand-anything/`.
+- `BE_ChatBot/src/contex_kltn.md` có vẻ là tài liệu giải thích thủ công/onboarding cho backend flow.
+- Hiện dự án đang ưu tiên chất lượng RAG answer hơn là complete planning automation.
+- Giữ README khớp với code đã implement. Recommendation/planning modules khá tiềm năng, nhưng nên tiếp tục được document như roadmap cho tới khi các TODO methods được implement và nối vào `TripOrchestrator.run()`.
+
+## License
+
+Dự án phục vụ mục đích học thuật / khóa luận tốt nghiệp.

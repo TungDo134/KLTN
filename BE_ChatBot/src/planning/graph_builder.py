@@ -42,7 +42,7 @@ class GraphBuilder:
     def _compute_weight(self, a: Place, b: Place, mode: str) -> float:
         """
         Pseudo:
-          dist_km = haversine(a.lat, a.lon, b.lat, b.lon)
+          dist_km = haversine(a.lat, a.lng, b.lat, b.lng)
           if mode == "distance": return dist_km
           if mode == "time":
             AVG_SPEED_KMH = 30
