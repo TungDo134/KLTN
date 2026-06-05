@@ -1,7 +1,11 @@
 from functools import partial
 
 from dotenv import load_dotenv
-from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, TextLoader
+from langchain_community.document_loaders import (
+    DirectoryLoader,
+    PyPDFLoader,
+    TextLoader,
+)
 from langchain_core.messages import HumanMessage
 
 from src.core.base_embed_model import get_embedding_model
@@ -21,6 +25,14 @@ Test xem nó run bằng cpu hay gpu
 # print(torch.cuda.is_available())  # True ✅
 # print(torch.cuda.get_device_name(0))  # NVIDIA GeForce RTX 3050 ✅
 # print(torch.__version__)  # 2.x.x+cu124 ✅
+
+
+"""
+Test xem get dc value env khong? 
+"""
+# json_dir = os.getenv("JSON_DATA_DIR")
+# print(json_dir)
+
 
 """
 - Check exist db and have data?.
@@ -138,7 +150,6 @@ Test xem nó run bằng cpu hay gpu
 #     sample = vectorstore.get(limit=2)
 #     print(sample["metadatas"])
 #     print(sample["documents"][0][:200])
-
 
 
 # Synthetic Questions:

@@ -5,7 +5,8 @@ INGESTION + RETRIEVE PIPELINE
 # --- IMPORT ---
 import os
 from typing import List
-
+from pathlib import Path
+import json
 import torch
 from dotenv import load_dotenv
 
@@ -31,7 +32,13 @@ from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm, get_model_info
 
-from tenacity import retry, stop_after_attempt, wait_fixed, wait_exponential, retry_if_exception_type
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_fixed,
+    wait_exponential,
+    retry_if_exception_type,
+)
 
 # --- LOAD .env ---
 
@@ -54,6 +61,75 @@ _TOP_K = 20
 # ============================================================
 #                       INGEST PIPELINE
 # ============================================================
+
+
+# --- Untils Function: CONVERT JSON DATA => DOCUMENT ---
+def load_json_places(data_dir: str) -> list[Document]:
+    """
+    Load all json files (folder: dataCrawl) => list[Document].
+
+    - page_content  : text (concat từ các field ngữ nghĩa cao)
+    - metadata      : các field flat support rerank (tự build) - filter - planning
+    """
+
+    documents = []
+    json_files = list(Path(data_dir).glob("*.json"))
+
+    if not json_files:
+        raise FileNotFoundError(f"Không tìm thấy file json nào trong: {data_dir}")
+
+    print(f"📂 Tìm thấy {len(json_files)} file JSON: {[f.name for f in json_files]}")
+
+    for file in json_files:
+        with open(file, "r", encoding="utf-8") as f:
+            places = json.load(f)  # list[dict]
+
+        for place in places:
+            # --- 1. Build Page Content (LLM Context - RAG) ---
+            tags_str = ",".join(place.get("tags", []))
+
+            page_content = (
+                f"{place['name']} là một địa điểm thuộc {place['region']}. "
+                f"Loại hình: {place.get('type', 'N/A')}. "
+                f"Các hoạt động nổi bật: {tags_str}. "
+                f"{place.get('description', '')} "
+                f"Giờ mở cửa: {place['time']['open']} - {place['time']['close']}. "
+                f"Thời gian tham quan trung bình: {place.get('avg_duration_minutes', 60)} phút. "
+                f"Phí vào cửa: {place.get('entrance_fee', 0):,} VNĐ. "
+                f"Thời điểm lý tưởng để đến: {place.get('best_time', 'N/A')}."
+            )
+
+            # --- 2. Build Metadata (flat fields support rerank - filter - planning) ---
+            metadata = {
+                # Identity
+                "place_id": place["id"],
+                "name": place["name"],
+                "region": place["region"],
+                "type": place.get("type", ""),
+                "tags": tags_str,  # str vì ChromaDB không nhận list
+                # Geo
+                "lat": place["geo"]["lat"],
+                "lng": place["geo"]["lng"],
+                "address": place["geo"].get("address", ""),
+                # Rating
+                "rating_score": place["rating"]["score"],
+                "rating_count": place["rating"]["review_count"],
+                "rating_is_reliable": place["rating"]["is_reliable"],
+                # Time & Cost
+                "open": place["time"]["open"],
+                "close": place["time"]["close"],
+                "avg_duration_minutes": place.get("avg_duration_minutes", 60),
+                "entrance_fee": place.get("entrance_fee", 0),
+                # Extra
+                "best_time": place.get("best_time", ""),
+                "source_url": place["metadata"].get("source_url", ""),
+            }
+
+            documents.append(Document(page_content=page_content, metadata=metadata))
+
+    # return
+    print(f"✅ Load xong: {len(documents)} địa điểm từ {len(json_files)} file")
+    return documents
 
 
 # --- STEP 1: FUNCTION LOAD DOCUMENT ---
@@ -107,8 +183,9 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
     if chunks:
         print(f"Split into {len(chunks)} chunks")
         for i, chunk in enumerate(chunks[:3]):
+            source = chunk.metadata.get('source') or chunk.metadata.get('place_id', 'unknown')  # fix cho json files
             print(
-                f"\n[Chunk {i + 1}] {chunk.metadata['source']} | {len(chunk.page_content)} chars"
+                f"\n[Chunk {i + 1}] {source} | {len(chunk.page_content)} chars"
             )
             print(chunk.page_content[:100] + "...")
 
@@ -157,8 +234,14 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
     # Lọc chunk trùng dựa theo source + content
     # Lọc theo tên file != theo chunk
     if existing_count > 0:
-        existing_sources = set(m["source"] for m in vectorstore.get()["metadatas"])
-        chunks = [c for c in chunks if c.metadata["source"] not in existing_sources]
+        existing_sources = set(
+            m.get("source") or m.get("place_id", "")
+            for m in vectorstore.get()["metadatas"]
+        )
+        chunks = [
+            c for c in chunks
+            if (c.metadata.get("source") or c.metadata.get("place_id", "")) not in existing_sources
+        ]
         print(f"⚙️  Sau lọc trùng: {len(chunks)} chunks mới cần insert")
 
     if not chunks:
@@ -266,7 +349,9 @@ class MultiQueryRetriever:
         self._model_info = get_model_info(llm)
 
         # Dùng structured output để đảm bảo LLM trả về đúng format
-        self.llm_structured = llm.with_structured_output(QueryVariations, method="json_mode")
+        self.llm_structured = llm.with_structured_output(
+            QueryVariations, method="json_mode"
+        )
 
     #  ======= Step 1: Build prompt =======
     def _build_prompt(self, original_query: str):
@@ -275,13 +360,14 @@ class MultiQueryRetriever:
         )
 
     # ===================== RETRY LLM (thử lại tối đa 3 lần - 1s/once) =====================
-    @retry(stop=stop_after_attempt(3),
-           # wait_fixed(1):        1s → 1s → 1s   # retry liên tục, dễ bị rate limit
-           # wait_exponential:     1s → 2s → 4s   # tăng dần, tránh hammering API
-           wait=wait_exponential(multiplier=1, min=1, max=4),
-           retry=retry_if_exception_type((ValidationError, ValueError)),
-           reraise=True  # throw exception ra ngoài sau 3 lần
-           )
+    @retry(
+        stop=stop_after_attempt(3),
+        # wait_fixed(1):        1s → 1s → 1s   # retry liên tục, dễ bị rate limit
+        # wait_exponential:     1s → 2s → 4s   # tăng dần, tránh hammering API
+        wait=wait_exponential(multiplier=1, min=1, max=4),
+        retry=retry_if_exception_type((ValidationError, ValueError)),
+        reraise=True,  # throw exception ra ngoài sau 3 lần
+    )
     async def _call_llm(self, prompt: str) -> QueryVariations:
         response = await self.llm_structured.ainvoke(prompt)
         if not response.queries:
@@ -360,8 +446,13 @@ class RAGStorage:
     # ======= FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  =======
     def build_vector_db(self):
         """Only re-run when adding new PDFs || Texts into the folder docs/"""
-        # 1. Loading the files
-        documents = load_documents()
+        # 1a. Loading the files
+        # documents = load_documents()  # PDF + Text
+
+        # 1b. Add-on (Json data)
+        json_dir = os.getenv("JSON_DATA_DIR", "src/source_data/places_data")
+        json_docs = load_json_places(json_dir)
+        documents = json_docs
 
         # 2. Chunking the files
         chunks = split_documents(documents)
@@ -372,7 +463,7 @@ class RAGStorage:
         )
 
         print(
-            "\n Ingestion complete! Your documents are stored in Chroma DB and ready for RAG queries."
+            "\n Ingestion hoàn thành! Tài liệu đã được lưu vào Chroma DB & sẵn sàng cho các truy vấn RAG."
         )
 
         return vectorstore
@@ -466,9 +557,7 @@ class RAGStorage:
         hybrid_retriever = self.get_hybrid_retriever()
 
         print(f"\n- LLM cho multi query")
-        llm_multi_query = get_llm(
-            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER"))
-        )
+        llm_multi_query = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")))
 
         return MultiQueryRetriever(
             retriever=hybrid_retriever,

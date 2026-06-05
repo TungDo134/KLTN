@@ -2,15 +2,11 @@
 MAIN APPLICATION - END POINT
 """
 
-# --- App Initialization ---
-from dotenv import load_dotenv
-load_dotenv()
-
 # --- Import ---
 import os
 from contextlib import asynccontextmanager
 
-import gradio as gr   # Tạm thời tắt Gradio — dùng React Frontend
+import gradio as gr  # Tạm thời tắt Gradio — dùng React Frontend
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,6 +14,10 @@ from pydantic import BaseModel
 
 from .pipeline.inference import RAGInference
 
+# --- App Initialization ---
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Quản lý vòng đời app
@@ -29,7 +29,9 @@ async def lifespan(app: FastAPI):
     """Khởi tạo RAGInference 1 lần khi app start, giải phóng khi app stop."""
     print("\n ================ KHỞI ĐỘNG ỨNG DỤNG - HẾ LÔ ================")
     app.state.inference = RAGInference()
-    print("\n ================ ỨNG DỤNG SẴN SÀNG - HỎI ĐI TUI TRẢ LỜI CHO ================")
+    print(
+        "\n ================ ỨNG DỤNG SẴN SÀNG - HỎI ĐI TUI TRẢ LỜI CHO ================"
+    )
 
     yield
     print("\n ================ TẮT ỨNG DỤNG - BÁI BAI NHA ================ \n")
@@ -46,7 +48,7 @@ app.add_middleware(
     allow_origins=[frontend_url],  # Đọc từ biến môi trường
     allow_methods=["*"],
     allow_headers=["*"],
-    allow_credentials=True
+    allow_credentials=True,
 )
 
 
@@ -64,6 +66,7 @@ class ChatResponse(BaseModel):
 # async def root():
 #     return {"status": "Vietnam Travel RAG API is running 🚀"}
 
+
 def get_inference_service(request: Request) -> RAGInference:  # ← thêm request
     inference = getattr(request.app.state, "inference", None)
     if inference is None:
@@ -71,13 +74,16 @@ def get_inference_service(request: Request) -> RAGInference:  # ← thêm reques
     return inference
 
 
-@app.post('/chat', response_model=ChatResponse)
-async def chat(request: ChatRequest, engine: RAGInference = Depends(get_inference_service)):
+@app.post("/chat", response_model=ChatResponse)
+async def chat(
+    request: ChatRequest, engine: RAGInference = Depends(get_inference_service)
+):
     response_text = await engine.predict_async(request.prompt)
     return ChatResponse(response=response_text)
 
 
 # --- Gradio ChatInterface (Tạm thời tắt — dùng React Frontend) ---
+
 
 async def gradio_predict(message: str, history: list) -> str:
     """Hàm này được Gradio gọi mỗi khi user gửi tin nhắn."""

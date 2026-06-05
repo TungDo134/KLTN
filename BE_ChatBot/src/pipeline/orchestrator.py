@@ -111,7 +111,7 @@ class TripOrchestrator:
               name     = meta.get("name", "Unknown"),
               region   = meta.get("region", ""),
               lat      = float(meta.get("lat", 0)),
-              lon      = float(meta.get("lon", 0)),
+              lng      = float(meta.get("lng", 0)),
               tags     = meta.get("tags", "").split(","),
               rating   = float(meta.get("rating", 3.0)),
               avg_duration_minutes = int(meta.get("duration", 60)),
@@ -162,7 +162,7 @@ class TripOrchestrator:
                     "arrival": sp.arrival_time,
                     "departure": sp.departure_time,
                     "lat": sp.place.lat,
-                    "lon": sp.place.lon,
+                    "lng": sp.place.lng,
                     "tags": sp.place.tags,
                   }
                   for sp in day.places
