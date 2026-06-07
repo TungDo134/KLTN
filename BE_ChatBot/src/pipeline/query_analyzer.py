@@ -10,8 +10,11 @@ Sử dụng LLM (Llama) để extract:
 
 Output là JSON được parse thành TripRequest dataclass.
 """
+
 import json
 from src.core.schemas import TripRequest
+from src.core.llm_container import get_llm, get_model_info
+
 
 # Prompt yêu cầu LLM trả về JSON thuần
 _EXTRACT_PROMPT_TEMPLATE = """
@@ -29,16 +32,17 @@ Câu hỏi: {query}
 
 
 class QueryAnalyzer:
-
     def __init__(self, llm):
         """
-        llm: instance ChatNVIDIA / ChatAnthropic (bất kỳ LangChain ChatModel)
+        llm: [nvidia / meta/llama-3.3-70b-instruct]
         """
-        self.llm = llm
+        print(f"\n- LLM cho trích xuất User Query => Trip Request")
+        self.llm_query_analyzer = llm
+        self.model_info_query_analyzer = get_model_info(self.llm_query_analyzer)
 
     async def extract(self, raw_query: str) -> TripRequest:
         """
-        Pseudo:
+        Expected:
           prompt   = _EXTRACT_PROMPT_TEMPLATE.format(query=raw_query)
           response = await llm.ainvoke(prompt)
           text     = response.content  # chuỗi JSON
@@ -53,14 +57,79 @@ class QueryAnalyzer:
             start_date= data.get("start_date"),
           )
         """
-        # TODO: implement
-        pass
+        prompt = _EXTRACT_PROMPT_TEMPLATE.format(query=raw_query)
+        try:
+            response = await self.llm_query_analyzer.ainvoke(prompt)
+            text = getattr(response, "content", str(response))
+            data = self._parse_response(text)
+        except Exception as exc:
+            print("[QueryAnalyzer] extract failed:", exc)
+            data = {}
+
+        days = data.get("days", 1)
+        try:
+            days = int(days)
+        except (TypeError, ValueError):
+            days = 1
+
+        tags = data.get("tags", [])
+        if isinstance(tags, str):
+            tags = [tags]
+        elif not isinstance(tags, list):
+            tags = []
+
+        normalized_tags = []
+        for tag in tags:
+            tag = str(tag).strip().lower()
+            if tag and tag not in normalized_tags:
+                normalized_tags.append(tag)
+
+        budget = data.get("budget")
+        if budget in ("", "null", None):
+            budget = None
+        else:
+            try:
+                budget = float(budget)
+            except (TypeError, ValueError):
+                budget = None
+
+        start_date = data.get("start_date")
+        if start_date in ("", "null", None):
+            start_date = None
+        else:
+            start_date = str(start_date).strip()
+
+        return TripRequest(
+            raw_query=raw_query,
+            region=str(data.get("region") or "").strip(),
+            days=max(days, 1),
+            tags=normalized_tags,
+            budget=budget,
+            start_date=start_date,
+        )
 
     def _parse_response(self, text: str) -> dict:
         """
-        Pseudo:
+        Expected:
           clean = text.strip().removeprefix("```json").removesuffix("```").strip()
           return json.loads(clean)
         """
-        # TODO: implement
-        pass
+        clean = text.strip()
+
+        if clean.startswith("```"):
+            lines = clean.splitlines()
+            if lines and lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            clean = "\n".join(lines).strip()
+
+        start = clean.find("{")
+        end = clean.rfind("}")
+        if start == -1 or end == -1 or end < start:
+            raise ValueError("LLM response does not contain a JSON object")
+
+        data = json.loads(clean[start : end + 1])
+        if not isinstance(data, dict):
+            raise ValueError("LLM response JSON must be an object")
+        return data
