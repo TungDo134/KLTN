@@ -20,7 +20,7 @@ FULL FLOW:
   Response (dict)  →  FastAPI / Gradio
 """
 
-from src.core.schemas import TripRequest, TripPlan
+from src.core.schemas import Place, TripRequest, TripPlan
 from src.pipeline.query_analyzer import QueryAnalyzer
 from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
@@ -52,6 +52,7 @@ class TripOrchestrator:
 
         # =========  Bước 1: Phân tích câu hỏi =========
         trip_request = await self.analyzer.extract(raw_query)
+        print("\n[QueryAnalyzer] TripRequest:", trip_request)
 
         # =========  Bước 2: Multi-Query + Hybrid Search → ~30 unique docs =========
         # MultiQueryRetriever: sinh N query variations → Hybrid Search (Vector + BM25) → dedup
@@ -75,14 +76,17 @@ class TripOrchestrator:
             preview = clean_text[:150]
             print(f"\n 📄 Doc {i}: {preview}...")
 
-        return reranked_docs
-
         # ============================================================ #
-        # LATER
+        # Under construction
         # ============================================================ #
 
         # =========  Bước 3b: Convert → Places rồi metadata rerank → top-10 =========
-        # places = self._docs_to_places(reranked_docs)
+        places = self._docs_to_places(reranked_docs)
+        print(f"[_docs_to_places] Converted {len(places)} places")
+        for place in places[:3]:
+            print(place.name, place.region, place.tags, place.rating)
+
+        return reranked_docs
         # reranked_places = self.reranker.rerank(places, trip_request)
 
         # # =========  Bước 4: Recommend =========
@@ -121,8 +125,38 @@ class TripOrchestrator:
             ))
           return places
         """
-        # TODO: implement
-        pass
+        places = []
+        for doc in documents:
+            meta = doc.metadata
+            open_time = str(meta.get("open") or "").strip()
+            close_time = str(meta.get("close") or "").strip()
+            opening_hours = None
+            if open_time or close_time:
+                opening_hours = f"{open_time} - {close_time}".strip(" -")
+
+            tags = meta.get("tags", "")
+            if isinstance(tags, str):
+                tags = [tag.strip() for tag in tags.split(",") if tag.strip()]
+            elif not isinstance(tags, list):
+                tags = []
+
+            places.append(
+                Place(
+                    place_id=str(meta.get("place_id") or meta.get("name") or "unknown"),
+                    name=str(meta.get("name") or "Unknown"),
+                    region=str(meta.get("region") or ""),
+                    lat=float(meta.get("lat") or 0),
+                    lng=float(meta.get("lng") or 0),
+                    tags=tags,
+                    rating=float(meta.get("rating_score") or 0),
+                    avg_duration_minutes=int(meta.get("avg_duration_minutes") or 60),
+                    opening_hours=opening_hours,
+                    description=doc.page_content,
+                    rag_score=float(meta.get("score") or 0),
+                )
+            )
+
+        return places
 
     async def _generate_response(self, request: TripRequest, plan: TripPlan) -> str:
         """
