@@ -29,15 +29,29 @@ from src.planning.planner import TripPlanner
 
 
 class TripOrchestrator:
-    def __init__(self, llm, top_k_rerank: int = 15, top_k_recommend: int = 10):
+    def __init__(
+        self,
+        llm,
+        top_k_rerank: int = 20,
+        top_k_rerank_metadata=15,
+        top_k_recommend: int = 10,
+    ):
+        # Trích xuất ý định người dùng => tags
         self.analyzer = QueryAnalyzer(llm)
-        self.reranker = Reranker(top_k=top_k_recommend)  # metadata-based, top-10
+
+        # Re-rank lại dựa trên trực tiếp các metadata của dữ liệu
+        self.reranker = Reranker(top_k=top_k_rerank_metadata)
+
+        # Module Recommendation
         self.recommender = HybridRecommender(top_k=top_k_recommend)
+
+        # Module Graph Planning
         self.planner = TripPlanner()
 
+        # retriever              → MultiQueryRetriever (hybrid search)
         self.llm = llm
-        # retriever              → MultiQueryRetriever (hybrid search, ~30 unique docs)
-        # cross_encoder_reranker → CrossEncoderReranker (top-15 hiện tại)
+
+        # cross_encoder_reranker → CrossEncoderReranker
         rag = RAGStorage()
         self.retriever, self.cross_encoder_reranker = rag.get_multi_query_retriever()
 
@@ -45,25 +59,35 @@ class TripOrchestrator:
         """
         Flow Pipeline
 
-        Query → Analyze → Retrieve → Hybrid Rerank (CrossEncoder + metadata-based)
+        User Request → Query Analyze → Retrieve → Hybrid Rerank (CrossEncoder + metadata-based)
                         ↓
         Recommend → Plan → Generate.
         """
 
-        # =========  Bước 1: Phân tích câu hỏi =========
+        # ============================================================
+        #                      BƯỚC 1: PHÂN TÍCH CÂU
+        # ============================================================
+
         trip_request = await self.analyzer.extract(raw_query)
         print("\n[QueryAnalyzer] TripRequest:", trip_request)
 
-        # =========  Bước 2: Multi-Query + Hybrid Search → ~30 unique docs =========
+        # ============================================================
+        #               BƯỚC 2: MULTI-QUERY + HYBRID SEARCH
+        #
         # MultiQueryRetriever: sinh N query variations → Hybrid Search (Vector + BM25) → dedup
+        # ============================================================
+
         raw_docs = await self.retriever.ainvoke(raw_query)
         print(
             f"========= Tìm thấy {len(raw_docs)} tài liệu liên quan "
             f"(Multi-Query + Hybrid Search) ========="
         )
 
-        # =========  Bước 3a: CrossEncoder rerank → top-N docs (ngữ nghĩa) =========
+        # ============================================================
+        #                BƯỚC 3A: RERANK(CROSS-ENCODER) -> TOP_K
         # CrossEncoder nhìn (query, doc) cùng lúc →  chính xác hơn embedding
+        # ============================================================
+
         print("\n========= Reranking tài liệu (CrossEncoder) =========")
         reranked_docs = self.cross_encoder_reranker.compress_documents(
             raw_docs, raw_query
@@ -77,17 +101,39 @@ class TripOrchestrator:
             print(f"\n 📄 Doc {i}: {preview}...")
 
         # ============================================================ #
-        # Under construction
+        #                       UNDER CONSTRUCTION
         # ============================================================ #
 
-        # =========  Bước 3b: Convert → Places rồi metadata rerank → top-10 =========
+        # ============================================================
+        #        BƯỚC 3B: CONVERT -> PLACES -> RERANK (METADATA)
+        # ============================================================
         places = self._docs_to_places(reranked_docs)
-        print(f"[_docs_to_places] Converted {len(places)} places")
-        for place in places[:3]:
-            print(place.name, place.region, place.tags, place.rating)
+        print(f"\n [_docs_to_places] Converted {len(places)} places")
 
+        for i, place in enumerate(places[:3], 1):
+            print(f"\n[_docs_to_places] Place {i}")
+            print(f"  name               : {place.name}")
+            print(f"  place_type         : {place.place_type}")
+            print(f"  region             : {place.region}")
+            print(f"  entrance_fee       : {place.entrance_fee}")
+            print(f"  rating             : {place.rating}")
+            print(f"  rating_count       : {place.rating_count}")
+            print(f"  rating_is_reliable : {place.rating_is_reliable}")
+            print(f"  open_time          : {place.open_time}")
+            print(f"  close_time         : {place.close_time}")
+
+        reranked_places = self.reranker.rerank(places, trip_request)
+
+        print(f"\n[Metadata Reranker] Reranked {len(reranked_places)} places")
+        for i, place in enumerate(reranked_places[:5], 1):
+            print(f"\n[Metadata Reranker] Place {i}")
+            print(f"  name          : {place.name}")
+            print(f"  region        : {place.region}")
+            print(f"  tags          : {place.tags}")
+            print(f"  rating        : {place.rating}")
+            print(f"  entrance_fee  : {place.entrance_fee}")
+            print(f"  rerank_score  : {place.rerank_score}")
         return reranked_docs
-        # reranked_places = self.reranker.rerank(places, trip_request)
 
         # # =========  Bước 4: Recommend =========
         # recommend_result = self.recommender.recommend(reranked_places, trip_request)
@@ -106,24 +152,25 @@ class TripOrchestrator:
     def _docs_to_places(self, documents: list) -> list:
         """
         Convert LangChain Document objects → Place dataclass.
-        Pseudo:
-          places = []
-          for doc in documents:
-            meta = doc.metadata
-            places.append(Place(
-              place_id = meta.get("place_id", str(uuid4())),
-              name     = meta.get("name", "Unknown"),
-              region   = meta.get("region", ""),
-              lat      = float(meta.get("lat", 0)),
-              lng      = float(meta.get("lng", 0)),
-              tags     = meta.get("tags", "").split(","),
-              rating   = float(meta.get("rating", 3.0)),
-              avg_duration_minutes = int(meta.get("duration", 60)),
-              opening_hours = meta.get("opening_hours"),
-              description   = doc.page_content,
-              rag_score     = meta.get("score", 0.0),
-            ))
-          return places
+        CrossEncoder returns documents, but the metadata reranker,
+        recommender, and planner work with structured Place objects.
+        This method maps the flat metadata created in rag_pipline.py into
+        the Place schema and keeps doc.page_content as the place description.
+
+        Important metadata mapping:
+          - type -> Place.place_type
+          - address -> Place.address
+          - rating.score -> Place.rating
+          - rating.count -> Place.rating_count
+          - rating.is_reliable -> Place.rating_is_reliable
+          - open -> Place.open_time
+          - close -> Place.close_time
+          - avg_duration_minutes -> Place.avg_duration_minutes
+          - open + close -> Place.opening_hours
+          - entrance_fee -> Place.entrance_fee
+          - best_time -> Place.best_time
+          - source_url -> Place.source_url
+          - tags string from Chroma -> list[str]
         """
         places = []
         for doc in documents:
@@ -152,6 +199,15 @@ class TripOrchestrator:
                     avg_duration_minutes=int(meta.get("avg_duration_minutes") or 60),
                     opening_hours=opening_hours,
                     description=doc.page_content,
+                    place_type=str(meta.get("type") or ""),
+                    address=meta.get("address") or None,
+                    rating_count=int(meta.get("rating_count") or 0),
+                    rating_is_reliable=bool(meta.get("rating_is_reliable") or False),
+                    open_time=open_time or None,
+                    close_time=close_time or None,
+                    entrance_fee=float(meta.get("entrance_fee") or 0),
+                    best_time=meta.get("best_time") or None,
+                    source_url=meta.get("source_url") or None,
                     rag_score=float(meta.get("score") or 0),
                 )
             )

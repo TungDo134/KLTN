@@ -13,7 +13,7 @@ Output là JSON được parse thành TripRequest dataclass.
 
 import json
 from src.core.schemas import TripRequest
-from src.core.llm_container import get_llm, get_model_info
+from src.core.llm_container import get_model_info
 
 
 # Prompt yêu cầu LLM trả về JSON thuần
@@ -36,9 +36,12 @@ class QueryAnalyzer:
         """
         llm: [nvidia / meta/llama-3.3-70b-instruct]
         """
-        print(f"\n- LLM cho trích xuất User Query => Trip Request")
+        print("\n- LLM cho trích xuất User Query => Trip Request [QueryAnalyzer]\n")
         self.llm_query_analyzer = llm
         self.model_info_query_analyzer = get_model_info(self.llm_query_analyzer)
+        provider, model = self.model_info_query_analyzer.split(" / ", 1)
+        print(f"🔧 Provider : {provider}")
+        print(f"🔧 Model    : {model}")
 
     async def extract(self, raw_query: str) -> TripRequest:
         """

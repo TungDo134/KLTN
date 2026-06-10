@@ -66,7 +66,8 @@ _TOP_K = 20
 # --- Untils Function: CONVERT JSON DATA => DOCUMENT ---
 def load_json_places(data_dir: str) -> list[Document]:
     """
-    Load all json files (folder: dataCrawl) => list[Document].
+    **Lưu ý: Chỉ hỗ trợ file dạng JSON**
+    - Load files từ (folder: `D:\KLTN\Project\BE_ChatBot\src\source_data`) => `list[Document]`.
 
     - page_content  : text (concat từ các field ngữ nghĩa cao)
     - metadata      : các field flat support rerank (tự build) - filter - planning
@@ -183,10 +184,10 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
     if chunks:
         print(f"Split into {len(chunks)} chunks")
         for i, chunk in enumerate(chunks[:3]):
-            source = chunk.metadata.get('source') or chunk.metadata.get('place_id', 'unknown')  # fix cho json files
-            print(
-                f"\n[Chunk {i + 1}] {source} | {len(chunk.page_content)} chars"
-            )
+            source = chunk.metadata.get("source") or chunk.metadata.get(
+                "place_id", "unknown"
+            )  # fix cho json files
+            print(f"\n[Chunk {i + 1}] {source} | {len(chunk.page_content)} chars")
             print(chunk.page_content[:100] + "...")
 
     return chunks
@@ -239,8 +240,10 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
             for m in vectorstore.get()["metadatas"]
         )
         chunks = [
-            c for c in chunks
-            if (c.metadata.get("source") or c.metadata.get("place_id", "")) not in existing_sources
+            c
+            for c in chunks
+            if (c.metadata.get("source") or c.metadata.get("place_id", ""))
+            not in existing_sources
         ]
         print(f"⚙️  Sau lọc trùng: {len(chunks)} chunks mới cần insert")
 
@@ -252,7 +255,7 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
     success = batch_size if is_new_db else 0
     failed = 0
     for i in range(0, len(chunks), batch_size):
-        batch = chunks[i: i + batch_size]
+        batch = chunks[i : i + batch_size]
         try:
             vectorstore.add_documents(batch)
             success += len(batch)
@@ -282,7 +285,7 @@ class RerankerConfig:
     """
 
     MODEL_NAME: str = "BAAI/bge-reranker-v2-m3"
-    TOP_N: int = 15  # Số docs giữ lại sau rerank — đưa vào LLM generate
+    TOP_N: int = 20  # Số docs giữ lại sau rerank — đưa vào LLM generate
 
 
 # ============================================================
@@ -337,10 +340,10 @@ class MultiQueryRetriever:
 """
 
     def __init__(
-            self,
-            retriever,  # EnsembleRetriever (hybrid) từ RAGStorage.get_hybrid_retriever()
-            llm,  # LLM from NVIDIA NIMs
-            num_variations: int = 3,  # số query variations
+        self,
+        retriever,  # EnsembleRetriever (hybrid) từ RAGStorage.get_hybrid_retriever()
+        llm,  # LLM from NVIDIA NIMs
+        num_variations: int = 3,  # số query variations
     ):
         self.retriever = retriever
         self.num_variations = num_variations
@@ -406,7 +409,7 @@ class MultiQueryRetriever:
 
         # 2. Hybrid search từng variation
         # EnsembleRetriever xử lý Vector + BM25 bên trong — mỗi variation = 1 lần gọi
-        print(f"\n🔀 Relevant Docs từng câu hỏi (Hybrid Search):")
+        print("\n🔀 Relevant Docs từng câu hỏi (Hybrid Search):")
         all_results: List[List[Document]] = []
         for i, variation in enumerate(variations, 1):
             try:
@@ -417,7 +420,7 @@ class MultiQueryRetriever:
                 print(f"⚠️ Retriever fail query {i}: {e}")
 
         # 3. Remove duplicate
-        print(f"\n❌ Loại bỏ các docs mang tính trùng lặp")
+        print("\n❌ Loại bỏ các docs mang tính trùng lặp")
         unique_docs = self._deduplicate(all_results)
         total = sum(len(r) for r in all_results)
         print(
@@ -437,7 +440,7 @@ class RAGStorage:
     def __init__(self, provider: EmbeddingProvider = EmbeddingProvider.HUGGINGFACE):
         self.persist_directory = os.getenv("PERSIST_DIRECTORY")
         if not self.persist_directory:
-            raise ValueError(f"PERSIST_DIRECTORY environment variable is not set.")
+            raise ValueError("PERSIST_DIRECTORY environment variable is not set.")
 
         print(f"\n- Chạy embedding model bằng: '{_DEVICE}' \n")
         # ======= Create Embedding Model =======
@@ -445,8 +448,12 @@ class RAGStorage:
 
     # ======= FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  =======
     def build_vector_db(self):
-        """Only re-run when adding new PDFs || Texts into the folder docs/"""
-        # 1a. Loading the files
+        """
+        - Chỉ chạy lại (re-run) khi thêm data mới
+        - Data phải lưu vào thư mục **source-data/**
+        - **Lưu ý: Hàm chỉ dùng cho data type là Json**
+        """
+        # 1a. Loading files
         # documents = load_documents()  # PDF + Text
 
         # 1b. Add-on (Json data)
@@ -484,7 +491,7 @@ class RAGStorage:
 
     # ======= FUNC 3: HYBRID SEARCH (VECTOR + KEY WORD) =======
     def get_hybrid_retriever(
-            self, vector_weight: float = 0.6, bm25_weight: float = 0.4
+        self, vector_weight: float = 0.6, bm25_weight: float = 0.4
     ) -> EnsembleRetriever:
         """
         Kết hợp Vector Search + BM25 bằng EnsembleRetriever.
@@ -516,7 +523,7 @@ class RAGStorage:
         vector_retriever = vectorstore.as_retriever(search_kwargs={"k": _TOP_K})
 
         # BM25 chạy trên RAM ==> cần List Document => pull toàn bộ từ Chroma
-        print(f"\n- Build BM25 index từ Chroma docs")
+        print("\n- Build BM25 index từ Chroma docs")
         """
         Chroma lưu trữ trên disk, trả về dict dạng:
         {
@@ -556,7 +563,7 @@ class RAGStorage:
         """
         hybrid_retriever = self.get_hybrid_retriever()
 
-        print(f"\n- LLM cho multi query")
+        print("\n- LLM cho multi query")
         llm_multi_query = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")))
 
         return MultiQueryRetriever(
@@ -615,7 +622,7 @@ class RAGStorage:
 
     # ======= FUNC 5: Trả về cặp (Retriever, Reranker) =======
     def get_multi_query_retriever(
-            self,
+        self,
     ) -> tuple[MultiQueryRetriever, CrossEncoderReranker]:
         """
         Trả về cặp (MultiQueryRetriever, CrossEncoderReranker).
