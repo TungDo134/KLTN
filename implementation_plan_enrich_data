@@ -1,0 +1,178 @@
+# Kế hoạch Enrichment Data - `places_data`
+
+## Bối cảnh
+
+11,308 địa điểm du lịch trong 6 file JSON tại [places_data](file:///d:/KLTN/Project/BE_ChatBot/src/source_data/places_data). Data hiện đủ để demo pipeline RAG nhưng có nhiều vấn đề chất lượng nghiêm trọng cần sửa trước khi dùng cho recommendation/planning thực tế.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Chiến lược tổng thể:** Tôi đề xuất chia làm **3 Phase** thay vì dồn tất cả vào LLM. Lý do:
+> - Nhiều lỗi (region sai, type lệch, trùng tên) có thể sửa **bằng rule thuần** mà không cần GPU.
+> - LLM cục bộ (`llama3.2:1b`) chỉ nên dùng cho công việc nó giỏi nhất: **viết lại description**.
+> - Tách phase giúp kiểm soát chất lượng từng bước, rollback dễ.
+
+> [!WARNING]
+> **Về model Ollama:** Máy bạn hiện chỉ có `llama3.2:1b` (1.3GB) và `bge-m3` (embedding). Model 1B viết tiếng Việt sẽ **không tốt bằng** model 3B-7B. Nếu chất lượng description quan trọng, bạn nên cân nhắc pull thêm `qwen2.5:3b` (~1.9GB, vừa VRAM 4GB).
+
+## Open Questions
+
+1. **Chọn model cho Phase 2:** Dùng `llama3.2:1b` có sẵn (nhanh, chất lượng tiếng Việt trung bình) hay pull `qwen2.5:3b` (chậm hơn, tiếng Việt tốt hơn)?
+
+2. **Phạm vi Phase 1:** Với 11k records, bạn muốn chạy Phase 1 (rule-based) cho **toàn bộ** luôn, hay chỉ test trên `dalat_merged.json` (459 records) trước?
+
+3. **Xử lý record không phải du lịch:** Có ~400 spa, ~200 nhà hàng, cửa hàng... Bạn muốn **giữ lại** (đổi type cho đúng) hay **loại bỏ** khỏi dataset?
+
+---
+
+## Proposed Changes
+
+### Tổng quan 3 Phase
+
+```mermaid
+flowchart LR
+    A["Phase 1\nRule-Based\n(No GPU)"] --> B["Phase 2\nLLM Enrich\n(Ollama)"]
+    B --> C["Phase 3\nWeb Verify\n(Optional)"]
+    
+    A -- "Sửa region, dedupe,\nchuẩn hóa type/tags" --> A
+    B -- "Viết lại description\nbằng LLM local" --> B
+    C -- "Xác minh giờ mở cửa,\ngiá vé từ web" --> C
+```
+
+---
+
+### Phase 1: Rule-Based Cleanup (Không cần LLM)
+
+Mục tiêu: Sửa tất cả lỗi có thể detect bằng logic đơn giản.
+
+#### [NEW] [enrich_phase1.py](file:///d:/KLTN/Project/BE_ChatBot/src/scripts/enrich_phase1.py)
+
+Script Python thuần, không cần GPU, chạy nhanh trên CPU.
+
+**Các bước xử lý:**
+
+| Bước | Vấn đề | Giải pháp |
+|---|---|---|
+| 1.1 | Region sai (DN file có `"region": "Đà Lạt"`) | Suy ra region từ tên file: `danang_merged.json` → `"Đà Nẵng"` |
+| 1.2 | Type quá generic (10,229 `attraction`) | Rule-based reclassify dựa trên tên: `*Spa*` → `spa`, `*Chùa/Pagoda*` → `pagoda`, `*Beach*` → `beach`, `*Market/Chợ*` → `market`, `*Cafe/Coffee*` → `cafe`, `*Museum/Bảo tàng*` → `museum` |
+| 1.3 | Tags nghèo nàn | Tự động gán tags mới dựa trên type đã sửa: `spa` → `["thư giãn", "chăm sóc sức khỏe"]`, `beach` → `["biển", "tắm biển", "thiên nhiên"]`, v.v. |
+| 1.4 | Trùng tên (242 records) | Dedupe theo `normalize(name) + region`. Giữ record có `review_count` cao nhất, merge `source_url` |
+| 1.5 | Rating bất thường | Flag `rating.is_reliable = false` cho records có `review_count` lặp lại bất thường (338 lần cùng 6488, v.v.) |
+| 1.6 | Đánh dấu default fields | Thêm field `_enrichment_flags` ghi lại những field nào còn là giá trị mặc định |
+
+**Input:** `src/source_data/places_data/*.json`
+**Output:** `src/source_data/places_enriched_p1/*.json` (giữ nguyên tên file, thêm suffix thư mục)
+
+---
+
+### Phase 2: LLM Description Enrichment (Ollama local)
+
+Mục tiêu: Viết lại `description` từ template thành nội dung tự nhiên, giàu ngữ nghĩa.
+
+#### [NEW] [enrich_phase2.py](file:///d:/KLTN/Project/BE_ChatBot/src/scripts/enrich_phase2.py)
+
+**Chiến lược:**
+- Đọc output của Phase 1 (đã clean)
+- Gọi Ollama qua `langchain_ollama` (hoặc `requests` trực tiếp đến `http://localhost:11434`)
+- Batch size: **5 records/batch** (tránh timeout với model nhỏ)
+- Mỗi record gửi prompt kèm context: `name`, `region`, `type`, `tags`, `address`
+- LLM trả về JSON structured output gồm: `description_enriched`, `highlights` (3-5 điểm nổi bật)
+
+**Prompt template (draft):**
+```
+Bạn là chuyên gia du lịch Việt Nam. Viết mô tả ngắn gọn (2-3 câu) cho địa điểm sau.
+Dùng kiến thức của bạn để thêm thông tin thực tế nếu biết.
+
+Tên: {name}
+Khu vực: {region}  
+Loại: {type}
+Tags: {tags}
+Địa chỉ: {address}
+
+Trả lời dạng JSON:
+{
+  "description": "Mô tả tự nhiên, sinh động về địa điểm...",
+  "highlights": ["điểm nổi bật 1", "điểm nổi bật 2", "điểm nổi bật 3"]
+}
+```
+
+**Ước tính thời gian:**
+- `llama3.2:1b` trên RTX 3050: ~1-2 giây/record → ~3-6 tiếng cho 11k records
+- `qwen2.5:3b`: ~3-5 giây/record → ~9-15 tiếng cho 11k records
+- Có checkpoint/resume: lưu progress mỗi 100 records, crash-safe
+
+**Input:** `src/source_data/places_enriched_p1/*.json`
+**Output:** `src/source_data/places_enriched_p2/*.json`
+
+---
+
+### Phase 3: Web Verification (Tùy chọn, chưa triển khai)
+
+> [!NOTE]
+> Phase này **không nằm trong scope triển khai ngay**. Ghi lại để planning tương lai.
+
+- Dùng `source_url` (TripAdvisor/Google Maps) để scrape lại giờ mở cửa, giá vé thực tế
+- Cập nhật `time.is_default = false`, `entrance_fee` chính xác
+- Cần thêm crawler module riêng
+
+---
+
+### Cấu trúc thư mục sau enrichment
+
+```
+src/source_data/
+├── docs/                          # PDF/TXT cũ (không đổi)
+├── places_data/                   # ← GỐC, không chạm vào
+│   ├── dalat_merged.json
+│   ├── danang_merged.json
+│   └── ...
+├── places_enriched_p1/            # ← Phase 1 output
+│   ├── dalat_merged.json
+│   ├── danang_merged.json
+│   └── ...
+└── places_enriched_p2/            # ← Phase 2 output (final)
+    ├── dalat_merged.json
+    ├── danang_merged.json
+    └── ...
+```
+
+---
+
+### Cập nhật pipeline sau enrichment
+
+#### [MODIFY] [rag_pipline.py](file:///d:/KLTN/Project/BE_ChatBot/src/pipeline/rag_pipline.py)
+
+Sau khi Phase 2 hoàn tất, đổi `JSON_DATA_DIR` trong `.env`:
+```diff
+-JSON_DATA_DIR = src/source_data/places_data
++JSON_DATA_DIR = src/source_data/places_enriched_p2
+```
+Không cần sửa code Python, chỉ đổi env var.
+
+---
+
+## Verification Plan
+
+### Phase 1 Verification
+- Chạy script, so sánh 1 file (ví dụ `danang_merged.json`):
+  - Kiểm tra tất cả `region` đã đổi thành `"Đà Nẵng"`
+  - Kiểm tra `Panda Spa` có type `spa` thay vì `attraction`
+  - Kiểm tra số record sau dedupe < số record gốc
+  - Đếm `_enrichment_flags` xem bao nhiêu field còn default
+
+### Phase 2 Verification
+- Chạy thử 10 records từ `dalat_merged.json`
+- So sánh description cũ vs mới:
+  ```
+  CŨ:  "Thác Datanla là địa điểm lý tưởng cho các hoạt động khám phá, tham quan."
+  MỚI: "Thác Datanla nằm cách trung tâm Đà Lạt khoảng 5km, nổi tiếng với hệ thống 
+        máng trượt alpine coaster xuyên rừng thông. Du khách có thể trekking, chơi 
+        zipline, và ngắm thác nước nhiều tầng giữa không gian xanh mát."
+  ```
+- Nếu chất lượng output LLM kém → thử đổi model hoặc tinh chỉnh prompt
+
+### Automated Check
+```bash
+python src/scripts/enrich_phase1.py --input places_data --output places_enriched_p1 --dry-run
+```
+`--dry-run` in ra stats thay đổi mà không ghi file, để review trước.

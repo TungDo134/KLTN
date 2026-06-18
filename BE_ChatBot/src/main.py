@@ -11,11 +11,11 @@ import gradio as gr  # Tạm thời tắt Gradio — dùng React Frontend
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from dotenv import load_dotenv
 
 from .pipeline.inference import RAGInference
 
 # --- App Initialization ---
-from dotenv import load_dotenv
 
 load_dotenv()
 
