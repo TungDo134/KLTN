@@ -1,11 +1,15 @@
+"""
+2. CLEAN DATA TYPES
+"""
+
 from pathlib import Path
 import json
 import re
 import unicodedata
 
 
-INPUT_DIR = Path(r"D:\KLTN\Project\BE_ChatBot\src\utils\enrich_data_region")
-OUTPUT_DIR = Path(r"D:\KLTN\Project\BE_ChatBot\src\utils\enrich_data_type")
+INPUT_DIR = Path(r"D:\KLTN\Project\CRAWL_DATA_CHATBOT\utils\enrich_data_region")
+OUTPUT_DIR = Path(r"D:\KLTN\Project\CRAWL_DATA_CHATBOT\utils\enrich_data_type")
 
 VALID_TYPES = {
     "attraction",

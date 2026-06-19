@@ -1,11 +1,15 @@
+"""
+3. CLEAN DATA TAGS
+"""
+
 from pathlib import Path
 import json
 import re
 import unicodedata
 
 
-INPUT_DIR = Path(r"D:\KLTN\Project\BE_ChatBot\src\utils\enrich_data_type")
-OUTPUT_DIR = Path(r"D:\KLTN\Project\BE_ChatBot\src\utils\enrich_data_tag")
+INPUT_DIR = Path(r"D:\KLTN\Project\CRAWL_DATA_CHATBOT\utils\enrich_data_type")
+OUTPUT_DIR = Path(r"D:\KLTN\Project\CRAWL_DATA_CHATBOT\utils\enrich_data_tag")
 
 TYPE_BASE_TAGS = {
     "attraction": ["khám phá", "tham quan", "check-in"],

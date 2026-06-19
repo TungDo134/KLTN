@@ -1,9 +1,13 @@
+"""
+1. CLEAN REGION
+"""
+
 from pathlib import Path
 import json
 
 INPUT_DIR = Path(r"D:\KLTN\Project\BE_ChatBot\src\source_data\places_data")
 
-OUTPUT_DIR = Path(r"D:\KLTN\Project\BE_ChatBot\src\utils\enrich_data")
+OUTPUT_DIR = Path(r"D:\KLTN\Project\CRAWL_DATA_CHATBOT\utils\enrich_data")
 
 REGION_BY_FILENAME = {
     "hanoi_merged.json": "Hà Nội",
