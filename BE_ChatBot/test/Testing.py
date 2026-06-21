@@ -19,6 +19,7 @@ import torch
 import chromadb
 from langchain_ollama import OllamaEmbeddings
 
+
 """
 Test xem nó run bằng cpu hay gpu
 """

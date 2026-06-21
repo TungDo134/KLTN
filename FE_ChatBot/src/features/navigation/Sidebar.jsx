@@ -12,15 +12,37 @@ import {
   FiSidebar,
   FiSettings,
   FiLogOut,
+  FiLogIn,
 } from "react-icons/fi";
 import {
   HiOutlineTemplate,
   HiSelector,
   HiOutlineSparkles,
 } from "react-icons/hi";
+import LoginModal from "./LoginModal";
+import { getStoredAuthUser, logout } from "../../services/authApi";
 
 function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
   const [openUserMenu, setOpenUserMenu] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [currentUser, setCurrentUser] = useState(() => getStoredAuthUser());
+
+  const isLoggedIn = Boolean(currentUser);
+  const displayName = currentUser?.full_name || currentUser?.email || "User";
+  const displayEmail = currentUser?.email || "";
+  const initials = displayName
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+
+  const handleLogout = async () => {
+    await logout();
+    setCurrentUser(null);
+    setOpenUserMenu(false);
+  };
 
   // Click ra ngoài tự đóng
   useEffect(() => {
@@ -126,59 +148,91 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
         </div>
       </div>
 
-      {/* User Profile */}
+      {/* User Profile / Login */}
       <div className="p-3 relative">
-        {/* User menu popup */}
-        {openUserMenu && (
-          <div className="absolute bottom-16 left-3 right-3 bg-(--bg-panel) rounded-xl shadow-2xl border border-(--border-main) py-1 overflow-hidden z-50">
-            <div className="px-4 py-3 border-b border-(--border-main) bg-(--bg-panel)">
-              <p className="font-medium text-[13px]">Tung Do</p>
-              <p className="text-[12px] text-gray-400">@sont4036</p>
-            </div>
-            <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) transition-colors text-left">
-              <HiOutlineSparkles size={15} /> Nâng cấp gói
-            </button>
-            <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) transition-colors text-left">
-              <FiSettings size={15} /> Cài đặt
-            </button>
-            <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) text-red-400 transition-colors text-left">
-              <FiLogOut size={15} /> Đăng xuất
-            </button>
-          </div>
-        )}
+        {isLoggedIn ? (
+          <>
+            {/* User menu popup */}
+            {openUserMenu && (
+              <div className="absolute bottom-16 left-3 right-3 bg-(--bg-panel) rounded-xl shadow-2xl border border-(--border-main) py-1 overflow-hidden z-50">
+                <div className="px-4 py-3 border-b border-(--border-main) bg-(--bg-panel)">
+                  <p className="font-medium text-[13px]">{displayName}</p>
+                  <p className="text-[12px] text-gray-400">{displayEmail}</p>
+                </div>
+                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) transition-colors text-left">
+                  <HiOutlineSparkles size={15} /> Nâng cấp gói
+                </button>
+                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) transition-colors text-left">
+                  <FiSettings size={15} /> Cài đặt
+                </button>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) text-red-400 transition-colors text-left"
+                >
+                  <FiLogOut size={15} /> Đăng xuất
+                </button>
+              </div>
+            )}
 
-        {/* User Button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setOpenUserMenu(!openUserMenu);
-          }}
-          className="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-(--bg-hover) transition-colors"
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-[30px] h-[30px] rounded-full bg-[#E3D4C4] text-[#4A433A] flex items-center justify-center text-xs font-semibold">
-              TD
-            </div>
-            <div className="text-left flex flex-col justify-center ml-1">
-              <span className="text-[13px] font-medium leading-tight">
-                Tung Do
-              </span>
-              <span className="text-[11px] text-gray-400 leading-tight mt-0.5">
-                Free plan
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center gap-1 text-gray-400">
-            <div
-              className="p-1 hover:bg-(--bg-hover) rounded transition-colors"
-              onClick={(e) => e.stopPropagation()}
+            {/* User Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenUserMenu(!openUserMenu);
+              }}
+              className="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-(--bg-hover) transition-colors"
             >
-              <FiDownload size={14} />
-            </div>
-            <HiSelector size={16} />
-          </div>
-        </button>
+              <div className="flex items-center gap-2">
+                {currentUser?.avatar_url ? (
+                  <img
+                    src={currentUser.avatar_url}
+                    alt={displayName}
+                    className="w-[30px] h-[30px] rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-[30px] h-[30px] rounded-full bg-[#E3D4C4] text-[#4A433A] flex items-center justify-center text-xs font-semibold">
+                    {initials || "U"}
+                  </div>
+                )}
+                <div className="text-left flex flex-col justify-center ml-1">
+                  <span className="text-[13px] font-medium leading-tight">
+                    {displayName}
+                  </span>
+                  <span className="text-[11px] text-gray-400 leading-tight mt-0.5">
+                    Free plan
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-1 text-gray-400">
+                <div
+                  className="p-1 hover:bg-(--bg-hover) rounded transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <FiDownload size={14} />
+                </div>
+                <HiSelector size={16} />
+              </div>
+            </button>
+          </>
+        ) : (
+          /* Login Button */
+          <button
+            onClick={() => setShowLoginModal(true)}
+            className="w-full flex items-center gap-3 px-2.5 py-2.5 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors text-(--text-muted) hover:text-(--text-main)"
+          >
+            <FiLogIn size={16} />
+            <span>Đăng nhập</span>
+          </button>
+        )}
       </div>
+
+      {/* Login Modal */}
+      {showLoginModal && (
+        <LoginModal
+          onClose={() => setShowLoginModal(false)}
+          onLogin={setCurrentUser}
+        />
+      )}
     </div>
   );
 }

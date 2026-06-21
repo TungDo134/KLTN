@@ -46,7 +46,7 @@ lerna-debug.log*
 # -----------------------------------------------------------------------
 # Vector DB / ML artifacts
 # -----------------------------------------------------------------------
-db/
+**/db/chroma_db/
 chroma_db/
 vector_db/
 *.chroma
@@ -104,4 +104,7 @@ huong_dan_tao_skills.md
 # AI agent (Antigravity)
 AGENTS.md
 .understand-anything/
+
+firebase-service-account.json
+**/firebase-service-account.json
 
