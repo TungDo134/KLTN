@@ -7,6 +7,10 @@ from src.db.base import Base
 
 
 class User(Base):
+    """
+    Map 1:1 users table in PostgreSQL
+    """
+
     __tablename__ = "users"
 
     id: Mapped[str] = mapped_column(

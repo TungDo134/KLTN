@@ -7,6 +7,7 @@ class UserRepository:
     def __init__(self, db: Session):
         self.db = db
 
+    # Tim user theo id
     def get_by_firebase_uid(self, firebase_uid: str) -> User | None:
         return (
             self.db.query(User)
@@ -30,8 +31,8 @@ class UserRepository:
             provider="google",
         )
         self.db.add(user)
-        self.db.flush()
-        self.db.refresh(user)
+        self.db.flush()  # ghi xuong db chua commit (transaction - service layer lo)
+        self.db.refresh(user)  # dong bo value from db tu sinh ra vao object Python
 
         return user
 
@@ -48,7 +49,7 @@ class UserRepository:
         user.avatar_url = avatar_url
         user.provider = "google"
 
-        self.db.flush()
+        self.db.flush()  # ghi xuong db chua commit (transaction - service layer lo)
         self.db.refresh(user)
 
         return user

@@ -44,7 +44,7 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
     setOpenUserMenu(false);
   };
 
-  // Click ra ngoài tự đóng
+  // Click outside => close
   useEffect(() => {
     const handleClick = () => setOpenUserMenu(false);
     window.addEventListener("click", handleClick);
@@ -60,11 +60,11 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
   return (
     <div
       className={`
-        w-[260px] bg-(--bg-sidebar) flex flex-col h-full relative text-(--text-main) shrink-0
+        w-65 bg-(--bg-sidebar) flex flex-col h-full text-(--text-main) shrink-0
         fixed md:static inset-y-0 left-0 z-50
         transition-all duration-300 ease-in-out
         ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
-        ${desktopOpen ? "md:ml-0" : "md:-ml-[260px]"}
+        ${desktopOpen ? "md:ml-0" : "md:-ml-65"}
         md:translate-x-0
       `}
     >
@@ -81,7 +81,7 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
           >
             <IoCloseOutline size={20} />
           </button>
-          <button 
+          <button
             onClick={onDesktopToggle}
             className="p-1.5 hover:bg-(--bg-hover) rounded-md text-gray-400 transition-colors hidden md:block"
           >
@@ -187,10 +187,10 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
                   <img
                     src={currentUser.avatar_url}
                     alt={displayName}
-                    className="w-[30px] h-[30px] rounded-full object-cover"
+                    className="w-7.5 h-7.5 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="w-[30px] h-[30px] rounded-full bg-[#E3D4C4] text-[#4A433A] flex items-center justify-center text-xs font-semibold">
+                  <div className="w-7.5 h-7.5 rounded-full bg-[#E3D4C4] text-[#4A433A] flex items-center justify-center text-xs font-semibold">
                     {initials || "U"}
                   </div>
                 )}

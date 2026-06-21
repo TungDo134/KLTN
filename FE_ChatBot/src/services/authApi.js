@@ -7,18 +7,22 @@ const ACCESS_TOKEN_KEY = "access_token";
 const AUTH_USER_KEY = "auth_user";
 
 export async function loginWithGoogle() {
+  // Pop-up -> chon user -> firebase tra rs
   const result = await signInWithPopup(auth, googleProvider);
   const idToken = await result.user.getIdToken();
 
+  // Gui id token (jwt cua firebase) len BE verify - chua auto refresh token
   const response = await axiosClient.post("/auth/firebase-login", null, {
     headers: {
       Authorization: `Bearer ${idToken}`,
     },
   });
 
+  // Set localStorage
   localStorage.setItem(ACCESS_TOKEN_KEY, idToken);
   localStorage.setItem(AUTH_USER_KEY, JSON.stringify(response.data));
 
+  // Tra ve data cho component
   return response.data;
 }
 

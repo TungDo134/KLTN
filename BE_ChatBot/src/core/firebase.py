@@ -37,5 +37,6 @@ def get_firebase_app():
 
 
 def verify_firebase_id_token(id_token: str) -> dict:
-    get_firebase_app()
+    get_firebase_app()  # dam bao app da khoi tao
+    # Trả về dict - JWT cua firebase: { uid, email, name, picture, iss, aud, exp, iat, ... }
     return auth.verify_id_token(id_token)
