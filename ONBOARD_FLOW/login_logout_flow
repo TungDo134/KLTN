@@ -1,0 +1,904 @@
+# 🔐 Hướng dẫn chi tiết: Tính năng Login / Logout
+
+> **Ứng dụng**: Mellow AI — Vietnam Travel ChatBot
+> **Kiến trúc**: React (Vite) ↔ FastAPI ↔ PostgreSQL, xác thực qua Firebase Authentication
+
+---
+
+## Mục lục
+
+- [Tổng quan kiến trúc xác thực](#tổng-quan-kiến-trúc-xác-thực)
+- [Flow 1: Login (Đăng nhập)](#flow-1-login-đăng-nhập)
+  - [Bước 1 — Sidebar.jsx: Hiển thị nút đăng nhập](#bước-1--sidebarjsx-hiển-thị-nút-đăng-nhập)
+  - [Bước 2 — LoginModal.jsx: Popup đăng nhập](#bước-2--loginmodaljsx-popup-đăng-nhập)
+  - [Bước 3 — authApi.js → loginWithGoogle(): Xử lý logic đăng nhập](#bước-3--authapijs--loginwithgoogle-xử-lý-logic-đăng-nhập)
+  - [Bước 4 — firebase.js: Cấu hình Firebase Client SDK](#bước-4--firebasejs-cấu-hình-firebase-client-sdk)
+  - [Bước 5 — axiosClient.js: HTTP Client + Token Interceptor](#bước-5--axiosclientjs-http-client--token-interceptor)
+  - [Bước 6 — BE Router auth.py: Endpoint nhận request](#bước-6--be-router-authpy-endpoint-nhận-request)
+  - [Bước 7 — deps.py: Trích xuất token + xác thực user](#bước-7--depspy-trích-xuất-token--xác-thực-user)
+  - [Bước 8 — auth_service.py: Business Logic xác thực](#bước-8--auth_servicepy-business-logic-xác-thực)
+  - [Bước 9 — firebase.py (BE): Verify token với Firebase Admin SDK](#bước-9--firebasepy-be-verify-token-với-firebase-admin-sdk)
+  - [Bước 10 — user_repository.py: CRUD User trong DB](#bước-10--user_repositorypy-crud-user-trong-db)
+  - [Bước 11 — user.py (Model) + AuthUserResponse (Schema): Cấu trúc dữ liệu](#bước-11--userpy-model--authuserresponse-schema-cấu-trúc-dữ-liệu)
+- [Flow 2: Logout (Đăng xuất)](#flow-2-logout-đăng-xuất)
+- [Phần phụ trợ: Khôi phục session khi reload](#phần-phụ-trợ-khôi-phục-session-khi-reload)
+- [Sequence Diagrams](#sequence-diagrams)
+- [Tóm tắt file map](#tóm-tắt-file-map)
+
+---
+
+## Tổng quan kiến trúc xác thực
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        FRONTEND (React/Vite)                    │
+│                                                                 │
+│  User Click → LoginModal → Firebase Auth (Google Popup)         │
+│       ↓ nhận idToken                                            │
+│  authApi.loginWithGoogle() → axiosClient.POST /auth/firebase-login │
+│       ↓ lưu token + user vào localStorage                       │
+└────────────────────────────┬────────────────────────────────────┘
+                             │ HTTP POST (Bearer idToken)
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                        BACKEND (FastAPI)                        │
+│                                                                 │
+│  auth router → deps.get_current_user()                          │
+│       ↓ extract Bearer token                                    │
+│  AuthService.login_with_firebase_token()                        │
+│       ↓ verify token qua Firebase Admin SDK                     │
+│       ↓ tìm/tạo User trong PostgreSQL                          │
+│       ↓ trả về AuthUserResponse                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+> [!IMPORTANT]
+> Hệ thống **không tự phát hành JWT**. Mỗi request, FE gửi **Firebase idToken** gốc, BE verify lại với Firebase Admin SDK. Đây là mô hình **stateless token delegation** — Firebase là identity provider duy nhất.
+
+---
+
+## Flow 1: Login (Đăng nhập)
+
+### Bước 1 — Sidebar.jsx: Hiển thị nút đăng nhập
+
+📁 **File**: [Sidebar.jsx](file:///d:/KLTN/Project/FE_ChatBot/src/features/navigation/Sidebar.jsx)
+
+#### Công dụng
+Sidebar là navigation chính của app. Phần cuối sidebar hiển thị **nút "Đăng nhập"** nếu chưa login, hoặc **user profile** nếu đã login.
+
+#### Tại sao cần
+Cần một entry point rõ ràng để user bắt đầu quá trình đăng nhập. Sidebar luôn hiển thị nên đây là vị trí tự nhiên nhất.
+
+#### Cách hoạt động
+
+```jsx
+// Khởi tạo state user từ localStorage (để persist qua reload)
+const [showLoginModal, setShowLoginModal] = useState(false);
+const [currentUser, setCurrentUser] = useState(() => getStoredAuthUser());
+const isLoggedIn = Boolean(currentUser);
+```
+
+**Khi chưa đăng nhập** (L217–L226):
+```jsx
+{/* Hiển thị nút "Đăng nhập" */}
+<button onClick={() => setShowLoginModal(true)}>
+  <FiLogIn size={16} />
+  <span>Đăng nhập</span>
+</button>
+```
+
+**Khi đã đăng nhập** (L153–L216): Hiển thị avatar + tên + popup menu (có nút "Đăng xuất").
+
+**Render LoginModal** (L230–L235):
+```jsx
+{showLoginModal && (
+  <LoginModal
+    onClose={() => setShowLoginModal(false)}
+    onLogin={setCurrentUser}  // ← callback nhận user data sau login thành công
+  />
+)}
+```
+
+> [!NOTE]
+> `onLogin={setCurrentUser}` — khi login thành công, `LoginModal` gọi `onLogin(user)` → `setCurrentUser(user)` → Sidebar re-render hiển thị profile thay vì nút login.
+
+---
+
+### Bước 2 — LoginModal.jsx: Popup đăng nhập
+
+📁 **File**: [LoginModal.jsx](file:///d:/KLTN/Project/FE_ChatBot/src/features/navigation/LoginModal.jsx)
+
+#### Công dụng
+Modal popup hiển thị nút **"Tiếp tục với Google"**. Xử lý UX: loading state, error display, ESC to close, click-outside to close.
+
+#### Tại sao cần
+Tách UI đăng nhập ra component riêng giúp:
+- Sidebar không bị phình to
+- Có thể reuse ở nơi khác
+- Quản lý state loading/error độc lập
+
+#### Cách hoạt động
+
+```jsx
+function LoginModal({ onClose, onLogin }) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const user = await loginWithGoogle();  // ← Gọi service (Bước 3)
+      onLogin?.(user);                       // ← Trả user về Sidebar
+      onClose();                             // ← Đóng modal
+    } catch (err) {
+      setError(
+        err.response?.data?.detail ||        // ← Lỗi từ BE
+        err.message ||                        // ← Lỗi Firebase popup
+        "Khong the dang nhap voi Google."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+  // ...
+}
+```
+
+**Chi tiết UX**:
+- **Portal rendering** (`createPortal`): Modal render vào `document.body` thay vì DOM tree của Sidebar → tránh bị ảnh hưởng bởi `overflow: hidden` hay `z-index` của parent.
+- **Body scroll lock**: `document.body.style.overflow = "hidden"` khi modal mở.
+- **ESC key handler**: Listener `keydown` để đóng modal khi nhấn Escape.
+- **Click-outside**: Click vào overlay (`.bg-black/60`) → gọi `onClose()`.
+- **Backdrop blur**: `backdrop-blur-sm` tạo hiệu ứng blur nền phía sau.
+
+---
+
+### Bước 3 — authApi.js → loginWithGoogle(): Xử lý logic đăng nhập
+
+📁 **File**: [authApi.js](file:///d:/KLTN/Project/FE_ChatBot/src/services/authApi.js)
+
+#### Công dụng
+Đây là **trung tâm logic xác thực** ở FE. Hàm `loginWithGoogle()` thực hiện 3 việc theo thứ tự:
+1. Mở popup Google đăng nhập (qua Firebase)
+2. Gửi idToken lên BE để verify + lấy user data
+3. Lưu token + user vào localStorage
+
+#### Tại sao cần
+Tách logic auth ra service riêng (thay vì viết trong component) giúp:
+- Component chỉ lo UI, không lo nghiệp vụ
+- Dễ test, dễ maintain
+- Nhiều component có thể gọi chung
+
+#### Cách hoạt động
+
+```js
+import { signInWithPopup, signOut } from "firebase/auth";
+import axiosClient from "../api/axiosClient";
+import { auth, googleProvider } from "../config/firebase";
+
+const ACCESS_TOKEN_KEY = "access_token";
+const AUTH_USER_KEY = "auth_user";
+
+export async function loginWithGoogle() {
+  // BƯỚC 3.1: Mở popup Google → user chọn tài khoản → Firebase trả về result
+  const result = await signInWithPopup(auth, googleProvider);
+
+  // BƯỚC 3.2: Lấy Firebase ID Token từ user object
+  // idToken là một JWT do Firebase ký, chứa: uid, email, name, picture, exp...
+  const idToken = await result.user.getIdToken();
+
+  // BƯỚC 3.3: Gửi idToken lên BE để verify + tạo/cập nhật user trong DB
+  const response = await axiosClient.post("/auth/firebase-login", null, {
+    headers: {
+      Authorization: `Bearer ${idToken}`,
+    },
+  });
+
+  // BƯỚC 3.4: Lưu vào localStorage
+  localStorage.setItem(ACCESS_TOKEN_KEY, idToken);           // Token cho các request sau
+  localStorage.setItem(AUTH_USER_KEY, JSON.stringify(response.data)); // User info cho UI
+
+  // BƯỚC 3.5: Trả về user data cho component
+  return response.data;
+}
+```
+
+> [!WARNING]
+> **Vấn đề tiềm ẩn**: Firebase idToken có TTL = 1 giờ. Sau 1 giờ, token hết hạn nhưng code hiện tại **không tự refresh**. Các request API sau đó sẽ nhận 401 từ BE. Cần thêm cơ chế `onIdTokenChanged` hoặc interceptor response để tự refresh.
+
+**Luồng dữ liệu của bước này:**
+
+```
+signInWithPopup(auth, googleProvider)
+      ↓
+  Google OAuth popup → user chọn account
+      ↓
+  Firebase trả về UserCredential
+      ↓
+  result.user.getIdToken() → idToken (JWT)
+      ↓
+  POST /auth/firebase-login (Bearer idToken) → { id, email, full_name, ... }
+      ↓
+  localStorage.setItem("access_token", idToken)
+  localStorage.setItem("auth_user", JSON.stringify(userData))
+      ↓
+  return userData → LoginModal → Sidebar (setCurrentUser)
+```
+
+---
+
+### Bước 4 — firebase.js: Cấu hình Firebase Client SDK
+
+📁 **File**: [firebase.js](file:///d:/KLTN/Project/FE_ChatBot/src/config/firebase.js)
+
+#### Công dụng
+Khởi tạo Firebase App + Auth instance + Google Auth Provider cho FE.
+
+#### Tại sao cần
+Firebase Authentication yêu cầu khởi tạo app trước khi sử dụng bất kỳ service nào. File này là **singleton** — chạy 1 lần khi import, mọi nơi khác import lại sẽ nhận cùng instance.
+
+#### Cách hoạt động
+
+```js
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
+// Config đọc từ biến môi trường (VITE_FIREBASE_*)
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
+
+// Validate: nếu thiếu key bắt buộc → throw error ngay lập tức
+const requiredKeys = ["apiKey", "authDomain", "projectId", "appId"];
+const missingKeys = requiredKeys.filter((key) => !firebaseConfig[key]);
+if (missingKeys.length > 0) {
+  throw new Error(`Missing Firebase config: ${missingKeys.join(", ")}`);
+}
+
+// Singleton instances
+const firebaseApp = initializeApp(firebaseConfig);  // Firebase App
+const auth = getAuth(firebaseApp);                    // Auth service
+const googleProvider = new GoogleAuthProvider();       // Google provider
+
+export { auth, googleProvider };
+```
+
+**Giải thích từng export:**
+| Export | Kiểu | Dùng ở đâu | Vai trò |
+|--------|------|-------------|---------|
+| `auth` | `Auth` | `authApi.js` → `signInWithPopup(auth, ...)`, `signOut(auth)` | Firebase Auth instance để gọi các method auth |
+| `googleProvider` | `GoogleAuthProvider` | `authApi.js` → `signInWithPopup(..., googleProvider)` | Cấu hình provider cho popup Google |
+
+---
+
+### Bước 5 — axiosClient.js: HTTP Client + Token Interceptor
+
+📁 **File**: [axiosClient.js](file:///d:/KLTN/Project/FE_ChatBot/src/api/axiosClient.js)
+
+#### Công dụng
+Tạo Axios instance với `baseURL` trỏ đến FastAPI backend. **Request interceptor** tự động gắn `Bearer token` vào header `Authorization` cho mọi request.
+
+#### Tại sao cần
+- **DRY (Don't Repeat Yourself)**: Không phải set `baseURL` và `Authorization` header mỗi lần gọi API.
+- **Centralized config**: Thay đổi URL hoặc logic token ở 1 chỗ, apply cho toàn bộ app.
+
+#### Cách hoạt động
+
+```js
+import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_FASTAPI_URL;
+
+const axiosClient = axios.create({
+  baseURL: BASE_URL,                         // VD: http://localhost:8000
+  headers: { "Content-Type": "application/json" },
+});
+
+// INTERCEPTOR: Chạy TRƯỚC mỗi request
+axiosClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem("access_token");  // Đọc token đã lưu ở Bước 3
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;   // Gắn vào header
+  }
+  return config;
+});
+
+export default axiosClient;
+```
+
+> [!NOTE]
+> Trong `loginWithGoogle()` (Bước 3), request đầu tiên **tự set header thủ công** (`headers: { Authorization: \`Bearer ${idToken}\` }`) vì tại thời điểm đó token chưa được lưu vào localStorage. Interceptor chỉ hoạt động cho **các request sau đó**.
+
+---
+
+### Bước 6 — BE Router auth.py: Endpoint nhận request
+
+📁 **File**: [auth.py](file:///d:/KLTN/Project/BE_ChatBot/src/api/routers/auth.py) (Router)
+
+#### Công dụng
+Định nghĩa 2 API endpoints liên quan auth:
+- `POST /auth/firebase-login` — Đăng nhập
+- `GET /auth/me` — Lấy thông tin user hiện tại
+
+#### Tại sao cần
+Đây là **entry point** duy nhất cho request auth từ FE. Router chỉ lo routing, logic thực sự nằm ở dependency `get_current_user`.
+
+#### Cách hoạt động
+
+```python
+from fastapi import APIRouter, Depends
+from src.api.deps import get_current_user
+from src.models.user import User
+from src.schemas.auth import AuthUserResponse
+
+router = APIRouter(prefix="/auth", tags=["auth"])
+
+@router.post("/firebase-login", response_model=AuthUserResponse)
+def firebase_login(current_user: User = Depends(get_current_user)):
+    return current_user
+
+@router.get("/me", response_model=AuthUserResponse)
+def get_me(current_user: User = Depends(get_current_user)):
+    return current_user
+```
+
+**Phân tích:**
+
+| Thành phần | Giải thích |
+|------------|------------|
+| `prefix="/auth"` | Mọi route trong router này bắt đầu bằng `/auth` |
+| `tags=["auth"]` | Nhóm trong Swagger docs |
+| `Depends(get_current_user)` | FastAPI DI: trước khi chạy handler, FastAPI gọi `get_current_user()` → verify token → trả về `User` object |
+| `response_model=AuthUserResponse` | Pydantic schema để serialize User → JSON response (chỉ trả các field cần thiết, loại bỏ `password_hash`, `deleted_at`...) |
+
+> [!TIP]
+> Cả 2 endpoint `/firebase-login` và `/me` đều dùng chung `get_current_user`. Sự khác biệt chỉ là **ngữ nghĩa**: `/firebase-login` dùng khi đăng nhập lần đầu (có side-effect tạo user mới), `/me` dùng khi đã đăng nhập (chỉ đọc).
+
+**Router được đăng ký trong** [main.py](file:///d:/KLTN/Project/BE_ChatBot/src/main.py#L43):
+```python
+app.include_router(auth.router)
+```
+
+---
+
+### Bước 7 — deps.py: Trích xuất token + xác thực user
+
+📁 **File**: [deps.py](file:///d:/KLTN/Project/BE_ChatBot/src/api/deps.py)
+
+#### Công dụng
+2 dependency functions tạo thành **chuỗi xác thực** (dependency chain):
+
+```
+Request → get_bearer_token() → get_current_user() → Handler
+```
+
+#### Tại sao cần
+- **Separation of Concerns**: Tách riêng "extract token" vs "verify + lookup user"
+- **Reusable**: Bất kỳ endpoint nào cần auth chỉ cần `Depends(get_current_user)`
+- **Testable**: Có thể mock từng dependency riêng khi test
+
+#### Cách hoạt động
+
+**Hàm 1: `get_bearer_token()`**
+```python
+bearer_scheme = HTTPBearer(auto_error=False)
+
+def get_bearer_token(
+    credentials: HTTPAuthorizationCredentials | None = Depends(bearer_scheme),
+) -> str:
+    if credentials is None or credentials.scheme.lower() != "bearer":
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Missing bearer token",
+        )
+    return credentials.credentials  # ← Chỉ trả về token string, không có "Bearer " prefix
+```
+
+| Chi tiết | Giải thích |
+|----------|------------|
+| `HTTPBearer(auto_error=False)` | Parse header `Authorization: Bearer <token>`. `auto_error=False` = không tự trả 403, cho phép ta custom error message |
+| `credentials.scheme` | Kiểm tra scheme phải là "bearer" |
+| `credentials.credentials` | Chuỗi token thuần (đã bỏ prefix "Bearer ") |
+
+**Hàm 2: `get_current_user()`**
+```python
+def get_current_user(
+    token: str = Depends(get_bearer_token),  # ← Chạy hàm 1 trước
+    db: Session = Depends(get_db),           # ← Lấy DB session
+) -> User:
+    return AuthService(db).login_with_firebase_token(token)  # ← Bước 8
+```
+
+> [!IMPORTANT]
+> Hàm này **vừa verify vừa upsert user**. Mỗi lần request có Bearer token, hệ thống đều gọi Firebase Admin để verify, sau đó tìm/tạo user trong DB. Đây là thiết kế **stateless** — BE không lưu session, không phát token riêng.
+
+---
+
+### Bước 8 — auth_service.py: Business Logic xác thực
+
+📁 **File**: [auth_service.py](file:///d:/KLTN/Project/BE_ChatBot/src/services/auth_service.py)
+
+#### Công dụng
+Service layer chứa toàn bộ nghiệp vụ xác thực. Hàm `login_with_firebase_token()` thực hiện:
+1. Verify Firebase idToken
+2. Extract thông tin user từ token
+3. Tìm hoặc tạo user trong DB (upsert pattern)
+
+#### Tại sao cần
+- **Single Responsibility**: Router chỉ lo routing, Repository chỉ lo DB, Service lo business logic
+- **Upsert pattern**: Lần đăng nhập đầu tiên → tạo user mới. Lần sau → cập nhật profile (tên, avatar có thể thay đổi trên Google)
+
+#### Cách hoạt động
+
+```python
+class AuthService:
+    def __init__(self, db: Session):
+        self.db = db
+        self.user_repository = UserRepository(db)
+
+    def login_with_firebase_token(self, id_token: str) -> User:
+        # ═══ PHASE 1: Verify token ═══
+        try:
+            decoded_token = verify_firebase_id_token(id_token)  # → Bước 9
+        except Exception as exc:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid Firebase token",
+            ) from exc
+
+        # ═══ PHASE 2: Extract user info từ decoded token ═══
+        firebase_uid = decoded_token.get("uid")       # ID duy nhất trên Firebase
+        email = decoded_token.get("email")              # Email Google
+        full_name = decoded_token.get("name")           # Tên hiển thị
+        avatar_url = decoded_token.get("picture")       # URL ảnh đại diện
+
+        # Validate: uid + email là bắt buộc
+        if not firebase_uid or not email:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Firebase token missing required user info",
+            )
+
+        # ═══ PHASE 3: Upsert user trong DB ═══
+        user = self.user_repository.get_by_firebase_uid(firebase_uid)
+
+        if user is None:
+            # Lần đầu đăng nhập → TẠO MỚI
+            user = self.user_repository.create_firebase_user(
+                firebase_uid=firebase_uid,
+                email=email,
+                full_name=full_name,
+                avatar_url=avatar_url,
+            )
+        else:
+            # Đã có → CẬP NHẬT profile (tên/avatar có thể thay đổi trên Google)
+            user = self.user_repository.update_firebase_profile(
+                user=user,
+                email=email,
+                full_name=full_name,
+                avatar_url=avatar_url,
+            )
+
+        # ═══ PHASE 4: Commit + refresh ═══
+        self.db.commit()    # Lưu thay đổi vào DB
+        self.db.refresh(user)  # Refresh để lấy server-generated values (id, created_at...)
+
+        return user
+```
+
+**Luồng quyết định:**
+```
+decoded_token = verify(idToken)
+        ↓
+ extract uid, email, name, picture
+        ↓
+ user = DB.find_by(firebase_uid)
+        ↓
+   ┌────┴────┐
+   │         │
+ None      Found
+   │         │
+ CREATE   UPDATE
+   │         │
+   └────┬────┘
+        ↓
+    commit()
+    refresh()
+    return user
+```
+
+---
+
+### Bước 9 — firebase.py (BE): Verify token với Firebase Admin SDK
+
+📁 **File**: [firebase.py](file:///d:/KLTN/Project/BE_ChatBot/src/core/firebase.py)
+
+#### Công dụng
+Verify tính hợp lệ của Firebase idToken bằng **Firebase Admin SDK** (server-side). Đây là bước **bảo mật quan trọng nhất** — đảm bảo token thực sự do Firebase cấp, chưa hết hạn, chưa bị giả mạo.
+
+#### Tại sao cần
+- FE gửi idToken, nhưng **không thể tin FE**. BE phải tự verify bằng Admin SDK (dùng service account credentials).
+- Admin SDK kiểm tra: signature, expiration, issuer, audience.
+
+#### Cách hoạt động
+
+**Hàm 1: `_resolve_credentials_path()`** — Tìm file service account
+```python
+def _resolve_credentials_path() -> Path:
+    if not settings.firebase_credentials_path:
+        raise RuntimeError("FIREBASE_CREDENTIALS_PATH is not configured")
+
+    path = Path(settings.firebase_credentials_path)
+    if path.is_absolute():
+        return path
+    # Nếu là relative path → resolve từ project root (2 cấp trên core/)
+    project_root = Path(__file__).resolve().parents[2]
+    return project_root / path
+```
+
+**Hàm 2: `get_firebase_app()`** — Singleton Firebase Admin App
+```python
+def get_firebase_app():
+    # Nếu đã khởi tạo → trả về app hiện có (singleton)
+    if firebase_admin._apps:
+        return firebase_admin.get_app()
+
+    credentials_path = _resolve_credentials_path()
+    if not credentials_path.exists():
+        raise FileNotFoundError(f"Firebase credentials file not found: {credentials_path}")
+
+    cred = credentials.Certificate(str(credentials_path))
+    return firebase_admin.initialize_app(cred)
+```
+
+**Hàm 3: `verify_firebase_id_token()`** — Verify token
+```python
+def verify_firebase_id_token(id_token: str) -> dict:
+    get_firebase_app()  # Đảm bảo app đã khởi tạo
+    return auth.verify_id_token(id_token)
+    # Trả về dict: { uid, email, name, picture, iss, aud, exp, iat, ... }
+```
+
+> [!CAUTION]
+> File `firebase-service-account.json` chứa **private key** của service account. File này **KHÔNG ĐƯỢC commit vào git**. Path được cấu hình qua env var `FIREBASE_CREDENTIALS_PATH` trong [config.py](file:///d:/KLTN/Project/BE_ChatBot/src/core/config.py).
+
+---
+
+### Bước 10 — user_repository.py: CRUD User trong DB
+
+📁 **File**: [user_repository.py](file:///d:/KLTN/Project/BE_ChatBot/src/repositories/user_repository.py)
+
+#### Công dụng
+Repository pattern — trung gian giữa Service và Database. Chứa 3 method CRUD cho `User`.
+
+#### Tại sao cần
+- **Abstraction**: Service không cần biết chi tiết query SQL
+- **Testable**: Dễ mock khi unit test AuthService
+- **Consistent**: Mọi truy cập User đều đi qua đây → dễ thêm filter (VD: `deleted_at.is_(None)`)
+
+#### Cách hoạt động
+
+```python
+class UserRepository:
+    def __init__(self, db: Session):
+        self.db = db
+```
+
+**Method 1: `get_by_firebase_uid()`** — Tìm user theo Firebase UID
+```python
+def get_by_firebase_uid(self, firebase_uid: str) -> User | None:
+    return (
+        self.db.query(User)
+        .filter(User.firebase_uid == firebase_uid, User.deleted_at.is_(None))
+        #                                          ↑ Soft delete: bỏ qua user đã xóa
+        .first()
+    )
+```
+
+**Method 2: `create_firebase_user()`** — Tạo user mới (đăng nhập lần đầu)
+```python
+def create_firebase_user(self, firebase_uid, email, full_name, avatar_url) -> User:
+    user = User(
+        firebase_uid=firebase_uid,
+        email=email,
+        full_name=full_name,
+        avatar_url=avatar_url,
+        provider="google",           # Hardcode provider = "google"
+    )
+    self.db.add(user)
+    self.db.flush()      # Ghi xuống DB nhưng CHƯA commit (commit ở Service)
+    self.db.refresh(user) # Lấy lại server-generated values (id = gen_random_uuid())
+    return user
+```
+
+**Method 3: `update_firebase_profile()`** — Cập nhật profile (đăng nhập lại)
+```python
+def update_firebase_profile(self, user, email, full_name, avatar_url) -> User:
+    user.email = email
+    user.full_name = full_name
+    user.avatar_url = avatar_url
+    user.provider = "google"
+    self.db.flush()
+    self.db.refresh(user)
+    return user
+```
+
+> [!NOTE]
+> **`flush()` vs `commit()`**: Repository chỉ gọi `flush()` (ghi SQL nhưng chưa commit transaction). `commit()` được gọi ở `AuthService` — đây là pattern đúng vì Service mới biết khi nào toàn bộ logic đã hoàn tất.
+
+---
+
+### Bước 11 — user.py (Model) + AuthUserResponse (Schema): Cấu trúc dữ liệu
+
+📁 **Files**:
+- [user.py](file:///d:/KLTN/Project/BE_ChatBot/src/models/user.py) — SQLAlchemy Model
+- [auth.py](file:///d:/KLTN/Project/BE_ChatBot/src/schemas/auth.py) — Pydantic Schema
+
+#### Công dụng
+- `User` model: Map 1:1 với bảng `users` trong PostgreSQL
+- `AuthUserResponse` schema: Định nghĩa JSON response trả về FE
+
+#### Tại sao cần
+- **Model**: ORM cần biết cấu trúc bảng để query/insert
+- **Schema**: Kiểm soát dữ liệu trả về (không lộ `password_hash`, `deleted_at`)
+
+#### Cấu trúc bảng `users`
+
+```python
+class User(Base):
+    __tablename__ = "users"
+
+    id          = UUID, PK, server_default=gen_random_uuid()
+    email       = String(255), unique, not null
+    firebase_uid = String(128), unique, nullable
+    password_hash = Text, nullable          # Dự phòng cho login email/password
+    full_name   = String(255), nullable
+    avatar_url  = Text, nullable
+    provider    = String(50), default="google"
+    status      = String(30), default="active"
+    created_at  = DateTime(tz), server_default=now()
+    updated_at  = DateTime(tz), server_default=now()
+    deleted_at  = DateTime(tz), nullable     # Soft delete
+
+    conversations = relationship("Conversation", back_populates="user")
+```
+
+#### Response Schema
+
+```python
+class AuthUserResponse(BaseModel):
+    id: str
+    firebase_uid: str | None
+    email: str
+    full_name: str | None
+    avatar_url: str | None
+    provider: str
+    status: str
+
+    model_config = ConfigDict(from_attributes=True)
+    # from_attributes=True → cho phép tạo từ SQLAlchemy User object
+```
+
+**So sánh Model vs Schema:**
+
+| Field | User Model | AuthUserResponse | Lý do |
+|-------|-----------|------------------|-------|
+| `id` | ✅ | ✅ | FE cần ID để call API |
+| `email` | ✅ | ✅ | Hiển thị trên UI |
+| `firebase_uid` | ✅ | ✅ | Identify user |
+| `full_name` | ✅ | ✅ | Hiển thị trên UI |
+| `avatar_url` | ✅ | ✅ | Hiển thị avatar |
+| `provider` | ✅ | ✅ | Biết user đăng nhập bằng gì |
+| `status` | ✅ | ✅ | Kiểm tra account active/banned |
+| `password_hash` | ✅ | ❌ | **Bảo mật** — không bao giờ trả về |
+| `created_at` | ✅ | ❌ | Không cần ở FE |
+| `deleted_at` | ✅ | ❌ | Internal logic |
+
+---
+
+## Flow 2: Logout (Đăng xuất)
+
+Logout đơn giản hơn nhiều — **chỉ xảy ra ở FE**, không gọi BE.
+
+### Bước 1 — Sidebar.jsx: Nút đăng xuất
+
+📁 **File**: [Sidebar.jsx](file:///d:/KLTN/Project/FE_ChatBot/src/features/navigation/Sidebar.jsx#L41-L45)
+
+```jsx
+const handleLogout = async () => {
+  await logout();             // Gọi service (Bước 2)
+  setCurrentUser(null);       // Clear state → re-render thành nút "Đăng nhập"
+  setOpenUserMenu(false);     // Đóng popup menu
+};
+```
+
+Nút "Đăng xuất" nằm trong user menu popup (L168–L173):
+```jsx
+<button onClick={handleLogout} className="... text-red-400 ...">
+  <FiLogOut size={15} /> Đăng xuất
+</button>
+```
+
+### Bước 2 — authApi.js → logout()
+
+📁 **File**: [authApi.js](file:///d:/KLTN/Project/FE_ChatBot/src/services/authApi.js#L25-L29)
+
+```js
+export async function logout() {
+  await signOut(auth);                          // 1. Sign out khỏi Firebase
+  localStorage.removeItem(ACCESS_TOKEN_KEY);    // 2. Xóa token
+  localStorage.removeItem(AUTH_USER_KEY);       // 3. Xóa user info
+}
+```
+
+**Chi tiết từng bước:**
+
+| Bước | Hàm | Tại sao cần |
+|------|-----|-------------|
+| 1 | `signOut(auth)` | Đăng xuất Firebase session trên client. Nếu không gọi, Firebase SDK vẫn giữ session → `getIdToken()` vẫn trả token hợp lệ |
+| 2 | `removeItem("access_token")` | Xóa token khỏi localStorage → interceptor không gắn token vào request nữa |
+| 3 | `removeItem("auth_user")` | Xóa user info → `getStoredAuthUser()` trả `null` → khi reload, Sidebar hiển thị nút "Đăng nhập" |
+
+> [!NOTE]
+> **Không cần gọi BE khi logout** vì hệ thống là **stateless** — BE không lưu session. Chỉ cần xóa token ở FE là đủ. Token cũ sẽ tự hết hạn sau 1 giờ (Firebase TTL).
+
+---
+
+## Phần phụ trợ: Khôi phục session khi reload
+
+📁 **File**: [authApi.js](file:///d:/KLTN/Project/FE_ChatBot/src/services/authApi.js#L31-L41)
+
+### `getStoredAuthUser()`
+
+```js
+export function getStoredAuthUser() {
+  const rawUser = localStorage.getItem(AUTH_USER_KEY);
+  if (!rawUser) return null;
+
+  try {
+    return JSON.parse(rawUser);  // Parse JSON → user object
+  } catch {
+    localStorage.removeItem(AUTH_USER_KEY);  // JSON hỏng → xóa luôn
+    return null;
+  }
+}
+```
+
+#### Công dụng
+Đọc user info đã lưu trong localStorage. Được gọi khi Sidebar mount lần đầu.
+
+#### Tại sao cần
+Khi user refresh trang, React state bị reset. Hàm này **khôi phục state** từ localStorage → user không bị mất đăng nhập.
+
+#### Nơi sử dụng
+```jsx
+// Sidebar.jsx — khởi tạo state
+const [currentUser, setCurrentUser] = useState(() => getStoredAuthUser());
+```
+
+> [!WARNING]
+> Hàm này chỉ khôi phục **thông tin hiển thị** (tên, avatar, email). Token trong localStorage có thể đã **hết hạn** (Firebase idToken TTL = 1h). Khi gọi API với token hết hạn, BE sẽ trả 401 nhưng FE hiện chưa xử lý case này.
+
+---
+
+## Sequence Diagrams
+
+### Login Flow
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Sidebar
+    participant LoginModal
+    participant authApi
+    participant Firebase as Firebase Auth<br/>(Client SDK)
+    participant Google as Google OAuth
+    participant axiosClient
+    participant Router as BE: auth router
+    participant Deps as BE: deps.py
+    participant AuthSvc as BE: AuthService
+    participant FBAdmin as BE: Firebase Admin
+    participant UserRepo as BE: UserRepository
+    participant DB as PostgreSQL
+
+    User->>Sidebar: Click "Đăng nhập"
+    Sidebar->>LoginModal: showLoginModal = true
+
+    User->>LoginModal: Click "Tiếp tục với Google"
+    LoginModal->>authApi: loginWithGoogle()
+    authApi->>Firebase: signInWithPopup(auth, googleProvider)
+    Firebase->>Google: OAuth popup
+    Google-->>User: Chọn tài khoản
+    Google-->>Firebase: OAuth credential
+    Firebase-->>authApi: UserCredential (result)
+    authApi->>Firebase: result.user.getIdToken()
+    Firebase-->>authApi: idToken (JWT)
+
+    authApi->>axiosClient: POST /auth/firebase-login<br/>Authorization: Bearer {idToken}
+    axiosClient->>Router: HTTP POST
+    Router->>Deps: Depends(get_current_user)
+    Deps->>Deps: get_bearer_token() → extract token
+    Deps->>AuthSvc: login_with_firebase_token(token)
+    AuthSvc->>FBAdmin: verify_firebase_id_token(token)
+    FBAdmin-->>AuthSvc: decoded_token {uid, email, name, picture}
+
+    AuthSvc->>UserRepo: get_by_firebase_uid(uid)
+    UserRepo->>DB: SELECT * FROM users WHERE firebase_uid = ?
+    DB-->>UserRepo: User | None
+
+    alt User không tồn tại
+        AuthSvc->>UserRepo: create_firebase_user(...)
+        UserRepo->>DB: INSERT INTO users (...)
+    else User đã tồn tại
+        AuthSvc->>UserRepo: update_firebase_profile(...)
+        UserRepo->>DB: UPDATE users SET ...
+    end
+
+    AuthSvc->>DB: COMMIT
+    AuthSvc-->>Deps: User object
+    Deps-->>Router: User object
+    Router-->>axiosClient: AuthUserResponse (JSON)
+    axiosClient-->>authApi: response.data
+
+    authApi->>authApi: localStorage.setItem("access_token", idToken)
+    authApi->>authApi: localStorage.setItem("auth_user", JSON.stringify(user))
+    authApi-->>LoginModal: user data
+    LoginModal->>Sidebar: onLogin(user) → setCurrentUser(user)
+    Sidebar->>Sidebar: Re-render: hiển thị avatar + tên
+```
+
+### Logout Flow
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Sidebar
+    participant authApi
+    participant Firebase as Firebase Auth<br/>(Client SDK)
+    participant localStorage
+
+    User->>Sidebar: Click "Đăng xuất" (trong user menu)
+    Sidebar->>authApi: logout()
+    authApi->>Firebase: signOut(auth)
+    Firebase-->>authApi: done
+    authApi->>localStorage: removeItem("access_token")
+    authApi->>localStorage: removeItem("auth_user")
+    authApi-->>Sidebar: done
+    Sidebar->>Sidebar: setCurrentUser(null)
+    Sidebar->>Sidebar: Re-render: hiển thị nút "Đăng nhập"
+```
+
+---
+
+## Tóm tắt file map
+
+### Frontend (React/Vite)
+
+| File | Vai trò | Hàm chính |
+|------|---------|-----------|
+| [Sidebar.jsx](file:///d:/KLTN/Project/FE_ChatBot/src/features/navigation/Sidebar.jsx) | UI chính: nút login/logout + user profile | `handleLogout()` |
+| [LoginModal.jsx](file:///d:/KLTN/Project/FE_ChatBot/src/features/navigation/LoginModal.jsx) | Modal popup đăng nhập | `handleGoogleLogin()` |
+| [authApi.js](file:///d:/KLTN/Project/FE_ChatBot/src/services/authApi.js) | Service layer auth | `loginWithGoogle()`, `logout()`, `getStoredAuthUser()` |
+| [firebase.js](file:///d:/KLTN/Project/FE_ChatBot/src/config/firebase.js) | Firebase Client SDK config | exports: `auth`, `googleProvider` |
+| [axiosClient.js](file:///d:/KLTN/Project/FE_ChatBot/src/api/axiosClient.js) | HTTP client + auto token | request interceptor |
+
+### Backend (FastAPI)
+
+| File | Vai trò | Hàm chính |
+|------|---------|-----------|
+| [auth.py](file:///d:/KLTN/Project/BE_ChatBot/src/api/routers/auth.py) (router) | API endpoints | `firebase_login()`, `get_me()` |
+| [deps.py](file:///d:/KLTN/Project/BE_ChatBot/src/api/deps.py) | DI: extract + verify | `get_bearer_token()`, `get_current_user()` |
+| [auth_service.py](file:///d:/KLTN/Project/BE_ChatBot/src/services/auth_service.py) | Business logic | `login_with_firebase_token()` |
+| [firebase.py](file:///d:/KLTN/Project/BE_ChatBot/src/core/firebase.py) (core) | Firebase Admin SDK | `verify_firebase_id_token()`, `get_firebase_app()` |
+| [user_repository.py](file:///d:/KLTN/Project/BE_ChatBot/src/repositories/user_repository.py) | DB CRUD | `get_by_firebase_uid()`, `create_firebase_user()`, `update_firebase_profile()` |
+| [user.py](file:///d:/KLTN/Project/BE_ChatBot/src/models/user.py) | ORM Model | `User` class → bảng `users` |
+| [auth.py](file:///d:/KLTN/Project/BE_ChatBot/src/schemas/auth.py) (schema) | Response schema | `AuthUserResponse` |
+| [config.py](file:///d:/KLTN/Project/BE_ChatBot/src/core/config.py) | Settings | `Settings.firebase_credentials_path` |
+| [session.py](file:///d:/KLTN/Project/BE_ChatBot/src/db/session.py) | DB connection | `get_db()` → Session generator |
+| [main.py](file:///d:/KLTN/Project/BE_ChatBot/src/main.py) | App entry + CORS | `app.include_router(auth.router)` |
