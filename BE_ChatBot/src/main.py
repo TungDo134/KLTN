@@ -6,14 +6,13 @@ MAIN APPLICATION - END POINT
 import os
 from contextlib import asynccontextmanager
 
-import gradio as gr  # Tạm thời tắt Gradio — dùng React Frontend
+import gradio as gr
 
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from dotenv import load_dotenv
 
-from .api.routers import auth
+from .api.routers import auth, chat
 from .pipeline.inference import RAGInference
 
 # --- App Initialization ---
@@ -41,6 +40,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Vietnam Travel RAG API", lifespan=lifespan)
 app.include_router(auth.router)
+app.include_router(chat.router)
 
 # Cors
 frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
@@ -52,36 +52,6 @@ app.add_middleware(
     allow_headers=["*"],
     allow_credentials=True,
 )
-
-
-# --- Pydantic Models ---
-class ChatRequest(BaseModel):
-    prompt: str
-
-
-class ChatResponse(BaseModel):
-    response: str
-
-
-# --- API Endpoints ---
-# @app.get("/")
-# async def root():
-#     return {"status": "Vietnam Travel RAG API is running 🚀"}
-
-
-def get_inference_service(request: Request) -> RAGInference:  # ← thêm request
-    inference = getattr(request.app.state, "inference", None)
-    if inference is None:
-        raise HTTPException(status_code=503, detail="Inference Pipeline chưa sẵn sàng!")
-    return inference
-
-
-@app.post("/chat", response_model=ChatResponse)
-async def chat(
-    request: ChatRequest, engine: RAGInference = Depends(get_inference_service)
-):
-    response_text = await engine.predict_async(request.prompt)
-    return ChatResponse(response=response_text)
 
 
 # --- Gradio ChatInterface (Tạm thời tắt — dùng React Frontend) ---
