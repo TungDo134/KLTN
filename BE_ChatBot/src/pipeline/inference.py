@@ -174,6 +174,37 @@ class RAGInference:
 
         return answer
 
+    async def predict_stream(
+        self,
+        question: str,
+        session_id: str = "default",
+    ):
+        """Stream phản hồi kết hợp với việc giữ session id - sẽ thay qua converstation id"""
+        history = self._get_history(session_id)
+
+        # [1] Rewrite nếu có history
+        search_question = await self._rewrite_question(question, history)
+
+        # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
+        reranked_docs = await self.orchestrator.run(search_question)
+
+        # [3] Build context từ reranked docs
+        context = "\n\n".join(doc.page_content for doc in reranked_docs)
+
+        # [4] Build messages (system + history + question)
+        messages = self._build_messages(history, context, question)
+
+        # [5] LLM generate - STREAMING RESPONSE
+        full_answer = ""
+        async for chunk in self.llm.astream(messages):
+            token = getattr(chunk, "content", "")
+            if token:
+                full_answer += token
+                yield token
+
+        print(f"\n [{self.model_info_core}]: {full_answer}")
+        self._save_turn(session_id, question, full_answer)
+
     # Xóa lịch sử - API
     def clear_history(self, session_id: str = "default") -> None:
         """Xóa lịch sử của một session (dùng cho nút 'New Chat')."""

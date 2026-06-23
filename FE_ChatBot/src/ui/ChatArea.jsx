@@ -2,12 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import Message from "./Message";
 import ChatInput from "./ChatInput";
 import chatApi from "../services/chatApi";
+import { getConversationSessionId } from "../services/conversationSession";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
 function ChatArea() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
+  const conversationSessionIdRef = useRef(getConversationSessionId());
 
   const handleSend = async (text) => {
     if (!text.trim()) return;
@@ -25,8 +27,9 @@ function ChatArea() {
     try {
       const res = await chatApi.sendMessageStream(
         text,
+        conversationSessionIdRef.current,
         (chunk, fullTextSoFar) => {
-          // Tắt loading indicator (3 dấu chấm) khi nhận ký tự đầu tiên
+          // Tắt loading khi nhận ký tự đầu tiên
           setLoading(false);
           // Cập nhật text liên tục cho tin nhắn bot cuối cùng
           setMessages((prev) => {
@@ -34,7 +37,9 @@ function ChatArea() {
             const lastIndex = newMsgs.length - 1;
 
             // Loại bỏ khối ```json... để chỉ stream ngôn ngữ tự nhiên
-            const cleanStreamingText = fullTextSoFar.replace(/```json[\s\S]*/i, "").trim();
+            const cleanStreamingText = fullTextSoFar
+              .replace(/```json[\s\S]*/i, "")
+              .trim();
 
             newMsgs[lastIndex] = {
               ...newMsgs[lastIndex],
@@ -57,7 +62,9 @@ function ChatArea() {
       }
 
       // Xóa hẳn khối JSON ra khỏi ngôn ngữ tự nhiên hiển thị
-      const finalCleanText = responseText.replace(/```json[\s\S]*?```/i, "").trim();
+      const finalCleanText = responseText
+        .replace(/```json[\s\S]*?```/i, "")
+        .trim();
 
       if (tripData) {
         // Đặt trạng thái đang tạo giao diện (chưa có tripData)
