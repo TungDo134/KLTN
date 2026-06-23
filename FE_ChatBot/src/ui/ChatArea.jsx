@@ -2,17 +2,28 @@ import { useState, useEffect, useRef } from "react";
 import Message from "./Message";
 import ChatInput from "./ChatInput";
 import chatApi from "../services/chatApi";
-import { getConversationSessionId } from "../services/conversationSession";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
 function ChatArea() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [conversationId, setConversationId] = useState(null);
   const bottomRef = useRef(null);
-  const conversationSessionIdRef = useRef(getConversationSessionId());
 
   const handleSend = async (text) => {
     if (!text.trim()) return;
+
+    if (!localStorage.getItem("access_token")) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          text: "Vui lòng đăng nhập để bắt đầu chat.",
+          sender: "bot",
+          isError: true,
+        },
+      ]);
+      return;
+    }
 
     // Thêm message của user
     setMessages((prev) => [...prev, { text, sender: "user" }]);
@@ -27,7 +38,7 @@ function ChatArea() {
     try {
       const res = await chatApi.sendMessageStream(
         text,
-        conversationSessionIdRef.current,
+        conversationId,
         (chunk, fullTextSoFar) => {
           // Tắt loading khi nhận ký tự đầu tiên
           setLoading(false);
@@ -47,6 +58,11 @@ function ChatArea() {
             };
             return newMsgs;
           });
+        },
+        (meta) => {
+          if (meta.conversation_id) {
+            setConversationId(meta.conversation_id);
+          }
         },
       );
 
