@@ -1,0 +1,3782 @@
+[
+  {
+    "id": "VT_0001",
+    "name": "Tượng Chúa Kitô Vua",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "tượng chúa giang tay",
+      "núi nhỏ",
+      "view toàn cảnh",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1607,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.389318425090275,
+      "lng": 107.03292043611003,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tượng Chúa Kitô Vua phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tượng Chúa Kitô Vua là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tượng+Chúa+Kitô+Vua"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0002",
+    "name": "Mũi Nghinh Phong",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "cổng trời",
+      "đón gió",
+      "hoàng hôn",
+      "chụp ảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2968,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.35206181680155,
+      "lng": 107.03045281427255,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mũi Nghinh Phong phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Mũi Nghinh Phong là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mũi+Nghinh+Phong"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0003",
+    "name": "Ngọn Hải Đăng Vũng Tàu",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "h hải đăng cổ",
+      "kiến trúc pháp",
+      "view biển",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 811,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.306326644503951,
+      "lng": 107.13672285959979,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngọn Hải Đăng Vũng Tàu phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Ngọn Hải Đăng Vũng Tàu là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngọn+Hải+Đăng+Vũng+Tàu"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0004",
+    "name": "Bãi Sau (Thùy Vân)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "tắm biển nhộn nhịp",
+      "cát dài",
+      "vui chơi",
+      "khách sạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2758,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.343518100638818,
+      "lng": 107.13003520758448,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Sau (Thùy Vân) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Sau (Thùy Vân) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Sau+(Thùy+Vân)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0005",
+    "name": "Bãi Trước",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "công viên ven biển",
+      "ngắm hoàng hôn",
+      "tàu bè",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2847,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.298418174845413,
+      "lng": 107.03824047880497,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Trước phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Trước là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Trước"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0006",
+    "name": "Bạch Dinh (Villa Blanche)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp cổ",
+      "lịch sử",
+      "view biển",
+      "hoa sứ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2003,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.39857018004981,
+      "lng": 107.04519399538512,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bạch Dinh (Villa Blanche) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bạch Dinh (Villa Blanche) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bạch+Dinh+(Villa+Blanche)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0007",
+    "name": "Hồ Mây Park",
+    "region": "Vũng Tàu",
+    "type": "park",
+    "tags": [
+      "cáp treo",
+      "đỉnh núi lớn",
+      "vui chơi giải trí",
+      "gia đình",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2206,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.301631432641585,
+      "lng": 107.0315559255364,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Mây Park phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Hồ Mây Park là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Mây+Park"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0008",
+    "name": "Thích Ca Phật Đài",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "quần thể phật giáo",
+      "tâm linh",
+      "tĩnh lặng",
+      "kiến trúc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2463,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.316512316143292,
+      "lng": 107.0612615990572,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thích Ca Phật Đài phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Thích Ca Phật Đài là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thích+Ca+Phật+Đài"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0009",
+    "name": "Niết Bàn Tịnh Xá",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "chùa thuyền rồng",
+      "tượng phật nằm",
+      "tâm linh",
+      "núi nhỏ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 4098,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.33524467849178,
+      "lng": 107.09841540491877,
+      "address": "Tọa độ bản đồ chuẩn hóa của Niết Bàn Tịnh Xá phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Niết Bàn Tịnh Xá là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Niết+Bàn+Tịnh+Xá"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0010",
+    "name": "Hòn Bà",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "con đường đi bộ dưới biển",
+      "tâm linh",
+      "thủy triều",
+      "độc đáo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2980,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.31220661188247,
+      "lng": 107.13994376428566,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Bà phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Bà là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Bà"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0011",
+    "name": "Đồi Con Heo",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "hoang sơ",
+      "view bãi sau",
+      "phượt",
+      "chụp ảnh bụi",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 295,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.314016516609836,
+      "lng": 107.13384734788588,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồi Con Heo phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồi Con Heo là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Con+Heo"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0012",
+    "name": "Bến thuyền Marina Vũng Tàu",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "thuyền buồm colorful",
+      "sống ảo",
+      "giới trẻ",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3549,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.371208856292997,
+      "lng": 107.10800180200215,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến thuyền Marina Vũng Tàu phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bến thuyền Marina Vũng Tàu là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+thuyền+Marina+Vũng+Tàu"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0013",
+    "name": "Bãi Dứa",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "yên tĩnh",
+      "ghềnh đá",
+      "ngắm hoàng hôn",
+      "lãng mạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2417,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.306530855900974,
+      "lng": 107.07171246873108,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dứa phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dứa là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dứa"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0014",
+    "name": "Bãi Dâu",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "đền thánh đức mẹ",
+      "thanh bình",
+      "ít người",
+      "tắm biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3118,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.301869173815357,
+      "lng": 107.04240375204321,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dâu phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dâu là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dâu"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0015",
+    "name": "Nhà úp ngược (Upside Down House)",
+    "region": "Vũng Tàu",
+    "type": "entertainment",
+    "tags": [
+      "độc lạ",
+      "chụp hình trong nhà",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1545,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.369015360724982,
+      "lng": 107.02788463856139,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà úp ngược (Upside Down House) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 20000,
+    "description": "Nhà úp ngược (Upside Down House) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+úp+ngược+(Upside+Down+House)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0016",
+    "name": "Hồ Tràm / Hồ Cốc",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "biển hoang sơ",
+      "resort cao cấp",
+      "ngoại ô",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3894,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.350460367643723,
+      "lng": 107.07364333022952,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tràm / Hồ Cốc phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hồ Tràm / Hồ Cốc là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tràm+/+Hồ+Cốc"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0017",
+    "name": "Suối nước nóng Bình Châu",
+    "region": "Vũng Tàu",
+    "type": "resort",
+    "tags": [
+      "luộc trứng",
+      "khoáng nóng",
+      "ngoại ô",
+      "sức khỏe",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1923,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.318945180857177,
+      "lng": 107.09621201153212,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối nước nóng Bình Châu phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối nước nóng Bình Châu là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+nước+nóng+Bình+Châu"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0018",
+    "name": "Soho Coffee Vũng Tàu",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "view biển trực diện",
+      "kính hiện đại",
+      "hot trend",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1158,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.390703515898725,
+      "lng": 107.02894965626726,
+      "address": "Tọa độ bản đồ chuẩn hóa của Soho Coffee Vũng Tàu phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Soho Coffee Vũng Tàu là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Soho+Coffee+Vũng+Tàu"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0019",
+    "name": "Lightroom Coffee",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "đường lên hải đăng",
+      "view ôm trọn biển",
+      "buổi tối lung linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3487,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.336472280267273,
+      "lng": 107.11333122824512,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lightroom Coffee phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lightroom Coffee là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lightroom+Coffee"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0020",
+    "name": "Bánh khọt Cô Ba Vũng Tàu",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "bánh khọt sang trọng",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 407,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.320878476492087,
+      "lng": 107.08413128083124,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Cô Ba Vũng Tàu phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Cô Ba Vũng Tàu là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Cô+Ba+Vũng+Tàu"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0021",
+    "name": "Bánh khọt Gốc Vú Sữa",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đúc lò than",
+      "đông đúc",
+      "đặc sản lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3896,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.362015013877524,
+      "lng": 107.0979000823899,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Gốc Vú Sữa phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Gốc Vú Sữa là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Gốc+Vú+Sữa"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0022",
+    "name": "Lẩu cá đuối Hoàng Minh",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "lẩu cá đuối",
+      "ẩm thực đêm",
+      "đặc sản",
+      "quán nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 473,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.351612419022253,
+      "lng": 107.06538655521989,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lẩu cá đuối Hoàng Minh phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lẩu cá đuối Hoàng Minh là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lẩu+cá+đuối+Hoàng+Minh"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0023",
+    "name": "Sữa chua Cô Tiên",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đường lên hải đăng",
+      "ăn vặt",
+      "trứng lòng đào",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3786,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.326200787378609,
+      "lng": 107.1042773363643,
+      "address": "Tọa độ bản đồ chuẩn hóa của Sữa chua Cô Tiên phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Sữa chua Cô Tiên là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Sữa+chua+Cô+Tiên"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0024",
+    "name": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "tượng chúa giang tay",
+      "núi nhỏ",
+      "view toàn cảnh",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 558,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.336169414964305,
+      "lng": 107.09920146747572,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tượng Chúa Kitô Vua (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tượng+Chúa+Kitô+Vua+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0025",
+    "name": "Mũi Nghinh Phong (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "cổng trời",
+      "đón gió",
+      "hoàng hôn",
+      "chụp ảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2535,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.388235894197786,
+      "lng": 107.05133991797466,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mũi Nghinh Phong (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mũi+Nghinh+Phong+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0026",
+    "name": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "h hải đăng cổ",
+      "kiến trúc pháp",
+      "view biển",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 4013,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.326139566680634,
+      "lng": 107.11813559555607,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngọn+Hải+Đăng+Vũng+Tàu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0027",
+    "name": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "tắm biển nhộn nhịp",
+      "cát dài",
+      "vui chơi",
+      "khách sạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1007,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.400278974484783,
+      "lng": 107.14360393975247,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Sau+(Thùy+Vân)+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0028",
+    "name": "Bãi Trước (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "công viên ven biển",
+      "ngắm hoàng hôn",
+      "tàu bè",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1847,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.364914113772839,
+      "lng": 107.0580329049061,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Trước (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Trước (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Trước+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0029",
+    "name": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp cổ",
+      "lịch sử",
+      "view biển",
+      "hoa sứ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2306,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.348503578867945,
+      "lng": 107.03482048275355,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bạch+Dinh+(Villa+Blanche)+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0030",
+    "name": "Hồ Mây Park (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "park",
+    "tags": [
+      "cáp treo",
+      "đỉnh núi lớn",
+      "vui chơi giải trí",
+      "gia đình",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1995,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.311925829965388,
+      "lng": 107.05359967348727,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Mây Park (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Hồ Mây Park (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Mây+Park+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0031",
+    "name": "Thích Ca Phật Đài (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "quần thể phật giáo",
+      "tâm linh",
+      "tĩnh lặng",
+      "kiến trúc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2720,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.3026385221226,
+      "lng": 107.04025151787525,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thích Ca Phật Đài (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thích+Ca+Phật+Đài+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0032",
+    "name": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "chùa thuyền rồng",
+      "tượng phật nằm",
+      "tâm linh",
+      "núi nhỏ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 4173,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.338508882708494,
+      "lng": 107.04576760196346,
+      "address": "Tọa độ bản đồ chuẩn hóa của Niết Bàn Tịnh Xá (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Niết+Bàn+Tịnh+Xá+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0033",
+    "name": "Hòn Bà (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "con đường đi bộ dưới biển",
+      "tâm linh",
+      "thủy triều",
+      "độc đáo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1090,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.378524675961948,
+      "lng": 107.13099907739567,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Bà (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Bà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Bà+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0034",
+    "name": "Đồi Con Heo (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "hoang sơ",
+      "view bãi sau",
+      "phượt",
+      "chụp ảnh bụi",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 706,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.297814401361887,
+      "lng": 107.10663862322772,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồi Con Heo (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồi Con Heo (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Con+Heo+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0035",
+    "name": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "thuyền buồm colorful",
+      "sống ảo",
+      "giới trẻ",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1836,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.398609220816834,
+      "lng": 107.0580426843847,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+thuyền+Marina+Vũng+Tàu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0036",
+    "name": "Bãi Dứa (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "yên tĩnh",
+      "ghềnh đá",
+      "ngắm hoàng hôn",
+      "lãng mạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3687,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.291460029648196,
+      "lng": 107.04412729161332,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dứa (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dứa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dứa+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0037",
+    "name": "Bãi Dâu (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "đền thánh đức mẹ",
+      "thanh bình",
+      "ít người",
+      "tắm biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2371,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.319936312164021,
+      "lng": 107.03534055625678,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dâu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dâu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dâu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0038",
+    "name": "Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "entertainment",
+    "tags": [
+      "độc lạ",
+      "chụp hình trong nhà",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 727,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.336560358540552,
+      "lng": 107.03937054090527,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+úp+ngược+(Upside+Down+House)+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0039",
+    "name": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "biển hoang sơ",
+      "resort cao cấp",
+      "ngoại ô",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 621,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.354463163113444,
+      "lng": 107.11484020230436,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tràm+/+Hồ+Cốc+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0040",
+    "name": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "resort",
+    "tags": [
+      "luộc trứng",
+      "khoáng nóng",
+      "ngoại ô",
+      "sức khỏe",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1333,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.380219073649908,
+      "lng": 107.12027422597022,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối nước nóng Bình Châu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+nước+nóng+Bình+Châu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0041",
+    "name": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "view biển trực diện",
+      "kính hiện đại",
+      "hot trend",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 837,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.33568438125149,
+      "lng": 107.11079634445173,
+      "address": "Tọa độ bản đồ chuẩn hóa của Soho Coffee Vũng Tàu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Soho+Coffee+Vũng+Tàu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0042",
+    "name": "Lightroom Coffee (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "đường lên hải đăng",
+      "view ôm trọn biển",
+      "buổi tối lung linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 4035,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.404933142338123,
+      "lng": 107.09643444180213,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lightroom Coffee (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lightroom Coffee (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lightroom+Coffee+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0043",
+    "name": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "bánh khọt sang trọng",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2239,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.292188189980328,
+      "lng": 107.1037250488731,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Cô+Ba+Vũng+Tàu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0044",
+    "name": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đúc lò than",
+      "đông đúc",
+      "đặc sản lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3232,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.404024513999387,
+      "lng": 107.11065591972533,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Gốc+Vú+Sữa+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0045",
+    "name": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "lẩu cá đuối",
+      "ẩm thực đêm",
+      "đặc sản",
+      "quán nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3853,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.335903635816022,
+      "lng": 107.03298506320503,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lẩu+cá+đuối+Hoàng+Minh+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0046",
+    "name": "Sữa chua Cô Tiên (Cụm/Chi nhánh 2)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đường lên hải đăng",
+      "ăn vặt",
+      "trứng lòng đào",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2946,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.405349347175683,
+      "lng": 107.1127510794638,
+      "address": "Tọa độ bản đồ chuẩn hóa của Sữa chua Cô Tiên (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Sữa chua Cô Tiên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Sữa+chua+Cô+Tiên+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0047",
+    "name": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "tượng chúa giang tay",
+      "núi nhỏ",
+      "view toàn cảnh",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2593,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.318885326737446,
+      "lng": 107.08455581542515,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tượng Chúa Kitô Vua (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tượng+Chúa+Kitô+Vua+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0048",
+    "name": "Mũi Nghinh Phong (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "cổng trời",
+      "đón gió",
+      "hoàng hôn",
+      "chụp ảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2295,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.369782312291646,
+      "lng": 107.06937082939424,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mũi Nghinh Phong (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mũi+Nghinh+Phong+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0049",
+    "name": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "h hải đăng cổ",
+      "kiến trúc pháp",
+      "view biển",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 607,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.335193517280507,
+      "lng": 107.05172480579574,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngọn+Hải+Đăng+Vũng+Tàu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0050",
+    "name": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "tắm biển nhộn nhịp",
+      "cát dài",
+      "vui chơi",
+      "khách sạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 632,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.338406064709842,
+      "lng": 107.03487114305706,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Sau+(Thùy+Vân)+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0051",
+    "name": "Bãi Trước (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "công viên ven biển",
+      "ngắm hoàng hôn",
+      "tàu bè",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 402,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.30386504774058,
+      "lng": 107.10109460450519,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Trước (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Trước (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Trước+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0052",
+    "name": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp cổ",
+      "lịch sử",
+      "view biển",
+      "hoa sứ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2734,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.342561460835919,
+      "lng": 107.0468528246751,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bạch+Dinh+(Villa+Blanche)+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0053",
+    "name": "Hồ Mây Park (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "park",
+    "tags": [
+      "cáp treo",
+      "đỉnh núi lớn",
+      "vui chơi giải trí",
+      "gia đình",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1719,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.302395544855264,
+      "lng": 107.05885937980398,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Mây Park (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Hồ Mây Park (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Mây+Park+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0054",
+    "name": "Thích Ca Phật Đài (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "quần thể phật giáo",
+      "tâm linh",
+      "tĩnh lặng",
+      "kiến trúc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 963,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.328126020669487,
+      "lng": 107.08796240636143,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thích Ca Phật Đài (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thích+Ca+Phật+Đài+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0055",
+    "name": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "chùa thuyền rồng",
+      "tượng phật nằm",
+      "tâm linh",
+      "núi nhỏ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2063,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.346923822984822,
+      "lng": 107.0563712384463,
+      "address": "Tọa độ bản đồ chuẩn hóa của Niết Bàn Tịnh Xá (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Niết+Bàn+Tịnh+Xá+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0056",
+    "name": "Hòn Bà (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "con đường đi bộ dưới biển",
+      "tâm linh",
+      "thủy triều",
+      "độc đáo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2754,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.300918615482406,
+      "lng": 107.07603283496054,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Bà (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Bà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Bà+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0057",
+    "name": "Đồi Con Heo (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "hoang sơ",
+      "view bãi sau",
+      "phượt",
+      "chụp ảnh bụi",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2272,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.286901762967242,
+      "lng": 107.04870830546159,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồi Con Heo (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồi Con Heo (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Con+Heo+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0058",
+    "name": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "thuyền buồm colorful",
+      "sống ảo",
+      "giới trẻ",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 4170,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.381934250718903,
+      "lng": 107.14125502657464,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+thuyền+Marina+Vũng+Tàu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0059",
+    "name": "Bãi Dứa (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "yên tĩnh",
+      "ghềnh đá",
+      "ngắm hoàng hôn",
+      "lãng mạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 1199,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.390394462802488,
+      "lng": 107.04156461159214,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dứa (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dứa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dứa+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0060",
+    "name": "Bãi Dâu (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "đền thánh đức mẹ",
+      "thanh bình",
+      "ít người",
+      "tắm biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2596,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.36526213698936,
+      "lng": 107.11461305779126,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dâu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dâu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dâu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0061",
+    "name": "Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "entertainment",
+    "tags": [
+      "độc lạ",
+      "chụp hình trong nhà",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2840,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.378855421306449,
+      "lng": 107.09780471068433,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+úp+ngược+(Upside+Down+House)+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0062",
+    "name": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "biển hoang sơ",
+      "resort cao cấp",
+      "ngoại ô",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1201,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.341256632068452,
+      "lng": 107.09257276451956,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tràm+/+Hồ+Cốc+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0063",
+    "name": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "resort",
+    "tags": [
+      "luộc trứng",
+      "khoáng nóng",
+      "ngoại ô",
+      "sức khỏe",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1840,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.374378140530974,
+      "lng": 107.12293911720839,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối nước nóng Bình Châu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+nước+nóng+Bình+Châu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0064",
+    "name": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "view biển trực diện",
+      "kính hiện đại",
+      "hot trend",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 811,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.342917891821838,
+      "lng": 107.05515538921459,
+      "address": "Tọa độ bản đồ chuẩn hóa của Soho Coffee Vũng Tàu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Soho+Coffee+Vũng+Tàu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0065",
+    "name": "Lightroom Coffee (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "đường lên hải đăng",
+      "view ôm trọn biển",
+      "buổi tối lung linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 465,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.378699816809744,
+      "lng": 107.12531137032565,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lightroom Coffee (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lightroom Coffee (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lightroom+Coffee+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0066",
+    "name": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "bánh khọt sang trọng",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 176,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.325520340204726,
+      "lng": 107.13958825314629,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Cô+Ba+Vũng+Tàu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0067",
+    "name": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đúc lò than",
+      "đông đúc",
+      "đặc sản lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1907,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.383350007310414,
+      "lng": 107.093298904512,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Gốc+Vú+Sữa+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0068",
+    "name": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "lẩu cá đuối",
+      "ẩm thực đêm",
+      "đặc sản",
+      "quán nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3938,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.376862136040138,
+      "lng": 107.12991889798457,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lẩu+cá+đuối+Hoàng+Minh+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0069",
+    "name": "Sữa chua Cô Tiên (Cụm/Chi nhánh 3)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đường lên hải đăng",
+      "ăn vặt",
+      "trứng lòng đào",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1893,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.38489325075827,
+      "lng": 107.08432982980034,
+      "address": "Tọa độ bản đồ chuẩn hóa của Sữa chua Cô Tiên (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Sữa chua Cô Tiên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Sữa+chua+Cô+Tiên+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0070",
+    "name": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "tượng chúa giang tay",
+      "núi nhỏ",
+      "view toàn cảnh",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1372,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.36760730570867,
+      "lng": 107.04443993834975,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tượng Chúa Kitô Vua (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tượng+Chúa+Kitô+Vua+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0071",
+    "name": "Mũi Nghinh Phong (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "cổng trời",
+      "đón gió",
+      "hoàng hôn",
+      "chụp ảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3937,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.390984415719837,
+      "lng": 107.06930015219085,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mũi Nghinh Phong (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mũi+Nghinh+Phong+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0072",
+    "name": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "h hải đăng cổ",
+      "kiến trúc pháp",
+      "view biển",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 636,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.299486120723545,
+      "lng": 107.10852175051787,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngọn+Hải+Đăng+Vũng+Tàu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0073",
+    "name": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "tắm biển nhộn nhịp",
+      "cát dài",
+      "vui chơi",
+      "khách sạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2680,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.315715522185831,
+      "lng": 107.11207439030491,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Sau+(Thùy+Vân)+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0074",
+    "name": "Bãi Trước (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "công viên ven biển",
+      "ngắm hoàng hôn",
+      "tàu bè",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 616,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.323411888983843,
+      "lng": 107.09164623619141,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Trước (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Trước (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Trước+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0075",
+    "name": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp cổ",
+      "lịch sử",
+      "view biển",
+      "hoa sứ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3154,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.365304472765189,
+      "lng": 107.04428238665997,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bạch+Dinh+(Villa+Blanche)+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0076",
+    "name": "Hồ Mây Park (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "park",
+    "tags": [
+      "cáp treo",
+      "đỉnh núi lớn",
+      "vui chơi giải trí",
+      "gia đình",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1359,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.390011019246831,
+      "lng": 107.1313742842541,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Mây Park (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Hồ Mây Park (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Mây+Park+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0077",
+    "name": "Thích Ca Phật Đài (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "quần thể phật giáo",
+      "tâm linh",
+      "tĩnh lặng",
+      "kiến trúc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3776,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.330242296191617,
+      "lng": 107.05207359771761,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thích Ca Phật Đài (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thích+Ca+Phật+Đài+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0078",
+    "name": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "chùa thuyền rồng",
+      "tượng phật nằm",
+      "tâm linh",
+      "núi nhỏ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3738,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.298765204902217,
+      "lng": 107.05930498086553,
+      "address": "Tọa độ bản đồ chuẩn hóa của Niết Bàn Tịnh Xá (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Niết+Bàn+Tịnh+Xá+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0079",
+    "name": "Hòn Bà (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "con đường đi bộ dưới biển",
+      "tâm linh",
+      "thủy triều",
+      "độc đáo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1084,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.365762608847032,
+      "lng": 107.05207794878105,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Bà (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Bà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Bà+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0080",
+    "name": "Đồi Con Heo (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "hoang sơ",
+      "view bãi sau",
+      "phượt",
+      "chụp ảnh bụi",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3244,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.297086491751156,
+      "lng": 107.13167095387203,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồi Con Heo (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồi Con Heo (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Con+Heo+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0081",
+    "name": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "thuyền buồm colorful",
+      "sống ảo",
+      "giới trẻ",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2154,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.405675473437986,
+      "lng": 107.13635686908405,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+thuyền+Marina+Vũng+Tàu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0082",
+    "name": "Bãi Dứa (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "yên tĩnh",
+      "ghềnh đá",
+      "ngắm hoàng hôn",
+      "lãng mạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1347,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.34314569397966,
+      "lng": 107.13042810718815,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dứa (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dứa (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dứa+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0083",
+    "name": "Bãi Dâu (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "đền thánh đức mẹ",
+      "thanh bình",
+      "ít người",
+      "tắm biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3396,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.293156149797035,
+      "lng": 107.07126139875197,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Dâu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Dâu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Dâu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0084",
+    "name": "Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "entertainment",
+    "tags": [
+      "độc lạ",
+      "chụp hình trong nhà",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2962,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.352250167038862,
+      "lng": 107.13388676299613,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 50000,
+    "description": "Nhà úp ngược (Upside Down House) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+úp+ngược+(Upside+Down+House)+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0085",
+    "name": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "biển hoang sơ",
+      "resort cao cấp",
+      "ngoại ô",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1054,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.32864036141049,
+      "lng": 107.1359948207595,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tràm+/+Hồ+Cốc+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0086",
+    "name": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "resort",
+    "tags": [
+      "luộc trứng",
+      "khoáng nóng",
+      "ngoại ô",
+      "sức khỏe",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 4047,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.297666743888195,
+      "lng": 107.05274295674754,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối nước nóng Bình Châu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+nước+nóng+Bình+Châu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0087",
+    "name": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "view biển trực diện",
+      "kính hiện đại",
+      "hot trend",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 575,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.361295873910388,
+      "lng": 107.13496610479663,
+      "address": "Tọa độ bản đồ chuẩn hóa của Soho Coffee Vũng Tàu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Soho+Coffee+Vũng+Tàu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0088",
+    "name": "Lightroom Coffee (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "cafe",
+    "tags": [
+      "đường lên hải đăng",
+      "view ôm trọn biển",
+      "buổi tối lung linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3699,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.320980205932361,
+      "lng": 107.06071833527429,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lightroom Coffee (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lightroom Coffee (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lightroom+Coffee+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0089",
+    "name": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "bánh khọt sang trọng",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 195,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.357681374485711,
+      "lng": 107.06680818970331,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Cô+Ba+Vũng+Tàu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0090",
+    "name": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đúc lò than",
+      "đông đúc",
+      "đặc sản lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3925,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.314377718811677,
+      "lng": 107.04747631997431,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+khọt+Gốc+Vú+Sữa+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "VT_0091",
+    "name": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "lẩu cá đuối",
+      "ẩm thực đêm",
+      "đặc sản",
+      "quán nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3563,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.404319838692977,
+      "lng": 107.03811749418514,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lẩu+cá+đuối+Hoàng+Minh+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0092",
+    "name": "Sữa chua Cô Tiên (Cụm/Chi nhánh 4)",
+    "region": "Vũng Tàu",
+    "type": "restaurant",
+    "tags": [
+      "đường lên hải đăng",
+      "ăn vặt",
+      "trứng lòng đào",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3038,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.354055826139037,
+      "lng": 107.07451281842278,
+      "address": "Tọa độ bản đồ chuẩn hóa của Sữa chua Cô Tiên (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Sữa chua Cô Tiên (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Sữa+chua+Cô+Tiên+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0093",
+    "name": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "landmark",
+    "tags": [
+      "tượng chúa giang tay",
+      "núi nhỏ",
+      "view toàn cảnh",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3955,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.365886765508682,
+      "lng": 107.03900138165436,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tượng Chúa Kitô Vua (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tượng+Chúa+Kitô+Vua+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0094",
+    "name": "Mũi Nghinh Phong (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "cổng trời",
+      "đón gió",
+      "hoàng hôn",
+      "chụp ảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1560,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.383588977371362,
+      "lng": 107.05461716644949,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mũi Nghinh Phong (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mũi+Nghinh+Phong+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0095",
+    "name": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "h hải đăng cổ",
+      "kiến trúc pháp",
+      "view biển",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1950,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.32928116127827,
+      "lng": 107.04290107521662,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Ngọn Hải Đăng Vũng Tàu (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngọn+Hải+Đăng+Vũng+Tàu+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "VT_0096",
+    "name": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "tắm biển nhộn nhịp",
+      "cát dài",
+      "vui chơi",
+      "khách sạn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 905,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.329089290679862,
+      "lng": 107.13958840697155,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Sau+(Thùy+Vân)+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0097",
+    "name": "Bãi Trước (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "nature",
+    "tags": [
+      "công viên ven biển",
+      "ngắm hoàng hôn",
+      "tàu bè",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2703,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.319398842552697,
+      "lng": 107.06041733079927,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Trước (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Trước (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Trước+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0098",
+    "name": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp cổ",
+      "lịch sử",
+      "view biển",
+      "hoa sứ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2780,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.327203309878204,
+      "lng": 107.09985136963618,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bạch+Dinh+(Villa+Blanche)+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "VT_0099",
+    "name": "Hồ Mây Park (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "park",
+    "tags": [
+      "cáp treo",
+      "đỉnh núi lớn",
+      "vui chơi giải trí",
+      "gia đình",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1098,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.34168344390678,
+      "lng": 107.12836346608607,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Mây Park (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Hồ Mây Park (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Mây+Park+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "VT_0100",
+    "name": "Thích Ca Phật Đài (Cụm/Chi nhánh 5)",
+    "region": "Vũng Tàu",
+    "type": "spiritual",
+    "tags": [
+      "quần thể phật giáo",
+      "tâm linh",
+      "tĩnh lặng",
+      "kiến trúc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1326,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.290156342777918,
+      "lng": 107.08858977858307,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thích Ca Phật Đài (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Vũng Tàu, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thích+Ca+Phật+Đài+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "05-09"
+  }
+]

@@ -1,0 +1,3788 @@
+[
+  {
+    "id": "DN_0001",
+    "name": "Bà Nà Hills",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "cầu vàng",
+      "cáp treo",
+      "làng pháp",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 977,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.066496904261207,
+      "lng": 108.25264574179836,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bà Nà Hills phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Bà Nà Hills là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bà+Nà+Hills"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0002",
+    "name": "Bán đảo Sơn Trà",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "lá phổi xanh",
+      "thiên nhiên",
+      "phượt",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 591,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.04290154280259,
+      "lng": 108.25792810722608,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bán đảo Sơn Trà phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bán đảo Sơn Trà là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bán+đảo+Sơn+Trà"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0003",
+    "name": "Bãi biển Mỹ Khê",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "tắm biển",
+      "cát trắng",
+      "bình minh",
+      "thể thao nước",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 186,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.021706355835324,
+      "lng": 108.21245496115662,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi biển Mỹ Khê phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi biển Mỹ Khê là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+biển+Mỹ+Khê"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0004",
+    "name": "Cầu Rồng",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng",
+      "phun lửa",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3530,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.022411479878624,
+      "lng": 108.24641567848393,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Rồng phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Rồng là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Rồng"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0005",
+    "name": "Ngũ Hành Sơn",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "hang động",
+      "chùa chiền",
+      "leo núi",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1668,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.007582211456157,
+      "lng": 108.15885444613114,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngũ Hành Sơn phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngũ Hành Sơn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngũ+Hành+Sơn"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0006",
+    "name": "Chùa Linh Ứng Sơn Trà",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật quan âm",
+      "tâm linh",
+      "view biển",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 306,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.092244518775914,
+      "lng": 108.17463348873984,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Linh Ứng Sơn Trà phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Linh Ứng Sơn Trà là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Linh+Ứng+Sơn+Trà"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0007",
+    "name": "Cầu Sông Hàn",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu quay",
+      "lịch sử",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 4032,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.045240795854273,
+      "lng": 108.25297616162706,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Sông Hàn phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Sông Hàn là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Sông+Hàn"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0008",
+    "name": "Cầu Tình Yêu",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "ổ khóa",
+      "lãng mạn",
+      "cặp đôi",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2609,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.002226247981383,
+      "lng": 108.20094443965391,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Tình Yêu phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Tình Yêu là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Tình+Yêu"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0009",
+    "name": "Công viên Châu Á (Asia Park)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "vòng quay mặt trời",
+      "vui chơi",
+      "mạo hiểm",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2326,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.053875286065175,
+      "lng": 108.2409823666649,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Châu Á (Asia Park) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Công viên Châu Á (Asia Park) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Châu+Á+(Asia+Park)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0010",
+    "name": "Bảo tàng Điêu khắc Chăm",
+    "region": "Đà Nẵng",
+    "type": "historical",
+    "tags": [
+      "văn hóa chăm pa",
+      "cổ vật",
+      "bảo tàng",
+      "lịch sử",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2271,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.035225456953015,
+      "lng": 108.24016071197165,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Điêu khắc Chăm phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bảo tàng Điêu khắc Chăm là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Điêu+khắc+Chăm"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0011",
+    "name": "Chợ Cồn",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "thiên đường ẩm thực",
+      "ăn vặt",
+      "đặc sản",
+      "mua sắm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1615,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.07254693635801,
+      "lng": 108.21288210663735,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Cồn phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Cồn là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Cồn"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0012",
+    "name": "Chợ Hàn",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "quà lưu niệm",
+      "đặc sản",
+      "mua sắm",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 432,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.004090190513615,
+      "lng": 108.19749046108323,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Hàn phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Hàn là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Hàn"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0013",
+    "name": "Đỉnh Bàn Cờ",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "sơn trà",
+      "view toàn cảnh",
+      "leo núi",
+      "phượt",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 357,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.006695401165903,
+      "lng": 108.16223845756144,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đỉnh Bàn Cờ phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đỉnh Bàn Cờ là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đỉnh+Bàn+Cờ"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0014",
+    "name": "Rạn Nam Ô",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá rêu",
+      "hoang sơ",
+      "chụp ảnh",
+      "bình minh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1386,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.057698094666392,
+      "lng": 108.2459854872662,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rạn Nam Ô phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Rạn Nam Ô là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rạn+Nam+Ô"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0015",
+    "name": "Suối Khoáng Nóng Núi Thần Tài",
+    "region": "Đà Nẵng",
+    "type": "resort",
+    "tags": [
+      "nghỉ dưỡng",
+      "khoáng nóng",
+      "vui chơi",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3154,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.078927388588408,
+      "lng": 108.2493267578388,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối Khoáng Nóng Núi Thần Tài phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối Khoáng Nóng Núi Thần Tài là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+Khoáng+Nóng+Núi+Thần+Tài"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0016",
+    "name": "Thác Hòa Phú Thành",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "trượt thác",
+      "mạo hiểm",
+      "thiên nhiên",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3800,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.064479592375466,
+      "lng": 108.21813698932604,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thác Hòa Phú Thành phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Thác Hòa Phú Thành là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Hòa+Phú+Thành"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0017",
+    "name": "Cung thể thao Tiên Sơn",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "kiến trúc đĩa bay",
+      "check-in",
+      "hiện đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 4130,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.00947036736726,
+      "lng": 108.24908572317176,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cung thể thao Tiên Sơn phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung thể thao Tiên Sơn là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cung+thể+thao+Tiên+Sơn"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0018",
+    "name": "Cầu Thuận Phước",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu dây văng",
+      "view biển",
+      "hoàng hôn",
+      "vĩ đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3295,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.104420048221378,
+      "lng": 108.2403592365725,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Thuận Phước phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Thuận Phước là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Thuận+Phước"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0019",
+    "name": "Bãi Rạng",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá",
+      "hải sản",
+      "tắm biển",
+      "sơn trà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2317,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.098871279797162,
+      "lng": 108.17126101090767,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Rạng phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Rạng là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Rạng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0020",
+    "name": "Nhà thờ Con Gà Đà Nẵng",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "nhà thờ chính tòa",
+      "màu hồng",
+      "kiến trúc pháp",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3330,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.101194949328143,
+      "lng": 108.16014376410509,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Con Gà Đà Nẵng phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Con Gà Đà Nẵng là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Con+Gà+Đà+Nẵng"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0021",
+    "name": "Út Tịch Cafe",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "hoài cổ",
+      "view sông hàn",
+      "chill",
+      "trò chuyện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 204,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.051700922926333,
+      "lng": 108.17363881961913,
+      "address": "Tọa độ bản đồ chuẩn hóa của Út Tịch Cafe phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Út Tịch Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Út+Tịch+Cafe"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0022",
+    "name": "Reply 1988 Cafe",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "phong cách hàn quốc",
+      "sống ảo",
+      "giới trẻ",
+      "xinh xắn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2808,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.05979804399681,
+      "lng": 108.17568100329667,
+      "address": "Tọa độ bản đồ chuẩn hóa của Reply 1988 Cafe phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Reply 1988 Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Reply+1988+Cafe"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0023",
+    "name": "Mỳ quảng Ếch Bếp Trang",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "mỳ quảng",
+      "đặc sản",
+      "ẩm thực",
+      "nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2615,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.019223726639986,
+      "lng": 108.15167117879868,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mỳ quảng Ếch Bếp Trang phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Mỳ quảng Ếch Bếp Trang là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mỳ+quảng+Ếch+Bếp+Trang"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0024",
+    "name": "Bánh tráng cuốn thịt heo Trần",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "thịt heo hai đầu da",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2942,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.048903296194222,
+      "lng": 108.2271051938235,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh tráng cuốn thịt heo Trần phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh tráng cuốn thịt heo Trần là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+tráng+cuốn+thịt+heo+Trần"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0025",
+    "name": "Hải sản Năm Đảnh",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "hải sản bình dân",
+      "quán nhậu",
+      "ẩm thực biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1683,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.081644558567938,
+      "lng": 108.24647104505125,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Năm Đảnh phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Năm Đảnh là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Năm+Đảnh"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0026",
+    "name": "Bún chả cá Ông Tạ",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "bún chả cá",
+      "ẩm thực",
+      "ăn sáng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 897,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.033479024563285,
+      "lng": 108.16910185140972,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún chả cá Ông Tạ phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún chả cá Ông Tạ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+chả+cá+Ông+Tạ"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0027",
+    "name": "Bà Nà Hills (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "cầu vàng",
+      "cáp treo",
+      "làng pháp",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 4018,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.033113681175106,
+      "lng": 108.23660929323061,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bà Nà Hills (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Bà Nà Hills (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bà+Nà+Hills+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0028",
+    "name": "Bán đảo Sơn Trà (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "lá phổi xanh",
+      "thiên nhiên",
+      "phượt",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2799,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.05681631997886,
+      "lng": 108.14243698475373,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bán đảo Sơn Trà (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bán đảo Sơn Trà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bán+đảo+Sơn+Trà+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0029",
+    "name": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "tắm biển",
+      "cát trắng",
+      "bình minh",
+      "thể thao nước",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3348,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.1028450155634,
+      "lng": 108.22770399396829,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi biển Mỹ Khê (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+biển+Mỹ+Khê+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0030",
+    "name": "Cầu Rồng (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng",
+      "phun lửa",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2528,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.08330051042357,
+      "lng": 108.18702813708316,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Rồng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Rồng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Rồng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0031",
+    "name": "Ngũ Hành Sơn (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "hang động",
+      "chùa chiền",
+      "leo núi",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1473,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.097023910370762,
+      "lng": 108.18162322889755,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngũ Hành Sơn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngũ Hành Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngũ+Hành+Sơn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0032",
+    "name": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật quan âm",
+      "tâm linh",
+      "view biển",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 624,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.035675816697236,
+      "lng": 108.22095836506665,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Linh+Ứng+Sơn+Trà+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0033",
+    "name": "Cầu Sông Hàn (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu quay",
+      "lịch sử",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 1781,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.098056954571657,
+      "lng": 108.18781660038924,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Sông Hàn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Sông Hàn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Sông+Hàn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0034",
+    "name": "Cầu Tình Yêu (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "ổ khóa",
+      "lãng mạn",
+      "cặp đôi",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 819,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 15.997917393783446,
+      "lng": 108.15192580318102,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Tình Yêu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Tình Yêu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Tình+Yêu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0035",
+    "name": "Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "vòng quay mặt trời",
+      "vui chơi",
+      "mạo hiểm",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1813,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.09439556657869,
+      "lng": 108.2544362686722,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Châu+Á+(Asia+Park)+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0036",
+    "name": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "historical",
+    "tags": [
+      "văn hóa chăm pa",
+      "cổ vật",
+      "bảo tàng",
+      "lịch sử",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1967,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.01746757297548,
+      "lng": 108.161101261406,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Điêu+khắc+Chăm+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0037",
+    "name": "Chợ Cồn (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "thiên đường ẩm thực",
+      "ăn vặt",
+      "đặc sản",
+      "mua sắm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1325,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.001594643318896,
+      "lng": 108.22808056023855,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Cồn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Cồn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Cồn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0038",
+    "name": "Chợ Hàn (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "quà lưu niệm",
+      "đặc sản",
+      "mua sắm",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2214,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.034562558373334,
+      "lng": 108.21087079346333,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Hàn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Hàn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Hàn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0039",
+    "name": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "sơn trà",
+      "view toàn cảnh",
+      "leo núi",
+      "phượt",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2637,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.093937224821378,
+      "lng": 108.22367011558295,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đỉnh Bàn Cờ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đỉnh+Bàn+Cờ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0040",
+    "name": "Rạn Nam Ô (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá rêu",
+      "hoang sơ",
+      "chụp ảnh",
+      "bình minh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2809,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.10786880190588,
+      "lng": 108.18129980236391,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rạn Nam Ô (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Rạn Nam Ô (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rạn+Nam+Ô+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0041",
+    "name": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "resort",
+    "tags": [
+      "nghỉ dưỡng",
+      "khoáng nóng",
+      "vui chơi",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 4045,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.104220704731723,
+      "lng": 108.19675399187855,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+Khoáng+Nóng+Núi+Thần+Tài+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0042",
+    "name": "Thác Hòa Phú Thành (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "trượt thác",
+      "mạo hiểm",
+      "thiên nhiên",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1074,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.028680801266752,
+      "lng": 108.24602430082976,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thác Hòa Phú Thành (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Thác Hòa Phú Thành (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Hòa+Phú+Thành+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0043",
+    "name": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "kiến trúc đĩa bay",
+      "check-in",
+      "hiện đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3537,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.031405752404734,
+      "lng": 108.21448105738382,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cung thể thao Tiên Sơn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cung+thể+thao+Tiên+Sơn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0044",
+    "name": "Cầu Thuận Phước (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu dây văng",
+      "view biển",
+      "hoàng hôn",
+      "vĩ đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3332,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.03369480950488,
+      "lng": 108.24069226395349,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Thuận Phước (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Thuận Phước (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Thuận+Phước+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0045",
+    "name": "Bãi Rạng (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá",
+      "hải sản",
+      "tắm biển",
+      "sơn trà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2824,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.034257393285806,
+      "lng": 108.20130800187606,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Rạng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Rạng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Rạng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0046",
+    "name": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "nhà thờ chính tòa",
+      "màu hồng",
+      "kiến trúc pháp",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 272,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.078864387795022,
+      "lng": 108.19171444440411,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Con+Gà+Đà+Nẵng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0047",
+    "name": "Út Tịch Cafe (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "hoài cổ",
+      "view sông hàn",
+      "chill",
+      "trò chuyện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2904,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.054898924577856,
+      "lng": 108.22948274291764,
+      "address": "Tọa độ bản đồ chuẩn hóa của Út Tịch Cafe (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Út Tịch Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Út+Tịch+Cafe+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0048",
+    "name": "Reply 1988 Cafe (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "phong cách hàn quốc",
+      "sống ảo",
+      "giới trẻ",
+      "xinh xắn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2889,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.06167480766757,
+      "lng": 108.25905271458377,
+      "address": "Tọa độ bản đồ chuẩn hóa của Reply 1988 Cafe (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Reply 1988 Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Reply+1988+Cafe+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0049",
+    "name": "Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "mỳ quảng",
+      "đặc sản",
+      "ẩm thực",
+      "nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2694,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.07790888201246,
+      "lng": 108.15558356257615,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mỳ+quảng+Ếch+Bếp+Trang+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0050",
+    "name": "Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "thịt heo hai đầu da",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3543,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.1006563775664,
+      "lng": 108.20020155863207,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+tráng+cuốn+thịt+heo+Trần+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0051",
+    "name": "Hải sản Năm Đảnh (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "hải sản bình dân",
+      "quán nhậu",
+      "ẩm thực biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3350,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.017988546468803,
+      "lng": 108.16941969048551,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Năm Đảnh (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Năm Đảnh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Năm+Đảnh+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0052",
+    "name": "Bún chả cá Ông Tạ (Cụm/Chi nhánh 2)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "bún chả cá",
+      "ẩm thực",
+      "ăn sáng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 686,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.018473692697885,
+      "lng": 108.24958350686832,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún chả cá Ông Tạ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún chả cá Ông Tạ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+chả+cá+Ông+Tạ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0053",
+    "name": "Bà Nà Hills (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "cầu vàng",
+      "cáp treo",
+      "làng pháp",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3046,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.09775369553508,
+      "lng": 108.24509835755151,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bà Nà Hills (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Bà Nà Hills (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bà+Nà+Hills+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0054",
+    "name": "Bán đảo Sơn Trà (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "lá phổi xanh",
+      "thiên nhiên",
+      "phượt",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2805,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.00845843064733,
+      "lng": 108.21262220280015,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bán đảo Sơn Trà (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bán đảo Sơn Trà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bán+đảo+Sơn+Trà+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0055",
+    "name": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "tắm biển",
+      "cát trắng",
+      "bình minh",
+      "thể thao nước",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3849,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.056502577846608,
+      "lng": 108.19083816402491,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi biển Mỹ Khê (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+biển+Mỹ+Khê+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0056",
+    "name": "Cầu Rồng (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng",
+      "phun lửa",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2426,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.09148422061887,
+      "lng": 108.18874441445138,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Rồng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Rồng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Rồng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0057",
+    "name": "Ngũ Hành Sơn (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "hang động",
+      "chùa chiền",
+      "leo núi",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2402,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.101668963179502,
+      "lng": 108.18390439282966,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngũ Hành Sơn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngũ Hành Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngũ+Hành+Sơn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0058",
+    "name": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật quan âm",
+      "tâm linh",
+      "view biển",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2292,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.02487350044675,
+      "lng": 108.14931036758045,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Linh+Ứng+Sơn+Trà+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0059",
+    "name": "Cầu Sông Hàn (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu quay",
+      "lịch sử",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3291,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.105425013723334,
+      "lng": 108.20677256942277,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Sông Hàn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Sông Hàn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Sông+Hàn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0060",
+    "name": "Cầu Tình Yêu (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "ổ khóa",
+      "lãng mạn",
+      "cặp đôi",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2739,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.027403655880402,
+      "lng": 108.14993205025675,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Tình Yêu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Tình Yêu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Tình+Yêu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0061",
+    "name": "Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "vòng quay mặt trời",
+      "vui chơi",
+      "mạo hiểm",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2605,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.024662327307315,
+      "lng": 108.23707784373183,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Châu+Á+(Asia+Park)+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0062",
+    "name": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "historical",
+    "tags": [
+      "văn hóa chăm pa",
+      "cổ vật",
+      "bảo tàng",
+      "lịch sử",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2564,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.034849878492267,
+      "lng": 108.21933878184025,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Điêu+khắc+Chăm+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0063",
+    "name": "Chợ Cồn (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "thiên đường ẩm thực",
+      "ăn vặt",
+      "đặc sản",
+      "mua sắm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3787,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 15.995193319125761,
+      "lng": 108.18865884209178,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Cồn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Cồn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Cồn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0064",
+    "name": "Chợ Hàn (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "quà lưu niệm",
+      "đặc sản",
+      "mua sắm",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2995,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.107627272551156,
+      "lng": 108.23569148055175,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Hàn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Hàn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Hàn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0065",
+    "name": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "sơn trà",
+      "view toàn cảnh",
+      "leo núi",
+      "phượt",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3946,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 15.99588131849468,
+      "lng": 108.24197764012388,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đỉnh Bàn Cờ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đỉnh+Bàn+Cờ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0066",
+    "name": "Rạn Nam Ô (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá rêu",
+      "hoang sơ",
+      "chụp ảnh",
+      "bình minh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 4004,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.068326582146216,
+      "lng": 108.25289108781513,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rạn Nam Ô (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Rạn Nam Ô (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rạn+Nam+Ô+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0067",
+    "name": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "resort",
+    "tags": [
+      "nghỉ dưỡng",
+      "khoáng nóng",
+      "vui chơi",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 707,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.039909702143706,
+      "lng": 108.25348503156717,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+Khoáng+Nóng+Núi+Thần+Tài+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0068",
+    "name": "Thác Hòa Phú Thành (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "trượt thác",
+      "mạo hiểm",
+      "thiên nhiên",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3428,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 15.999987883356935,
+      "lng": 108.15180567227941,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thác Hòa Phú Thành (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Thác Hòa Phú Thành (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Hòa+Phú+Thành+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0069",
+    "name": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "kiến trúc đĩa bay",
+      "check-in",
+      "hiện đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1239,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.059671163438903,
+      "lng": 108.16044724695985,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cung thể thao Tiên Sơn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cung+thể+thao+Tiên+Sơn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0070",
+    "name": "Cầu Thuận Phước (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu dây văng",
+      "view biển",
+      "hoàng hôn",
+      "vĩ đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2428,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.10897429728006,
+      "lng": 108.14443634301558,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Thuận Phước (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Thuận Phước (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Thuận+Phước+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0071",
+    "name": "Bãi Rạng (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá",
+      "hải sản",
+      "tắm biển",
+      "sơn trà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 4151,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.032117751277294,
+      "lng": 108.1597710843796,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Rạng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Rạng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Rạng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0072",
+    "name": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "nhà thờ chính tòa",
+      "màu hồng",
+      "kiến trúc pháp",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1578,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.078862465973714,
+      "lng": 108.17187324120033,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Con+Gà+Đà+Nẵng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0073",
+    "name": "Út Tịch Cafe (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "hoài cổ",
+      "view sông hàn",
+      "chill",
+      "trò chuyện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1454,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 15.999773185693897,
+      "lng": 108.19296733769829,
+      "address": "Tọa độ bản đồ chuẩn hóa của Út Tịch Cafe (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Út Tịch Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Út+Tịch+Cafe+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0074",
+    "name": "Reply 1988 Cafe (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "phong cách hàn quốc",
+      "sống ảo",
+      "giới trẻ",
+      "xinh xắn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2874,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.032687545361952,
+      "lng": 108.16355763092663,
+      "address": "Tọa độ bản đồ chuẩn hóa của Reply 1988 Cafe (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Reply 1988 Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Reply+1988+Cafe+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0075",
+    "name": "Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "mỳ quảng",
+      "đặc sản",
+      "ẩm thực",
+      "nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3734,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.06334994526229,
+      "lng": 108.24667296429271,
+      "address": "Tọa độ bản đồ chuẩn hóa của Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mỳ+quảng+Ếch+Bếp+Trang+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0076",
+    "name": "Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "thịt heo hai đầu da",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 991,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.020018935260183,
+      "lng": 108.19095365019697,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+tráng+cuốn+thịt+heo+Trần+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0077",
+    "name": "Hải sản Năm Đảnh (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "hải sản bình dân",
+      "quán nhậu",
+      "ẩm thực biển",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1173,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.107702791961835,
+      "lng": 108.26026554532785,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Năm Đảnh (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Năm Đảnh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Năm+Đảnh+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0078",
+    "name": "Bún chả cá Ông Tạ (Cụm/Chi nhánh 3)",
+    "region": "Đà Nẵng",
+    "type": "restaurant",
+    "tags": [
+      "bún chả cá",
+      "ẩm thực",
+      "ăn sáng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2275,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.082446463588187,
+      "lng": 108.20796987489747,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún chả cá Ông Tạ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún chả cá Ông Tạ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+chả+cá+Ông+Tạ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0079",
+    "name": "Bà Nà Hills (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "cầu vàng",
+      "cáp treo",
+      "làng pháp",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 318,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.106120278504577,
+      "lng": 108.17950384750588,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bà Nà Hills (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bà Nà Hills (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bà+Nà+Hills+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0080",
+    "name": "Bán đảo Sơn Trà (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "lá phổi xanh",
+      "thiên nhiên",
+      "phượt",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 470,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.059931651604018,
+      "lng": 108.25992418648272,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bán đảo Sơn Trà (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bán đảo Sơn Trà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bán+đảo+Sơn+Trà+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0081",
+    "name": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "tắm biển",
+      "cát trắng",
+      "bình minh",
+      "thể thao nước",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 4049,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.02248611051104,
+      "lng": 108.16444943452987,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi biển Mỹ Khê (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+biển+Mỹ+Khê+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0082",
+    "name": "Cầu Rồng (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng",
+      "phun lửa",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 4064,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.027992592815046,
+      "lng": 108.17715449933196,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Rồng (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Rồng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Rồng+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0083",
+    "name": "Ngũ Hành Sơn (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "hang động",
+      "chùa chiền",
+      "leo núi",
+      "tâm linh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 694,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.025494430313362,
+      "lng": 108.2121442404224,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ngũ Hành Sơn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngũ Hành Sơn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ngũ+Hành+Sơn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0084",
+    "name": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật quan âm",
+      "tâm linh",
+      "view biển",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1469,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.075378776378255,
+      "lng": 108.1686920164887,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Linh+Ứng+Sơn+Trà+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0085",
+    "name": "Cầu Sông Hàn (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu quay",
+      "lịch sử",
+      "sông hàn",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3540,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.047529832496487,
+      "lng": 108.18416919558543,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Sông Hàn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Sông Hàn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Sông+Hàn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0086",
+    "name": "Cầu Tình Yêu (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "ổ khóa",
+      "lãng mạn",
+      "cặp đôi",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 326,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.030754602270655,
+      "lng": 108.24714904253435,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Tình Yêu (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Tình Yêu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Tình+Yêu+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0087",
+    "name": "Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "park",
+    "tags": [
+      "vòng quay mặt trời",
+      "vui chơi",
+      "mạo hiểm",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 436,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.06767330845553,
+      "lng": 108.23966771815097,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Công viên Châu Á (Asia Park) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Châu+Á+(Asia+Park)+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0088",
+    "name": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "historical",
+    "tags": [
+      "văn hóa chăm pa",
+      "cổ vật",
+      "bảo tàng",
+      "lịch sử",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 4129,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.005160337648398,
+      "lng": 108.15655324475259,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Điêu+khắc+Chăm+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0089",
+    "name": "Chợ Cồn (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "thiên đường ẩm thực",
+      "ăn vặt",
+      "đặc sản",
+      "mua sắm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3221,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.032262664317617,
+      "lng": 108.24565943789784,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Cồn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Cồn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Cồn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0090",
+    "name": "Chợ Hàn (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "market",
+    "tags": [
+      "quà lưu niệm",
+      "đặc sản",
+      "mua sắm",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2830,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.079885482057673,
+      "lng": 108.20484805806,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Hàn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Hàn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Hàn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0091",
+    "name": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "sơn trà",
+      "view toàn cảnh",
+      "leo núi",
+      "phượt",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 4182,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.094646195607083,
+      "lng": 108.21112365684687,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đỉnh Bàn Cờ (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đỉnh+Bàn+Cờ+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0092",
+    "name": "Rạn Nam Ô (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá rêu",
+      "hoang sơ",
+      "chụp ảnh",
+      "bình minh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1471,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.011129990599684,
+      "lng": 108.2406018374067,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rạn Nam Ô (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Rạn Nam Ô (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rạn+Nam+Ô+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0093",
+    "name": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "resort",
+    "tags": [
+      "nghỉ dưỡng",
+      "khoáng nóng",
+      "vui chơi",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3899,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.0142074720719,
+      "lng": 108.1485994051926,
+      "address": "Tọa độ bản đồ chuẩn hóa của Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+Khoáng+Nóng+Núi+Thần+Tài+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "DN_0094",
+    "name": "Thác Hòa Phú Thành (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "trượt thác",
+      "mạo hiểm",
+      "thiên nhiên",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3583,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.058823698934138,
+      "lng": 108.1936162205545,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thác Hòa Phú Thành (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Thác Hòa Phú Thành (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Hòa+Phú+Thành+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0095",
+    "name": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "kiến trúc đĩa bay",
+      "check-in",
+      "hiện đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1319,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.089351690653718,
+      "lng": 108.23419953020922,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cung thể thao Tiên Sơn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cung+thể+thao+Tiên+Sơn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "DN_0096",
+    "name": "Cầu Thuận Phước (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "landmark",
+    "tags": [
+      "cầu dây văng",
+      "view biển",
+      "hoàng hôn",
+      "vĩ đại",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 312,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.01323894480145,
+      "lng": 108.2422745856291,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Thuận Phước (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Thuận Phước (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Thuận+Phước+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0097",
+    "name": "Bãi Rạng (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "nature",
+    "tags": [
+      "bãi đá",
+      "hải sản",
+      "tắm biển",
+      "sơn trà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3314,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.074859203067142,
+      "lng": 108.19096797414699,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi Rạng (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi Rạng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+Rạng+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DN_0098",
+    "name": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "spiritual",
+    "tags": [
+      "nhà thờ chính tòa",
+      "màu hồng",
+      "kiến trúc pháp",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 731,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.049805931253985,
+      "lng": 108.17910448243967,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Con+Gà+Đà+Nẵng+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0099",
+    "name": "Út Tịch Cafe (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "hoài cổ",
+      "view sông hàn",
+      "chill",
+      "trò chuyện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1707,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.108030800124617,
+      "lng": 108.16808157840036,
+      "address": "Tọa độ bản đồ chuẩn hóa của Út Tịch Cafe (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Út Tịch Cafe (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Út+Tịch+Cafe+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DN_0100",
+    "name": "Reply 1988 Cafe (Cụm/Chi nhánh 4)",
+    "region": "Đà Nẵng",
+    "type": "cafe",
+    "tags": [
+      "phong cách hàn quốc",
+      "sống ảo",
+      "giới trẻ",
+      "xinh xắn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 832,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 16.04293460710723,
+      "lng": 108.15263932013023,
+      "address": "Tọa độ bản đồ chuẩn hóa của Reply 1988 Cafe (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Đà Nẵng, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Reply 1988 Cafe (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Reply+1988+Cafe+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  }
+]
