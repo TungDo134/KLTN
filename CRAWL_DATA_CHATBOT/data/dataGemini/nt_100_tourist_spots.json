@@ -1,0 +1,3781 @@
+[
+  {
+    "id": "NT_0001",
+    "name": "VinWonders Nha Trang",
+    "region": "Nha Trang",
+    "type": "park",
+    "tags": [
+      "đảo hòn tre",
+      "cáp treo vượt biển",
+      "giải trí",
+      "thủy cung",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3817,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.18901212007399,
+      "lng": 109.16045019986164,
+      "address": "Tọa độ bản đồ chuẩn hóa của VinWonders Nha Trang phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "VinWonders Nha Trang là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/VinWonders+Nha+Trang"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0002",
+    "name": "Tháp Bà Ponagar",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "kiến trúc chăm pa",
+      "di tích cổ",
+      "tâm linh",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3076,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.266878555983974,
+      "lng": 109.18811432185728,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Bà Ponagar phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Tháp Bà Ponagar là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Bà+Ponagar"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0003",
+    "name": "Hòn Chồng",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi đá tự nhiên",
+      "view biển",
+      "check-in",
+      "truyền thuyết",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 1918,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.225115142121634,
+      "lng": 109.21342910721464,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Chồng phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Chồng là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Chồng"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0004",
+    "name": "Chùa Long Sơn",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật trắng khổng lồ",
+      "tâm linh",
+      "kiến trúc",
+      "view toàn cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 278,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.203657429207826,
+      "lng": 109.18883076754284,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Long Sơn phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Long Sơn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Long+Sơn"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0005",
+    "name": "Nhà thờ Núi Nha Trang",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "nhà thờ đá",
+      "cổ kính",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1623,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.232237702783916,
+      "lng": 109.25270739100496,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Núi Nha Trang phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Núi Nha Trang là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Núi+Nha+Trang"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0006",
+    "name": "Viện Hải dương học",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "mẫu vật biển",
+      "thủy cung",
+      "giáo dục",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2344,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.264901301621514,
+      "lng": 109.20100087886026,
+      "address": "Tọa độ bản đồ chuẩn hóa của Viện Hải dương học phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Viện Hải dương học là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Viện+Hải+dương+học"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0007",
+    "name": "Đảo Hòn Mun",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "lặn ngắm san hô",
+      "biển xanh",
+      "đa dạng sinh học",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 189,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.281083225431166,
+      "lng": 109.25114658888192,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Mun phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Mun là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Mun"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0008",
+    "name": "Đảo Hòn Tằm",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn khoáng",
+      "nghỉ dưỡng",
+      "bãi biển đẹp",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 272,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.227140920628175,
+      "lng": 109.19811303488272,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Tằm phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Tằm là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Tằm"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0009",
+    "name": "Đảo Khỉ (Hòn Lao)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "đàn khỉ tự nhiên",
+      "xiếc thú",
+      "trải nghiệm",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1234,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.281486159876932,
+      "lng": 109.18525696489539,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Khỉ (Hòn Lao) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Khỉ (Hòn Lao) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Khỉ+(Hòn+Lao)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0010",
+    "name": "Bãi dài Cam Ranh",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi cát mịn",
+      "tắm biển",
+      "hải sản tươi",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1482,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.18645488793255,
+      "lng": 109.15932323506881,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi dài Cam Ranh phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi dài Cam Ranh là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+dài+Cam+Ranh"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0011",
+    "name": "Chợ Đầm Nha Trang",
+    "region": "Nha Trang",
+    "type": "market",
+    "tags": [
+      "kiến trúc tròn",
+      "mua sắm",
+      "đặc sản",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2028,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.214765724068346,
+      "lng": 109.23876562875374,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đầm Nha Trang phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đầm Nha Trang là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đầm+Nha+Trang"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0012",
+    "name": "Tháp Trầm Hương",
+    "region": "Nha Trang",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng thành phố",
+      "quảng trường 2/4",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3642,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.18411499029609,
+      "lng": 109.22106725563461,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Trầm Hương phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tháp Trầm Hương là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Trầm+Hương"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0013",
+    "name": "Khu du lịch Tắm bùn Tháp Bà",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "bùn khoáng",
+      "sức khỏe",
+      "thư giãn",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2363,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.214631918267596,
+      "lng": 109.2504349434226,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Tắm bùn Tháp Bà phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu du lịch Tắm bùn Tháp Bà là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Tắm+bùn+Tháp+Bà"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0014",
+    "name": "Hòn Một",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "làng chài",
+      "tắm biển",
+      "san hô",
+      "bình yên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2574,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.257507931431673,
+      "lng": 109.17484755608783,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Một phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Một là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Một"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0015",
+    "name": "Hòn Tằm Mud Bath",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn",
+      "cao cấp",
+      "view biển",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1445,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.231833946349449,
+      "lng": 109.23959841254685,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Tằm Mud Bath phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Tằm Mud Bath là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Tằm+Mud+Bath"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0016",
+    "name": "Đồng muối Hòn Khói",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "cánh đồng muối",
+      "chụp ảnh nghệ thuật",
+      "đời sống",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 770,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.193918486693269,
+      "lng": 109.25580770659425,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồng muối Hòn Khói phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồng muối Hòn Khói là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồng+muối+Hòn+Khói"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0017",
+    "name": "Rainforest Cafe",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "rừng rậm nhiệt đới",
+      "kiến trúc độc đáo",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3909,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.215535618537034,
+      "lng": 109.20229361838153,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rainforest Cafe phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Rainforest Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rainforest+Cafe"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0018",
+    "name": "An Cafe Nha Trang",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "gỗ vintage",
+      "hoài cổ",
+      "yên tĩnh",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 360,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.21253916192851,
+      "lng": 109.14716213653163,
+      "address": "Tọa độ bản đồ chuẩn hóa của An Cafe Nha Trang phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "An Cafe Nha Trang là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/An+Cafe+Nha+Trang"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0019",
+    "name": "Nem nướng Đặng Văn Quyên",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "nem nướng nha trang",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3245,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.284683021596173,
+      "lng": 109.18920935462563,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nem nướng Đặng Văn Quyên phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Nem nướng Đặng Văn Quyên là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nem+nướng+Đặng+Văn+Quyên"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0020",
+    "name": "Bún sứa Năm Beo",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bún sứa",
+      "bún chả cá",
+      "đặc sản",
+      "ăn sáng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3655,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.237730551983026,
+      "lng": 109.142210774284,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún sứa Năm Beo phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún sứa Năm Beo là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+sứa+Năm+Beo"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0021",
+    "name": "Bánh căn mực Võ Trứ",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bánh căn mực",
+      "ẩm thực đường phố",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1985,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.214269628678954,
+      "lng": 109.20248564664251,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh căn mực Võ Trứ phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh căn mực Võ Trứ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+căn+mực+Võ+Trứ"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0022",
+    "name": "Hải sản Tháp Bà",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "phố hải sản",
+      "tươi sống",
+      "bình dân",
+      "quán nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1009,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.220095158134587,
+      "lng": 109.22089604912944,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Tháp Bà phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Tháp Bà là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Tháp+Bà"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0023",
+    "name": "VinWonders Nha Trang (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "park",
+    "tags": [
+      "đảo hòn tre",
+      "cáp treo vượt biển",
+      "giải trí",
+      "thủy cung",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2267,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.242564862022189,
+      "lng": 109.22987241682259,
+      "address": "Tọa độ bản đồ chuẩn hóa của VinWonders Nha Trang (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "VinWonders Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/VinWonders+Nha+Trang+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0024",
+    "name": "Tháp Bà Ponagar (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "kiến trúc chăm pa",
+      "di tích cổ",
+      "tâm linh",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 954,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.188179087766061,
+      "lng": 109.25287317440271,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Bà Ponagar (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Tháp Bà Ponagar (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Bà+Ponagar+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0025",
+    "name": "Hòn Chồng (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi đá tự nhiên",
+      "view biển",
+      "check-in",
+      "truyền thuyết",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3527,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.241509019803328,
+      "lng": 109.17494194113125,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Chồng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Chồng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Chồng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0026",
+    "name": "Chùa Long Sơn (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật trắng khổng lồ",
+      "tâm linh",
+      "kiến trúc",
+      "view toàn cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3645,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.231001038451533,
+      "lng": 109.19712567253528,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Long Sơn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Long Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Long+Sơn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0027",
+    "name": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "nhà thờ đá",
+      "cổ kính",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 185,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.215345122545298,
+      "lng": 109.16136141455493,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Núi+Nha+Trang+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0028",
+    "name": "Viện Hải dương học (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "mẫu vật biển",
+      "thủy cung",
+      "giáo dục",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2583,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.25804694661873,
+      "lng": 109.22621436293149,
+      "address": "Tọa độ bản đồ chuẩn hóa của Viện Hải dương học (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Viện Hải dương học (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Viện+Hải+dương+học+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0029",
+    "name": "Đảo Hòn Mun (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "lặn ngắm san hô",
+      "biển xanh",
+      "đa dạng sinh học",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2093,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.239369690655316,
+      "lng": 109.23132221221826,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Mun (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Mun (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Mun+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0030",
+    "name": "Đảo Hòn Tằm (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn khoáng",
+      "nghỉ dưỡng",
+      "bãi biển đẹp",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1212,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.290181293450503,
+      "lng": 109.20613999648879,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Tằm (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Tằm+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0031",
+    "name": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "đàn khỉ tự nhiên",
+      "xiếc thú",
+      "trải nghiệm",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 4063,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.247019351775846,
+      "lng": 109.23596842907381,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Khỉ+(Hòn+Lao)+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0032",
+    "name": "Bãi dài Cam Ranh (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi cát mịn",
+      "tắm biển",
+      "hải sản tươi",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2945,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.193729705447453,
+      "lng": 109.21379455154114,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi dài Cam Ranh (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+dài+Cam+Ranh+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0033",
+    "name": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "market",
+    "tags": [
+      "kiến trúc tròn",
+      "mua sắm",
+      "đặc sản",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 350,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.280436760283747,
+      "lng": 109.22557004741371,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đầm Nha Trang (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đầm+Nha+Trang+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0034",
+    "name": "Tháp Trầm Hương (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng thành phố",
+      "quảng trường 2/4",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 305,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.219128543391125,
+      "lng": 109.1772824430821,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Trầm Hương (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tháp Trầm Hương (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Trầm+Hương+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0035",
+    "name": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "bùn khoáng",
+      "sức khỏe",
+      "thư giãn",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3358,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.271983423159316,
+      "lng": 109.18278613938979,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Tắm+bùn+Tháp+Bà+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0036",
+    "name": "Hòn Một (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "làng chài",
+      "tắm biển",
+      "san hô",
+      "bình yên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 4110,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.282455356735758,
+      "lng": 109.1372464532536,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Một (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Một (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Một+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0037",
+    "name": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn",
+      "cao cấp",
+      "view biển",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3899,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.272567882161063,
+      "lng": 109.22101413201192,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Tằm Mud Bath (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Tằm+Mud+Bath+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0038",
+    "name": "Đồng muối Hòn Khói (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "cánh đồng muối",
+      "chụp ảnh nghệ thuật",
+      "đời sống",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1976,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.212525052606255,
+      "lng": 109.1871752012311,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồng muối Hòn Khói (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồng muối Hòn Khói (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồng+muối+Hòn+Khói+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0039",
+    "name": "Rainforest Cafe (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "rừng rậm nhiệt đới",
+      "kiến trúc độc đáo",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3042,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.28482133943451,
+      "lng": 109.24960197333917,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rainforest Cafe (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Rainforest Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rainforest+Cafe+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0040",
+    "name": "An Cafe Nha Trang (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "gỗ vintage",
+      "hoài cổ",
+      "yên tĩnh",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1162,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.295906147592824,
+      "lng": 109.23068761561929,
+      "address": "Tọa độ bản đồ chuẩn hóa của An Cafe Nha Trang (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "An Cafe Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/An+Cafe+Nha+Trang+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0041",
+    "name": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "nem nướng nha trang",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2281,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.276625972431946,
+      "lng": 109.18867700264703,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nem+nướng+Đặng+Văn+Quyên+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0042",
+    "name": "Bún sứa Năm Beo (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bún sứa",
+      "bún chả cá",
+      "đặc sản",
+      "ăn sáng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2960,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.293439490280452,
+      "lng": 109.18515842946626,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún sứa Năm Beo (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún sứa Năm Beo (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+sứa+Năm+Beo+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0043",
+    "name": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bánh căn mực",
+      "ẩm thực đường phố",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3897,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.241546166733098,
+      "lng": 109.21851891882653,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh căn mực Võ Trứ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+căn+mực+Võ+Trứ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0044",
+    "name": "Hải sản Tháp Bà (Cụm/Chi nhánh 2)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "phố hải sản",
+      "tươi sống",
+      "bình dân",
+      "quán nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1100,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.210916314349754,
+      "lng": 109.17368832256986,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Tháp Bà (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Tháp Bà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Tháp+Bà+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0045",
+    "name": "VinWonders Nha Trang (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "park",
+    "tags": [
+      "đảo hòn tre",
+      "cáp treo vượt biển",
+      "giải trí",
+      "thủy cung",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1629,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.271987800391612,
+      "lng": 109.22362973946795,
+      "address": "Tọa độ bản đồ chuẩn hóa của VinWonders Nha Trang (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "VinWonders Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/VinWonders+Nha+Trang+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0046",
+    "name": "Tháp Bà Ponagar (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "kiến trúc chăm pa",
+      "di tích cổ",
+      "tâm linh",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 351,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.22043656016454,
+      "lng": 109.21027635485943,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Bà Ponagar (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Tháp Bà Ponagar (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Bà+Ponagar+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0047",
+    "name": "Hòn Chồng (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi đá tự nhiên",
+      "view biển",
+      "check-in",
+      "truyền thuyết",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 327,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.254768743017587,
+      "lng": 109.17046066015797,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Chồng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Chồng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Chồng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0048",
+    "name": "Chùa Long Sơn (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật trắng khổng lồ",
+      "tâm linh",
+      "kiến trúc",
+      "view toàn cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1537,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.192734490454587,
+      "lng": 109.1916884872236,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Long Sơn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Long Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Long+Sơn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0049",
+    "name": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "nhà thờ đá",
+      "cổ kính",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3641,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.227562387431414,
+      "lng": 109.20719311302815,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Núi+Nha+Trang+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0050",
+    "name": "Viện Hải dương học (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "mẫu vật biển",
+      "thủy cung",
+      "giáo dục",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3881,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.276104442410373,
+      "lng": 109.15775831476152,
+      "address": "Tọa độ bản đồ chuẩn hóa của Viện Hải dương học (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Viện Hải dương học (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Viện+Hải+dương+học+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0051",
+    "name": "Đảo Hòn Mun (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "lặn ngắm san hô",
+      "biển xanh",
+      "đa dạng sinh học",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2417,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.188004606060666,
+      "lng": 109.23009137739704,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Mun (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Mun (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Mun+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0052",
+    "name": "Đảo Hòn Tằm (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn khoáng",
+      "nghỉ dưỡng",
+      "bãi biển đẹp",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3501,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.242493588308509,
+      "lng": 109.2111702222411,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Tằm (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Tằm+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0053",
+    "name": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "đàn khỉ tự nhiên",
+      "xiếc thú",
+      "trải nghiệm",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 361,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.281951841010763,
+      "lng": 109.15410105669116,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Khỉ+(Hòn+Lao)+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0054",
+    "name": "Bãi dài Cam Ranh (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi cát mịn",
+      "tắm biển",
+      "hải sản tươi",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 333,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.293500906692687,
+      "lng": 109.21849580931497,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi dài Cam Ranh (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+dài+Cam+Ranh+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0055",
+    "name": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "market",
+    "tags": [
+      "kiến trúc tròn",
+      "mua sắm",
+      "đặc sản",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2337,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.255070074080706,
+      "lng": 109.22779564738103,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đầm Nha Trang (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đầm+Nha+Trang+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0056",
+    "name": "Tháp Trầm Hương (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng thành phố",
+      "quảng trường 2/4",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 266,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.22863018451559,
+      "lng": 109.16720646137506,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Trầm Hương (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tháp Trầm Hương (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Trầm+Hương+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0057",
+    "name": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "bùn khoáng",
+      "sức khỏe",
+      "thư giãn",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 737,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.275119246926765,
+      "lng": 109.15579230826717,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Tắm+bùn+Tháp+Bà+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0058",
+    "name": "Hòn Một (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "làng chài",
+      "tắm biển",
+      "san hô",
+      "bình yên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 4189,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.239665966281818,
+      "lng": 109.23984542880574,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Một (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Một (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Một+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0059",
+    "name": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn",
+      "cao cấp",
+      "view biển",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3560,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.190987619483185,
+      "lng": 109.13716646888676,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Tằm Mud Bath (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Tằm+Mud+Bath+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0060",
+    "name": "Đồng muối Hòn Khói (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "cánh đồng muối",
+      "chụp ảnh nghệ thuật",
+      "đời sống",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 940,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.20134091568594,
+      "lng": 109.19450938928743,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồng muối Hòn Khói (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồng muối Hòn Khói (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồng+muối+Hòn+Khói+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0061",
+    "name": "Rainforest Cafe (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "rừng rậm nhiệt đới",
+      "kiến trúc độc đáo",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3309,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.220874182680546,
+      "lng": 109.22525494156898,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rainforest Cafe (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Rainforest Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rainforest+Cafe+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0062",
+    "name": "An Cafe Nha Trang (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "gỗ vintage",
+      "hoài cổ",
+      "yên tĩnh",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2308,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.268562621917493,
+      "lng": 109.17928679294273,
+      "address": "Tọa độ bản đồ chuẩn hóa của An Cafe Nha Trang (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "An Cafe Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/An+Cafe+Nha+Trang+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0063",
+    "name": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "nem nướng nha trang",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3770,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.21600915742471,
+      "lng": 109.1482291045665,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nem+nướng+Đặng+Văn+Quyên+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0064",
+    "name": "Bún sứa Năm Beo (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bún sứa",
+      "bún chả cá",
+      "đặc sản",
+      "ăn sáng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3648,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.251355498736594,
+      "lng": 109.23681999334218,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún sứa Năm Beo (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún sứa Năm Beo (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+sứa+Năm+Beo+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0065",
+    "name": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bánh căn mực",
+      "ẩm thực đường phố",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 358,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.180955589403403,
+      "lng": 109.18755530221937,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh căn mực Võ Trứ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+căn+mực+Võ+Trứ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0066",
+    "name": "Hải sản Tháp Bà (Cụm/Chi nhánh 3)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "phố hải sản",
+      "tươi sống",
+      "bình dân",
+      "quán nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2863,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.248237622485412,
+      "lng": 109.24833491568374,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Tháp Bà (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Tháp Bà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Tháp+Bà+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0067",
+    "name": "VinWonders Nha Trang (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "park",
+    "tags": [
+      "đảo hòn tre",
+      "cáp treo vượt biển",
+      "giải trí",
+      "thủy cung",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3042,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.29620315598364,
+      "lng": 109.19682446717435,
+      "address": "Tọa độ bản đồ chuẩn hóa của VinWonders Nha Trang (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "VinWonders Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/VinWonders+Nha+Trang+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0068",
+    "name": "Tháp Bà Ponagar (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "kiến trúc chăm pa",
+      "di tích cổ",
+      "tâm linh",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1054,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.193975412373176,
+      "lng": 109.13943618749079,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Bà Ponagar (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Tháp Bà Ponagar (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Bà+Ponagar+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0069",
+    "name": "Hòn Chồng (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi đá tự nhiên",
+      "view biển",
+      "check-in",
+      "truyền thuyết",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2575,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.291339430713629,
+      "lng": 109.19937152953162,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Chồng (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Chồng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Chồng+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0070",
+    "name": "Chùa Long Sơn (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật trắng khổng lồ",
+      "tâm linh",
+      "kiến trúc",
+      "view toàn cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 337,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.271692080038019,
+      "lng": 109.24606287466224,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Long Sơn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Long Sơn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Long+Sơn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0071",
+    "name": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "nhà thờ đá",
+      "cổ kính",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 211,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.197267038292845,
+      "lng": 109.18617888547863,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Núi+Nha+Trang+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0072",
+    "name": "Viện Hải dương học (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "mẫu vật biển",
+      "thủy cung",
+      "giáo dục",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1147,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.278224847825744,
+      "lng": 109.17614373707444,
+      "address": "Tọa độ bản đồ chuẩn hóa của Viện Hải dương học (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Viện Hải dương học (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Viện+Hải+dương+học+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0073",
+    "name": "Đảo Hòn Mun (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "lặn ngắm san hô",
+      "biển xanh",
+      "đa dạng sinh học",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 226,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.217952249373498,
+      "lng": 109.17154674118044,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Mun (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Mun (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Mun+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0074",
+    "name": "Đảo Hòn Tằm (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn khoáng",
+      "nghỉ dưỡng",
+      "bãi biển đẹp",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 4093,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.217060638633985,
+      "lng": 109.21579929376459,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Tằm (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Tằm+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0075",
+    "name": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "đàn khỉ tự nhiên",
+      "xiếc thú",
+      "trải nghiệm",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2819,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.223767795846426,
+      "lng": 109.2065098150221,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Khỉ+(Hòn+Lao)+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0076",
+    "name": "Bãi dài Cam Ranh (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi cát mịn",
+      "tắm biển",
+      "hải sản tươi",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2174,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.281628950659131,
+      "lng": 109.19722648268349,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi dài Cam Ranh (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+dài+Cam+Ranh+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0077",
+    "name": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "market",
+    "tags": [
+      "kiến trúc tròn",
+      "mua sắm",
+      "đặc sản",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2238,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.212788484657075,
+      "lng": 109.20754271729587,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đầm Nha Trang (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đầm+Nha+Trang+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0078",
+    "name": "Tháp Trầm Hương (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng thành phố",
+      "quảng trường 2/4",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1730,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.220635312741758,
+      "lng": 109.17517299980203,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Trầm Hương (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tháp Trầm Hương (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Trầm+Hương+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0079",
+    "name": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "bùn khoáng",
+      "sức khỏe",
+      "thư giãn",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2227,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.19642024579046,
+      "lng": 109.14869858276212,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Tắm+bùn+Tháp+Bà+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0080",
+    "name": "Hòn Một (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "làng chài",
+      "tắm biển",
+      "san hô",
+      "bình yên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2159,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.266621808007189,
+      "lng": 109.15190587553732,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Một (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Một (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Một+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0081",
+    "name": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn",
+      "cao cấp",
+      "view biển",
+      "nghỉ dưỡng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3631,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.251175032475327,
+      "lng": 109.15670130216539,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Tằm Mud Bath (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Tằm+Mud+Bath+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0082",
+    "name": "Đồng muối Hòn Khói (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "cánh đồng muối",
+      "chụp ảnh nghệ thuật",
+      "đời sống",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 1364,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.248824030717264,
+      "lng": 109.15140289033518,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đồng muối Hòn Khói (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đồng muối Hòn Khói (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồng+muối+Hòn+Khói+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0083",
+    "name": "Rainforest Cafe (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "rừng rậm nhiệt đới",
+      "kiến trúc độc đáo",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2805,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.20800693571287,
+      "lng": 109.20066552091544,
+      "address": "Tọa độ bản đồ chuẩn hóa của Rainforest Cafe (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Rainforest Cafe (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rainforest+Cafe+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0084",
+    "name": "An Cafe Nha Trang (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "cafe",
+    "tags": [
+      "gỗ vintage",
+      "hoài cổ",
+      "yên tĩnh",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 613,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.194978300492139,
+      "lng": 109.20090407932557,
+      "address": "Tọa độ bản đồ chuẩn hóa của An Cafe Nha Trang (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "An Cafe Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/An+Cafe+Nha+Trang+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0085",
+    "name": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "nem nướng nha trang",
+      "đặc sản",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 580,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.249741292488741,
+      "lng": 109.20352382597638,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nem+nướng+Đặng+Văn+Quyên+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0086",
+    "name": "Bún sứa Năm Beo (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bún sứa",
+      "bún chả cá",
+      "đặc sản",
+      "ăn sáng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1951,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.296583813552497,
+      "lng": 109.23089234514673,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún sứa Năm Beo (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún sứa Năm Beo (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+sứa+Năm+Beo+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0087",
+    "name": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "bánh căn mực",
+      "ẩm thực đường phố",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2142,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.28747551663797,
+      "lng": 109.20405908793492,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh căn mực Võ Trứ (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+căn+mực+Võ+Trứ+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0088",
+    "name": "Hải sản Tháp Bà (Cụm/Chi nhánh 4)",
+    "region": "Nha Trang",
+    "type": "restaurant",
+    "tags": [
+      "phố hải sản",
+      "tươi sống",
+      "bình dân",
+      "quán nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2671,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.24238135158638,
+      "lng": 109.16860734662237,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hải sản Tháp Bà (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Hải sản Tháp Bà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hải+sản+Tháp+Bà+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0089",
+    "name": "VinWonders Nha Trang (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "park",
+    "tags": [
+      "đảo hòn tre",
+      "cáp treo vượt biển",
+      "giải trí",
+      "thủy cung",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3318,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.293697535809507,
+      "lng": 109.20436410434716,
+      "address": "Tọa độ bản đồ chuẩn hóa của VinWonders Nha Trang (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "VinWonders Nha Trang (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/VinWonders+Nha+Trang+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0090",
+    "name": "Tháp Bà Ponagar (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "kiến trúc chăm pa",
+      "di tích cổ",
+      "tâm linh",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 234,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.21316103400003,
+      "lng": 109.17797621555663,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Bà Ponagar (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Tháp Bà Ponagar (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Bà+Ponagar+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "NT_0091",
+    "name": "Hòn Chồng (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi đá tự nhiên",
+      "view biển",
+      "check-in",
+      "truyền thuyết",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1078,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.216495897195047,
+      "lng": 109.23257108179241,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hòn Chồng (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Hòn Chồng (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hòn+Chồng+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0092",
+    "name": "Chùa Long Sơn (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "tượng phật trắng khổng lồ",
+      "tâm linh",
+      "kiến trúc",
+      "view toàn cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1298,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.183419766498604,
+      "lng": 109.1682045135368,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Long Sơn (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Long Sơn (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Long+Sơn+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0093",
+    "name": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "nhà thờ đá",
+      "cổ kính",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3394,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.226313298255759,
+      "lng": 109.1976512460615,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Núi+Nha+Trang+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0094",
+    "name": "Viện Hải dương học (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "historical",
+    "tags": [
+      "mẫu vật biển",
+      "thủy cung",
+      "giáo dục",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3654,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.293402668399287,
+      "lng": 109.15419362885336,
+      "address": "Tọa độ bản đồ chuẩn hóa của Viện Hải dương học (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Viện Hải dương học (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Viện+Hải+dương+học+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0095",
+    "name": "Đảo Hòn Mun (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "lặn ngắm san hô",
+      "biển xanh",
+      "đa dạng sinh học",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3584,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.181469102710626,
+      "lng": 109.1534512143695,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Mun (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Mun (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Mun+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0096",
+    "name": "Đảo Hòn Tằm (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "resort",
+    "tags": [
+      "tắm bùn khoáng",
+      "nghỉ dưỡng",
+      "bãi biển đẹp",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 493,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.240478379299033,
+      "lng": 109.24764901761142,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Hòn Tằm (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Hòn+Tằm+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0097",
+    "name": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "đàn khỉ tự nhiên",
+      "xiếc thú",
+      "trải nghiệm",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 967,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.226080464309428,
+      "lng": 109.17885763432658,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đảo+Khỉ+(Hòn+Lao)+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "NT_0098",
+    "name": "Bãi dài Cam Ranh (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "nature",
+    "tags": [
+      "bãi cát mịn",
+      "tắm biển",
+      "hải sản tươi",
+      "hoang sơ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2984,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.22080083317975,
+      "lng": 109.18555932542282,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bãi dài Cam Ranh (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bãi+dài+Cam+Ranh+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "NT_0099",
+    "name": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "market",
+    "tags": [
+      "kiến trúc tròn",
+      "mua sắm",
+      "đặc sản",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2728,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.18219935148693,
+      "lng": 109.14624143257473,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đầm Nha Trang (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đầm+Nha+Trang+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "NT_0100",
+    "name": "Tháp Trầm Hương (Cụm/Chi nhánh 5)",
+    "region": "Nha Trang",
+    "type": "landmark",
+    "tags": [
+      "biểu tượng thành phố",
+      "quảng trường 2/4",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 4068,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.274603665114633,
+      "lng": 109.21980643280843,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp Trầm Hương (Cụm/Chi nhánh 5) phục vụ hệ thống Chatbot RAG, Nha Trang, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tháp Trầm Hương (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+Trầm+Hương+(Cụm/Chi+nhánh+5)"
+    },
+    "best_time": "09-12"
+  }
+]
