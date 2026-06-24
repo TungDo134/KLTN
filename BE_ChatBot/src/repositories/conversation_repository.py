@@ -22,6 +22,18 @@ class ConversationRepository:
             .first()
         )
 
+    # Lay danh sach conversation theo user id
+    def get_conversations_by_user_id(self, user_id: str):
+        return (
+            self.db.query(Conversation)
+            .filter(
+                Conversation.user_id == user_id,
+                Conversation.deleted_at.is_(None),
+            )
+            .order_by(Conversation.updated_at.desc())
+            .all()
+        )
+
     # Tao moi conversation
     def create_conversation(
         self, user_id: str, title: str | None = None
@@ -35,4 +47,9 @@ class ConversationRepository:
     # Update value `updated_at`
     def touch_updated_at(self, conversation: Conversation) -> None:
         conversation.updated_at = func.now()
+        self.db.flush()
+
+    # Soft delete conversation
+    def soft_delete_conversation(self, conversation: Conversation) -> None:
+        conversation.deleted_at = func.now()
         self.db.flush()

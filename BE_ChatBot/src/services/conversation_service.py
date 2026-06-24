@@ -20,10 +20,19 @@ class ConversationService:
             user_id,
         )
 
+    # Lay LIST conversation theo user_id
+    def get_conversations_by_user_id(self, user_id: str):
+        return self.conversation_repo.get_conversations_by_user_id(user_id)
+
     # Lay hoac tao moi conversation
     def get_or_create_conversation(
         self, conversation_id: str | None, user_id: str
     ) -> Conversation:
+        """
+        - Luu y: neu conversation_id khong hop le hoac da bi soft delete,
+        - Ham nay se tao conversation moi thay vi tra loi 404.
+        - Se cap nhat lai sau
+        """
         # Co id => kim conver match
         if conversation_id:
             conversation = self.conversation_repo.get_conversation_by_user_id(
@@ -68,3 +77,16 @@ class ConversationService:
     #
     def get_messages_by_conversation_id(self, conversation_id: str):
         return self.message_repo.get_messages_by_conversation_id(conversation_id)
+
+    # Xoa mem conversation
+    def delete_conversation(self, conversation_id: str, user_id: str) -> bool:
+        conversation = self.conversation_repo.get_conversation_by_user_id(
+            conversation_id, user_id
+        )
+
+        if not conversation:
+            return False
+
+        self.conversation_repo.soft_delete_conversation(conversation)
+        self.db.commit()
+        return True

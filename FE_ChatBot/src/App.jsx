@@ -9,6 +9,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<ChatArea />} />
+          <Route path="conversations/:conversationId" element={<ChatArea />} />
         </Route>
       </Routes>
     </BrowserRouter>

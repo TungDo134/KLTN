@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import Message from "./Message";
 import ChatInput from "./ChatInput";
 import chatApi from "../services/chatApi";
+import { fetchMessages } from "../services/conversationApi";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
 function ChatArea() {
@@ -9,6 +11,33 @@ function ChatArea() {
   const [loading, setLoading] = useState(false);
   const [conversationId, setConversationId] = useState(null);
   const bottomRef = useRef(null);
+  const navigate = useNavigate();
+  const { conversationId: routeConversationId } = useParams();
+  const { onConversationChanged } = useOutletContext() ?? {};
+
+  const mapDbMessage = (message) => {
+    if (message.role === "user") {
+      return { text: message.content, sender: "user" };
+    }
+
+    let tripData = null;
+    try {
+      const jsonText = extractJsonFromText(message.content);
+      if (jsonText) tripData = JSON.parse(jsonText);
+    } catch {
+      tripData = null;
+    }
+
+    const cleanText = message.content.replace(/```json[\s\S]*?```/i, "").trim();
+
+    return {
+      text: cleanText,
+      sender: "bot",
+      tripData,
+      isBuildingUI: false,
+      isStreaming: false,
+    };
+  };
 
   const handleSend = async (text) => {
     if (!text.trim()) return;
@@ -36,6 +65,8 @@ function ChatArea() {
     ]);
 
     try {
+      let nextConversationId = conversationId;
+
       const res = await chatApi.sendMessageStream(
         text,
         conversationId,
@@ -61,6 +92,7 @@ function ChatArea() {
         },
         (meta) => {
           if (meta.conversation_id) {
+            nextConversationId = meta.conversation_id;
             setConversationId(meta.conversation_id);
           }
         },
@@ -114,6 +146,12 @@ function ChatArea() {
         };
         return newMsgs;
       });
+
+      if (nextConversationId && routeConversationId !== nextConversationId) {
+        navigate(`/conversations/${nextConversationId}`, { replace: true });
+      }
+
+      onConversationChanged?.();
     } catch (err) {
       // Cập nhật tin nhắn lỗi
       setMessages((prev) => {
@@ -131,6 +169,43 @@ function ChatArea() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (!routeConversationId) {
+      setConversationId(null);
+      setMessages([]);
+      return;
+    }
+
+    let ignore = false;
+
+    const loadMessages = async () => {
+      setConversationId(routeConversationId);
+
+      try {
+        const data = await fetchMessages(routeConversationId);
+        if (!ignore) {
+          setMessages(data.map(mapDbMessage));
+        }
+      } catch {
+        if (!ignore) {
+          setMessages([
+            {
+              text: "Could not load this conversation.",
+              sender: "bot",
+              isError: true,
+            },
+          ]);
+        }
+      }
+    };
+
+    loadMessages();
+
+    return () => {
+      ignore = true;
+    };
+  }, [routeConversationId]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });

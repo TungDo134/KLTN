@@ -13,6 +13,11 @@ import "../index.css";
 function AppLayout() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopOpen, setDesktopOpen] = useState(true);
+  const [conversationRefreshKey, setConversationRefreshKey] = useState(0);
+
+  const handleConversationChanged = () => {
+    setConversationRefreshKey((key) => key + 1);
+  };
 
   return (
     <div className="flex h-screen bg-[var(--bg-main)] text-[var(--text-main)] overflow-hidden">
@@ -28,6 +33,7 @@ function AppLayout() {
       <Sidebar 
         mobileOpen={mobileOpen} 
         desktopOpen={desktopOpen}
+        refreshKey={conversationRefreshKey}
         onMobileClose={() => setMobileOpen(false)} 
         onDesktopToggle={() => setDesktopOpen(!desktopOpen)}
       />
@@ -43,7 +49,7 @@ function AppLayout() {
 
         {/* Main content */}
         <div className="flex-1 overflow-hidden">
-          <Outlet />
+          <Outlet context={{ onConversationChanged: handleConversationChanged }} />
         </div>
       </div>
     </div>
