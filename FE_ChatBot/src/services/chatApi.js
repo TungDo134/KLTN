@@ -4,7 +4,7 @@ if (!BASE_URL) {
   throw new Error("VITE_FASTAPI_URL not found");
 }
 
-const readStream = async (response, onProgress) => {
+const readStream = async (response, onProgress, onMeta) => {
   const reader = response.body.getReader();
   const decoder = new TextDecoder();
   let fullText = "";
@@ -19,14 +19,22 @@ const readStream = async (response, onProgress) => {
     buffer = events.pop() || "";
 
     for (const event of events) {
-      const dataLines = event
-        .split("\n")
+      const lines = event.split("\n");
+      const eventTypeLine = lines.find((line) => line.startsWith("event: "));
+      const eventType = eventTypeLine ? eventTypeLine.slice(7).trim() : null;
+
+      const dataLines = lines
         .filter((line) => line.startsWith("data: "))
         .map((line) => line.slice(6));
 
       const data = dataLines.join("\n");
       if (!data) continue;
       if (data === "[DONE]") return fullText;
+
+      if (eventType === "meta") {
+        onMeta?.(JSON.parse(data));
+        continue;
+      }
 
       const token = JSON.parse(data);
       fullText += token;
@@ -38,7 +46,7 @@ const readStream = async (response, onProgress) => {
 };
 
 const chatApi = {
-  sendMessageStream: async (prompt, conversationSessionId, onProgress) => {
+  sendMessageStream: async (prompt, conversationId, onProgress, onMeta) => {
     const token = localStorage.getItem("access_token");
 
     const response = await fetch(`${BASE_URL}/chat/stream`, {
@@ -47,7 +55,10 @@ const chatApi = {
         "Content-Type": "application/json",
         ...(token && { Authorization: `Bearer ${token}` }),
       },
-      body: JSON.stringify({ prompt, conversationSessionId }),
+      body: JSON.stringify({
+        prompt,
+        conversation_id: conversationId || null,
+      }),
     });
 
     if (!response.ok) {
@@ -55,7 +66,7 @@ const chatApi = {
       throw { response: { data: error } };
     }
 
-    const responseText = await readStream(response, onProgress);
+    const responseText = await readStream(response, onProgress, onMeta);
     return { data: { response: responseText } };
   },
 };

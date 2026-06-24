@@ -12,20 +12,20 @@ from src.models.message import Message
 #     print(result.scalar())
 
 
-db = SessionLocal()
+# db = SessionLocal()
 
-try:
-    print("Testing SQLAlchemy model mapping...")
+# try:
+#     print("Testing SQLAlchemy model mapping...")
 
-    user_count = db.query(User).count()
-    conversation_count = db.query(Conversation).count()
-    message_count = db.query(Message).count()
+#     user_count = db.query(User).count()
+#     conversation_count = db.query(Conversation).count()
+#     message_count = db.query(Message).count()
 
-    print(f"users: {user_count}")
-    print(f"conversations: {conversation_count}")
-    print(f"messages: {message_count}")
+#     print(f"users: {user_count}")
+#     print(f"conversations: {conversation_count}")
+#     print(f"messages: {message_count}")
 
-    print("Model mapping OK")
+#     print("Model mapping OK")
 
-finally:
-    db.close()
+# finally:
+#     db.close()

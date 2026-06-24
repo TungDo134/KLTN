@@ -12,7 +12,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-from .api.routers import auth, chat
+from .api.routers import auth, chat, conversation
 from .pipeline.inference import RAGInference
 
 # --- App Initialization ---
@@ -41,6 +41,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Vietnam Travel RAG API", lifespan=lifespan)
 app.include_router(auth.router)
 app.include_router(chat.router)
+app.include_router(conversation.router)
 
 # Cors
 frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")

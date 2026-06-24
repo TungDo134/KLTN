@@ -21,6 +21,7 @@ class AuthService:
             # Verify
             decoded_token = verify_firebase_id_token(id_token)
         except Exception as exc:
+            print(f"Firebase token verify failed: {type(exc).__name__}: {exc}")
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid Firebase token",

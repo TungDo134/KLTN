@@ -43,61 +43,157 @@ Repository cũng có các module khung cho recommendation, route planning và cr
 
 ```text
 Project/
+├── AGENTS.md
+├── README.md
 ├── BE_ChatBot/
 │   ├── src/
-│   │   ├── main.py
+│   │   ├── api/
+│   │   │   ├── deps.py
+│   │   │   ├── deps_chat.py
+│   │   │   └── routers/
+│   │   │       ├── auth.py
+│   │   │       └── chat.py
 │   │   ├── core/
-│   │   │   ├── schemas.py
 │   │   │   ├── base_embed_model.py
 │   │   │   ├── base_llm_model.py
-│   │   │   └── llm_container.py
+│   │   │   ├── config.py
+│   │   │   ├── firebase.py
+│   │   │   ├── llm_container.py
+│   │   │   └── schemas.py
+│   │   ├── db/
+│   │   │   ├── base.py
+│   │   │   └── session.py
+│   │   ├── eval/
+│   │   ├── models/
+│   │   │   ├── conversation.py
+│   │   │   ├── message.py
+│   │   │   └── user.py
 │   │   ├── pipeline/
 │   │   │   ├── inference.py
 │   │   │   ├── orchestrator.py
 │   │   │   ├── query_analyzer.py
 │   │   │   ├── rag_pipline.py
 │   │   │   └── reranker.py
+│   │   ├── planning/
+│   │   │   ├── graph_builder.py
+│   │   │   ├── planner.py
+│   │   │   ├── route_optimizer.py
+│   │   │   └── scheduler.py
+│   │   ├── prompts/
+│   │   │   └── system_prompt.md
 │   │   ├── recommend/
 │   │   │   ├── base_recommender.py
 │   │   │   ├── content_based.py
-│   │   │   ├── location_based.py
-│   │   │   └── hybrid_recommender.py
-│   │   ├── planning/
-│   │   │   ├── graph_builder.py
-│   │   │   ├── route_optimizer.py
-│   │   │   ├── scheduler.py
-│   │   │   └── planner.py
-│   │   ├── eval/
-│   │   ├── prompts/
-│   │   │   └── system_prompt.md
+│   │   │   ├── hybrid_recommender.py
+│   │   │   └── location_based.py
+│   │   ├── repositories/
+│   │   │   ├── conversation_repository.py
+│   │   │   ├── message_repository.py
+│   │   │   └── user_repository.py
+│   │   ├── schemas/
+│   │   │   ├── auth.py
+│   │   │   └── chat.py
+│   │   ├── services/
+│   │   │   ├── auth_service.py
+│   │   │   └── conversation_service.py
 │   │   ├── source_data/
 │   │   │   ├── docs/
 │   │   │   └── places_data/
-│   │   └── static/
+│   │   ├── static/
+│   │   └── main.py
+│   ├── test/
+│   │   ├── Testing.py
+│   │   ├── test_db_connection.py
+│   │   └── test_db_insert.py
 │   ├── build_rag_vector_db.ipynb
-│   ├── README_BE.md
-│   ├── Testing.py
+│   ├── Overview Schema Data.md
 │   ├── run.bat
 │   └── requirements.txt
 ├── FE_ChatBot/
+│   ├── public/
+│   │   ├── favicon.ico
+│   │   ├── logo_KLTN.jpg
+│   │   ├── logo_KLTN_no_text.png
+│   │   └── _redirects
 │   ├── src/
 │   │   ├── api/
-│   │   ├── services/
+│   │   ├── config/
 │   │   ├── features/
+│   │   │   ├── navigation/
+│   │   │   └── result-visualize/
 │   │   ├── helper/
+│   │   ├── services/
+│   │   │   ├── authApi.js
+│   │   │   └── chatApi.js
 │   │   ├── ui/
 │   │   ├── App.jsx
+│   │   ├── index.css
 │   │   └── main.jsx
+│   ├── README_FE.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
 │   ├── package.json
 │   └── vite.config.js
-└── CRAWL_DATA_CHATBOT/
-    ├── crawlers/
-    ├── validators/
-    ├── ingest/
-    ├── data/
-    ├── data_pipeline.py
-    └── README_CRAWL_DATA_CHATBOT.md
+├── CRAWL_DATA_CHATBOT/
+│   ├── crawlers/
+│   ├── data/
+│   │   ├── dataCrawl/
+│   │   └── places/
+│   ├── ingest/
+│   ├── utils/
+│   │   ├── clean_data/
+│   │   ├── enrich_data_region/
+│   │   ├── enrich_data_tag/
+│   │   └── enrich_data_type/
+│   ├── validators/
+│   ├── Flow_GetData.png
+│   ├── README_CRAWL_DATA_CHATBOT.md
+│   ├── config.py
+│   ├── data_pipeline.py
+│   ├── requirements.txt
+│   └── template.json
+└── ONBOARD_FLOW/
+    ├── chat_API_integration_flow.md
+    ├── implementation_plan_Persist Conversations & Messages vào DB.md
+    └── login_logout_flow.md
 ```
+
+### Architecture layers
+
+| Layer                       | Vai trò                                                                     | File nên đọc trước                                                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Backend API                 | FastAPI entry points, routers, dependencies và HTTP schemas.                | `BE_ChatBot/src/main.py`, `BE_ChatBot/src/api/routers/chat.py`, `BE_ChatBot/src/schemas/chat.py`                                        |
+| Backend Core                | Config, database, models, repositories, services và adapter LLM dùng chung. | `BE_ChatBot/src/core/config.py`, `BE_ChatBot/src/core/base_llm_model.py`, `BE_ChatBot/src/core/llm_container.py`                        |
+| RAG Pipeline                | Query analysis, retrieval, reranking, inference và orchestration.           | `BE_ChatBot/src/pipeline/inference.py`, `BE_ChatBot/src/pipeline/orchestrator.py`, `BE_ChatBot/src/pipeline/rag_pipline.py`             |
+| Recommendation and Planning | Recommendation strategies và trip route planning modules.                   | `BE_ChatBot/src/recommend/hybrid_recommender.py`, `BE_ChatBot/src/planning/planner.py`, `BE_ChatBot/src/planning/route_optimizer.py`    |
+| Frontend                    | React/Vite client, UI shell, chat API client và result visualization.       | `FE_ChatBot/src/main.jsx`, `FE_ChatBot/src/App.jsx`, `FE_ChatBot/src/services/chatApi.js`                                               |
+| Data Crawl                  | Crawler, ingestion, validation và data enrichment code.                     | `CRAWL_DATA_CHATBOT/data_pipeline.py`, `CRAWL_DATA_CHATBOT/ingest/text_builder.py`, `CRAWL_DATA_CHATBOT/validators/schema_validator.py` |
+| Project Docs and Config     | README, requirements, scripts và project-level config.                      | `README.md`, `BE_ChatBot/requirements.txt`, `FE_ChatBot/package.json`                                                                   |
+
+### Guided tour cho người mới
+
+1. Đọc `README.md` để nắm scope travel chatbot, trạng thái từng module và cách chạy project.
+2. Theo backend API flow qua `BE_ChatBot/src/main.py`, `BE_ChatBot/src/api/routers/chat.py`, `BE_ChatBot/src/api/deps_chat.py` và `BE_ChatBot/src/schemas/chat.py`.
+3. Theo RAG pipeline qua `BE_ChatBot/src/pipeline/orchestrator.py`, `BE_ChatBot/src/pipeline/rag_pipline.py` và `BE_ChatBot/src/pipeline/inference.py`.
+4. Theo frontend client qua `FE_ChatBot/src/main.jsx`, `FE_ChatBot/src/App.jsx` và `FE_ChatBot/src/services/chatApi.js`.
+
+### Key concepts
+
+- Runtime chính hiện là history-aware RAG chatbot: API nhận prompt, `RAGInference` rewrite câu hỏi follow-up nếu cần, retrieve nhiều query, rerank bằng cross-encoder, rồi gọi LLM để sinh answer.
+- `TripOrchestrator` đã được thiết kế như điểm nối giữa RAG, recommendation, planning và generation, nhưng runtime hiện đang dừng ở bước trả về reranked documents.
+- Place data trong `BE_ChatBot/src/source_data/places_data/` là nguồn quan trọng cho câu trả lời du lịch; chất lượng answer phụ thuộc nhiều vào metadata, prompt và `RerankerConfig.TOP_N`.
+- Frontend tập trung quanh chat UI và API client; các view như text, bot result, mindmap, timeline phục vụ hiển thị kết quả từ backend.
+- Crawler/data pipeline là module hỗ trợ dữ liệu riêng, dùng để collect, validate, enrich và chuẩn bị place JSON trước khi ingest vào Chroma.
+
+### Complexity hotspots
+
+- `BE_ChatBot/src/pipeline/rag_pipline.py`: nhiều logic retrieval, Chroma, BM25, multi-query và rerank nằm chung một file.
+- `BE_ChatBot/src/pipeline/orchestrator.py`: là nơi nối các bước RAG và roadmap recommendation/planning, cần đọc kỹ trước khi đổi flow.
+- `BE_ChatBot/src/pipeline/reranker.py`: liên quan trực tiếp chất lượng document ranking.
+- `BE_ChatBot/build_rag_vector_db.ipynb` và `BE_ChatBot/src/eval/rag_eval.ipynb`: notebook dài, nên coi như công cụ vận hành/eval hơn là runtime chính.
+- Các file JSON lớn trong `BE_ChatBot/src/source_data/places_data/` và `CRAWL_DATA_CHATBOT/data/dataCrawl/`: tránh chỉnh tay nếu chưa có script kiểm tra schema.
+- `FE_ChatBot/src/ui/ChatArea.jsx`, `FE_ChatBot/src/features/navigation/Sidebar.jsx` và `FE_ChatBot/src/services/chatApi.js`: các điểm chính của frontend chat flow.
 
 ## Flow runtime của backend
 
@@ -148,7 +244,7 @@ raw_query
  -> return reranked_docs
 ```
 
-Điểm quan trọng: function hiện đang trả về `reranked_docs` sớm. Các bước bên dưới đã có trong comment/TODO nhưng chưa active:
+Điểm quan trọng: function hiện đang trả về `reranked_docs` sớm. Các bước bên dưới đã có trong comment/TODO nhưng chưa active `(rcm + graph plan)`:
 
 ```text
 docs -> Place[]
@@ -181,7 +277,7 @@ BAAI/bge-reranker-v2-m3
 
 ### Document data
 
-`BE_ChatBot/src/source_data/docs/` chứa raw text/PDF-style documents dùng cho RAG pipeline.
+`BE_ChatBot/src/source_data/docs/` chứa raw text/PDF-style `(UNUSED)`.
 
 ### Place data
 
