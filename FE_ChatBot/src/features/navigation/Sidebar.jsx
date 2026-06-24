@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   IoAddOutline,
   IoSearchOutline,
   IoChatbubblesOutline,
   IoCloseOutline,
+  IoTrashOutline,
 } from "react-icons/io5";
 import {
   FiBriefcase,
@@ -21,11 +23,26 @@ import {
 } from "react-icons/hi";
 import LoginModal from "./LoginModal";
 import { getStoredAuthUser, logout } from "../../services/authApi";
+import {
+  deleteConversation,
+  fetchConversations,
+} from "../../services/conversationApi";
 
-function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
+function Sidebar({
+  mobileOpen,
+  desktopOpen,
+  refreshKey,
+  onMobileClose,
+  onDesktopToggle,
+}) {
   const [openUserMenu, setOpenUserMenu] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [currentUser, setCurrentUser] = useState(() => getStoredAuthUser());
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [conversations, setConversations] = useState([]);
+  const [isLoadingConversations, setIsLoadingConversations] = useState(false);
+  const [conversationError, setConversationError] = useState("");
 
   const isLoggedIn = Boolean(currentUser);
   const displayName = currentUser?.full_name || currentUser?.email || "User";
@@ -41,7 +58,9 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
   const handleLogout = async () => {
     await logout();
     setCurrentUser(null);
+    setConversations([]);
     setOpenUserMenu(false);
+    navigate("/home");
   };
 
   // Click outside => close
@@ -51,11 +70,55 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  const chats = [
-    "Lịch trình Đà Lạt 3 ngày",
-    "Du lịch Hà Nội",
-    "Khách sạn Phú Quốc",
-  ];
+  useEffect(() => {
+    if (!isLoggedIn) {
+      setConversations([]);
+      return;
+    }
+
+    let ignore = false;
+
+    const loadConversations = async () => {
+      setIsLoadingConversations(true);
+      setConversationError("");
+
+      try {
+        const data = await fetchConversations();
+        if (!ignore) setConversations(data);
+      } catch {
+        if (!ignore) setConversationError("Could not load conversations.");
+      } finally {
+        if (!ignore) setIsLoadingConversations(false);
+      }
+    };
+
+    loadConversations();
+
+    return () => {
+      ignore = true;
+    };
+  }, [isLoggedIn, refreshKey]);
+
+  const handleNewChat = () => {
+    navigate("/home");
+    onMobileClose?.();
+  };
+
+  const handleOpenConversation = (conversationId) => {
+    navigate(`/conversations/${conversationId}`);
+    onMobileClose?.();
+  };
+
+  const handleDeleteConversation = async (conversationId) => {
+    await deleteConversation(conversationId);
+    setConversations((items) =>
+      items.filter((conversation) => conversation.id !== conversationId),
+    );
+
+    if (location.pathname === `/conversations/${conversationId}`) {
+      navigate("/home");
+    }
+  };
 
   return (
     <div
@@ -92,7 +155,10 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
 
       {/* Primary Actions */}
       <div className="px-3 pt-2 pb-1 space-y-0.5">
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors">
+        <button
+          onClick={handleNewChat}
+          className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors"
+        >
           <IoAddOutline size={16} className="text-gray-400" />
           <span>New chat</span>
         </button>
@@ -130,21 +196,56 @@ function Sidebar({ mobileOpen, desktopOpen, onMobileClose, onDesktopToggle }) {
           Recents
         </p>
         <div className="space-y-0.5">
-          {chats.map((chat, index) => {
-            const isActive = index === 0; // Tạm thời gán dòng đầu tiên luôn được chọn (placeholder)
-            return (
-              <button
-                key={index}
-                className={`w-full text-left truncate px-2.5 py-2 rounded-lg transition-colors text-[13px] ${
-                  isActive
-                    ? "bg-(--bg-hover) text-(--text-main) font-medium"
-                    : "text-(--text-muted) hover:bg-(--bg-hover)"
-                }`}
-              >
-                {chat}
-              </button>
-            );
-          })}
+          {isLoadingConversations && (
+            <p className="px-2.5 py-2 text-[13px] text-(--text-muted)">
+              Loading...
+            </p>
+          )}
+
+          {!isLoadingConversations && conversationError && (
+            <p className="px-2.5 py-2 text-[13px] text-red-400">
+              {conversationError}
+            </p>
+          )}
+
+          {!isLoadingConversations &&
+            !conversationError &&
+            conversations.length === 0 && (
+              <p className="px-2.5 py-2 text-[13px] text-(--text-muted)">
+                No conversations yet.
+              </p>
+            )}
+
+          {!isLoadingConversations &&
+            !conversationError &&
+            conversations.map((conversation) => {
+              const isActive =
+                location.pathname === `/conversations/${conversation.id}`;
+
+              return (
+                <div
+                  key={conversation.id}
+                  className={`group flex items-center rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-(--bg-hover) text-(--text-main) font-medium"
+                      : "text-(--text-muted) hover:bg-(--bg-hover)"
+                  }`}
+                >
+                  <button
+                    onClick={() => handleOpenConversation(conversation.id)}
+                    className="min-w-0 flex-1 text-left truncate px-2.5 py-2 text-[13px]"
+                  >
+                    {conversation.title || "New chat"}
+                  </button>
+                  <button
+                    onClick={() => handleDeleteConversation(conversation.id)}
+                    className="p-2 text-gray-500 hover:text-red-400 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+                  >
+                    <IoTrashOutline size={14} />
+                  </button>
+                </div>
+              );
+            })}
         </div>
       </div>
 
