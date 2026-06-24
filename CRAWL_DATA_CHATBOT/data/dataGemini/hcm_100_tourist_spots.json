@@ -1,0 +1,3802 @@
+[
+  {
+    "id": "HCM_0001",
+    "name": "Dinh Độc Lập",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "kiến trúc",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2284,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.712741004681922,
+      "lng": 106.61634053555893,
+      "address": "Tọa độ bản đồ chuẩn hóa của Dinh Độc Lập phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Dinh Độc Lập là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+Độc+Lập"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0002",
+    "name": "Nhà thờ Đức Bà Sài Gòn",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc pháp",
+      "biểu tượng",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3445,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.767948321487568,
+      "lng": 106.6334350361701,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Đức Bà Sài Gòn phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Đức Bà Sài Gòn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Đức+Bà+Sài+Gòn"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0003",
+    "name": "Bưu điện Trung tâm Sài Gòn",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc cổ",
+      "check-in",
+      "biểu tượng",
+      "bưu điện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 1506,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.727065518259018,
+      "lng": 106.62407346125015,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bưu điện Trung tâm Sài Gòn phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bưu điện Trung tâm Sài Gòn là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bưu+điện+Trung+tâm+Sài+Gòn"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0004",
+    "name": "Chợ Bến Thành",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "biểu tượng",
+      "mua sắm",
+      "ẩm thực",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1028,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.806682376511963,
+      "lng": 106.62060842304516,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Bến Thành phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Bến Thành là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Bến+Thành"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0005",
+    "name": "Phố đi bộ Nguyễn Huệ",
+    "region": "Hồ Chí Minh",
+    "type": "entertainment",
+    "tags": [
+      "trung tâm",
+      "nhộn nhịp",
+      "vui chơi",
+      "về đêm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1704,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.724459709559065,
+      "lng": 106.63406499196539,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố đi bộ Nguyễn Huệ phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Phố đi bộ Nguyễn Huệ là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+đi+bộ+Nguyễn+Huệ"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0006",
+    "name": "Bến Nhà Rồng",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "bảo tàng",
+      "bác hồ",
+      "sông sài gòn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3636,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.790558607481573,
+      "lng": 106.68283880943329,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến Nhà Rồng phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bến Nhà Rồng là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+Nhà+Rồng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0007",
+    "name": "Địa đạo Củ Chi",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "di tích chiến tranh",
+      "khám phá",
+      "hầm ngầm",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3714,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.805586446879946,
+      "lng": 106.71790643459225,
+      "address": "Tọa độ bản đồ chuẩn hóa của Địa đạo Củ Chi phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Địa đạo Củ Chi là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Địa+đạo+Củ+Chi"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0008",
+    "name": "Thảo Cầm Viên Sài Gòn",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "sở thú",
+      "xanh mát",
+      "gia đình",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3253,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.785933953132783,
+      "lng": 106.67870299120347,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thảo Cầm Viên Sài Gòn phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Thảo Cầm Viên Sài Gòn là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thảo+Cầm+Viên+Sài+Gòn"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0009",
+    "name": "Bảo tàng Chứng tích Chiến tranh",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "chiến tranh",
+      "xúc động",
+      "quốc tế",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 4029,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.787158029380501,
+      "lng": 106.6776468623613,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Chứng tích Chiến tranh phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bảo tàng Chứng tích Chiến tranh là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Chứng+tích+Chiến+tranh"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0010",
+    "name": "Bitexco Financial Tower",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "hiện đại",
+      "skydeck",
+      "ngắm cảnh",
+      "tòa nhà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2059,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.722119066037571,
+      "lng": 106.67174634311343,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bitexco Financial Tower phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bitexco Financial Tower là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bitexco+Financial+Tower"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0011",
+    "name": "Landmark 81",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "cao nhất",
+      "hiện đại",
+      "mua sắm",
+      "ngắm cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2494,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.74343981001425,
+      "lng": 106.71907268421108,
+      "address": "Tọa độ bản đồ chuẩn hóa của Landmark 81 phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Landmark 81 là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Landmark+81"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0012",
+    "name": "Phố Tây Bùi Viện",
+    "region": "Hồ Chí Minh",
+    "type": "entertainment",
+    "tags": [
+      "phố bia",
+      "sôi động",
+      "về đêm",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3586,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.774578375748767,
+      "lng": 106.62482634723827,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố Tây Bùi Viện phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Phố Tây Bùi Viện là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+Tây+Bùi+Viện"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0013",
+    "name": "Nhà hát Thành phố",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp",
+      "nghệ thuật",
+      "opera",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2894,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.807308210327959,
+      "lng": 106.61781707468053,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà hát Thành phố phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Nhà hát Thành phố là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+hát+Thành+phố"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0014",
+    "name": "Chùa Bửu Long",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc thái lan",
+      "độc đáo",
+      "tâm linh",
+      "quận 9",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1004,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.747902093684681,
+      "lng": 106.68631931896927,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Bửu Long phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Bửu Long là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Bửu+Long"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0015",
+    "name": "Chùa Ngọc Hoàng",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "linh thiêng",
+      "cầu con",
+      "người nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2801,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.755402571314914,
+      "lng": 106.69130796187895,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Ngọc Hoàng phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Ngọc Hoàng là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Ngọc+Hoàng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0016",
+    "name": "Hồ Con Rùa",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "ăn vặt",
+      "giới trẻ",
+      "hóng mát",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3360,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.758161718685216,
+      "lng": 106.66720538799862,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Con Rùa phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Hồ Con Rùa là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Con+Rùa"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0017",
+    "name": "Công viên Tao Đàn",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "xanh mát",
+      "tập thể dục",
+      "yên tĩnh",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 382,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.712277561485168,
+      "lng": 106.6214232399998,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Tao Đàn phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Công viên Tao Đàn là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Tao+Đàn"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0018",
+    "name": "Chợ Lớn - Chợ Bình Tây",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "người hoa",
+      "kiến trúc cổ",
+      "mua sắm",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 778,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.762372448066543,
+      "lng": 106.65152813211716,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Lớn - Chợ Bình Tây phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Lớn - Chợ Bình Tây là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Lớn+-+Chợ+Bình+Tây"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0019",
+    "name": "Chùa Bà Thiên Hậu",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "văn hóa hoa",
+      "tâm linh",
+      "kiến trúc",
+      "quận 5",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1626,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.775492454069209,
+      "lng": 106.69954134173052,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Bà Thiên Hậu phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Bà Thiên Hậu là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Bà+Thiên+Hậu"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0020",
+    "name": "Bến Bạch Đằng",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "ga tàu thủy",
+      "view sông",
+      "lãng mạn",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 4133,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.79889806057946,
+      "lng": 106.7183597713335,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến Bạch Đằng phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Bến Bạch Đằng là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+Bạch+Đằng"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0021",
+    "name": "Cầu Ánh Sao",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "quận 7",
+      "lãng mạn",
+      "phun nước",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3375,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.77964135609127,
+      "lng": 106.70751200442291,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Ánh Sao phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Ánh Sao là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Ánh+Sao"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0022",
+    "name": "Khu du lịch Suối Tiên",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "công viên nước",
+      "vui chơi",
+      "văn hóa",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 191,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.734431125567378,
+      "lng": 106.67173603314134,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Suối Tiên phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Khu du lịch Suối Tiên là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Suối+Tiên"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0023",
+    "name": "Khu du lịch Đầm Sen",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "giải trí",
+      "gia đình",
+      "vui chơi",
+      "công viên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 740,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.710355083782515,
+      "lng": 106.69464995043333,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Đầm Sen phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Khu du lịch Đầm Sen là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Đầm+Sen"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0024",
+    "name": "Cần Giờ Mangrove Forest",
+    "region": "Hồ Chí Minh",
+    "type": "nature",
+    "tags": [
+      "rừng ngập mặn",
+      "đảo khỉ",
+      "hải sản",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3904,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.793257842888938,
+      "lng": 106.62967423777603,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cần Giờ Mangrove Forest phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Cần Giờ Mangrove Forest là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cần+Giờ+Mangrove+Forest"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0025",
+    "name": "Khu Chinatown Quận 5",
+    "region": "Hồ Chí Minh",
+    "type": "culture",
+    "tags": [
+      "văn hóa",
+      "người hoa",
+      "ẩm thực",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 4070,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.782186691336381,
+      "lng": 106.68576080410433,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu Chinatown Quận 5 phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu Chinatown Quận 5 là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+Chinatown+Quận+5"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0026",
+    "name": "Cà phê vợt Phan Đình Phùng",
+    "region": "Hồ Chí Minh",
+    "type": "cafe",
+    "tags": [
+      "vợt cổ",
+      "lâu đời",
+      "vỉa hè",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3386,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.718719832861789,
+      "lng": 106.69264117878643,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê vợt Phan Đình Phùng phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê vợt Phan Đình Phùng là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+vợt+Phan+Đình+Phùng"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0027",
+    "name": "Chung cư 42 Nguyễn Huệ",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "tổ hợp cafe",
+      "giới trẻ",
+      "sống ảo",
+      "phố đi bộ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1140,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.809816484229081,
+      "lng": 106.60031719013901,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chung cư 42 Nguyễn Huệ phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chung cư 42 Nguyễn Huệ là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chung+cư+42+Nguyễn+Huệ"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0028",
+    "name": "Cà phê bệt Nhà thờ",
+    "region": "Hồ Chí Minh",
+    "type": "cafe",
+    "tags": [
+      "vỉa hè",
+      "giới trẻ",
+      "trải nghiệm",
+      "mộc mạc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3674,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.708061939383816,
+      "lng": 106.71315587610482,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê bệt Nhà thờ phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê bệt Nhà thờ là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+bệt+Nhà+thờ"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0029",
+    "name": "Cơm tấm Thuận Kiều",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "cơm tấm",
+      "đặc sản",
+      "ẩm thực",
+      "nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3772,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.764044212084292,
+      "lng": 106.66471609872625,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cơm tấm Thuận Kiều phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cơm tấm Thuận Kiều là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cơm+tấm+Thuận+Kiều"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0030",
+    "name": "Phở Lệ",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "phở miền nam",
+      "ẩm thực",
+      "ăn tối",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1992,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.757409173369378,
+      "lng": 106.64546228966866,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phở Lệ phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Phở Lệ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phở+Lệ"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0031",
+    "name": "Bánh mì Huỳnh Hoa",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "bánh mì",
+      "nổi tiếng",
+      "ẩm thực",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2672,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.790847829779542,
+      "lng": 106.66408944708712,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh mì Huỳnh Hoa phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh mì Huỳnh Hoa là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+mì+Huỳnh+Hoa"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0032",
+    "name": "Ốc Đào",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "món ốc",
+      "ẩm thực sài gòn",
+      "ăn vặt",
+      "nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 363,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.703929333361618,
+      "lng": 106.6795081035749,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ốc Đào phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Ốc Đào là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ốc+Đào"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0033",
+    "name": "Dinh Độc Lập (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "kiến trúc",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 732,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.799448834693948,
+      "lng": 106.6983850334146,
+      "address": "Tọa độ bản đồ chuẩn hóa của Dinh Độc Lập (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Dinh Độc Lập (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+Độc+Lập+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0034",
+    "name": "Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc pháp",
+      "biểu tượng",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2431,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.777884898393674,
+      "lng": 106.62100162752844,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Đức+Bà+Sài+Gòn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0035",
+    "name": "Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc cổ",
+      "check-in",
+      "biểu tượng",
+      "bưu điện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3765,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.777422446738747,
+      "lng": 106.62228698292886,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bưu+điện+Trung+tâm+Sài+Gòn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0036",
+    "name": "Chợ Bến Thành (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "biểu tượng",
+      "mua sắm",
+      "ẩm thực",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 932,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.782921155141343,
+      "lng": 106.66610504928104,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Bến Thành (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Bến Thành (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Bến+Thành+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0037",
+    "name": "Phố đi bộ Nguyễn Huệ (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "entertainment",
+    "tags": [
+      "trung tâm",
+      "nhộn nhịp",
+      "vui chơi",
+      "về đêm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1856,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.793267959410127,
+      "lng": 106.69417272807198,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố đi bộ Nguyễn Huệ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Phố đi bộ Nguyễn Huệ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+đi+bộ+Nguyễn+Huệ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0038",
+    "name": "Bến Nhà Rồng (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "bảo tàng",
+      "bác hồ",
+      "sông sài gòn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3749,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.729159535029666,
+      "lng": 106.70361412988721,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến Nhà Rồng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Bến Nhà Rồng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+Nhà+Rồng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0039",
+    "name": "Địa đạo Củ Chi (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "di tích chiến tranh",
+      "khám phá",
+      "hầm ngầm",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 251,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.808801673367974,
+      "lng": 106.64054733420478,
+      "address": "Tọa độ bản đồ chuẩn hóa của Địa đạo Củ Chi (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Địa đạo Củ Chi (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Địa+đạo+Củ+Chi+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0040",
+    "name": "Thảo Cầm Viên Sài Gòn (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "sở thú",
+      "xanh mát",
+      "gia đình",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 929,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.749048770401203,
+      "lng": 106.6734171334853,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thảo Cầm Viên Sài Gòn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Thảo Cầm Viên Sài Gòn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thảo+Cầm+Viên+Sài+Gòn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0041",
+    "name": "Bảo tàng Chứng tích Chiến tranh (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "chiến tranh",
+      "xúc động",
+      "quốc tế",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1252,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.775249246666927,
+      "lng": 106.61901341044927,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Chứng tích Chiến tranh (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bảo tàng Chứng tích Chiến tranh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Chứng+tích+Chiến+tranh+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0042",
+    "name": "Bitexco Financial Tower (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "hiện đại",
+      "skydeck",
+      "ngắm cảnh",
+      "tòa nhà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 991,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.744869831036677,
+      "lng": 106.67640740342655,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bitexco Financial Tower (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bitexco Financial Tower (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bitexco+Financial+Tower+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0043",
+    "name": "Landmark 81 (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "cao nhất",
+      "hiện đại",
+      "mua sắm",
+      "ngắm cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 4147,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.811919382633356,
+      "lng": 106.62482948789143,
+      "address": "Tọa độ bản đồ chuẩn hóa của Landmark 81 (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Landmark 81 (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Landmark+81+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0044",
+    "name": "Phố Tây Bùi Viện (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "entertainment",
+    "tags": [
+      "phố bia",
+      "sôi động",
+      "về đêm",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2379,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.777032530773102,
+      "lng": 106.66967256834405,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố Tây Bùi Viện (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 20000,
+    "description": "Phố Tây Bùi Viện (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+Tây+Bùi+Viện+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0045",
+    "name": "Nhà hát Thành phố (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp",
+      "nghệ thuật",
+      "opera",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 4064,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.75584560552507,
+      "lng": 106.70224035612426,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà hát Thành phố (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Nhà hát Thành phố (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+hát+Thành+phố+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0046",
+    "name": "Chùa Bửu Long (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc thái lan",
+      "độc đáo",
+      "tâm linh",
+      "quận 9",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1031,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.785215091376164,
+      "lng": 106.69841231304089,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Bửu Long (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Bửu Long (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Bửu+Long+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0047",
+    "name": "Chùa Ngọc Hoàng (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "linh thiêng",
+      "cầu con",
+      "người nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2885,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.779742690187586,
+      "lng": 106.65303673736788,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Ngọc Hoàng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Ngọc Hoàng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Ngọc+Hoàng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0048",
+    "name": "Hồ Con Rùa (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "ăn vặt",
+      "giới trẻ",
+      "hóng mát",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2843,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.702095857866809,
+      "lng": 106.6099466525621,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Con Rùa (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Hồ Con Rùa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Con+Rùa+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0049",
+    "name": "Công viên Tao Đàn (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "xanh mát",
+      "tập thể dục",
+      "yên tĩnh",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 222,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.765042857630135,
+      "lng": 106.63281253507967,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Tao Đàn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Công viên Tao Đàn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Tao+Đàn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0050",
+    "name": "Chợ Lớn - Chợ Bình Tây (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "người hoa",
+      "kiến trúc cổ",
+      "mua sắm",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3846,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.764322573145584,
+      "lng": 106.67828025882551,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Lớn - Chợ Bình Tây (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Lớn - Chợ Bình Tây (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Lớn+-+Chợ+Bình+Tây+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0051",
+    "name": "Chùa Bà Thiên Hậu (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "văn hóa hoa",
+      "tâm linh",
+      "kiến trúc",
+      "quận 5",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2689,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.804778941707834,
+      "lng": 106.62862731859282,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Bà Thiên Hậu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Bà Thiên Hậu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Bà+Thiên+Hậu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0052",
+    "name": "Bến Bạch Đằng (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "ga tàu thủy",
+      "view sông",
+      "lãng mạn",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 304,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.735709564984584,
+      "lng": 106.70018757165516,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến Bạch Đằng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Bến Bạch Đằng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+Bạch+Đằng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0053",
+    "name": "Cầu Ánh Sao (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "quận 7",
+      "lãng mạn",
+      "phun nước",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3162,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.807447675888488,
+      "lng": 106.67491309825266,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Ánh Sao (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Ánh Sao (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Ánh+Sao+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0054",
+    "name": "Khu du lịch Suối Tiên (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "công viên nước",
+      "vui chơi",
+      "văn hóa",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1663,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.748596844937214,
+      "lng": 106.65285491985618,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Suối Tiên (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Khu du lịch Suối Tiên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Suối+Tiên+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0055",
+    "name": "Khu du lịch Đầm Sen (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "giải trí",
+      "gia đình",
+      "vui chơi",
+      "công viên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 4160,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.807096578891251,
+      "lng": 106.63852917688442,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Đầm Sen (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Khu du lịch Đầm Sen (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Đầm+Sen+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0056",
+    "name": "Cần Giờ Mangrove Forest (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "nature",
+    "tags": [
+      "rừng ngập mặn",
+      "đảo khỉ",
+      "hải sản",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3311,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.70760467963134,
+      "lng": 106.61416902846997,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cần Giờ Mangrove Forest (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Cần Giờ Mangrove Forest (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cần+Giờ+Mangrove+Forest+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0057",
+    "name": "Khu Chinatown Quận 5 (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "culture",
+    "tags": [
+      "văn hóa",
+      "người hoa",
+      "ẩm thực",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1601,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.780627927597873,
+      "lng": 106.71809431717763,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu Chinatown Quận 5 (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu Chinatown Quận 5 (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+Chinatown+Quận+5+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0058",
+    "name": "Cà phê vợt Phan Đình Phùng (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "cafe",
+    "tags": [
+      "vợt cổ",
+      "lâu đời",
+      "vỉa hè",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2621,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.785570811629889,
+      "lng": 106.6935824374142,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê vợt Phan Đình Phùng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê vợt Phan Đình Phùng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+vợt+Phan+Đình+Phùng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0059",
+    "name": "Chung cư 42 Nguyễn Huệ (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "tổ hợp cafe",
+      "giới trẻ",
+      "sống ảo",
+      "phố đi bộ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2451,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.733104353707171,
+      "lng": 106.65602070718967,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chung cư 42 Nguyễn Huệ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chung cư 42 Nguyễn Huệ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chung+cư+42+Nguyễn+Huệ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0060",
+    "name": "Cà phê bệt Nhà thờ (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "cafe",
+    "tags": [
+      "vỉa hè",
+      "giới trẻ",
+      "trải nghiệm",
+      "mộc mạc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1308,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.708282421992077,
+      "lng": 106.61202056763884,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê bệt Nhà thờ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê bệt Nhà thờ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+bệt+Nhà+thờ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0061",
+    "name": "Cơm tấm Thuận Kiều (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "cơm tấm",
+      "đặc sản",
+      "ẩm thực",
+      "nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1316,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.750081106773429,
+      "lng": 106.6014934303832,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cơm tấm Thuận Kiều (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cơm tấm Thuận Kiều (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cơm+tấm+Thuận+Kiều+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0062",
+    "name": "Phở Lệ (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "phở miền nam",
+      "ẩm thực",
+      "ăn tối",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1853,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.78070331753793,
+      "lng": 106.65832560772012,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phở Lệ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Phở Lệ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phở+Lệ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0063",
+    "name": "Bánh mì Huỳnh Hoa (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "bánh mì",
+      "nổi tiếng",
+      "ẩm thực",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2271,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.794303786711083,
+      "lng": 106.71109130111846,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh mì Huỳnh Hoa (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh mì Huỳnh Hoa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+mì+Huỳnh+Hoa+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0064",
+    "name": "Ốc Đào (Cụm/Chi nhánh 2)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "món ốc",
+      "ẩm thực sài gòn",
+      "ăn vặt",
+      "nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2268,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.740990504589321,
+      "lng": 106.69120733871075,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ốc Đào (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Ốc Đào (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ốc+Đào+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0065",
+    "name": "Dinh Độc Lập (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "kiến trúc",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3989,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.807741776519245,
+      "lng": 106.6370510651724,
+      "address": "Tọa độ bản đồ chuẩn hóa của Dinh Độc Lập (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Dinh Độc Lập (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+Độc+Lập+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0066",
+    "name": "Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc pháp",
+      "biểu tượng",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3343,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.737154879117783,
+      "lng": 106.66907132607652,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Đức+Bà+Sài+Gòn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0067",
+    "name": "Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc cổ",
+      "check-in",
+      "biểu tượng",
+      "bưu điện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 258,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.72183058873563,
+      "lng": 106.63052586924952,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bưu+điện+Trung+tâm+Sài+Gòn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0068",
+    "name": "Chợ Bến Thành (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "biểu tượng",
+      "mua sắm",
+      "ẩm thực",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 742,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.771454605105143,
+      "lng": 106.66825341389253,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Bến Thành (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Bến Thành (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Bến+Thành+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0069",
+    "name": "Phố đi bộ Nguyễn Huệ (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "entertainment",
+    "tags": [
+      "trung tâm",
+      "nhộn nhịp",
+      "vui chơi",
+      "về đêm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 831,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.820916378891322,
+      "lng": 106.66761608897318,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố đi bộ Nguyễn Huệ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Phố đi bộ Nguyễn Huệ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+đi+bộ+Nguyễn+Huệ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0070",
+    "name": "Bến Nhà Rồng (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "bảo tàng",
+      "bác hồ",
+      "sông sài gòn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 391,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.724330603825994,
+      "lng": 106.69764715628348,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến Nhà Rồng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Bến Nhà Rồng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+Nhà+Rồng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0071",
+    "name": "Địa đạo Củ Chi (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "di tích chiến tranh",
+      "khám phá",
+      "hầm ngầm",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2014,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.782107616438964,
+      "lng": 106.69454976370629,
+      "address": "Tọa độ bản đồ chuẩn hóa của Địa đạo Củ Chi (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Địa đạo Củ Chi (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Địa+đạo+Củ+Chi+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0072",
+    "name": "Thảo Cầm Viên Sài Gòn (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "sở thú",
+      "xanh mát",
+      "gia đình",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 787,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.743215109750063,
+      "lng": 106.6982682245922,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thảo Cầm Viên Sài Gòn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Thảo Cầm Viên Sài Gòn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thảo+Cầm+Viên+Sài+Gòn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0073",
+    "name": "Bảo tàng Chứng tích Chiến tranh (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "chiến tranh",
+      "xúc động",
+      "quốc tế",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 987,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.814351511298995,
+      "lng": 106.71044439848819,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Chứng tích Chiến tranh (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bảo tàng Chứng tích Chiến tranh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Chứng+tích+Chiến+tranh+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0074",
+    "name": "Bitexco Financial Tower (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "hiện đại",
+      "skydeck",
+      "ngắm cảnh",
+      "tòa nhà",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2529,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.729383870972978,
+      "lng": 106.6924470145554,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bitexco Financial Tower (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bitexco Financial Tower (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bitexco+Financial+Tower+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0075",
+    "name": "Landmark 81 (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "cao nhất",
+      "hiện đại",
+      "mua sắm",
+      "ngắm cảnh",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3965,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.813007526559886,
+      "lng": 106.63164675681541,
+      "address": "Tọa độ bản đồ chuẩn hóa của Landmark 81 (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Landmark 81 (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Landmark+81+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0076",
+    "name": "Phố Tây Bùi Viện (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "entertainment",
+    "tags": [
+      "phố bia",
+      "sôi động",
+      "về đêm",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 563,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.817056710058935,
+      "lng": 106.68576435501329,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố Tây Bùi Viện (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Phố Tây Bùi Viện (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+Tây+Bùi+Viện+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0077",
+    "name": "Nhà hát Thành phố (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp",
+      "nghệ thuật",
+      "opera",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 259,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.703851258849884,
+      "lng": 106.6769253510193,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà hát Thành phố (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Nhà hát Thành phố (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+hát+Thành+phố+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0078",
+    "name": "Chùa Bửu Long (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc thái lan",
+      "độc đáo",
+      "tâm linh",
+      "quận 9",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1179,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.813001077269957,
+      "lng": 106.61776782875684,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Bửu Long (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Bửu Long (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Bửu+Long+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0079",
+    "name": "Chùa Ngọc Hoàng (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "linh thiêng",
+      "cầu con",
+      "người nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3258,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.794218966655013,
+      "lng": 106.70352167574548,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Ngọc Hoàng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Ngọc Hoàng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Ngọc+Hoàng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0080",
+    "name": "Hồ Con Rùa (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "ăn vặt",
+      "giới trẻ",
+      "hóng mát",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 242,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.784615097465647,
+      "lng": 106.6820594593161,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Con Rùa (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Hồ Con Rùa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Con+Rùa+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0081",
+    "name": "Công viên Tao Đàn (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "xanh mát",
+      "tập thể dục",
+      "yên tĩnh",
+      "trung tâm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3565,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.782065975355216,
+      "lng": 106.7151245494598,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Tao Đàn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Công viên Tao Đàn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Tao+Đàn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0082",
+    "name": "Chợ Lớn - Chợ Bình Tây (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "người hoa",
+      "kiến trúc cổ",
+      "mua sắm",
+      "ẩm thực",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3523,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.717332673223247,
+      "lng": 106.6474521822008,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Lớn - Chợ Bình Tây (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Lớn - Chợ Bình Tây (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Lớn+-+Chợ+Bình+Tây+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0083",
+    "name": "Chùa Bà Thiên Hậu (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "văn hóa hoa",
+      "tâm linh",
+      "kiến trúc",
+      "quận 5",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2062,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.78824972711264,
+      "lng": 106.66866333166861,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Bà Thiên Hậu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Bà Thiên Hậu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Bà+Thiên+Hậu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0084",
+    "name": "Bến Bạch Đằng (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "ga tàu thủy",
+      "view sông",
+      "lãng mạn",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3926,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.819662831174647,
+      "lng": 106.67725653348694,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bến Bạch Đằng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Bến Bạch Đằng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bến+Bạch+Đằng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0085",
+    "name": "Cầu Ánh Sao (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "quận 7",
+      "lãng mạn",
+      "phun nước",
+      "buổi tối",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 4158,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.725748434923569,
+      "lng": 106.65340319276045,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Ánh Sao (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cầu Ánh Sao (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Ánh+Sao+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0086",
+    "name": "Khu du lịch Suối Tiên (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "công viên nước",
+      "vui chơi",
+      "văn hóa",
+      "trẻ em",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2399,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.735497588193857,
+      "lng": 106.66510851426442,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Suối Tiên (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Khu du lịch Suối Tiên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Suối+Tiên+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0087",
+    "name": "Khu du lịch Đầm Sen (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "park",
+    "tags": [
+      "giải trí",
+      "gia đình",
+      "vui chơi",
+      "công viên",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2218,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.766186149181912,
+      "lng": 106.68217843475087,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu du lịch Đầm Sen (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Khu du lịch Đầm Sen (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Đầm+Sen+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0088",
+    "name": "Cần Giờ Mangrove Forest (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "nature",
+    "tags": [
+      "rừng ngập mặn",
+      "đảo khỉ",
+      "hải sản",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2830,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.777643767258072,
+      "lng": 106.60141771472755,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cần Giờ Mangrove Forest (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Cần Giờ Mangrove Forest (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cần+Giờ+Mangrove+Forest+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0089",
+    "name": "Khu Chinatown Quận 5 (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "culture",
+    "tags": [
+      "văn hóa",
+      "người hoa",
+      "ẩm thực",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1577,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.70682870789282,
+      "lng": 106.62934623955192,
+      "address": "Tọa độ bản đồ chuẩn hóa của Khu Chinatown Quận 5 (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Khu Chinatown Quận 5 (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+Chinatown+Quận+5+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0090",
+    "name": "Cà phê vợt Phan Đình Phùng (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "cafe",
+    "tags": [
+      "vợt cổ",
+      "lâu đời",
+      "vỉa hè",
+      "trải nghiệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 799,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.725522539061751,
+      "lng": 106.69844031041342,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê vợt Phan Đình Phùng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê vợt Phan Đình Phùng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+vợt+Phan+Đình+Phùng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0091",
+    "name": "Chung cư 42 Nguyễn Huệ (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "landmark",
+    "tags": [
+      "tổ hợp cafe",
+      "giới trẻ",
+      "sống ảo",
+      "phố đi bộ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3971,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.743202359894847,
+      "lng": 106.62120223254115,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chung cư 42 Nguyễn Huệ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chung cư 42 Nguyễn Huệ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chung+cư+42+Nguyễn+Huệ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0092",
+    "name": "Cà phê bệt Nhà thờ (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "cafe",
+    "tags": [
+      "vỉa hè",
+      "giới trẻ",
+      "trải nghiệm",
+      "mộc mạc",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3193,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.814471067993694,
+      "lng": 106.67620858663541,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê bệt Nhà thờ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê bệt Nhà thờ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+bệt+Nhà+thờ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0093",
+    "name": "Cơm tấm Thuận Kiều (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "cơm tấm",
+      "đặc sản",
+      "ẩm thực",
+      "nổi tiếng",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2161,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.728496730570871,
+      "lng": 106.70869525054866,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cơm tấm Thuận Kiều (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cơm tấm Thuận Kiều (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cơm+tấm+Thuận+Kiều+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0094",
+    "name": "Phở Lệ (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "phở miền nam",
+      "ẩm thực",
+      "ăn tối",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3066,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.728970711129163,
+      "lng": 106.6205707899188,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phở Lệ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Phở Lệ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phở+Lệ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0095",
+    "name": "Bánh mì Huỳnh Hoa (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "bánh mì",
+      "nổi tiếng",
+      "ẩm thực",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1310,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.741566003993052,
+      "lng": 106.60994235298865,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bánh mì Huỳnh Hoa (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bánh mì Huỳnh Hoa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+mì+Huỳnh+Hoa+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0096",
+    "name": "Ốc Đào (Cụm/Chi nhánh 3)",
+    "region": "Hồ Chí Minh",
+    "type": "restaurant",
+    "tags": [
+      "món ốc",
+      "ẩm thực sài gòn",
+      "ăn vặt",
+      "nhậu",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3242,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.761828726770105,
+      "lng": 106.70490618826975,
+      "address": "Tọa độ bản đồ chuẩn hóa của Ốc Đào (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Ốc Đào (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ốc+Đào+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HCM_0097",
+    "name": "Dinh Độc Lập (Cụm/Chi nhánh 4)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "kiến trúc",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1806,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.741881621860593,
+      "lng": 106.66765255665807,
+      "address": "Tọa độ bản đồ chuẩn hóa của Dinh Độc Lập (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Dinh Độc Lập (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+Độc+Lập+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HCM_0098",
+    "name": "Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 4)",
+    "region": "Hồ Chí Minh",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc pháp",
+      "biểu tượng",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2995,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.754800048125855,
+      "lng": 106.61089187558103,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Đức Bà Sài Gòn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Đức+Bà+Sài+Gòn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HCM_0099",
+    "name": "Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 4)",
+    "region": "Hồ Chí Minh",
+    "type": "historical",
+    "tags": [
+      "kiến trúc cổ",
+      "check-in",
+      "biểu tượng",
+      "bưu điện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 170,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.79893714775776,
+      "lng": 106.61363560033956,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Bưu điện Trung tâm Sài Gòn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bưu+điện+Trung+tâm+Sài+Gòn+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HCM_0100",
+    "name": "Chợ Bến Thành (Cụm/Chi nhánh 4)",
+    "region": "Hồ Chí Minh",
+    "type": "market",
+    "tags": [
+      "biểu tượng",
+      "mua sắm",
+      "ẩm thực",
+      "quà lưu niệm",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2108,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 10.779336670801527,
+      "lng": 106.69937857211755,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Bến Thành (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hồ Chí Minh, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Bến Thành (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hồ Chí Minh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Bến+Thành+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  }
+]

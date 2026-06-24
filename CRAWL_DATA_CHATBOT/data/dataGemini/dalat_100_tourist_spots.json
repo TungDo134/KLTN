@@ -1,0 +1,3612 @@
+[
+  {
+    "id": "DL_0001",
+    "name": "Khu du lịch Thác Datanla",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thiên nhiên",
+      "tham quan",
+      "khám phá",
+      "chụp ảnh",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1288,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.9034324,
+      "lng": 108.4496999,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Khu du lịch Thác Datanla là địa điểm lý tưởng cho các hoạt động khám phá, tham quan.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Thác+Datanla"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0002",
+    "name": "Đồi chè Cầu Đất",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "săn mây",
+      "đồi chè",
+      "bình minh",
+      "chụp ảnh",
+      "ngoại ô"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2906,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.854124,
+      "lng": 108.561245,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đồi chè xanh mướt trải dài với không gian săn mây bình minh cực đẹp.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+chè+Cầu+Đất"
+    },
+    "best_time": "10-04"
+  },
+  {
+    "id": "DL_0003",
+    "name": "Hồ Tuyền Lâm",
+    "region": "Đà Lạt",
+    "type": "lake",
+    "tags": [
+      "thiên nhiên",
+      "chèo thuyền",
+      "cắm trại",
+      "hoàng hôn",
+      "tĩnh lặng"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1276,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.894215,
+      "lng": 108.436124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ nước ngọt nhân tạo lớn nhất Đà Lạt bao quanh bởi rừng thông xanh mướt.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tuyền+Lâm"
+    },
+    "best_time": "11-05"
+  },
+  {
+    "id": "DL_0004",
+    "name": "Quảng trường Lâm Viên",
+    "region": "Đà Lạt",
+    "type": "square",
+    "tags": [
+      "check-in",
+      "biểu tượng",
+      "trung tâm",
+      "dạo bộ",
+      "kiến trúc"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2223,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.938412,
+      "lng": 108.444124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Biểu tượng kiến trúc của thành phố với nụ hoa Atiso và đóa hoa Dã Quỳ khổng lồ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quảng+trường+Lâm+Viên"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0005",
+    "name": "Thung lũng Tình Yêu",
+    "region": "Đà Lạt",
+    "type": "park",
+    "tags": [
+      "tham quan",
+      "chụp ảnh",
+      "lãng mạn",
+      "cặp đôi",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1597,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.968124,
+      "lng": 108.452124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 250000,
+    "description": "Khu du lịch sinh thái lãng mạn lâu đời với nhiều tiểu cảnh hoa và hồ nước.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thung+lũng+Tình+Yêu"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0006",
+    "name": "Đỉnh núi Langbiang",
+    "region": "Đà Lạt",
+    "type": "mountain",
+    "tags": [
+      "trekking",
+      "xe jeep",
+      "ngắm cảnh",
+      "khám phá",
+      "cao nguyên"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1343,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.031245,
+      "lng": 108.438124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 50000,
+    "description": "Nóc nhà của Đà Lạt mang lại tầm nhìn toàn cảnh thung lũng và thành phố từ trên cao.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đỉnh+núi+Langbiang"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0007",
+    "name": "Puppy Farm",
+    "region": "Đà Lạt",
+    "type": "farm",
+    "tags": [
+      "thú cưng",
+      "nông trại",
+      "gia đình",
+      "trẻ em",
+      "vườn hoa"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2871,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.954124,
+      "lng": 108.398124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Nông trại cún đáng yêu kết hợp vườn nông nghiệp công nghệ cao và thảm hoa.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Puppy+Farm"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0008",
+    "name": "Chợ Đêm Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "market",
+    "tags": [
+      "ẩm thực",
+      "mua sắm",
+      "về đêm",
+      "ăn vặt",
+      "đặc sản"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1510,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.942415,
+      "lng": 108.437124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Trung tâm mua sắm và trải nghiệm ẩm thực đường phố nhộn nhịp nhất về đêm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đêm+Đà+Lạt"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0009",
+    "name": "Vườn hoa Thành phố Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "garden",
+    "tags": [
+      "vườn hoa",
+      "chụp ảnh",
+      "tham quan",
+      "trung tâm",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 439,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.949124,
+      "lng": 108.449124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 75000,
+    "description": "Nơi quy tụ hàng trăm loài hoa đẹp và quý hiếm của thành phố sương mù.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+hoa+Thành+phố+Đà+Lạt"
+    },
+    "best_time": "12-02"
+  },
+  {
+    "id": "DL_0010",
+    "name": "Dinh 1 Bảo Đại",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "kiến trúc phái",
+      "tham quan",
+      "chụp ảnh",
+      "cổ kính"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2335,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.931124,
+      "lng": 108.468124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 90000,
+    "description": "Dinh thự cổ kính sang trọng của vị vua cuối cùng triều Nguyễn nằm giữa rừng thông.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+1+Bảo+Đại"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0011",
+    "name": "Thiền viện Trúc Lâm",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "tĩnh lặng",
+      "kiến trúc",
+      "hồ tuyền lâm"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2829,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.902,
+      "lng": 108.435,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngôi thiền viện lớn nhất Lâm Đồng nằm bình yên bên Hồ Tuyền Lâm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thiền+viện+Trúc+Lâm"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0012",
+    "name": "Chùa Linh Phước (Chùa Ve Chai)",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "kiến trúc độc đáo",
+      "kỷ lục",
+      "ve chai"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1562,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.944,
+      "lng": 108.498,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngôi chùa độc đáo khảm từ hàng triệu mảnh sành sứ, chai lọ đạt nhiều kỷ lục.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Linh+Phước+(Chùa+Ve+Chai)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0013",
+    "name": "Nhà thờ Domaine de Marie",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "nhà thờ",
+      "kiến trúc pháp",
+      "màu hồng",
+      "check-in"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1794,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.948,
+      "lng": 108.428,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ với kiến trúc châu Âu đặc trưng và sắc hồng mai anh đào nổi bật.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Domaine+de+Marie"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0014",
+    "name": "Ga Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "kiến trúc",
+      "ga tàu cổ",
+      "check-in"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 433,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.941,
+      "lng": 108.454,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 10000,
+    "description": "Nhà ga cổ kính nhất Việt Nam và Đông Dương mang đậm phong cách kiến trúc Pháp.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ga+Đà+Lạt"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0015",
+    "name": "Biệt thự Hằng Nga (Crazy House)",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "kiến trúc kỳ dị",
+      "khám phá",
+      "nghệ thuật",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2214,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.934,
+      "lng": 108.431,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 60000,
+    "description": "Công trình kiến trúc phá cách độc đáo lọt top các tòa nhà kỳ dị nhất thế giới.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Biệt+thự+Hằng+Nga+(Crazy+House)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0016",
+    "name": "Thác Pongour",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thiên nhiên",
+      "thác bảy tầng",
+      "hùng vĩ",
+      "ngoại ô"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1613,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.691,
+      "lng": 108.281,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Nam thiên đệ nhất thác với dòng nước đổ qua hệ thống đá 7 tầng hùng vĩ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Pongour"
+    },
+    "best_time": "10-02"
+  },
+  {
+    "id": "DL_0017",
+    "name": "Thác Elephant (Thác Voi)",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thiên nhiên",
+      "hoang sơ",
+      "khám phá",
+      "mạo hiểm"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2712,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.825,
+      "lng": 108.334,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Thác nước hoang sơ, dòng nước đổ mạnh mẽ tung bọt trắng xóa giữa đại ngàn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Elephant+(Thác+Voi)"
+    },
+    "best_time": "09-02"
+  },
+  {
+    "id": "DL_0018",
+    "name": "Hồ Xuân Hương",
+    "region": "Đà Lạt",
+    "type": "lake",
+    "tags": [
+      "trung tâm",
+      "lãng mạn",
+      "đạp vịt",
+      "dạo bộ"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1109,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.94,
+      "lng": 108.445,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Trái tim của thành phố Đà Lạt, nơi lý tưởng để đi dạo ngắm cảnh chiều tà.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Xuân+Hương"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0019",
+    "name": "Cổng Trời Bali - Green Hills",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2160,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.928,
+      "lng": 108.449,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Khu check-in mô phỏng cổng trời Bali cùng nhiều tiểu cảnh gương vô cực.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cổng+Trời+Bali+-+Green+Hills"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0020",
+    "name": "Vườn Thượng Uyển Bay",
+    "region": "Đà Lạt",
+    "type": "garden",
+    "tags": [
+      "vườn hoa",
+      "màu sắc",
+      "chụp ảnh",
+      "tiểu cảnh"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1175,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.912,
+      "lng": 108.482,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Không gian hoa mang phong cách hoàng gia châu Âu rực rỡ sắc màu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+Thượng+Uyển+Bay"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0021",
+    "name": "Ma Rừng Lữ Quán",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 673,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.958568129241403,
+      "lng": 108.40228870800325,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Khu du lịch sinh thái ẩn mình giữa rừng sâu rậm rạp.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ma+Rừng+Lữ+Quán"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0022",
+    "name": "Làng Cù Lần",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2603,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.935695547867798,
+      "lng": 108.35071932960311,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Ngôi làng nhỏ yên bình nằm giữa thung lũng rừng thông nguyên sinh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+Cù+Lần"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0023",
+    "name": "Fresh Garden Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "garden",
+    "tags": [
+      "vườn hoa",
+      "sắc màu",
+      "chụp ảnh",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1371,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.94454569640519,
+      "lng": 108.35479743956827,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Khu vườn ngập tràn thảm hoa rực rỡ và mô hình tiểu cảnh sáng tạo.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Fresh+Garden+Đà+Lạt"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0024",
+    "name": "Kombi Land Đồi Xương Rồng",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3418,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.955569654665881,
+      "lng": 108.45115739248853,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 90000,
+    "description": "Quán cà phê sa mạc độc đáo với hàng ngàn cây xương rồng giữa lòng phố núi.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Kombi+Land+Đồi+Xương+Rồng"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0025",
+    "name": "Nông trại cừu Chika Farm",
+    "region": "Đà Lạt",
+    "type": "farm",
+    "tags": [
+      "nông trại",
+      "trải nghiệm",
+      "gia đình",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2543,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.92751887901959,
+      "lng": 108.38575731077879,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 110000,
+    "description": "Nông trại phong cách đồng quê châu Âu với những chú cừu và lạc đà Alpaca dễ thương.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nông+trại+cừu+Chika+Farm"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0026",
+    "name": "Lẩu bò Ba Toa quán Nhà Gỗ",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 956,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.849874500403118,
+      "lng": 108.4027191888893,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán lẩu bò lâu đời và nổi tiếng nhất với nước dùng đậm đà, thịt bò dày.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lẩu+bò+Ba+Toa+quán+Nhà+Gỗ"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0027",
+    "name": "Tiệm bánh Cối Xay Gió",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2612,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.944929498959887,
+      "lng": 108.42502104718899,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Bức tường vàng check-in biểu tượng quen thuộc của giới trẻ khi đến Đà Lạt.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+bánh+Cối+Xay+Gió"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0028",
+    "name": "Kem bơ Thanh Thảo",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 744,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.006889072878801,
+      "lng": 108.34688571694952,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán kem bơ béo ngậy nức tiếng nằm trên đường Nguyễn Văn Trỗi.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Kem+bơ+Thanh+Thảo"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0029",
+    "name": "Bánh mỳ xíu mại Hoàng Diệu",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1744,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.89630661738545,
+      "lng": 108.35083279007215,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Điểm ăn sáng kinh điển với chén xíu mại nóng hổi chấm bánh mỳ giòn rụm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+mỳ+xíu+mại+Hoàng+Diệu"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0030",
+    "name": "Đồi Đa Phú",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2537,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.031617284534171,
+      "lng": 108.39133985994091,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Địa điểm cắm trại tự do và săn mây hoang sơ được giới phượt yêu thích.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Đa+Phú"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0031",
+    "name": "Đồi Thiên Phúc Đức",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 580,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.856631378560465,
+      "lng": 108.47108494987154,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngọn đồi nổi tiếng với cây thông cô đơn và view ngắm mây, sao đêm tuyệt đẹp.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Thiên+Phúc+Đức"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0032",
+    "name": "Cây thông cô đơn Hồ Suối Vàng",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2231,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.936434932173759,
+      "lng": 108.36446212164728,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tọa độ cắm trại kinh điển bên hồ nước rộng lớn và cây thông đứng một mình.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cây+thông+cô+đơn+Hồ+Suối+Vàng"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0033",
+    "name": "Tuyệt Tình Cốc",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2542,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.910102037266018,
+      "lng": 108.50961891600002,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ nước màu xanh ngọc bích ảo diệu nằm sâu trong khu vực mỏ đá cũ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tuyệt+Tình+Cốc"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0034",
+    "name": "Đèo Tà Nung",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1958,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.01801877006767,
+      "lng": 108.47474513342111,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung đèo quanh co uốn lượn với cảnh sắc núi rừng trùng điệp hùng vĩ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đèo+Tà+Nung"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0035",
+    "name": "Khu du lịch Lá Phong",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3238,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.039304940504712,
+      "lng": 108.361469063121,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 60000,
+    "description": "Khu vườn mang phong cách Nhật Bản với hàng trăm cây lá phong và hồ cá Koi.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Lá+Phong"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0036",
+    "name": "Cáp treo đồi Robin",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 574,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.94159373854776,
+      "lng": 108.51479224178199,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Tuyến cáp treo ngắm toàn cảnh thành phố và rừng thông từ đồi Robin đến Thiền Viện.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cáp+treo+đồi+Robin"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0037",
+    "name": "Dinh 2 Bảo Đại",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1881,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.9014057266088,
+      "lng": 108.48087843472567,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Dinh thự sang trọng thời Pháp thuộc nằm trên đồi cao lộng gió.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+2+Bảo+Đại"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0038",
+    "name": "Dinh 3 Bảo Đại",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3310,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.98365612066686,
+      "lng": 108.37186116807055,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Nơi sinh sống và làm việc của gia đình vua Bảo Đại lưu giữ nhiều cổ vật quý giá.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dinh+3+Bảo+Đại"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0039",
+    "name": "XQ Sử Quán",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 235,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.936694211998924,
+      "lng": 108.47455814942819,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Làng tranh thêu tay nghệ thuật độc đáo mang đậm không gian văn hóa truyền thống.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/XQ+Sử+Quán"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0040",
+    "name": "Phân viện Sinh học Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1800,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.999496096526002,
+      "lng": 108.51200170011018,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 15000,
+    "description": "Tòa nhà bằng đá cổ kính lưu giữ hàng ngàn mẫu vật sinh học quý hiếm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phân+viện+Sinh+học+Đà+Lạt"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0041",
+    "name": "Nhà thờ Con Gà",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "chùa chiền",
+      "tĩnh lặng",
+      "kiến trúc"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2990,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.894955853708646,
+      "lng": 108.38206038971717,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chính tòa Đà Lạt với tượng con gà trên đỉnh tháp chuông mang kiến trúc Roman Pháp.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Con+Gà"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0042",
+    "name": "Chùa Tàu (Thiên Vương Cổ Sát)",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "chùa chiền",
+      "tĩnh lặng",
+      "kiến trúc"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3301,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.005760947866216,
+      "lng": 108.41777712936873,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngôi chùa cổ kính mang kiến trúc Trung Hoa với ba pho tượng gỗ trầm hương khổng lồ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Tàu+(Thiên+Vương+Cổ+Sát)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0043",
+    "name": "Khu du lịch Chuồn Chuồn",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2664,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.877318331336213,
+      "lng": 108.41277247192002,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Tọa độ check-in giữa đồi trà view thung lũng rừng thông cực rộng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Chuồn+Chuồn"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0044",
+    "name": "Meli Hills",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 898,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.878619280154638,
+      "lng": 108.49378323721201,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 80000,
+    "description": "Khu tiểu cảnh sống ảo mới lạ với nhiều góc chụp hiện đại.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Meli+Hills"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0045",
+    "name": "The Florest Hoa Trong Rừng",
+    "region": "Đà Lạt",
+    "type": "garden",
+    "tags": [
+      "vườn hoa",
+      "sắc màu",
+      "chụp ảnh",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2856,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.907321895924477,
+      "lng": 108.4467014079068,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Cánh đồng hoa rộng lớn ẩn mình giữa thung lũng rừng thông hoang sơ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/The+Florest+Hoa+Trong+Rừng"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0046",
+    "name": "Mongo Land",
+    "region": "Đà Lạt",
+    "type": "farm",
+    "tags": [
+      "nông trại",
+      "trải nghiệm",
+      "gia đình",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2509,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.937858632634113,
+      "lng": 108.435873589502,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 120000,
+    "description": "Khu vui chơi phong cách thảo nguyên Mông Cổ với thảm cỏ trượt cỏ và thú cưng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mongo+Land"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0047",
+    "name": "Lăng Nguyễn Hữu Hào",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1684,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.949514956285281,
+      "lng": 108.38641382038038,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Di tích lịch sử kiến trúc cổ kính, nơi an nghỉ của thân phụ Nam Phương Hoàng Hậu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lăng+Nguyễn+Hữu+Hào"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0048",
+    "name": "Hồ Than Thở",
+    "region": "Đà Lạt",
+    "type": "lake",
+    "tags": [
+      "hồ nước",
+      "lãng mạn",
+      "thiên nhiên",
+      "chill"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2360,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.990507481884045,
+      "lng": 108.51223662556052,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 20000,
+    "description": "Hồ nước gắn liền với những câu chuyện tình lãng mạn đượm buồn của phố núi.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Than+Thở"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0049",
+    "name": "Đồi cỏ hồng Masara",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3192,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.957459574405997,
+      "lng": 108.4444459864855,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Thảo nguyên cỏ hồng rực rỡ lãng mạn vào những tháng cuối năm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+cỏ+hồng+Masara"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0050",
+    "name": "Thác Cam Ly",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thác nước",
+      "thiên nhiên",
+      "hùng vĩ",
+      "khám phá"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 389,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.913373010714729,
+      "lng": 108.4175179745744,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Ngọn thác nằm gần trung tâm thành phố gắn liền với nhiều bài ca thơ văn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Cam+Ly"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0051",
+    "name": "Đồi Ngô Quyền",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2334,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.028004296183523,
+      "lng": 108.4028771093762,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Điểm ngắm hoàng hôn và thung lũng đèn lung linh về đêm cực chill.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đồi+Ngô+Quyền"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0052",
+    "name": "Thung lũng đèn Trai Mát",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1158,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.95639119384194,
+      "lng": 108.37098335859949,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Tọa độ ngắm thung lũng nhà kính lên đèn sáng rực như kinh đô ánh sáng về đêm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thung+lũng+đèn+Trai+Mát"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0053",
+    "name": "Tiệm cà phê Bình Minh Ơi",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 305,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.95511185533691,
+      "lng": 108.49747589837953,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê gỗ phong cách vintage chuyên đón bình minh và săn mây.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+cà+phê+Bình+Minh+Ơi"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0054",
+    "name": "Túi Mơ To",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 803,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.860886654244311,
+      "lng": 108.51884144557528,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê cúc họa mi nổi tiếng bậc nhất với view thung lũng đèn lãng mạn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Túi+Mơ+To"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0055",
+    "name": "Cheo Veo Cafe",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 885,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.892160000262452,
+      "lng": 108.35906200557103,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Căn nhà gỗ nhỏ mộc mạc nép mình bên sườn đồi ngắm hoàng hôn phố núi.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cheo+Veo+Cafe"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0056",
+    "name": "In the Forest",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3005,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.860952657932257,
+      "lng": 108.35435744647093,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê nằm giữa rừng thông hoang sơ mang phong cách biệt lập tĩnh lặng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/In+the+Forest"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0057",
+    "name": "Thông Ơi",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2499,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.917413338771903,
+      "lng": 108.37040316697876,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê gỗ hai tầng ẩn mình giữa ngàn thông xanh mát.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thông+Ơi"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0058",
+    "name": "Khu vườn mùa hè",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2870,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.976026517756154,
+      "lng": 108.45780587973893,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê ngập tràn cây xanh và hoa lá mang phong cách cổ tích.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+vườn+mùa+hè"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0059",
+    "name": "An Cafe",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2134,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.005556231100977,
+      "lng": 108.50646343711189,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê dốc phố độc đáo tích hợp các vườn rau thủy canh xanh mướt.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/An+Cafe"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0060",
+    "name": "Still Cafe",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2161,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.857447342107283,
+      "lng": 108.41794108683139,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Tọa độ cà phê phong cách Nhật Bản hoài cổ với nhiều tiệm bánh, tiệm mì xung quanh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Still+Cafe"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0061",
+    "name": "Kong Cafe",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 641,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.840296160610468,
+      "lng": 108.49711166680366,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Không gian mộc mạc, bình yên, điểm hẹn của những tâm hồn yêu nhạc indie và rap.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Kong+Cafe"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0062",
+    "name": "Horizon Coffee",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1557,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.985738380379377,
+      "lng": 108.4476773479048,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê view vô cực ngắm trọn vẹn dãy núi và rừng thông đèo Prenn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Horizon+Coffee"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0063",
+    "name": "Lululola Coffee+",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2415,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.034563500884829,
+      "lng": 108.4082392007946,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Không gian cà phê acoustic ngoài trời đón hoàng hôn và thưởng thức âm nhạc lãng mạn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lululola+Coffee+"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0064",
+    "name": "Mây Lang Thang",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3399,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.952219099243308,
+      "lng": 108.45889441955701,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Sân khấu ca nhạc acoustic mây ngàn nổi tiếng giữa đồi núi trập trùng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Mây+Lang+Thang"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0065",
+    "name": "Boho Corner",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3243,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.880320674022608,
+      "lng": 108.35198182137695,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê phong cách du mục Bohemian tràn ngập hoa cỏ rực rỡ sắc màu.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Boho+Corner"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0066",
+    "name": "Tiệm cà phê Ba Quả Đồi",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1433,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.009610002348094,
+      "lng": 108.43184940951238,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê gỗ đơn sơ nhìn ra những ngọn đồi thông trập trùng sương mù.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+cà+phê+Ba+Quả+Đồi"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0067",
+    "name": "Yooberi",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1256,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.928221287879358,
+      "lng": 108.35844712169082,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê studio mang phong cách Hàn Quốc ngọt ngào với tông màu pastel chủ đạo.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Yooberi"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0068",
+    "name": "Chuyện của Nắng",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1130,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.94715318332906,
+      "lng": 108.52064440157284,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán cà phê không gian mở ngập tràn ánh nắng và góc chụp hình xinh xắn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chuyện+của+Nắng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0069",
+    "name": "Lẩu gà lá é É RE",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 941,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.848804913059814,
+      "lng": 108.52865904030507,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Địa điểm thưởng thức lẩu gà lá é chuẩn vị, không gian sạch sẽ rộng rãi.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lẩu+gà+lá+é+É+RE"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0070",
+    "name": "Bánh mì xíu mại Ri7",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 527,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.011365496592639,
+      "lng": 108.49940115609064,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Thương hiệu bánh mì xíu mại gia truyền thơm ngon nóng hổi ăn sáng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+mì+xíu+mại+Ri7"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0071",
+    "name": "Bánh ướt lòng gà Long",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2462,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.974542638489378,
+      "lng": 108.38287399801969,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán bánh ướt lòng gà dẻo thơm nước mắm pha đậm đà đặc trưng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+ướt+lòng+gà+Long"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0072",
+    "name": "Bánh ướt lòng gà Trang",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 255,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.003652684929945,
+      "lng": 108.53534391610722,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Địa chỉ ẩm thực lâu năm nổi tiếng với món bánh ướt gà xé lòng heo.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bánh+ướt+lòng+gà+Trang"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0073",
+    "name": "Ốc nhồi thịt 33",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2074,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.94821254192745,
+      "lng": 108.46177472794152,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Món ốc nhồi thịt thơm phức mùi sả đặt trên bếp than hồng sưởi ấm đêm lạnh.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Ốc+nhồi+thịt+33"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0074",
+    "name": "Nem nướng Bà Hùng",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 2035,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.910928346699311,
+      "lng": 108.4339913688436,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Thương hiệu nem nướng lâu đời ngon danh bất hư truyền ăn kèm nước chấm độc quyền.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nem+nướng+Bà+Hùng"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0075",
+    "name": "Nem nướng Hùng Ly",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 866,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.998873015419175,
+      "lng": 108.47979347436313,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán nem nướng chuẩn vị với bánh tráng chiên giòn và rau sống tươi rói.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nem+nướng+Hùng+Ly"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0076",
+    "name": "Quán nướng Chu",
+    "region": "Đà Lạt",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đặc sản",
+      "ăn uống",
+      "quán ngon"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1518,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.978098251333673,
+      "lng": 108.48193642562254,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán nướng ngói bình dân đông đúc, thực đơn phong phú giữa trung tâm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quán+nướng+Chu"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0077",
+    "name": "Fairy Tale Land",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3209,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.017492939813256,
+      "lng": 108.51061487413924,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 70000,
+    "description": "Vương quốc cổ tích của những chú lùn Hobbit kết hợp hầm vang vĩnh tiến.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Fairy+Tale+Land"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0078",
+    "name": "Khu du lịch Quỷ Núi",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2552,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.863658398530092,
+      "lng": 108.45869553092801,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 100000,
+    "description": "Công trình nhân tạo độc lạ mang chủ đề quỷ núi kỳ bí giữa đại ngàn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Khu+du+lịch+Quỷ+Núi"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0079",
+    "name": "Suối Ma Súc",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 621,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.89212530245972,
+      "lng": 108.52145157984663,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Dòng suối hoang sơ xanh mát thích hợp cho các hoạt động dã ngoại trekking.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Suối+Ma+Súc"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0080",
+    "name": "Hồ Suối Vàng",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1015,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.976162955073072,
+      "lng": 108.50986516424629,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ nước mênh mông, phong cảnh hữu tình, điểm cắm trại lý tưởng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Suối+Vàng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0081",
+    "name": "Thác Hang Cọp",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thác nước",
+      "thiên nhiên",
+      "hùng vĩ",
+      "khám phá"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 428,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.024239865461105,
+      "lng": 108.39580312392447,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 10000,
+    "description": "Ngọn thác hoang dã ít người biết nằm giữa rừng sâu kỳ bí.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Hang+Cọp"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0082",
+    "name": "Thác Bảo Đại",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thác nước",
+      "thiên nhiên",
+      "hùng vĩ",
+      "khám phá"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2245,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.932296536930592,
+      "lng": 108.44506898142832,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Ngọn thác mang tên vị vua cuối cùng, vẻ đẹp hoang dại thơ mộng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Bảo+Đại"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0083",
+    "name": "Vườn hồng nhà Tom",
+    "region": "Đà Lạt",
+    "type": "farm",
+    "tags": [
+      "nông trại",
+      "trải nghiệm",
+      "gia đình",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2504,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.94442338794588,
+      "lng": 108.44598426389167,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Khu vườn hồng trĩu quả vào mùa thu với nhiều góc check-in lều mông cổ.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+hồng+nhà+Tom"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0084",
+    "name": "Tiệm cà phê phía tây mặt trời",
+    "region": "Đà Lạt",
+    "type": "cafe",
+    "tags": [
+      "quán cafe",
+      "chill",
+      "sống ảo",
+      "ngắm cảnh"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 203,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.90188866139366,
+      "lng": 108.49817538970275,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Tọa độ ngắm hoàng hôn buông xuống thung lũng tuyệt đẹp.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+cà+phê+phía+tây+mặt+trời"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0085",
+    "name": "Nấc thang lên thiên đường (Sunny Farm)",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 2360,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.989532004552526,
+      "lng": 108.4332207169297,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nơi sở hữu chiếc cầu thang vô cực hướng thẳng lên bầu trời.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nấc+thang+lên+thiên+đường+(Sunny+Farm)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0086",
+    "name": "Đèo Prenn",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1755,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.924020449440874,
+      "lng": 108.40000849499552,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung đèo cửa ngõ thơ mộng với những rặng thông già hai bên đường uốn lượn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đèo+Prenn"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0087",
+    "name": "Đèo Mimosa",
+    "region": "Đà Lạt",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "khám phá",
+      "ngoại cảnh",
+      "phượt"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1102,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 12.003682194671716,
+      "lng": 108.53688867439605,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Cung đèo ngập tràn sắc hoa mimosa vàng rực rỡ vào mùa hoa nở.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đèo+Mimosa"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0088",
+    "name": "Dốc Nhà Bò",
+    "region": "Đà Lạt",
+    "type": "landmark",
+    "tags": [
+      "check-in",
+      "sống ảo",
+      "giới trẻ",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 2834,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.942055199124296,
+      "lng": 108.43423182966816,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Con dốc đứng huyền thoại xuất hiện trong nhiều bộ phim điện ảnh nổi tiếng.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Dốc+Nhà+Bò"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0089",
+    "name": "Trường Cao đẳng Sư phạm Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 410,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.912925015676917,
+      "lng": 108.43309194639251,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Công trình kiến trúc hình vòng cung bằng gạch trần độc đáo được thế giới công nhận.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Trường+Cao+đẳng+Sư+phạm+Đà+Lạt"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0090",
+    "name": "Viện Pasteur Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2844,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.93762883694853,
+      "lng": 108.50614455208233,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Tòa nhà mang đậm dấu ấn kiến trúc công sở Pháp cổ kính trang nghiêm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Viện+Pasteur+Đà+Lạt"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0091",
+    "name": "Biệt điện Trần Lệ Xuân",
+    "region": "Đà Lạt",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "cổ kính",
+      "kiến trúc",
+      "tham quan"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1165,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.898635470499046,
+      "lng": 108.45020206636535,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Trung tâm lưu trữ quốc gia IV, lưu giữ mộc bản triều Nguyễn quý giá.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Biệt+điện+Trần+Lệ+Xuân"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0092",
+    "name": "Hồ Đa Nhim",
+    "region": "Đà Lạt",
+    "type": "lake",
+    "tags": [
+      "hồ nước",
+      "lãng mạn",
+      "thiên nhiên",
+      "chill"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2216,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.876095656549944,
+      "lng": 108.52345680974673,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ nước xanh biếc rộng lớn thuộc huyện Đơn Dương trên đường đi Phan Rang.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Đa+Nhim"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0093",
+    "name": "Thác Bobla",
+    "region": "Đà Lạt",
+    "type": "waterfall",
+    "tags": [
+      "thác nước",
+      "thiên nhiên",
+      "hùng vĩ",
+      "khám phá"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2117,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.905390344266662,
+      "lng": 108.46482468952561,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Ngọn thác hùng vĩ đổ thẳng từ vách đá cao xuống thung lũng xanh mướt.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thác+Bobla"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0094",
+    "name": "Rừng hoa Đà Lạt",
+    "region": "Đà Lạt",
+    "type": "garden",
+    "tags": [
+      "vườn hoa",
+      "sắc màu",
+      "chụp ảnh",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1454,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.961293933175002,
+      "lng": 108.41981643020212,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 50000,
+    "description": "Showroom hoa sấy khô nghệ thuật lớn nhất Việt Nam giữ màu sắc nhiều năm.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Rừng+hoa+Đà+Lạt"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0095",
+    "name": "Cánh đồng hoa cẩm tú cầu Trại Mát",
+    "region": "Đà Lạt",
+    "type": "garden",
+    "tags": [
+      "vườn hoa",
+      "sắc màu",
+      "chụp ảnh",
+      "ngoại cảnh"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1040,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.910335139978457,
+      "lng": 108.42063565235684,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Thảm hoa cẩm tú cầu khổng lồ nở rộ quanh năm rực rỡ sắc xanh tím.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cánh+đồng+hoa+cẩm+tú+cầu+Trại+Mát"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0096",
+    "name": "Vườn dâu tây thủy canh Bunny",
+    "region": "Đà Lạt",
+    "type": "farm",
+    "tags": [
+      "nông trại",
+      "trải nghiệm",
+      "gia đình",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2186,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.964956239438013,
+      "lng": 108.51230820648792,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Trải nghiệm tự tay hái dâu tây công nghệ cao chín mọng tại vườn.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+dâu+tây+thủy+canh+Bunny"
+    },
+    "best_time": "12-04"
+  },
+  {
+    "id": "DL_0097",
+    "name": "Nhà thờ Thánh Tâm",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "chùa chiền",
+      "tĩnh lặng",
+      "kiến trúc"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2826,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.889483092780514,
+      "lng": 108.50854074511398,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Công trình tôn giáo trang nghiêm với lối kiến trúc phương Tây hài hòa.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Thánh+Tâm"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "DL_0098",
+    "name": "Chùa Linh Ẩn",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "chùa chiền",
+      "tĩnh lặng",
+      "kiến trúc"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3378,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.889344874023816,
+      "lng": 108.53546090046521,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Ngôi chùa sở hữu tượng Phật Bà Quan Âm lộ thiên cao nhất Việt Nam.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Linh+Ẩn"
+    },
+    "best_time": "10-03"
+  },
+  {
+    "id": "DL_0099",
+    "name": "Samten Hills Dalat",
+    "region": "Đà Lạt",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "chùa chiền",
+      "tĩnh lặng",
+      "kiến trúc"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1474,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.930055950250589,
+      "lng": 108.49859470154124,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 150000,
+    "description": "Không gian văn hóa tâm linh Phật giáo Kim Cương Thừa với Đại bảo tháp kinh luân lớn nhất thế giới.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Samten+Hills+Dalat"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "DL_0100",
+    "name": "Làng hoa Vạn Thành",
+    "region": "Đà Lạt",
+    "type": "farm",
+    "tags": [
+      "nông trại",
+      "trải nghiệm",
+      "gia đình",
+      "chụp ảnh"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3152,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 11.894339599531124,
+      "lng": 108.45107807970957,
+      "address": "Địa điểm thu hút khách du lịch tại Đà Lạt, Lâm Đồng. Tọa độ thực tế phục vụ hệ thống định vị Chatbot.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "18:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 40000,
+    "description": "Làng nghề trồng hoa truyền thống lâu đời và lớn nhất thành phố.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+hoa+Vạn+Thành"
+    },
+    "best_time": "01-12"
+  }
+]
