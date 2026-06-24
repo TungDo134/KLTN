@@ -129,6 +129,37 @@ class RAGInference:
         self._history[session_id].append(HumanMessage(content=question))
         self._history[session_id].append(AIMessage(content=answer))
 
+    #
+    def hydrate_history(self, session_id: str, messages: list) -> None:
+        """
+        ### Load DB messages vao memory cua RAG
+            ```
+        DB messages → HumanMessage / AIMessage
+                ↓
+        self._history[conversation_id] có lại context
+                ↓
+        predict_stream / predict_async
+                ↓
+        _rewrite_question() dùng được history cũ
+            ```
+        """
+
+        # Neu memory co history trc do (BE chua restart & user dang chat cung session) => Ko nap
+        if self._history[session_id]:
+            return
+
+        history = []
+
+        # Luu msg = role => convert qua object LangChain (RAG needed)
+        #
+        for message in messages:
+            if message.role == "user":
+                history.append(HumanMessage(content=message.content))
+            elif message.role == "assistant":
+                history.append(AIMessage(content=message.content))
+
+        self._history[session_id] = history
+
     # ============================================================ #
     # PUBLIC API
     # ============================================================ #

@@ -15,6 +15,45 @@ from src.services.conversation_service import ConversationService
 router = APIRouter(tags=["chat"])
 
 
+#
+def hydrate_conversation_history(
+    request: ChatRequest,
+    conversation_id: str,
+    engine: RAGInference,
+    conv_service: ConversationService,
+) -> None:
+    """
+    ### Bridge giua API layer & Inference
+        - Quyet dinh xem co load history tu DB khong
+        => Call service + RAGInference de lam (`hydrate_history`)
+        ```
+    FE/Postman gửi conversation_id
+            ↓
+    chat.py get_or_create_conversation()
+            ↓
+    hydrate_conversation_history()
+            ↓
+    query messages từ DB
+            ↓
+    RAGInference.hydrate_history()
+            ↓
+
+        ```
+    """
+
+    # Neu request ko co conversation_id => new conversation
+    # => Ko co msg cũ
+    if not request.conversation_id:
+        return
+
+    # Co conversation_id => user dg tiep tuc chat tu conversation cũ
+    # => Query db lay msg tuong ung
+    messages = conv_service.get_messages_by_conversation_id(conversation_id)
+
+    # Dua msg tu DB vao RAGInference
+    engine.hydrate_history(conversation_id, messages)
+
+
 # non-stream response
 @router.post("/chat", response_model=ChatResponse)
 async def chat(
@@ -27,7 +66,12 @@ async def chat(
     conversation = conv_service.get_or_create_conversation(
         request.conversation_id, current_user.id
     )
-
+    hydrate_conversation_history(
+        request,
+        conversation.id,
+        engine,
+        conv_service,
+    )
     response_text = await engine.predict_async(request.prompt, conversation.id)
 
     conv_service.save_turn(
@@ -50,6 +94,13 @@ async def chat_stream(
         current_user.id,
     )
     conversation_id = conversation.id
+
+    hydrate_conversation_history(
+        request,
+        conversation.id,
+        engine,
+        conv_service,
+    )
 
     #
     async def event_generator():

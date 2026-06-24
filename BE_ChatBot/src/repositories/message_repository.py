@@ -18,3 +18,12 @@ class MessageRepository:
         self.db.flush()
         self.db.refresh(message)
         return message
+
+    #
+    def get_messages_by_conversation_id(self, conversation_id: str) -> list[Message]:
+        return (
+            self.db.query(Message)
+            .filter(Message.conversation_id == conversation_id)
+            .order_by(Message.created_at)
+            .all()
+        )

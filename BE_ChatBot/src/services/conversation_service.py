@@ -11,6 +11,15 @@ class ConversationService:
         self.conversation_repo = ConversationRepository(db)
         self.message_repo = MessageRepository(db)
 
+    # Lay conversation theo user_id
+    def get_conversation_by_user_id(
+        self, conversation_id: str, user_id: str
+    ) -> Conversation | None:
+        return self.conversation_repo.get_conversation_by_user_id(
+            conversation_id,
+            user_id,
+        )
+
     # Lay hoac tao moi conversation
     def get_or_create_conversation(
         self, conversation_id: str | None, user_id: str
@@ -40,6 +49,11 @@ class ConversationService:
         if not conversation:
             return
 
+        # Tao title mac dinh
+        if not conversation.title:
+            conversation.title = user_message[:100]
+            self.db.flush()
+
         self.message_repo.create_message(
             conversation_id, role="user", content=user_message
         )
@@ -50,3 +64,7 @@ class ConversationService:
         )
         self.conversation_repo.touch_updated_at(conversation)
         self.db.commit()
+
+    #
+    def get_messages_by_conversation_id(self, conversation_id: str):
+        return self.message_repo.get_messages_by_conversation_id(conversation_id)
