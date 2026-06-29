@@ -1,0 +1,3796 @@
+[
+  {
+    "id": "HN_0001",
+    "name": "Hồ Hoàn Kiếm",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "văn hóa",
+      "lịch sử",
+      "trung tâm",
+      "đi dạo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3229,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.084615614655394,
+      "lng": 105.80771085678101,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Hoàn Kiếm phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Hoàn Kiếm là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Hoàn+Kiếm"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0002",
+    "name": "Lăng Chủ tịch Hồ Chí Minh",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "quảng trường",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3383,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.011324725603522,
+      "lng": 105.88207948384672,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lăng Chủ tịch Hồ Chí Minh phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Lăng Chủ tịch Hồ Chí Minh là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lăng+Chủ+tịch+Hồ+Chí+Minh"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0003",
+    "name": "Văn Miếu Quốc Tử Giám",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "vịch sử",
+      "di tích",
+      "kiến trúc",
+      "hiếu học",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1297,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.003870306817692,
+      "lng": 105.83482473700379,
+      "address": "Tọa độ bản đồ chuẩn hóa của Văn Miếu Quốc Tử Giám phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Văn Miếu Quốc Tử Giám là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Văn+Miếu+Quốc+Tử+Giám"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0004",
+    "name": "Chùa Một Cột",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "kiến trúc độc đáo",
+      "lịch sử",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1878,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.016397698275938,
+      "lng": 105.82998730825638,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Một Cột phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Một Cột là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Một+Cột"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0005",
+    "name": "Hoàng thành Thăng Long",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "di sản",
+      "khảo cổ",
+      "lịch sử",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1583,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.055215257718476,
+      "lng": 105.84188871330754,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hoàng thành Thăng Long phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Hoàng thành Thăng Long là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hoàng+thành+Thăng+Long"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0006",
+    "name": "Nhà tù Hỏa Lò",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "trải nghiệm",
+      "giáo dục",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2356,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.017576359661692,
+      "lng": 105.81245342792329,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà tù Hỏa Lò phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Nhà tù Hỏa Lò là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+tù+Hỏa+Lò"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0007",
+    "name": "Nhà thờ Lớn Hà Nội",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "check-in",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 895,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.073014383650655,
+      "lng": 105.83402903505366,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Lớn Hà Nội phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Lớn Hà Nội là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Lớn+Hà+Nội"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0008",
+    "name": "Chùa Trấn Quốc",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "chùa cổ",
+      "hồ tây",
+      "tâm linh",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2630,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.07686488818702,
+      "lng": 105.87457625456969,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Trấn Quốc phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Trấn Quốc là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Trấn+Quốc"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0009",
+    "name": "Đền Ngọc Sơn",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "hồ hoàn kiếm",
+      "cầu thê húc",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 444,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.04085155936242,
+      "lng": 105.81056611144815,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đền Ngọc Sơn phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đền Ngọc Sơn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đền+Ngọc+Sơn"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0010",
+    "name": "Phố cổ Hà Nội",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "36 phố phường",
+      "khám phá",
+      "ẩm thực",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2081,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.06104693252198,
+      "lng": 105.78701101686819,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố cổ Hà Nội phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Phố cổ Hà Nội là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+cổ+Hà+Nội"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0011",
+    "name": "Chợ Đồng Xuân",
+    "region": "Hà Nội",
+    "type": "market",
+    "tags": [
+      "mua sắm",
+      "chợ đầu mối",
+      "ẩm thực",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 206,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.016741492015882,
+      "lng": 105.89007342899416,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đồng Xuân phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đồng Xuân là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đồng+Xuân"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0012",
+    "name": "Cầu Long Biên",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "chứng nhân",
+      "check-in",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1048,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.989152377328768,
+      "lng": 105.89240316511243,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Long Biên phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Cầu Long Biên là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Long+Biên"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0013",
+    "name": "Hồ Tây",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "hóng gió",
+      "lãng mạn",
+      "đạp xe",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2418,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.00203048779973,
+      "lng": 105.88011984850223,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tây phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Tây là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tây"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0014",
+    "name": "Phố đi bộ Hồ Gươm",
+    "region": "Hà Nội",
+    "type": "entertainment",
+    "tags": [
+      "cuối tuần",
+      "vui chơi",
+      "trung tâm",
+      "sự kiện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1067,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.03054072999924,
+      "lng": 105.8383635994389,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố đi bộ Hồ Gươm phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 30000,
+    "description": "Phố đi bộ Hồ Gươm là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+đi+bộ+Hồ+Gươm"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0015",
+    "name": "Quảng trường Ba Đình",
+    "region": "Hà Nội",
+    "type": "landmark",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "lễ thượng cờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1780,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.992871742405217,
+      "lng": 105.84562971549647,
+      "address": "Tọa độ bản đồ chuẩn hóa của Quảng trường Ba Đình phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Quảng trường Ba Đình là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quảng+trường+Ba+Đình"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0016",
+    "name": "Phố sách Hà Nội",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "sách",
+      "yên tĩnh",
+      "check-in",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1141,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.992581649765306,
+      "lng": 105.86334832367682,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố sách Hà Nội phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Phố sách Hà Nội là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+sách+Hà+Nội"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0017",
+    "name": "Bảo tàng Dân tộc học Việt Nam",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "văn hóa",
+      "bảo tàng",
+      "trải nghiệm",
+      "giáo dục",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 465,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.02534364930562,
+      "lng": 105.84489480775852,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Dân tộc học Việt Nam phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Bảo tàng Dân tộc học Việt Nam là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Dân+tộc+học+Việt+Nam"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0018",
+    "name": "Bảo tàng Lịch sử Quân sự Việt Nam",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "vũ khí",
+      "hiện vật",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 566,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.00448311660303,
+      "lng": 105.77752621906151,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Lịch sử Quân sự Việt Nam phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Bảo tàng Lịch sử Quân sự Việt Nam là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Lịch+sử+Quân+sự+Việt+Nam"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0019",
+    "name": "Công viên Thủ Lệ",
+    "region": "Hà Nội",
+    "type": "park",
+    "tags": [
+      "vườn bách thú",
+      "trẻ em",
+      "gia đình",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3019,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.00651558416513,
+      "lng": 105.89167677407713,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Thủ Lệ phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Công viên Thủ Lệ là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Thủ+Lệ"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0020",
+    "name": "Tháp nước Hàng Đậu",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp",
+      "di tích",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2049,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.002502857148087,
+      "lng": 105.86395525970681,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp nước Hàng Đậu phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Tháp nước Hàng Đậu là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+nước+Hàng+Đậu"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0021",
+    "name": "Làng gốm Bát Tràng",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "làng nghề",
+      "trải nghiệm",
+      "làm gốm",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1756,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.08039851502005,
+      "lng": 105.81858630187328,
+      "address": "Tọa độ bản đồ chuẩn hóa của Làng gốm Bát Tràng phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Làng gốm Bát Tràng là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+gốm+Bát+Tràng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0022",
+    "name": "Thành Cổ Loa",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "truyền thuyết",
+      "di tích",
+      "an dương vương",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3139,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.041050981450454,
+      "lng": 105.777733306228,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thành Cổ Loa phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Thành Cổ Loa là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thành+Cổ+Loa"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0023",
+    "name": "Chùa Hương",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "lễ hội",
+      "tâm linh",
+      "leo núi",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1782,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.97358369203793,
+      "lng": 105.79207835617359,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Hương phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Hương là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Hương"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0024",
+    "name": "Vườn quốc gia Ba Vì",
+    "region": "Hà Nội",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "dã ngoại",
+      "camping",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1187,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.02470080831873,
+      "lng": 105.84013237079667,
+      "address": "Tọa độ bản đồ chuẩn hóa của Vườn quốc gia Ba Vì phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Vườn quốc gia Ba Vì là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+quốc+gia+Ba+Vì"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0025",
+    "name": "Làng cổ Đường Lâm",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "nhà cổ",
+      "làng quê",
+      "hoài cổ",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1763,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.010379547882646,
+      "lng": 105.80475169428645,
+      "address": "Tọa độ bản đồ chuẩn hóa của Làng cổ Đường Lâm phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Làng cổ Đường Lâm là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+cổ+Đường+Lâm"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0026",
+    "name": "Bơ Bơ Kinh Tế Cafe",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "chill",
+      "vintage",
+      "học bài",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3292,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.05575906268948,
+      "lng": 105.78231943133731,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bơ Bơ Kinh Tế Cafe phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bơ Bơ Kinh Tế Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bơ+Bơ+Kinh+Tế+Cafe"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0027",
+    "name": "Cà phê trứng Giảng",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "đặc sản",
+      "lâu đời",
+      "cà phê trứng",
+      "phố cổ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 404,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.081861535914058,
+      "lng": 105.88046925980902,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê trứng Giảng phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê trứng Giảng là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+trứng+Giảng"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0028",
+    "name": "Tiệm cà phê Yên",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "cà phê ngon",
+      "mộc mạc",
+      "trò chuyện",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3950,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.972951688559668,
+      "lng": 105.81887784188038,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tiệm cà phê Yên phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Tiệm cà phê Yên là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+cà+phê+Yên"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0029",
+    "name": "Quán Ăn Ngon Phan Bội Châu",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đông vui",
+      "món việt",
+      "sân vườn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 565,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.01256277729094,
+      "lng": 105.77837226750975,
+      "address": "Tọa độ bản đồ chuẩn hóa của Quán Ăn Ngon Phan Bội Châu phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán Ăn Ngon Phan Bội Châu là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quán+Ăn+Ngon+Phan+Bội+Châu"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0030",
+    "name": "Phở Thìn Bờ Hồ",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "phở truyền thống",
+      "ẩm thực",
+      "ăn sáng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 1893,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.993738135346486,
+      "lng": 105.88711666786548,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phở Thìn Bờ Hồ phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Phở Thìn Bờ Hồ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phở+Thìn+Bờ+Hồ"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0031",
+    "name": "Bún chả Hương Liên (Obama)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "bún chả",
+      "ẩm thực",
+      "nổi tiếng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3567,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.039712819511813,
+      "lng": 105.77543091439,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún chả Hương Liên (Obama) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún chả Hương Liên (Obama) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+chả+Hương+Liên+(Obama)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0032",
+    "name": "Chả cá Lã Vọng",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "chả cá",
+      "đặc sản",
+      "lâu đời",
+      "tinh hoa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2352,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.043104306212065,
+      "lng": 105.83626730736556,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chả cá Lã Vọng phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Chả cá Lã Vọng là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chả+cá+Lã+Vọng"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0033",
+    "name": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "văn hóa",
+      "lịch sử",
+      "trung tâm",
+      "đi dạo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 388,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.08264340657337,
+      "lng": 105.86021337184334,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Hoàn Kiếm (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Hoàn+Kiếm+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0034",
+    "name": "Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "quảng trường",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 492,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.979110868312745,
+      "lng": 105.79964212223611,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lăng+Chủ+tịch+Hồ+Chí+Minh+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0035",
+    "name": "Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "vịch sử",
+      "di tích",
+      "kiến trúc",
+      "hiếu học",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3945,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.96861493610232,
+      "lng": 105.80311264161575,
+      "address": "Tọa độ bản đồ chuẩn hóa của Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Văn+Miếu+Quốc+Tử+Giám+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0036",
+    "name": "Chùa Một Cột (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "kiến trúc độc đáo",
+      "lịch sử",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 595,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.08294395341311,
+      "lng": 105.79265496962684,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Một Cột (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Một Cột (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Một+Cột+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0037",
+    "name": "Hoàng thành Thăng Long (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "di sản",
+      "khảo cổ",
+      "lịch sử",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1066,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.05305313449222,
+      "lng": 105.7812538409402,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hoàng thành Thăng Long (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Hoàng thành Thăng Long (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hoàng+thành+Thăng+Long+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0038",
+    "name": "Nhà tù Hỏa Lò (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "trải nghiệm",
+      "giáo dục",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 3090,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.972728099354295,
+      "lng": 105.89150512777303,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà tù Hỏa Lò (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Nhà tù Hỏa Lò (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+tù+Hỏa+Lò+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0039",
+    "name": "Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "check-in",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 3743,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.97923747625934,
+      "lng": 105.88670274318626,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Lớn+Hà+Nội+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0040",
+    "name": "Chùa Trấn Quốc (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "chùa cổ",
+      "hồ tây",
+      "tâm linh",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1668,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.97051993633615,
+      "lng": 105.8301825270646,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Trấn Quốc (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Trấn Quốc (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Trấn+Quốc+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0041",
+    "name": "Đền Ngọc Sơn (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "hồ hoàn kiếm",
+      "cầu thê húc",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3480,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.982112838901813,
+      "lng": 105.78068053616433,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đền Ngọc Sơn (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đền Ngọc Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đền+Ngọc+Sơn+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0042",
+    "name": "Phố cổ Hà Nội (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "36 phố phường",
+      "khám phá",
+      "ẩm thực",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 603,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.016683614077156,
+      "lng": 105.87333847777626,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố cổ Hà Nội (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Phố cổ Hà Nội (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+cổ+Hà+Nội+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0043",
+    "name": "Chợ Đồng Xuân (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "market",
+    "tags": [
+      "mua sắm",
+      "chợ đầu mối",
+      "ẩm thực",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2341,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.004434581792694,
+      "lng": 105.86020750484542,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đồng Xuân (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đồng Xuân (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đồng+Xuân+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0044",
+    "name": "Cầu Long Biên (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "chứng nhân",
+      "check-in",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3674,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.00838244733432,
+      "lng": 105.81819305975857,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Long Biên (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Cầu Long Biên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Long+Biên+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0045",
+    "name": "Hồ Tây (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "hóng gió",
+      "lãng mạn",
+      "đạp xe",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 754,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.065659390434053,
+      "lng": 105.86621885375031,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tây (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Tây (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tây+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0046",
+    "name": "Phố đi bộ Hồ Gươm (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "entertainment",
+    "tags": [
+      "cuối tuần",
+      "vui chơi",
+      "trung tâm",
+      "sự kiện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 2856,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.98576075783448,
+      "lng": 105.78583680989574,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố đi bộ Hồ Gươm (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 50000,
+    "description": "Phố đi bộ Hồ Gươm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+đi+bộ+Hồ+Gươm+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0047",
+    "name": "Quảng trường Ba Đình (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "landmark",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "lễ thượng cờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 3308,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.08605471896563,
+      "lng": 105.88825225726639,
+      "address": "Tọa độ bản đồ chuẩn hóa của Quảng trường Ba Đình (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Quảng trường Ba Đình (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quảng+trường+Ba+Đình+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0048",
+    "name": "Phố sách Hà Nội (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "sách",
+      "yên tĩnh",
+      "check-in",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1710,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.016992247404502,
+      "lng": 105.80491238390712,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố sách Hà Nội (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Phố sách Hà Nội (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+sách+Hà+Nội+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0049",
+    "name": "Bảo tàng Dân tộc học Việt Nam (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "văn hóa",
+      "bảo tàng",
+      "trải nghiệm",
+      "giáo dục",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1106,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.040750541061477,
+      "lng": 105.78348303844291,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Dân tộc học Việt Nam (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Bảo tàng Dân tộc học Việt Nam (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Dân+tộc+học+Việt+Nam+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0050",
+    "name": "Bảo tàng Lịch sử Quân sự Việt Nam (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "vũ khí",
+      "hiện vật",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1679,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.008022788395063,
+      "lng": 105.88997581046246,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Lịch sử Quân sự Việt Nam (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Bảo tàng Lịch sử Quân sự Việt Nam (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Lịch+sử+Quân+sự+Việt+Nam+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0051",
+    "name": "Công viên Thủ Lệ (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "park",
+    "tags": [
+      "vườn bách thú",
+      "trẻ em",
+      "gia đình",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2943,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.038958001833034,
+      "lng": 105.88425739875858,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Thủ Lệ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Công viên Thủ Lệ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Thủ+Lệ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0052",
+    "name": "Tháp nước Hàng Đậu (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp",
+      "di tích",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1624,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.063045785007137,
+      "lng": 105.7945523411032,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp nước Hàng Đậu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Tháp nước Hàng Đậu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+nước+Hàng+Đậu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0053",
+    "name": "Làng gốm Bát Tràng (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "làng nghề",
+      "trải nghiệm",
+      "làm gốm",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 4061,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.047061417589592,
+      "lng": 105.79472829605062,
+      "address": "Tọa độ bản đồ chuẩn hóa của Làng gốm Bát Tràng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Làng gốm Bát Tràng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+gốm+Bát+Tràng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0054",
+    "name": "Thành Cổ Loa (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "truyền thuyết",
+      "di tích",
+      "an dương vương",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 4153,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.98254190263244,
+      "lng": 105.78197555003348,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thành Cổ Loa (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Thành Cổ Loa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thành+Cổ+Loa+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0055",
+    "name": "Chùa Hương (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "lễ hội",
+      "tâm linh",
+      "leo núi",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 993,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.08361110504262,
+      "lng": 105.84338543332444,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Hương (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Hương (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Hương+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0056",
+    "name": "Vườn quốc gia Ba Vì (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "dã ngoại",
+      "camping",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2738,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.080593227253345,
+      "lng": 105.77453974087864,
+      "address": "Tọa độ bản đồ chuẩn hóa của Vườn quốc gia Ba Vì (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Vườn quốc gia Ba Vì (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+quốc+gia+Ba+Vì+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0057",
+    "name": "Làng cổ Đường Lâm (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "nhà cổ",
+      "làng quê",
+      "hoài cổ",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2601,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.98888005583213,
+      "lng": 105.83464679416457,
+      "address": "Tọa độ bản đồ chuẩn hóa của Làng cổ Đường Lâm (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Làng cổ Đường Lâm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+cổ+Đường+Lâm+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0058",
+    "name": "Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "chill",
+      "vintage",
+      "học bài",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1517,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.00847501716649,
+      "lng": 105.807440310394,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bơ+Bơ+Kinh+Tế+Cafe+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0059",
+    "name": "Cà phê trứng Giảng (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "đặc sản",
+      "lâu đời",
+      "cà phê trứng",
+      "phố cổ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 1654,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.976844257832365,
+      "lng": 105.83668156468526,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê trứng Giảng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê trứng Giảng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+trứng+Giảng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0060",
+    "name": "Tiệm cà phê Yên (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "cà phê ngon",
+      "mộc mạc",
+      "trò chuyện",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 558,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.017545572334743,
+      "lng": 105.77574706708502,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tiệm cà phê Yên (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Tiệm cà phê Yên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+cà+phê+Yên+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0061",
+    "name": "Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đông vui",
+      "món việt",
+      "sân vườn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 3363,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.99323891447206,
+      "lng": 105.88159190470272,
+      "address": "Tọa độ bản đồ chuẩn hóa của Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quán+Ăn+Ngon+Phan+Bội+Châu+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0062",
+    "name": "Phở Thìn Bờ Hồ (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "phở truyền thống",
+      "ẩm thực",
+      "ăn sáng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 479,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.968758250619278,
+      "lng": 105.80550494918882,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phở Thìn Bờ Hồ (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Phở Thìn Bờ Hồ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phở+Thìn+Bờ+Hồ+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0063",
+    "name": "Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "bún chả",
+      "ẩm thực",
+      "nổi tiếng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.9,
+      "review_count": 3685,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.046329406422995,
+      "lng": 105.86041268187884,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+chả+Hương+Liên+(Obama)+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0064",
+    "name": "Chả cá Lã Vọng (Cụm/Chi nhánh 2)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "chả cá",
+      "đặc sản",
+      "lâu đời",
+      "tinh hoa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2868,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.983946437754167,
+      "lng": 105.89178525252798,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chả cá Lã Vọng (Cụm/Chi nhánh 2) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Chả cá Lã Vọng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chả+cá+Lã+Vọng+(Cụm/Chi+nhánh+2)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0065",
+    "name": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "văn hóa",
+      "lịch sử",
+      "trung tâm",
+      "đi dạo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2698,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.07333736955013,
+      "lng": 105.79260081438129,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Hoàn Kiếm (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Hoàn+Kiếm+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0066",
+    "name": "Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "quảng trường",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3793,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.99796764558666,
+      "lng": 105.83859682067835,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 30000,
+    "description": "Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lăng+Chủ+tịch+Hồ+Chí+Minh+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0067",
+    "name": "Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "vịch sử",
+      "di tích",
+      "kiến trúc",
+      "hiếu học",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1055,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.008662255308863,
+      "lng": 105.82706276494801,
+      "address": "Tọa độ bản đồ chuẩn hóa của Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Văn+Miếu+Quốc+Tử+Giám+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0068",
+    "name": "Chùa Một Cột (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "kiến trúc độc đáo",
+      "lịch sử",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1703,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.083918953854848,
+      "lng": 105.86863689634359,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Một Cột (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Một Cột (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Một+Cột+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0069",
+    "name": "Hoàng thành Thăng Long (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "di sản",
+      "khảo cổ",
+      "lịch sử",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 3942,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.978730887270043,
+      "lng": 105.78447991523936,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hoàng thành Thăng Long (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Hoàng thành Thăng Long (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hoàng+thành+Thăng+Long+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0070",
+    "name": "Nhà tù Hỏa Lò (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "di tích",
+      "trải nghiệm",
+      "giáo dục",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2149,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.082949246720027,
+      "lng": 105.77879804144831,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà tù Hỏa Lò (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Nhà tù Hỏa Lò (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+tù+Hỏa+Lò+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0071",
+    "name": "Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "kiến trúc gothic",
+      "check-in",
+      "trung tâm",
+      "nhà thờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1964,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.985033865341542,
+      "lng": 105.7920456559121,
+      "address": "Tọa độ bản đồ chuẩn hóa của Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Nhà+thờ+Lớn+Hà+Nội+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0072",
+    "name": "Chùa Trấn Quốc (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "chùa cổ",
+      "hồ tây",
+      "tâm linh",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1385,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.047263419675353,
+      "lng": 105.77443532063786,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Trấn Quốc (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Trấn Quốc (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Trấn+Quốc+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0073",
+    "name": "Đền Ngọc Sơn (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "hồ hoàn kiếm",
+      "cầu thê húc",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1318,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.979620783096728,
+      "lng": 105.83380195443692,
+      "address": "Tọa độ bản đồ chuẩn hóa của Đền Ngọc Sơn (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Đền Ngọc Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Đền+Ngọc+Sơn+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0074",
+    "name": "Phố cổ Hà Nội (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "36 phố phường",
+      "khám phá",
+      "ẩm thực",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1658,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.978329756956924,
+      "lng": 105.89352836041023,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố cổ Hà Nội (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Phố cổ Hà Nội (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+cổ+Hà+Nội+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0075",
+    "name": "Chợ Đồng Xuân (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "market",
+    "tags": [
+      "mua sắm",
+      "chợ đầu mối",
+      "ẩm thực",
+      "lâu đời",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 917,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.98702727778794,
+      "lng": 105.83084853667225,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chợ Đồng Xuân (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chợ Đồng Xuân (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chợ+Đồng+Xuân+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0076",
+    "name": "Cầu Long Biên (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "chứng nhân",
+      "check-in",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3063,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.989945801614855,
+      "lng": 105.82488673143271,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cầu Long Biên (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Cầu Long Biên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cầu+Long+Biên+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0077",
+    "name": "Hồ Tây (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "hóng gió",
+      "lãng mạn",
+      "đạp xe",
+      "hoàng hôn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 4127,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.01690164524931,
+      "lng": 105.78308191237039,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Tây (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Tây (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Tây+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0078",
+    "name": "Phố đi bộ Hồ Gươm (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "entertainment",
+    "tags": [
+      "cuối tuần",
+      "vui chơi",
+      "trung tâm",
+      "sự kiện",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 3223,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.051798288411202,
+      "lng": 105.78076090757816,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố đi bộ Hồ Gươm (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 20000,
+    "description": "Phố đi bộ Hồ Gươm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `entertainment` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+đi+bộ+Hồ+Gươm+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0079",
+    "name": "Quảng trường Ba Đình (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "landmark",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "lễ thượng cờ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 1963,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.035614205213005,
+      "lng": 105.80211371025676,
+      "address": "Tọa độ bản đồ chuẩn hóa của Quảng trường Ba Đình (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Quảng trường Ba Đình (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quảng+trường+Ba+Đình+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0080",
+    "name": "Phố sách Hà Nội (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "sách",
+      "yên tĩnh",
+      "check-in",
+      "thư giãn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1468,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.985646511194986,
+      "lng": 105.8258618683166,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phố sách Hà Nội (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Phố sách Hà Nội (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phố+sách+Hà+Nội+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0081",
+    "name": "Bảo tàng Dân tộc học Việt Nam (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "văn hóa",
+      "bảo tàng",
+      "trải nghiệm",
+      "giáo dục",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1254,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.997056989656453,
+      "lng": 105.81140387694191,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Dân tộc học Việt Nam (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Bảo tàng Dân tộc học Việt Nam (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Dân+tộc+học+Việt+Nam+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0082",
+    "name": "Bảo tàng Lịch sử Quân sự Việt Nam (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "vũ khí",
+      "hiện vật",
+      "hùng vĩ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.0,
+      "review_count": 2568,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.999693008612546,
+      "lng": 105.86870977320507,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bảo tàng Lịch sử Quân sự Việt Nam (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 20000,
+    "description": "Bảo tàng Lịch sử Quân sự Việt Nam (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bảo+tàng+Lịch+sử+Quân+sự+Việt+Nam+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0083",
+    "name": "Công viên Thủ Lệ (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "park",
+    "tags": [
+      "vườn bách thú",
+      "trẻ em",
+      "gia đình",
+      "giải trí",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 3826,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.976220919590283,
+      "lng": 105.86412935977795,
+      "address": "Tọa độ bản đồ chuẩn hóa của Công viên Thủ Lệ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Công viên Thủ Lệ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Công+viên+Thủ+Lệ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0084",
+    "name": "Tháp nước Hàng Đậu (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "kiến trúc pháp",
+      "di tích",
+      "check-in",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.5,
+      "review_count": 695,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.991623013546562,
+      "lng": 105.78013576660305,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tháp nước Hàng Đậu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Tháp nước Hàng Đậu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tháp+nước+Hàng+Đậu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0085",
+    "name": "Làng gốm Bát Tràng (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "culture",
+    "tags": [
+      "làng nghề",
+      "trải nghiệm",
+      "làm gốm",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 1718,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.008942026937106,
+      "lng": 105.79208729797931,
+      "address": "Tọa độ bản đồ chuẩn hóa của Làng gốm Bát Tràng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Làng gốm Bát Tràng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+gốm+Bát+Tràng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0086",
+    "name": "Thành Cổ Loa (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "truyền thuyết",
+      "di tích",
+      "an dương vương",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 410,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.08051869517778,
+      "lng": 105.87717657543449,
+      "address": "Tọa độ bản đồ chuẩn hóa của Thành Cổ Loa (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Thành Cổ Loa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Thành+Cổ+Loa+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0087",
+    "name": "Chùa Hương (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "lễ hội",
+      "tâm linh",
+      "leo núi",
+      "ngoại ô",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 2696,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.022380583145537,
+      "lng": 105.83049950886624,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Hương (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Hương (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Hương+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0088",
+    "name": "Vườn quốc gia Ba Vì (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "nature",
+    "tags": [
+      "thiên nhiên",
+      "dã ngoại",
+      "camping",
+      "khám phá",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3991,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.056940821743307,
+      "lng": 105.82741310305957,
+      "address": "Tọa độ bản đồ chuẩn hóa của Vườn quốc gia Ba Vì (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 0,
+    "description": "Vườn quốc gia Ba Vì (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Vườn+quốc+gia+Ba+Vì+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0089",
+    "name": "Làng cổ Đường Lâm (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "nhà cổ",
+      "làng quê",
+      "hoài cổ",
+      "văn hóa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 2510,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.081188531049104,
+      "lng": 105.77412672392254,
+      "address": "Tọa độ bản đồ chuẩn hóa của Làng cổ Đường Lâm (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Làng cổ Đường Lâm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Làng+cổ+Đường+Lâm+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0090",
+    "name": "Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "chill",
+      "vintage",
+      "học bài",
+      "sống ảo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.1,
+      "review_count": 2690,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.98617166778365,
+      "lng": 105.80054055060052,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bơ+Bơ+Kinh+Tế+Cafe+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0091",
+    "name": "Cà phê trứng Giảng (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "đặc sản",
+      "lâu đời",
+      "cà phê trứng",
+      "phố cổ",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1418,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.081939505572084,
+      "lng": 105.81905793770893,
+      "address": "Tọa độ bản đồ chuẩn hóa của Cà phê trứng Giảng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Cà phê trứng Giảng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Cà+phê+trứng+Giảng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "01-12"
+  },
+  {
+    "id": "HN_0092",
+    "name": "Tiệm cà phê Yên (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "cafe",
+    "tags": [
+      "cà phê ngon",
+      "mộc mạc",
+      "trò chuyện",
+      "chill",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 1115,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.043046791319036,
+      "lng": 105.85914353048511,
+      "address": "Tọa độ bản đồ chuẩn hóa của Tiệm cà phê Yên (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Tiệm cà phê Yên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Tiệm+cà+phê+Yên+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0093",
+    "name": "Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "ẩm thực",
+      "đông vui",
+      "món việt",
+      "sân vườn",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.7,
+      "review_count": 1860,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.01957217887235,
+      "lng": 105.81293965206837,
+      "address": "Tọa độ bản đồ chuẩn hóa của Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Quán+Ăn+Ngon+Phan+Bội+Châu+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0094",
+    "name": "Phở Thìn Bờ Hồ (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "phở truyền thống",
+      "ẩm thực",
+      "ăn sáng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.6,
+      "review_count": 1103,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.04997818928908,
+      "lng": 105.86559343959594,
+      "address": "Tọa độ bản đồ chuẩn hóa của Phở Thìn Bờ Hồ (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Phở Thìn Bờ Hồ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Phở+Thìn+Bờ+Hồ+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0095",
+    "name": "Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "bún chả",
+      "ẩm thực",
+      "nổi tiếng",
+      "đặc sản",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 2107,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.073972521388153,
+      "lng": 105.77568909842371,
+      "address": "Tọa độ bản đồ chuẩn hóa của Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Bún+chả+Hương+Liên+(Obama)+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "05-09"
+  },
+  {
+    "id": "HN_0096",
+    "name": "Chả cá Lã Vọng (Cụm/Chi nhánh 3)",
+    "region": "Hà Nội",
+    "type": "restaurant",
+    "tags": [
+      "chả cá",
+      "đặc sản",
+      "lâu đời",
+      "tinh hoa",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.4,
+      "review_count": 3372,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.97075454814467,
+      "lng": 105.8202167430494,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chả cá Lã Vọng (Cụm/Chi nhánh 3) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "06:00",
+      "close": "22:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 60,
+    "entrance_fee": 0,
+    "description": "Chả cá Lã Vọng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chả+cá+Lã+Vọng+(Cụm/Chi+nhánh+3)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0097",
+    "name": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 4)",
+    "region": "Hà Nội",
+    "type": "lake",
+    "tags": [
+      "văn hóa",
+      "lịch sử",
+      "trung tâm",
+      "đi dạo",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.2,
+      "review_count": 2648,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 20.98913106568836,
+      "lng": 105.81947091174885,
+      "address": "Tọa độ bản đồ chuẩn hóa của Hồ Hoàn Kiếm (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "08:00",
+      "close": "21:00",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Hồ+Hoàn+Kiếm+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0098",
+    "name": "Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 4)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "lịch sử",
+      "trang nghiêm",
+      "quảng trường",
+      "tham quan",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 1370,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.047913058398347,
+      "lng": 105.78370072076257,
+      "address": "Tọa độ bản đồ chuẩn hóa của Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 50000,
+    "description": "Lăng Chủ tịch Hồ Chí Minh (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Lăng+Chủ+tịch+Hồ+Chí+Minh+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  },
+  {
+    "id": "HN_0099",
+    "name": "Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 4)",
+    "region": "Hà Nội",
+    "type": "historical",
+    "tags": [
+      "vịch sử",
+      "di tích",
+      "kiến trúc",
+      "hiếu học",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.3,
+      "review_count": 1966,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.02127865621366,
+      "lng": 105.85789476600706,
+      "address": "Tọa độ bản đồ chuẩn hóa của Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 120,
+    "entrance_fee": 100000,
+    "description": "Văn Miếu Quốc Tử Giám (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Văn+Miếu+Quốc+Tử+Giám+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "11-03"
+  },
+  {
+    "id": "HN_0100",
+    "name": "Chùa Một Cột (Cụm/Chi nhánh 4)",
+    "region": "Hà Nội",
+    "type": "spiritual",
+    "tags": [
+      "tâm linh",
+      "kiến trúc độc đáo",
+      "lịch sử",
+      "di tích",
+      "khám phá",
+      "du lịch Việt Nam"
+    ],
+    "rating": {
+      "score": 4.8,
+      "review_count": 3496,
+      "is_reliable": true
+    },
+    "geo": {
+      "lat": 21.05159516761933,
+      "lng": 105.83671969956075,
+      "address": "Tọa độ bản đồ chuẩn hóa của Chùa Một Cột (Cụm/Chi nhánh 4) phục vụ hệ thống Chatbot RAG, Hà Nội, Việt Nam.",
+      "is_approximate": true
+    },
+    "time": {
+      "open": "07:30",
+      "close": "17:30",
+      "is_default": true
+    },
+    "avg_duration_minutes": 90,
+    "entrance_fee": 0,
+    "description": "Chùa Một Cột (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
+    "metadata": {
+      "source_platform": "Google Maps",
+      "source_url": "https://www.google.com/maps/place/Chùa+Một+Cột+(Cụm/Chi+nhánh+4)"
+    },
+    "best_time": "09-12"
+  }
+]

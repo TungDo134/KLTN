@@ -133,7 +133,8 @@ class TripOrchestrator:
             print(f"  rating        : {place.rating}")
             print(f"  entrance_fee  : {place.entrance_fee}")
             print(f"  rerank_score  : {place.rerank_score}")
-        return reranked_docs
+        # return reranked_docs
+        return reranked_places
 
         # # =========  Bước 4: Recommend =========
         # recommend_result = self.recommender.recommend(reranked_places, trip_request)

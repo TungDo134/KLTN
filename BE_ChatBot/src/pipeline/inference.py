@@ -39,10 +39,10 @@ class RAGInference:
         print("\n⚙️ Đang khởi tạo RAG Inference Pipeline")
 
         # ========= COMPONENTS =========
-        print(f"\n- LLM cho response user (core)")
+        print("\n- LLM cho response user (core)")
         self.llm = get_llm()  # LLM chạy chain (core)
 
-        print(f"\n- LLM cho rewrite question (hisory chat)")
+        print("\n- LLM cho rewrite question (hisory chat)")
         self.llm_rewrite = get_llm(
             LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2
         )  # LLM rewrite
@@ -57,14 +57,27 @@ class RAGInference:
         # Dùng defaultdict(list) => không cần khởi tạo thủ công từng session.
         # ------------------------------------------------------------------ #
         self._history: dict[str, list] = defaultdict(list)
+        """
+        RAM self._history
+        → dùng để chat nhanh trong runtime hiện tại
+
+        DB conversations + messages
+        → dùng để persist qua restart/shutdown
+
+        hydrate_history()
+        → cầu nối DB messages → RAM self._history
+        """
 
         self.model_info_rewrite = get_model_info(self.llm_rewrite)
 
     def _get_history(self, session_id: str) -> list:
         """Trả về lịch sử hội thoại dựa vào session_id (cắt bớt nếu quá dài)."""
         history = self._history[session_id]
-        # Giữ lại _MAX_HISTORY_TURNS turns gần nhất (mỗi turn = 2 message)
-        max_messages = _MAX_HISTORY_TURNS * 2
+
+        # Giữ lại _MAX_HISTORY_TURNS turns gần nhất (Tối đa 10 lượt)
+        # Mỗi turn = 2 message
+        max_messages = _MAX_HISTORY_TURNS * 2  # 1 HumanMessage + 1 AIMessage
+
         return history[-max_messages:] if len(history) > max_messages else history
 
     # Viết lại câu hỏi dựa trên history
@@ -129,11 +142,11 @@ class RAGInference:
         self._history[session_id].append(HumanMessage(content=question))
         self._history[session_id].append(AIMessage(content=answer))
 
-    #
+    # Nap lsu tu DB => memory khi tiep tuc conversation cũ
     def hydrate_history(self, session_id: str, messages: list) -> None:
         """
-        ### Load DB messages vao memory cua RAG
-            ```
+        Load DB messages vao memory cua RAG
+                ↓
         DB messages → HumanMessage / AIMessage
                 ↓
         self._history[conversation_id] có lại context
@@ -141,7 +154,6 @@ class RAGInference:
         predict_stream / predict_async
                 ↓
         _rewrite_question() dùng được history cũ
-            ```
         """
 
         # Neu memory co history trc do (BE chua restart & user dang chat cung session) => Ko nap
@@ -187,10 +199,11 @@ class RAGInference:
         search_question = await self._rewrite_question(question, history)
 
         # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
-        reranked_docs = await self.orchestrator.run(search_question)
+        # Hien tai dang la rerank docs (Crossencoder + Custom by field)
+        relevant_docs = await self.orchestrator.run(search_question)
 
-        # [3] Build context từ reranked docs
-        context = "\n\n".join(doc.page_content for doc in reranked_docs)
+        # [3] Build context từ các relevant docs
+        context = "\n\n".join(doc.page_content for doc in relevant_docs)
 
         # [4] Build messages (system + history + question)
         messages = self._build_messages(history, context, question)
@@ -210,13 +223,17 @@ class RAGInference:
         question: str,
         session_id: str = "default",
     ):
-        """Stream phản hồi kết hợp với việc giữ session id - sẽ thay qua converstation id"""
-        history = self._get_history(session_id)
+        """
+        - Stream phản hồi kết hợp với việc giữ session id
+        - Lay lich su cua sesseion cụ thể
+        """
+        history = self._get_history(session_id)  # session_id = conversation.id from DB
 
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)
 
-        # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
+        # [2] Retrieve + Rerank
+        # Query_analyzer → MultiQuery → Rerank (CrossEncoder) → top-N docs (context for LLM)
         reranked_docs = await self.orchestrator.run(search_question)
 
         # [3] Build context từ reranked docs
@@ -234,6 +251,8 @@ class RAGInference:
                 yield token
 
         print(f"\n [{self.model_info_core}]: {full_answer}")
+
+        # [6] Lưu vào history
         self._save_turn(session_id, question, full_answer)
 
     # Xóa lịch sử - API
