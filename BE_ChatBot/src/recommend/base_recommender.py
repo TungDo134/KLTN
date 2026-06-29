@@ -4,7 +4,7 @@ Abstract base class cho tất cả các chiến lược Recommend.
 Áp dụng Strategy Pattern — dễ swap giữa content-based, location-based, hybrid.
 """
 from abc import ABC, abstractmethod
-from src.core.schemas import Place, TripRequest
+from src.schemas import Place, TripRequest
 
 
 class BaseRecommender(ABC):

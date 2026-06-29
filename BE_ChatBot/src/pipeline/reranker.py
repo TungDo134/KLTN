@@ -31,7 +31,7 @@ Flow:
     top_k places
 """
 
-from src.core.schemas import Place, TripRequest
+from src.schemas import Place, TripRequest
 
 # ============================================================
 #                           CONSTANTS

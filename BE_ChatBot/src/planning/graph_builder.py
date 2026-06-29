@@ -9,7 +9,7 @@ Cấu trúc đồ thị:
 
 Dùng thư viện: networkx (hoặc dict thuần)
 """
-from src.core.schemas import Place
+from src.schemas import Place
 
 
 class GraphBuilder:

@@ -9,7 +9,7 @@ Logic phân bổ:
       departure_time[i] = arrival_time[i] + place.avg_duration_minutes
   - Nếu departure > 21:00 → cắt, chuyển sang ngày hôm sau
 """
-from src.core.schemas import Place, TripRequest, ScheduledPlace, DayPlan, TripPlan
+from src.schemas import Place, TripRequest, ScheduledPlace, DayPlan, TripPlan
 
 
 class Scheduler:

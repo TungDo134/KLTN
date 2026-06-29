@@ -20,7 +20,7 @@ FULL FLOW:
   Response (dict)  →  FastAPI / Gradio
 """
 
-from src.core.schemas import Place, TripRequest, TripPlan
+from src.schemas import Place, TripRequest, TripPlan
 from src.pipeline.query_analyzer import QueryAnalyzer
 from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
@@ -100,10 +100,6 @@ class TripOrchestrator:
             preview = clean_text[:150]
             print(f"\n 📄 Doc {i}: {preview}...")
 
-        # ============================================================ #
-        #                       UNDER CONSTRUCTION
-        # ============================================================ #
-
         # ============================================================
         #        BƯỚC 3B: CONVERT -> PLACES -> RERANK (METADATA)
         # ============================================================
@@ -136,7 +132,7 @@ class TripOrchestrator:
         # return reranked_docs
         return reranked_places
 
-        # # =========  Bước 4: Recommend =========
+        # # =========  Bước 4: Recommend (Call Hybrid RCM class)=========
         # recommend_result = self.recommender.recommend(reranked_places, trip_request)
 
         # # =========  Bước 5: Planning =========

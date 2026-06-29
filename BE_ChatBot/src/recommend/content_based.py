@@ -12,7 +12,7 @@ Ví dụ:
   place.tags   = ["cafe", "check-in", "view"]
   → overlap = {"cafe"} → jaccard = 1/4 = 0.25
 """
-from src.core.schemas import Place, TripRequest
+from src.schemas import Place, TripRequest
 from src.recommend.base_recommender import BaseRecommender
 
 

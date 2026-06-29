@@ -10,7 +10,7 @@ Thuật toán:
 
 Mục đích: tránh lịch trình trải dài gây tốn thời gian di chuyển.
 """
-from src.core.schemas import Place, TripRequest
+from src.schemas import Place, TripRequest
 from src.recommend.base_recommender import BaseRecommender
 
 

@@ -110,3 +110,6 @@ AGENTS.md
 firebase-service-account.json
 **/firebase-service-account.json
 
+# Others
+ONBOARD_FLOW/
+

@@ -7,7 +7,7 @@ Trọng số mặc định (có thể cấu hình qua .env hoặc constructor):
   CONTENT_WEIGHT  = 0.6
   LOCATION_WEIGHT = 0.4
 """
-from src.core.schemas import Place, TripRequest, RecommendResult
+from src.schemas import Place, TripRequest, RecommendResult
 from src.recommend.content_based import ContentBasedRecommender
 from src.recommend.location_based import LocationBasedRecommender
 from src.recommend.base_recommender import BaseRecommender
