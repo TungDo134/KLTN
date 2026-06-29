@@ -12,35 +12,34 @@ Ví dụ:
   place.tags   = ["cafe", "check-in", "view"]
   → overlap = {"cafe"} → jaccard = 1/4 = 0.25
 """
+
 from src.schemas import Place, TripRequest
 from src.recommend.base_recommender import BaseRecommender
 
+"""CONSTANT"""
+RATING_WEIGHT = 0.2
+
 
 class ContentBasedRecommender(BaseRecommender):
-
     def score(self, places: list[Place], request: TripRequest) -> list[Place]:
-        """
-        Pseudo:
-          for each place in places:
-            overlap    = set(place.tags) ∩ set(request.tags)
-            union      = set(place.tags) ∪ set(request.tags)
-            jaccard    = len(overlap) / len(union)  if union else 0
-            rating_bonus = (place.rating / 5.0) * RATING_WEIGHT
-            place.recommend_score = jaccard + rating_bonus
-
-          return sorted(places, key=lambda p: p.recommend_score, desc=True)
-        """
-        # TODO: implement
-        pass
+        """Tinh `raw content score` = `Jaccard tag similar + rating bonus`"""
+        for place in places:
+            jaccard = self._jaccard_similarity(place.tags, request.tags)
+            rating_bouns = (place.rating / 5.0) * RATING_WEIGHT
+            place.recommend_score = jaccard + rating_bouns
+        return sorted(places, key=lambda place: place.recommend_score, reverse=True)
 
     def _jaccard_similarity(self, tags_a: list[str], tags_b: list[str]) -> float:
         """
-        Pseudo:
-          set_a = set(tags_a)
-          set_b = set(tags_b)
-          intersection = set_a & set_b
-          union = set_a | set_b
-          return len(intersection) / len(union) if union else 0.0
+        Tinh `Jaccard Similarity` sau khi normalize lowercase + strip
         """
-        # TODO: implement
-        pass
+        set_a = {tag.strip().lower() for tag in tags_a if tag.strip()}
+        set_b = {tag.strip().lower() for tag in tags_b if tag.strip()}
+
+        union = set_a | set_b
+        if not union:
+            return 0.0
+
+        intersection = set_a & set_b
+
+        return len(intersection) / len(union)

@@ -10,48 +10,55 @@ Thuật toán:
 
 Mục đích: tránh lịch trình trải dài gây tốn thời gian di chuyển.
 """
+
+import math
 from src.schemas import Place, TripRequest
 from src.recommend.base_recommender import BaseRecommender
 
 
 class LocationBasedRecommender(BaseRecommender):
-
     def score(self, places: list[Place], request: TripRequest) -> list[Place]:
         """
-        Pseudo:
-          centroid = _compute_centroid(places)
-          max_dist = max(haversine(p, centroid) for p in places) or 1
-
-          for each place in places:
-            dist  = haversine(place, centroid)
-            norm  = 1 - (dist / max_dist)          # gần centroid → score cao
-            place.recommend_score += norm * LOCATION_WEIGHT
-
-          return sorted(places, key=lambda p: p.recommend_score, desc=True)
+        Tinh `raw location` dua tren khoang cach toi centroid
         """
-        # TODO: implement
-        pass
+        if not places:
+            return places
+
+        centroid_lat, centroid_lng = self._compute_centroid(places)
+        distances = [
+            self._haversine(place.lat, place.lng, centroid_lat, centroid_lng)
+            for place in places
+        ]
+        max_dist = max(distances) or 1.0
+
+        for place, distance in zip(places, distances):
+            place.recommend_score = 1.0 - (distance / max_dist)
+
+        return sorted(places, key=lambda place: place.recommend_score, reverse=True)
 
     def _compute_centroid(self, places: list[Place]) -> tuple[float, float]:
         """
-        Pseudo:
-          lat_mean = mean(p.lat for p in places)
-          lng_mean = mean(p.lng for p in places)
-          return (lat_mean, lng_mean)
+        Tinh `toa do trung binh` cua tap places
         """
-        # TODO: implement
-        pass
+        lat_mean = sum(place.lat for place in places) / len(places)
+        lng_mean = sum(place.lng for place in places) / len(places)
+        return lat_mean, lng_mean
 
     def _haversine(self, lat1: float, lng1: float, lat2: float, lng2: float) -> float:
         """
-        Tính khoảng cách (km) giữa 2 tọa độ theo công thức Haversine.
-        Pseudo:
-          R = 6371  # Earth radius km
-          dlat = radians(lat2 - lat1)
-          dlng = radians(lng2 - lng1)
-          a = sin²(dlat/2) + cos(lat1)*cos(lat2)*sin²(dlng/2)
-          c = 2 * atan2(sqrt(a), sqrt(1-a))
-          return R * c
+        Tinh `khoang cach giua 2 toa do` = Haversine.
         """
-        # TODO: implement
-        pass
+        earth_radius_km = 6371.0
+
+        lat1_rad = math.radians(lat1)
+        lat2_rad = math.radians(lat2)
+        dlat = math.radians(lat2 - lat1)
+        dlng = math.radians(lng2 - lng1)
+
+        a = (
+            math.sin(dlat / 2) ** 2
+            + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlng / 2) ** 2
+        )
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+        return earth_radius_km * c

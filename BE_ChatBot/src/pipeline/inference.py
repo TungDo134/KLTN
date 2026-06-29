@@ -203,7 +203,9 @@ class RAGInference:
         relevant_docs = await self.orchestrator.run(search_question)
 
         # [3] Build context từ các relevant docs
-        context = "\n\n".join(doc.page_content for doc in relevant_docs)
+        context = "\n\n".join(
+            place.description for place in relevant_docs if place.description
+        )
 
         # [4] Build messages (system + history + question)
         messages = self._build_messages(history, context, question)
@@ -232,12 +234,14 @@ class RAGInference:
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)
 
-        # [2] Retrieve + Rerank
-        # Query_analyzer → MultiQuery → Rerank (CrossEncoder) → top-N docs (context for LLM)
-        reranked_docs = await self.orchestrator.run(search_question)
+        # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
+        # Hien tai dang la rerank docs (Crossencoder + Custom by field)
+        relevant_docs = await self.orchestrator.run(search_question)
 
-        # [3] Build context từ reranked docs
-        context = "\n\n".join(doc.page_content for doc in reranked_docs)
+        # [3] Build context từ các relevant docs
+        context = "\n\n".join(
+            place.description for place in relevant_docs if place.description
+        )
 
         # [4] Build messages (system + history + question)
         messages = self._build_messages(history, context, question)
