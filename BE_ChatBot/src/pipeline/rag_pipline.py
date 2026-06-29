@@ -59,18 +59,54 @@ _TOP_K = 20
 
 
 # ============================================================
-#                       INGEST PIPELINE
+#                       INGEST DATA
 # ============================================================
 
 
-# --- Untils Function: CONVERT JSON DATA => DOCUMENT ---
+# --- (IGNORE - DO NOT USED) FUNCTION LOAD DOCUMENT ---
+def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
+    """Load all document in SOURCE_DATA: 'src/source_data/docs'"""
+    print(f"Loading document from {source_data}")
+
+    # check exists
+    if not os.path.exists(source_data):
+        raise FileNotFoundError(f"Documents directory does not exist: {source_data}")
+
+    # load pdf + text files
+
+    pdf_loader = DirectoryLoader(path=source_data, glob="*.pdf", loader_cls=PyPDFLoader)  # type: ignore
+    txt_loader = DirectoryLoader(
+        path=source_data,
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"encoding": "utf-8"},
+    )
+
+    # documents = loader.load()
+    documents = pdf_loader.load() + txt_loader.load()
+
+    if len(documents) == 0:
+        raise FileNotFoundError(
+            f"No .pdf or .txt files found in {source_data}. Please add your company documents."
+        )
+
+    # check xem load được không
+    print("=" * 60)
+    print(f"Tổng documents: {len(documents)}")
+    for doc in documents:
+        print(doc.metadata["source"])
+
+    return documents
+
+
+# --- STEP 1: FUNCTION CONVERT JSON DATA => DOCUMENT ---
 def load_json_places(data_dir: str) -> list[Document]:
     """
     **Lưu ý: Chỉ hỗ trợ file dạng JSON**
-    - Load files từ (folder: `D:\KLTN\Project\BE_ChatBot\src\source_data`) => `list[Document]`.
+    - Load files từ `D:\KLTN\Project\BE_ChatBot\src\source_data\places_data` => `list[Document]`.
 
-    - page_content  : text (concat từ các field ngữ nghĩa cao)
-    - metadata      : các field flat support rerank (tự build) - filter - planning
+    - page_content  : text `concat từ các field ngữ nghĩa cao`
+    - metadata      : các field flat support **RERANK** `tự build` - filter - planning
     """
 
     documents = []
@@ -133,43 +169,7 @@ def load_json_places(data_dir: str) -> list[Document]:
     return documents
 
 
-# --- STEP 1: FUNCTION LOAD DOCUMENT ---
-def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
-    """Load all document in SOURCE_DATA: 'src/source_data/docs'"""
-    print(f"Loading document from {source_data}")
-
-    # check exists
-    if not os.path.exists(source_data):
-        raise FileNotFoundError(f"Documents directory does not exist: {source_data}")
-
-    # load pdf + text files
-
-    pdf_loader = DirectoryLoader(path=source_data, glob="*.pdf", loader_cls=PyPDFLoader)  # type: ignore
-    txt_loader = DirectoryLoader(
-        path=source_data,
-        glob="*.txt",
-        loader_cls=TextLoader,
-        loader_kwargs={"encoding": "utf-8"},
-    )
-
-    # documents = loader.load()
-    documents = pdf_loader.load() + txt_loader.load()
-
-    if len(documents) == 0:
-        raise FileNotFoundError(
-            f"No .pdf or .txt files found in {source_data}. Please add your company documents."
-        )
-
-    # check xem load được không
-    print("=" * 60)
-    print(f"Tổng documents: {len(documents)}")
-    for doc in documents:
-        print(doc.metadata["source"])
-
-    return documents
-
-
-# --- STEP 2: FUNCTION CHUNK DOC (ADVANCED LATER) ---
+# --- STEP 2: FUNCTION CHUNK DOC ---
 def split_documents(documents, chunk_size=1000, chunk_overlap=150):
     """Split documents into smaller chunks with overlap"""
     print("=" * 60)
@@ -453,18 +453,18 @@ class RAGStorage:
         - Data phải lưu vào thư mục **source-data/**
         - **Lưu ý: Hàm chỉ dùng cho data type là Json**
         """
-        # 1a. Loading files
+        # 1-old. Loading files
         # documents = load_documents()  # PDF + Text
 
-        # 1b. Add-on (Json data)
+        # [1]. Load JSON files => Document (LangChain Object)
         json_dir = os.getenv("JSON_DATA_DIR", "src/source_data/places_data")
         json_docs = load_json_places(json_dir)
         documents = json_docs
 
-        # 2. Chunking the files
+        # [2]. Files Chunking
         chunks = split_documents(documents)
 
-        # 3. Embedding and Storing in Vector DB
+        # [3]. Embedding and Storing in Vector DB
         vectorstore = create_vector_store(
             chunks, self.persist_directory, self.embedding_model
         )

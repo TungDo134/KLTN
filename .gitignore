@@ -90,7 +90,8 @@ Thumbs.db
 # -----------------------------------------------------------------------
 # Data (tuỳ chọn commit hay không)
 # -----------------------------------------------------------------------
-src/source_data/
+places_data_old
+docs
 
 # Added by code-review-graph
 .code-review-graph/
@@ -105,6 +106,7 @@ huong_dan_tao_skills.md
 AGENTS.md
 .understand-anything/
 
+# Firebase
 firebase-service-account.json
 **/firebase-service-account.json
 
