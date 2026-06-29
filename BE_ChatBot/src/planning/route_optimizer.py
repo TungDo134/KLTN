@@ -10,7 +10,7 @@ Thuật toán được hỗ trợ:
 Đầu vào : graph (adjacency dict từ GraphBuilder) + danh sách place_id cần thăm
 Đầu ra  : list[place_id] — thứ tự tối ưu
 """
-from src.core.schemas import Place
+from src.schemas import Place
 
 
 class RouteOptimizer:

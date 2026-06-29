@@ -12,7 +12,7 @@ Output là JSON được parse thành TripRequest dataclass.
 """
 
 import json
-from src.core.schemas import TripRequest
+from src.schemas import TripRequest
 from src.core.llm_container import get_model_info
 
 

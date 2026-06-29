@@ -16,7 +16,7 @@ FLOW nội bộ:
       ↓
   TripPlan
 """
-from src.core.schemas import RecommendResult, TripPlan
+from src.schemas import RecommendResult, TripPlan
 from src.planning.graph_builder import GraphBuilder
 from src.planning.route_optimizer import RouteOptimizer
 from src.planning.scheduler import Scheduler

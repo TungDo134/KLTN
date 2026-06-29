@@ -3,8 +3,9 @@ recommend/base_recommender.py
 Abstract base class cho tất cả các chiến lược Recommend.
 Áp dụng Strategy Pattern — dễ swap giữa content-based, location-based, hybrid.
 """
+
 from abc import ABC, abstractmethod
-from src.core.schemas import Place, TripRequest
+from src.schemas import Place, TripRequest
 
 
 class BaseRecommender(ABC):
@@ -17,11 +18,10 @@ class BaseRecommender(ABC):
     @abstractmethod
     def score(self, places: list[Place], request: TripRequest) -> list[Place]:
         """
-        Tính recommend_score cho từng Place, trả về list đã sort descending.
+        Tinh recommend_score cho ~ Place, tra ve list da sort descending.
         """
         pass
 
     def filter_top_k(self, places: list[Place], k: int) -> list[Place]:
-        """Giữ lại top-k sau khi score. Có thể override nếu cần logic đặc biệt."""
-        # TODO: sort by recommend_score desc, slice [:k]
-        pass
+        """Giu lai top-k sau khi score"""
+        return sorted(places, key=lambda place: place.recommend_score, reverse=True)[:k]

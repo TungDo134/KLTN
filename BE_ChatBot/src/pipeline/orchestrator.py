@@ -20,7 +20,7 @@ FULL FLOW:
   Response (dict)  →  FastAPI / Gradio
 """
 
-from src.core.schemas import Place, TripRequest, TripPlan
+from src.schemas import Place, TripRequest, TripPlan
 from src.pipeline.query_analyzer import QueryAnalyzer
 from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
@@ -55,7 +55,7 @@ class TripOrchestrator:
         rag = RAGStorage()
         self.retriever, self.cross_encoder_reranker = rag.get_multi_query_retriever()
 
-    async def run(self, raw_query: str) -> dict:
+    async def run(self, raw_query: str) -> list[Place]:
         """
         Flow Pipeline
 
@@ -100,15 +100,11 @@ class TripOrchestrator:
             preview = clean_text[:150]
             print(f"\n 📄 Doc {i}: {preview}...")
 
-        # ============================================================ #
-        #                       UNDER CONSTRUCTION
-        # ============================================================ #
-
         # ============================================================
         #        BƯỚC 3B: CONVERT -> PLACES -> RERANK (METADATA)
         # ============================================================
         places = self._docs_to_places(reranked_docs)
-        print(f"\n [_docs_to_places] Converted {len(places)} places")
+        print(f"\n [Doc to places] Converted {len(places)} places")
 
         for i, place in enumerate(places[:3], 1):
             print(f"\n[_docs_to_places] Place {i}")
@@ -133,11 +129,24 @@ class TripOrchestrator:
             print(f"  rating        : {place.rating}")
             print(f"  entrance_fee  : {place.entrance_fee}")
             print(f"  rerank_score  : {place.rerank_score}")
-        # return reranked_docs
-        return reranked_places
 
-        # # =========  Bước 4: Recommend =========
-        # recommend_result = self.recommender.recommend(reranked_places, trip_request)
+        # ================================================================
+        #        BƯỚC 4: RECOMMENDATION (HYBRID (CONTENT+LOCATION BASED))
+        # ================================================================
+        recommend_result = self.recommender.recommend(reranked_places, trip_request)
+        recommended_places = recommend_result.places
+
+        print(f"\n[Hybrid Recommender] Recommended {len(recommended_places)} places")
+        for i, place in enumerate(recommended_places, 1):
+            print(f"\n[Recommend] Place {i}")
+            print(f"  name             : {place.name}")
+            print(f"  region           : {place.region}")
+            print(f"  tags             : {place.tags}")
+            print(f"  rating           : {place.rating}")
+            print(f"  rerank_score     : {place.rerank_score}")
+            print(f"  recommend_score  : {place.recommend_score}")
+
+        return recommended_places
 
         # # =========  Bước 5: Planning =========
         # trip_plan = self.planner.plan(recommend_result)
