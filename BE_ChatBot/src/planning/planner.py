@@ -36,37 +36,35 @@ class TripPlanner:
         self.scheduler       = Scheduler()
 
     def plan(self, recommend_result: RecommendResult) -> TripPlan:
-        """
-        Entry point chính.
+        places  = recommend_result.places
+        request = recommend_result.trip_request
 
-        Pseudo:
-          places  = recommend_result.places
-          request = recommend_result.trip_request
+        if not places:
+            return TripPlan(trip_request=request, days=[], total_places=0)
 
-          # Bước 1: Xây đồ thị
-          graph_data = graph_builder.build(places, weight_mode)
-          graph      = graph_data["graph"]
-          travel_matrix = graph  # adjacency dict cũng là travel matrix
+        place_map = self._build_place_map(places)
 
-          # Bước 2: Tối ưu thứ tự toàn bộ
-          ordered_ids = optimizer.optimize(places, graph, route_algorithm)
-          ordered_places = [place_map[pid] for pid in ordered_ids]
+        # Step 1: Build graph
+        graph = self.graph_builder.build(places, self.weight_mode)
+        travel_matrix = graph
 
-          # Bước 3: Chia theo ngày
-          places_per_day = scheduler.split_places_into_days(ordered_places, request.days)
+        # Step 2: Global route optimization
+        ordered_ids = self.optimizer.optimize(
+            places=places,
+            graph=graph,
+            algorithm=self.route_algorithm,
+            start_place_id=None #truyền djkstra ở đây
+        )
+        ordered_places = [place_map[pid] for pid in ordered_ids if pid in place_map]
 
-          # Bước 4: Lên lịch chi tiết
-          trip_plan = scheduler.schedule(places_per_day, travel_matrix, request)
+        # Step 3: Split into days
+        places_per_day = self.scheduler.split_places_into_days(ordered_places, request.days)
 
-          return trip_plan
-        """
-        # TODO: implement
-        pass
+        # Step 4: Schedule each day with time and duration
+        trip_plan = self.scheduler.schedule(places_per_day, travel_matrix, request)
+
+        return trip_plan
 
     def _build_place_map(self, places) -> dict:
-        """
-        Pseudo:
-          return {p.place_id: p for p in places}
-        """
-        # TODO: implement
-        pass
+        return {p.place_id: p for p in places}
+

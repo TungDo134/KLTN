@@ -36,8 +36,15 @@ class GraphBuilder:
               graph[pi.place_id][pj.place_id] = w
           return graph
         """
-        # TODO: implement
-        pass
+        import collections
+        graph = collections.defaultdict(dict)
+        for i, pi in enumerate(places):
+            for j, pj in enumerate(places):
+                if i == j:
+                    continue
+                w = self._compute_weight(pi, pj, weight_mode)
+                graph[pi.place_id][pj.place_id] = w
+        return dict(graph)
 
     def _compute_weight(self, a: Place, b: Place, mode: str) -> float:
         """
@@ -48,8 +55,23 @@ class GraphBuilder:
             AVG_SPEED_KMH = 30
             return (dist_km / AVG_SPEED_KMH) * 60  # → phút
         """
-        # TODO: implement (reuse haversine từ location_based hoặc utils)
-        pass
+        dist_km = self._haversine(a.lat, a.lng, b.lat, b.lng)
+        if mode == "distance":
+            return dist_km
+        elif mode == "time":
+            AVG_SPEED_KMH = 30.0
+            return (dist_km / AVG_SPEED_KMH) * 60.0  # -> minutes
+        return dist_km
+
+    def _haversine(self, lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+        import math
+        R = 6371.0  # Earth radius km
+        dlat = math.radians(lat2 - lat1)
+        dlng = math.radians(lng2 - lng1)
+        a = (math.sin(dlat / 2) ** 2 +
+             math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlng / 2) ** 2)
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        return R * c
 
     def add_node_weights(self, graph: dict, places: list[Place]) -> dict:
         """
@@ -59,5 +81,11 @@ class GraphBuilder:
                        for p in places}
           return {"graph": graph, "nodes": node_data}
         """
-        # TODO: implement
-        pass
+        node_data = {
+            p.place_id: {
+                "duration": p.avg_duration_minutes,
+                "rating": p.rating
+            }
+            for p in places
+        }
+        return {"graph": graph, "nodes": node_data}
