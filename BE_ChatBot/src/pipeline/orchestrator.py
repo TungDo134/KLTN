@@ -20,7 +20,7 @@ FULL FLOW:
   Response (dict)  →  FastAPI / Gradio
 """
 
-from src.schemas import Place, TripRequest, TripPlan
+from src.schemas import Place, TripRequest, TripPlan, RecommendResult
 from src.pipeline.query_analyzer import QueryAnalyzer
 from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
@@ -46,7 +46,7 @@ class TripOrchestrator:
         self.recommender = HybridRecommender(top_k=top_k_recommend)
 
         # Module Graph Planning
-        self.planner = TripPlanner()
+        self.planner = TripPlanner(route_algorithm="dijkstra")
 
         # retriever              → MultiQueryRetriever (hybrid search)
         self.llm = llm
@@ -146,18 +146,16 @@ class TripOrchestrator:
             print(f"  rerank_score     : {place.rerank_score}")
             print(f"  recommend_score  : {place.recommend_score}")
 
-        return recommended_places
+        # ================================================================
+        #        BƯỚC 5: PLANNING
+        # ================================================================
+        trip_plan = self.planner.plan(recommend_result)
 
-        # # =========  Bước 5: Planning =========
-        # trip_plan = self.planner.plan(recommend_result)
-
-        # # ── Bước 6: Generation =========
-        # response_text = await self._generate_response(trip_request, trip_plan)
-
-        # return {
-        #     "text": response_text,
-        #     "trip_plan": self._trip_plan_to_dict(trip_plan),
-        # }
+        return {
+            "places": recommended_places,
+            "trip_request": trip_request,
+            "trip_plan": trip_plan,
+        }
 
     def _docs_to_places(self, documents: list) -> list:
         """
@@ -251,26 +249,37 @@ class TripOrchestrator:
     def _trip_plan_to_dict(self, plan: TripPlan) -> dict:
         """
         Serialize TripPlan → dict để JSON response cho frontend.
-        Pseudo:
-          return {
-            "days": [
-              {
-                "day": day.day,
-                "places": [
-                  {
-                    "name": sp.place.name,
-                    "arrival": sp.arrival_time,
-                    "departure": sp.departure_time,
-                    "lat": sp.place.lat,
-                    "lng": sp.place.lng,
-                    "tags": sp.place.tags,
-                  }
-                  for sp in day.places
-                ]
-              }
-              for day in plan.days
-            ]
-          }
         """
-        # TODO: implement
-        pass
+        best_time_map = {
+            "đà lạt": "11-03",
+            "đà nẵng": "02-08",
+            "hà nội": "09-11 & 03-04",
+            "hồ chí minh": "12-04",
+            "nha trang": "01-09",
+            "vũng tàu": "11-04"
+        }
+        region_lower = (plan.trip_request.region or "").strip().lower()
+        best_time = best_time_map.get(region_lower, "11-04")
+
+        return {
+            "title": f"Hành trình khám phá {plan.trip_request.region or ''} {plan.trip_request.days or 0} Ngày",
+            "region": plan.trip_request.region,
+            "best_time": best_time,
+            "days": [
+                {
+                    "day": day.day,
+                    "title": f"Ngày {day.day}: Khám phá {plan.trip_request.region or ''}",
+                    "description": f"Hành trình tham quan tối ưu đường đi và thời gian ({len(day.places)} địa điểm).",
+                    "places": [
+                        {
+                            "name": sp.place.name,
+                            "arrival": sp.arrival_time,
+                            "departure": sp.departure_time,
+                            "tags": sp.place.tags,
+                        }
+                        for sp in day.places
+                    ]
+                }
+                for day in plan.days
+            ]
+        }
