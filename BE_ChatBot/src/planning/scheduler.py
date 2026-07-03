@@ -23,55 +23,86 @@ class Scheduler:
         travel_matrix: dict,
         request: TripRequest,
     ) -> TripPlan:
-        """
-        Nhận vào danh sách places đã được chia theo ngày (và đã sort thứ tự tối ưu).
-        Pseudo:
-          day_plans = []
-          for day_idx, places in enumerate(ordered_places_per_day):
-            current_time = START_HOUR * 60  # minutes from midnight
-            scheduled    = []
-            for order, place in enumerate(places):
-              travel_mins = travel_matrix[prev_id][place.place_id] if order > 0 else 0
-              arrival     = current_time + travel_mins
-              departure   = arrival + place.avg_duration_minutes
-
-              if departure > END_HOUR * 60: break  # hết giờ trong ngày
-
-              scheduled.append(ScheduledPlace(
-                place=place, day=day_idx+1, order=order+1,
-                arrival_time=_mins_to_hhmm(arrival),
-                departure_time=_mins_to_hhmm(departure),
-                travel_time_from_prev=travel_mins
-              ))
-              current_time = departure
-              prev_id = place.place_id
-
-            day_plans.append(DayPlan(...))
-
-          return TripPlan(trip_request=request, days=day_plans, ...)
-        """
-        # TODO: implement
-        pass
+        day_plans = []
+        total_places_count = 0
+        carry_over = []
+        
+        for day_idx in range(request.days):
+            current_time = self.START_HOUR * 60  # 480 mins
+            scheduled = []
+            prev_id = None
+            total_travel = 0
+            total_duration = 0
+            
+            # Collect places for today: carry-overs first, then today's regular allocation
+            day_places = []
+            if carry_over:
+                day_places.extend(carry_over)
+                carry_over = []
+            
+            if day_idx < len(ordered_places_per_day):
+                day_places.extend(ordered_places_per_day[day_idx])
+                
+            for place in day_places:
+                travel_mins = 0
+                if prev_id:
+                    travel_mins = int(round(travel_matrix.get(prev_id, {}).get(place.place_id, 0.0)))
+                
+                arrival = current_time + travel_mins
+                duration = place.avg_duration_minutes
+                departure = arrival + duration
+                
+                # Check cutoff constraint (21:00)
+                if departure > self.END_HOUR * 60:
+                    carry_over.append(place)
+                    continue
+                
+                scheduled.append(ScheduledPlace(
+                    place=place,
+                    day=day_idx + 1,
+                    order=len(scheduled) + 1,
+                    arrival_time=self._mins_to_hhmm(arrival),
+                    departure_time=self._mins_to_hhmm(departure),
+                    travel_time_from_prev=travel_mins
+                ))
+                
+                total_travel += travel_mins
+                total_duration += duration
+                current_time = departure
+                prev_id = place.place_id
+                
+            day_plans.append(DayPlan(
+                day=day_idx + 1,
+                places=scheduled,
+                total_travel_minutes=total_travel,
+                total_duration_minutes=total_duration
+            ))
+            total_places_count += len(scheduled)
+            
+        return TripPlan(
+            trip_request=request,
+            days=day_plans,
+            total_places=total_places_count
+        )
 
     def split_places_into_days(
         self, places: list[Place], num_days: int
     ) -> list[list[Place]]:
-        """
-        Chia đều list places thành num_days nhóm.
-        Pseudo:
-          chunk_size = ceil(len(places) / num_days)
-          return [places[i:i+chunk_size] for i in range(0, len(places), chunk_size)]
-        """
-        # TODO: implement
-        pass
+        import math
+        if not places or num_days <= 0:
+            return []
+            
+        chunk_size = math.ceil(len(places) / num_days)
+        result = []
+        for i in range(0, len(places), chunk_size):
+            result.append(places[i:i+chunk_size])
+            
+        while len(result) < num_days:
+            result.append([])
+        return result
 
     def _mins_to_hhmm(self, total_minutes: int) -> str:
-        """
-        Convert phút từ 00:00 sang chuỗi "HH:MM".
-        Pseudo:
-          h = total_minutes // 60
-          m = total_minutes % 60
-          return f"{h:02d}:{m:02d}"
-        """
-        # TODO: implement
-        pass
+        h = (total_minutes // 60) % 24
+        m = total_minutes % 60
+        return f"{h:02d}:{m:02d}"
+

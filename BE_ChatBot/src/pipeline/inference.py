@@ -20,6 +20,7 @@ FLOW:
 """
 
 import os
+import json
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
@@ -116,7 +117,7 @@ class RAGInference:
         print(f"   {rewritten}")
         return rewritten
 
-    def _build_messages(self, history: list, context: str, question: str) -> list:
+    def _build_messages(self, history: list, context: str, question: str, itinerary_text: str = None) -> list:
         """
         Ghép prompt hoàn chỉnh:
           SystemMessage (system_prompt + hướng dẫn + context)
@@ -125,17 +126,42 @@ class RAGInference:
         """
         system_content = f"""{self.system_prompt}
 
-    Hãy trả lời câu hỏi của người dùng CHỈ dựa trên ngữ cảnh dưới đây.
-    Nếu không tìm thấy thông tin, hãy nói: "Tôi không thể trả lời do không tìm thấy thông tin này trong dữ liệu của mình."
+    Hãy trả lời câu hỏi của người dùng dựa trên ngữ cảnh và thông tin địa điểm dưới đây."""
 
-    Ngữ cảnh:
-    {context}"""
+        if itinerary_text:
+            system_content += f"""
+
+    Dưới đây là LỊCH TRÌNH DU LỊCH TỐI ƯU đã được các thuật toán đồ thị (Dijkstra/Greedy) tính toán sẵn. Bạn hãy viết lời giới thiệu, tư vấn và mô tả chi tiết lịch trình này một cách tự nhiên, thân thiện và chi tiết bằng tiếng Việt. KHÔNG tự ý thay đổi thứ tự các địa điểm hoặc thời gian đã được định sẵn:
+    {itinerary_text}"""
+
+        system_content += f"""
+
+    Ngữ cảnh thông tin chi tiết các địa điểm:
+    {context}
+
+    LƯU Ý: Bạn tuyệt đối KHÔNG được tự tạo ra khối JSON ở cuối câu trả lời. Hệ thống backend sẽ tự động đính kèm khối JSON lịch trình này ở cuối cùng sau khi bạn hoàn thành phản hồi."""
 
         return (
             [SystemMessage(content=system_content)]
             + history
             + [HumanMessage(content=question)]
         )
+
+    def _format_itinerary_for_llm(self, plan) -> str:
+        """
+        Chuyển TripPlan thành dạng text tóm tắt để LLM biết lịch trình tối ưu thực tế
+        và viết lời giới thiệu tự nhiên.
+        """
+        if not plan or not plan.days:
+            return "Không có lịch trình được lập."
+
+        lines = []
+        lines.append(f"Hành trình: {plan.trip_request.region or ''} ({plan.trip_request.days or 0} ngày)")
+        for day_plan in plan.days:
+            lines.append(f"\nNgày {day_plan.day}:")
+            for sp in day_plan.places:
+                lines.append(f"  - [{sp.arrival_time} - {sp.departure_time}] {sp.place.name}")
+        return "\n".join(lines)
 
     def _save_turn(self, session_id: str, question: str, answer: str) -> None:
         """Lưu lượt hội thoại vào history."""
@@ -198,21 +224,34 @@ class RAGInference:
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)
 
-        # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
-        # Hien tai dang la rerank docs (Crossencoder + Custom by field)
-        relevant_docs = await self.orchestrator.run(search_question)
+        # [2] Retrieve + Rerank + Recommend + Plan
+        orch_res = await self.orchestrator.run(search_question)
+        relevant_places = orch_res["places"]
+        trip_request = orch_res["trip_request"]
+        trip_plan = orch_res["trip_plan"]
 
         # [3] Build context từ các relevant docs
         context = "\n\n".join(
-            place.description for place in relevant_docs if place.description
+            place.description for place in relevant_places if place.description
         )
 
-        # [4] Build messages (system + history + question)
-        messages = self._build_messages(history, context, question)
+        itinerary_text = None
+        if trip_plan and trip_plan.days:
+            itinerary_text = self._format_itinerary_for_llm(trip_plan)
+
+        # [4] Build messages (system + history + question + itinerary_text)
+        messages = self._build_messages(history, context, question, itinerary_text)
 
         # [5] LLM generate
         result = await self.llm.ainvoke(messages)
         answer = result.content
+
+        # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối
+        if trip_plan and trip_plan.days:
+            serialized_plan = self.orchestrator._trip_plan_to_dict(trip_plan)
+            json_block = f"\n\n```json\n{json.dumps(serialized_plan, ensure_ascii=False, indent=2)}\n```"
+            answer += json_block
+
         print(f"\n [{self.model_info_core}]: {answer}")
 
         # [6] Lưu vào history
@@ -234,17 +273,23 @@ class RAGInference:
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)
 
-        # [2] Retrieve + Rerank (MultiQuery → Rerank (CrossEncoder) → top-N docs)
-        # Hien tai dang la rerank docs (Crossencoder + Custom by field)
-        relevant_docs = await self.orchestrator.run(search_question)
+        # [2] Retrieve + Rerank + Recommend + Plan
+        orch_res = await self.orchestrator.run(search_question)
+        relevant_places = orch_res["places"]
+        trip_request = orch_res["trip_request"]
+        trip_plan = orch_res["trip_plan"]
 
         # [3] Build context từ các relevant docs
         context = "\n\n".join(
-            place.description for place in relevant_docs if place.description
+            place.description for place in relevant_places if place.description
         )
 
-        # [4] Build messages (system + history + question)
-        messages = self._build_messages(history, context, question)
+        itinerary_text = None
+        if trip_plan and trip_plan.days:
+            itinerary_text = self._format_itinerary_for_llm(trip_plan)
+
+        # [4] Build messages (system + history + question + itinerary_text)
+        messages = self._build_messages(history, context, question, itinerary_text)
 
         # [5] LLM generate - STREAMING RESPONSE
         full_answer = ""
@@ -253,6 +298,13 @@ class RAGInference:
             if token:
                 full_answer += token
                 yield token
+
+        # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối và stream tiếp
+        if trip_plan and trip_plan.days:
+            serialized_plan = self.orchestrator._trip_plan_to_dict(trip_plan)
+            json_block = f"\n\n```json\n{json.dumps(serialized_plan, ensure_ascii=False, indent=2)}\n```"
+            full_answer += json_block
+            yield json_block
 
         print(f"\n [{self.model_info_core}]: {full_answer}")
 
