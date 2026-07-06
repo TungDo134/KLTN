@@ -564,7 +564,10 @@ class RAGStorage:
         hybrid_retriever = self.get_hybrid_retriever()
 
         print("\n- LLM cho multi query")
-        llm_multi_query = get_llm(LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")))
+        llm_multi_query = get_llm(
+            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")),
+            model_name=os.getenv("REWRITE_LLM_MODEL") or None,
+        )
 
         return MultiQueryRetriever(
             retriever=hybrid_retriever,

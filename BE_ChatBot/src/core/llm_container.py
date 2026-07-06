@@ -48,9 +48,8 @@ def get_llm(
 ):
     if provider is None:
         provider = LLMProvider(os.getenv("LLM_PROVIDER", "nvidia"))
-
-    if model_name is None:
-        model_name = os.getenv("LLM_MODEL") or None
+        if model_name is None:
+            model_name = os.getenv("LLM_MODEL") or None
 
     print(f"\n🚀 Initializing LLM [{provider} - {model_name or 'default'}] \n")
     return get_llm_model(provider, model_name, temperature, max_tokens)
@@ -65,4 +64,7 @@ def get_model_info(llm: BaseChatModel) -> str:
     """Trả về string 'provider / model_name' từ BaseChatModel object."""
     model = getattr(llm, "model_name", None) or getattr(llm, "model", None) or "unknown"
     provider = type(llm).__name__.replace("Chat", "").lower()  # ChatGroq → groq
+    base_url = str(getattr(llm, "base_url", "") or "").rstrip("/")
+    if provider == "ollama" and base_url == "https://ollama.com":
+        provider = "ollama_cloud"
     return f"{provider} / {model}"

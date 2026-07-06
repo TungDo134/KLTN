@@ -6,13 +6,37 @@ import chatApi from "../services/chatApi";
 import { fetchMessages } from "../services/conversationApi";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
-function cleanBotText(text, hasTripData) {
+function stripJsonObject(text) {
+  const firstBrace = text.indexOf("{");
+  if (firstBrace === -1) return text;
+
+  let depth = 0;
+  for (let i = firstBrace; i < text.length; i++) {
+    const ch = text[i];
+    if (ch === "{") depth++;
+    if (ch === "}") depth--;
+
+    if (depth === 0) {
+      return `${text.slice(0, firstBrace)}${text.slice(i + 1)}`;
+    }
+  }
+
+  return text.slice(0, firstBrace);
+}
+
+function cleanBotText(text, jsonText) {
   let cleanText = text
     .replace(/```json[\s\S]*?```/i, "")
-    .replace(/^\s*json\s*\.{3}\s*$/gim, "")
+    .replace(/^\s*json\s*$/gim, "")
+    .replace(/^\s*```\s*$/gim, "")
     .trim();
 
-  if (!hasTripData) return cleanText;
+  if (jsonText) cleanText = cleanText.replace(jsonText, "");
+
+  cleanText = stripJsonObject(cleanText)
+    .replace(/^\s*json\s*$/gim, "")
+    .replace(/^\s*```\s*$/gim, "")
+    .trim();
 
   return cleanText
     .replace(
@@ -38,14 +62,15 @@ function ChatArea() {
     }
 
     let tripData = null;
+    let jsonText = null;
     try {
-      const jsonText = extractJsonFromText(message.content);
+      jsonText = extractJsonFromText(message.content);
       if (jsonText) tripData = JSON.parse(jsonText);
     } catch {
       tripData = null;
     }
 
-    const cleanText = cleanBotText(message.content, Boolean(tripData));
+    const cleanText = cleanBotText(message.content, jsonText);
 
     return {
       text: cleanText,
@@ -98,6 +123,8 @@ function ChatArea() {
             // Loại bỏ khối ```json... để chỉ stream ngôn ngữ tự nhiên
             const cleanStreamingText = fullTextSoFar
               .replace(/```json[\s\S]*/i, "")
+              .replace(/(^|\n)\s*json\s*\n\s*\{[\s\S]*/i, "")
+              .replace(/(^|\n)\s*\{[\s\S]*/i, "")
               .trim();
 
             newMsgs[lastIndex] = {
@@ -119,15 +146,16 @@ function ChatArea() {
 
       // Stream hoàn tất: Nếu LLM trả về JSON trip plan, parse để hiển thị UI
       let tripData = null;
+      let jsonText = null;
       try {
-        const jsonText = extractJsonFromText(responseText);
+        jsonText = extractJsonFromText(responseText);
         if (jsonText) tripData = JSON.parse(jsonText);
       } catch {
         tripData = null;
       }
 
       // Xóa hẳn khối JSON ra khỏi ngôn ngữ tự nhiên hiển thị
-      const finalCleanText = cleanBotText(responseText, Boolean(tripData));
+      const finalCleanText = cleanBotText(responseText, jsonText);
 
       if (tripData) {
         // Đặt trạng thái đang tạo giao diện (chưa có tripData)

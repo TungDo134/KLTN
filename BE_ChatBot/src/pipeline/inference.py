@@ -20,6 +20,7 @@ FLOW:
 """
 
 import os
+import re
 import json
 import asyncio
 from collections import defaultdict
@@ -46,7 +47,9 @@ class RAGInference:
 
         print("\n- LLM cho rewrite question (hisory chat)")
         self.llm_rewrite = get_llm(
-            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2
+            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")),
+            model_name=os.getenv("REWRITE_LLM_MODEL") or None,
+            temperature=0.2,
         )  # LLM rewrite
 
         # Orchestrator: MultiQuery → CrossEncoder → reranked docs
@@ -85,34 +88,66 @@ class RAGInference:
     # Viết lại câu hỏi dựa trên history
     async def _rewrite_question(self, question: str, history: list) -> str:
         """
-        Nếu có history, dùng LLM rewrite câu hỏi thành standalone
-        để ChromaDB search chính xác hơn (không phụ thuộc ngữ cảnh trước).
-
-        Ví dụ:
-          - History: "Tôi muốn đi Đà Lạt 2 ngày"
-          - Question: "Còn chỗ nào ăn ngon không?"
-          → Rewrite: "Các quán ăn ngon tại Đà Lạt?"
+        Nếu có history, viết lại câu hỏi hiện tại thành truy vấn độc lập.
+        Chỉ dùng history rút gọn để tránh assistant answer dài/JSON làm LLM rewrite
+        bị trôi thành câu trả lời.
         """
         if not history:
-            return question  # Không có history -> giữ nguyên
+            return question
+
+        compact_history = []
+        for message in history[-6:]:
+            content = str(getattr(message, "content", "")).strip()
+            if not content:
+                continue
+
+            if isinstance(message, AIMessage):
+                content = re.sub(
+                    r"```json[\s\S]*?```",
+                    "",
+                    content,
+                    flags=re.IGNORECASE,
+                ).strip()
+                content = re.sub(r"```[\s\S]*?```", "", content).strip()
+                content = content[:700]
+
+            compact_history.append(type(message)(content=content))
 
         messages = (
             [
                 SystemMessage(
                     content=(
-                        "Given the chat history below, rewrite the new question to be "
-                        "completely standalone and searchable without needing the history. "
-                        "Return ONLY the rewritten question, nothing else."
+                        "Rewrite the user's new travel question into ONE short standalone search query.\n"
+                        "Use the chat history only to recover missing context such as destination, days, budget, or preferences.\n"
+                        "Do NOT answer the question.\n"
+                        "Do NOT create an itinerary.\n"
+                        "Do NOT include markdown, JSON, bullets, explanations, or suggestions.\n"
+                        "Return only the rewritten query."
                     )
                 )
             ]
-            + history
+            + compact_history
             + [HumanMessage(content=f"New question: {question}")]
         )
 
-        # result = await self.llm.ainvoke(messages)
         result = await self.llm_rewrite.ainvoke(messages)
         rewritten = result.content.strip()
+
+        invalid_rewrite = (
+            not rewritten
+            or len(rewritten) > 300
+            or "```" in rewritten
+            or rewritten.startswith(("{", "["))
+            or "###" in rewritten
+            or "```json" in rewritten.lower()
+            or "dưới đây" in rewritten.lower()
+            or "lịch trình chi tiết" in rewritten.lower()
+        )
+
+        if invalid_rewrite:
+            print(f"\n⚠️ Rewrite không hợp lệ, dùng lại câu hỏi gốc bởi [{self.model_info_rewrite}]:")
+            print(f"   {question}")
+            return question
 
         print(f"\n🔄 Viết lại câu hỏi (history chat) bởi [{self.model_info_rewrite}]:")
         print(f"   {rewritten}")

@@ -6,7 +6,30 @@ import {
   FiEdit2,
   FiLoader,
 } from "react-icons/fi";
+import ReactMarkdown from "react-markdown";
 import BotResult from "../features/result-visualize/BotResult";
+
+function MarkdownText({ text }) {
+  return (
+    <ReactMarkdown
+      components={{
+        h3: ({ children }) => (
+          <h3 className="mt-4 mb-2 text-base font-semibold">{children}</h3>
+        ),
+        p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+        strong: ({ children }) => (
+          <strong className="font-semibold">{children}</strong>
+        ),
+        ul: ({ children }) => (
+          <ul className="mb-2 list-disc space-y-1 pl-5">{children}</ul>
+        ),
+        li: ({ children }) => <li>{children}</li>,
+      }}
+    >
+      {text}
+    </ReactMarkdown>
+  );
+}
 
 function Message({ sender, text, isError, tripData, isBuildingUI }) {
   const isUser = sender === "user";
@@ -52,8 +75,8 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
     return (
       <div className="mr-auto text-(--text-main) mb-4 sm:mb-6 max-w-3xl w-full">
         {text && (
-          <div className="mb-4 whitespace-pre-wrap text-[14px] sm:text-[15px] leading-relaxed">
-            {text}
+          <div className="mb-4 text-[14px] sm:text-[15px] leading-relaxed">
+            <MarkdownText text={text} />
           </div>
         )}
         <BotResult tripData={tripData} />
@@ -80,7 +103,9 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
     <div
       className={`mr-auto mb-4 sm:mb-6 max-w-3xl w-full text-[14px] sm:text-[15px] ${isError ? "text-red-400" : "text-[var(--text-main)]"}`}
     >
-      <div className="whitespace-pre-wrap leading-relaxed">{text}</div>
+      <div className="leading-relaxed">
+        <MarkdownText text={text} />
+      </div>
       <div className="flex items-center gap-3 mt-3 text-gray-500">
         <button className="hover:text-gray-300 transition-colors">
           <FiCopy size={14} />
