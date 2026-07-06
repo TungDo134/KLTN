@@ -51,6 +51,11 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
   if (tripData) {
     return (
       <div className="mr-auto text-(--text-main) mb-4 sm:mb-6 max-w-3xl w-full">
+        {text && (
+          <div className="mb-4 whitespace-pre-wrap text-[14px] sm:text-[15px] leading-relaxed">
+            {text}
+          </div>
+        )}
         <BotResult tripData={tripData} />
         <div className="flex items-center gap-3 mt-3 text-gray-500">
           <button className="hover:text-gray-300 transition-colors">

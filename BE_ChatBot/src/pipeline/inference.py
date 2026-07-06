@@ -21,6 +21,7 @@ FLOW:
 
 import os
 import json
+import asyncio
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
@@ -117,7 +118,14 @@ class RAGInference:
         print(f"   {rewritten}")
         return rewritten
 
-    def _build_messages(self, history: list, context: str, question: str, itinerary_text: str = None) -> list:
+    def _build_messages(
+        self,
+        history: list,
+        context: str,
+        question: str,
+        itinerary_text: str = None,
+        weather_context: str = "",
+    ) -> list:
         """
         Ghép prompt hoàn chỉnh:
           SystemMessage (system_prompt + hướng dẫn + context)
@@ -127,6 +135,15 @@ class RAGInference:
         system_content = f"""{self.system_prompt}
 
     Hãy trả lời câu hỏi của người dùng dựa trên ngữ cảnh và thông tin địa điểm dưới đây."""
+
+        if weather_context:
+            # Weather context giup LLM can nhac yeu to thuc tien khi tu van nen di hay can doi lich.
+            system_content += f"""
+
+    THÔNG TIN THỜI TIẾT / KHÍ HẬU THỰC TIỄN:
+    {weather_context}
+
+    Khi tư vấn, hãy dùng phần này để nói rõ nên đi, nên cân nhắc, hoặc nên đổi lịch nếu rủi ro thời tiết cao."""
 
         if itinerary_text:
             system_content += f"""
@@ -161,6 +178,39 @@ class RAGInference:
             lines.append(f"\nNgày {day_plan.day}:")
             for sp in day_plan.places:
                 lines.append(f"  - [{sp.arrival_time} - {sp.departure_time}] {sp.place.name}")
+        return "\n".join(lines)
+
+    def _format_weather_for_llm(self, weather) -> str:
+        """
+        Chuyen WeatherAdvice thanh context ngan de LLM dung khi tu van co nen di hay khong.
+        """
+        if not weather:
+            return ""
+
+        risk_label = {
+            "low": "thấp",
+            "medium": "trung bình",
+            "high": "cao",
+            "mixed": "phụ thuộc ngày đi",
+        }.get(weather.risk_level, weather.risk_level)
+        should_go_label = {
+            "recommended": "nên đi",
+            "go_with_caution": "có thể đi nhưng cần chuẩn bị",
+            "not_recommended": "không nên đi",
+            "depends_on_date": "cần ngày đi cụ thể hơn",
+        }.get(weather.should_go, weather.should_go)
+
+        lines = [
+            weather.summary,
+            f"Mức rủi ro thời tiết: {risk_label}",
+            f"Khuyến nghị: {should_go_label}",
+            f"Nguồn dữ liệu: {weather.data_source}",
+        ]
+        if weather.reasons:
+            lines.append("Lý do: " + "; ".join(weather.reasons))
+        if weather.suggestions:
+            lines.append("Gợi ý thực tiễn: " + "; ".join(weather.suggestions))
+
         return "\n".join(lines)
 
     def _save_turn(self, session_id: str, question: str, answer: str) -> None:
@@ -229,6 +279,7 @@ class RAGInference:
         relevant_places = orch_res["places"]
         trip_request = orch_res["trip_request"]
         trip_plan = orch_res["trip_plan"]
+        weather = orch_res.get("weather")
 
         # [3] Build context từ các relevant docs
         context = "\n\n".join(
@@ -239,12 +290,31 @@ class RAGInference:
         if trip_plan and trip_plan.days:
             itinerary_text = self._format_itinerary_for_llm(trip_plan)
 
-        # [4] Build messages (system + history + question + itinerary_text)
-        messages = self._build_messages(history, context, question, itinerary_text)
+        # Format weather rieng de prompt co du lieu thuc tien truoc khi LLM sinh cau tra loi.
+        weather_context = self._format_weather_for_llm(weather)
+
+        # [4] Build messages (system + history + question + itinerary_text + weather_context)
+        messages = self._build_messages(
+            history,
+            context,
+            question,
+            itinerary_text,
+            weather_context,
+        )
 
         # [5] LLM generate
-        result = await self.llm.ainvoke(messages)
-        answer = result.content
+        try:
+            result = await self.llm.ainvoke(messages)
+            answer = result.content
+        except (TimeoutError, asyncio.TimeoutError) as exc:
+            print(
+                f"[RAGInference] LLM response failed: {type(exc).__name__}: {exc}",
+                flush=True,
+            )
+            answer = (
+                "Xin lỗi, mô hình phản hồi đang bị timeout. "
+                "Hệ thống vẫn đã xử lý truy vấn, vui lòng thử lại sau ít phút."
+            )
 
         # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối
         if trip_plan and trip_plan.days:
@@ -278,6 +348,7 @@ class RAGInference:
         relevant_places = orch_res["places"]
         trip_request = orch_res["trip_request"]
         trip_plan = orch_res["trip_plan"]
+        weather = orch_res.get("weather")
 
         # [3] Build context từ các relevant docs
         context = "\n\n".join(
@@ -288,16 +359,37 @@ class RAGInference:
         if trip_plan and trip_plan.days:
             itinerary_text = self._format_itinerary_for_llm(trip_plan)
 
-        # [4] Build messages (system + history + question + itinerary_text)
-        messages = self._build_messages(history, context, question, itinerary_text)
+        # Format weather rieng de prompt co du lieu thuc tien truoc khi LLM stream cau tra loi.
+        weather_context = self._format_weather_for_llm(weather)
+
+        # [4] Build messages (system + history + question + itinerary_text + weather_context)
+        messages = self._build_messages(
+            history,
+            context,
+            question,
+            itinerary_text,
+            weather_context,
+        )
 
         # [5] LLM generate - STREAMING RESPONSE
         full_answer = ""
-        async for chunk in self.llm.astream(messages):
-            token = getattr(chunk, "content", "")
-            if token:
-                full_answer += token
-                yield token
+        try:
+            async for chunk in self.llm.astream(messages):
+                token = getattr(chunk, "content", "")
+                if token:
+                    full_answer += token
+                    yield token
+        except (TimeoutError, asyncio.TimeoutError) as exc:
+            print(
+                f"[RAGInference] LLM stream failed: {type(exc).__name__}: {exc}",
+                flush=True,
+            )
+            fallback_answer = (
+                "\n\nXin lỗi, mô hình phản hồi đang bị timeout. "
+                "Hệ thống vẫn đã xử lý truy vấn, vui lòng thử lại sau ít phút."
+            )
+            full_answer += fallback_answer
+            yield fallback_answer
 
         # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối và stream tiếp
         if trip_plan and trip_plan.days:

@@ -26,6 +26,7 @@ from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
 from src.recommend.hybrid_recommender import HybridRecommender
 from src.planning.planner import TripPlanner
+from src.services.weather_service import WeatherService
 
 
 class TripOrchestrator:
@@ -48,6 +49,9 @@ class TripOrchestrator:
         # Module Graph Planning
         self.planner = TripPlanner(route_algorithm="dijkstra")
 
+        # WeatherService lay du lieu thoi tiet runtime de bo sung ngu canh tu van thuc tien.
+        self.weather_service = WeatherService()
+
         # retriever              → MultiQueryRetriever (hybrid search)
         self.llm = llm
 
@@ -55,7 +59,7 @@ class TripOrchestrator:
         rag = RAGStorage()
         self.retriever, self.cross_encoder_reranker = rag.get_multi_query_retriever()
 
-    async def run(self, raw_query: str) -> list[Place]:
+    async def run(self, raw_query: str) -> dict:
         """
         Flow Pipeline
 
@@ -67,9 +71,20 @@ class TripOrchestrator:
         # ============================================================
         #                      BƯỚC 1: PHÂN TÍCH CÂU
         # ============================================================
+        print("=============== BAT DAU FLOW ORCHESTRATOR ===============")
 
         trip_request = await self.analyzer.extract(raw_query)
         print("\n[QueryAnalyzer] TripRequest:", trip_request)
+
+        weather = None
+        if trip_request.region:
+            # WeatherAdvice duoc tao sau QueryAnalyzer vi can region/start_date/days da trich xuat.
+            weather = await self.weather_service.get_advice(
+                trip_request.region,
+                trip_request.start_date,
+                trip_request.days,
+            )
+            print("\n[WeatherService] WeatherAdvice:", weather)
 
         # ============================================================
         #               BƯỚC 2: MULTI-QUERY + HYBRID SEARCH
@@ -155,6 +170,7 @@ class TripOrchestrator:
             "places": recommended_places,
             "trip_request": trip_request,
             "trip_plan": trip_plan,
+            "weather": weather,
         }
 
     def _docs_to_places(self, documents: list) -> list:
@@ -256,7 +272,7 @@ class TripOrchestrator:
             "hà nội": "09-11 & 03-04",
             "hồ chí minh": "12-04",
             "nha trang": "01-09",
-            "vũng tàu": "11-04"
+            "vũng tàu": "11-04",
         }
         region_lower = (plan.trip_request.region or "").strip().lower()
         best_time = best_time_map.get(region_lower, "11-04")
@@ -278,8 +294,8 @@ class TripOrchestrator:
                             "tags": sp.place.tags,
                         }
                         for sp in day.places
-                    ]
+                    ],
                 }
                 for day in plan.days
-            ]
+            ],
         }

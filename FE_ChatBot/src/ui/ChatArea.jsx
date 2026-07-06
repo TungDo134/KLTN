@@ -6,6 +6,23 @@ import chatApi from "../services/chatApi";
 import { fetchMessages } from "../services/conversationApi";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
+function cleanBotText(text, hasTripData) {
+  let cleanText = text
+    .replace(/```json[\s\S]*?```/i, "")
+    .replace(/^\s*json\s*\.{3}\s*$/gim, "")
+    .trim();
+
+  if (!hasTripData) return cleanText;
+
+  return cleanText
+    .replace(
+      /\n*Về lịch trình,[\s\S]*?(?=\n\s*(?:Budget|Ngân sách|Chi phí)\b|$)/i,
+      "\n\n",
+    )
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function ChatArea() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,7 +45,7 @@ function ChatArea() {
       tripData = null;
     }
 
-    const cleanText = message.content.replace(/```json[\s\S]*?```/i, "").trim();
+    const cleanText = cleanBotText(message.content, Boolean(tripData));
 
     return {
       text: cleanText,
@@ -110,9 +127,7 @@ function ChatArea() {
       }
 
       // Xóa hẳn khối JSON ra khỏi ngôn ngữ tự nhiên hiển thị
-      const finalCleanText = responseText
-        .replace(/```json[\s\S]*?```/i, "")
-        .trim();
+      const finalCleanText = cleanBotText(responseText, Boolean(tripData));
 
       if (tripData) {
         // Đặt trạng thái đang tạo giao diện (chưa có tripData)

@@ -1,3 +1,4 @@
+from src.schemas.weather import WeatherAdvice
 from src.schemas.day_plan import DayPlan
 from src.schemas.place import Place
 from src.schemas.recommend_result import RecommendResult
@@ -12,4 +13,5 @@ __all__ = [
     "ScheduledPlace",
     "TripPlan",
     "TripRequest",
+    "WeatherAdvice",
 ]
