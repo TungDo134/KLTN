@@ -21,8 +21,6 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_classic.retrievers import EnsembleRetriever
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
-from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 
 #
 from pydantic import BaseModel, Field, ValidationError
@@ -31,6 +29,7 @@ from pydantic import BaseModel, Field, ValidationError
 from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm, get_model_info
+from src.pipeline.document_reranker import DocumentReranker
 
 from tenacity import (
     retry,
@@ -276,16 +275,21 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
 # ============================================================
 class RerankerConfig:
     """
-    Cấu hình Reranker — chỉnh tại đây
-
-    MODEL OPTIONS (tiếng Việt):
-        BAAI/bge-reranker-v2-m3     ← recommended, multilingual, hỗ trợ tiếng Việt tốt
-        BAAI/bge-reranker-base      ← nhẹ hơn, nhanh hơn, tiếng Anh chủ yếu
-        BAAI/bge-reranker-large     ← nặng hơn, chính xác hơn
+    Cau hinh buoc rerank tai lieu truoc khi convert sang Place.
+    Doi provider bang .env va restart BE de ap dung.
     """
 
-    MODEL_NAME: str = "BAAI/bge-reranker-v2-m3"
-    TOP_N: int = 20  # Số docs giữ lại sau rerank — đưa vào LLM generate
+    PROVIDER: str = os.getenv("RERANKER_PROVIDER", "huggingface").strip().lower()
+    TOP_N: int = int(os.getenv("RERANKER_TOP_N", "20"))
+
+    _MODEL_NAME = os.getenv("RERANKER_MODEL_NAME")
+    MODEL_NAME: str = (
+        _MODEL_NAME.strip()
+        if _MODEL_NAME and _MODEL_NAME.strip()
+        else ("rerank-v3.5" if PROVIDER == "cohere" else "BAAI/bge-reranker-v2-m3")
+    )
+
+    COHERE_API_KEY: str | None = os.getenv("COHERE_API_KEY") or None
 
 
 # ============================================================
@@ -575,29 +579,17 @@ class RAGStorage:
             num_variations=3,
         )
 
-    # ======= FUNC 4b: BUILD CROSS-ENCODER RERANKER =======
+    # ======= FUNC 4b: BUILD DOCUMENT RERANKER =======
     @staticmethod
-    def _build_cross_encoder_reranker() -> CrossEncoderReranker:
+    def _build_document_reranker() -> DocumentReranker:
         """
-        Khởi tạo BGE Reranker chạy local trên GPU.
-        Nhìn (query, doc) cùng lúc → độ chính xác của docs cao hơn
-
-        Flow:
-            XX unique docs (sample: 68)(từ MultiQueryRetriever)
-                ↓
-            CrossEncoder tính score từng cặp (query, doc)
-                ↓
-            Rerank (metadatas) Sắp xếp lại theo score
-                ↓
-            Giữ lại top-N docs → đưa vào LLM generate
-
-        CrossEncoder khác Embedding:
-            - Embedding:    encode query và doc RIÊNG → so sánh vector
-            - CrossEncoder: nhìn query + doc CÙNG LÚC → score chính xác hơn
-                            nhưng chậm hơn (O(n) calls thay vì O(1))
+        Khoi tao document reranker bang interface chung.
+        Provider huggingface chay local, provider cohere goi API.
         """
         print(
-            f"\n========= Khởi tạo BGE Reranker: {RerankerConfig.MODEL_NAME} ========="
+            f"\n🚀 Initializing Document Reranker [{RerankerConfig.PROVIDER} - {RerankerConfig.MODEL_NAME}] "
+            f"\n🔧 Provider{RerankerConfig.PROVIDER}"
+            f"\n🔧 Model{RerankerConfig.MODEL_NAME}"
         )
         print(f"\n- Top-N sau rerank: {RerankerConfig.TOP_N}")
 
@@ -605,32 +597,30 @@ class RAGStorage:
         _DEFAULT_RERANKER_CACHE = os.path.normpath(
             os.path.join(_BASE_DIR, "..", "model", "reranker")
         )
-        print(f"\n📁 Cache dir reranker model: {_DEFAULT_RERANKER_CACHE} \n")
 
-        encoder = HuggingFaceCrossEncoder(
+        if RerankerConfig.PROVIDER == "huggingface":
+            print(f"\nCache dir reranker model: {_DEFAULT_RERANKER_CACHE} \n")
+
+        reranker = DocumentReranker(
+            provider=RerankerConfig.PROVIDER,
             model_name=RerankerConfig.MODEL_NAME,
-            model_kwargs={
-                "device": _DEVICE,  # chạy = gpu
-                "cache_folder": _DEFAULT_RERANKER_CACHE,  # lưu model rank
-            },
-        )
-
-        reranker = CrossEncoderReranker(
-            model=encoder,
             top_n=RerankerConfig.TOP_N,
+            api_key=RerankerConfig.COHERE_API_KEY,
+            device=_DEVICE,
+            cache_dir=_DEFAULT_RERANKER_CACHE,
         )
 
-        print("\n✅ Model Reranker sẵn sàng\n")
+        print("\nModel Reranker san sang\n")
         return reranker
 
     # ======= FUNC 5: Trả về cặp (Retriever, Reranker) =======
     def get_multi_query_retriever(
         self,
-    ) -> tuple[MultiQueryRetriever, CrossEncoderReranker]:
+    ) -> tuple[MultiQueryRetriever, DocumentReranker]:
         """
-        Trả về cặp (MultiQueryRetriever, CrossEncoderReranker).
-        Tách ra để orchestrator.py tự quyết định khi nào rerank.
+        Tra ve cap retriever va document reranker cho orchestrator.
+        Orchestrator se tu quyet dinh luc goi rerank sau khi retrieve xong.
         """
         retriever = self._build_multi_query_retriever()
-        reranker = self._build_cross_encoder_reranker()
+        reranker = self._build_document_reranker()
         return retriever, reranker

@@ -52,7 +52,7 @@ class RAGInference:
             temperature=0.2,
         )  # LLM rewrite
 
-        # Orchestrator: MultiQuery → CrossEncoder → reranked docs
+        # Orchestrator: MultiQuery -> DocumentReranker -> reranked docs
         self.orchestrator = TripOrchestrator(llm=self.llm)
         self.system_prompt = get_system_prompt()  # System prompt
         self.model_info_core = get_model_info(self.llm)

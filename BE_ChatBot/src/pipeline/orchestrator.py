@@ -55,23 +55,20 @@ class TripOrchestrator:
         # retriever              → MultiQueryRetriever (hybrid search)
         self.llm = llm
 
-        # cross_encoder_reranker → CrossEncoderReranker
+        # document_reranker -> DocumentReranker
         rag = RAGStorage()
-        self.retriever, self.cross_encoder_reranker = rag.get_multi_query_retriever()
+        self.retriever, self.document_reranker = rag.get_multi_query_retriever()
 
     async def run(self, raw_query: str) -> dict:
         """
-        Flow Pipeline
-
-        User Request → Query Analyze → Retrieve → Hybrid Rerank (CrossEncoder + metadata-based)
-                        ↓
-        Recommend → Plan → Generate.
+        Chay toan bo pipeline cho mot cau hoi nguoi dung.
+        Flow: query -> analyze -> retrieve -> document rerank -> metadata rerank -> recommend -> plan.
         """
 
         # ============================================================
         #                      BƯỚC 1: PHÂN TÍCH CÂU
         # ============================================================
-        print("=============== BAT DAU FLOW ORCHESTRATOR ===============")
+        print("=============== BẮT ĐẦU FLOW ORCHESTRATOR ===============")
 
         trip_request = await self.analyzer.extract(raw_query)
         print("\n[QueryAnalyzer] TripRequest:", trip_request)
@@ -99,14 +96,12 @@ class TripOrchestrator:
         )
 
         # ============================================================
-        #                BƯỚC 3A: RERANK(CROSS-ENCODER) -> TOP_K
-        # CrossEncoder nhìn (query, doc) cùng lúc →  chính xác hơn embedding
+        #                BUOC 3A: RERANK TAI LIEU -> TOP_K
+        # DocumentReranker co the dung local HuggingFace hoac Cohere API.
         # ============================================================
 
-        print("\n========= Reranking tài liệu (CrossEncoder) =========")
-        reranked_docs = self.cross_encoder_reranker.compress_documents(
-            raw_docs, raw_query
-        )
+        print("\n========= Reranking tài liệu (Document Reranker) =========")
+        reranked_docs = self.document_reranker.compress_documents(raw_docs, raw_query)
         print(f"\n========= Sau Rerank: {len(reranked_docs)} tài liệu =========")
 
         for i, doc in enumerate(reranked_docs, 1):
@@ -175,13 +170,11 @@ class TripOrchestrator:
 
     def _docs_to_places(self, documents: list) -> list:
         """
-        Convert LangChain Document objects → Place dataclass.
-        CrossEncoder returns documents, but the metadata reranker,
-        recommender, and planner work with structured Place objects.
-        This method maps the flat metadata created in rag_pipline.py into
-        the Place schema and keeps doc.page_content as the place description.
+        Chuyen LangChain Document thanh Place de dung cho cac buoc sau.
+        DocumentReranker tra ve Document goc, con metadata reranker,
+        recommender va planner lam viec voi Place co cau truc.
 
-        Important metadata mapping:
+        Mapping metadata quan trong:
           - type -> Place.place_type
           - address -> Place.address
           - rating.score -> Place.rating
