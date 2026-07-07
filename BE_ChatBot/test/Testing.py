@@ -1,4 +1,6 @@
 from functools import partial
+import asyncio
+import time
 
 from dotenv import load_dotenv
 from langchain_community.document_loaders import (
@@ -124,6 +126,89 @@ Test xem get dc value env khong?
 """
 - Test LLM
 """
+
+
+async def _quick_nvidia_model_test():
+    """
+    Test nhanh NVIDIA LLM, không chạy RAG/orchestrator.
+
+    Mục tiêu:
+      1. Kiểm tra non-stream `ainvoke`.
+      2. Kiểm tra stream `astream`.
+      3. Không set timeout; in thời gian chờ để biết model trả chậm hay không trả.
+    """
+    provider = LLMProvider.NVIDIA
+    prompt = "Tra loi ngan gon bang tieng Viet: 2 + 2 bang may?"
+
+    print("=" * 60)
+    print("NVIDIA LLM QUICK HEALTH CHECK")
+    print("=" * 60)
+    print(f"Provider: {provider}")
+    print("Timeout : disabled")
+
+    llm = get_llm(provider=provider, temperature=0.1, max_tokens=128)
+    messages = [HumanMessage(content=prompt)]
+
+    print("\n[1] Testing ainvoke...")
+    started_at = time.perf_counter()
+    done = asyncio.Event()
+    progress_task = asyncio.create_task(
+        _print_elapsed_until_done("ainvoke", started_at, done)
+    )
+    try:
+        response = await llm.ainvoke(messages)
+        elapsed = time.perf_counter() - started_at
+        print(f"OK ainvoke in {elapsed:.2f}s")
+        print("Response:", getattr(response, "content", response))
+    except Exception as exc:
+        elapsed = time.perf_counter() - started_at
+        print(f"FAILED ainvoke after {elapsed:.2f}s")
+        print(f"Error: {type(exc).__name__}: {repr(exc)}")
+        return
+    finally:
+        done.set()
+        await progress_task
+
+    print("\n[2] Testing astream...")
+    started_at = time.perf_counter()
+    chunks = []
+    first_token_at = None
+    done = asyncio.Event()
+    progress_task = asyncio.create_task(
+        _print_elapsed_until_done("astream", started_at, done)
+    )
+
+    try:
+        async for chunk in llm.astream(messages):
+            token = getattr(chunk, "content", "")
+            if token:
+                if first_token_at is None:
+                    first_token_at = time.perf_counter() - started_at
+                    print(f"First stream token after {first_token_at:.2f}s")
+                chunks.append(token)
+        elapsed = time.perf_counter() - started_at
+        print(f"OK astream in {elapsed:.2f}s")
+        print("Stream response:", "".join(chunks))
+    except Exception as exc:
+        elapsed = time.perf_counter() - started_at
+        print(f"FAILED astream after {elapsed:.2f}s")
+        print(f"Error: {type(exc).__name__}: {repr(exc)}")
+    finally:
+        done.set()
+        await progress_task
+
+
+async def _print_elapsed_until_done(label: str, started_at: float, done: asyncio.Event):
+    while not done.is_set():
+        await asyncio.sleep(10)
+        if not done.is_set():
+            elapsed = time.perf_counter() - started_at
+            print(f"[{label}] still waiting... {elapsed:.2f}s")
+
+
+if __name__ == "__main__":
+    asyncio.run(_quick_nvidia_model_test())
+
 
 # def _llm_test(provider: LLMProvider):
 #     llm = get_llm(provider=provider)

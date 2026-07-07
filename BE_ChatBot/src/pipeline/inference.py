@@ -20,7 +20,9 @@ FLOW:
 """
 
 import os
+import re
 import json
+import asyncio
 from collections import defaultdict
 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
@@ -45,10 +47,12 @@ class RAGInference:
 
         print("\n- LLM cho rewrite question (hisory chat)")
         self.llm_rewrite = get_llm(
-            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")), temperature=0.2
+            LLMProvider(os.getenv("REWRITE_LLM_PROVIDER")),
+            model_name=os.getenv("REWRITE_LLM_MODEL") or None,
+            temperature=0.2,
         )  # LLM rewrite
 
-        # Orchestrator: MultiQuery → CrossEncoder → reranked docs
+        # Orchestrator: MultiQuery -> DocumentReranker -> reranked docs
         self.orchestrator = TripOrchestrator(llm=self.llm)
         self.system_prompt = get_system_prompt()  # System prompt
         self.model_info_core = get_model_info(self.llm)
@@ -84,40 +88,79 @@ class RAGInference:
     # Viết lại câu hỏi dựa trên history
     async def _rewrite_question(self, question: str, history: list) -> str:
         """
-        Nếu có history, dùng LLM rewrite câu hỏi thành standalone
-        để ChromaDB search chính xác hơn (không phụ thuộc ngữ cảnh trước).
-
-        Ví dụ:
-          - History: "Tôi muốn đi Đà Lạt 2 ngày"
-          - Question: "Còn chỗ nào ăn ngon không?"
-          → Rewrite: "Các quán ăn ngon tại Đà Lạt?"
+        Nếu có history, viết lại câu hỏi hiện tại thành truy vấn độc lập.
+        Chỉ dùng history rút gọn để tránh assistant answer dài/JSON làm LLM rewrite
+        bị trôi thành câu trả lời.
         """
         if not history:
-            return question  # Không có history -> giữ nguyên
+            return question
+
+        compact_history = []
+        for message in history[-6:]:
+            content = str(getattr(message, "content", "")).strip()
+            if not content:
+                continue
+
+            if isinstance(message, AIMessage):
+                content = re.sub(
+                    r"```json[\s\S]*?```",
+                    "",
+                    content,
+                    flags=re.IGNORECASE,
+                ).strip()
+                content = re.sub(r"```[\s\S]*?```", "", content).strip()
+                content = content[:700]
+
+            compact_history.append(type(message)(content=content))
 
         messages = (
             [
                 SystemMessage(
                     content=(
-                        "Given the chat history below, rewrite the new question to be "
-                        "completely standalone and searchable without needing the history. "
-                        "Return ONLY the rewritten question, nothing else."
+                        "Rewrite the user's new travel question into ONE short standalone search query.\n"
+                        "Use the chat history only to recover missing context such as destination, days, budget, or preferences.\n"
+                        "Do NOT answer the question.\n"
+                        "Do NOT create an itinerary.\n"
+                        "Do NOT include markdown, JSON, bullets, explanations, or suggestions.\n"
+                        "Return only the rewritten query."
                     )
                 )
             ]
-            + history
+            + compact_history
             + [HumanMessage(content=f"New question: {question}")]
         )
 
-        # result = await self.llm.ainvoke(messages)
         result = await self.llm_rewrite.ainvoke(messages)
         rewritten = result.content.strip()
+
+        invalid_rewrite = (
+            not rewritten
+            or len(rewritten) > 300
+            or "```" in rewritten
+            or rewritten.startswith(("{", "["))
+            or "###" in rewritten
+            or "```json" in rewritten.lower()
+            or "dưới đây" in rewritten.lower()
+            or "lịch trình chi tiết" in rewritten.lower()
+        )
+
+        if invalid_rewrite:
+            print(f"\n⚠️ Rewrite không hợp lệ, dùng lại câu hỏi gốc bởi [{self.model_info_rewrite}]:")
+            print(f"   {question}")
+            return question
 
         print(f"\n🔄 Viết lại câu hỏi (history chat) bởi [{self.model_info_rewrite}]:")
         print(f"   {rewritten}")
         return rewritten
 
-    def _build_messages(self, history: list, context: str, question: str, itinerary_text: str = None) -> list:
+    def _build_messages(
+        self,
+        history: list,
+        context: str,
+        question: str,
+        itinerary_text: str = None,
+        weather_context: str = "",
+    ) -> list:
         """
         Ghép prompt hoàn chỉnh:
           SystemMessage (system_prompt + hướng dẫn + context)
@@ -127,6 +170,15 @@ class RAGInference:
         system_content = f"""{self.system_prompt}
 
     Hãy trả lời câu hỏi của người dùng dựa trên ngữ cảnh và thông tin địa điểm dưới đây."""
+
+        if weather_context:
+            # Weather context giup LLM can nhac yeu to thuc tien khi tu van nen di hay can doi lich.
+            system_content += f"""
+
+    THÔNG TIN THỜI TIẾT / KHÍ HẬU THỰC TIỄN:
+    {weather_context}
+
+    Khi tư vấn, hãy dùng phần này để nói rõ nên đi, nên cân nhắc, hoặc nên đổi lịch nếu rủi ro thời tiết cao."""
 
         if itinerary_text:
             system_content += f"""
@@ -161,6 +213,39 @@ class RAGInference:
             lines.append(f"\nNgày {day_plan.day}:")
             for sp in day_plan.places:
                 lines.append(f"  - [{sp.arrival_time} - {sp.departure_time}] {sp.place.name}")
+        return "\n".join(lines)
+
+    def _format_weather_for_llm(self, weather) -> str:
+        """
+        Chuyen WeatherAdvice thanh context ngan de LLM dung khi tu van co nen di hay khong.
+        """
+        if not weather:
+            return ""
+
+        risk_label = {
+            "low": "thấp",
+            "medium": "trung bình",
+            "high": "cao",
+            "mixed": "phụ thuộc ngày đi",
+        }.get(weather.risk_level, weather.risk_level)
+        should_go_label = {
+            "recommended": "nên đi",
+            "go_with_caution": "có thể đi nhưng cần chuẩn bị",
+            "not_recommended": "không nên đi",
+            "depends_on_date": "cần ngày đi cụ thể hơn",
+        }.get(weather.should_go, weather.should_go)
+
+        lines = [
+            weather.summary,
+            f"Mức rủi ro thời tiết: {risk_label}",
+            f"Khuyến nghị: {should_go_label}",
+            f"Nguồn dữ liệu: {weather.data_source}",
+        ]
+        if weather.reasons:
+            lines.append("Lý do: " + "; ".join(weather.reasons))
+        if weather.suggestions:
+            lines.append("Gợi ý thực tiễn: " + "; ".join(weather.suggestions))
+
         return "\n".join(lines)
 
     def _save_turn(self, session_id: str, question: str, answer: str) -> None:
@@ -229,6 +314,7 @@ class RAGInference:
         relevant_places = orch_res["places"]
         trip_request = orch_res["trip_request"]
         trip_plan = orch_res["trip_plan"]
+        weather = orch_res.get("weather")
 
         # [3] Build context từ các relevant docs
         context = "\n\n".join(
@@ -239,12 +325,31 @@ class RAGInference:
         if trip_plan and trip_plan.days:
             itinerary_text = self._format_itinerary_for_llm(trip_plan)
 
-        # [4] Build messages (system + history + question + itinerary_text)
-        messages = self._build_messages(history, context, question, itinerary_text)
+        # Format weather rieng de prompt co du lieu thuc tien truoc khi LLM sinh cau tra loi.
+        weather_context = self._format_weather_for_llm(weather)
+
+        # [4] Build messages (system + history + question + itinerary_text + weather_context)
+        messages = self._build_messages(
+            history,
+            context,
+            question,
+            itinerary_text,
+            weather_context,
+        )
 
         # [5] LLM generate
-        result = await self.llm.ainvoke(messages)
-        answer = result.content
+        try:
+            result = await self.llm.ainvoke(messages)
+            answer = result.content
+        except (TimeoutError, asyncio.TimeoutError) as exc:
+            print(
+                f"[RAGInference] LLM response failed: {type(exc).__name__}: {exc}",
+                flush=True,
+            )
+            answer = (
+                "Xin lỗi, mô hình phản hồi đang bị timeout. "
+                "Hệ thống vẫn đã xử lý truy vấn, vui lòng thử lại sau ít phút."
+            )
 
         # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối
         if trip_plan and trip_plan.days:
@@ -278,6 +383,7 @@ class RAGInference:
         relevant_places = orch_res["places"]
         trip_request = orch_res["trip_request"]
         trip_plan = orch_res["trip_plan"]
+        weather = orch_res.get("weather")
 
         # [3] Build context từ các relevant docs
         context = "\n\n".join(
@@ -288,16 +394,37 @@ class RAGInference:
         if trip_plan and trip_plan.days:
             itinerary_text = self._format_itinerary_for_llm(trip_plan)
 
-        # [4] Build messages (system + history + question + itinerary_text)
-        messages = self._build_messages(history, context, question, itinerary_text)
+        # Format weather rieng de prompt co du lieu thuc tien truoc khi LLM stream cau tra loi.
+        weather_context = self._format_weather_for_llm(weather)
+
+        # [4] Build messages (system + history + question + itinerary_text + weather_context)
+        messages = self._build_messages(
+            history,
+            context,
+            question,
+            itinerary_text,
+            weather_context,
+        )
 
         # [5] LLM generate - STREAMING RESPONSE
         full_answer = ""
-        async for chunk in self.llm.astream(messages):
-            token = getattr(chunk, "content", "")
-            if token:
-                full_answer += token
-                yield token
+        try:
+            async for chunk in self.llm.astream(messages):
+                token = getattr(chunk, "content", "")
+                if token:
+                    full_answer += token
+                    yield token
+        except (TimeoutError, asyncio.TimeoutError) as exc:
+            print(
+                f"[RAGInference] LLM stream failed: {type(exc).__name__}: {exc}",
+                flush=True,
+            )
+            fallback_answer = (
+                "\n\nXin lỗi, mô hình phản hồi đang bị timeout. "
+                "Hệ thống vẫn đã xử lý truy vấn, vui lòng thử lại sau ít phút."
+            )
+            full_answer += fallback_answer
+            yield fallback_answer
 
         # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối và stream tiếp
         if trip_plan and trip_plan.days:

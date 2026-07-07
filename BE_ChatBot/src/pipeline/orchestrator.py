@@ -26,6 +26,7 @@ from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
 from src.recommend.hybrid_recommender import HybridRecommender
 from src.planning.planner import TripPlanner
+from src.services.weather_service import WeatherService
 
 
 class TripOrchestrator:
@@ -48,28 +49,39 @@ class TripOrchestrator:
         # Module Graph Planning
         self.planner = TripPlanner(route_algorithm="dijkstra")
 
+        # WeatherService lay du lieu thoi tiet runtime de bo sung ngu canh tu van thuc tien.
+        self.weather_service = WeatherService()
+
         # retriever              → MultiQueryRetriever (hybrid search)
         self.llm = llm
 
-        # cross_encoder_reranker → CrossEncoderReranker
+        # document_reranker -> DocumentReranker
         rag = RAGStorage()
-        self.retriever, self.cross_encoder_reranker = rag.get_multi_query_retriever()
+        self.retriever, self.document_reranker = rag.get_multi_query_retriever()
 
-    async def run(self, raw_query: str) -> list[Place]:
+    async def run(self, raw_query: str) -> dict:
         """
-        Flow Pipeline
-
-        User Request → Query Analyze → Retrieve → Hybrid Rerank (CrossEncoder + metadata-based)
-                        ↓
-        Recommend → Plan → Generate.
+        Chay toan bo pipeline cho mot cau hoi nguoi dung.
+        Flow: query -> analyze -> retrieve -> document rerank -> metadata rerank -> recommend -> plan.
         """
 
         # ============================================================
         #                      BƯỚC 1: PHÂN TÍCH CÂU
         # ============================================================
+        print("=============== BẮT ĐẦU FLOW ORCHESTRATOR ===============")
 
         trip_request = await self.analyzer.extract(raw_query)
         print("\n[QueryAnalyzer] TripRequest:", trip_request)
+
+        weather = None
+        if trip_request.region:
+            # WeatherAdvice duoc tao sau QueryAnalyzer vi can region/start_date/days da trich xuat.
+            weather = await self.weather_service.get_advice(
+                trip_request.region,
+                trip_request.start_date,
+                trip_request.days,
+            )
+            print("\n[WeatherService] WeatherAdvice:", weather)
 
         # ============================================================
         #               BƯỚC 2: MULTI-QUERY + HYBRID SEARCH
@@ -84,14 +96,12 @@ class TripOrchestrator:
         )
 
         # ============================================================
-        #                BƯỚC 3A: RERANK(CROSS-ENCODER) -> TOP_K
-        # CrossEncoder nhìn (query, doc) cùng lúc →  chính xác hơn embedding
+        #                BUOC 3A: RERANK TAI LIEU -> TOP_K
+        # DocumentReranker co the dung local HuggingFace hoac Cohere API.
         # ============================================================
 
-        print("\n========= Reranking tài liệu (CrossEncoder) =========")
-        reranked_docs = self.cross_encoder_reranker.compress_documents(
-            raw_docs, raw_query
-        )
+        print("\n========= Reranking tài liệu (Document Reranker) =========")
+        reranked_docs = self.document_reranker.compress_documents(raw_docs, raw_query)
         print(f"\n========= Sau Rerank: {len(reranked_docs)} tài liệu =========")
 
         for i, doc in enumerate(reranked_docs, 1):
@@ -155,17 +165,16 @@ class TripOrchestrator:
             "places": recommended_places,
             "trip_request": trip_request,
             "trip_plan": trip_plan,
+            "weather": weather,
         }
 
     def _docs_to_places(self, documents: list) -> list:
         """
-        Convert LangChain Document objects → Place dataclass.
-        CrossEncoder returns documents, but the metadata reranker,
-        recommender, and planner work with structured Place objects.
-        This method maps the flat metadata created in rag_pipline.py into
-        the Place schema and keeps doc.page_content as the place description.
+        Chuyen LangChain Document thanh Place de dung cho cac buoc sau.
+        DocumentReranker tra ve Document goc, con metadata reranker,
+        recommender va planner lam viec voi Place co cau truc.
 
-        Important metadata mapping:
+        Mapping metadata quan trong:
           - type -> Place.place_type
           - address -> Place.address
           - rating.score -> Place.rating
@@ -256,7 +265,7 @@ class TripOrchestrator:
             "hà nội": "09-11 & 03-04",
             "hồ chí minh": "12-04",
             "nha trang": "01-09",
-            "vũng tàu": "11-04"
+            "vũng tàu": "11-04",
         }
         region_lower = (plan.trip_request.region or "").strip().lower()
         best_time = best_time_map.get(region_lower, "11-04")
@@ -278,8 +287,8 @@ class TripOrchestrator:
                             "tags": sp.place.tags,
                         }
                         for sp in day.places
-                    ]
+                    ],
                 }
                 for day in plan.days
-            ]
+            ],
         }

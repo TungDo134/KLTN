@@ -11,7 +11,10 @@ Sử dụng LLM (Llama) để extract:
 Output là JSON được parse thành TripRequest dataclass.
 """
 
+import asyncio
 import json
+import re
+import unicodedata
 from src.schemas import TripRequest
 from src.core.llm_container import get_model_info
 
@@ -62,12 +65,26 @@ class QueryAnalyzer:
         """
         prompt = _EXTRACT_PROMPT_TEMPLATE.format(query=raw_query)
         try:
-            response = await self.llm_query_analyzer.ainvoke(prompt)
+            # response = await self.llm_query_analyzer.ainvoke(prompt)
+            # text = getattr(response, "content", str(response))
+            # data = self._parse_response(text)
+            print("[QueryAnalyzer] Calling LLM extract...", flush=True)
+
+            response = await asyncio.wait_for(
+                self.llm_query_analyzer.ainvoke(prompt),
+                timeout=20,
+            )
+            print("[QueryAnalyzer] LLM extract done", flush=True)
             text = getattr(response, "content", str(response))
             data = self._parse_response(text)
+
         except Exception as exc:
-            print("[QueryAnalyzer] extract failed:", exc)
-            data = {}
+            print(
+                f"[QueryAnalyzer] extract failed: {type(exc).__name__}: {exc}",
+                flush=True,
+            )
+            data = self._fallback_extract(raw_query)
+            print("[QueryAnalyzer] fallback extract:", data, flush=True)
 
         days = data.get("days", 1)
         try:
@@ -110,6 +127,79 @@ class QueryAnalyzer:
             budget=budget,
             start_date=start_date,
         )
+
+    def _fallback_extract(self, raw_query: str) -> dict:
+        """
+        Rule-based fallback khi LLM extract timeout/lỗi.
+        Chỉ bắt các field rõ ràng để tránh trả về TripRequest rỗng.
+        """
+        normalized = self._normalize_text(raw_query)
+        data = {}
+
+        region_aliases = [
+            ("da lat", "\u0110\u00e0 L\u1ea1t"),
+            ("dalat", "\u0110\u00e0 L\u1ea1t"),
+            ("da nang", "\u0110\u00e0 N\u1eb5ng"),
+            ("hoi an", "H\u1ed9i An"),
+            ("ha noi", "H\u00e0 N\u1ed9i"),
+            ("ho chi minh", "H\u1ed3 Ch\u00ed Minh"),
+            ("sai gon", "H\u1ed3 Ch\u00ed Minh"),
+            ("tphcm", "H\u1ed3 Ch\u00ed Minh"),
+            ("nha trang", "Nha Trang"),
+            ("vung tau", "V\u0169ng T\u00e0u"),
+            ("hue", "Hu\u1ebf"),
+            ("sapa", "Sa Pa"),
+            ("sa pa", "Sa Pa"),
+            ("phu quoc", "Ph\u00fa Qu\u1ed1c"),
+        ]
+        for alias, region in region_aliases:
+            if alias in normalized:
+                data["region"] = region
+                break
+
+        days_match = re.search(r"\b(\d+)\s*(ngay|day|days)\b", normalized)
+        if days_match:
+            data["days"] = int(days_match.group(1))
+
+        date_match = re.search(r"\b(20\d{2}-\d{2}-\d{2})\b", raw_query)
+        if date_match:
+            data["start_date"] = date_match.group(1)
+
+        budget_match = re.search(
+            r"\b(\d+(?:[\.,]\d+)?)\s*(trieu|tr|million)\b",
+            normalized,
+        )
+        if budget_match:
+            amount = float(budget_match.group(1).replace(",", "."))
+            data["budget"] = amount * 1_000_000
+
+        tag_aliases = [
+            ("chill", "chill"),
+            ("cafe", "cafe"),
+            ("ca phe", "cafe"),
+            ("nghi duong", "nghi duong"),
+            ("bien", "bien"),
+            ("nui", "nui"),
+            ("am thuc", "am thuc"),
+            ("lich su", "lich su"),
+            ("van hoa", "van hoa"),
+            ("song ao", "song ao"),
+        ]
+        tags = []
+        for alias, tag in tag_aliases:
+            if alias in normalized and tag not in tags:
+                tags.append(tag)
+        if tags:
+            data["tags"] = tags
+
+        return data
+
+    def _normalize_text(self, text: str) -> str:
+        text = text.lower()
+        text = unicodedata.normalize("NFD", text)
+        text = "".join(char for char in text if unicodedata.category(char) != "Mn")
+        text = text.replace("\u0111", "d")
+        return re.sub(r"\s+", " ", text).strip()
 
     def _parse_response(self, text: str) -> dict:
         """

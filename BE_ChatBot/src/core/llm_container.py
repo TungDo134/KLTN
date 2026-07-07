@@ -2,6 +2,7 @@
 """
 Singleton Pattern — Khởi tạo 1 lần, dùng ở mọi nơi.
 """
+
 import os
 from functools import lru_cache
 from dotenv import load_dotenv
@@ -26,15 +27,31 @@ def _load_system_prompt() -> str:
         return "You are a Vietnamese travel assistant."
 
 
+# @lru_cache(maxsize=None)
+# def get_llm(
+#     provider: LLMProvider = LLMProvider(os.getenv("LLM_PROVIDER", "nvidia")),
+#     model_name: str | None = None,
+#     temperature: float = 0.5,
+#     max_tokens: int = 1024,
+# ):
+#     """Default dùng NVIDIA - meta/llama-3.3-70b-instruct"""
+#     print(f"\n🚀 Initializing LLM [{provider} / {model_name or 'default'}] \n")
+#     return get_llm_model(provider, model_name, temperature, max_tokens)
+
+
 @lru_cache(maxsize=None)
 def get_llm(
-        provider: LLMProvider = LLMProvider(os.getenv("LLM_PROVIDER", "nvidia")),
-        model_name: str | None = None,
-        temperature: float = 0.5,
-        max_tokens: int = 1024,
+    provider: LLMProvider | None = None,
+    model_name: str | None = None,
+    temperature: float = 0.5,
+    max_tokens: int = 1024,
 ):
-    """Default dùng NVIDIA - meta/llama-3.3-70b-instruct"""
-    print(f"\n🚀 Initializing LLM [{provider} / {model_name or 'default'}] \n")
+    if provider is None:
+        provider = LLMProvider(os.getenv("LLM_PROVIDER", "nvidia"))
+        if model_name is None:
+            model_name = os.getenv("LLM_MODEL") or None
+
+    print(f"\n🚀 Initializing LLM [{provider} - {model_name or 'default'}] \n")
     return get_llm_model(provider, model_name, temperature, max_tokens)
 
 
@@ -47,4 +64,7 @@ def get_model_info(llm: BaseChatModel) -> str:
     """Trả về string 'provider / model_name' từ BaseChatModel object."""
     model = getattr(llm, "model_name", None) or getattr(llm, "model", None) or "unknown"
     provider = type(llm).__name__.replace("Chat", "").lower()  # ChatGroq → groq
+    base_url = str(getattr(llm, "base_url", "") or "").rstrip("/")
+    if provider == "ollama" and base_url == "https://ollama.com":
+        provider = "ollama_cloud"
     return f"{provider} / {model}"

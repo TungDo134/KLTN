@@ -1,10 +1,10 @@
 """
 pipeline/reranker.py
-Reranker - metadata-based:: Lọc về sự phù hợp với chuyến đi (sau khi CrossEncoder rerank)
+Reranker - metadata-based:: Loc ve su phu hop voi chuyen di (sau khi document rerank)
 
 Mục đích:
-  CrossEncoder trong rag_pipeline trả về top_k
-  Reranker tinh chỉnh lại thứ tự dựa trên nhiều tín hiệu hơn:
+  DocumentReranker trong rag_pipeline tra ve top_k
+  Reranker tinh chinh lai thu tu dua tren nhieu tin hieu hon:
     - rag_score (embedding similarity)
     - rating của địa điểm
     - budget filter (loại bỏ nếu vượt ngân sách)
@@ -117,8 +117,8 @@ class Reranker:
     def _rank_score(self, index: int, total: int):
         """
         Ý tưởng:
-            - Tính điểm (trọng số) vị trí hiện tại của Place sau bước sắp xếp của CrossEncoder => thành điểm trong khoảng [0,1]
-            - Giữ lại **quyết định** CrossEncoder (rerank model) + tinh chỉnh xếp hạng dựa trên **domain suitable**
+            - Tinh diem (trong so) vi tri hien tai cua Place sau buoc sap xep cua DocumentReranker => thanh diem trong khoang [0,1]
+            - Giu lai quyet dinh cua document reranker + tinh chinh xep hang dua tren domain suitable
 
         Công thức: `1 - (index / (total - 1))`
 
