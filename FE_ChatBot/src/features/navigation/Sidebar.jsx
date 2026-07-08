@@ -4,7 +4,9 @@ import {
   IoAddOutline,
   IoSearchOutline,
   IoChatbubblesOutline,
+  IoCheckmarkOutline,
   IoCloseOutline,
+  IoPencilOutline,
   IoTrashOutline,
 } from "react-icons/io5";
 import {
@@ -26,6 +28,7 @@ import { getStoredAuthUser, logout } from "../../services/authApi";
 import {
   deleteConversation,
   fetchConversations,
+  renameConversation,
 } from "../../services/conversationApi";
 
 function Sidebar({
@@ -43,6 +46,9 @@ function Sidebar({
   const [conversations, setConversations] = useState([]);
   const [isLoadingConversations, setIsLoadingConversations] = useState(false);
   const [conversationError, setConversationError] = useState("");
+  const [editingConversationId, setEditingConversationId] = useState(null);
+  const [editingTitle, setEditingTitle] = useState("");
+  const [renamingConversationId, setRenamingConversationId] = useState(null);
 
   const isLoggedIn = Boolean(currentUser);
   const displayName = currentUser?.full_name || currentUser?.email || "User";
@@ -107,6 +113,56 @@ function Sidebar({
   const handleOpenConversation = (conversationId) => {
     navigate(`/conversations/${conversationId}`);
     onMobileClose?.();
+  };
+
+  const startRenameConversation = (conversation) => {
+    setEditingConversationId(conversation.id);
+    setEditingTitle(conversation.title || "");
+    setConversationError("");
+  };
+
+  const cancelRenameConversation = () => {
+    setEditingConversationId(null);
+    setEditingTitle("");
+  };
+
+  const handleRenameConversation = async (conversationId) => {
+    const nextTitle = editingTitle.trim();
+    const currentConversation = conversations.find(
+      (conversation) => conversation.id === conversationId,
+    );
+
+    if (!nextTitle) {
+      return;
+    }
+
+    if (nextTitle === (currentConversation?.title || "").trim()) {
+      cancelRenameConversation();
+      return;
+    }
+
+    setRenamingConversationId(conversationId);
+    setConversationError("");
+
+    try {
+      const updatedConversation = await renameConversation(
+        conversationId,
+        nextTitle,
+      );
+
+      setConversations((items) =>
+        items.map((conversation) =>
+          conversation.id === conversationId
+            ? { ...conversation, ...updatedConversation }
+            : conversation,
+        ),
+      );
+      cancelRenameConversation();
+    } catch {
+      setConversationError("Could not rename conversation.");
+    } finally {
+      setRenamingConversationId(null);
+    }
   };
 
   const handleDeleteConversation = async (conversationId) => {
@@ -231,18 +287,69 @@ function Sidebar({
                       : "text-(--text-muted) hover:bg-(--bg-hover)"
                   }`}
                 >
-                  <button
-                    onClick={() => handleOpenConversation(conversation.id)}
-                    className="min-w-0 flex-1 text-left truncate px-2.5 py-2 text-[13px]"
-                  >
-                    {conversation.title || "New chat"}
-                  </button>
-                  <button
-                    onClick={() => handleDeleteConversation(conversation.id)}
-                    className="p-2 text-gray-500 hover:text-red-400 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
-                  >
-                    <IoTrashOutline size={14} />
-                  </button>
+                  {editingConversationId === conversation.id ? (
+                    <form
+                      onSubmit={(event) => {
+                        event.preventDefault();
+                        handleRenameConversation(conversation.id);
+                      }}
+                      className="min-w-0 flex-1 flex items-center gap-1 px-2 py-1.5"
+                    >
+                      <input
+                        value={editingTitle}
+                        onChange={(event) => setEditingTitle(event.target.value)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Escape") {
+                            event.preventDefault();
+                            cancelRenameConversation();
+                          }
+                        }}
+                        autoFocus
+                        maxLength={255}
+                        disabled={renamingConversationId === conversation.id}
+                        placeholder="New chat"
+                        className="min-w-0 flex-1 bg-transparent border border-(--border-main) rounded px-2 py-1 text-[13px] text-(--text-main) outline-none focus:border-gray-500"
+                      />
+                      <button
+                        type="submit"
+                        disabled={
+                          renamingConversationId === conversation.id ||
+                          !editingTitle.trim()
+                        }
+                        className="p-1.5 text-gray-500 hover:text-green-400 disabled:opacity-50 transition-colors"
+                      >
+                        <IoCheckmarkOutline size={14} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={cancelRenameConversation}
+                        className="p-1.5 text-gray-500 hover:text-(--text-main) transition-colors"
+                      >
+                        <IoCloseOutline size={14} />
+                      </button>
+                    </form>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => handleOpenConversation(conversation.id)}
+                        className="min-w-0 flex-1 text-left truncate px-2.5 py-2 text-[13px]"
+                      >
+                        {conversation.title || "New chat"}
+                      </button>
+                      <button
+                        onClick={() => startRenameConversation(conversation)}
+                        className="p-2 text-gray-500 hover:text-(--text-main) opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+                      >
+                        <IoPencilOutline size={14} />
+                      </button>
+                      <button
+                        onClick={() => handleDeleteConversation(conversation.id)}
+                        className="p-2 text-gray-500 hover:text-red-400 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+                      >
+                        <IoTrashOutline size={14} />
+                      </button>
+                    </>
+                  )}
                 </div>
               );
             })}

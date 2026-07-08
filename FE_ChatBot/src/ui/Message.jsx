@@ -33,6 +33,10 @@ function MarkdownText({ text }) {
 
 function Message({ sender, text, isError, tripData, isBuildingUI }) {
   const isUser = sender === "user";
+  const copyText = () => {
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+  };
 
   if (isBuildingUI) {
     return (
@@ -81,14 +85,11 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
         )}
         <BotResult tripData={tripData} />
         <div className="flex items-center gap-3 mt-3 text-gray-500">
-          <button className="hover:text-gray-300 transition-colors">
+          <button
+            onClick={copyText}
+            className="hover:text-gray-300 transition-colors"
+          >
             <FiCopy size={14} />
-          </button>
-          <button className="hover:text-gray-300 transition-colors">
-            <FiThumbsUp size={14} />
-          </button>
-          <button className="hover:text-gray-300 transition-colors">
-            <FiThumbsDown size={14} />
           </button>
           <button className="hover:text-gray-300 transition-colors">
             <FiRotateCcw size={14} />
@@ -107,7 +108,10 @@ function Message({ sender, text, isError, tripData, isBuildingUI }) {
         <MarkdownText text={text} />
       </div>
       <div className="flex items-center gap-3 mt-3 text-gray-500">
-        <button className="hover:text-gray-300 transition-colors">
+        <button
+          onClick={copyText}
+          className="hover:text-gray-300 transition-colors"
+        >
           <FiCopy size={14} />
         </button>
         <button className="hover:text-gray-300 transition-colors">

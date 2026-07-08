@@ -16,3 +16,11 @@ export const fetchMessages = async (conversationId) => {
 export const deleteConversation = async (conversationId) => {
   await axiosClient.delete(`/conversations/${conversationId}`);
 };
+
+export const renameConversation = async (conversationId, title) => {
+  const response = await axiosClient.patch(
+    `/conversations/${conversationId}/title`,
+    { title },
+  );
+  return response.data;
+};

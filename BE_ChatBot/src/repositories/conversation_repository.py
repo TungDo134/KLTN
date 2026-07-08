@@ -49,6 +49,13 @@ class ConversationRepository:
         conversation.updated_at = func.now()
         self.db.flush()
 
+    # Doi ten conversation
+    def update_title(self, conversation: Conversation, title: str) -> Conversation:
+        conversation.title = title
+        self.db.flush()
+        self.db.refresh(conversation)
+        return conversation
+
     # Soft delete conversation
     def soft_delete_conversation(self, conversation: Conversation) -> None:
         conversation.deleted_at = func.now()
