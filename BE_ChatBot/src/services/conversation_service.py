@@ -78,6 +78,21 @@ class ConversationService:
     def get_messages_by_conversation_id(self, conversation_id: str):
         return self.message_repo.get_messages_by_conversation_id(conversation_id)
 
+    # Doi ten conversation
+    def rename_conversation(
+        self, conversation_id: str, user_id: str, title: str
+    ) -> Conversation | None:
+        conversation = self.conversation_repo.get_conversation_by_user_id(
+            conversation_id, user_id
+        )
+
+        if not conversation:
+            return None
+
+        conversation = self.conversation_repo.update_title(conversation, title)
+        self.db.commit()
+        return conversation
+
     # Xoa mem conversation
     def delete_conversation(self, conversation_id: str, user_id: str) -> bool:
         conversation = self.conversation_repo.get_conversation_by_user_id(

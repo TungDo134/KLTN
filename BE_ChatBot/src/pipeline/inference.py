@@ -32,6 +32,7 @@ from src.core.llm_container import get_llm, get_system_prompt, get_model_info
 # Import các module
 from .orchestrator import TripOrchestrator
 from ..core.base_llm_model import LLMProvider
+from .query_router import QueryRouter
 
 # Limit turns tránh vượt quá context window LLM
 _MAX_HISTORY_TURNS = 10  # 1 turn = 1 HumanMessage + 1 AIMessage
@@ -51,6 +52,9 @@ class RAGInference:
             model_name=os.getenv("REWRITE_LLM_MODEL") or None,
             temperature=0.2,
         )  # LLM rewrite
+
+        # Query Router => Block question out of domain before run pipeline
+        self.query_router = QueryRouter(llm=self.llm_rewrite)  # <= co the thay doi LLM
 
         # Orchestrator: MultiQuery -> DocumentReranker -> reranked docs
         self.orchestrator = TripOrchestrator(llm=self.llm)
@@ -95,10 +99,16 @@ class RAGInference:
         if not history:
             return question
 
-        compact_history = []
-        for message in history[-6:]:
+        user_turns = []
+        assistant_hints = []
+
+        for message in history[-8:]:
             content = str(getattr(message, "content", "")).strip()
             if not content:
+                continue
+
+            if isinstance(message, HumanMessage):
+                user_turns.append(HumanMessage(content=content[:500]))
                 continue
 
             if isinstance(message, AIMessage):
@@ -109,16 +119,21 @@ class RAGInference:
                     flags=re.IGNORECASE,
                 ).strip()
                 content = re.sub(r"```[\s\S]*?```", "", content).strip()
-                content = content[:700]
+                content = re.sub(r"\{[\s\S]*\}", "", content).strip()
+                if content:
+                    assistant_hints.append(AIMessage(content=content[:250]))
 
-            compact_history.append(type(message)(content=content))
+        compact_history = user_turns[-4:]
+        if not compact_history:
+            compact_history = assistant_hints[-1:]
 
         messages = (
             [
                 SystemMessage(
                     content=(
-                        "Rewrite the user's new travel question into ONE short standalone search query.\n"
-                        "Use the chat history only to recover missing context such as destination, days, budget, or preferences.\n"
+                        "Rewrite the user's new travel question into ONE short standalone Vietnamese travel-planning query.\n"
+                        "Use previous USER messages to recover destination, days, budget, dates, group size, and preferences.\n"
+                        "If the new question asks to adjust the existing itinerary, preserve the original trip constraints and add the requested adjustment.\n"
                         "Do NOT answer the question.\n"
                         "Do NOT create an itinerary.\n"
                         "Do NOT include markdown, JSON, bullets, explanations, or suggestions.\n"
@@ -145,7 +160,9 @@ class RAGInference:
         )
 
         if invalid_rewrite:
-            print(f"\n⚠️ Rewrite không hợp lệ, dùng lại câu hỏi gốc bởi [{self.model_info_rewrite}]:")
+            print(
+                f"\n⚠️ Rewrite không hợp lệ, dùng lại câu hỏi gốc bởi [{self.model_info_rewrite}]:"
+            )
             print(f"   {question}")
             return question
 
@@ -208,11 +225,15 @@ class RAGInference:
             return "Không có lịch trình được lập."
 
         lines = []
-        lines.append(f"Hành trình: {plan.trip_request.region or ''} ({plan.trip_request.days or 0} ngày)")
+        lines.append(
+            f"Hành trình: {plan.trip_request.region or ''} ({plan.trip_request.days or 0} ngày)"
+        )
         for day_plan in plan.days:
             lines.append(f"\nNgày {day_plan.day}:")
             for sp in day_plan.places:
-                lines.append(f"  - [{sp.arrival_time} - {sp.departure_time}] {sp.place.name}")
+                lines.append(
+                    f"  - [{sp.arrival_time} - {sp.departure_time}] {sp.place.name}"
+                )
         return "\n".join(lines)
 
     def _format_weather_for_llm(self, weather) -> str:
@@ -283,6 +304,13 @@ class RAGInference:
 
         self._history[session_id] = history
 
+        # Helper cho Query Router
+
+    def _build_fast_reply(self, route_decision) -> str:
+        return (
+            route_decision.reply or "Hệ thống hiện chỉ hỗ trợ tư vấn du lịch Việt Nam."
+        )
+
     # ============================================================ #
     # PUBLIC API
     # ============================================================ #
@@ -305,6 +333,13 @@ class RAGInference:
             Câu trả lời dạng string.
         """
         history = self._get_history(session_id)
+
+        # [0] Route ques trước khi run full pipeline
+        route_decision = await self.query_router.route(question, history)
+        if route_decision.action == "fast_reply":
+            answer = self._build_fast_reply(route_decision)
+            print(f"\n[Query Router] Fast reply ({route_decision.intent}):{answer}")
+            return answer
 
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)
@@ -374,6 +409,17 @@ class RAGInference:
         - Lay lich su cua sesseion cụ thể
         """
         history = self._get_history(session_id)  # session_id = conversation.id from DB
+
+        # [0] Route ques trước khi run full pipeline
+        route_decision = await self.query_router.route(question, history)
+        if route_decision.action == "fast_reply":
+            full_answer = self._build_fast_reply(route_decision)
+            print(
+                f"\n[Query Router] Fast stream reply ({route_decision.intent}):{full_answer}"
+            )
+            yield full_answer
+            self._save_turn(session_id, question, full_answer)
+            return
 
         # [1] Rewrite nếu có history
         search_question = await self._rewrite_question(question, history)

@@ -4,7 +4,11 @@ from sqlalchemy.orm import Session
 from src.api.deps import get_current_user
 from src.db.session import get_db
 from src.models.user import User
-from src.schemas.chat import ConversationSummary, MessageResponse
+from src.schemas.chat import (
+    ConversationRenameRequest,
+    ConversationSummary,
+    MessageResponse,
+)
 from src.services.conversation_service import ConversationService
 
 
@@ -36,6 +40,27 @@ def get_conversation_messages(
         raise HTTPException(status_code=404, detail="conversation not found")
 
     return conv_service.get_messages_by_conversation_id(conversation_id)
+
+
+# Doi ten conversation
+@router.patch("/{conversation_id}/title", response_model=ConversationSummary)
+def rename_conversation(
+    conversation_id: str,
+    payload: ConversationRenameRequest,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    conv_service = ConversationService(db)
+    conversation = conv_service.rename_conversation(
+        conversation_id,
+        current_user.id,
+        payload.title,
+    )
+
+    if not conversation:
+        raise HTTPException(status_code=404, detail="conversation not found")
+
+    return conversation
 
 
 # Xoa mem conversation
