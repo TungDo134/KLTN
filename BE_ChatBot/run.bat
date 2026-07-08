@@ -1,4 +1,4 @@
-c:: Dùng cho case không ctrl C để shutdown được
+c:: Dung cho case khong ctrl C de shutdown duoc
 
 :: Kill Python process
 @echo off

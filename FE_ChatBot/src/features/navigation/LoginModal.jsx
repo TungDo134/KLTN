@@ -36,7 +36,7 @@ function LoginModal({ onClose, onLogin }) {
       setError(
         err.response?.data?.detail ||
           err.message ||
-          "Khong the dang nhap voi Google.",
+          "Không thể đăng nhập với Google.",
       );
     } finally {
       setLoading(false);
@@ -64,7 +64,7 @@ function LoginModal({ onClose, onLogin }) {
 
         <div className="px-8 pt-10 pb-8">
           <h2 className="text-[24px] font-bold text-gray-900 leading-tight">
-            Dang nhap hoac dang ky
+            Đăng nhập hoặc đăng kí
           </h2>
 
           <div className="mt-7">
@@ -74,13 +74,13 @@ function LoginModal({ onClose, onLogin }) {
               className="w-full flex items-center gap-3 px-5 py-3 border border-gray-200 rounded-full text-[14px] font-medium text-gray-800 hover:bg-gray-50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <FcGoogle size={20} />
-              <span>{loading ? "Dang dang nhap..." : "Tiep tuc voi Google"}</span>
+              <span>
+                {loading ? "Đang đăng nhập..." : "Tiếp tục với Google"}
+              </span>
             </button>
 
             {error && (
-              <p className="mt-3 text-[13px] leading-5 text-red-500">
-                {error}
-              </p>
+              <p className="mt-3 text-[13px] leading-5 text-red-500">{error}</p>
             )}
           </div>
         </div>

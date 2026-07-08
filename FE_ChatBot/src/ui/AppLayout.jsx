@@ -20,7 +20,7 @@ function AppLayout() {
   };
 
   return (
-    <div className="flex h-screen bg-[var(--bg-main)] text-[var(--text-main)] overflow-hidden">
+    <div className="flex h-screen bg-(--bg-main) text-(--text-main) overflow-hidden">
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
@@ -30,18 +30,18 @@ function AppLayout() {
       )}
 
       {/* Sidebar */}
-      <Sidebar 
-        mobileOpen={mobileOpen} 
+      <Sidebar
+        mobileOpen={mobileOpen}
         desktopOpen={desktopOpen}
         refreshKey={conversationRefreshKey}
-        onMobileClose={() => setMobileOpen(false)} 
+        onMobileClose={() => setMobileOpen(false)}
         onDesktopToggle={() => setDesktopOpen(!desktopOpen)}
       />
 
       {/* Right side (Topbar + Content) */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Topbar */}
-        <Topbar 
+        <Topbar
           onMobileMenuToggle={() => setMobileOpen(true)}
           onDesktopMenuToggle={() => setDesktopOpen(!desktopOpen)}
           desktopSidebarOpen={desktopOpen}
@@ -49,7 +49,9 @@ function AppLayout() {
 
         {/* Main content */}
         <div className="flex-1 overflow-hidden">
-          <Outlet context={{ onConversationChanged: handleConversationChanged }} />
+          <Outlet
+            context={{ onConversationChanged: handleConversationChanged }}
+          />
         </div>
       </div>
     </div>
