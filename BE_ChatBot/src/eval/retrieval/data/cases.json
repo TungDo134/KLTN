@@ -1,0 +1,128 @@
+[
+  {
+    "id": "rq_dalat_nature_photo",
+    "query": "Gợi ý địa điểm thiên nhiên ở Đà Lạt để chụp ảnh trong 1 ngày",
+    "expected_region": "Da Lat",
+    "required_tags": ["thiên nhiên", "chụp ảnh", "ngoài trời"],
+    "optional_types": ["attraction", "landmark", "park"]
+  },
+  {
+    "id": "rq_dalat_family_budget",
+    "query": "Gia đình muốn đi Đà Lạt nhẹ nhàng, chi phí vừa phải",
+    "expected_region": "Da Lat",
+    "required_tags": ["gia đình", "thư giãn", "giá rẻ"],
+    "optional_types": ["attraction", "park", "garden"]
+  },
+  {
+    "id": "rq_dalat_culture",
+    "query": "Đà Lạt có địa điểm văn hóa lịch sử nào đáng đi không",
+    "expected_region": "Da Lat",
+    "required_tags": ["văn hóa", "lịch sử", "tham quan"],
+    "optional_types": ["museum", "landmark", "attraction"]
+  },
+  {
+    "id": "rq_danang_beach_family",
+    "query": "Tìm điểm đi chơi gần biển ở Đà Nẵng phù hợp gia đình",
+    "expected_region": "Da Nang",
+    "required_tags": ["biển", "gia đình", "thư giãn"],
+    "optional_types": ["beach", "attraction", "park"]
+  },
+  {
+    "id": "rq_danang_nature_photo",
+    "query": "Đà Nẵng có nơi ngắm cảnh và chụp ảnh đẹp không",
+    "expected_region": "Da Nang",
+    "required_tags": ["ngắm cảnh", "chụp ảnh", "thiên nhiên"],
+    "optional_types": ["landmark", "attraction", "mountain"]
+  },
+  {
+    "id": "rq_danang_food",
+    "query": "Muốn trải nghiệm ăn uống và đi dạo ở Đà Nẵng buổi tối",
+    "expected_region": "Da Nang",
+    "required_tags": ["ẩm thực", "buổi tối", "đi dạo"],
+    "optional_types": ["market", "street", "food"]
+  },
+  {
+    "id": "rq_hcm_history",
+    "query": "Ở TP HCM nên đi đâu để tìm hiểu lịch sử và văn hóa",
+    "expected_region": "Ho Chi Minh",
+    "required_tags": ["lịch sử", "văn hóa", "bảo tàng"],
+    "optional_types": ["museum", "landmark", "historic"]
+  },
+  {
+    "id": "rq_hcm_shopping_food",
+    "query": "Gợi ý nơi mua sắm và ăn uống ở Sài Gòn",
+    "expected_region": "Ho Chi Minh",
+    "required_tags": ["mua sắm", "ẩm thực", "chợ"],
+    "optional_types": ["market", "mall", "food"]
+  },
+  {
+    "id": "rq_hcm_family_indoor",
+    "query": "TP HCM có điểm tham quan trong nhà phù hợp gia đình không",
+    "expected_region": "Ho Chi Minh",
+    "required_tags": ["gia đình", "trong nhà", "tham quan"],
+    "optional_types": ["museum", "mall", "attraction"]
+  },
+  {
+    "id": "rq_hanoi_old_quarter",
+    "query": "Lịch trình Hà Nội quanh phố cổ, văn hóa và ăn uống",
+    "expected_region": "Ha Noi",
+    "required_tags": ["phố cổ", "văn hóa", "ẩm thực"],
+    "optional_types": ["street", "historic", "market"]
+  },
+  {
+    "id": "rq_hanoi_history",
+    "query": "Hà Nội có những địa điểm lịch sử nổi bật nào",
+    "expected_region": "Ha Noi",
+    "required_tags": ["lịch sử", "văn hóa", "tham quan"],
+    "optional_types": ["museum", "historic", "landmark"]
+  },
+  {
+    "id": "rq_hanoi_family_lake",
+    "query": "Gia đình muốn đi dạo hồ và tham quan nhẹ ở Hà Nội",
+    "expected_region": "Ha Noi",
+    "required_tags": ["gia đình", "hồ", "đi dạo"],
+    "optional_types": ["lake", "park", "attraction"]
+  },
+  {
+    "id": "rq_nhatrang_beach",
+    "query": "Nha Trang nên đi bãi biển nào đẹp để nghỉ dưỡng",
+    "expected_region": "Nha Trang",
+    "required_tags": ["biển", "nghỉ dưỡng", "thư giãn"],
+    "optional_types": ["beach", "island", "attraction"]
+  },
+  {
+    "id": "rq_nhatrang_island",
+    "query": "Gợi ý tour đảo và hoạt động ngoài trời ở Nha Trang",
+    "expected_region": "Nha Trang",
+    "required_tags": ["đảo", "ngoài trời", "thiên nhiên"],
+    "optional_types": ["island", "beach", "tour"]
+  },
+  {
+    "id": "rq_nhatrang_family",
+    "query": "Nha Trang có điểm vui chơi gia đình và trẻ em không",
+    "expected_region": "Nha Trang",
+    "required_tags": ["gia đình", "trẻ em", "vui chơi"],
+    "optional_types": ["theme park", "aquarium", "attraction"]
+  },
+  {
+    "id": "rq_vungtau_beach",
+    "query": "Vũng Tàu có bãi biển nào phù hợp đi cuối tuần",
+    "expected_region": "Vung Tau",
+    "required_tags": ["biển", "cuối tuần", "thư giãn"],
+    "optional_types": ["beach", "attraction", "park"]
+  },
+  {
+    "id": "rq_vungtau_viewpoint",
+    "query": "Tìm điểm ngắm cảnh và chụp ảnh ở Vũng Tàu",
+    "expected_region": "Vung Tau",
+    "required_tags": ["ngắm cảnh", "chụp ảnh", "ngoài trời"],
+    "optional_types": ["landmark", "viewpoint", "attraction"]
+  },
+  {
+    "id": "rq_vungtau_culture",
+    "query": "Vũng Tàu có địa điểm tâm linh hoặc văn hóa đáng ghé không",
+    "expected_region": "Vung Tau",
+    "required_tags": ["tâm linh", "văn hóa", "tham quan"],
+    "optional_types": ["temple", "landmark", "historic"]
+  }
+]

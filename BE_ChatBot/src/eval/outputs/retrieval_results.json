@@ -1,0 +1,879 @@
+{
+  "llm_runtime": {
+    "core_llm_provider": "ollama_cloud",
+    "core_llm_model": "gemma4:cloud",
+    "rewrite_llm_provider": "groq",
+    "rewrite_llm_model": "llama-3.1-8b-instant",
+    "reranker_provider": "cohere",
+    "reranker_model": "rerank-v3.5",
+    "reranker_top_n": "20",
+    "eval_case_delay_seconds": "7.0",
+    "chroma_collection": "kltn_chatbot",
+    "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+  },
+  "case_delay_seconds": 7.0,
+  "data_warnings": [],
+  "case_count": 18,
+  "rerank_error_count": 0,
+  "results": [
+    {
+      "case_id": "rq_dalat_nature_photo",
+      "query": "Gợi ý địa điểm thiên nhiên ở Đà Lạt để chụp ảnh trong 1 ngày",
+      "expected_region": "Da Lat",
+      "relevant_universe_size": 50,
+      "raw_doc_ids": ["DL_0068", "DL_0044", "DL_0009", "DL_0008", "DL_0077"],
+      "reranked_doc_ids": [
+        "DL_0001",
+        "DL_0087",
+        "DL_0009",
+        "DL_0045",
+        "DL_0049"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.6666666666666666,
+        "precision@5": 0.6,
+        "recall@5": 0.06,
+        "ndcg@5": 0.48718689410783317
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.1,
+        "ndcg@5": 0.6223772601563521
+      },
+      "retrieval_latency_ms": 784.9228999984916,
+      "rerank_latency_ms": 897.2816999885254,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_dalat_family_budget",
+      "query": "Gia đình muốn đi Đà Lạt nhẹ nhàng, chi phí vừa phải",
+      "expected_region": "Da Lat",
+      "relevant_universe_size": 13,
+      "raw_doc_ids": ["DL_0038", "DL_0008", "DL_0023", "DL_0014", "DL_0006"],
+      "reranked_doc_ids": [
+        "DL_0083",
+        "DL_0006",
+        "DL_0046",
+        "DL_0014",
+        "DL_0043"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "recall@5": 0.07692307692307693,
+        "ndcg@5": 0.44638673509120536
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 0.6666666666666666,
+        "precision@5": 0.4,
+        "recall@5": 0.15384615384615385,
+        "ndcg@5": 0.6724935386069494
+      },
+      "retrieval_latency_ms": 791.3660999911372,
+      "rerank_latency_ms": 698.4811000002082,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_dalat_culture",
+      "query": "Đà Lạt có địa điểm văn hóa lịch sử nào đáng đi không",
+      "expected_region": "Da Lat",
+      "relevant_universe_size": 26,
+      "raw_doc_ids": ["DL_0039", "DL_0014", "DL_0037", "DL_0088", "DL_0040"],
+      "reranked_doc_ids": [
+        "DL_0039",
+        "DL_0047",
+        "DL_0010",
+        "DL_0038",
+        "DL_0037"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.19230769230769232,
+        "ndcg@5": 0.7942545059558663
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.19230769230769232,
+        "ndcg@5": 1.0
+      },
+      "retrieval_latency_ms": 715.0101999868639,
+      "rerank_latency_ms": 621.8064000131562,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_danang_beach_family",
+      "query": "Tìm điểm đi chơi gần biển ở Đà Nẵng phù hợp gia đình",
+      "expected_region": "Da Nang",
+      "relevant_universe_size": 12,
+      "raw_doc_ids": ["DN_0003", "DN_0029", "DN_0081", "DN_0055", "DN_0079"],
+      "reranked_doc_ids": [
+        "DN_0081",
+        "DN_0055",
+        "DN_0029",
+        "DN_0003",
+        "DN_0071"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.2,
+        "recall@5": 0.08333333333333333,
+        "ndcg@5": 0.42080338500822784
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "retrieval_latency_ms": 474.4254999968689,
+      "rerank_latency_ms": 696.0363000107463,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_danang_nature_photo",
+      "query": "Đà Nẵng có nơi ngắm cảnh và chụp ảnh đẹp không",
+      "expected_region": "Da Nang",
+      "relevant_universe_size": 32,
+      "raw_doc_ids": ["DN_0031", "DN_0079", "DN_0057", "DN_0083", "DN_0027"],
+      "reranked_doc_ids": [
+        "DL_0068",
+        "DN_0019",
+        "DN_0096",
+        "DN_0097",
+        "DN_0004"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.4,
+        "recall@5": 0.0625,
+        "ndcg@5": 0.42080338500822784
+      },
+      "retrieval_latency_ms": 841.7881000204943,
+      "rerank_latency_ms": 744.2389000207186,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_danang_food",
+      "query": "Muốn trải nghiệm ăn uống và đi dạo ở Đà Nẵng buổi tối",
+      "expected_region": "Da Nang",
+      "relevant_universe_size": 29,
+      "raw_doc_ids": ["DN_0051", "DN_0077", "DN_0089", "DN_0048", "DN_0100"],
+      "reranked_doc_ids": [
+        "DN_0022",
+        "DN_0074",
+        "DN_0048",
+        "DN_0021",
+        "DN_0049"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "recall@5": 0.034482758620689655,
+        "ndcg@5": 0.44638673509120536
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.2,
+        "recall@5": 0.034482758620689655,
+        "ndcg@5": 0.42080338500822784
+      },
+      "retrieval_latency_ms": 734.7278999804985,
+      "rerank_latency_ms": 735.7489000132773,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_hcm_history",
+      "query": "Ở TP HCM nên đi đâu để tìm hiểu lịch sử và văn hóa",
+      "expected_region": "Ho Chi Minh",
+      "relevant_universe_size": 28,
+      "raw_doc_ids": [
+        "HCM_0009",
+        "HCM_0041",
+        "HCM_0073",
+        "HCM_0006",
+        "HCM_0038"
+      ],
+      "reranked_doc_ids": [
+        "HCM_0006",
+        "HCM_0025",
+        "HCM_0038",
+        "HCM_0057",
+        "HCM_0001"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.17857142857142858,
+        "ndcg@5": 0.6975316711438911
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.17857142857142858,
+        "ndcg@5": 0.8547006153693435
+      },
+      "retrieval_latency_ms": 634.3780999886803,
+      "rerank_latency_ms": 724.8379999946337,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_hcm_shopping_food",
+      "query": "Gợi ý nơi mua sắm và ăn uống ở Sài Gòn",
+      "expected_region": "Ho Chi Minh",
+      "relevant_universe_size": 25,
+      "raw_doc_ids": [
+        "HCM_0008",
+        "HCM_0072",
+        "HCM_0040",
+        "HCM_0029",
+        "HCM_0063"
+      ],
+      "reranked_doc_ids": [
+        "HCM_0032",
+        "HCM_0064",
+        "HCM_0096",
+        "HCM_0068",
+        "HCM_0036"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.4,
+        "recall@5": 0.08,
+        "ndcg@5": 0.22207812210144237
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.4,
+        "recall@5": 0.08,
+        "ndcg@5": 0.38052008059004133
+      },
+      "retrieval_latency_ms": 686.3365999888629,
+      "rerank_latency_ms": 691.9148000015412,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_hcm_family_indoor",
+      "query": "TP HCM có điểm tham quan trong nhà phù hợp gia đình không",
+      "expected_region": "Ho Chi Minh",
+      "relevant_universe_size": 10,
+      "raw_doc_ids": [
+        "DL_0038",
+        "HCM_0006",
+        "HCM_0038",
+        "HCM_0070",
+        "HCM_0008"
+      ],
+      "reranked_doc_ids": [
+        "HCM_0023",
+        "HCM_0040",
+        "HCM_0008",
+        "HCM_0072",
+        "HCM_0027"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.2,
+        "recall@5": 0.1,
+        "ndcg@5": 0.3077499832503558
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 0.8,
+        "recall@5": 0.4,
+        "ndcg@5": 0.9125299483251055
+      },
+      "retrieval_latency_ms": 671.071100019617,
+      "rerank_latency_ms": 817.1760000113863,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_hanoi_old_quarter",
+      "query": "Lịch trình Hà Nội quanh phố cổ, văn hóa và ăn uống",
+      "expected_region": "Ha Noi",
+      "relevant_universe_size": 28,
+      "raw_doc_ids": ["HN_0010", "HN_0042", "HN_0074", "HN_0061", "HN_0093"],
+      "reranked_doc_ids": [
+        "HN_0010",
+        "HN_0074",
+        "HN_0042",
+        "HN_0057",
+        "HN_0025"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.17857142857142858,
+        "ndcg@5": 0.8415580415114009
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.17857142857142858,
+        "ndcg@5": 0.8415580415114009
+      },
+      "retrieval_latency_ms": 898.0276000220329,
+      "rerank_latency_ms": 646.8105000094511,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_hanoi_history",
+      "query": "Hà Nội có những địa điểm lịch sử nổi bật nào",
+      "expected_region": "Ha Noi",
+      "relevant_universe_size": 39,
+      "raw_doc_ids": ["HN_0010", "HN_0018", "HN_0042", "HN_0005", "HN_0074"],
+      "reranked_doc_ids": [
+        "HN_0022",
+        "HN_0005",
+        "HN_0012",
+        "HN_0015",
+        "HN_0037"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.1282051282051282,
+        "ndcg@5": 0.5120390570529751
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.1282051282051282,
+        "ndcg@5": 0.7092912526226147
+      },
+      "retrieval_latency_ms": 635.3336999891326,
+      "rerank_latency_ms": 836.8178000091575,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_hanoi_family_lake",
+      "query": "Gia đình muốn đi dạo hồ và tham quan nhẹ ở Hà Nội",
+      "expected_region": "Ha Noi",
+      "relevant_universe_size": 10,
+      "raw_doc_ids": ["DL_0018", "DL_0058", "HN_0074", "HN_0046", "HN_0042"],
+      "reranked_doc_ids": [
+        "HN_0001",
+        "HN_0033",
+        "HN_0097",
+        "HN_0065",
+        "HN_0013"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.06383621857026518
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.5,
+        "ndcg@5": 0.9250256699929476
+      },
+      "retrieval_latency_ms": 746.1868999816943,
+      "rerank_latency_ms": 729.4506999896839,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_nhatrang_beach",
+      "query": "Nha Trang nên đi bãi biển nào đẹp để nghỉ dưỡng",
+      "expected_region": "Nha Trang",
+      "relevant_universe_size": 13,
+      "raw_doc_ids": ["NT_0011", "NT_0010", "NT_0013", "NT_0098", "NT_0032"],
+      "reranked_doc_ids": [
+        "NT_0010",
+        "NT_0098",
+        "NT_0054",
+        "NT_0032",
+        "NT_0076"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "recall@5": 0.07692307692307693,
+        "ndcg@5": 0.19130860075337372
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.14285714285714285
+      },
+      "retrieval_latency_ms": 465.4412000090815,
+      "rerank_latency_ms": 801.4083000016399,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_nhatrang_island",
+      "query": "Gợi ý tour đảo và hoạt động ngoài trời ở Nha Trang",
+      "expected_region": "Nha Trang",
+      "relevant_universe_size": 100,
+      "raw_doc_ids": ["NT_0001", "NT_0067", "NT_0089", "NT_0023", "NT_0045"],
+      "reranked_doc_ids": [
+        "NT_0007",
+        "NT_0001",
+        "NT_0045",
+        "NT_0089",
+        "NT_0067"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.05,
+        "ndcg@5": 1.0
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.05,
+        "ndcg@5": 1.0
+      },
+      "retrieval_latency_ms": 505.3950999863446,
+      "rerank_latency_ms": 1786.8834999972023,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_nhatrang_family",
+      "query": "Nha Trang có điểm vui chơi gia đình và trẻ em không",
+      "expected_region": "Nha Trang",
+      "relevant_universe_size": 10,
+      "raw_doc_ids": ["NT_0001", "NT_0067", "NT_0011", "NT_0045", "NT_0089"],
+      "reranked_doc_ids": [
+        "NT_0009",
+        "NT_0001",
+        "NT_0089",
+        "NT_0023",
+        "NT_0067"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "recall@5": 0.1,
+        "ndcg@5": 0.5594401368490773
+      },
+      "retrieval_latency_ms": 626.7049000016414,
+      "rerank_latency_ms": 762.5242000212893,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_vungtau_beach",
+      "query": "Vũng Tàu có bãi biển nào phù hợp đi cuối tuần",
+      "expected_region": "Vung Tau",
+      "relevant_universe_size": 5,
+      "raw_doc_ids": ["VT_0012", "VT_0058", "VT_0081", "VT_0005", "VT_0004"],
+      "reranked_doc_ids": [
+        "VT_0027",
+        "VT_0014",
+        "VT_0004",
+        "VT_0096",
+        "VT_0050"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "retrieval_latency_ms": 847.6326999953017,
+      "rerank_latency_ms": 689.6165999933146,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_vungtau_viewpoint",
+      "query": "Tìm điểm ngắm cảnh và chụp ảnh ở Vũng Tàu",
+      "expected_region": "Vung Tau",
+      "relevant_universe_size": 14,
+      "raw_doc_ids": ["VT_0018", "VT_0087", "VT_0064", "VT_0003", "VT_0008"],
+      "reranked_doc_ids": [
+        "VT_0019",
+        "VT_0038",
+        "VT_0065",
+        "VT_0042",
+        "VT_0088"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "metrics_after_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.3333333333333333
+      },
+      "retrieval_latency_ms": 584.1123000136577,
+      "rerank_latency_ms": 723.0744000116829,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    },
+    {
+      "case_id": "rq_vungtau_culture",
+      "query": "Vũng Tàu có địa điểm tâm linh hoặc văn hóa đáng ghé không",
+      "expected_region": "Vung Tau",
+      "relevant_universe_size": 22,
+      "raw_doc_ids": ["VT_0003", "DL_0042", "VT_0009", "VT_0008", "VT_0032"],
+      "reranked_doc_ids": [
+        "VT_0010",
+        "VT_0008",
+        "VT_0100",
+        "VT_0054",
+        "VT_0079"
+      ],
+      "metrics_before_rerank": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.6,
+        "recall@5": 0.13636363636363635,
+        "ndcg@5": 0.23996011360702643
+      },
+      "metrics_after_rerank": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "recall@5": 0.22727272727272727,
+        "ndcg@5": 0.4285714285714286
+      },
+      "retrieval_latency_ms": 720.8572999807075,
+      "rerank_latency_ms": 675.7447000127286,
+      "llm_runtime": {
+        "core_llm_provider": "ollama_cloud",
+        "core_llm_model": "gemma4:cloud",
+        "rewrite_llm_provider": "groq",
+        "rewrite_llm_model": "llama-3.1-8b-instant",
+        "reranker_provider": "cohere",
+        "reranker_model": "rerank-v3.5",
+        "reranker_top_n": "20",
+        "eval_case_delay_seconds": "7.0",
+        "chroma_collection": "kltn_chatbot",
+        "chroma_persist_directory": "D:\\KLTN\\Project\\BE_ChatBot\\src\\db\\chroma_db"
+      },
+      "rerank_error": null
+    }
+  ],
+  "metrics": [
+    {
+      "Nhóm": "Retrieval Quality",
+      "Tên chỉ số": "Precision@K",
+      "Công dụng": "Do ty le tai lieu dung trong top-K.",
+      "Tại sao cần": "Day la chi so quan trong nhat de biet retrieval co dua dung dia diem len dau khong.",
+      "Giá trị / Cách tính": "relevant_docs_in_top_k / k",
+      "Đơn vị": "%",
+      "Chiều tốt": "Cao hon",
+      "Nguồn dữ liệu": "Ground truth tu src/eval/retrieval/data/cases.json + ket qua retriever",
+      "Cỡ mẫu": "18",
+      "Kết quả đo được": "P@1=61.11%, P@3=57.41%, P@5=57.78%",
+      "Ghi chú": "Nen bao cao K = 1, 3, 5. Gia tri nay tinh sau rerank."
+    },
+    {
+      "Nhóm": "Retrieval Quality",
+      "Tên chỉ số": "Recall@K",
+      "Công dụng": "Do kha nang tim du tai lieu lien quan trong top-K.",
+      "Tại sao cần": "Precision cao chua chac da tim du cac dia diem phu hop cho lap lich trinh.",
+      "Giá trị / Cách tính": "relevant_docs_in_top_k / total_relevant_docs",
+      "Đơn vị": "%",
+      "Chiều tốt": "Cao hon",
+      "Nguồn dữ liệu": "Ground truth tu src/eval/retrieval/data/cases.json + ket qua retriever",
+      "Cỡ mẫu": "18",
+      "Kết quả đo được": "13.25%",
+      "Ghi chú": "Mac dinh dung Recall@5 de khop top-K dang lay."
+    },
+    {
+      "Nhóm": "Retrieval Quality",
+      "Tên chỉ số": "nDCG@K",
+      "Công dụng": "Do chat luong thu hang cua tai lieu lien quan.",
+      "Tại sao cần": "Tai lieu dung nam rank cao tot hon tai lieu dung nam cuoi danh sach.",
+      "Giá trị / Cách tính": "DCG@K / IDCG@K",
+      "Đơn vị": "%",
+      "Chiều tốt": "Cao hon",
+      "Nguồn dữ liệu": "Ground truth co relevance score tu rule theo region/tag/type",
+      "Cỡ mẫu": "18",
+      "Kết quả đo được": "60.51%",
+      "Ghi chú": "Phu hop khi ground truth co muc do lien quan 1-3."
+    },
+    {
+      "Nhóm": "Retrieval Quality",
+      "Tên chỉ số": "Retrieval latency",
+      "Công dụng": "Do thoi gian truy xuat va rerank.",
+      "Tại sao cần": "Cho biet chi phi cua buoc RAG truoc khi goi LLM sinh cau tra loi.",
+      "Giá trị / Cách tính": "elapsed_ms",
+      "Đơn vị": "ms",
+      "Chiều tốt": "Thap hon",
+      "Nguồn dữ liệu": "Timer trong benchmark retrieval",
+      "Cỡ mẫu": "18",
+      "Kết quả đo được": "retrieval avg=686.8732ms, rerank avg=793.3252ms",
+      "Ghi chú": "Nen bao cao avg, min, max, p95 trong JSON output."
+    },
+    {
+      "Nhóm": "Retrieval Quality",
+      "Tên chỉ số": "Rerank improvement",
+      "Công dụng": "So sanh truoc/sau rerank.",
+      "Tại sao cần": "Chung minh reranker co tac dung cai thien thu hang hay khong.",
+      "Giá trị / Cách tính": "metric_after_rerank - metric_before_rerank",
+      "Đơn vị": "diem %",
+      "Chiều tốt": "Cao hon",
+      "Nguồn dữ liệu": "Retriever output truoc/sau DocumentReranker",
+      "Cỡ mẫu": "18",
+      "Kết quả đo được": "Delta P@5=15.56%, Delta nDCG@5=16.04%",
+      "Ghi chú": "Gia tri am nghia la rerank lam ket qua xau hon voi bo case hien tai. Rerank failed cases: 0/18."
+    }
+  ]
+}
