@@ -4,6 +4,7 @@ INGESTION + RETRIEVE PIPELINE
 
 # --- IMPORT ---
 import os
+import time
 from typing import List
 from pathlib import Path
 import json
@@ -26,7 +27,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pydantic import BaseModel, Field, ValidationError
 
 # Embedding model
-from src.core.base_embed_model import get_embedding_model, EmbeddingProvider
+from src.core.base_embed_model import (
+    get_embedding_model,
+    resolve_embedding_config,
+    EmbeddingProvider,
+)
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm, get_model_info
 from src.pipeline.document_reranker import DocumentReranker
@@ -47,14 +52,58 @@ load_dotenv()
 - Nếu muốn thêm data, bạn chỉ cần chạy file notebook build_vector_db:
 """
 
-# ========== Check detect GPU if CPU --> Stop ==========
-if not torch.cuda.is_available():
-    raise EnvironmentError(
-        "Không tìm thấy GPU. Dự án này cần CUDA để cho ra hiệu suất tốt nhất."
-    )
-
-_DEVICE = "cuda"
+# Local providers may use CUDA; API embedding providers do not require it.
+_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 _TOP_K = 20
+_COLLECTION_NAME = "kltn_chatbot"
+_GOOGLE_BATCH_SIZE = 100
+_GOOGLE_BATCH_DELAY_SECONDS = 65
+_GOOGLE_MAX_RATE_LIMIT_RETRIES = 3
+
+
+class EmbeddingDatabaseMismatchError(ValueError):
+    """Nem loi khi ChromaDB duoc tao boi embedding khac."""
+
+
+def _embedding_collection_metadata(
+    provider: EmbeddingProvider,
+    model_name: str,
+) -> dict:
+    return {
+        "hnsw:space": "cosine",
+        "embedding_provider": provider.value,
+        "embedding_model": model_name,
+    }
+
+
+def _validate_embedding_database(
+    vectorstore: Chroma,
+    provider: EmbeddingProvider,
+    model_name: str,
+    persist_directory: str,
+    require_documents: bool = False,
+) -> int:
+    existing_count = len(vectorstore.get()["ids"])
+    if require_documents and existing_count == 0:
+        raise ValueError(
+            f"ChromaDB is empty at {persist_directory}. Run the build notebook first."
+        )
+    if existing_count == 0:
+        return 0
+
+    metadata = vectorstore._collection.metadata or {}
+    stored_provider = metadata.get("embedding_provider")
+    stored_model = metadata.get("embedding_model")
+    if stored_provider != provider.value or stored_model != model_name:
+        raise EmbeddingDatabaseMismatchError(
+            "ChromaDB embedding configuration does not match .env. "
+            f"DB uses provider={stored_provider or 'missing'}, "
+            f"model={stored_model or 'missing'}; .env uses "
+            f"provider={provider.value}, model={model_name}. "
+            f"Stop the backend, delete {persist_directory} manually, then rebuild "
+            "with utils/build_rag_vector_db.ipynb."
+        )
+    return existing_count
 
 
 # ============================================================
@@ -193,7 +242,13 @@ def split_documents(documents, chunk_size=1000, chunk_overlap=150):
 
 
 # --- STEP 3: FUNCTION CREATE/UPDATE VECTOR DB ---
-def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chroma:
+def create_vector_store(
+    chunks,
+    persist_directory: str,
+    embedding_model,
+    provider: EmbeddingProvider,
+    model_name: str,
+) -> Chroma:
     """
     - Embed model handle chunk to vector
     - Send all to db can time out --> Divide into parts (100 chunk/time)
@@ -201,6 +256,7 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
     print("=" * 60)
     batch_size = 100
     is_new_db = False
+    collection_metadata = _embedding_collection_metadata(provider, model_name)
 
     # Load or create DB
     try:
@@ -208,24 +264,31 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
         vectorstore = Chroma(
             persist_directory=persist_directory,
             embedding_function=embedding_model,
-            collection_name="kltn_chatbot",
-            collection_metadata={"hnsw:space": "cosine"},
+            collection_name=_COLLECTION_NAME,
+            collection_metadata=collection_metadata,
         )
-        existing_count = len(vectorstore.get()["ids"])
+        existing_count = _validate_embedding_database(
+            vectorstore,
+            provider,
+            model_name,
+            persist_directory,
+        )
 
         if existing_count == 0:
             raise ValueError("DB rỗng, chuẩn bị tạo mới")
 
         print(f"📦 Load DB thành công ({existing_count} chunks đã có)")
+    except EmbeddingDatabaseMismatchError:
+        raise
     except Exception as e:
         # Create - Update
         print(f"📦 Tạo DB mới... ({e})")
         vectorstore = Chroma.from_documents(
             documents=chunks[:batch_size],
-            collection_name="kltn_chatbot",
+            collection_name=_COLLECTION_NAME,
             embedding=embedding_model,
             persist_directory=persist_directory,
-            collection_metadata={"hnsw:space": "cosine"},
+            collection_metadata=collection_metadata,
         )
         chunks = chunks[batch_size:]
         existing_count = 0
@@ -267,6 +330,102 @@ def create_vector_store(chunks, persist_directory: str, embedding_model) -> Chro
     print(
         f"\nHoàn tất: {success} inserted, {failed} failed | Tổng DB: {len(vectorstore.get()['ids'])}"
     )
+    return vectorstore
+
+
+# --- STEP 3: Use Gemini Embedding ---
+def create_vector_store_google(
+    chunks,
+    persist_directory: str,
+    embedding_model,
+    provider: EmbeddingProvider,
+    model_name: str,
+) -> Chroma:
+    """Create/update ChromaDB with Google free-tier throttling and retry."""
+    if provider != EmbeddingProvider.GOOGLE:
+        raise ValueError(
+            "create_vector_store_google() requires EMBEDDING_PROVIDER=google."
+        )
+    if not chunks:
+        raise ValueError("No chunks found to embed.")
+
+    collection_metadata = _embedding_collection_metadata(provider, model_name)
+    vectorstore = Chroma(
+        persist_directory=persist_directory,
+        embedding_function=embedding_model,
+        collection_name=_COLLECTION_NAME,
+        collection_metadata=collection_metadata,
+    )
+    existing_count = _validate_embedding_database(
+        vectorstore,
+        provider,
+        model_name,
+        persist_directory,
+    )
+
+    if existing_count > 0:
+        existing_sources = set(
+            metadata.get("source") or metadata.get("place_id", "")
+            for metadata in vectorstore.get()["metadatas"]
+        )
+        chunks = [
+            chunk
+            for chunk in chunks
+            if (chunk.metadata.get("source") or chunk.metadata.get("place_id", ""))
+            not in existing_sources
+        ]
+        print(f"Google ingestion: {len(chunks)} new chunks after duplicate filtering")
+
+    if not chunks:
+        print("No new chunks. Google ingestion skipped.")
+        return vectorstore
+
+    inserted_batches = 0
+    for start in range(0, len(chunks), _GOOGLE_BATCH_SIZE):
+        batch = chunks[start : start + _GOOGLE_BATCH_SIZE]
+        batch_number = start // _GOOGLE_BATCH_SIZE + 1
+
+        if inserted_batches > 0:
+            print(
+                f"Waiting {_GOOGLE_BATCH_DELAY_SECONDS}s before batch "
+                f"{batch_number} to respect the Google free-tier rate limit..."
+            )
+            time.sleep(_GOOGLE_BATCH_DELAY_SECONDS)
+
+        rate_limit_retries = 0
+        while True:
+            try:
+                vectorstore.add_documents(batch)
+                inserted_batches += 1
+                print(f"Google batch {batch_number}: OK ({len(batch)} chunks)")
+                break
+            except Exception as exc:
+                error_message = str(exc)
+                is_rate_limit_error = (
+                    "429" in error_message or "RESOURCE_EXHAUSTED" in error_message
+                )
+                if not is_rate_limit_error:
+                    raise RuntimeError(
+                        f"Google batch {batch_number} failed: "
+                        f"{type(exc).__name__}: {exc}"
+                    ) from exc
+
+                rate_limit_retries += 1
+                if rate_limit_retries > _GOOGLE_MAX_RATE_LIMIT_RETRIES:
+                    raise RuntimeError(
+                        f"Google batch {batch_number} is still rate limited after "
+                        f"{_GOOGLE_MAX_RATE_LIMIT_RETRIES} retries: {exc}"
+                    ) from exc
+
+                print(
+                    f"Google batch {batch_number}: rate limited (429). Waiting "
+                    f"{_GOOGLE_BATCH_DELAY_SECONDS}s before retry "
+                    f"{rate_limit_retries}/{_GOOGLE_MAX_RATE_LIMIT_RETRIES}..."
+                )
+                time.sleep(_GOOGLE_BATCH_DELAY_SECONDS)
+
+    total_count = len(vectorstore.get()["ids"])
+    print(f"Google ingestion complete. Total DB chunks: {total_count}")
     return vectorstore
 
 
@@ -441,14 +600,27 @@ class MultiQueryRetriever:
 
 
 class RAGStorage:
-    def __init__(self, provider: EmbeddingProvider = EmbeddingProvider.HUGGINGFACE):
+    def __init__(
+        self,
+        provider: EmbeddingProvider | str | None = None,
+        model_name: str | None = None,
+    ):
         self.persist_directory = os.getenv("PERSIST_DIRECTORY")
         if not self.persist_directory:
             raise ValueError("PERSIST_DIRECTORY environment variable is not set.")
 
-        print(f"\n- Chạy embedding model bằng: '{_DEVICE}' \n")
-        # ======= Create Embedding Model =======
-        self.embedding_model = get_embedding_model(provider=provider)
+        self.embedding_provider, self.embedding_model_name = resolve_embedding_config(
+            provider,
+            model_name,
+        )
+        self.collection_metadata = _embedding_collection_metadata(
+            self.embedding_provider,
+            self.embedding_model_name,
+        )
+        self.embedding_model = get_embedding_model(
+            provider=self.embedding_provider,
+            model_name=self.embedding_model_name,
+        )
 
     # ======= FUNC 1: NẠP DỮ LIỆU (INGESTION DATA) - Run once only  =======
     def build_vector_db(self):
@@ -457,6 +629,13 @@ class RAGStorage:
         - Data phải lưu vào thư mục **source-data/**
         - **Lưu ý: Hàm chỉ dùng cho data type là Json**
         """
+        if self.embedding_provider == EmbeddingProvider.GOOGLE:
+            raise ValueError(
+                "Google embedding must use build_vector_db_google(). "
+                "Update the comment/uncomment selection in "
+                "utils/build_rag_vector_db.ipynb."
+            )
+
         # 1-old. Loading files
         # documents = load_documents()  # PDF + Text
 
@@ -470,13 +649,40 @@ class RAGStorage:
 
         # [3]. Embedding and Storing in Vector DB
         vectorstore = create_vector_store(
-            chunks, self.persist_directory, self.embedding_model
+            chunks,
+            self.persist_directory,
+            self.embedding_model,
+            self.embedding_provider,
+            self.embedding_model_name,
         )
 
         print(
             "\n Ingestion hoàn thành! Tài liệu đã được lưu vào Chroma DB & sẵn sàng cho các truy vấn RAG."
         )
 
+        return vectorstore
+
+    def build_vector_db_google(self):
+        """Build ChromaDB through the separate Google throttled ingestion path."""
+        if self.embedding_provider != EmbeddingProvider.GOOGLE:
+            raise ValueError(
+                "build_vector_db_google() requires EMBEDDING_PROVIDER=google. "
+                "Use build_vector_db() for HuggingFace or Ollama."
+            )
+
+        json_dir = os.getenv("JSON_DATA_DIR", "src/source_data/places_data")
+        documents = load_json_places(json_dir)
+        chunks = split_documents(documents)
+        vectorstore = create_vector_store_google(
+            chunks,
+            self.persist_directory,
+            self.embedding_model,
+            self.embedding_provider,
+            self.embedding_model_name,
+        )
+        print(
+            "\nGoogle embedding ingestion completed. ChromaDB is ready for RAG retrieval."
+        )
         return vectorstore
 
     # ======= FUNC 2: TRUY XUẤT TÀI LIỆU =======
@@ -488,7 +694,15 @@ class RAGStorage:
         vectorstore = Chroma(
             persist_directory=self.persist_directory,
             embedding_function=self.embedding_model,
-            collection_name="kltn_chatbot",
+            collection_name=_COLLECTION_NAME,
+            collection_metadata=self.collection_metadata,
+        )
+        _validate_embedding_database(
+            vectorstore,
+            self.embedding_provider,
+            self.embedding_model_name,
+            self.persist_directory,
+            require_documents=True,
         )
         # top_k
         return vectorstore.as_retriever(search_kwargs={"k": _TOP_K})
@@ -521,7 +735,15 @@ class RAGStorage:
         vectorstore = Chroma(
             persist_directory=self.persist_directory,
             embedding_function=self.embedding_model,
-            collection_name="kltn_chatbot",
+            collection_name=_COLLECTION_NAME,
+            collection_metadata=self.collection_metadata,
+        )
+        _validate_embedding_database(
+            vectorstore,
+            self.embedding_provider,
+            self.embedding_model_name,
+            self.persist_directory,
+            require_documents=True,
         )
         # Vector retriever — k = 20 để có pool đủ lớn cho dedup sau này
         vector_retriever = vectorstore.as_retriever(search_kwargs={"k": _TOP_K})

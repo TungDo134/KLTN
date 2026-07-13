@@ -1,0 +1,74 @@
+[
+  {
+    "id": "out_dalat_2d_family",
+    "query": "Lập lịch trình Đà Lạt 2 ngày cho gia đình, ưu tiên đi nhẹ nhàng và chụp ảnh",
+    "expected_region": "Da Lat",
+    "expected_days": 2
+  },
+  {
+    "id": "out_dalat_3d_nature",
+    "query": "Tôi muốn đi Đà Lạt 3 ngày, thích thiên nhiên và quán cà phê đẹp",
+    "expected_region": "Da Lat",
+    "expected_days": 3
+  },
+  {
+    "id": "out_danang_2d_beach",
+    "query": "Lên lịch trình Đà Nẵng 2 ngày, có biển và điểm ngắm cảnh",
+    "expected_region": "Da Nang",
+    "expected_days": 2
+  },
+  {
+    "id": "out_danang_3d_family",
+    "query": "Gia đình tôi đi Đà Nẵng 3 ngày, cần lịch trình dễ di chuyển",
+    "expected_region": "Da Nang",
+    "expected_days": 3
+  },
+  {
+    "id": "out_hcm_2d_history",
+    "query": "Lịch trình TP HCM 2 ngày tập trung lịch sử, văn hóa và ăn uống",
+    "expected_region": "Ho Chi Minh",
+    "expected_days": 2
+  },
+  {
+    "id": "out_hcm_3d_family",
+    "query": "Tạo lịch trình Sài Gòn 3 ngày cho gia đình có trẻ em",
+    "expected_region": "Ho Chi Minh",
+    "expected_days": 3
+  },
+  {
+    "id": "out_hanoi_2d_culture",
+    "query": "Lập lịch trình Hà Nội 2 ngày quanh phố cổ, hồ và điểm văn hóa",
+    "expected_region": "Ha Noi",
+    "expected_days": 2
+  },
+  {
+    "id": "out_hanoi_3d_history",
+    "query": "Tôi muốn lịch trình Hà Nội 3 ngày, ưu tiên lịch sử và ẩm thực",
+    "expected_region": "Ha Noi",
+    "expected_days": 3
+  },
+  {
+    "id": "out_nhatrang_2d_beach",
+    "query": "Lên lịch trình Nha Trang 2 ngày để đi biển và nghỉ dưỡng",
+    "expected_region": "Nha Trang",
+    "expected_days": 2
+  },
+  {
+    "id": "out_nhatrang_3d_family",
+    "query": "Gia đình đi Nha Trang 3 ngày, muốn có đảo và điểm vui chơi",
+    "expected_region": "Nha Trang",
+    "expected_days": 3
+  },
+  {
+    "id": "out_vungtau_2d_weekend",
+    "query": "Lập lịch trình Vũng Tàu 2 ngày cuối tuần, có biển và ăn uống",
+    "expected_region": "Vung Tau",
+    "expected_days": 2
+  },
+  {
+    "id": "out_vungtau_3d_view",
+    "query": "Tôi muốn đi Vũng Tàu 3 ngày, thích ngắm cảnh và địa điểm văn hóa",
+    "expected_region": "Vung Tau",
+    "expected_days": 3
+  }
+]

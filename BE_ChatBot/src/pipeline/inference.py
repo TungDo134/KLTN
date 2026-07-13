@@ -133,7 +133,7 @@ class RAGInference:
                     content=(
                         "Rewrite the user's new travel question into ONE short standalone Vietnamese travel-planning query.\n"
                         "Use previous USER messages to recover destination, days, budget, dates, group size, and preferences.\n"
-                        "If the new question asks to adjust the existing itinerary, preserve the original trip constraints and add the requested adjustment.\n"
+                        "If the conversation is about an itinerary, rewrite every follow-up as a complete itinerary request that preserves the original trip constraints and includes the requested adjustment.\n"
                         "Do NOT answer the question.\n"
                         "Do NOT create an itinerary.\n"
                         "Do NOT include markdown, JSON, bullets, explanations, or suggestions.\n"
@@ -156,7 +156,6 @@ class RAGInference:
             or "###" in rewritten
             or "```json" in rewritten.lower()
             or "dưới đây" in rewritten.lower()
-            or "lịch trình chi tiết" in rewritten.lower()
         )
 
         if invalid_rewrite:
@@ -386,11 +385,10 @@ class RAGInference:
                 "Hệ thống vẫn đã xử lý truy vấn, vui lòng thử lại sau ít phút."
             )
 
-        # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối
-        if trip_plan and trip_plan.days:
-            serialized_plan = self.orchestrator._trip_plan_to_dict(trip_plan)
-            json_block = f"\n\n```json\n{json.dumps(serialized_plan, ensure_ascii=False, indent=2)}\n```"
-            answer += json_block
+        # Luôn đính kèm trip plan để frontend tạo Text/Timeline/Mindmap.
+        serialized_plan = self.orchestrator._trip_plan_to_dict(trip_plan)
+        json_block = f"\n\n```json\n{json.dumps(serialized_plan, ensure_ascii=False, indent=2)}\n```"
+        answer += json_block
 
         print(f"\n [{self.model_info_core}]: {answer}")
 
@@ -472,12 +470,11 @@ class RAGInference:
             full_answer += fallback_answer
             yield fallback_answer
 
-        # Nếu có kế hoạch, tự động đính kèm khối JSON lịch trình chuẩn ở cuối và stream tiếp
-        if trip_plan and trip_plan.days:
-            serialized_plan = self.orchestrator._trip_plan_to_dict(trip_plan)
-            json_block = f"\n\n```json\n{json.dumps(serialized_plan, ensure_ascii=False, indent=2)}\n```"
-            full_answer += json_block
-            yield json_block
+        # Luôn đính kèm trip plan để frontend tạo Text/Timeline/Mindmap.
+        serialized_plan = self.orchestrator._trip_plan_to_dict(trip_plan)
+        json_block = f"\n\n```json\n{json.dumps(serialized_plan, ensure_ascii=False, indent=2)}\n```"
+        full_answer += json_block
+        yield json_block
 
         print(f"\n [{self.model_info_core}]: {full_answer}")
 

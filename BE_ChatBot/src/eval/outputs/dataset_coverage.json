@@ -1,0 +1,108 @@
+{
+  "summary": {
+    "total_places": 600,
+    "places_by_region": {
+      "Da Lat": 100,
+      "Da Nang": 100,
+      "Ha Noi": 100,
+      "Ho Chi Minh": 100,
+      "Nha Trang": 100,
+      "Vung Tau": 100
+    },
+    "unique_tags_count": 304,
+    "unique_types_count": 17,
+    "missing_metadata_rate_by_field": {
+      "id": 0.0,
+      "name": 0.0,
+      "region": 0.0,
+      "type": 0.0,
+      "tags": 0.0,
+      "rating.score": 0.0,
+      "rating.review_count": 0.0,
+      "geo.lat": 0.0,
+      "geo.lng": 0.0,
+      "time.open": 0.0,
+      "time.close": 0.0,
+      "avg_duration_minutes": 0.0,
+      "entrance_fee": 0.0,
+      "description": 0.0,
+      "best_time": 0.0
+    },
+    "avg_rating_by_region": {
+      "Hà Nội": 4.439,
+      "Hồ Chí Minh": 4.491,
+      "Nha Trang": 4.39,
+      "Vũng Tàu": 4.455,
+      "Đà Lạt": 4.432,
+      "Đà Nẵng": 4.467
+    },
+    "warnings": []
+  },
+  "metrics": [
+    {
+      "Nhóm": "Dataset Coverage",
+      "Tên chỉ số": "Tong so dia diem",
+      "Công dụng": "Cho biet quy mo du lieu dang dung.",
+      "Tại sao cần": "Chung minh benchmark duoc chay tren tap 600 dia diem, 100 dia diem moi vung.",
+      "Giá trị / Cách tính": "count(place)",
+      "Đơn vị": "dia diem",
+      "Chiều tốt": "Khong ap dung",
+      "Nguồn dữ liệu": "src/source_data/places_data/*.json",
+      "Cỡ mẫu": "600",
+      "Kết quả đo được": 600,
+      "Ghi chú": "Nen bao cao tong va chi tiet theo vung."
+    },
+    {
+      "Nhóm": "Dataset Coverage",
+      "Tên chỉ số": "So dia diem theo vung",
+      "Công dụng": "Kiem tra do can bang cua 6 tap dia diem.",
+      "Tại sao cần": "Neu moi vung deu co 100 dia diem thi benchmark truy xuat theo vung cong bang hon.",
+      "Giá trị / Cách tính": "count(place by region)",
+      "Đơn vị": "dia diem/vung",
+      "Chiều tốt": "Gan 100 moi vung",
+      "Nguồn dữ liệu": "src/source_data/places_data/*.json",
+      "Cỡ mẫu": "600",
+      "Kết quả đo được": "Da Lat: 100, Da Nang: 100, Ha Noi: 100, Ho Chi Minh: 100, Nha Trang: 100, Vung Tau: 100",
+      "Ghi chú": "Ky vong: 100 dia diem/vung."
+    },
+    {
+      "Nhóm": "Dataset Coverage",
+      "Tên chỉ số": "So tag/type duy nhat",
+      "Công dụng": "Do do da dang nhu cau du lich ma metadata co the mo ta.",
+      "Tại sao cần": "Tag/type phong phu giup giai thich kha nang loc va de xuat cua he thong.",
+      "Giá trị / Cách tính": "unique(tags), unique(type)",
+      "Đơn vị": "so luong",
+      "Chiều tốt": "Cao hon",
+      "Nguồn dữ liệu": "Place JSON metadata",
+      "Cỡ mẫu": "600",
+      "Kết quả đo được": "304 tags, 17 types",
+      "Ghi chú": "Nen dinh kem danh sach top tags neu can phan tich sau."
+    },
+    {
+      "Nhóm": "Dataset Coverage",
+      "Tên chỉ số": "Ty le thieu metadata",
+      "Công dụng": "Kiem tra chat luong du lieu dau vao.",
+      "Tại sao cần": "Metadata thieu co the lam yeu loc, rerank va lap lich trinh.",
+      "Giá trị / Cách tính": "avg(missing_field_count / total_places by required field)",
+      "Đơn vị": "%",
+      "Chiều tốt": "Thap hon",
+      "Nguồn dữ liệu": "Place JSON metadata",
+      "Cỡ mẫu": "600",
+      "Kết quả đo được": "0.00%",
+      "Ghi chú": "Nen bao cao them missing theo tung field trong JSON output."
+    },
+    {
+      "Nhóm": "Dataset Coverage",
+      "Tên chỉ số": "Rating trung binh theo vung",
+      "Công dụng": "Mo ta chat luong danh gia cua dia diem trong moi vung.",
+      "Tại sao cần": "Giup giai thich khi recommender uu tien dia diem co rating cao.",
+      "Giá trị / Cách tính": "avg(rating.score by region)",
+      "Đơn vị": "diem",
+      "Chiều tốt": "Cao hon",
+      "Nguồn dữ liệu": "Place JSON rating.score",
+      "Cỡ mẫu": "600",
+      "Kết quả đo được": "Hà Nội: 4.4390, Hồ Chí Minh: 4.4910, Nha Trang: 4.3900, Vũng Tàu: 4.4550, Đà Lạt: 4.4320, Đà Nẵng: 4.4670",
+      "Ghi chú": "Chi tinh cac item co rating.score hop le."
+    }
+  ]
+}

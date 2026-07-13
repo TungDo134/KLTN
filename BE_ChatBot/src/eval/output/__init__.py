@@ -1,0 +1,1 @@
+"""Output validity benchmark."""
