@@ -18,6 +18,7 @@ site-packages/
 # Virtual Environment
 # -----------------------------------------------------------------------
 .venv/
+.venv-deploy/
 venv/
 env/
 ENV/

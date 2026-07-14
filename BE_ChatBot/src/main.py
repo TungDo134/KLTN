@@ -6,8 +6,6 @@ MAIN APPLICATION - END POINT
 import os
 from contextlib import asynccontextmanager
 
-import gradio as gr
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -53,29 +51,3 @@ app.add_middleware(
     allow_headers=["*"],
     allow_credentials=True,
 )
-
-
-# --- Gradio ChatInterface (Tạm thời tắt — dùng React Frontend) ---
-
-
-async def gradio_predict(message: str, history: list) -> str:
-    """Hàm này được Gradio gọi mỗi khi user gửi tin nhắn."""
-    inference: RAGInference = app.state.inference
-    if inference is None:
-        return "Hệ thống chưa sẵn sàng, vui lòng thử lại sau."
-    return await inference.predict_async(message)
-
-
-gradio_ui = gr.ChatInterface(
-    fn=gradio_predict,
-    title="🇻🇳 Trợ lý Du lịch Việt Nam",
-    description="Hỏi bất kỳ điều gì về du lịch Việt Nam!",
-    examples=[
-        "Địa điểm du lịch nổi tiếng ở Hội An?",
-        "Món ăn đặc sản Hà Nội là gì?",
-        "Thời điểm nào đẹp nhất để đến Đà Lạt?",
-    ],
-)
-
-# Mount Gradio vào FastAPI tại route main /
-app = gr.mount_gradio_app(app, gradio_ui, path="/")
