@@ -37,6 +37,13 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Vietnam Travel RAG API", lifespan=lifespan)
+
+
+@app.get("/health", tags=["health"])
+async def health_check():
+    return {"status": "ok"}
+
+
 app.include_router(auth.router)
 app.include_router(chat.router)
 app.include_router(conversation.router)

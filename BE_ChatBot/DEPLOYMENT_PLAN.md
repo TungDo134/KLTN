@@ -380,7 +380,17 @@ Chạy `init_db` lần thứ hai vẫn thành công và không tạo bảng trù
 
 ### Kết quả/tiến độ Phase 2
 
-> ⏳ Chưa triển khai. Kết quả kiểm tra sẽ được cập nhật sau khi hoàn thành Phase 2.
+**Trạng thái: ✅ Hoàn thành — 5/5 PASS**
+
+| # | Nội dung kiểm tra | Kết quả | Kết quả chính |
+|---|---|---|---|
+| 1 | Git và ChromaDB | ✅ PASS | Git nhận diện `src/db/chroma_db/` để commit; local model và Firebase credentials file vẫn bị ignore. |
+| 2 | Firebase bằng JSON environment | ✅ PASS | Backend khởi động với `FIREBASE_CREDENTIALS_JSON` và đăng nhập Firebase thành công. |
+| 3 | Firebase local path fallback | ✅ PASS | Backend đọc credentials từ đường dẫn local; `POST /auth/firebase-login` trả HTTP 200. |
+| 4 | Tạo PostgreSQL schema | ✅ PASS | `src.db.init_db` chạy thành công hai lần; database có đủ 3 bảng và 2 bản ghi test vẫn còn sau lần chạy thứ hai, xác nhận không xóa database, bảng hoặc dữ liệu. |
+| 5 | SQLAlchemy `NullPool` | ✅ PASS | Engine runtime trả về pool type `NullPool`. |
+
+Kết quả kiểm tra: [Result Test Phase 2](<../../LOG TERMINAL (13072026)/Result Test Phase 2.md>).
 
 ---
 
@@ -498,7 +508,19 @@ Có tồn tại:
 
 ### Kết quả/tiến độ Phase 3
 
-> ⏳ Chưa triển khai. Kết quả kiểm tra sẽ được cập nhật sau khi hoàn thành Phase 3.
+**Trạng thái: ✅ Hoàn thành — 7/7 PASS**
+
+| # | Nội dung kiểm tra | Kết quả | Kết quả chính |
+|---|---|---|---|
+| 1 | Docker Client và Server | ✅ PASS | Docker Desktop hoạt động với Linux container engine. |
+| 2 | Build image | ✅ PASS | Build hoàn thành và tạo image `be-chatbot:railway-free`. |
+| 3 | Kích thước image | ✅ PASS | Image có kích thước `201.57 MB`, thấp hơn mục tiêu 1 GB. |
+| 4 | Nội dung image | ✅ PASS | Có ChromaDB và system prompt; không có `.env`, Firebase credentials, local model hoặc deploy venv. |
+| 5 | Local AI dependency | ✅ PASS | `torch`, `transformers` và `gradio` đều không tồn tại trong image. |
+| 6 | Container startup | ✅ PASS | Các API provider khởi tạo thành công; ChromaDB/BM25 tải đủ 600 documents; không có traceback. |
+| 7 | Healthcheck | ✅ PASS | `GET /health` trả `status: ok`. |
+
+Kết quả kiểm tra: [Result Test Phase 3–4](<../../LOG TERMINAL (13072026)/Rsult Test Phase 3-4.md>).
 
 ---
 
@@ -602,7 +624,19 @@ Thực hiện:
 
 ### Kết quả/tiến độ Phase 4
 
-> ⏳ Chưa triển khai. Kết quả kiểm tra sẽ được cập nhật sau khi hoàn thành Phase 4.
+**Trạng thái: ✅ Hoàn thành — 5/5 PASS**
+
+| # | Nội dung kiểm tra | Kết quả | Kết quả chính |
+|---|---|---|---|
+| 1 | Startup và healthcheck | ✅ PASS | Container chạy ổn định, tải đủ 600 documents và healthcheck thành công. |
+| 2 | RAM trước chat | ✅ PASS | Sử dụng `227.4 MiB / 512 MiB`; container `running`, `OOMKilled=false`. |
+| 3 | Firebase login | ✅ PASS | Đăng nhập thành công khi container sử dụng database host `host.docker.internal`. |
+| 4 | Full chat và PostgreSQL persistence | ✅ PASS | Luồng chat hoạt động; runtime đã xác nhận kết nối `host.docker.internal:5432/kltn_chatbot_deploy` và có dữ liệu trong `users`, `conversations`, `messages`. |
+| 5 | RAM sau chat | ✅ PASS | Sau nhiều lần đo, RAM ổn định trong khoảng `227.7–228.6 MiB / 512 MiB`, thấp hơn mục tiêu `430 MiB`; container `running`, `OOMKilled=false`, `ExitCode=0`. |
+
+Kiểm tra tách database local/Docker ngày 14/07/2026: **✅ PASS** — `run_docker_be.ps1` đọc `DOCKER_DATABASE_URL`, chuyển host sang `host.docker.internal` và truyền vào container dưới tên `DATABASE_URL`; cấu hình local tiếp tục dùng database `kltn`.
+
+Kết quả kiểm tra: [Result Test Phase 3–4](<../../LOG TERMINAL (13072026)/Rsult Test Phase 3-4.md>).
 
 ---
 
