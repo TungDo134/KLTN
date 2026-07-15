@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     database_url: str | None = None
     sql_echo: bool = False
     firebase_credentials_path: str | None = None
+    firebase_credentials_json: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,

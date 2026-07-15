@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import firebase_admin
@@ -24,6 +25,11 @@ def _resolve_credentials_path() -> Path:
 def get_firebase_app():
     if firebase_admin._apps:
         return firebase_admin.get_app()
+
+    if settings.firebase_credentials_json:
+        credentials_info = json.loads(settings.firebase_credentials_json)
+        cred = credentials.Certificate(credentials_info)
+        return firebase_admin.initialize_app(cred)
 
     credentials_path = _resolve_credentials_path()
 

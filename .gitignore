@@ -18,6 +18,7 @@ site-packages/
 # Virtual Environment
 # -----------------------------------------------------------------------
 .venv/
+.venv-deploy/
 venv/
 env/
 ENV/
@@ -48,6 +49,10 @@ lerna-debug.log*
 # -----------------------------------------------------------------------
 **/db/chroma_db/
 chroma_db/
+
+# ChromaDB seed used by the deployed backend
+!BE_ChatBot/src/db/chroma_db/
+!BE_ChatBot/src/db/chroma_db/**
 vector_db/
 *.chroma
 

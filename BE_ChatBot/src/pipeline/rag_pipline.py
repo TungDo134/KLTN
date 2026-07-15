@@ -8,7 +8,6 @@ import time
 from typing import List
 from pathlib import Path
 import json
-import torch
 from dotenv import load_dotenv
 
 # Langchain
@@ -52,8 +51,6 @@ load_dotenv()
 - Nếu muốn thêm data, bạn chỉ cần chạy file notebook build_vector_db:
 """
 
-# Local providers may use CUDA; API embedding providers do not require it.
-_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 _TOP_K = 20
 _COLLECTION_NAME = "kltn_chatbot"
 _GOOGLE_BATCH_SIZE = 100
@@ -828,7 +825,6 @@ class RAGStorage:
             model_name=RerankerConfig.MODEL_NAME,
             top_n=RerankerConfig.TOP_N,
             api_key=RerankerConfig.COHERE_API_KEY,
-            device=_DEVICE,
             cache_dir=_DEFAULT_RERANKER_CACHE,
         )
 

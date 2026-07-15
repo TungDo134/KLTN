@@ -1,14 +1,12 @@
 from __future__ import annotations
 
 from langchain_core.documents import Document as LangChainDocument
-from rerankers import Document as RerankerDocument
-from rerankers import Reranker as build_reranker
 
 
 class DocumentReranker:
     """
     Rerank LangChain Document = mot interface chung.
-    Ho tro local HuggingFace cross-encoder va Cohere API qua thu vien rerankers (PyPI).
+    Ho tro local HuggingFace cross-encoder va Cohere API truc tiep.
     """
 
     SUPPORTED_PROVIDERS = {"huggingface", "cohere"}
@@ -48,14 +46,17 @@ class DocumentReranker:
 
     def _build_ranker(self):
         """
-        Tao reranker that su tu thu vien rerankers theo provider da chon.
+        Tao reranker theo provider da chon.
         HuggingFace chay local, Cohere goi API va bat buoc co COHERE_API_KEY.
         """
         if self.provider == "huggingface":
-            kwargs = {"model_type": "cross-encoder"}
+            import torch
+            from rerankers import Reranker as build_reranker
 
-            if self.device:
-                kwargs["device"] = self.device
+            kwargs = {"model_type": "cross-encoder"}
+            kwargs["device"] = self.device or (
+                "cuda" if torch.cuda.is_available() else "cpu"
+            )
 
             if self.cache_dir:
                 kwargs["model_kwargs"] = {"cache_dir": self.cache_dir}
@@ -65,12 +66,9 @@ class DocumentReranker:
         if not self.api_key:
             raise ValueError("COHERE_API_KEY duoc yeu cau khi RERANKER_PROVIDER=cohere")
 
-        return build_reranker(
-            self.model_name,
-            model_type="cohere",
-            api_provider="cohere",
-            api_key=self.api_key,
-        )
+        from cohere import ClientV2
+
+        return ClientV2(api_key=self.api_key)
 
     def compress_documents(
         self,
@@ -79,10 +77,21 @@ class DocumentReranker:
     ) -> list[LangChainDocument]:
         """
         Nhan danh sach LangChain Document, rerank theo query va tra ve Document goc.
-        Viec map nguoc theo doc_id giu nguyen metadata cho _docs_to_places().
+        Viec map nguoc theo index/doc_id giu nguyen metadata cho _docs_to_places().
         """
         if not documents:
             return []
+
+        if self.provider == "cohere":
+            results = self._ranker.rerank(
+                model=self.model_name,
+                query=query,
+                documents=[doc.page_content for doc in documents],
+                top_n=min(self.top_n, len(documents)),
+            )
+            return [documents[result.index] for result in results.results]
+
+        from rerankers import Document as RerankerDocument
 
         reranker_docs = [
             RerankerDocument(

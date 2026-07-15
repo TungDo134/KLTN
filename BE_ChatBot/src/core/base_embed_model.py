@@ -5,10 +5,8 @@ FACTORY CLASS TO CREATE EMBEDDING MODELS
 import os
 from enum import Enum
 
-import torch
 from langchain_core.embeddings import Embeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaEmbeddings
 
 
@@ -83,6 +81,9 @@ def get_embedding_model(
     print(f"🔧 Embedding model   : {model_name}")
 
     if provider == EmbeddingProvider.HUGGINGFACE:
+        import torch
+        from langchain_huggingface import HuggingFaceEmbeddings
+
         if not torch.cuda.is_available():
             raise EnvironmentError(
                 "Khong tim thay GPU. HuggingFace embedding yeu cau CUDA."
