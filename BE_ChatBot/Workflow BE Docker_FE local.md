@@ -4,15 +4,19 @@
 
 - [Quick Start](#quick-start)
 - [Lần đầu clone/pull code](#lần-đầu-clonepull-code)
+- [Tùy chọn: chạy BE bằng `.venv-deploy`](#tùy-chọn-chạy-be-bằng-venv-deploy)
 - [1. Khởi động Docker và PostgreSQL](#1-khởi-động-docker-và-postgresql)
 - [2. Chuẩn bị environment cho container](#2-chuẩn-bị-environment-cho-container)
 - [3. Trường hợp BE không thay đổi code](#3-trường-hợp-be-không-thay-đổi-code)
+  - [3a. Nếu container cũ tồn tại](#nếu-container-cũ-vẫn-tồn-tại)
+  - [3b. Nếu container cũ bị xóa](#nếu-container-đã-bị-xóa)
 - [4. Kiểm tra backend sẵn sàng](#4-kiểm-tra-backend-sẵn-sàng)
 - [5. Khởi động FE local](#5-khởi-động-fe-local)
 - [Khi BE thay đổi code](#khi-be-thay-đổi-code-hoặc-logic)
 - [Khi nào cần rebuild?](#khi-nào-cần-rebuild)
 - [Theo dõi trong lúc test](#theo-dõi-trong-lúc-test)
 - [Kết thúc phiên làm việc](#kết-thúc-phiên-làm-việc)
+- [Tùy chọn: chạy BE bằng `.venv-deploy`](#tùy-chọn-chạy-be-bằng-venv-deploy)
 
 ## Quick Start (dành cho đã setup build code deploy trước đó)
 
@@ -459,3 +463,149 @@ run_docker_be.ps1 -Build → kiểm tra health → npm.cmd run dev
 Kết thúc:
 Ctrl+C FE → docker stop hoặc docker rm
 ```
+
+## Tùy chọn: chạy BE bằng `.venv-deploy`
+
+### `.venv-deploy` dùng để làm gì?
+
+`.venv-deploy` là môi trường Python cô lập dùng đúng bộ thư viện trong
+`requirements.deploy.txt`. Cách này hữu ích khi cần:
+
+- Kiểm tra runtime deploy có thiếu dependency hoặc lỗi import hay không.
+- Chạy và debug backend nhanh trên Windows mà chưa cần build lại Docker image.
+- Xác nhận code vẫn chạy khi không cài `torch`, `transformers`, `gradio` và các
+  dependency AI local.
+- Tách bộ thư viện deploy khỏi `.venv` dùng cho phát triển đầy đủ.
+
+Các package tải từ PyPI được lưu tại:
+
+```text
+BE_ChatBot/.venv-deploy/Lib/site-packages
+```
+
+`.venv-deploy` chỉ nằm trên máy hiện tại và đã được `.gitignore`; không commit
+thư mục này. Người khác clone repo sẽ tự tạo lại từ `requirements.deploy.txt`.
+
+### Giới hạn so với Docker
+
+Chạy bằng `.venv-deploy` không kiểm tra được:
+
+- Dockerfile và nội dung thực tế của image.
+- Khác biệt giữa Windows và Linux container.
+- Docker networking như `host.docker.internal`.
+- Giới hạn `1 CPU / 512 MB RAM` của container.
+- `.dockerignore` có loại đúng secret và file local hay không.
+
+Vì vậy đây chỉ là bước test nhanh. Trước khi deploy vẫn phải build và test Docker.
+
+### Bước 1 — Tạo môi trường
+
+Cách này yêu cầu Python 3.12 được cài trên Windows. Kiểm tra:
+
+```powershell
+py -3.12 --version
+```
+
+Expected:
+
+```text
+Python 3.12.x
+```
+
+Sau đó, tại thư mục `BE_ChatBot`:
+
+```powershell
+py -3.12 -m venv .venv-deploy
+```
+
+Expected:
+
+```text
+BE_ChatBot/.venv-deploy/
+```
+
+Không cần activate venv vì các lệnh bên dưới gọi trực tiếp Python của
+`.venv-deploy`. Điều này tránh chạy nhầm `.venv` đang active trong terminal.
+
+### Bước 2 — Cài thư viện deploy
+
+```powershell
+.\.venv-deploy\Scripts\python.exe -m pip install --upgrade pip
+.\.venv-deploy\Scripts\python.exe -m pip install -r requirements.deploy.txt
+```
+
+`pip` tải dependency từ PyPI và cài vào `.venv-deploy`, không cài vào Python hệ
+thống, `.venv` cũ hoặc Docker image.
+
+Kiểm tra Python đang dùng:
+
+```powershell
+.\.venv-deploy\Scripts\python.exe -c "import sys; print(sys.executable)"
+```
+
+Expected: đường dẫn kết thúc bằng:
+
+```text
+BE_ChatBot\.venv-deploy\Scripts\python.exe
+```
+
+### Bước 3 — Chuẩn bị cấu hình local
+
+Cách chạy này đọc `DATABASE_URL` trong `.env`, không đọc
+`DOCKER_DATABASE_URL`. PostgreSQL local và database được khai báo trong
+`DATABASE_URL` phải đang hoạt động.
+
+Firebase sử dụng file:
+
+```text
+config/firebase-service-account.json
+```
+
+Nếu database local chưa có bảng, chạy một lần:
+
+```powershell
+.\.venv-deploy\Scripts\python.exe -m src.db.init_db
+```
+
+Expected:
+
+```text
+Database tables initialized successfully
+```
+
+### Bước 4 — Chạy backend
+
+Cách an toàn, không tác động tới Python process khác:
+
+```powershell
+.\.venv-deploy\Scripts\python.exe -m uvicorn src.main:app --host 127.0.0.1 --port 8000
+```
+
+Hoặc dùng file có sẵn:
+
+```powershell
+.\run_venv-deploy_be.bat
+```
+
+> Cảnh báo: batch file hiện gọi `taskkill /IM python.exe /F`, nên sẽ tắt tất cả
+> Python process đang chạy trên máy trước khi khởi động backend.
+
+### Bước 5 — Kiểm tra
+
+Mở PowerShell khác:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
+```
+
+Expected:
+
+```text
+status
+------
+ok
+```
+
+Kết thúc backend bằng `Ctrl+C` tại terminal đang chạy Uvicorn.
+
+---
