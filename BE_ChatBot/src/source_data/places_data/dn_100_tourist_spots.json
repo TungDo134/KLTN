@@ -67,7 +67,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bán đảo Sơn Trà là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -105,7 +105,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bãi biển Mỹ Khê là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -143,7 +143,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cầu Rồng là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -181,7 +181,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngũ Hành Sơn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -219,7 +219,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Linh Ứng Sơn Trà là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -257,7 +257,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Sông Hàn là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -295,7 +295,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Tình Yêu là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -409,7 +409,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Chợ Cồn là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -447,7 +447,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Chợ Hàn là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -485,7 +485,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Đỉnh Bàn Cờ là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -523,7 +523,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rạn Nam Ô là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -561,7 +561,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 240000,
     "description": "Suối Khoáng Nóng Núi Thần Tài là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -599,7 +599,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Thác Hòa Phú Thành là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -636,7 +636,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cung thể thao Tiên Sơn là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -674,7 +674,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Thuận Phước là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -712,7 +712,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Rạng là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -749,7 +749,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Con Gà Đà Nẵng là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -787,7 +787,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Út Tịch Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -825,7 +825,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Reply 1988 Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -863,7 +863,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Mỳ quảng Ếch Bếp Trang là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -900,7 +900,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Bánh tráng cuốn thịt heo Trần là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -937,7 +937,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 160000,
     "description": "Hải sản Năm Đảnh là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -975,7 +975,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Bún chả cá Ông Tạ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1051,7 +1051,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bán đảo Sơn Trà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1089,7 +1089,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1127,7 +1127,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cầu Rồng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1165,7 +1165,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngũ Hành Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1203,7 +1203,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1241,7 +1241,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Sông Hàn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1279,7 +1279,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Tình Yêu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1355,7 +1355,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bảo tàng Điêu khắc Chăm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1393,7 +1393,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Chợ Cồn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1431,7 +1431,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Chợ Hàn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1469,7 +1469,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1507,7 +1507,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rạn Nam Ô (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1545,7 +1545,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 240000,
     "description": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1583,7 +1583,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Thác Hòa Phú Thành (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1620,7 +1620,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1658,7 +1658,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Thuận Phước (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1696,7 +1696,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Rạng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1733,7 +1733,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1771,7 +1771,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Út Tịch Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1809,7 +1809,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Reply 1988 Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1847,7 +1847,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1884,7 +1884,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1921,7 +1921,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 160000,
     "description": "Hải sản Năm Đảnh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1959,7 +1959,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Bún chả cá Ông Tạ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2035,7 +2035,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bán đảo Sơn Trà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2073,7 +2073,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2111,7 +2111,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cầu Rồng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2149,7 +2149,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngũ Hành Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2187,7 +2187,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2225,7 +2225,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Sông Hàn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2263,7 +2263,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Tình Yêu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2377,7 +2377,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Chợ Cồn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2415,7 +2415,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Chợ Hàn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2453,7 +2453,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2491,7 +2491,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rạn Nam Ô (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2529,7 +2529,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 240000,
     "description": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2567,7 +2567,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Thác Hòa Phú Thành (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2604,7 +2604,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2642,7 +2642,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Thuận Phước (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2680,7 +2680,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Rạng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2717,7 +2717,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2755,7 +2755,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Út Tịch Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2793,7 +2793,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Reply 1988 Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2831,7 +2831,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Mỳ quảng Ếch Bếp Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2868,7 +2868,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Bánh tráng cuốn thịt heo Trần (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2905,7 +2905,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 160000,
     "description": "Hải sản Năm Đảnh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2943,7 +2943,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Bún chả cá Ông Tạ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3019,7 +3019,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bán đảo Sơn Trà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3057,7 +3057,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bãi biển Mỹ Khê (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3095,7 +3095,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cầu Rồng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3133,7 +3133,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngũ Hành Sơn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3171,7 +3171,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Linh Ứng Sơn Trà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3209,7 +3209,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Sông Hàn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3247,7 +3247,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Tình Yêu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3361,7 +3361,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Chợ Cồn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3399,7 +3399,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Chợ Hàn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3437,7 +3437,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Đỉnh Bàn Cờ (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3475,7 +3475,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rạn Nam Ô (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3513,7 +3513,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 240000,
     "description": "Suối Khoáng Nóng Núi Thần Tài (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3551,7 +3551,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Thác Hòa Phú Thành (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3588,7 +3588,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cung thể thao Tiên Sơn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3626,7 +3626,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Cầu Thuận Phước (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3664,7 +3664,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Rạng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3701,7 +3701,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Con Gà Đà Nẵng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3739,7 +3739,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Út Tịch Cafe (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3777,7 +3777,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Reply 1988 Cafe (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Đà Nẵng.",
     "metadata": {
       "source_platform": "Google Maps",

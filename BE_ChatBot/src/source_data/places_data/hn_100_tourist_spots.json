@@ -29,7 +29,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hồ Hoàn Kiếm là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -67,7 +67,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Lăng Chủ tịch Hồ Chí Minh là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -143,7 +143,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Một Cột là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -257,7 +257,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Lớn Hà Nội là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -295,7 +295,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Trấn Quốc là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -333,7 +333,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Đền Ngọc Sơn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -371,7 +371,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Phố cổ Hà Nội là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -409,7 +409,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chợ Đồng Xuân là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -485,7 +485,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hồ Tây là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -560,7 +560,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Quảng trường Ba Đình là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -598,7 +598,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Phố sách Hà Nội là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -787,7 +787,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Làng gốm Bát Tràng là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -863,7 +863,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Hương là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -901,7 +901,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Vườn quốc gia Ba Vì là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -939,7 +939,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Làng cổ Đường Lâm là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -977,7 +977,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bơ Bơ Kinh Tế Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1015,7 +1015,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cà phê trứng Giảng là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1053,7 +1053,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Tiệm cà phê Yên là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1091,7 +1091,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Quán Ăn Ngon Phan Bội Châu là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1129,7 +1129,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Phở Thìn Bờ Hồ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1167,7 +1167,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Bún chả Hương Liên (Obama) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1205,7 +1205,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Chả cá Lã Vọng là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1243,7 +1243,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1357,7 +1357,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Một Cột (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1471,7 +1471,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1509,7 +1509,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Trấn Quốc (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1547,7 +1547,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Đền Ngọc Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1585,7 +1585,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Phố cổ Hà Nội (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1623,7 +1623,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chợ Đồng Xuân (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1699,7 +1699,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hồ Tây (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1774,7 +1774,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Quảng trường Ba Đình (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1812,7 +1812,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Phố sách Hà Nội (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2001,7 +2001,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Làng gốm Bát Tràng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2077,7 +2077,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Hương (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2115,7 +2115,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Vườn quốc gia Ba Vì (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2191,7 +2191,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2229,7 +2229,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cà phê trứng Giảng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2267,7 +2267,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Tiệm cà phê Yên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2305,7 +2305,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2343,7 +2343,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Phở Thìn Bờ Hồ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2381,7 +2381,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2419,7 +2419,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Chả cá Lã Vọng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2457,7 +2457,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2571,7 +2571,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Một Cột (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2685,7 +2685,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nhà thờ Lớn Hà Nội (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2723,7 +2723,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Chùa Trấn Quốc (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2761,7 +2761,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Đền Ngọc Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2799,7 +2799,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Phố cổ Hà Nội (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2837,7 +2837,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chợ Đồng Xuân (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2875,7 +2875,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Cầu Long Biên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2913,7 +2913,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hồ Tây (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2988,7 +2988,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Quảng trường Ba Đình (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3026,7 +3026,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Phố sách Hà Nội (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3177,7 +3177,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Tháp nước Hàng Đậu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3215,7 +3215,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Làng gốm Bát Tràng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `culture` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3291,7 +3291,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Hương (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3329,7 +3329,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Vườn quốc gia Ba Vì (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3405,7 +3405,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bơ Bơ Kinh Tế Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3443,7 +3443,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cà phê trứng Giảng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3481,7 +3481,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Tiệm cà phê Yên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3519,7 +3519,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Quán Ăn Ngon Phan Bội Châu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3557,7 +3557,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Phở Thìn Bờ Hồ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3595,7 +3595,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 150000,
     "description": "Bún chả Hương Liên (Obama) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3633,7 +3633,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Chả cá Lã Vọng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3671,7 +3671,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hồ Hoàn Kiếm (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `lake` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3785,7 +3785,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Một Cột (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Hà Nội.",
     "metadata": {
       "source_platform": "Google Maps",

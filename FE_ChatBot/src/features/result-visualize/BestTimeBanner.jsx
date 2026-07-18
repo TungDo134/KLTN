@@ -1,18 +1,18 @@
 import { FiCalendar } from "react-icons/fi";
 
-function formatBestTime(bestTime) {
+function formatBestTime(bestTime, language) {
   if (!bestTime) return null;
 
   return String(bestTime)
     .split("&")
     .map((part) => part.trim())
     .filter(Boolean)
-    .map((part) => `Tháng ${part}`)
-    .join(" hoặc ");
+    .map((part) => `${language === "en" ? "Months" : "Tháng"} ${part}`)
+    .join(language === "en" ? " or " : " hoặc ");
 }
 
-function BestTimeBanner({ bestTime, region }) {
-  const label = formatBestTime(bestTime);
+function BestTimeBanner({ bestTime, region, language = "vi" }) {
+  const label = formatBestTime(bestTime, language);
 
   if (!label) return null;
 
@@ -22,7 +22,10 @@ function BestTimeBanner({ bestTime, region }) {
       <div>
         {/* Banner hien thi mua du lich phu hop nhat tu JSON trip plan cua backend. */}
         <p className="font-medium">
-          Thời điểm đẹp nhất{region ? ` cho ${region}` : ""}
+          {language === "en"
+            ? "Best time to visit"
+            : "Thời điểm đẹp nhất"}
+          {region ? ` ${language === "en" ? "for" : "cho"} ${region}` : ""}
         </p>
         <p className="mt-1 text-emerald-100/80">{label}</p>
       </div>

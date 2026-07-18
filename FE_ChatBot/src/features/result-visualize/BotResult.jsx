@@ -5,6 +5,7 @@ import TextResult from "./TextResult";
 import TimelineResult from "./TimelineResult";
 import MindmapResult from "./MindmapResult";
 import BestTimeBanner from "./BestTimeBanner";
+import BudgetSummary from "./BudgetSummary";
 import convertToMindmap from "../../helper/convertToMindmap";
 
 function BotResult({ tripData }) {
@@ -13,19 +14,36 @@ function BotResult({ tripData }) {
     tripData && Array.isArray(tripData.days)
       ? tripData
       : { title: "Trip", days: [] };
+  const language = safeTripData.language === "en" ? "en" : "vi";
+  const budgetSummary = safeTripData.budget_summary ?? null;
+  const showBudget = Boolean(budgetSummary);
 
   const timelineData = safeTripData.days;
-  const mindmapData = convertToMindmap(safeTripData);
+  const mindmapData = convertToMindmap(safeTripData, language);
 
   return (
     <div className="rounded-xl p-4 max-w-3xl">
       <BestTimeBanner
         bestTime={safeTripData.best_time}
         region={safeTripData.region}
+        language={language}
       />
-      <ResultSwitcher view={view} setView={setView} />
-      {view === "text" && <TextResult data={timelineData} />}
-      {view === "timeline" && <TimelineResult data={timelineData} />}
+      <BudgetSummary summary={budgetSummary} language={language} />
+      <ResultSwitcher view={view} setView={setView} language={language} />
+      {view === "text" && (
+        <TextResult
+          data={timelineData}
+          language={language}
+          showBudget={showBudget}
+        />
+      )}
+      {view === "timeline" && (
+        <TimelineResult
+          data={timelineData}
+          language={language}
+          showBudget={showBudget}
+        />
+      )}
       {view === "mindmap" && <MindmapResult data={mindmapData} />}
     </div>
   );

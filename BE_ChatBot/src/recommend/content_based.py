@@ -24,10 +24,33 @@ class ContentBasedRecommender(BaseRecommender):
     def score(self, places: list[Place], request: TripRequest) -> list[Place]:
         """Tinh `raw content score` = `Jaccard tag similar + rating bonus`"""
         for place in places:
+            place.matched_preference_tags = self._matched_tags(
+                place.tags,
+                request.tags,
+            )
             jaccard = self._jaccard_similarity(place.tags, request.tags)
             rating_bouns = (place.rating / 5.0) * RATING_WEIGHT
             place.recommend_score = jaccard + rating_bouns
         return sorted(places, key=lambda place: place.recommend_score, reverse=True)
+
+    def _matched_tags(
+        self,
+        place_tags: list[str],
+        request_tags: list[str],
+    ) -> list[str]:
+        """Tra ve cac tag trong request khop chinh xac voi tag cua dia diem."""
+        normalized_place_tags = {
+            tag.strip().lower() for tag in place_tags if tag.strip()
+        }
+        matched_tags = []
+        for tag in request_tags:
+            normalized_tag = tag.strip().lower()
+            if (
+                normalized_tag in normalized_place_tags
+                and normalized_tag not in matched_tags
+            ):
+                matched_tags.append(normalized_tag)
+        return matched_tags
 
     def _jaccard_similarity(self, tags_a: list[str], tags_b: list[str]) -> float:
         """

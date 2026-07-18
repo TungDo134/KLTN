@@ -67,7 +67,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Tháp Bà Ponagar là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -105,7 +105,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Hòn Chồng là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -143,7 +143,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Long Sơn là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -181,7 +181,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Nhà thờ Núi Nha Trang là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -219,7 +219,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Viện Hải dương học là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -257,7 +257,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Đảo Hòn Mun là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -295,7 +295,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Đảo Hòn Tằm là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -333,7 +333,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Đảo Khỉ (Hòn Lao) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -371,7 +371,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bãi dài Cam Ranh là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -409,7 +409,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Chợ Đầm Nha Trang là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -446,7 +446,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tháp Trầm Hương là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -484,7 +484,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 210000,
     "description": "Khu du lịch Tắm bùn Tháp Bà là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -522,7 +522,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hòn Một là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -560,7 +560,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 270000,
     "description": "Hòn Tằm Mud Bath là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -597,7 +597,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Đồng muối Hòn Khói là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -634,7 +634,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rainforest Cafe là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -672,7 +672,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "An Cafe Nha Trang là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -709,7 +709,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Nem nướng Đặng Văn Quyên là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -747,7 +747,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bún sứa Năm Beo là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -784,7 +784,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Bánh căn mực Võ Trứ là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -822,7 +822,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Hải sản Tháp Bà là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -936,7 +936,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Hòn Chồng (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -974,7 +974,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Long Sơn (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1012,7 +1012,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1088,7 +1088,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Đảo Hòn Mun (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1126,7 +1126,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1164,7 +1164,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1202,7 +1202,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1240,7 +1240,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1277,7 +1277,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tháp Trầm Hương (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1315,7 +1315,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 210000,
     "description": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1353,7 +1353,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hòn Một (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1391,7 +1391,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 270000,
     "description": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1428,7 +1428,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Đồng muối Hòn Khói (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1465,7 +1465,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rainforest Cafe (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1503,7 +1503,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "An Cafe Nha Trang (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1540,7 +1540,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1578,7 +1578,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bún sứa Năm Beo (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1615,7 +1615,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1653,7 +1653,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Hải sản Tháp Bà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1767,7 +1767,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Hòn Chồng (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1805,7 +1805,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Long Sơn (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1843,7 +1843,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1919,7 +1919,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Đảo Hòn Mun (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1957,7 +1957,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1995,7 +1995,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2033,7 +2033,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2071,7 +2071,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2108,7 +2108,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tháp Trầm Hương (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2146,7 +2146,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 210000,
     "description": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2184,7 +2184,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hòn Một (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2222,7 +2222,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 270000,
     "description": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2259,7 +2259,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Đồng muối Hòn Khói (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2296,7 +2296,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rainforest Cafe (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2334,7 +2334,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "An Cafe Nha Trang (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2371,7 +2371,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2409,7 +2409,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bún sứa Năm Beo (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2446,7 +2446,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2484,7 +2484,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Hải sản Tháp Bà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2522,7 +2522,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "VinWonders Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `park` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2560,7 +2560,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Tháp Bà Ponagar (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2598,7 +2598,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Hòn Chồng (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2636,7 +2636,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Long Sơn (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2674,7 +2674,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2750,7 +2750,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Đảo Hòn Mun (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2788,7 +2788,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2826,7 +2826,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2864,7 +2864,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2902,7 +2902,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2939,7 +2939,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tháp Trầm Hương (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2977,7 +2977,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 210000,
     "description": "Khu du lịch Tắm bùn Tháp Bà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3015,7 +3015,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hòn Một (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3053,7 +3053,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 270000,
     "description": "Hòn Tằm Mud Bath (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3090,7 +3090,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Đồng muối Hòn Khói (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3127,7 +3127,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Rainforest Cafe (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3165,7 +3165,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "An Cafe Nha Trang (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3202,7 +3202,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Nem nướng Đặng Văn Quyên (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3240,7 +3240,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bún sứa Năm Beo (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3277,7 +3277,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Bánh căn mực Võ Trứ (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3315,7 +3315,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Hải sản Tháp Bà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3429,7 +3429,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Hòn Chồng (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3467,7 +3467,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chùa Long Sơn (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3505,7 +3505,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Nhà thờ Núi Nha Trang (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3581,7 +3581,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Đảo Hòn Mun (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3619,7 +3619,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 140000,
     "description": "Đảo Hòn Tằm (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3657,7 +3657,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Đảo Khỉ (Hòn Lao) (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3695,7 +3695,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bãi dài Cam Ranh (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3733,7 +3733,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Chợ Đầm Nha Trang (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `market` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3770,7 +3770,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tháp Trầm Hương (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Nha Trang.",
     "metadata": {
       "source_platform": "Google Maps",

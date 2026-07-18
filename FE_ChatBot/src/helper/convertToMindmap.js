@@ -28,7 +28,7 @@ function getTimeRange(place) {
   return place.arrival || place.departure || "";
 }
 
-function convertToMindmap(data) {
+function convertToMindmap(data, language = "vi") {
   const days = Array.isArray(data.days) ? data.days : [];
   const dayX = 340;
   const placeX = 720;
@@ -64,7 +64,12 @@ function convertToMindmap(data) {
       position: { x: 0, y: rootY },
       sourcePosition: "right",
       data: {
-        label: [data.title || "Trip", data.region].filter(Boolean).join("\n"),
+        label: [
+          data.title || (language === "en" ? "Trip" : "Chuyến đi"),
+          data.region,
+        ]
+          .filter(Boolean)
+          .join("\n"),
       },
       style: {
         background: "#1d4ed8",
@@ -94,8 +99,14 @@ function convertToMindmap(data) {
       targetPosition: "left",
       data: {
         label: [
-          `Ngày ${day.day}`,
-          `${places.length} địa điểm`,
+          `${language === "en" ? "Day" : "Ngày"} ${day.day}`,
+          `${places.length} ${
+            language === "en"
+              ? places.length === 1
+                ? "place"
+                : "places"
+              : "địa điểm"
+          }`,
           day.description,
         ]
           .filter(Boolean)
