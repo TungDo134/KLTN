@@ -173,11 +173,24 @@ class TripOrchestrator:
         if mode == "trip_planning":
             trip_plan = self.planner.plan(recommend_result)
 
+        budget_places = recommended_places
+        if trip_plan is not None:
+            budget_places = [
+                scheduled_place.place
+                for day in trip_plan.days
+                for scheduled_place in day.places
+            ]
+        budget_summary = self._build_budget_summary(
+            budget_places,
+            trip_request,
+        )
+
         return {
             "places": recommended_places,
             "trip_request": trip_request,
             "trip_plan": trip_plan,
             "weather": weather,
+            "budget_summary": budget_summary,
             "execution_mode": mode,
         }
 
@@ -268,6 +281,110 @@ class TripOrchestrator:
         # TODO: implement
         pass
 
+    def _entrance_fee_to_dict(self, place: Place) -> dict:
+        """Classify a positive fee as estimated and zero as unclassified."""
+        entrance_fee = max(float(getattr(place, "entrance_fee", 0) or 0), 0.0)
+        return {
+            "entrance_fee": entrance_fee,
+            "entrance_fee_status": (
+                "estimated" if entrance_fee > 0 else "unclassified_zero"
+            ),
+        }
+
+    def _build_budget_summary(
+        self,
+        places: list[Place],
+        trip_request: TripRequest,
+    ) -> dict | None:
+        """Summarize known entrance fees without estimating total trip cost."""
+        requested_budget = getattr(trip_request, "budget", None)
+        if requested_budget is None or requested_budget <= 0:
+            return None
+
+        fee_details = [self._entrance_fee_to_dict(place) for place in places]
+        estimated_total = sum(item["entrance_fee"] for item in fee_details)
+        known_fee_place_count = sum(
+            item["entrance_fee_status"] == "estimated" for item in fee_details
+        )
+        total_place_count = len(fee_details)
+        unclassified_fee_place_count = total_place_count - known_fee_place_count
+
+        if estimated_total > requested_budget:
+            status = "estimated_over_budget"
+        elif total_place_count == 0 or unclassified_fee_place_count > 0:
+            status = "partial"
+        else:
+            status = "estimated_within_budget"
+
+        return {
+            "scope": "entrance_fee_only",
+            "requested_budget": float(requested_budget),
+            "estimated_entrance_fee_total": estimated_total,
+            "known_fee_place_count": known_fee_place_count,
+            "unclassified_fee_place_count": unclassified_fee_place_count,
+            "total_place_count": total_place_count,
+            "status": status,
+        }
+
+    def _place_recommendation_to_dict(
+        self,
+        place: Place,
+        response_language: str = "vi",
+    ) -> dict:
+        """Serialize the evidence used to explain why a place was recommended."""
+        language = "en" if response_language == "en" else "vi"
+        reasons = []
+        matched_preference_tags = getattr(
+            place,
+            "matched_preference_tags",
+            [],
+        )
+
+        if matched_preference_tags:
+            if language == "en":
+                reasons.append("Matches the travel preferences in your request.")
+            else:
+                matched_tags = ", ".join(matched_preference_tags)
+                reasons.append(f"Phù hợp với sở thích: {matched_tags}.")
+
+        rating = getattr(place, "rating", 0)
+        rating_count = getattr(place, "rating_count", 0)
+        rating_is_reliable = getattr(place, "rating_is_reliable", False)
+        if rating_is_reliable and rating > 0:
+            if language == "en":
+                rating_reason = f"Has a reliable rating of {rating:.1f}/5"
+                if rating_count > 0:
+                    rating_reason += f" from {rating_count:,} reviews"
+            else:
+                formatted_rating = f"{rating:.1f}".replace(".", ",")
+                rating_reason = f"Có mức đánh giá đáng tin cậy {formatted_rating}/5"
+                if rating_count > 0:
+                    formatted_rating_count = f"{rating_count:,}".replace(",", ".")
+                    rating_reason += f" từ {formatted_rating_count} lượt đánh giá"
+            reasons.append(rating_reason + ".")
+
+        distance = getattr(place, "distance_to_candidate_centroid_km", None)
+        location_score = getattr(place, "location_recommend_score", 0)
+        # Only describe proximity for the nearer half of the candidate-distance range.
+        if distance is not None and location_score >= 0.5:
+            if language == "en":
+                reasons.append(
+                    "Located about "
+                    f"{distance:.1f} km from the candidate cluster center, "
+                    "making it easier to combine with nearby places."
+                )
+            else:
+                formatted_distance = f"{distance:.1f}".replace(".", ",")
+                reasons.append(
+                    f"Cách trung tâm thành phố khoảng {formatted_distance} km, "
+                    "thuận tiện kết hợp với các địa điểm lân cận."
+                )
+
+        return {
+            "name": getattr(place, "name", ""),
+            "recommendation_reasons": reasons[:3],
+        }
+
     def _trip_plan_to_dict(
         self,
         plan: TripPlan,
@@ -291,6 +408,13 @@ class TripOrchestrator:
         language = "en" if response_language == "en" else "vi"
         region = plan.trip_request.region or ""
         days = plan.trip_request.days or 0
+        scheduled_places = [
+            scheduled_place.place for day in plan.days for scheduled_place in day.places
+        ]
+        budget_summary = self._build_budget_summary(
+            scheduled_places,
+            plan.trip_request,
+        )
 
         if language == "en":
             title = f"Explore {region} in {days} days"
@@ -312,21 +436,28 @@ class TripOrchestrator:
             "region": plan.trip_request.region,
             "best_time": best_time,
             "language": language,
+            "budget_summary": budget_summary,
             "days": [
                 {
                     "day": day.day,
                     "title": day_title,
+                    "estimated_entrance_fee_total": sum(
+                        self._entrance_fee_to_dict(sp.place)["entrance_fee"]
+                        for sp in day.places
+                    ),
                     "description": description_template.format(
                         place_count=len(day.places),
-                        place_label=(
-                            "place" if len(day.places) == 1 else "places"
-                        )
+                        place_label=("place" if len(day.places) == 1 else "places")
                         if language == "en"
                         else "địa điểm",
                     ),
                     "places": [
                         {
-                            "name": sp.place.name,
+                            **self._place_recommendation_to_dict(
+                                sp.place,
+                                language,
+                            ),
+                            **self._entrance_fee_to_dict(sp.place),
                             "arrival": sp.arrival_time,
                             "departure": sp.departure_time,
                             "tags": sp.place.tags if language == "vi" else [],

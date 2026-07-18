@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
+.sidebar-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.sidebar-scrollbar:hover {
+  scrollbar-color: #4b5563 transparent;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+}
+
+.sidebar-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
 :root {
   /* =========================================
      CẤU HÌNH MÀU SẮC GIAO DIỆN (THEME COLORS)
      ========================================= */
-  
+
   /* Nền (Backgrounds) */
-  --bg-main: #171A21;       /* Nền khu vực chat chính */
-  --bg-sidebar: #0F1115;    /* Nền thanh điều hướng trái */
-  --bg-panel: #212631;      /* Nền cho input box, dropdown, bong bóng chat của user */
-  --bg-hover: #2D3446;      /* Nền khi hover vào các nút, item */
-  
+  --bg-main: #171a21; /* Nền khu vực chat chính */
+  --bg-sidebar: #0f1115; /* Nền thanh điều hướng trái */
+  --bg-panel: #212631; /* Nền cho input box, dropdown, bong bóng chat của user */
+  --bg-hover: #2d3446; /* Nền khi hover vào các nút, item */
+
   /* Viền (Borders) */
-  --border-main: #374151;   /* Viền chung cho input, menu, nút */
-  
+  --border-main: #374151; /* Viền chung cho input, menu, nút */
+
   /* Chữ (Text) */
-  --text-main: #F3F4F6;     /* Chữ chính (tiêu đề, nội dung chat) */
-  --text-muted: #9CA3AF;    /* Chữ phụ (danh sách chat, nút chức năng) */
-  --text-dark: #6B7280;     /* Chữ rất nhạt (disclaimer, ghi chú nhỏ) */
-  
+  --text-main: #f3f4f6; /* Chữ chính (tiêu đề, nội dung chat) */
+  --text-muted: #9ca3af; /* Chữ phụ (danh sách chat, nút chức năng) */
+  --text-dark: #6b7280; /* Chữ rất nhạt (disclaimer, ghi chú nhỏ) */
+
   /* Thương hiệu (Brand/Accent) */
-  --accent-color: #60A5FA;  /* Màu nhấn (icon mặt trời, điểm nhấn) */
+  --accent-color: #60a5fa; /* Màu nhấn (icon mặt trời, điểm nhấn) */
 }
 
 /* Componet timeline result */

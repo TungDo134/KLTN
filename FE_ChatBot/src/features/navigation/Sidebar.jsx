@@ -247,7 +247,7 @@ function Sidebar({
       </div>
 
       {/* Recents */}
-      <div className="flex-1 overflow-y-auto px-3 mt-4 mb-2">
+      <div className="sidebar-scrollbar flex-1 overflow-y-auto px-3 mt-4 mb-2">
         <p className="px-2.5 mb-2 text-[11px] font-medium text-gray-500">
           Recents
         </p>
@@ -297,7 +297,9 @@ function Sidebar({
                     >
                       <input
                         value={editingTitle}
-                        onChange={(event) => setEditingTitle(event.target.value)}
+                        onChange={(event) =>
+                          setEditingTitle(event.target.value)
+                        }
                         onKeyDown={(event) => {
                           if (event.key === "Escape") {
                             event.preventDefault();
@@ -343,7 +345,9 @@ function Sidebar({
                         <IoPencilOutline size={14} />
                       </button>
                       <button
-                        onClick={() => handleDeleteConversation(conversation.id)}
+                        onClick={() =>
+                          handleDeleteConversation(conversation.id)
+                        }
                         className="p-2 text-gray-500 hover:text-red-400 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
                       >
                         <IoTrashOutline size={14} />

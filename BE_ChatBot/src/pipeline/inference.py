@@ -181,6 +181,7 @@ class RAGInference:
         question: str,
         itinerary_text: str = None,
         weather_context: str = "",
+        budget_context: str = "",
         response_language: str = "vi",
         execution_mode: str = "trip_planning",
     ) -> list:
@@ -206,6 +207,12 @@ class RAGInference:
     {weather_context}
 
     Khi tư vấn, hãy dùng phần này để nói rõ nên đi, nên cân nhắc, hoặc nên đổi lịch nếu rủi ro thời tiết cao."""
+
+        if budget_context:
+            system_content += f"""
+
+    THÔNG TIN NGÂN SÁCH MINH BẠCH:
+    {budget_context}"""
 
         if itinerary_text:
             system_content += f"""
@@ -329,6 +336,205 @@ class RAGInference:
             + json.dumps(serialized_plan, ensure_ascii=False, indent=2)
             + "\n```"
         )
+
+    def _build_recommendation_details(
+        self,
+        places: list,
+        response_language: str = "vi",
+    ) -> str:
+        """Build deterministic recommendation reasons without asking the LLM."""
+        if not places:
+            return ""
+
+        language = "en" if response_language == "en" else "vi"
+        heading = (
+            "### Why these places were recommended"
+            if language == "en"
+            else "### Vì sao các địa điểm này được đề xuất"
+        )
+        lines = [heading]
+        display_index = 0
+
+        for place in places:
+            details = self.orchestrator._place_recommendation_to_dict(
+                place,
+                language,
+            )
+            reasons = details["recommendation_reasons"]
+            if not reasons:
+                continue
+
+            display_index += 1
+            lines.append(f"\n**{display_index}. {details['name']}**")
+            lines.extend(f"- {reason}" for reason in reasons)
+
+        if len(lines) == 1:
+            return ""
+        return "\n\n" + "\n".join(lines)
+
+    def _format_vnd(self, amount: float, language: str) -> str:
+        formatted_amount = f"{round(float(amount or 0)):,}"
+        if language != "en":
+            formatted_amount = formatted_amount.replace(",", ".")
+        return f"{formatted_amount} VND"
+
+    def _format_budget_for_llm(
+        self,
+        budget_summary: dict | None,
+        response_language: str = "vi",
+    ) -> str:
+        """Provide verified fee scope so the LLM does not claim full affordability."""
+        if not budget_summary:
+            return ""
+
+        language = "en" if response_language == "en" else "vi"
+        requested_budget = self._format_vnd(
+            budget_summary["requested_budget"],
+            language,
+        )
+        estimated_total = self._format_vnd(
+            budget_summary["estimated_entrance_fee_total"],
+            language,
+        )
+        known_count = budget_summary["known_fee_place_count"]
+        total_count = budget_summary["total_place_count"]
+        unclassified_count = budget_summary["unclassified_fee_place_count"]
+        if known_count == 0:
+            estimated_total = (
+                "No classified entrance-fee data"
+                if language == "en"
+                else "Chưa có dữ liệu phí được phân loại"
+            )
+
+        if language == "en":
+            return (
+                f"Requested total budget: {requested_budget}.\n"
+                f"Known entrance-fee estimate: {estimated_total}.\n"
+                f"Fee coverage: {known_count}/{total_count} places; "
+                f"{unclassified_count} places have unclassified fees.\n"
+                "These figures cover known entrance fees only. Never claim that the "
+                "whole trip fits the budget because accommodation, food, transport, "
+                "and incidental costs are not included."
+            )
+        return (
+            f"Ngân sách tổng đã cung cấp: {requested_budget}.\n"
+            f"Phí tham quan đã biết ước tính: {estimated_total}.\n"
+            f"Mức độ bao phủ phí: {known_count}/{total_count} địa điểm; "
+            f"{unclassified_count} địa điểm chưa phân loại phí.\n"
+            "Các số liệu này chỉ bao gồm phí tham quan đã biết. Không được kết luận "
+            "toàn bộ chuyến đi nằm trong ngân sách vì chưa tính lưu trú, ăn uống, "
+            "di chuyển và chi phí phát sinh."
+        )
+
+    def _build_budget_details(
+        self,
+        budget_summary: dict | None,
+        response_language: str = "vi",
+    ) -> str:
+        """Build the recommendation-mode budget disclosure deterministically."""
+        if not budget_summary:
+            return ""
+
+        language = "en" if response_language == "en" else "vi"
+        requested_value = budget_summary["requested_budget"]
+        estimated_value = budget_summary["estimated_entrance_fee_total"]
+        requested_budget = self._format_vnd(requested_value, language)
+        estimated_total = self._format_vnd(estimated_value, language)
+        known_count = budget_summary["known_fee_place_count"]
+        total_count = budget_summary["total_place_count"]
+        unclassified_count = budget_summary["unclassified_fee_place_count"]
+        status = budget_summary["status"]
+        if known_count == 0:
+            estimated_total = (
+                "No classified entrance-fee data"
+                if language == "en"
+                else "Chưa có dữ liệu phí được phân loại"
+            )
+
+        if language == "en":
+            lines = [
+                "### Budget transparency",
+                "",
+                f"- **Requested budget:** {requested_budget}",
+                f"- **Known entrance-fee estimate:** {estimated_total}",
+                f"- **Fee coverage:** {known_count}/{total_count} places",
+                f"- **Unclassified fees:** {unclassified_count} places",
+                "",
+            ]
+            if status == "estimated_over_budget":
+                over_amount = self._format_vnd(
+                    estimated_value - requested_value,
+                    language,
+                )
+                lines.append(
+                    "Known entrance fees alone exceed the requested budget by "
+                    f"approximately {over_amount}."
+                )
+            elif status == "partial":
+                if known_count == 0:
+                    lines.append(
+                        "No entrance fees are currently classified, so there is "
+                        "not enough data to assess the whole trip."
+                    )
+                else:
+                    lines.append(
+                        "Known entrance fees do not currently exceed the budget, but "
+                        "there is not enough data to assess the whole trip."
+                    )
+            else:
+                lines.append(
+                    "The estimated entrance fees are within the requested budget."
+                )
+            lines.extend(
+                [
+                    "",
+                    "> This estimate covers known entrance fees only; accommodation, "
+                    "food, transport, and incidental costs are not included.",
+                ]
+            )
+        else:
+            lines = [
+                "### Minh bạch ngân sách",
+                "",
+                f"- **Ngân sách đã cung cấp:** {requested_budget}",
+                f"- **Tổng phí tham quan đã biết:** {estimated_total}",
+                f"- **Dữ liệu phí:** {known_count}/{total_count} địa điểm",
+                f"- **Chưa phân loại phí:** {unclassified_count} địa điểm",
+                "",
+            ]
+            if status == "estimated_over_budget":
+                over_amount = self._format_vnd(
+                    estimated_value - requested_value,
+                    language,
+                )
+                lines.append(
+                    "Riêng phí tham quan đã biết đã vượt ngân sách khoảng "
+                    f"{over_amount}."
+                )
+            elif status == "partial":
+                if known_count == 0:
+                    lines.append(
+                        "Hiện chưa có phí tham quan nào được phân loại nên chưa đủ "
+                        "dữ liệu để đánh giá toàn bộ chuyến đi."
+                    )
+                else:
+                    lines.append(
+                        "Phần phí tham quan đã biết hiện không vượt quá ngân sách. "
+                        "Tuy nhiên, chưa đủ dữ liệu để đánh giá toàn bộ chuyến đi."
+                    )
+            else:
+                lines.append(
+                    "Phí tham quan ước tính nằm trong ngân sách đã cung cấp."
+                )
+            lines.extend(
+                [
+                    "",
+                    "> Ước tính chỉ bao gồm phí tham quan đã biết; chưa bao gồm lưu trú, "
+                    "ăn uống, di chuyển và chi phí phát sinh.",
+                ]
+            )
+
+        return "\n\n" + "\n".join(lines)
 
     def _timeout_reply(self, language: str) -> str:
         if language == "en":
@@ -466,6 +672,9 @@ class RAGInference:
                 "messages": messages,
                 "trip_request": None,
                 "trip_plan": None,
+                "places": [],
+                "budget_summary": None,
+                "execution_mode": "travel_general",
             }
 
         if route_decision.resolved_question:
@@ -487,6 +696,7 @@ class RAGInference:
         trip_request = orch_res["trip_request"]
         trip_plan = orch_res["trip_plan"]
         weather = orch_res.get("weather")
+        budget_summary = orch_res.get("budget_summary")
 
         place_context = "\n\n".join(
             place.description for place in relevant_places if place.description
@@ -501,6 +711,10 @@ class RAGInference:
             question=effective_question,
             itinerary_text=itinerary_text,
             weather_context=self._format_weather_for_llm(weather),
+            budget_context=self._format_budget_for_llm(
+                budget_summary,
+                route_decision.response_language,
+            ),
             response_language=route_decision.response_language,
             execution_mode=mode,
         )
@@ -508,6 +722,9 @@ class RAGInference:
             "messages": messages,
             "trip_request": trip_request,
             "trip_plan": trip_plan,
+            "places": relevant_places,
+            "budget_summary": budget_summary,
+            "execution_mode": mode,
         }
 
     # ============================================================ #
@@ -577,6 +794,15 @@ class RAGInference:
             )
             answer = self._timeout_reply(route_decision.response_language)
 
+        if prepared["execution_mode"] == "recommendation":
+            answer += self._build_recommendation_details(
+                prepared["places"],
+                route_decision.response_language,
+            )
+            answer += self._build_budget_details(
+                prepared["budget_summary"],
+                route_decision.response_language,
+            )
         answer += self._build_visa_note(
             routing_context,
             route_decision,
@@ -657,6 +883,23 @@ class RAGInference:
             )
             full_answer += fallback_answer
             yield fallback_answer
+
+        if prepared["execution_mode"] == "recommendation":
+            recommendation_details = self._build_recommendation_details(
+                prepared["places"],
+                route_decision.response_language,
+            )
+            if recommendation_details:
+                full_answer += recommendation_details
+                yield recommendation_details
+
+            budget_details = self._build_budget_details(
+                prepared["budget_summary"],
+                route_decision.response_language,
+            )
+            if budget_details:
+                full_answer += budget_details
+                yield budget_details
 
         visa_note = self._build_visa_note(
             routing_context,

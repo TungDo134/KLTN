@@ -32,7 +32,10 @@ class LocationBasedRecommender(BaseRecommender):
         max_dist = max(distances) or 1.0
 
         for place, distance in zip(places, distances):
-            place.recommend_score = 1.0 - (distance / max_dist)
+            location_score = 1.0 - (distance / max_dist)
+            place.distance_to_candidate_centroid_km = distance
+            place.location_recommend_score = location_score
+            place.recommend_score = location_score
 
         return sorted(places, key=lambda place: place.recommend_score, reverse=True)
 

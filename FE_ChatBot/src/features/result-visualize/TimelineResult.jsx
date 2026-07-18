@@ -1,4 +1,8 @@
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
+import PlaceInsights from "./PlaceInsights";
+import EntranceFeeBadge, {
+  formatKnownEntranceFeeTotal,
+} from "./EntranceFeeBadge";
 
 const DAY_TONES = [
   {
@@ -41,7 +45,7 @@ function stripDayPrefix(title) {
   return String(title || "").replace(/^(Ngày|Day)\s+\d+\s*:\s*/i, "");
 }
 
-function TimelineResult({ data, language = "vi" }) {
+function TimelineResult({ data, language = "vi", showBudget = false }) {
   if (!Array.isArray(data) || data.length === 0) {
     return (
       <div className="mt-2 rounded-lg border border-neutral-800 bg-neutral-900/70 px-4 py-3 text-sm text-neutral-400">
@@ -80,6 +84,16 @@ function TimelineResult({ data, language = "vi" }) {
                         : "places"
                       : "địa điểm"}
                   </span>
+                  {showBudget && (
+                    <span className="rounded-full border border-white/10 bg-black/20 px-2 py-0.5 text-xs text-neutral-300">
+                      {language === "en" ? "Known fees" : "Phí đã biết"}: {" "}
+                      {formatKnownEntranceFeeTotal(
+                        day.estimated_entrance_fee_total,
+                        places,
+                        language,
+                      )}
+                    </span>
+                  )}
                 </div>
                 {day.description && (
                   <p className="mt-1 text-sm text-neutral-300">
@@ -130,6 +144,17 @@ function TimelineResult({ data, language = "vi" }) {
                               ))}
                             </div>
                           )}
+                          {showBudget && (
+                            <EntranceFeeBadge
+                              fee={place.entrance_fee}
+                              status={place.entrance_fee_status}
+                              language={language}
+                            />
+                          )}
+                          <PlaceInsights
+                            reasons={place.recommendation_reasons}
+                            language={language}
+                          />
                         </div>
                       </div>
                     </div>
