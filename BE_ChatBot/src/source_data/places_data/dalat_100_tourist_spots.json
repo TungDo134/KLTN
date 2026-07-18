@@ -65,7 +65,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Đồi chè xanh mướt trải dài với không gian săn mây bình minh cực đẹp.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -102,7 +102,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Hồ nước ngọt nhân tạo lớn nhất Đà Lạt bao quanh bởi rừng thông xanh mướt.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -139,7 +139,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Biểu tượng kiến trúc của thành phố với nụ hoa Atiso và đóa hoa Dã Quỳ khổng lồ.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -287,7 +287,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Trung tâm mua sắm và trải nghiệm ẩm thực đường phố nhộn nhịp nhất về đêm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -397,7 +397,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngôi thiền viện lớn nhất Lâm Đồng nằm bình yên bên Hồ Tuyền Lâm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -433,7 +433,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngôi chùa độc đáo khảm từ hàng triệu mảnh sành sứ, chai lọ đạt nhiều kỷ lục.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -469,7 +469,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Nhà thờ với kiến trúc châu Âu đặc trưng và sắc hồng mai anh đào nổi bật.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -649,7 +649,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Trái tim của thành phố Đà Lạt, nơi lý tưởng để đi dạo ngắm cảnh chiều tà.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -937,7 +937,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Quán lẩu bò lâu đời và nổi tiếng nhất với nước dùng đậm đà, thịt bò dày.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -973,7 +973,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Bức tường vàng check-in biểu tượng quen thuộc của giới trẻ khi đến Đà Lạt.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1009,7 +1009,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Quán kem bơ béo ngậy nức tiếng nằm trên đường Nguyễn Văn Trỗi.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1045,7 +1045,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 110000,
     "description": "Điểm ăn sáng kinh điển với chén xíu mại nóng hổi chấm bánh mỳ giòn rụm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1081,7 +1081,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Địa điểm cắm trại tự do và săn mây hoang sơ được giới phượt yêu thích.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1117,7 +1117,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Ngọn đồi nổi tiếng với cây thông cô đơn và view ngắm mây, sao đêm tuyệt đẹp.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1153,7 +1153,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tọa độ cắm trại kinh điển bên hồ nước rộng lớn và cây thông đứng một mình.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1189,7 +1189,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Hồ nước màu xanh ngọc bích ảo diệu nằm sâu trong khu vực mỏ đá cũ.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1225,7 +1225,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Cung đèo quanh co uốn lượn với cảnh sắc núi rừng trùng điệp hùng vĩ.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1477,7 +1477,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Chính tòa Đà Lạt với tượng con gà trên đỉnh tháp chuông mang kiến trúc Roman Pháp.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1513,7 +1513,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Ngôi chùa cổ kính mang kiến trúc Trung Hoa với ba pho tượng gỗ trầm hương khổng lồ.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1693,7 +1693,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Di tích lịch sử kiến trúc cổ kính, nơi an nghỉ của thân phụ Nam Phương Hoàng Hậu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1765,7 +1765,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Thảo nguyên cỏ hồng rực rỡ lãng mạn vào những tháng cuối năm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1837,7 +1837,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Điểm ngắm hoàng hôn và thung lũng đèn lung linh về đêm cực chill.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1873,7 +1873,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Tọa độ ngắm thung lũng nhà kính lên đèn sáng rực như kinh đô ánh sáng về đêm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1909,7 +1909,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 90000,
     "description": "Quán cà phê gỗ phong cách vintage chuyên đón bình minh và săn mây.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1945,7 +1945,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Quán cà phê cúc họa mi nổi tiếng bậc nhất với view thung lũng đèn lãng mạn.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1981,7 +1981,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Căn nhà gỗ nhỏ mộc mạc nép mình bên sườn đồi ngắm hoàng hôn phố núi.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2017,7 +2017,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Quán cà phê nằm giữa rừng thông hoang sơ mang phong cách biệt lập tĩnh lặng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2053,7 +2053,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Quán cà phê gỗ hai tầng ẩn mình giữa ngàn thông xanh mát.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2089,7 +2089,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Quán cà phê ngập tràn cây xanh và hoa lá mang phong cách cổ tích.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2125,7 +2125,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 90000,
     "description": "Quán cà phê dốc phố độc đáo tích hợp các vườn rau thủy canh xanh mướt.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2161,7 +2161,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Tọa độ cà phê phong cách Nhật Bản hoài cổ với nhiều tiệm bánh, tiệm mì xung quanh.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2197,7 +2197,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Không gian mộc mạc, bình yên, điểm hẹn của những tâm hồn yêu nhạc indie và rap.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2233,7 +2233,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Quán cà phê view vô cực ngắm trọn vẹn dãy núi và rừng thông đèo Prenn.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2269,7 +2269,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 90000,
     "description": "Không gian cà phê acoustic ngoài trời đón hoàng hôn và thưởng thức âm nhạc lãng mạn.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2305,7 +2305,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Sân khấu ca nhạc acoustic mây ngàn nổi tiếng giữa đồi núi trập trùng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2341,7 +2341,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Quán cà phê phong cách du mục Bohemian tràn ngập hoa cỏ rực rỡ sắc màu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2377,7 +2377,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Quán cà phê gỗ đơn sơ nhìn ra những ngọn đồi thông trập trùng sương mù.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2413,7 +2413,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Quán cà phê studio mang phong cách Hàn Quốc ngọt ngào với tông màu pastel chủ đạo.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2449,7 +2449,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Quán cà phê không gian mở ngập tràn ánh nắng và góc chụp hình xinh xắn.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2485,7 +2485,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Địa điểm thưởng thức lẩu gà lá é chuẩn vị, không gian sạch sẽ rộng rãi.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2521,7 +2521,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 180000,
     "description": "Thương hiệu bánh mì xíu mại gia truyền thơm ngon nóng hổi ăn sáng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2557,7 +2557,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Quán bánh ướt lòng gà dẻo thơm nước mắm pha đậm đà đặc trưng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2593,7 +2593,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 180000,
     "description": "Địa chỉ ẩm thực lâu năm nổi tiếng với món bánh ướt gà xé lòng heo.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2629,7 +2629,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 110000,
     "description": "Món ốc nhồi thịt thơm phức mùi sả đặt trên bếp than hồng sưởi ấm đêm lạnh.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2665,7 +2665,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 160000,
     "description": "Thương hiệu nem nướng lâu đời ngon danh bất hư truyền ăn kèm nước chấm độc quyền.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2701,7 +2701,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 190000,
     "description": "Quán nem nướng chuẩn vị với bánh tráng chiên giòn và rau sống tươi rói.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2737,7 +2737,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 120000,
     "description": "Quán nướng ngói bình dân đông đúc, thực đơn phong phú giữa trung tâm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2845,7 +2845,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Dòng suối hoang sơ xanh mát thích hợp cho các hoạt động dã ngoại trekking.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2881,7 +2881,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Hồ nước mênh mông, phong cảnh hữu tình, điểm cắm trại lý tưởng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3025,7 +3025,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Tọa độ ngắm hoàng hôn buông xuống thung lũng tuyệt đẹp.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3061,7 +3061,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Nơi sở hữu chiếc cầu thang vô cực hướng thẳng lên bầu trời.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3097,7 +3097,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Cung đèo cửa ngõ thơ mộng với những rặng thông già hai bên đường uốn lượn.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3133,7 +3133,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Cung đèo ngập tràn sắc hoa mimosa vàng rực rỡ vào mùa hoa nở.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3169,7 +3169,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Con dốc đứng huyền thoại xuất hiện trong nhiều bộ phim điện ảnh nổi tiếng.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3205,7 +3205,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Công trình kiến trúc hình vòng cung bằng gạch trần độc đáo được thế giới công nhận.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3241,7 +3241,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Tòa nhà mang đậm dấu ấn kiến trúc công sở Pháp cổ kính trang nghiêm.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3313,7 +3313,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Hồ nước xanh biếc rộng lớn thuộc huyện Đơn Dương trên đường đi Phan Rang.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3457,7 +3457,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Trải nghiệm tự tay hái dâu tây công nghệ cao chín mọng tại vườn.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3493,7 +3493,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 10000,
     "description": "Công trình tôn giáo trang nghiêm với lối kiến trúc phương Tây hài hòa.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3529,7 +3529,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Ngôi chùa sở hữu tượng Phật Bà Quan Âm lộ thiên cao nhất Việt Nam.",
     "metadata": {
       "source_platform": "Google Maps",

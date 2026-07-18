@@ -29,7 +29,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Tượng Chúa Kitô Vua là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -67,7 +67,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Mũi Nghinh Phong là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -143,7 +143,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Sau (Thùy Vân) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -181,7 +181,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Trước là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -295,7 +295,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Thích Ca Phật Đài là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -333,7 +333,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Niết Bàn Tịnh Xá là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -371,7 +371,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hòn Bà là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -409,7 +409,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Đồi Con Heo là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -447,7 +447,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bến thuyền Marina Vũng Tàu là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -485,7 +485,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bãi Dứa là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -523,7 +523,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bãi Dâu là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -598,7 +598,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Hồ Tràm / Hồ Cốc là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -636,7 +636,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 120000,
     "description": "Suối nước nóng Bình Châu là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -674,7 +674,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Soho Coffee Vũng Tàu là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -711,7 +711,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Lightroom Coffee là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -748,7 +748,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Bánh khọt Cô Ba Vũng Tàu là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -785,7 +785,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Bánh khọt Gốc Vú Sữa là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -823,7 +823,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Lẩu cá đuối Hoàng Minh là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -860,7 +860,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Sữa chua Cô Tiên là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -898,7 +898,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -936,7 +936,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1012,7 +1012,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1050,7 +1050,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Trước (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1088,7 +1088,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1164,7 +1164,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1202,7 +1202,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1240,7 +1240,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hòn Bà (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1278,7 +1278,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Đồi Con Heo (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1316,7 +1316,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1354,7 +1354,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bãi Dứa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1392,7 +1392,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bãi Dâu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1467,7 +1467,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1505,7 +1505,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 120000,
     "description": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1543,7 +1543,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1580,7 +1580,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Lightroom Coffee (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1617,7 +1617,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1654,7 +1654,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1692,7 +1692,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1729,7 +1729,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Sữa chua Cô Tiên (Cụm/Chi nhánh 2) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1767,7 +1767,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1805,7 +1805,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1881,7 +1881,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1919,7 +1919,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Trước (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -1957,7 +1957,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bạch Dinh (Villa Blanche) (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `historical` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2033,7 +2033,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2071,7 +2071,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2109,7 +2109,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hòn Bà (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2147,7 +2147,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Đồi Con Heo (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2185,7 +2185,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2223,7 +2223,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bãi Dứa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2261,7 +2261,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bãi Dâu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2336,7 +2336,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2374,7 +2374,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 120000,
     "description": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2412,7 +2412,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2449,7 +2449,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Lightroom Coffee (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2486,7 +2486,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2523,7 +2523,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2561,7 +2561,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2598,7 +2598,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Sữa chua Cô Tiên (Cụm/Chi nhánh 3) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2636,7 +2636,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2674,7 +2674,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2750,7 +2750,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2788,7 +2788,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Trước (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2902,7 +2902,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2940,7 +2940,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Niết Bàn Tịnh Xá (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -2978,7 +2978,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Hòn Bà (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3016,7 +3016,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 80000,
     "description": "Đồi Con Heo (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3054,7 +3054,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Bến thuyền Marina Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3092,7 +3092,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Bãi Dứa (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3130,7 +3130,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 60000,
     "description": "Bãi Dâu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3205,7 +3205,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 40000,
     "description": "Hồ Tràm / Hồ Cốc (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3243,7 +3243,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 120000,
     "description": "Suối nước nóng Bình Châu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `resort` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3281,7 +3281,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 50000,
     "description": "Soho Coffee Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3318,7 +3318,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Lightroom Coffee (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `cafe` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3355,7 +3355,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 200000,
     "description": "Bánh khọt Cô Ba Vũng Tàu (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3392,7 +3392,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 170000,
     "description": "Bánh khọt Gốc Vú Sữa (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3430,7 +3430,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Lẩu cá đuối Hoàng Minh (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3467,7 +3467,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 60,
-    "entrance_fee": 0,
+    "entrance_fee": 100000,
     "description": "Sữa chua Cô Tiên (Cụm/Chi nhánh 4) là một trong những điểm tọa độ `restaurant` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3505,7 +3505,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Tượng Chúa Kitô Vua (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `landmark` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3543,7 +3543,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 70000,
     "description": "Mũi Nghinh Phong (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3619,7 +3619,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Sau (Thùy Vân) (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3657,7 +3657,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 120,
-    "entrance_fee": 0,
+    "entrance_fee": 30000,
     "description": "Bãi Trước (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `nature` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
@@ -3771,7 +3771,7 @@
       "is_default": true
     },
     "avg_duration_minutes": 90,
-    "entrance_fee": 0,
+    "entrance_fee": 20000,
     "description": "Thích Ca Phật Đài (Cụm/Chi nhánh 5) là một trong những điểm tọa độ `spiritual` đặc trưng hàng đầu mà chatbot luôn ưu tiên gợi ý khi thiết lập lịch trình du lịch tại Vũng Tàu.",
     "metadata": {
       "source_platform": "Google Maps",
