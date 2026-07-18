@@ -2,7 +2,7 @@
 pipeline/orchestrator.py
 Master Orchestrator — kết nối toàn bộ pipeline từ đầu đến cuối.
 
-FULL FLOW:
+TRAVEL PIPELINE:
   raw_query (str)
       ↓
   [1] QueryAnalyzer     → TripRequest
@@ -13,12 +13,14 @@ FULL FLOW:
       ↓
   [4] HybridRecommender → top-10 Place (content + location scoring)
       ↓
-  [5] TripPlanner       → TripPlan (graph + route + schedule)
+  [5] recommendation mode → skip planner
+      OR
+      trip_planning mode → TripPlanner → TripPlan
       ↓
-  [6] LLM Generation    → natural language response + structured JSON
-      ↓
-  Response (dict)  →  FastAPI / Gradio
+  Result dict → RAGInference for response generation
 """
+
+from typing import Literal
 
 from src.schemas import Place, TripRequest, TripPlan, RecommendResult
 from src.pipeline.query_analyzer import QueryAnalyzer
@@ -59,11 +61,19 @@ class TripOrchestrator:
         rag = RAGStorage()
         self.retriever, self.document_reranker = rag.get_multi_query_retriever()
 
-    async def run(self, raw_query: str) -> dict:
+    async def run(
+        self,
+        raw_query: str,
+        mode: Literal["recommendation", "trip_planning"] = "trip_planning",
+    ) -> dict:
         """
-        Chay toan bo pipeline cho mot cau hoi nguoi dung.
-        Flow: query -> analyze -> retrieve -> document rerank -> metadata rerank -> recommend -> plan.
+        Chay pipeline du lich theo execution mode.
+
+        - recommendation: analyze -> retrieve -> rerank -> recommend.
+        - trip_planning: chay them planner sau recommendation.
         """
+        if mode not in {"recommendation", "trip_planning"}:
+            raise ValueError(f"Unsupported orchestrator mode: {mode}")
 
         # ============================================================
         #                      BƯỚC 1: PHÂN TÍCH CÂU
@@ -159,13 +169,16 @@ class TripOrchestrator:
         # ================================================================
         #        BƯỚC 5: PLANNING
         # ================================================================
-        trip_plan = self.planner.plan(recommend_result)
+        trip_plan = None
+        if mode == "trip_planning":
+            trip_plan = self.planner.plan(recommend_result)
 
         return {
             "places": recommended_places,
             "trip_request": trip_request,
             "trip_plan": trip_plan,
             "weather": weather,
+            "execution_mode": mode,
         }
 
     def _docs_to_places(self, documents: list) -> list:
@@ -255,7 +268,11 @@ class TripOrchestrator:
         # TODO: implement
         pass
 
-    def _trip_plan_to_dict(self, plan: TripPlan) -> dict:
+    def _trip_plan_to_dict(
+        self,
+        plan: TripPlan,
+        response_language: str = "vi",
+    ) -> dict:
         """
         Serialize TripPlan → dict để JSON response cho frontend.
         """
@@ -263,28 +280,56 @@ class TripOrchestrator:
             "đà lạt": "11-03",
             "đà nẵng": "02-08",
             "hà nội": "09-11 & 03-04",
+            "ha noi": "09-11 & 03-04",
+            "hanoi": "09-11 & 03-04",
             "hồ chí minh": "12-04",
             "nha trang": "01-09",
             "vũng tàu": "11-04",
         }
         region_lower = (plan.trip_request.region or "").strip().lower()
         best_time = best_time_map.get(region_lower, "11-04")
+        language = "en" if response_language == "en" else "vi"
+        region = plan.trip_request.region or ""
+        days = plan.trip_request.days or 0
+
+        if language == "en":
+            title = f"Explore {region} in {days} days"
+            day_title = f"Explore {region}"
+            description_template = (
+                "An optimized sightseeing route and schedule "
+                "({place_count} {place_label})."
+            )
+        else:
+            title = f"Hành trình khám phá {region} {days} ngày"
+            day_title = f"Khám phá {region}"
+            description_template = (
+                "Hành trình tham quan tối ưu đường đi và thời gian "
+                "({place_count} {place_label})."
+            )
 
         return {
-            "title": f"Hành trình khám phá {plan.trip_request.region or ''} {plan.trip_request.days or 0} Ngày",
+            "title": title,
             "region": plan.trip_request.region,
             "best_time": best_time,
+            "language": language,
             "days": [
                 {
                     "day": day.day,
-                    "title": f"Ngày {day.day}: Khám phá {plan.trip_request.region or ''}",
-                    "description": f"Hành trình tham quan tối ưu đường đi và thời gian ({len(day.places)} địa điểm).",
+                    "title": day_title,
+                    "description": description_template.format(
+                        place_count=len(day.places),
+                        place_label=(
+                            "place" if len(day.places) == 1 else "places"
+                        )
+                        if language == "en"
+                        else "địa điểm",
+                    ),
                     "places": [
                         {
                             "name": sp.place.name,
                             "arrival": sp.arrival_time,
                             "departure": sp.departure_time,
-                            "tags": sp.place.tags,
+                            "tags": sp.place.tags if language == "vi" else [],
                         }
                         for sp in day.places
                     ],

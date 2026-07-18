@@ -1,3 +1,22 @@
+# Mục lục
+
+- [Kế hoạch triển khai Railway Free theo từng phase](#kế-hoạch-triển-khai-railway-free-theo-từng-phase)
+  - [Tổng quan](#tổng-quan)
+  - [Phase 0 — Chốt baseline trước khi thay đổi](#phase-0--chốt-baseline-trước-khi-thay-đổi)
+  - [Phase 1 — Làm deployment runtime thuần API](#phase-1--làm-deployment-runtime-thuần-api)
+  - [Phase 2 — Chuẩn bị dữ liệu và cấu hình cloud](#phase-2--chuẩn-bị-dữ-liệu-và-cấu-hình-cloud)
+  - [Phase 3 — Đóng gói Docker](#phase-3--đóng-gói-docker)
+  - [Phase 4 — Test container hoàn chỉnh trên local](#phase-4--test-container-hoàn-chỉnh-trên-local)
+  - [Phase 5 — Tạo hạ tầng Railway Free](#phase-5--tạo-hạ-tầng-railway-free)
+  - [Phase 6 — Khai báo biến và deploy backend](#phase-6--khai-báo-biến-và-deploy-backend)
+  - [Phase 7 — Kết nối Netlify với Railway](#phase-7--kết-nối-netlify-với-railway)
+  - [Phase 8 — Kiểm tra Serverless và chi phí Free](#phase-8--kiểm-tra-serverless-và-chi-phí-free)
+  - [Phase 9 — Ổn định trước khi upgrade](#phase-9--ổn-định-trước-khi-upgrade)
+  - [Public interface và cấu hình mới](#public-interface-và-cấu-hình-mới)
+  - [Tiêu chí hoàn thành toàn bộ](#tiêu-chí-hoàn-thành-toàn-bộ)
+
+---
+
 # Kế hoạch triển khai Railway Free theo từng phase
 
 ## Tổng quan
@@ -733,7 +752,25 @@ DATABASE_URL=${{Postgres.DATABASE_URL}}
 
 ### Kết quả/tiến độ Phase 5
 
-> ⏳ Chưa triển khai. Kết quả kiểm tra sẽ được cập nhật sau khi hoàn thành Phase 5.
+**Trạng thái: ✅ Hoàn thành — 8/8 PASS**
+
+| # | Nội dung kiểm tra | Kết quả | Kết quả chính |
+|---|---|---|---|
+| 1 | Project và services | ✅ PASS | Project `Vietnam Travel ChatBot` có đúng hai service: `BE_ChatBot` và `Postgres`. |
+| 2 | PostgreSQL volume | ✅ PASS | Có đúng một volume `postgres-volume`, dung lượng `500 MB`, mount tại `/var/lib/postgresql/data`. |
+| 3 | Backend volume | ✅ PASS | `BE_ChatBot` không gắn volume; ChromaDB tiếp tục được đóng gói trong Docker image. |
+| 4 | Monorepo settings | ✅ PASS | Root Directory là `/BE_ChatBot`; Watch Patterns là `/BE_ChatBot/**`. |
+| 5 | Database reference | ✅ PASS | Backend dùng private reference `DATABASE_URL=${{Postgres.DATABASE_URL}}`; không dùng public database URL. |
+| 6 | Deployment settings | ✅ PASS | Pre-deploy command là `python -m src.db.init_db`; Healthcheck Path là `/health`, timeout `300` giây. |
+| 7 | Serverless và restart | ✅ PASS | Serverless bật cho cả `BE_ChatBot` và `Postgres`; Restart Policy là `On Failure`, tối đa `10` lần thử. |
+| 8 | Áp dụng hạ tầng | ✅ PASS | Staged changes được áp dụng thành công; Postgres redeploy và trở lại trạng thái `Online` trước khi được tắt thủ công. |
+
+Kết quả kiểm tra ngày 15/07/2026:
+
+- Region: `US West (California, USA)`; số replica: `1`.
+- Tài khoản đang ở Trial nên giao diện chỉ hiển thị plan limit `2 vCPU / 1 GB` và không cho chỉnh thủ công. Backend chưa có active deployment nên chưa phát sinh compute; khi chuyển sang Free, giới hạn plan sẽ là `1 vCPU / 0.5 GB`.
+- Sau khi xác nhận cấu hình thành công, active deployment của Postgres được `Remove` thủ công để dừng compute trước Phase 6. Service `Postgres`, variables và volume `postgres-volume` vẫn được giữ nguyên.
+- `BE_ChatBot` đang offline vì chưa kết nối GitHub source; PostgreSQL chưa có bảng là trạng thái đúng trước khi pre-deploy command chạy ở Phase 6.
 
 ---
 
@@ -944,7 +981,26 @@ UI:
 
 ### Kết quả/tiến độ Phase 7
 
-> ⏳ Chưa triển khai. Kết quả kiểm tra sẽ được cập nhật sau khi hoàn thành Phase 7.
+**Trạng thái: 🟡 Hoàn tất cấu hình production — 6/8 PASS, 2/8 DEFERRED**
+
+| # | Nội dung kiểm tra | Kết quả | Kết quả chính |
+|---|---|---|---|
+| 1 | Netlify build | ✅ PASS | Builds được kích hoạt lại; frontend build và publish thành công từ code mới trên branch `main`. |
+| 2 | Monorepo settings | ✅ PASS | Base directory `FE_ChatBot`, build command `npm run build`, publish directory `FE_ChatBot/dist`. |
+| 3 | Backend URL | ✅ PASS | Netlify dùng `VITE_FASTAPI_URL=https://bechatbot-production.up.railway.app`; Railway `/health` trả `{"status":"ok"}`. |
+| 4 | Firebase Web config | ✅ PASS | Sáu biến `VITE_FIREBASE_*` được khai báo trên Netlify; frontend không còn lỗi `Missing Firebase config`. |
+| 5 | Firebase authorized domain | ✅ PASS | Domain `mellowai.netlify.app` được thêm vào Firebase Authentication Authorized domains. |
+| 6 | Authentication | ✅ PASS | Frontend production hiển thị bình thường và đăng nhập Google thành công. |
+| 7 | SSE streaming chat | ⏸️ DEFERRED | Chưa chạy test `/chat/stream`; Railway backend chỉ bật khi cần integration test hoặc demo. |
+| 8 | PostgreSQL persistence | ⏸️ DEFERRED | Chưa chạy test tạo conversation rồi redeploy; không đánh dấu PASS khi chưa có bằng chứng runtime. |
+
+Kết quả triển khai ngày 15–16/07/2026:
+
+- Frontend production: `https://mellowai.netlify.app`.
+- Backend production: `https://bechatbot-production.up.railway.app`.
+- Dependency `react-markdown` được chuyển vào đúng manifest `FE_ChatBot/package.json`; local Vite build và Netlify build đều thành công.
+- Google login chỉ hoạt động sau khi thêm Netlify domain vào Firebase Authorized domains.
+- Hai test SSE và persistence được chủ động hoãn vì workflow chính là dev/test local bằng backend Docker; Railway được deploy theo nhu cầu.
 
 ---
 
@@ -1009,7 +1065,92 @@ Projected monthly usage <= $1
 
 ### Kết quả/tiến độ Phase 8
 
-> ⏳ Chưa triển khai. Kết quả kiểm tra sẽ được cập nhật sau khi hoàn thành Phase 8.
+**Trạng thái: 🟡 Xác nhận một phần — 2/5 PASS, 3/5 DEFERRED**
+
+| # | Nội dung kiểm tra | Kết quả | Kết quả chính |
+|---|---|---|---|
+| 1 | PostgreSQL serverless sleep | ✅ PASS | Postgres tự chuyển sang trạng thái sleep khi không có traffic. |
+| 2 | Runtime resource baseline | ✅ PASS | Backend dùng khoảng `235.49 MB` RAM, CPU gần `0 vCPU` khi idle, request error rate `0%`, không OOM hoặc restart. |
+| 3 | Backend sleep/wake | ⏸️ DEFERRED | Không test tự sleep/wake; active deployment được `Remove` và chỉ deploy lại khi cần test hoặc demo. |
+| 4 | Backend cold start | ⏸️ DEFERRED | Chưa đo thời gian cold start vì không dùng backend Railway cho dev/test hằng ngày. |
+| 5 | Usage và budget limits | ⏸️ DEFERRED | Chưa xác nhận projected monthly usage, email alert `$0.50` hoặc hard limit `$1.00`; không ghi nhận PASS khi chưa cấu hình/đo. |
+
+### Quyết định vận hành
+
+- Dev/test hằng ngày dùng backend Docker local và PostgreSQL local; không cần giữ Railway chạy liên tục.
+- Khi cần integration test hoặc demo cloud: deploy Postgres trước, chờ `Online`, sau đó deploy `BE_ChatBot` và kiểm tra `/health`.
+- Sau khi test xong: `Remove` active deployment của backend; Postgres có thể tự sleep hoặc được `Remove` thủ công. Service, variables và `postgres-volume` vẫn được giữ lại.
+- Cách vận hành này giảm Railway compute usage nhưng không thay thế bằng chứng cho backend auto sleep, cold start và monthly usage; các mục đó tiếp tục ở trạng thái `DEFERRED`.
+
+### Flow dev/test Docker local
+
+Mở Docker Desktop và PostgreSQL local, sau đó vào backend:
+
+```powershell
+cd D:\KLTN\Project\BE_ChatBot
+docker version
+Test-NetConnection localhost -Port 5432
+```
+
+Nếu code backend và environment không đổi, container cũ vẫn tồn tại:
+
+```powershell
+docker start be-chatbot-deploy
+```
+
+Nếu container đã bị xóa hoặc cần nạp lại `.env`/Firebase credentials, dùng image hiện tại:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1
+```
+
+Nếu code backend, `Dockerfile`, `requirements.deploy.txt`, system prompt hoặc ChromaDB thay đổi:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1 -Build
+```
+
+Khởi tạo bảng khi dùng database mới:
+
+```powershell
+docker exec be-chatbot-deploy python -m src.db.init_db
+```
+
+Kiểm tra backend:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
+docker logs -f --tail 100 be-chatbot-deploy
+docker stats be-chatbot-deploy --no-stream
+```
+
+Mở terminal khác để chạy frontend local:
+
+```powershell
+cd D:\KLTN\Project\FE_ChatBot
+npm.cmd run dev
+```
+
+Luồng dữ liệu local:
+
+```text
+FE localhost:5173
+→ BE Docker localhost:8000
+→ PostgreSQL local qua host.docker.internal:5432
+→ database kltn_chatbot_deploy
+```
+
+Kết thúc phiên test:
+
+```powershell
+docker stop be-chatbot-deploy
+```
+
+Nếu muốn xóa container nhưng giữ image và PostgreSQL local:
+
+```powershell
+docker rm -f be-chatbot-deploy
+```
 
 ---
 

@@ -13,19 +13,23 @@ function BotResult({ tripData }) {
     tripData && Array.isArray(tripData.days)
       ? tripData
       : { title: "Trip", days: [] };
+  const language = safeTripData.language === "en" ? "en" : "vi";
 
   const timelineData = safeTripData.days;
-  const mindmapData = convertToMindmap(safeTripData);
+  const mindmapData = convertToMindmap(safeTripData, language);
 
   return (
     <div className="rounded-xl p-4 max-w-3xl">
       <BestTimeBanner
         bestTime={safeTripData.best_time}
         region={safeTripData.region}
+        language={language}
       />
-      <ResultSwitcher view={view} setView={setView} />
-      {view === "text" && <TextResult data={timelineData} />}
-      {view === "timeline" && <TimelineResult data={timelineData} />}
+      <ResultSwitcher view={view} setView={setView} language={language} />
+      {view === "text" && <TextResult data={timelineData} language={language} />}
+      {view === "timeline" && (
+        <TimelineResult data={timelineData} language={language} />
+      )}
       {view === "mindmap" && <MindmapResult data={mindmapData} />}
     </div>
   );

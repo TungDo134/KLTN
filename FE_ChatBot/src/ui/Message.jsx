@@ -20,6 +20,19 @@ function MarkdownText({ text }) {
         strong: ({ children }) => (
           <strong className="font-semibold">{children}</strong>
         ),
+        blockquote: ({ children }) => (
+          <blockquote className="my-3 rounded-r-lg border-l-4 border-[var(--accent-color)] bg-[var(--bg-panel)] px-4 py-3 text-[var(--text-main)]">
+            {children}
+          </blockquote>
+        ),
+        a: ({ href, children }) => (
+          <a
+            href={href}
+            className="font-medium text-[var(--accent-color)] underline underline-offset-2 transition-opacity hover:opacity-80"
+          >
+            {children}
+          </a>
+        ),
         ul: ({ children }) => (
           <ul className="mb-2 list-disc space-y-1 pl-5">{children}</ul>
         ),

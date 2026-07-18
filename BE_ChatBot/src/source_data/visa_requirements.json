@@ -1,0 +1,230 @@
+{
+  "verified_at": "2026-07-16",
+  "scope": "Ordinary passports used for tourism travel to Vietnam",
+  "sources": {
+    "mofa": "https://mofa.gov.vn/tin-chi-tiet/chi-tiet/viet-nam-39-s-visa-exemption-list-57163-172.html",
+    "evisa": "https://evisa.gov.vn/e-visa/foreigners/"
+  },
+  "countries": [
+    {
+      "code": "VN",
+      "name_vi": "Việt Nam",
+      "name_en": "Vietnam",
+      "aliases": ["viet nam", "vietnam", "vietnamese", "người việt nam", "nguoi viet nam"],
+      "ordinary_passport": {"status": "domestic", "max_stay_days": null}
+    },
+    {
+      "code": "BY",
+      "name_vi": "Belarus",
+      "name_en": "Belarus",
+      "aliases": ["belarus", "bạch nga", "bach nga"],
+      "ordinary_passport": {
+        "status": "visa_exempt",
+        "max_stay_days": 30,
+        "note_vi": "Tổng thời gian lưu trú theo diện này không vượt quá 90 ngày trong một năm dương lịch.",
+        "note_en": "The total stay under this exemption must not exceed 90 days in a calendar year."
+      }
+    },
+    {
+      "code": "BN",
+      "name_vi": "Brunei",
+      "name_en": "Brunei",
+      "aliases": ["brunei", "brunei darussalam"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 14}
+    },
+    {
+      "code": "KH",
+      "name_vi": "Campuchia",
+      "name_en": "Cambodia",
+      "aliases": ["campuchia", "cambodia", "cambodian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "CL",
+      "name_vi": "Chile",
+      "name_en": "Chile",
+      "aliases": ["chile", "chilean"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 90}
+    },
+    {
+      "code": "CN",
+      "name_vi": "Trung Quốc",
+      "name_en": "China",
+      "aliases": ["trung quốc", "trung quoc", "china", "chinese"],
+      "ordinary_passport": {"status": "unknown", "max_stay_days": null}
+    },
+    {
+      "code": "DK",
+      "name_vi": "Đan Mạch",
+      "name_en": "Denmark",
+      "aliases": ["đan mạch", "dan mach", "denmark", "danish"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "FI",
+      "name_vi": "Phần Lan",
+      "name_en": "Finland",
+      "aliases": ["phần lan", "phan lan", "finland", "finnish"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "FR",
+      "name_vi": "Pháp",
+      "name_en": "France",
+      "aliases": ["pháp", "phap", "france", "french"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "DE",
+      "name_vi": "Đức",
+      "name_en": "Germany",
+      "aliases": ["đức", "duc", "germany", "german", "federal republic of germany"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "ID",
+      "name_vi": "Indonesia",
+      "name_en": "Indonesia",
+      "aliases": ["indonesia", "indonesian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "IT",
+      "name_vi": "Ý",
+      "name_en": "Italy",
+      "aliases": ["ý", "y", "italy", "italian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "JP",
+      "name_vi": "Nhật Bản",
+      "name_en": "Japan",
+      "aliases": ["nhật bản", "nhat ban", "japan", "japanese"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "KZ",
+      "name_vi": "Kazakhstan",
+      "name_en": "Kazakhstan",
+      "aliases": ["kazakhstan", "kazakh"],
+      "ordinary_passport": {
+        "status": "visa_exempt",
+        "max_stay_days": 30,
+        "note_vi": "Tổng thời gian lưu trú không vượt quá 90 ngày trong mỗi giai đoạn 180 ngày.",
+        "note_en": "The total stay must not exceed 90 days within each 180-day period."
+      }
+    },
+    {
+      "code": "KR",
+      "name_vi": "Hàn Quốc",
+      "name_en": "South Korea",
+      "aliases": ["hàn quốc", "han quoc", "south korea", "korea republic", "republic of korea", "korean"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "KG",
+      "name_vi": "Kyrgyzstan",
+      "name_en": "Kyrgyzstan",
+      "aliases": ["kyrgyzstan", "kyrgyz"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "LA",
+      "name_vi": "Lào",
+      "name_en": "Laos",
+      "aliases": ["lào", "lao", "laos", "laotian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "MY",
+      "name_vi": "Malaysia",
+      "name_en": "Malaysia",
+      "aliases": ["malaysia", "malaysian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "MN",
+      "name_vi": "Mông Cổ",
+      "name_en": "Mongolia",
+      "aliases": ["mông cổ", "mong co", "mongolia", "mongolian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "MM",
+      "name_vi": "Myanmar",
+      "name_en": "Myanmar",
+      "aliases": ["myanmar", "burma", "burmese"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "NO",
+      "name_vi": "Na Uy",
+      "name_en": "Norway",
+      "aliases": ["na uy", "norway", "norwegian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "PA",
+      "name_vi": "Panama",
+      "name_en": "Panama",
+      "aliases": ["panama", "panamanian"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 90}
+    },
+    {
+      "code": "PH",
+      "name_vi": "Philippines",
+      "name_en": "Philippines",
+      "aliases": ["philippines", "philippine", "filipino"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 21}
+    },
+    {
+      "code": "RU",
+      "name_vi": "Nga",
+      "name_en": "Russia",
+      "aliases": ["nga", "russia", "russian", "russian federation"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "SG",
+      "name_vi": "Singapore",
+      "name_en": "Singapore",
+      "aliases": ["singapore", "singaporean"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "ES",
+      "name_vi": "Tây Ban Nha",
+      "name_en": "Spain",
+      "aliases": ["tây ban nha", "tay ban nha", "spain", "spanish"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "SE",
+      "name_vi": "Thụy Điển",
+      "name_en": "Sweden",
+      "aliases": ["thụy điển", "thuy dien", "sweden", "swedish"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 45, "effective_from": "2025-03-15", "effective_until": "2028-03-14"}
+    },
+    {
+      "code": "TH",
+      "name_vi": "Thái Lan",
+      "name_en": "Thailand",
+      "aliases": ["thái lan", "thai lan", "thailand", "thai"],
+      "ordinary_passport": {"status": "visa_exempt", "max_stay_days": 30}
+    },
+    {
+      "code": "GB",
+      "name_vi": "Vương quốc Anh",
+      "name_en": "United Kingdom",
+      "aliases": ["anh", "vương quốc anh", "vuong quoc anh", "united kingdom", "uk", "great britain", "british"],
+      "ordinary_passport": {
+        "status": "visa_exempt",
+        "max_stay_days": 45,
+        "effective_from": "2025-03-15",
+        "effective_until": "2028-03-14",
+        "note_vi": "Hộ chiếu British National Overseas (BNO) không thuộc diện miễn thị thực này.",
+        "note_en": "British National Overseas (BNO) passports are not covered by this exemption."
+      }
+    }
+  ]
+}

@@ -13,7 +13,8 @@ __pycache__/
 *.py[cod]
 
 src/model/
-src/source_data/
+src/source_data/*
+!src/source_data/visa_requirements.json
 src/eval/
 test/
 utils/

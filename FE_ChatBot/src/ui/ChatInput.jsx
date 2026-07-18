@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiPlus } from "react-icons/fi";
+import { FiArrowUp, FiPlus } from "react-icons/fi";
 import { HiOutlineMicrophone } from "react-icons/hi";
 
 import ModelDropdown from "../features/navigation/ModelDropdown";
@@ -48,12 +48,23 @@ function ChatInput({ onSend, disabled, isEmptyState }) {
 
           <div className="flex items-center gap-1.5 sm:gap-2">
             <ModelDropdown />
-            <button
-              type="button"
-              className="p-1.5 text-gray-400 hover:text-gray-200 hover:bg-[var(--bg-hover)] rounded-lg transition-colors"
-            >
-              <HiOutlineMicrophone size={18} className="sm:w-5 sm:h-5" />
-            </button>
+            {input.trim() ? (
+              <button
+                type="submit"
+                disabled={disabled}
+                aria-label="Send message"
+                className="p-1.5 bg-[var(--text-main)] text-[var(--bg-panel)] hover:opacity-80 disabled:opacity-50 rounded-lg transition-opacity"
+              >
+                <FiArrowUp size={18} className="sm:w-5 sm:h-5" />
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="p-1.5 text-gray-400 hover:text-gray-200 hover:bg-[var(--bg-hover)] rounded-lg transition-colors"
+              >
+                <HiOutlineMicrophone size={18} className="sm:w-5 sm:h-5" />
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -25,19 +25,29 @@ function getTags(tags) {
   return Array.isArray(tags) ? tags.filter(Boolean).slice(0, 3) : [];
 }
 
-function formatTimeRange(place) {
+function formatTimeRange(place, language) {
   if (place.arrival && place.departure) {
     return `${place.arrival} - ${place.departure}`;
   }
 
-  return place.arrival || place.departure || "Chưa có giờ";
+  return (
+    place.arrival ||
+    place.departure ||
+    (language === "en" ? "Time unavailable" : "Chưa có giờ")
+  );
 }
 
-function TimelineResult({ data }) {
+function stripDayPrefix(title) {
+  return String(title || "").replace(/^(Ngày|Day)\s+\d+\s*:\s*/i, "");
+}
+
+function TimelineResult({ data, language = "vi" }) {
   if (!Array.isArray(data) || data.length === 0) {
     return (
       <div className="mt-2 rounded-lg border border-neutral-800 bg-neutral-900/70 px-4 py-3 text-sm text-neutral-400">
-        Chưa có lịch trình để hiển thị.
+        {language === "en"
+          ? "No itinerary is available to display."
+          : "Chưa có lịch trình để hiển thị."}
       </div>
     );
   }
@@ -59,10 +69,16 @@ function TimelineResult({ data }) {
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-sm font-semibold">
-                    Ngày {day.day}: {day.title}
+                    {language === "en" ? "Day" : "Ngày"} {day.day}:{" "}
+                    {stripDayPrefix(day.title)}
                   </h3>
                   <span className="rounded-full border border-white/10 bg-black/20 px-2 py-0.5 text-xs text-neutral-300">
-                    {places.length} địa điểm
+                    {places.length}{" "}
+                    {language === "en"
+                      ? places.length === 1
+                        ? "place"
+                        : "places"
+                      : "địa điểm"}
                   </span>
                 </div>
                 {day.description && (
@@ -89,7 +105,7 @@ function TimelineResult({ data }) {
                       <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-400">
                         <span className="inline-flex items-center gap-1">
                           <FiClock size={13} />
-                          {formatTimeRange(place)}
+                          {formatTimeRange(place, language)}
                         </span>
                       </div>
 

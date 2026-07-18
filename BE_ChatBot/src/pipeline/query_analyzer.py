@@ -142,6 +142,7 @@ class QueryAnalyzer:
             ("da nang", "\u0110\u00e0 N\u1eb5ng"),
             ("hoi an", "H\u1ed9i An"),
             ("ha noi", "H\u00e0 N\u1ed9i"),
+            ("hanoi", "H\u00e0 N\u1ed9i"),
             ("ho chi minh", "H\u1ed3 Ch\u00ed Minh"),
             ("sai gon", "H\u1ed3 Ch\u00ed Minh"),
             ("tphcm", "H\u1ed3 Ch\u00ed Minh"),

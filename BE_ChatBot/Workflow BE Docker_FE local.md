@@ -24,7 +24,7 @@
 > PostgreSQL local và database `kltn_chatbot_deploy`. Xem mục
 > [Lần đầu clone/pull code](#lần-đầu-clonepull-code) nếu máy chưa từng chạy project.
 
-- `run_docker_be.ps1`: xóa container cũ → tạo container mới từ image hiện tại → chạy BE bằng Docker.
+- `run_docker_be.ps1`: xóa container cũ → tạo container mới (nhận env mới) từ image hiện tại → chạy BE bằng Docker.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1
@@ -32,7 +32,9 @@ powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1
 
 - `run.bat`: chạy BE trực tiếp trên máy cá nhân bằng Python/venv, không qua Docker.
 
-- `run_docker_be.ps1 -Build`: build lại image theo code mới → xóa container cũ → tạo container mới từ image vừa cập nhật.
+### Chạy khi codebase thay đổi
+
+- `run_docker_be.ps1 -Build`: Build lại image theo `code mới` → Xóa container cũ → Tạo container mới từ image vừa cập nhật.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1 -Build
