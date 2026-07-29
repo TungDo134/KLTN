@@ -1,0 +1,95 @@
+{
+  "regions": {
+    "ha_noi": {
+      "name": "Hà Nội",
+      "aliases": ["ha noi", "hanoi"],
+      "latitude": 21.0285,
+      "longitude": 105.8542,
+      "airport_transfer_minutes": 45,
+      "plane_supported": true
+    },
+    "ho_chi_minh": {
+      "name": "Hồ Chí Minh",
+      "aliases": [
+        "ho chi minh",
+        "tp hcm",
+        "tphcm",
+        "thanh pho hcm",
+        "tp ho chi minh",
+        "sai gon",
+        "saigon"
+      ],
+      "latitude": 10.7769,
+      "longitude": 106.7009,
+      "airport_transfer_minutes": 45,
+      "plane_supported": true
+    },
+    "da_nang": {
+      "name": "Đà Nẵng",
+      "aliases": ["da nang"],
+      "latitude": 16.0544,
+      "longitude": 108.2022,
+      "airport_transfer_minutes": 30,
+      "plane_supported": true
+    },
+    "da_lat": {
+      "name": "Đà Lạt",
+      "aliases": ["da lat", "dalat"],
+      "latitude": 11.9404,
+      "longitude": 108.4583,
+      "airport_transfer_minutes": 40,
+      "plane_supported": true
+    },
+    "nha_trang": {
+      "name": "Nha Trang",
+      "aliases": ["nha trang"],
+      "latitude": 12.2388,
+      "longitude": 109.1967,
+      "airport_transfer_minutes": 50,
+      "plane_supported": true
+    },
+    "vung_tau": {
+      "name": "Vũng Tàu",
+      "aliases": ["vung tau"],
+      "latitude": 10.4114,
+      "longitude": 107.1362,
+      "airport_transfer_minutes": 150,
+      "plane_supported": false
+    }
+  },
+  "road_profiles": {
+    "car": {
+      "road_factor": 1.3,
+      "average_speed_kmh": 50,
+      "rest_every_minutes": 120,
+      "rest_minutes": 15
+    },
+    "motorcycle": {
+      "road_factor": 1.3,
+      "average_speed_kmh": 40,
+      "rest_every_minutes": 90,
+      "rest_minutes": 20
+    }
+  },
+  "local_profiles": {
+    "car": {
+      "road_factor": 1.3,
+      "average_speed_kmh": 25
+    },
+    "motorcycle": {
+      "road_factor": 1.3,
+      "average_speed_kmh": 30
+    },
+    "plane": {
+      "road_factor": 1.3,
+      "average_speed_kmh": 25
+    }
+  },
+  "plane_profile": {
+    "check_in_minutes": 120,
+    "average_flight_speed_kmh": 650,
+    "takeoff_landing_minutes": 30,
+    "minimum_flight_minutes": 60,
+    "safety_buffer_minutes": 30
+  }
+}

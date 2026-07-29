@@ -17,6 +17,7 @@ import re
 import unicodedata
 from src.schemas import TripRequest
 from src.core.llm_container import get_model_info
+from src.services.travel_timing_service import TravelTimingService
 
 
 # Prompt yêu cầu LLM trả về JSON thuần
@@ -41,6 +42,7 @@ class QueryAnalyzer:
         """
         print("\n- LLM cho trích xuất User Query => Trip Request [QueryAnalyzer]\n")
         self.llm_query_analyzer = llm
+        self.travel_timing_service = TravelTimingService()
         self.model_info_query_analyzer = get_model_info(self.llm_query_analyzer)
         provider, model = self.model_info_query_analyzer.split(" / ", 1)
         print(f"🔧 Provider : {provider}")
@@ -86,6 +88,11 @@ class QueryAnalyzer:
             data = self._fallback_extract(raw_query)
             print("[QueryAnalyzer] fallback extract:", data, flush=True)
 
+        timing_data = self.travel_timing_service.extract_fields(raw_query)
+        for field, value in timing_data.items():
+            if value is not None:
+                data[field] = value
+
         days = data.get("days", 1)
         try:
             days = int(days)
@@ -126,6 +133,19 @@ class QueryAnalyzer:
             tags=normalized_tags,
             budget=budget,
             start_date=start_date,
+            origin_region=data.get("origin_region"),
+            transport_mode=data.get("transport_mode"),
+            day1_start_time=data.get("day1_start_time"),
+            time_intent=data.get("time_intent"),
+            auto_select_start_time=bool(
+                data.get("auto_select_start_time", False)
+            ),
+            flight_departure_at=data.get("flight_departure_at"),
+            airport_transfer_minutes=data.get("airport_transfer_minutes"),
+            flight_duration_minutes=data.get("flight_duration_minutes"),
+            destination_transfer_minutes=data.get(
+                "destination_transfer_minutes"
+            ),
         )
 
     def _fallback_extract(self, raw_query: str) -> dict:
