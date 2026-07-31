@@ -179,7 +179,7 @@ function Sidebar({
   return (
     <div
       className={`
-        w-65 bg-(--bg-sidebar) flex flex-col h-full text-(--text-main) shrink-0
+        w-65 bg-(--color-surface-sidebar) flex flex-col h-full text-(--color-text-primary) shrink-0
         fixed md:static inset-y-0 left-0 z-50
         transition-all duration-300 ease-in-out
         ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
@@ -189,20 +189,20 @@ function Sidebar({
     >
       {/* Header */}
       <div className="px-4 py-3 flex items-center justify-between">
-        <h1 className="font-serif text-[19px] tracking-wide font-medium whitespace-nowrap">
+        <h1 className="font-serif text-[19px] tracking-wide font-medium whitespace-nowrap text-(--color-text-sidebar-subheading)">
           Mellow AI
         </h1>
         <div className="flex items-center gap-1">
           {/* Close button - mobile only */}
           <button
             onClick={onMobileClose}
-            className="p-1.5 hover:bg-(--bg-hover) rounded-md text-gray-400 transition-colors md:hidden"
+            className="p-1.5 hover:bg-(--color-surface-hover) rounded-md text-(--color-text-secondary) transition-colors md:hidden"
           >
             <IoCloseOutline size={20} />
           </button>
           <button
             onClick={onDesktopToggle}
-            className="p-1.5 hover:bg-(--bg-hover) rounded-md text-gray-400 transition-colors hidden md:block"
+            className="p-1.5 hover:bg-(--color-surface-hover) rounded-md text-(--color-text-secondary) transition-colors hidden md:block"
           >
             <FiSidebar size={16} />
           </button>
@@ -213,53 +213,42 @@ function Sidebar({
       <div className="px-3 pt-2 pb-1 space-y-0.5">
         <button
           onClick={handleNewChat}
-          className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors"
+          className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--color-surface-hover) text-[13px] transition-colors"
         >
-          <IoAddOutline size={16} className="text-gray-400" />
-          <span>New chat</span>
-        </button>
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors">
-          <IoSearchOutline size={16} className="text-gray-400" />
-          <span>Search</span>
-        </button>
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors">
-          <FiBriefcase size={16} className="text-gray-400" />
-          <span>Customize</span>
+          <IoAddOutline size={16} className="text-(--color-text-secondary)" />
+          <span className="font-semibold">Tạo mới cuộc hội thoại</span>
         </button>
       </div>
 
-      <div className="px-5 my-2 border-t border-(--border-main) opacity-60"></div>
-
       {/* Secondary Actions */}
       <div className="px-3 py-1 space-y-0.5">
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors">
-          <IoChatbubblesOutline size={16} className="text-gray-400" />
-          <span>Chats</span>
-        </button>
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors">
-          <FiFolder size={16} className="text-gray-400" />
-          <span>Projects</span>
-        </button>
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors">
-          <HiOutlineTemplate size={16} className="text-gray-400" />
-          <span>Artifacts</span>
+        {/* <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--color-surface-hover) text-[13px] transition-colors">
+          <IoChatbubblesOutline
+            size={16}
+            className="text-(--color-text-secondary)"
+          />
+          <span className="font-semibold">Đoạn hội thoại</span>
+        </button> */}
+        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--color-surface-hover) text-[13px] transition-colors">
+          <FiFolder size={16} className="text-(--color-text-secondary)" />
+          <span className="font-semibold">Kế hoạch đã lưu</span>
         </button>
       </div>
 
       {/* Recents */}
       <div className="sidebar-scrollbar flex-1 overflow-y-auto px-3 mt-4 mb-2">
-        <p className="px-2.5 mb-2 text-[11px] font-medium text-gray-500">
-          Recents
+        <p className="font-semibold px-2.5 mb-2 text-[12px] text-(--color-text-sidebar-subheading)">
+          Đoạn hội thoại gần đây
         </p>
         <div className="space-y-0.5">
           {isLoadingConversations && (
-            <p className="px-2.5 py-2 text-[13px] text-(--text-muted)">
+            <p className="px-2.5 py-2 text-[13px] text-(--color-text-secondary)">
               Loading...
             </p>
           )}
 
           {!isLoadingConversations && conversationError && (
-            <p className="px-2.5 py-2 text-[13px] text-red-400">
+            <p className="px-2.5 py-2 text-[13px] text-[var(--color-danger-text)]">
               {conversationError}
             </p>
           )}
@@ -267,7 +256,7 @@ function Sidebar({
           {!isLoadingConversations &&
             !conversationError &&
             conversations.length === 0 && (
-              <p className="px-2.5 py-2 text-[13px] text-(--text-muted)">
+              <p className="px-2.5 py-2 text-[13px] text-(--color-text-secondary)">
                 No conversations yet.
               </p>
             )}
@@ -283,8 +272,8 @@ function Sidebar({
                   key={conversation.id}
                   className={`group flex items-center rounded-lg transition-colors ${
                     isActive
-                      ? "bg-(--bg-hover) text-(--text-main) font-medium"
-                      : "text-(--text-muted) hover:bg-(--bg-hover)"
+                      ? "bg-(--color-surface-hover) text-(--color-text-primary) font-medium"
+                      : "text-(--color-text-secondary) hover:bg-(--color-surface-hover)"
                   }`}
                 >
                   {editingConversationId === conversation.id ? (
@@ -310,7 +299,7 @@ function Sidebar({
                         maxLength={255}
                         disabled={renamingConversationId === conversation.id}
                         placeholder="New chat"
-                        className="min-w-0 flex-1 bg-transparent border border-(--border-main) rounded px-2 py-1 text-[13px] text-(--text-main) outline-none focus:border-gray-500"
+                        className="min-w-0 flex-1 bg-transparent border border-(--color-border-control) rounded px-2 py-1 text-[13px] text-(--color-text-primary) outline-none focus:border-(--color-action-primary)"
                       />
                       <button
                         type="submit"
@@ -318,14 +307,14 @@ function Sidebar({
                           renamingConversationId === conversation.id ||
                           !editingTitle.trim()
                         }
-                        className="p-1.5 text-gray-500 hover:text-green-400 disabled:opacity-50 transition-colors"
+                        className="p-1.5 text-(--color-text-subtle) hover:bg-[var(--color-success-surface)] hover:text-[var(--color-success-text)] disabled:opacity-50 rounded transition-colors"
                       >
                         <IoCheckmarkOutline size={14} />
                       </button>
                       <button
                         type="button"
                         onClick={cancelRenameConversation}
-                        className="p-1.5 text-gray-500 hover:text-(--text-main) transition-colors"
+                        className="p-1.5 text-(--color-text-subtle) hover:text-(--color-action-primary) transition-colors"
                       >
                         <IoCloseOutline size={14} />
                       </button>
@@ -340,7 +329,7 @@ function Sidebar({
                       </button>
                       <button
                         onClick={() => startRenameConversation(conversation)}
-                        className="p-2 text-gray-500 hover:text-(--text-main) opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+                        className="p-2 text-(--color-text-subtle) hover:text-(--color-action-primary) opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
                       >
                         <IoPencilOutline size={14} />
                       </button>
@@ -348,7 +337,7 @@ function Sidebar({
                         onClick={() =>
                           handleDeleteConversation(conversation.id)
                         }
-                        className="p-2 text-gray-500 hover:text-red-400 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+                        className="p-2 text-(--color-text-subtle) hover:text-[var(--color-danger-text)] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
                       >
                         <IoTrashOutline size={14} />
                       </button>
@@ -366,20 +355,22 @@ function Sidebar({
           <>
             {/* User menu popup */}
             {openUserMenu && (
-              <div className="absolute bottom-16 left-3 right-3 bg-(--bg-panel) rounded-xl shadow-2xl border border-(--border-main) py-1 overflow-hidden z-50">
-                <div className="px-4 py-3 border-b border-(--border-main) bg-(--bg-panel)">
+              <div className="absolute bottom-16 left-3 right-3 bg-(--color-surface-panel) rounded-xl shadow-2xl border border-(--color-border-default) py-1 overflow-hidden z-50">
+                <div className="px-4 py-3 border-b border-(--color-border-default) bg-(--color-surface-panel)">
                   <p className="font-medium text-[13px]">{displayName}</p>
-                  <p className="text-[12px] text-gray-400">{displayEmail}</p>
+                  <p className="text-[12px] text-(--color-text-secondary)">
+                    {displayEmail}
+                  </p>
                 </div>
-                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) transition-colors text-left">
+                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) transition-colors text-left">
                   <HiOutlineSparkles size={15} /> Nâng cấp gói
                 </button>
-                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) transition-colors text-left">
+                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) transition-colors text-left">
                   <FiSettings size={15} /> Cài đặt
                 </button>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--bg-hover) text-red-400 transition-colors text-left"
+                  className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) text-[var(--color-danger-text)] transition-colors text-left"
                 >
                   <FiLogOut size={15} /> Đăng xuất
                 </button>
@@ -392,7 +383,7 @@ function Sidebar({
                 e.stopPropagation();
                 setOpenUserMenu(!openUserMenu);
               }}
-              className="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-(--bg-hover) transition-colors"
+              className="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-(--color-surface-hover) transition-colors"
             >
               <div className="flex items-center gap-2">
                 {currentUser?.avatar_url ? (
@@ -402,7 +393,7 @@ function Sidebar({
                     className="w-7.5 h-7.5 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="w-7.5 h-7.5 rounded-full bg-[#E3D4C4] text-[#4A433A] flex items-center justify-center text-xs font-semibold">
+                  <div className="w-7.5 h-7.5 rounded-full bg-[var(--color-action-soft)] text-[var(--color-action-primary)] flex items-center justify-center text-xs font-semibold">
                     {initials || "U"}
                   </div>
                 )}
@@ -410,14 +401,14 @@ function Sidebar({
                   <span className="text-[13px] font-medium leading-tight">
                     {displayName}
                   </span>
-                  <span className="text-[11px] text-gray-400 leading-tight mt-0.5">
+                  <span className="text-[11px] text-(--color-text-secondary) leading-tight mt-0.5">
                     Free plan
                   </span>
                 </div>
               </div>
-              <div className="flex items-center gap-1 text-gray-400">
+              <div className="flex items-center gap-1 text-(--color-text-secondary)">
                 <div
-                  className="p-1 hover:bg-(--bg-hover) rounded transition-colors"
+                  className="p-1 hover:bg-(--color-surface-hover) rounded transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FiDownload size={14} />
@@ -430,7 +421,7 @@ function Sidebar({
           /* Login Button */
           <button
             onClick={() => setShowLoginModal(true)}
-            className="w-full flex items-center gap-3 px-2.5 py-2.5 rounded-lg hover:bg-(--bg-hover) text-[13px] transition-colors text-(--text-muted) hover:text-(--text-main)"
+            className="w-full flex items-center gap-3 px-2.5 py-2.5 rounded-lg hover:bg-(--color-surface-hover) text-[13px] transition-colors text-(--color-text-secondary) hover:text-(--color-text-primary)"
           >
             <FiLogIn size={16} />
             <span>Đăng nhập</span>

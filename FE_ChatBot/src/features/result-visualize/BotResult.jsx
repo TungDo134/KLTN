@@ -6,6 +6,7 @@ import TimelineResult from "./TimelineResult";
 import MindmapResult from "./MindmapResult";
 import BestTimeBanner from "./BestTimeBanner";
 import BudgetSummary from "./BudgetSummary";
+import TravelTimingBanner from "./TravelTimingBanner";
 import convertToMindmap from "../../helper/convertToMindmap";
 
 function BotResult({ tripData }) {
@@ -16,6 +17,7 @@ function BotResult({ tripData }) {
       : { title: "Trip", days: [] };
   const language = safeTripData.language === "en" ? "en" : "vi";
   const budgetSummary = safeTripData.budget_summary ?? null;
+  const timingAdvice = safeTripData.timing_advice ?? null;
   const showBudget = Boolean(budgetSummary);
 
   const timelineData = safeTripData.days;
@@ -23,11 +25,15 @@ function BotResult({ tripData }) {
 
   return (
     <div className="rounded-xl p-4 max-w-3xl">
-      <BestTimeBanner
-        bestTime={safeTripData.best_time}
-        region={safeTripData.region}
-        language={language}
-      />
+      {timingAdvice ? (
+        <TravelTimingBanner advice={timingAdvice} language={language} />
+      ) : (
+        <BestTimeBanner
+          bestTime={safeTripData.best_time}
+          region={safeTripData.region}
+          language={language}
+        />
+      )}
       <BudgetSummary summary={budgetSummary} language={language} />
       <ResultSwitcher view={view} setView={setView} language={language} />
       {view === "text" && (

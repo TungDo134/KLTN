@@ -1,7 +1,18 @@
 import { useState, useEffect, useRef } from "react";
-import { FiChevronDown, FiEdit2, FiTrash2, FiInfo, FiMenu, FiSidebar } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiEdit2,
+  FiTrash2,
+  FiInfo,
+  FiMenu,
+  FiSidebar,
+} from "react-icons/fi";
 
-export default function Topbar({ onMobileMenuToggle, onDesktopMenuToggle, desktopSidebarOpen }) {
+export default function Topbar({
+  onMobileMenuToggle,
+  onDesktopMenuToggle,
+  desktopSidebarOpen,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -24,7 +35,7 @@ export default function Topbar({ onMobileMenuToggle, onDesktopMenuToggle, deskto
         {/* Hamburger menu - mobile only */}
         <button
           onClick={onMobileMenuToggle}
-          className="p-2 hover:bg-(--bg-hover) rounded-lg transition-colors text-(--text-muted) md:hidden"
+          className="p-2 hover:bg-(--color-surface-hover) rounded-lg transition-colors text-(--color-text-secondary) md:hidden"
         >
           <FiMenu size={20} />
         </button>
@@ -33,45 +44,15 @@ export default function Topbar({ onMobileMenuToggle, onDesktopMenuToggle, deskto
         {!desktopSidebarOpen && (
           <button
             onClick={onDesktopMenuToggle}
-            className="p-2 hover:bg-(--bg-hover) rounded-lg transition-colors text-(--text-muted) hidden md:block"
+            className="p-2 hover:bg-(--color-surface-hover) rounded-lg transition-colors text-(--color-text-secondary) hidden md:block"
           >
             <FiSidebar size={20} />
           </button>
         )}
-
-        <div className="relative" ref={dropdownRef}>
-          <div
-            className="flex items-center gap-2 cursor-pointer hover:bg-(--bg-hover) px-3 py-1.5 rounded-lg transition text-(--text-main)"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span className="text-sm font-medium">Chatbot</span>
-            <FiChevronDown className="text-gray-400" size={16} />
-          </div>
-
-          {/* Dropdown Menu */}
-          {isOpen && (
-            <div className="absolute top-full left-0 mt-1 w-48 bg-(--bg-panel) rounded-xl shadow-2xl border border-(--border-main) py-1 overflow-hidden z-50">
-              <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] text-(--text-main) hover:bg-(--bg-hover) transition-colors text-left">
-                <FiEdit2 size={14} className="text-gray-400" /> Đổi tên
-              </button>
-              <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] text-(--text-main) hover:bg-(--bg-hover) transition-colors text-left">
-                <FiInfo size={14} className="text-gray-400" /> Thông tin
-              </button>
-              <div className="border-t border-(--border-main) my-1"></div>
-              <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] text-red-400 hover:bg-(--bg-hover) transition-colors text-left">
-                <FiTrash2 size={14} /> Xóa hội thoại
-              </button>
-            </div>
-          )}
-        </div>
       </div>
 
       {/* Right */}
-      <div className="flex items-center gap-4">
-        <button className="flex items-center gap-2 border border-(--border-main)ransparent hover:bg-(--bg-hover) px-3 py-1.5 rounded-lg transition text-(--text-main)">
-          <span className="text-[13px] font-medium">Share</span>
-        </button>
-      </div>
+      <div className="flex items-center gap-4"></div>
     </div>
   );
 }

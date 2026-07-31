@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/theme.css";
 
 .sidebar-scrollbar {
   scrollbar-width: thin;
@@ -6,7 +7,7 @@
 }
 
 .sidebar-scrollbar:hover {
-  scrollbar-color: #4b5563 transparent;
+  scrollbar-color: var(--color-action-secondary) transparent;
 }
 
 .sidebar-scrollbar::-webkit-scrollbar {
@@ -23,33 +24,34 @@
 }
 
 .sidebar-scrollbar:hover::-webkit-scrollbar-thumb {
-  background: #4b5563;
+  background: var(--color-action-secondary);
 }
 
 .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
+  background: var(--color-action-primary);
 }
-:root {
-  /* =========================================
-     CẤU HÌNH MÀU SẮC GIAO DIỆN (THEME COLORS)
-     ========================================= */
 
-  /* Nền (Backgrounds) */
-  --bg-main: #171a21; /* Nền khu vực chat chính */
-  --bg-sidebar: #0f1115; /* Nền thanh điều hướng trái */
-  --bg-panel: #212631; /* Nền cho input box, dropdown, bong bóng chat của user */
-  --bg-hover: #2d3446; /* Nền khi hover vào các nút, item */
+.chat-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-action-soft) transparent;
+}
 
-  /* Viền (Borders) */
-  --border-main: #374151; /* Viền chung cho input, menu, nút */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
 
-  /* Chữ (Text) */
-  --text-main: #f3f4f6; /* Chữ chính (tiêu đề, nội dung chat) */
-  --text-muted: #9ca3af; /* Chữ phụ (danh sách chat, nút chức năng) */
-  --text-dark: #6b7280; /* Chữ rất nhạt (disclaimer, ghi chú nhỏ) */
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  /* Thương hiệu (Brand/Accent) */
-  --accent-color: #60a5fa; /* Màu nhấn (icon mặt trời, điểm nhấn) */
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-action-soft);
+  border: 2px solid var(--color-surface-page);
+  border-radius: 999px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-action-secondary);
 }
 
 /* Componet timeline result */

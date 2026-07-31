@@ -17,8 +17,11 @@ function BestTimeBanner({ bestTime, region, language = "vi" }) {
   if (!label) return null;
 
   return (
-    <div className="mb-3 flex items-start gap-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-50">
-      <FiCalendar className="mt-0.5 shrink-0 text-emerald-300" size={18} />
+    <div className="mb-3 flex items-start gap-3 rounded-lg border border-[var(--color-success-border)] bg-[var(--color-success-surface)] px-4 py-3 text-sm text-[var(--color-success-text)]">
+      <FiCalendar
+        className="mt-0.5 shrink-0 text-[var(--color-success-text)]"
+        size={18}
+      />
       <div>
         {/* Banner hien thi mua du lich phu hop nhat tu JSON trip plan cua backend. */}
         <p className="font-medium">
@@ -27,7 +30,7 @@ function BestTimeBanner({ bestTime, region, language = "vi" }) {
             : "Thời điểm đẹp nhất"}
           {region ? ` ${language === "en" ? "for" : "cho"} ${region}` : ""}
         </p>
-        <p className="mt-1 text-emerald-100/80">{label}</p>
+        <p className="mt-1 text-[var(--color-success-text)]">{label}</p>
       </div>
     </div>
   );

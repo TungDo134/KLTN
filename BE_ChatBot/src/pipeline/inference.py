@@ -12,20 +12,20 @@ FLOW:
       -> save the complete turn to session history
 """
 
+import asyncio
+import json
 import os
 import re
-import json
-import asyncio
 from collections import defaultdict
 
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from src.core.llm_container import get_llm, get_model_info, get_system_prompt
 
-from src.core.llm_container import get_llm, get_system_prompt, get_model_info
+from ..core.base_llm_model import LLMProvider
+from ..services.visa_advisor import VisaAdvisor
 
 # Import các module
 from .orchestrator import TripOrchestrator
-from ..core.base_llm_model import LLMProvider
-from ..services.visa_advisor import VisaAdvisor
 from .query_router import QueryRouter, RouteDecision, RoutingContext
 
 # Limit turns tránh vượt quá context window LLM
@@ -65,6 +65,7 @@ class RAGInference:
         # ------------------------------------------------------------------ #
         self._history: dict[str, list] = defaultdict(list)
         self._routing_context: dict[str, RoutingContext] = defaultdict(RoutingContext)
+        self._pending_timing_question: dict[str, str] = {}
         """
         RAM self._history
         → dùng để chat nhanh trong runtime hiện tại
@@ -192,7 +193,9 @@ class RAGInference:
           + HumanMessage (câu hỏi hiện tại)
         """
         language_instruction = (
-            "Respond in English." if response_language == "en" else "Trả lời bằng tiếng Việt."
+            "Respond in English."
+            if response_language == "en"
+            else "Trả lời bằng tiếng Việt."
         )
         system_content = f"""{self.system_prompt}
 
@@ -335,6 +338,19 @@ class RAGInference:
             "\n\n```json\n"
             + json.dumps(serialized_plan, ensure_ascii=False, indent=2)
             + "\n```"
+        )
+
+    def _build_timing_advice(
+        self,
+        trip_plan,
+        response_language: str = "vi",
+    ) -> str:
+        advice = getattr(trip_plan, "timing_advice", None)
+        if advice is None:
+            return ""
+        return self.orchestrator.travel_timing_service.render_markdown(
+            advice,
+            response_language,
         )
 
     def _build_recommendation_details(
@@ -523,9 +539,7 @@ class RAGInference:
                         "Tuy nhiên, chưa đủ dữ liệu để đánh giá toàn bộ chuyến đi."
                     )
             else:
-                lines.append(
-                    "Phí tham quan ước tính nằm trong ngân sách đã cung cấp."
-                )
+                lines.append("Phí tham quan ước tính nằm trong ngân sách đã cung cấp.")
             lines.extend(
                 [
                     "",
@@ -575,7 +589,11 @@ class RAGInference:
 
     def _restore_pending_context(self, session_id: str, history: list) -> None:
         routing_context = self._routing_context[session_id]
-        if routing_context.pending_question or not history:
+        if (
+            routing_context.pending_question
+            or self._pending_timing_question.get(session_id)
+            or not history
+        ):
             return
 
         last_message = history[-1]
@@ -583,6 +601,20 @@ class RAGInference:
             return
 
         content = str(getattr(last_message, "content", "")).lower()
+        is_timing_question = (
+            "to calculate the departure time before creating the itinerary" in content
+            or "\u0111\u1ec3 t\u00ednh gi\u1edd kh\u1edfi h\u00e0nh tr\u01b0\u1edbc khi t\u1ea1o itinerary"
+            in content
+        )
+        if is_timing_question:
+            routing_context.response_language = (
+                "en" if content.startswith("to calculate") else "vi"
+            )
+            for previous in reversed(history[:-1]):
+                if isinstance(previous, HumanMessage):
+                    self._pending_timing_question[session_id] = str(previous.content)
+                    return
+
         is_country_question = (
             "which country's passport" in content
             or "hộ chiếu do quốc gia nào" in content
@@ -691,7 +723,23 @@ class RAGInference:
             if route_decision.action == "run_recommendation"
             else "trip_planning"
         )
-        orch_res = await self.orchestrator.run(search_question, mode=mode)
+        orch_res = await self.orchestrator.run(
+            search_question,
+            mode=mode,
+            response_language=route_decision.response_language,
+        )
+        clarification_reply = orch_res.get("clarification_reply")
+        if clarification_reply:
+            return {
+                "messages": None,
+                "trip_request": orch_res["trip_request"],
+                "trip_plan": None,
+                "places": [],
+                "budget_summary": None,
+                "execution_mode": mode,
+                "clarification_reply": clarification_reply,
+                "search_question": search_question,
+            }
         relevant_places = orch_res["places"]
         trip_request = orch_res["trip_request"]
         trip_plan = orch_res["trip_plan"]
@@ -725,6 +773,8 @@ class RAGInference:
             "places": relevant_places,
             "budget_summary": budget_summary,
             "execution_mode": mode,
+            "clarification_reply": None,
+            "search_question": search_question,
         }
 
     # ============================================================ #
@@ -749,9 +799,15 @@ class RAGInference:
             Câu trả lời dạng string.
         """
         history = self._get_history(session_id)
+        pending_timing_question = self._pending_timing_question.get(session_id)
+        pipeline_question = (
+            f"{pending_timing_question}\nThông tin bổ sung: {question}"
+            if pending_timing_question
+            else question
+        )
         routing_context = self._routing_context[session_id]
         route_decision = await self.query_router.route(
-            question,
+            pipeline_question,
             history,
             routing_context,
         )
@@ -770,20 +826,23 @@ class RAGInference:
                 force=True,
             ).lstrip()
             if not answer:
-                answer = self._domestic_visa_reply(
-                    route_decision.response_language
-                )
-            answer += self._visa_route_closing(
-                route_decision.response_language
-            )
+                answer = self._domestic_visa_reply(route_decision.response_language)
+            answer += self._visa_route_closing(route_decision.response_language)
             self._save_turn(session_id, question, answer)
             return answer
 
         prepared = await self._prepare_generation(
-            question,
+            pipeline_question,
             history,
             route_decision,
         )
+        if prepared.get("clarification_reply"):
+            answer = prepared["clarification_reply"]
+            self._pending_timing_question[session_id] = prepared["search_question"]
+            self._save_turn(session_id, question, answer)
+            return answer
+
+        self._pending_timing_question.pop(session_id, None)
         try:
             result = await self.llm.ainvoke(prepared["messages"])
             answer = result.content
@@ -808,6 +867,10 @@ class RAGInference:
             route_decision,
             trip_request=prepared["trip_request"],
         )
+        answer += self._build_timing_advice(
+            prepared["trip_plan"],
+            route_decision.response_language,
+        )
         answer += self._build_json_block(
             prepared["trip_plan"],
             route_decision.response_language,
@@ -827,9 +890,15 @@ class RAGInference:
         - Lay lich su cua sesseion cụ thể
         """
         history = self._get_history(session_id)
+        pending_timing_question = self._pending_timing_question.get(session_id)
+        pipeline_question = (
+            f"{pending_timing_question}\nThông tin bổ sung: {question}"
+            if pending_timing_question
+            else question
+        )
         routing_context = self._routing_context[session_id]
         route_decision = await self.query_router.route(
-            question,
+            pipeline_question,
             history,
             routing_context,
         )
@@ -854,18 +923,24 @@ class RAGInference:
                 full_answer = self._domestic_visa_reply(
                     route_decision.response_language
                 )
-            full_answer += self._visa_route_closing(
-                route_decision.response_language
-            )
+            full_answer += self._visa_route_closing(route_decision.response_language)
             yield full_answer
             self._save_turn(session_id, question, full_answer)
             return
 
         prepared = await self._prepare_generation(
-            question,
+            pipeline_question,
             history,
             route_decision,
         )
+        if prepared.get("clarification_reply"):
+            full_answer = prepared["clarification_reply"]
+            self._pending_timing_question[session_id] = prepared["search_question"]
+            yield full_answer
+            self._save_turn(session_id, question, full_answer)
+            return
+
+        self._pending_timing_question.pop(session_id, None)
         full_answer = ""
         try:
             async for chunk in self.llm.astream(prepared["messages"]):
@@ -910,6 +985,14 @@ class RAGInference:
             full_answer += visa_note
             yield visa_note
 
+        timing_advice = self._build_timing_advice(
+            prepared["trip_plan"],
+            route_decision.response_language,
+        )
+        if timing_advice:
+            full_answer += timing_advice
+            yield timing_advice
+
         json_block = self._build_json_block(
             prepared["trip_plan"],
             route_decision.response_language,
@@ -928,6 +1011,7 @@ class RAGInference:
         """Xóa lịch sử của một session (dùng cho nút 'New Chat')."""
         self._history.pop(session_id, None)
         self._routing_context.pop(session_id, None)
+        self._pending_timing_question.pop(session_id, None)
         print(f"🗑️  History cleared for session: {session_id}")
 
     #

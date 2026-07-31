@@ -6,8 +6,10 @@ function ResultSwitcher({ view, setView, language = "vi" }) {
   const base =
     "flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg transition";
 
-  const active = "bg-neutral-700 text-white";
-  const inactive = "text-neutral-400 hover:text-white hover:bg-neutral-800";
+  const active =
+    "bg-[var(--color-action-primary)] text-[var(--color-text-on-primary)]";
+  const inactive =
+    "text-[var(--color-text-secondary)] hover:text-[var(--color-action-primary)] hover:bg-[var(--color-surface-hover)]";
   const labels =
     language === "en"
       ? { text: "Text", timeline: "Timeline", mindmap: "Mindmap" }

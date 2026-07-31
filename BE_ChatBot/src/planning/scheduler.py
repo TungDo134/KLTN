@@ -28,7 +28,7 @@ class Scheduler:
         carry_over = []
         
         for day_idx in range(request.days):
-            current_time = self.START_HOUR * 60  # 480 mins
+            current_time = self._start_minutes(request, day_idx)
             scheduled = []
             prev_id = None
             total_travel = 0
@@ -106,3 +106,16 @@ class Scheduler:
         m = total_minutes % 60
         return f"{h:02d}:{m:02d}"
 
+    def _start_minutes(self, request: TripRequest, day_idx: int) -> int:
+        if day_idx != 0 or not request.day1_start_time:
+            return self.START_HOUR * 60
+
+        try:
+            hour, minute = str(request.day1_start_time).split(":", 1)
+            parsed = int(hour) * 60 + int(minute)
+        except (TypeError, ValueError):
+            return self.START_HOUR * 60
+
+        if 0 <= parsed < 24 * 60:
+            return parsed
+        return self.START_HOUR * 60

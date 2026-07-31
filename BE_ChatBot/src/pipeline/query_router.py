@@ -328,9 +328,7 @@ class QueryRouter:
             and not context.pending_question
             and self._is_small_talk_only(normalized)
         ):
-            response_language = (
-                "vi" if normalized in _VI_SMALL_TALK else "en"
-            )
+            response_language = "vi" if normalized in _VI_SMALL_TALK else "en"
             context.response_language = response_language
             return self._fast_reply(
                 intent="small_talk",
@@ -384,9 +382,11 @@ class QueryRouter:
         if language not in {"vi", "en", "mixed", "unsupported", "unknown"}:
             language = "unknown"
 
-        response_language = str(
-            data.get("response_language") or context.response_language or "vi"
-        ).strip().lower()
+        response_language = (
+            str(data.get("response_language") or context.response_language or "vi")
+            .strip()
+            .lower()
+        )
         if response_language not in {"vi", "en"}:
             response_language = context.response_language or "vi"
         context.response_language = response_language
@@ -575,8 +575,7 @@ class QueryRouter:
             )
 
         needs_country = not passport_country and (
-            intent == "visa_advice"
-            or (intent in _TRAVEL_INTENTS and language == "en")
+            intent == "visa_advice" or (intent in _TRAVEL_INTENTS and language == "en")
         )
         if needs_country:
             context.pending_question = resolved_question or question
@@ -727,9 +726,7 @@ otherwise return null.
 
         intent = "uncertain"
         confidence = 0.45
-        has_explicit_planning_signal = self._has_explicit_planning_signal(
-            normalized
-        )
+        has_explicit_planning_signal = self._has_explicit_planning_signal(normalized)
         has_duration_signal = bool(
             re.search(r"\b\d+\s*-?\s*(ngay|day|days)\b", normalized)
         )
@@ -786,59 +783,30 @@ otherwise return null.
         merged = dict(data)
         overrides = []
 
-        classifier_language = str(
-            data.get("language") or "unknown"
-        ).strip().lower()
-        rule_language = str(
-            rule_data.get("language") or "unknown"
-        ).strip().lower()
-        if (
-            not preserve_language
-            and rule_language in {"vi", "en", "unsupported"}
-        ):
+        classifier_language = str(data.get("language") or "unknown").strip().lower()
+        rule_language = str(rule_data.get("language") or "unknown").strip().lower()
+        if not preserve_language and rule_language in {"vi", "en", "unsupported"}:
             merged["language"] = rule_language
             if rule_language in {"vi", "en"}:
                 merged["response_language"] = rule_language
             overrides.append(f"language={rule_language}")
 
-        classifier_intent = str(
-            data.get("intent") or "uncertain"
-        ).strip().lower()
-        rule_intent = str(
-            rule_data.get("intent") or "uncertain"
-        ).strip().lower()
+        classifier_intent = str(data.get("intent") or "uncertain").strip().lower()
+        rule_intent = str(rule_data.get("intent") or "uncertain").strip().lower()
         classifier_confidence = self._confidence(data)
         strong_rule_intents = _TRAVEL_INTENTS | {"small_talk", "visa_advice"}
 
-        should_use_rule_intent = (
-            rule_intent in strong_rule_intents
-            and (
-                classifier_intent not in _VALID_INTENTS
-                or classifier_intent in {"uncertain", "not_travel"}
-                or classifier_confidence < 0.55
-                or (
-                    classifier_language == "unsupported"
-                    and rule_language in {"vi", "en"}
-                )
-                or (
-                    rule_intent == "visa_advice"
-                    and classifier_intent in _TRAVEL_INTENTS
-                )
-                or (
-                    rule_intent == "trip_planning"
-                    and classifier_intent == "visa_advice"
-                )
-            )
+        should_use_rule_intent = rule_intent in strong_rule_intents and (
+            classifier_intent not in _VALID_INTENTS
+            or classifier_intent in {"uncertain", "not_travel"}
+            or classifier_confidence < 0.55
+            or (classifier_language == "unsupported" and rule_language in {"vi", "en"})
+            or (rule_intent == "visa_advice" and classifier_intent in _TRAVEL_INTENTS)
+            or (rule_intent == "trip_planning" and classifier_intent == "visa_advice")
         )
-        should_use_rule_not_travel = (
-            rule_intent == "not_travel"
-            and (
-                classifier_intent in {"uncertain", "not_travel"}
-                or (
-                    classifier_language == "unsupported"
-                    and rule_language in {"vi", "en"}
-                )
-            )
+        should_use_rule_not_travel = rule_intent == "not_travel" and (
+            classifier_intent in {"uncertain", "not_travel"}
+            or (classifier_language == "unsupported" and rule_language in {"vi", "en"})
         )
         if should_use_rule_intent or should_use_rule_not_travel:
             merged["intent"] = rule_intent
@@ -863,14 +831,12 @@ otherwise return null.
         )
 
     def _mentions_multiple_passports(self, normalized: str) -> bool:
-        english_multiple = (
-            "passports" in normalized
-            and bool(re.search(r"\b(and|or)\b", normalized))
+        english_multiple = "passports" in normalized and bool(
+            re.search(r"\b(and|or)\b", normalized)
         )
-        vietnamese_multiple = (
-            self._contains_phrase(normalized, {"hai ho chieu", "nhieu ho chieu"})
-            and bool(re.search(r"\b(va|hoac)\b", normalized))
-        )
+        vietnamese_multiple = self._contains_phrase(
+            normalized, {"hai ho chieu", "nhieu ho chieu"}
+        ) and bool(re.search(r"\b(va|hoac)\b", normalized))
         return english_multiple or vietnamese_multiple
 
     def _valid_passport_country(self, value) -> str | None:
@@ -988,9 +954,7 @@ otherwise return null.
 
     def _is_complete_trip_request(self, normalized: str) -> bool:
         has_destination = self._contains_phrase(normalized, _DESTINATION_PHRASES)
-        has_duration = bool(
-            re.search(r"\b\d+\s*[- ]?\s*(day|days|ngay)\b", normalized)
-        )
+        has_duration = bool(re.search(r"\b\d+\s*[- ]?\s*(day|days|ngay)\b", normalized))
         return has_destination and has_duration
 
     def _is_ambiguous_korea(self, normalized: str) -> bool:
@@ -1012,8 +976,11 @@ otherwise return null.
 
     def _detect_supported_language(self, original: str, normalized: str) -> str:
         has_vietnamese_chars = bool(
-            re.search(r"[ăâđêôơưáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩị"
-                      r"óòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]", original.lower())
+            re.search(
+                r"[ăâđêôơưáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩị"
+                r"óòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]",
+                original.lower(),
+            )
         )
         has_english_marker = self._contains_phrase(
             normalized,
@@ -1036,10 +1003,7 @@ otherwise return null.
             return "vi"
         if has_english_marker:
             return "en"
-        if any(
-            char.isalpha() and not ("a" <= char <= "z")
-            for char in normalized
-        ):
+        if any(char.isalpha() and not ("a" <= char <= "z") for char in normalized):
             return "unsupported"
         if len(re.findall(r"\b[a-z]+\b", normalized)) >= 3:
             return "unsupported"

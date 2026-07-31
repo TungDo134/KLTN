@@ -22,12 +22,16 @@ TRAVEL PIPELINE:
 
 from typing import Literal
 
-from src.schemas import Place, TripRequest, TripPlan, RecommendResult
 from src.pipeline.query_analyzer import QueryAnalyzer
 from src.pipeline.rag_pipline import RAGStorage
 from src.pipeline.reranker import Reranker
-from src.recommend.hybrid_recommender import HybridRecommender
 from src.planning.planner import TripPlanner
+from src.recommend.hybrid_recommender import HybridRecommender
+from src.schemas import Place, RecommendResult, TripPlan, TripRequest
+from src.services.travel_timing_service import (
+    TimingClarificationError,
+    TravelTimingService,
+)
 from src.services.weather_service import WeatherService
 
 
@@ -53,6 +57,7 @@ class TripOrchestrator:
 
         # WeatherService lay du lieu thoi tiet runtime de bo sung ngu canh tu van thuc tien.
         self.weather_service = WeatherService()
+        self.travel_timing_service = TravelTimingService()
 
         # retriever              → MultiQueryRetriever (hybrid search)
         self.llm = llm
@@ -65,6 +70,7 @@ class TripOrchestrator:
         self,
         raw_query: str,
         mode: Literal["recommendation", "trip_planning"] = "trip_planning",
+        response_language: str = "vi",
     ) -> dict:
         """
         Chay pipeline du lich theo execution mode.
@@ -83,6 +89,24 @@ class TripOrchestrator:
         trip_request = await self.analyzer.extract(raw_query)
         print("\n[QueryAnalyzer] TripRequest:", trip_request)
 
+        timing_service = getattr(self, "travel_timing_service", None)
+        timing_requested = (
+            mode == "trip_planning"
+            and timing_service is not None
+            and timing_service.is_timing_requested(trip_request)
+        )
+        if timing_requested:
+            clarification = timing_service.clarification_reply(
+                trip_request,
+                response_language,
+            )
+            if clarification:
+                return self._clarification_result(
+                    trip_request,
+                    mode,
+                    clarification,
+                )
+
         weather = None
         if trip_request.region:
             # WeatherAdvice duoc tao sau QueryAnalyzer vi can region/start_date/days da trich xuat.
@@ -92,6 +116,10 @@ class TripOrchestrator:
                 trip_request.days,
             )
             print("\n[WeatherService] WeatherAdvice:", weather)
+
+        if timing_requested and trip_request.auto_select_start_time:
+            trip_request.day1_start_time = self._select_day1_start_time(weather)
+            trip_request.time_intent = "auto_select"
 
         # ============================================================
         #               BƯỚC 2: MULTI-QUERY + HYBRID SEARCH
@@ -172,6 +200,23 @@ class TripOrchestrator:
         trip_plan = None
         if mode == "trip_planning":
             trip_plan = self.planner.plan(recommend_result)
+            if timing_requested:
+                first_place = self._first_scheduled_place(trip_plan)
+            else:
+                first_place = None
+            if first_place is not None:
+                try:
+                    trip_plan.timing_advice = timing_service.build_advice(
+                        trip_request,
+                        first_place,
+                        response_language,
+                    )
+                except TimingClarificationError as exc:
+                    return self._clarification_result(
+                        trip_request,
+                        mode,
+                        str(exc),
+                    )
 
         budget_places = recommended_places
         if trip_plan is not None:
@@ -192,7 +237,40 @@ class TripOrchestrator:
             "weather": weather,
             "budget_summary": budget_summary,
             "execution_mode": mode,
+            "clarification_reply": None,
         }
+
+    def _clarification_result(
+        self,
+        trip_request: TripRequest,
+        mode: str,
+        reply: str,
+    ) -> dict:
+        return {
+            "places": [],
+            "trip_request": trip_request,
+            "trip_plan": None,
+            "weather": None,
+            "budget_summary": None,
+            "execution_mode": mode,
+            "clarification_reply": reply,
+        }
+
+    def _select_day1_start_time(self, weather) -> str:
+        risk_level = getattr(weather, "risk_level", "")
+        if risk_level == "high":
+            return "09:00"
+        if risk_level == "medium":
+            return "07:30"
+        return "08:00"
+
+    def _first_scheduled_place(self, trip_plan: TripPlan):
+        if not trip_plan:
+            return None
+        for day in trip_plan.days:
+            if day.places:
+                return day.places[0].place
+        return None
 
     def _docs_to_places(self, documents: list) -> list:
         """
@@ -437,6 +515,11 @@ class TripOrchestrator:
             "best_time": best_time,
             "language": language,
             "budget_summary": budget_summary,
+            "timing_advice": (
+                getattr(plan, "timing_advice", None).to_dict()
+                if getattr(plan, "timing_advice", None) is not None
+                else None
+            ),
             "days": [
                 {
                     "day": day.day,

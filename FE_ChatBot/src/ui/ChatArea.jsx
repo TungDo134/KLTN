@@ -4,6 +4,7 @@ import Message from "./Message";
 import ChatInput from "./ChatInput";
 import chatApi from "../services/chatApi";
 import { fetchMessages } from "../services/conversationApi";
+import { getStoredAuthUser } from "../services/authApi";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
 function stripJsonObject(text) {
@@ -51,10 +52,14 @@ function ChatArea() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [conversationId, setConversationId] = useState(null);
+  const [currentUser, setCurrentUser] = useState(() => getStoredAuthUser());
   const bottomRef = useRef(null);
   const navigate = useNavigate();
   const { conversationId: routeConversationId } = useParams();
   const { onConversationChanged } = useOutletContext() ?? {};
+
+  const displayName = currentUser?.full_name || currentUser?.email || "User";
+  console.log(displayName);
 
   const mapDbMessage = (message) => {
     if (message.role === "user") {
@@ -264,50 +269,34 @@ function ChatArea() {
             {/* Greeting */}
             <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
               <img
-                src="/favicon.ico"
-                alt="Logo"
-                className="w-[40px] h-[33px] sm:w-[60px] sm:h-[50px]"
+                src="/android-chrome-192x192.png"
+                alt="Mellow AI logo"
+                className="size-16 sm:size-20 shrink-0 object-contain"
               />
-              <h1 className="text-[22px] sm:text-[32px] font-serif text-(--text-main) font-medium tracking-wide">
-                {`Happy ${
+              <h1 className="text-[22px] sm:text-[32px] font-serif text-(--color-text-page-subheading) font-medium tracking-wide">
+                {` ${
                   [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
+                    "Chủ nhật",
+                    "Thứ Hai",
+                    "Thứ Ba",
+                    "Thứ Tư",
+                    "Thứ Năm",
+                    "Thứ Sáu",
+                    "Thứ Bảy",
                   ][new Date().getDay()]
-                }, Tung Do`}
+                } vui vẻ, ${displayName}`}
               </h1>
             </div>
 
             {/* Input */}
-            <div className="w-full relative max-w-[800px]">
+            <div className="w-full relative max-w-200">
               <ChatInput onSend={handleSend} isEmptyState={true} />
-            </div>
-
-            {/* Quick Actions */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-5 w-full max-w-[800px]">
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
-                <span className="text-gray-400">{"</>"}</span> Code
-              </button>
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
-                <span className="text-gray-400">🎓</span> Learn
-              </button>
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
-                <span className="text-gray-400">🖊️</span> Write
-              </button>
-              <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[var(--border-main)] bg-transparent hover:bg-[var(--bg-hover)] text-[12px] sm:text-[13px] text-[var(--text-muted)] transition-colors">
-                <span className="text-gray-400">☕</span> Relax
-              </button>
             </div>
           </div>
         </div>
       ) : (
         <>
-          <div className="flex-1 overflow-y-auto px-3 sm:px-6 pt-4 sm:pt-6 pb-28">
+          <div className="chat-scrollbar flex-1 overflow-y-auto px-3 sm:px-6 pt-4 sm:pt-6 pb-28">
             <div className="max-w-3xl mx-auto space-y-4">
               {messages.map((msg, index) => (
                 <Message key={index} {...msg} />
@@ -316,9 +305,9 @@ function ChatArea() {
               {/* Hiển thị placeholder loading khi đang chờ bot */}
               {loading && (
                 <div className="mr-auto mb-6 flex items-center gap-1.5 py-3 px-2">
-                  <div className="w-2 h-2 bg-(--text-muted) rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                  <div className="w-2 h-2 bg-(--text-muted) rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                  <div className="w-2 h-2 bg-(--text-muted) rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-(--color-text-secondary) rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                  <div className="w-2 h-2 bg-(--color-text-secondary) rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                  <div className="w-2 h-2 bg-(--color-text-secondary) rounded-full animate-bounce"></div>
                 </div>
               )}
 
@@ -326,7 +315,7 @@ function ChatArea() {
             </div>
           </div>
 
-          <div className="px-3 sm:px-4 pb-3 sm:pb-4 bg-(--bg-main)">
+          <div className="px-3 sm:px-4 pb-3 sm:pb-4 bg-(--color-surface-page)">
             <div className="max-w-3xl mx-auto w-full relative">
               {/* Disable input khi đang loading */}
               <ChatInput
@@ -334,9 +323,9 @@ function ChatArea() {
                 disabled={loading}
                 isEmptyState={false}
               />
-              <p className="text-center text-[10px] sm:text-[11px] text-(--text-dark) mt-2 sm:mt-3">
-                Mellow is AI and can make mistakes. Please double-check
-                responses.
+              <p className="text-center text-[12px] sm:text-[11px] text-(--color-text-subtle) mt-2 sm:mt-3">
+                Mellow là trí tuệ nhân tạo (AI) và có thể mắc sai sót. Vui lòng
+                kiểm tra kỹ các phản hồi.
               </p>
             </div>
           </div>
