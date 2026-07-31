@@ -1,0 +1,58 @@
+:root {
+  /* Surfaces */
+  --color-surface-page: #ebdcc5;
+  --color-surface-sidebar: #a9835c;
+  --color-surface-panel: #f5ead8;
+  --color-surface-hover: #d1b48f;
+  --color-surface-chat-input: #3f1816;
+
+  /* Borders */
+  --color-border-default: #a9835c;
+  --color-border-control: #7e3717;
+
+  /* Text */
+  --color-text-primary: #3f1816;
+  --color-text-secondary: #3f1816;
+  --color-text-subtle: #3f1816;
+  --color-text-on-primary: #ebdcc5;
+  --color-text-sidebar-subheading: #3f1816;
+  --color-text-page-subheading: #7e3717;
+  --color-text-on-chat-input: #ebdcc5;
+
+  /* Actions */
+  --color-action-primary: #3f1816;
+  --color-action-secondary: #7e3717;
+  --color-action-soft: #a9835c;
+
+  /* Overlays */
+  --color-overlay-modal: rgb(63 24 22 / 55%);
+  --color-overlay-mobile: rgb(63 24 22 / 50%);
+  --color-overlay-mindmap: rgb(235 220 197 / 72%);
+
+  /* Success */
+  --color-success-surface: #7a8450;
+  --color-success-border: #7a8450;
+  --color-success-text: #ffffff;
+  --color-success-accent: #7a8450;
+
+  /* Information */
+  --color-info-surface: #f1e4cf;
+  --color-info-border: #a9835c;
+  --color-info-text: #7e3717;
+  --color-info-accent: #3f1816;
+
+  /* Estimated costs */
+  --color-estimate-surface: #7a8450;
+  --color-estimate-text: #ffffff;
+
+  /* Warning */
+  --color-warning-surface: #fef3c7;
+  --color-warning-border: #fcd34d;
+  --color-warning-text: #92400e;
+  --color-warning-accent: #b45309;
+
+  /* Danger */
+  --color-danger-surface: #fee2e2;
+  --color-danger-border: #fca5a5;
+  --color-danger-text: #991b1b;
+}

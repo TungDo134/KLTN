@@ -33,8 +33,8 @@ function EntranceFeeBadge({ fee, status, language = "vi" }) {
     <span
       className={`mt-2 inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-xs ${
         isEstimated
-          ? "border-emerald-500/25 bg-emerald-500/10 text-emerald-200"
-          : "border-amber-500/25 bg-amber-500/10 text-amber-200"
+          ? "border-[var(--color-estimate-surface)] bg-[var(--color-estimate-surface)] text-[var(--color-estimate-text)]"
+          : "border-[var(--color-warning-border)] bg-[var(--color-warning-surface)] text-[var(--color-warning-text)]"
       }`}
     >
       {isEstimated ? <FiDollarSign size={13} /> : <FiAlertCircle size={13} />}

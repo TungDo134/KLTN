@@ -36,25 +36,25 @@ export default function PlusMenu() {
           e.stopPropagation();
           setOpen(!open);
         }}
-        className="p-2 rounded-full hover:bg-[var(--bg-hover)] transition"
+        className="p-2 rounded-full hover:bg-[var(--color-surface-hover)] transition"
       >
         <FiPlus size={18} />
       </button>
 
       {/* dropdown plus */}
       {open && (
-        <div className="absolute bottom-full mb-2 left-0 w-64 bg-[var(--bg-panel)] border border-[var(--border-main)] rounded-2xl shadow-xl p-2 z-50">
+        <div className="absolute bottom-full mb-2 left-0 w-64 bg-[var(--color-surface-panel)] border border-[var(--color-border-default)] rounded-2xl shadow-xl p-2 z-50">
           {items.map((item, index) =>
             item.divider ? (
-              <div key={index} className="border-t border-[var(--border-main)] my-2" />
+              <div key={index} className="border-t border-[var(--color-border-default)] my-2" />
             ) : (
               <div
                 key={index}
-                className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--bg-hover)] cursor-pointer transition"
+                className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[var(--color-surface-hover)] cursor-pointer transition"
               >
-                <span className="text-lg text-[var(--text-muted)]">{item.icon}</span>
+                <span className="text-lg text-[var(--color-text-secondary)]">{item.icon}</span>
 
-                <span className="text-sm text-[var(--text-main)]">{item.label}</span>
+                <span className="text-sm text-[var(--color-text-primary)]">{item.label}</span>
               </div>
             ),
           )}

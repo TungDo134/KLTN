@@ -77,19 +77,22 @@ function TravelTimingBanner({ advice, language = "vi" }) {
   ].filter(([, value]) => Number(value) > 0);
 
   return (
-    <section className="mb-4 rounded-xl border border-sky-500/30 bg-sky-500/10 p-4 text-sky-50">
+    <section className="mb-4 rounded-xl border border-[var(--color-info-border)] bg-[var(--color-info-surface)] p-4 text-[var(--color-info-text)]">
       <div className="flex items-start gap-3">
-        <FiClock className="mt-0.5 shrink-0 text-sky-300" size={19} />
+        <FiClock
+          className="mt-0.5 shrink-0 text-[var(--color-info-accent)]"
+          size={19}
+        />
         <div className="min-w-0 flex-1">
           <p className="text-xl font-bold uppercase">
             {language === "en"
               ? "Recommended departure time"
               : "dự kiến giờ khởi hành"}
           </p>
-          <p className="mt-1 text-lg font-bold text-white">
+          <p className="mt-1 text-lg font-bold text-[var(--color-text-primary)]">
             {formatDateTime(advice.recommended_departure_at, language)}
           </p>
-          <p className="mt-1 text-md text-sky-100/80">
+          <p className="mt-1 text-md text-[var(--color-info-text)]">
             {language === "en" ? "Safe window" : "Khoảng an toàn"}:{" "}
             {formatDateTime(safeWindow.start, language)} –{" "}
             {formatDateTime(safeWindow.end, language)}
@@ -97,7 +100,7 @@ function TravelTimingBanner({ advice, language = "vi" }) {
         </div>
       </div>
 
-      <div className="mt-3 flex items-start gap-2 text-xs text-sky-100/90">
+      <div className="mt-3 flex items-start gap-2 text-xs text-[var(--color-info-text)]">
         <FiMapPin className="mt-0.5 shrink-0" size={14} />
         <span className="flex flex-col gap-1">
           <span>
@@ -116,9 +119,9 @@ function TravelTimingBanner({ advice, language = "vi" }) {
           {durationItems.map(([label, value]) => (
             <div
               key={label}
-              className="flex justify-between gap-3 rounded-lg bg-black/20 px-3 py-2 text-xs"
+              className="flex justify-between gap-3 rounded-lg bg-[var(--color-surface-panel)] px-3 py-2 text-xs"
             >
-              <span className="text-sky-100/70">{label}</span>
+              <span className="text-[var(--color-text-secondary)]">{label}</span>
               <span className="font-medium">
                 {formatMinutes(value, language)}
               </span>
@@ -127,7 +130,7 @@ function TravelTimingBanner({ advice, language = "vi" }) {
         </div>
       )}
 
-      <div className="mt-3 flex items-start gap-2 rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2.5 text-xs leading-relaxed text-amber-100">
+      <div className="mt-3 flex items-start gap-2 rounded-lg border border-[var(--color-warning-border)] bg-[var(--color-warning-surface)] px-3 py-2.5 text-xs leading-relaxed text-[var(--color-warning-text)]">
         <FiAlertTriangle className="mt-0.5 shrink-0" size={14} />
         <span>{advice.uncertainty_notice}</span>
       </div>

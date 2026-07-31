@@ -6,22 +6,30 @@ import EntranceFeeBadge, {
 
 const DAY_TONES = [
   {
-    header: "border-emerald-500/30 bg-emerald-500/10 text-emerald-100",
-    icon: "bg-emerald-500/20 text-emerald-300",
-    dot: "bg-emerald-400 ring-emerald-500/20",
-    chip: "border-emerald-500/20 bg-emerald-500/10 text-emerald-200",
+    header:
+      "border-[var(--color-success-border)] bg-[var(--color-success-surface)] text-[var(--color-success-text)]",
+    icon:
+      "bg-[var(--color-surface-panel)] text-[var(--color-success-accent)]",
+    dot: "bg-[var(--color-success-text)] ring-[var(--color-success-surface)]",
+    chip:
+      "border-[var(--color-success-border)] bg-[var(--color-success-surface)] text-[var(--color-success-text)]",
   },
   {
-    header: "border-sky-500/30 bg-sky-500/10 text-sky-100",
-    icon: "bg-sky-500/20 text-sky-300",
-    dot: "bg-sky-400 ring-sky-500/20",
-    chip: "border-sky-500/20 bg-sky-500/10 text-sky-200",
+    header:
+      "border-[var(--color-info-border)] bg-[var(--color-info-surface)] text-[var(--color-info-text)]",
+    icon: "bg-[var(--color-surface-panel)] text-[var(--color-info-accent)]",
+    dot: "bg-[var(--color-info-accent)] ring-[var(--color-info-surface)]",
+    chip:
+      "border-[var(--color-info-border)] bg-[var(--color-surface-panel)] text-[var(--color-info-text)]",
   },
   {
-    header: "border-amber-500/30 bg-amber-500/10 text-amber-100",
-    icon: "bg-amber-500/20 text-amber-300",
-    dot: "bg-amber-400 ring-amber-500/20",
-    chip: "border-amber-500/20 bg-amber-500/10 text-amber-200",
+    header:
+      "border-[var(--color-warning-border)] bg-[var(--color-warning-surface)] text-[var(--color-warning-text)]",
+    icon:
+      "bg-[var(--color-surface-panel)] text-[var(--color-warning-accent)]",
+    dot: "bg-[var(--color-warning-accent)] ring-[var(--color-warning-surface)]",
+    chip:
+      "border-[var(--color-warning-border)] bg-[var(--color-surface-panel)] text-[var(--color-warning-text)]",
   },
 ];
 
@@ -48,7 +56,7 @@ function stripDayPrefix(title) {
 function TimelineResult({ data, language = "vi", showBudget = false }) {
   if (!Array.isArray(data) || data.length === 0) {
     return (
-      <div className="mt-2 rounded-lg border border-neutral-800 bg-neutral-900/70 px-4 py-3 text-sm text-neutral-400">
+      <div className="mt-2 rounded-lg border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] px-4 py-3 text-sm text-[var(--color-text-secondary)]">
         {language === "en"
           ? "No itinerary is available to display."
           : "Chưa có lịch trình để hiển thị."}
@@ -76,7 +84,7 @@ function TimelineResult({ data, language = "vi", showBudget = false }) {
                     {language === "en" ? "Day" : "Ngày"} {day.day}:{" "}
                     {stripDayPrefix(day.title)}
                   </h3>
-                  <span className="rounded-full border border-white/10 bg-black/20 px-2 py-0.5 text-xs text-neutral-300">
+                  <span className="rounded-full border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] px-2 py-0.5 text-xs text-[var(--color-text-secondary)]">
                     {places.length}{" "}
                     {language === "en"
                       ? places.length === 1
@@ -85,7 +93,7 @@ function TimelineResult({ data, language = "vi", showBudget = false }) {
                       : "địa điểm"}
                   </span>
                   {showBudget && (
-                    <span className="rounded-full border border-white/10 bg-black/20 px-2 py-0.5 text-xs text-neutral-300">
+                    <span className="rounded-full border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] px-2 py-0.5 text-xs text-[var(--color-text-secondary)]">
                       {language === "en" ? "Known fees" : "Phí đã biết"}: {" "}
                       {formatKnownEntranceFeeTotal(
                         day.estimated_entrance_fee_total,
@@ -96,14 +104,14 @@ function TimelineResult({ data, language = "vi", showBudget = false }) {
                   )}
                 </div>
                 {day.description && (
-                  <p className="mt-1 text-sm text-neutral-300">
+                  <p className="mt-1 text-sm text-[var(--color-text-primary)]">
                     {day.description}
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="relative ml-4 border-l border-neutral-700/80 pl-5">
+            <div className="relative ml-4 border-l border-[var(--color-border-default)] pl-5">
               {places.map((place, placeIndex) => {
                 const tags = getTags(place.tags);
 
@@ -115,8 +123,8 @@ function TimelineResult({ data, language = "vi", showBudget = false }) {
                     <span
                       className={`absolute -left-[29px] top-4 h-3 w-3 rounded-full ring-4 ${tone.dot}`}
                     />
-                    <div className="rounded-lg border border-neutral-800 bg-neutral-900/80 px-4 py-3 shadow-sm">
-                      <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-400">
+                    <div className="rounded-lg border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] px-4 py-3 shadow-sm">
+                      <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
                         <span className="inline-flex items-center gap-1">
                           <FiClock size={13} />
                           {formatTimeRange(place, language)}
@@ -125,11 +133,11 @@ function TimelineResult({ data, language = "vi", showBudget = false }) {
 
                       <div className="mt-2 flex items-start gap-2">
                         <FiMapPin
-                          className="mt-0.5 shrink-0 text-neutral-500"
+                          className="mt-0.5 shrink-0 text-[var(--color-action-secondary)]"
                           size={15}
                         />
                         <div className="min-w-0">
-                          <h4 className="text-sm font-medium text-neutral-100">
+                          <h4 className="text-sm font-medium text-[var(--color-text-primary)]">
                             {place.name}
                           </h4>
                           {tags.length > 0 && (

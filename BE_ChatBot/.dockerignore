@@ -15,6 +15,7 @@ __pycache__/
 src/model/
 src/source_data/*
 !src/source_data/visa_requirements.json
+!src/source_data/intercity_travel_times.json
 src/eval/
 test/
 utils/

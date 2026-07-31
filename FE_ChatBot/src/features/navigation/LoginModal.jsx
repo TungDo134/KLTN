@@ -48,22 +48,22 @@ function LoginModal({ onClose, onLogin }) {
       className="fixed inset-0 z-[999] flex items-center justify-center"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-[var(--color-overlay-modal)] backdrop-blur-sm" />
 
       <div
-        className="relative bg-white rounded-2xl w-[420px] max-w-[90vw] shadow-2xl"
+        className="relative bg-[var(--color-surface-panel)] text-[var(--color-text-primary)] border border-[var(--color-border-default)] rounded-2xl w-[420px] max-w-[90vw] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
         style={{ animation: "loginModalIn 0.2s ease-out" }}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-1 rounded-full hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-800"
+          className="absolute top-4 right-4 p-1 rounded-full hover:bg-[var(--color-surface-hover)] transition-colors text-[var(--color-text-secondary)] hover:text-[var(--color-action-primary)]"
         >
           <IoCloseOutline size={22} />
         </button>
 
         <div className="px-8 pt-10 pb-8">
-          <h2 className="text-[24px] font-bold text-gray-900 leading-tight">
+          <h2 className="text-[24px] font-bold text-[var(--color-text-primary)] leading-tight">
             Đăng nhập hoặc đăng kí
           </h2>
 
@@ -71,7 +71,7 @@ function LoginModal({ onClose, onLogin }) {
             <button
               onClick={handleGoogleLogin}
               disabled={loading}
-              className="w-full flex items-center gap-3 px-5 py-3 border border-gray-200 rounded-full text-[14px] font-medium text-gray-800 hover:bg-gray-50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full flex items-center gap-3 px-5 py-3 border border-[var(--color-border-control)] rounded-full text-[14px] font-medium text-[var(--color-text-primary)] hover:bg-[var(--color-surface-hover)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <FcGoogle size={20} />
               <span>
@@ -80,7 +80,9 @@ function LoginModal({ onClose, onLogin }) {
             </button>
 
             {error && (
-              <p className="mt-3 text-[13px] leading-5 text-red-500">{error}</p>
+              <p className="mt-3 text-[13px] leading-5 text-[var(--color-danger-text)]">
+                {error}
+              </p>
             )}
           </div>
         </div>

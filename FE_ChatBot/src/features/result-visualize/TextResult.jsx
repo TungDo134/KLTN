@@ -9,7 +9,7 @@ function stripDayPrefix(title) {
 
 function TextResult({ data, language = "vi", showBudget = false }) {
   return (
-    <div className="text-neutral-200 leading-relaxed">
+    <div className="text-[var(--color-text-primary)] leading-relaxed">
       <ul className="list-disc ml-6 mt-2 space-y-3">
         {data.map((item, index) => (
           <li key={index}>
@@ -19,7 +19,7 @@ function TextResult({ data, language = "vi", showBudget = false }) {
               {item.description ? ` - ${item.description}` : ""}
             </div>
             {showBudget && (
-              <p className="mt-1 text-xs text-neutral-400">
+              <p className="mt-1 text-xs text-[var(--color-text-secondary)]">
                 {language === "en"
                   ? "Known entrance fees for the day"
                   : "Phí tham quan đã biết trong ngày"}
@@ -33,11 +33,11 @@ function TextResult({ data, language = "vi", showBudget = false }) {
             )}
 
             {Array.isArray(item.places) && item.places.length > 0 && (
-              <ul className="list-disc ml-6 mt-2 space-y-1 text-sm text-neutral-300">
+              <ul className="list-disc ml-6 mt-2 space-y-1 text-sm text-[var(--color-text-primary)]">
                 {item.places.map((place, placeIndex) => (
                   <li key={`${item.day}-${place.name}-${placeIndex}`}>
                     <div>
-                      <span className="text-neutral-400">
+                      <span className="text-[var(--color-text-secondary)]">
                         {place.arrival} - {place.departure}
                       </span>
                       : {place.name}

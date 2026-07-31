@@ -6,7 +6,7 @@ function MindmapResult({ data }) {
   const edges = data.edges;
 
   return (
-    <div className="mt-2 h-[460px] overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950 sm:h-[680px]">
+    <div className="mt-2 h-[460px] overflow-hidden rounded-xl border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] sm:h-[680px]">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -15,12 +15,12 @@ function MindmapResult({ data }) {
         nodesConnectable={false}
         nodesDraggable={false}
       >
-        <Background color="#334155" gap={20} />
+        <Background color="var(--color-action-soft)" gap={20} />
         <MiniMap
           pannable
           zoomable
-          nodeColor="#525252"
-          maskColor="rgba(15, 23, 42, 0.72)"
+          nodeColor="var(--color-action-secondary)"
+          maskColor="var(--color-overlay-mindmap)"
         />
         <Controls showInteractive={false} />
       </ReactFlow>

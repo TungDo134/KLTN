@@ -38,32 +38,32 @@ function BudgetSummary({ summary, language = "vi" }) {
   }
 
   return (
-    <section className="mb-4 mt-3 rounded-xl border border-neutral-800 bg-neutral-900/80 p-4">
+    <section className="mb-4 mt-3 rounded-xl border border-[var(--color-border-default)] bg-[var(--color-surface-panel)] p-4">
       <div className="flex items-center gap-2">
-        <span className="rounded-lg bg-emerald-500/10 p-2 text-emerald-300">
+        <span className="rounded-lg bg-[var(--color-success-surface)] p-2 text-[var(--color-success-text)]">
           <FiDollarSign size={17} />
         </span>
-        <h3 className="text-sm font-semibold text-neutral-100">
+        <h3 className="text-xl font-bold uppercase text-[var(--color-info-text)]">
           {language === "en" ? "Budget transparency" : "Tổng quan về ngân sách"}
         </h3>
       </div>
 
       <div className="mt-3 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-lg bg-black/20 px-3 py-2.5">
-          <p className="text-xs text-neutral-400">
+        <div className="rounded-lg bg-[var(--color-surface-page)] px-3 py-2.5">
+          <p className="text-xs text-[var(--color-text-secondary)]">
             {language === "en" ? "Requested budget" : "Ngân sách đã cung cấp"}
           </p>
-          <p className="mt-1 text-sm font-semibold text-neutral-100">
+          <p className="mt-1 text-sm font-semibold text-[var(--color-text-primary)]">
             {formatVnd(requestedBudget, language)}
           </p>
         </div>
-        <div className="rounded-lg bg-black/20 px-3 py-2.5">
-          <p className="text-xs text-neutral-400">
+        <div className="rounded-lg bg-[var(--color-surface-page)] px-3 py-2.5">
+          <p className="text-xs text-[var(--color-text-secondary)]">
             {language === "en"
               ? "Known entrance fees"
               : "Phí tham quan đã biết"}
           </p>
-          <p className="mt-1 text-sm font-semibold text-neutral-100">
+          <p className="mt-1 text-sm font-semibold text-[var(--color-text-primary)]">
             {knownCount > 0
               ? formatVnd(estimatedTotal, language)
               : language === "en"
@@ -71,11 +71,11 @@ function BudgetSummary({ summary, language = "vi" }) {
                 : "Chưa có dữ liệu phí được phân loại"}
           </p>
         </div>
-        <div className="rounded-lg bg-black/20 px-3 py-2.5">
-          <p className="text-xs text-neutral-400">
+        <div className="rounded-lg bg-[var(--color-surface-page)] px-3 py-2.5">
+          <p className="text-xs text-[var(--color-text-secondary)]">
             {language === "en" ? "Fee coverage" : "Mức độ bao phủ phí"}
           </p>
-          <p className="mt-1 text-sm font-semibold text-neutral-100">
+          <p className="mt-1 text-sm font-semibold text-[var(--color-text-primary)]">
             {knownCount}/{totalCount}{" "}
             {language === "en" ? "places" : "địa điểm"}
           </p>
@@ -83,7 +83,7 @@ function BudgetSummary({ summary, language = "vi" }) {
       </div>
 
       {unclassifiedCount > 0 && (
-        <p className="mt-3 flex items-center gap-2 text-xs text-amber-200">
+        <p className="mt-3 flex items-center gap-2 text-xs text-[var(--color-warning-text)]">
           <FiAlertTriangle className="shrink-0" size={14} />
           {language === "en"
             ? `${unclassifiedCount} places have unclassified entrance fees.`
@@ -92,12 +92,12 @@ function BudgetSummary({ summary, language = "vi" }) {
       )}
 
       <div
-        className={`mt-3 flex items-start gap-2 rounded-lg border px-3 py-2.5 text-xs leading-relaxed ${
+        className={`mt-3 flex items-start gap-2 rounded-lg px-3 py-2.5 text-xs leading-relaxed ${
           isOverBudget
-            ? "border-red-500/25 bg-red-500/10 text-red-200"
+            ? "border border-[var(--color-danger-border)] bg-[var(--color-danger-surface)] text-[var(--color-danger-text)]"
             : isPartial
-              ? "border-amber-500/25 bg-amber-500/10 text-amber-200"
-              : "border-emerald-500/25 bg-emerald-500/10 text-emerald-200"
+              ? "border border-[var(--color-warning-border)] bg-[var(--color-warning-surface)] text-[var(--color-warning-text)]"
+              : "border-0 bg-[var(--color-estimate-surface)] text-[var(--color-estimate-text)]"
         }`}
       >
         {isOverBudget || isPartial ? (
@@ -108,7 +108,7 @@ function BudgetSummary({ summary, language = "vi" }) {
         <span>{statusText}</span>
       </div>
 
-      <p className="mt-3 text-xs leading-relaxed text-neutral-500">
+      <p className="mt-3 text-xs leading-relaxed text-[var(--color-text-subtle)]">
         {language === "en"
           ? "This estimate covers known entrance fees only; accommodation, food, transport, and incidental costs are not included."
           : "Ước tính chỉ bao gồm phí tham quan đã biết, chưa bao gồm lưu trú, ăn uống, di chuyển và chi phí phát sinh."}

@@ -1,18 +1,21 @@
 const DAY_TONES = [
   {
-    dayBg: "#064e3b",
-    dayBorder: "#10b981",
-    edge: "#10b981",
+    dayBg: "var(--color-success-surface)",
+    dayBorder: "var(--color-success-border)",
+    dayText: "var(--color-success-text)",
+    edge: "var(--color-success-accent)",
   },
   {
-    dayBg: "#075985",
-    dayBorder: "#38bdf8",
-    edge: "#38bdf8",
+    dayBg: "var(--color-info-surface)",
+    dayBorder: "var(--color-info-border)",
+    dayText: "var(--color-info-text)",
+    edge: "var(--color-info-accent)",
   },
   {
-    dayBg: "#92400e",
-    dayBorder: "#f59e0b",
-    edge: "#f59e0b",
+    dayBg: "var(--color-warning-surface)",
+    dayBorder: "var(--color-warning-border)",
+    dayText: "var(--color-warning-text)",
+    edge: "var(--color-warning-accent)",
   },
 ];
 
@@ -72,9 +75,9 @@ function convertToMindmap(data, language = "vi") {
           .join("\n"),
       },
       style: {
-        background: "#1d4ed8",
-        color: "white",
-        border: "1px solid #60a5fa",
+        background: "var(--color-action-primary)",
+        color: "var(--color-text-on-primary)",
+        border: "1px solid var(--color-action-secondary)",
         borderRadius: 8,
         padding: 12,
         width: 230,
@@ -114,7 +117,7 @@ function convertToMindmap(data, language = "vi") {
       },
       style: {
         background: tone.dayBg,
-        color: "white",
+        color: tone.dayText,
         border: `1px solid ${tone.dayBorder}`,
         borderRadius: 8,
         padding: 10,
@@ -145,9 +148,9 @@ function convertToMindmap(data, language = "vi") {
           label: [place.name, timeRange, tags].filter(Boolean).join("\n"),
         },
         style: {
-          background: "#171717",
-          color: "#e5e5e5",
-          border: "1px solid #404040",
+          background: "var(--color-surface-panel)",
+          color: "var(--color-text-primary)",
+          border: "1px solid var(--color-border-default)",
           borderRadius: 8,
           padding: 10,
           width: 260,

@@ -38,7 +38,7 @@ export default function ModelDropdown() {
           e.stopPropagation();
           setOpen(!open);
         }}
-        className="flex items-center gap-1 bg-[var(--bg-panel)] px-3 py-1 rounded-lg text-sm hover:bg-[var(--bg-hover)]"
+        className="flex items-center gap-1 bg-transparent px-3 py-1 rounded-lg text-sm text-[var(--color-text-on-chat-input)] hover:bg-[var(--color-action-secondary)]"
       >
         {model}
         <FiChevronDown size={14} />
@@ -46,7 +46,7 @@ export default function ModelDropdown() {
 
       {/* dropdown choose model */}
       {open && (
-        <div className="absolute right-0 bottom-full sm:bottom-auto sm:top-full mb-2 sm:mb-0 sm:mt-2 w-60 sm:w-72 bg-[var(--bg-panel)] border border-[var(--border-main)] rounded-xl shadow-xl p-2 z-50">
+        <div className="absolute right-0 bottom-full sm:bottom-auto sm:top-full mb-2 sm:mb-0 sm:mt-2 w-60 sm:w-72 bg-[var(--color-surface-panel)] border border-[var(--color-border-default)] rounded-xl shadow-xl p-2 z-50">
           {models.map((m) => (
             <div
               key={m.name}
@@ -54,21 +54,21 @@ export default function ModelDropdown() {
                 setModel(m.name);
                 setOpen(false);
               }}
-              className={`p-3 rounded-lg cursor-pointer hover:bg-[var(--bg-hover)] transition
-              ${model === m.name ? "border border-[var(--border-main)] bg-[var(--bg-hover)]" : ""}
+              className={`p-3 rounded-lg cursor-pointer hover:bg-[var(--color-surface-hover)] transition
+              ${model === m.name ? "border border-[var(--color-border-default)] bg-[var(--color-surface-hover)]" : ""}
               `}
             >
               <div className="flex justify-between">
                 <span>{m.name}</span>
 
                 {m.upgrade && (
-                  <span className="text-sm bg-[var(--bg-main)] text-[var(--text-muted)] px-2 py-0.5 rounded-xl">
+                  <span className="text-sm bg-[var(--color-surface-page)] text-[var(--color-text-secondary)] px-2 py-0.5 rounded-xl">
                     Upgrade
                   </span>
                 )}
               </div>
 
-              <p className="text-xs text-[var(--text-muted)] mt-1">{m.desc}</p>
+              <p className="text-xs text-[var(--color-text-secondary)] mt-1">{m.desc}</p>
             </div>
           ))}
         </div>

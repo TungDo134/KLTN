@@ -20,11 +20,11 @@ function AppLayout() {
   };
 
   return (
-    <div className="flex h-screen bg-(--bg-main) text-(--text-main) overflow-hidden">
+    <div className="flex h-screen bg-(--color-surface-page) text-(--color-text-primary) overflow-hidden">
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-[var(--color-overlay-mobile)] z-40 md:hidden"
           onClick={() => setMobileOpen(false)}
         />
       )}
