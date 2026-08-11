@@ -3,7 +3,6 @@ from datetime import date, datetime, timedelta
 from typing import Callable
 
 import httpx
-
 from src.schemas.weather import WeatherAdvice
 from src.services.climate_data import (
     REGION_TO_ZONE,

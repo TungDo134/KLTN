@@ -229,10 +229,10 @@ function Sidebar({
           />
           <span className="font-semibold">Đoạn hội thoại</span>
         </button> */}
-        <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--color-surface-hover) text-[13px] transition-colors">
+        {/* <button className="w-full flex items-center gap-3 px-2.5 py-2 rounded-lg hover:bg-(--color-surface-hover) text-[13px] transition-colors">
           <FiFolder size={16} className="text-(--color-text-secondary)" />
           <span className="font-semibold">Kế hoạch đã lưu</span>
-        </button>
+        </button> */}
       </div>
 
       {/* Recents */}
@@ -362,12 +362,12 @@ function Sidebar({
                     {displayEmail}
                   </p>
                 </div>
-                <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) transition-colors text-left">
+                {/* <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) transition-colors text-left">
                   <HiOutlineSparkles size={15} /> Nâng cấp gói
                 </button>
                 <button className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) transition-colors text-left">
                   <FiSettings size={15} /> Cài đặt
-                </button>
+                </button> */}
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-3 w-full px-4 py-2.5 text-[13px] hover:bg-(--color-surface-hover) text-[var(--color-danger-text)] transition-colors text-left"
@@ -393,7 +393,7 @@ function Sidebar({
                     className="w-7.5 h-7.5 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="w-7.5 h-7.5 rounded-full bg-[var(--color-action-soft)] text-[var(--color-action-primary)] flex items-center justify-center text-xs font-semibold">
+                  <div className="w-7.5 h-7.5 rounded-full bg-(--color-action-soft) text-[var(--color-action-primary)] flex items-center justify-center text-xs font-semibold">
                     {initials || "U"}
                   </div>
                 )}
@@ -407,12 +407,12 @@ function Sidebar({
                 </div>
               </div>
               <div className="flex items-center gap-1 text-(--color-text-secondary)">
-                <div
+                {/* <div
                   className="p-1 hover:bg-(--color-surface-hover) rounded transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FiDownload size={14} />
-                </div>
+                </div> */}
                 <HiSelector size={16} />
               </div>
             </button>

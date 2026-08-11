@@ -86,8 +86,9 @@ class TripOrchestrator:
         # ============================================================
         print("=============== BẮT ĐẦU FLOW ORCHESTRATOR ===============")
 
+        # Trích xuất (Query Analyzer) các field quan trọng từ request của user
         trip_request = await self.analyzer.extract(raw_query)
-        print("\n[QueryAnalyzer] TripRequest:", trip_request)
+        print("\n[Query Analyzer] Trip Request:", trip_request)
 
         timing_service = getattr(self, "travel_timing_service", None)
         timing_requested = (
@@ -107,6 +108,7 @@ class TripOrchestrator:
                     clarification,
                 )
 
+        # Tư vấn thời tiết (max 16 ngày, >16 => tổng quan data trước đó)
         weather = None
         if trip_request.region:
             # WeatherAdvice duoc tao sau QueryAnalyzer vi can region/start_date/days da trich xuat.
@@ -115,7 +117,7 @@ class TripOrchestrator:
                 trip_request.start_date,
                 trip_request.days,
             )
-            print("\n[WeatherService] WeatherAdvice:", weather)
+            print("\n[Weather Service] Weather Advice:", weather)
 
         if timing_requested and trip_request.auto_select_start_time:
             trip_request.day1_start_time = self._select_day1_start_time(weather)
@@ -264,6 +266,7 @@ class TripOrchestrator:
             return "07:30"
         return "08:00"
 
+    # Tính giờ rời nơi xuất phát
     def _first_scheduled_place(self, trip_plan: TripPlan):
         if not trip_plan:
             return None
@@ -274,6 +277,11 @@ class TripOrchestrator:
 
     def _docs_to_places(self, documents: list) -> list:
         """
+        LangChain Document
+            - Đọc page_content và metadata
+            - Chuẩn hóa dữ liệu
+            - Tạo Place
+
         Chuyen LangChain Document thanh Place de dung cho cac buoc sau.
         DocumentReranker tra ve Document goc, con metadata reranker,
         recommender va planner lam viec voi Place co cau truc.

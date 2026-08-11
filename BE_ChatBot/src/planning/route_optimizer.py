@@ -10,11 +10,11 @@ Thuật toán được hỗ trợ:
 Đầu vào : graph (adjacency dict từ GraphBuilder) + danh sách place_id cần thăm
 Đầu ra  : list[place_id] — thứ tự tối ưu
 """
+
 from src.schemas import Place
 
 
 class RouteOptimizer:
-
     def optimize(
         self,
         places: list[Place],
@@ -24,7 +24,7 @@ class RouteOptimizer:
     ) -> list[str]:
         if not places:
             return []
-        
+
         if algorithm == "greedy":
             route = self._greedy_nearest_neighbor(places, graph, start_place_id)
         elif algorithm == "dijkstra":
@@ -35,11 +35,11 @@ class RouteOptimizer:
             route = self._dijkstra_path(places, graph, sid)
         else:
             raise ValueError(f"Unknown algorithm: {algorithm}")
-        
+
         # Optimize with 2-opt
         if len(route) > 3:
             route = self._two_opt_improve(route, graph)
-            
+
         return route
 
     # ── Greedy Nearest Neighbor ────────────────────────────────────────────────
@@ -49,22 +49,22 @@ class RouteOptimizer:
         unvisited = set(p.place_id for p in places)
         if not unvisited:
             return []
-            
+
         if start_id in unvisited:
             current = start_id
         else:
             current = max(places, key=lambda p: p.recommend_score).place_id
-            
+
         route = [current]
         unvisited.remove(current)
-        
+
         while unvisited:
             neighbors = graph.get(current, {})
-            nearest = min(unvisited, key=lambda nid: neighbors.get(nid, float('inf')))
+            nearest = min(unvisited, key=lambda nid: neighbors.get(nid, float("inf")))
             route.append(nearest)
             unvisited.remove(nearest)
             current = nearest
-            
+
         return route
 
     # ── Dijkstra shortest path ────────────────────────────────────────────────
@@ -74,14 +74,14 @@ class RouteOptimizer:
         unvisited = set(p.place_id for p in places)
         if not unvisited:
             return []
-            
+
         current = start_id if start_id in unvisited else list(unvisited)[0]
         route = [current]
         unvisited.remove(current)
-        
+
         while unvisited:
             best_next = None
-            min_cost = float('inf')
+            min_cost = float("inf")
             for nid in unvisited:
                 _, cost = self._dijkstra(graph, current, nid)
                 if cost < min_cost:
@@ -93,12 +93,15 @@ class RouteOptimizer:
                 unvisited.remove(best_next)
             route.append(best_next)
             current = best_next
-            
+
         return route
 
-    #nút thắt tính toán của djkstra để tìm đường đi ngắn nhất
-    def _dijkstra(self, graph: dict, start: str, target: str) -> tuple[list[str], float]:
+    # nút thắt tính toán của djkstra để tìm đường đi ngắn nhất
+    def _dijkstra(
+        self, graph: dict, start: str, target: str
+    ) -> tuple[list[str], float]:
         import heapq
+
         queue = [(0.0, start, [start])]
         visited = set()
         while queue:
@@ -108,10 +111,12 @@ class RouteOptimizer:
             visited.add(node)
             if node == target:
                 return path, cost
-            for neighbor, weight in graph.get(node, {}).items():# duyệt qua tất cả các node kề với node hiện tại rồi đưa vào hàng đợi ưu tiên
+            for neighbor, weight in graph.get(
+                node, {}
+            ).items():  # duyệt qua tất cả các node kề với node hiện tại rồi đưa vào hàng đợi ưu tiên
                 if neighbor not in visited:
                     heapq.heappush(queue, (cost + weight, neighbor, path + [neighbor]))
-        return [], float('inf')
+        return [], float("inf")
 
     # ── (Future) 2-opt local search ───────────────────────────────────────────
     def _two_opt_improve(self, route: list[str], graph: dict) -> list[str]:
@@ -121,8 +126,14 @@ class RouteOptimizer:
             improved = False
             for i in range(1, len(best_route) - 1):
                 for j in range(i + 1, len(best_route)):
-                    new_route = best_route[:i] + best_route[i:j+1][::-1] + best_route[j+1:]
-                    if self.total_cost(new_route, graph) < self.total_cost(best_route, graph):
+                    new_route = (
+                        best_route[:i]
+                        + best_route[i : j + 1][::-1]
+                        + best_route[j + 1 :]
+                    )
+                    if self.total_cost(new_route, graph) < self.total_cost(
+                        best_route, graph
+                    ):
                         best_route = new_route
                         improved = True
             if not improved:
@@ -132,8 +143,7 @@ class RouteOptimizer:
     def total_cost(self, route: list[str], graph: dict) -> float:
         cost = 0.0
         for i in range(len(route) - 1):
-            w = graph.get(route[i], {}).get(route[i+1])
+            w = graph.get(route[i], {}).get(route[i + 1])
             if w is not None:
                 cost += w
         return cost
-

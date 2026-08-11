@@ -4,7 +4,8 @@ Location-Based Recommendation: ưu tiên các địa điểm gần nhau / gần 
 
 Thuật toán:
   - Tính centroid (lat_mean, lng_mean) của toàn bộ tập Place
-  - Tính khoảng cách Haversine từ mỗi place đến centroid
+  - Tính khoảng cách Haversine (khoảng cách đường chim bay giữa hai tọa độ trên bề mặt Trái Đất)
+  từ mỗi place đến centroid
   - Normalize khoảng cách → score (gần = score cao)
   - Cộng vào recommend_score hiện tại với trọng số LOCATION_WEIGHT
 
@@ -12,8 +13,9 @@ Mục đích: tránh lịch trình trải dài gây tốn thời gian di chuyể
 """
 
 import math
-from src.schemas import Place, TripRequest
+
 from src.recommend.base_recommender import BaseRecommender
+from src.schemas import Place, TripRequest
 
 
 class LocationBasedRecommender(BaseRecommender):
@@ -49,7 +51,9 @@ class LocationBasedRecommender(BaseRecommender):
 
     def _haversine(self, lat1: float, lng1: float, lat2: float, lng2: float) -> float:
         """
-        Tinh `khoang cach giua 2 toa do` = Haversine.
+        -  Haversine: Khoảng cách đường chim bay giữa hai tọa độ trên bề mặt Trái Đất
+        - VD:
+            - (lat1, lng1) ----- khoảng cách km ----- (lat2, lng2)
         """
         earth_radius_km = 6371.0
 

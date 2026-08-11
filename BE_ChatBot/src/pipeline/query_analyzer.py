@@ -40,7 +40,7 @@ class QueryAnalyzer:
         """
         llm: [nvidia / meta/llama-3.3-70b-instruct]
         """
-        print("\n- LLM cho trích xuất User Query => Trip Request [QueryAnalyzer]\n")
+        print("\n- LLM cho trích xuất User Query => Trip Request [Query Analyzer]\n")
         self.llm_query_analyzer = llm
         self.travel_timing_service = TravelTimingService()
         self.model_info_query_analyzer = get_model_info(self.llm_query_analyzer)
@@ -137,15 +137,11 @@ class QueryAnalyzer:
             transport_mode=data.get("transport_mode"),
             day1_start_time=data.get("day1_start_time"),
             time_intent=data.get("time_intent"),
-            auto_select_start_time=bool(
-                data.get("auto_select_start_time", False)
-            ),
+            auto_select_start_time=bool(data.get("auto_select_start_time", False)),
             flight_departure_at=data.get("flight_departure_at"),
             airport_transfer_minutes=data.get("airport_transfer_minutes"),
             flight_duration_minutes=data.get("flight_duration_minutes"),
-            destination_transfer_minutes=data.get(
-                "destination_transfer_minutes"
-            ),
+            destination_transfer_minutes=data.get("destination_transfer_minutes"),
         )
 
     def _fallback_extract(self, raw_query: str) -> dict:

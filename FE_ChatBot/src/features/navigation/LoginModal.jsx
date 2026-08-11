@@ -63,11 +63,11 @@ function LoginModal({ onClose, onLogin }) {
         </button>
 
         <div className="px-8 pt-10 pb-8">
-          <h2 className="text-[24px] font-bold text-[var(--color-text-primary)] leading-tight">
+          {/* <h2 className="text-[24px] font-bold text-[var(--color-text-primary)] leading-tight">
             Đăng nhập hoặc đăng kí
-          </h2>
+          </h2> */}
 
-          <div className="mt-7">
+          <div className="mt-1">
             <button
               onClick={handleGoogleLogin}
               disabled={loading}

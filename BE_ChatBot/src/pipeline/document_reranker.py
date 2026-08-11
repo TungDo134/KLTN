@@ -76,6 +76,11 @@ class DocumentReranker:
         query: str,
     ) -> list[LangChainDocument]:
         """
+        Nhiều Document lấy từ Chroma/BM25
+            - So sánh lại từng Document với câu hỏi
+            - Sắp xếp theo độ liên quan
+            - Giữ top-N Document
+
         Nhan danh sach LangChain Document, rerank theo query va tra ve Document goc.
         Viec map nguoc theo index/doc_id giu nguyen metadata cho _docs_to_places().
         """

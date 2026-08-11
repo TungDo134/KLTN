@@ -3,22 +3,23 @@ INGESTION + RETRIEVE PIPELINE
 """
 
 # --- IMPORT ---
+import json
 import os
 import time
-from typing import List
 from pathlib import Path
-import json
+from typing import List
+
 from dotenv import load_dotenv
 
 # Langchain
 from langchain_chroma import Chroma
+from langchain_classic.retrievers import EnsembleRetriever
 from langchain_community.document_loaders import (
-    PyPDFLoader,
     DirectoryLoader,
+    PyPDFLoader,
     TextLoader,
 )
 from langchain_community.retrievers import BM25Retriever
-from langchain_classic.retrievers import EnsembleRetriever
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
@@ -27,20 +28,19 @@ from pydantic import BaseModel, Field, ValidationError
 
 # Embedding model
 from src.core.base_embed_model import (
+    EmbeddingProvider,
     get_embedding_model,
     resolve_embedding_config,
-    EmbeddingProvider,
 )
 from src.core.base_llm_model import LLMProvider
 from src.core.llm_container import get_llm, get_model_info
 from src.pipeline.document_reranker import DocumentReranker
-
 from tenacity import (
     retry,
-    stop_after_attempt,
-    wait_fixed,
-    wait_exponential,
     retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+    wait_fixed,
 )
 
 # --- LOAD .env ---
@@ -148,7 +148,7 @@ def load_documents(source_data: str = os.getenv("SOURCE_DATA")):
 def load_json_places(data_dir: str) -> list[Document]:
     """
     **Lưu ý: Chỉ hỗ trợ file dạng JSON**
-    - Load files từ `D:\KLTN\Project\BE_ChatBot\src\source_data\places_data` => `list[Document]`.
+    - Load files từ `D:/KLTN/Project/BE_ChatBot/src/source_data/places_data` => `list[Document]`.
 
     - page_content  : text `concat từ các field ngữ nghĩa cao`
     - metadata      : các field flat support **RERANK** `tự build` - filter - planning
@@ -567,7 +567,7 @@ class MultiQueryRetriever:
         for i, v in enumerate(variations, 1):
             print(f"   {i}. {v}")
 
-        # 2. Hybrid search từng variation
+        # 2. HYBRID SEARCH từng VARIATION
         # EnsembleRetriever xử lý Vector + BM25 bên trong — mỗi variation = 1 lần gọi
         print("\n🔀 Relevant Docs từng câu hỏi (Hybrid Search):")
         all_results: List[List[Document]] = []
@@ -587,7 +587,7 @@ class MultiQueryRetriever:
             f"\n➡️ Tổng số docs sau khi Multi-Query + Hybrid : {total} docs  → {len(unique_docs)} unique docs\n"
         )
 
-        # 4. Trả về các relevant docs sau khi multi query + handle duplicate
+        # 4. Trả về các RELEVANTS DOCS sau khi multi query + duplicate
         return unique_docs
 
 

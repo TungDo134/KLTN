@@ -1,9 +1,9 @@
 """
 recommend/content_based.py
-Content-Based Filtering: so sánh tags của Place với tags trong TripRequest.
+Content-Based Filtering: so sánh/chọn địa điểm có tags của Place với tags trong TripRequest.
 
 Thuật toán gợi ý:
-  - Tính Jaccard similarity (hoặc TF-IDF cosine) giữa tags của place và tags của request
+  - Tính Jaccard similarity (độ giống giữa 2 tags) tags của place và tags của request
   - Cộng thêm bonus nếu rating cao
   - Kết quả gán vào place.recommend_score
 
@@ -13,8 +13,8 @@ Ví dụ:
   → overlap = {"cafe"} → jaccard = 1/4 = 0.25
 """
 
-from src.schemas import Place, TripRequest
 from src.recommend.base_recommender import BaseRecommender
+from src.schemas import Place, TripRequest
 
 """CONSTANT"""
 RATING_WEIGHT = 0.2
@@ -54,7 +54,14 @@ class ContentBasedRecommender(BaseRecommender):
 
     def _jaccard_similarity(self, tags_a: list[str], tags_b: list[str]) -> float:
         """
-        Tinh `Jaccard Similarity` sau khi normalize lowercase + strip
+        - Tinh `Jaccard Similarity` sau khi normalize lowercase + strip
+        - VD:
+            - Request = {cafe, ẩm thực}
+            - Place   = {cafe, check-in, view}
+
+            - Tag chung = {cafe}                             → 1
+            - Tất cả tag = {cafe, ẩm thực, check-in, view}   → 4
+        | `=> Jaccard = 1 / 4 = 0.25` càng cao => địa điểm càng khớp với sở thích
         """
         set_a = {tag.strip().lower() for tag in tags_a if tag.strip()}
         set_b = {tag.strip().lower() for tag in tags_b if tag.strip()}
