@@ -328,7 +328,7 @@ class TravelTimingService:
             ]
         else:
             lines = [
-                "Để tính giờ khởi hành trước khi tạo itinerary, cần bổ sung:",
+                "Để tính giờ khởi hành trước khi tạo lịch trình, cần bổ sung:",
                 *[f"- {labels[item]}" for item in missing],
                 "Các vùng hỗ trợ: " + ", ".join(self.supported_region_names()) + ".",
             ]

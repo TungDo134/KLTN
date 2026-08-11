@@ -102,11 +102,10 @@ async def chat_stream(
         conv_service,
     )
 
-    #
     async def event_generator():
         """
         - SSE (gui tung event - startWith 'Data')
-        - Phan biet moi line = dau xuong dong \ n \ n
+        - Phan biet moi line = dau xuong dong
         """
         meta = json.dumps({"conversation_id": conversation_id}, ensure_ascii=False)
         yield f"event: meta\ndata: {meta}\n\n"

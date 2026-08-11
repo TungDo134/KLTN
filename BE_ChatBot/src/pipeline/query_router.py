@@ -7,23 +7,23 @@ from dataclasses import dataclass
 
 @dataclass
 class RoutingContext:
-    response_language: str = "vi"
-    passport_country: str | None = None
-    pending_question: str | None = None
-    pending_intent: str | None = None
+    response_language: str = "vi"  # Ngôn ngữ chatbot dùng để p/hồi
+    passport_country: str | None = None  # Qgia cấp visa
+    pending_question: str | None = None  # Thiếu in4 => câu hỏi gốc tạm dừng
+    pending_intent: str | None = None  # Thiếu in4 => Ý ĐỊNH gốc bị tạm dừng
     pending_stay_days: int | None = None
     pending_entry_date: str | None = None
-    visa_note_signature: str | None = None
+    visa_note_signature: str | None = None  # các lưu ý về visa (nếu có)
 
 
 @dataclass
 class RouteDecision:
-    intent: str
-    action: str
-    confidence: float
+    intent: str  # Router hiểu user muốn gì - 1 intent có thể có 2 action !=
+    action: str  # Pipeline (RAGInference) nên chạy full hay nhánh nhỏ
+    confidence: float  # Tin cậy của phân loại (~0->1) => Khi merge (LLM + rule-based)
     reply: str | None = None
-    reason: str = ""
-    language: str = "unknown"
+    reason: str = ""  # Lí do router ra quyết định
+    language: str = "unknown"  # Ngôn ngữ hiện tại của chat
     response_language: str = "vi"
     passport_country: str | None = None
     resolved_question: str | None = None
@@ -44,8 +44,10 @@ _SMALL_TALK_PHRASES = {
     "bye",
 }
 
+# Sau khi biết message là small talk => quyết định response language:
 _VI_SMALL_TALK = {"xin chao", "chao", "chao ban", "cam on", "tam biet"}
 
+# Hỏi ngược lại system khi cần thêm thông tin về cho câu query đầy đủ hơn
 _DETAIL_HELP_PHRASES = {
     "what do you need",
     "specifically what do you need",
@@ -56,6 +58,7 @@ _DETAIL_HELP_PHRASES = {
     "can cu the thong tin gi",
 }
 
+# Các điểm đến phổ biến ()
 _DESTINATION_PHRASES = {
     "viet nam",
     "da lat",
@@ -76,6 +79,7 @@ _DESTINATION_PHRASES = {
     "ha giang",
 }
 
+#
 _TRAVEL_GENERAL_PHRASES = {
     "du lich",
     "travel",
@@ -90,6 +94,7 @@ _TRAVEL_GENERAL_PHRASES = {
     "travel tips",
 }
 
+# Signal hỗ trợ gán intent=travel_recommendation
 _RECOMMENDATION_PHRASES = {
     "dia diem tham quan",
     "goi y dia diem",
@@ -105,7 +110,7 @@ _RECOMMENDATION_PHRASES = {
     "hotel",
     "weather",
 }
-
+# Signal hỗ trợ gán intent=trip_planning
 _PLANNING_PHRASES = {
     "lich trinh",
     "hanh trinh",
@@ -134,6 +139,7 @@ _VIETNAMESE_LANGUAGE_PHRASES = {
     "mien thi thuc",
 }
 
+# Hỗ trợ phát hiện tiếng Anh
 _ENGLISH_LANGUAGE_MARKERS = {
     "i",
     "you",
@@ -214,6 +220,7 @@ _ENGLISH_LANGUAGE_MARKERS = {
     "how",
 }
 
+# Hỗ trợ phát hiện tiếng Anh (câu mix Việt-Anh)
 _ENGLISH_STRUCTURE_MARKERS = {
     "i",
     "you",
@@ -258,6 +265,7 @@ _INVALID_PASSPORT_COUNTRIES = {
     "chua ro",
 }
 
+# Nhận diện intent=visa_advice
 _VISA_PHRASES = {
     "visa",
     "evisa",
@@ -269,6 +277,7 @@ _VISA_PHRASES = {
     "thi thuc",
 }
 
+# INTENT CHUẨN
 _VALID_INTENTS = {
     "small_talk",
     "not_travel",
@@ -285,6 +294,7 @@ _TRAVEL_INTENTS = {
     "trip_planning",
 }
 
+# Map 3 intent liên quan đến lập lịch
 _ACTION_BY_INTENT = {
     "travel_general": "direct_answer",
     "travel_recommendation": "run_recommendation",
@@ -309,10 +319,24 @@ class QueryRouter:
         history: list | None = None,
         context: RoutingContext | None = None,
     ) -> RouteDecision:
+        """
+        Đầu vào:
+        - question : Truy vấn (query) cần định hướng (route) hiện tại
+        - history  : Các AI/Human Message gần nhất
+        - context  : Trạng thái routing của session
+        ---
+        Chức năng:
+        - Phan loai query = LLM
+        - Phan loai dua tren rule-based (hardcode), vd: keywords, signal
+        - call _merge_classification() => hop nhat 2 ket qua
+        ---
+
+        """
         history = history or []
         context = context or RoutingContext()
         normalized = self._normalize(question)
 
+        # Return nhanh => small_talk
         if not normalized or normalized in {"?", ".", "...", "!"}:
             return self._fast_reply(
                 intent="small_talk",
@@ -323,6 +347,7 @@ class QueryRouter:
                 response_language=context.response_language,
             )
 
+        # Return nhanh => small_talk
         if (
             not history
             and not context.pending_question
@@ -360,7 +385,10 @@ class QueryRouter:
                 resolved_question=context.pending_question,
             )
 
+        # 1. LLM phân loại
         data = await self._classify(question, history, context)
+
+        # 2. Rule-based phân loại (hardcode)
         rule_data = self._classify_by_rules(question, context)
         is_pending_country_answer = bool(
             context.pending_question
@@ -369,6 +397,8 @@ class QueryRouter:
                 or self._looks_like_origin_answer(normalized)
             )
         )
+
+        # 3. Hợp nhất kết quả LLM và rule
         data = self._merge_classification(
             data,
             rule_data,
@@ -401,7 +431,10 @@ class QueryRouter:
                 response_language=response_language,
             )
 
+        # 4. Lấy intent cuối cùng
         intent = str(data.get("intent") or "uncertain").strip().lower()
+
+        # 5. Intent không hợp lệ (0 nằm trong _VALID_INTENTS) => uncertain
         if intent not in _VALID_INTENTS:
             intent = "uncertain"
 
@@ -542,6 +575,7 @@ class QueryRouter:
             context.pending_intent = route_intent
             context.pending_stay_days = stay_days
             context.pending_entry_date = entry_date
+
             return RouteDecision(
                 intent=route_intent,
                 action="ask_country",
@@ -615,15 +649,18 @@ class QueryRouter:
             **common,
         )
 
+    # LLM Classifier
     async def _classify(
         self,
         question: str,
         history: list,
         context: RoutingContext,
     ) -> dict:
+        # Ko có LLM => RULE-BASED
         if not self.llm:
             return self._classify_by_rules(question, context)
 
+        # Build prompt cho LLM Classifier
         prompt = self._build_classifier_prompt(question, history, context)
         try:
             response = await asyncio.wait_for(
@@ -637,12 +674,15 @@ class QueryRouter:
             fallback["_reason"] = f"LLM classifier failed: {type(exc).__name__}"
             return fallback
 
+    # Build prompt cho LLM Classifier
+    # LLM này chỉ classifer, ko trả lời câu hỏi
     def _build_classifier_prompt(
         self,
         question: str,
         history: list,
         context: RoutingContext,
     ) -> str:
+        #  Only 8 msg gần nhất => ~ 4turn (1 AI msg + 1 Human msg)
         history_text = self._history_to_text(history[-8:]) or "(none)"
         pending_question = context.pending_question or "(none)"
         pending_intent = context.pending_intent or "(none)"
@@ -717,6 +757,7 @@ Use YYYY-MM-DD for entry_date only when the exact date is explicit and valid;
 otherwise return null.
 """.strip()
 
+    # Rule-based (thứ tự ưu tiên các signal và gán intent)
     def _classify_by_rules(self, question: str, context: RoutingContext) -> dict:
         normalized = self._normalize(question)
         language = self._detect_supported_language(question, normalized)
@@ -726,6 +767,8 @@ otherwise return null.
 
         intent = "uncertain"
         confidence = 0.45
+
+        # các signal
         has_explicit_planning_signal = self._has_explicit_planning_signal(normalized)
         has_duration_signal = bool(
             re.search(r"\b\d+\s*-?\s*(ngay|day|days)\b", normalized)
@@ -774,6 +817,7 @@ otherwise return null.
             "_reason": "Rule-based fallback classification.",
         }
 
+    # Hợp nhất 2 kqua (LLM + Rule-based)
     def _merge_classification(
         self,
         data: dict,
@@ -952,6 +996,7 @@ otherwise return null.
             or re.search(r"\b20\d{2}-\d{2}-\d{2}\b", normalized)
         )
 
+    #  Kiểm tra query có destination & duration?
     def _is_complete_trip_request(self, normalized: str) -> bool:
         has_destination = self._contains_phrase(normalized, _DESTINATION_PHRASES)
         has_duration = bool(re.search(r"\b\d+\s*[- ]?\s*(day|days|ngay)\b", normalized))
@@ -974,6 +1019,7 @@ otherwise return null.
             return value
         return str(value).strip().lower() in {"1", "true", "yes"}
 
+    # Hỗ trợ xác định tiếng Việt
     def _detect_supported_language(self, original: str, normalized: str) -> str:
         has_vietnamese_chars = bool(
             re.search(
@@ -1009,6 +1055,7 @@ otherwise return null.
             return "unsupported"
         return "unknown"
 
+    # ~MSG được conver => USER: ... - ASSISTANT: ...
     def _history_to_text(self, history: list) -> str:
         parts = []
         for message in history:
@@ -1026,11 +1073,13 @@ otherwise return null.
             parts.append(f"{role}: {content[:600]}")
         return "\n".join(parts)
 
+    # Nhận diện small_talk (sau khi clean)
     def _is_small_talk_only(self, text: str) -> bool:
         cleaned = re.sub(r"[^\w\s]", " ", text)
         cleaned = re.sub(r"\s+", " ", cleaned).strip()
         return cleaned in _SMALL_TALK_PHRASES
 
+    # user hỏi cần cung cấp gì
     def _contains_phrase(self, text: str, phrases: set[str]) -> bool:
         for phrase in phrases:
             pattern = rf"(?<!\w){re.escape(phrase)}(?!\w)"
@@ -1102,6 +1151,7 @@ otherwise return null.
             entry_date=entry_date,
         )
 
+    # Normalize query
     def _normalize(self, text: str) -> str:
         text = str(text or "").lower()
         text = unicodedata.normalize("NFD", text)
@@ -1109,6 +1159,7 @@ otherwise return null.
         text = text.replace("đ", "d")
         return re.sub(r"\s+", " ", text).strip()
 
+    # Tin cậy của phân loại
     def _confidence(self, data: dict) -> float:
         try:
             confidence = float(data.get("confidence", 0.5))
@@ -1129,6 +1180,7 @@ otherwise return null.
         text = str(value).strip()
         return text or None
 
+    # ép response về json
     def _parse_json(self, text: str) -> dict:
         clean = text.strip()
         if clean.startswith("```"):

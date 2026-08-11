@@ -48,35 +48,56 @@ class RAGInference:
         )  # LLM rewrite
 
         # Query Router => language, domain, travel task and passport context.
+        # Ho tro cho cac tu van Visa
         self.visa_advisor = VisaAdvisor()
+
         self.query_router = QueryRouter(
-            llm=self.llm_rewrite,
-            passport_country_resolver=self.visa_advisor.resolve_passport_country,
+            llm=self.llm_rewrite,  # Phân loại query
+            passport_country_resolver=self.visa_advisor.resolve_passport_country,  # ho tro chuan hoa/xac dinh quoc gia
         )
 
-        # Orchestrator: MultiQuery -> DocumentReranker -> reranked docs
+        # Orchestrator: Multi-Query -> Document Reranker -> Reranked Docs
         self.orchestrator = TripOrchestrator(llm=self.llm)
-        self.system_prompt = get_system_prompt()  # System prompt
+
+        # Prompt || instruction cho core
+        self.system_prompt = get_system_prompt()
+
+        # Ttin model (provider, name)
         self.model_info_core = get_model_info(self.llm)
 
-        # ------------------------------------------------------------------ #
+        # ----------------------------------------------------------------------- #
         # Chat history store: { session_id → [HumanMessage, AIMessage, ...] }
         # Dùng defaultdict(list) => không cần khởi tạo thủ công từng session.
-        # ------------------------------------------------------------------ #
+        # History + Router: context hội thoại + trạng thái điều hướng ĐANG active
+        # ----------------------------------------------------------------------- #
+
         self._history: dict[str, list] = defaultdict(list)
+        """
+        Bản ghi hội thoại => giúp
+        - LLM ploai nắm bắt được context gần đây (nếu có)
+        - Query rewrite khôi phục in4 từ các lần chat trước (nếu có)
+        - Hỗ trợ xem câu hiện tại có phải là câu nối tiếp câu trước?  
+        """
+
         self._routing_context: dict[str, RoutingContext] = defaultdict(RoutingContext)
+        """
+        Lưu các in4 mà Router cần (query_router.py ->`RoutingContext`)
+        VD: ngôn ngữ, qgia, visa, intent,..
+        """
+
         self._pending_timing_question: dict[str, str] = {}
         """
         RAM self._history
         → dùng để chat nhanh trong runtime hiện tại
 
-        DB conversations + messages
+        DB (conversations + messages)
         → dùng để persist qua restart/shutdown
 
         hydrate_history()
         → cầu nối DB messages → RAM self._history
         """
 
+        # Ttin model (provider, name)
         self.model_info_rewrite = get_model_info(self.llm_rewrite)
 
     def _get_history(self, session_id: str) -> list:
@@ -292,6 +313,7 @@ class RAGInference:
 
         return "\n".join(lines)
 
+    # Gán data "passport_country"
     def _build_visa_note(
         self,
         routing_context: RoutingContext,
@@ -602,9 +624,8 @@ class RAGInference:
 
         content = str(getattr(last_message, "content", "")).lower()
         is_timing_question = (
-            "to calculate the departure time before creating the itinerary" in content
-            or "\u0111\u1ec3 t\u00ednh gi\u1edd kh\u1edfi h\u00e0nh tr\u01b0\u1edbc khi t\u1ea1o itinerary"
-            in content
+            "To calculate the departure time before creating the itinerary" in content
+            or "Để tính giờ khởi hành trước khi tạo lịch trình" in content
         )
         if is_timing_question:
             routing_context.response_language = (
@@ -684,6 +705,9 @@ class RAGInference:
             f"reason={route_decision.reason}"
         )
 
+    # [route action]
+    # Chuyển action => mode
+    # Các action còn lại (direct_answer; run_recommendation; run_planning)
     async def _prepare_generation(
         self,
         question: str,
@@ -692,6 +716,7 @@ class RAGInference:
     ) -> dict:
         effective_question = route_decision.resolved_question or question
 
+        # Tạo msg cho LLM, ko run pipeline
         if route_decision.action == "direct_answer":
             messages = self._build_messages(
                 history=history,
@@ -718,11 +743,19 @@ class RAGInference:
                 route_decision.response_language,
             )
 
+        """
+        run_recommendation
+        => orchestrator.run(mode="recommendation")
+        =========
+        run_planning
+        => orchestrator.run(mode="trip_planning")
+        """
         mode = (
             "recommendation"
             if route_decision.action == "run_recommendation"
             else "trip_planning"
         )
+
         orch_res = await self.orchestrator.run(
             search_question,
             mode=mode,
@@ -782,103 +815,109 @@ class RAGInference:
     # ============================================================ #
 
     # ========= Hàm Async để gọi API =========
-    async def predict_async(
-        self,
-        question: str,
-        session_id: str = "default",
-    ) -> str:
-        """
-        Main entry point — gọi từ FastAPI
+    # async def predict_async(
+    #     self,
+    #     question: str,
+    #     session_id: str = "default",
+    # ) -> str:
+    #     """
+    #     Main entry point — gọi từ FastAPI
 
-        Args:
-            question:   Câu hỏi của user.
-            session_id: ID phiên chat (mỗi user/tab nên có ID riêng).
-                        Mặc định "default" cho Gradio single-user.
+    #     Args:
+    #         question:   Câu hỏi của user.
+    #         session_id: ID phiên chat (mỗi user/tab có ID riêng).
+    #                     Mặc định "default" cho Gradio single-user.
 
-        Returns:
-            Câu trả lời dạng string.
-        """
-        history = self._get_history(session_id)
-        pending_timing_question = self._pending_timing_question.get(session_id)
-        pipeline_question = (
-            f"{pending_timing_question}\nThông tin bổ sung: {question}"
-            if pending_timing_question
-            else question
-        )
-        routing_context = self._routing_context[session_id]
-        route_decision = await self.query_router.route(
-            pipeline_question,
-            history,
-            routing_context,
-        )
-        self._log_route_decision(route_decision)
+    #     Returns:
+    #         Câu trả lời dạng string.
+    #     """
+    #     history = self._get_history(session_id)
+    #     pending_timing_question = self._pending_timing_question.get(session_id)
+    #     pipeline_question = (
+    #         f"{pending_timing_question}\nThông tin bổ sung: {question}"
+    #         if pending_timing_question
+    #         else question
+    #     )
 
-        if route_decision.action in {"fast_reply", "ask_country"}:
-            answer = self._build_fast_reply(route_decision)
-            print(f"\n[Query Router] Fast reply ({route_decision.intent}): {answer}")
-            self._save_turn(session_id, question, answer)
-            return answer
+    #     # Xác định context thuộc session (đoạn hội thoại nào)
+    #     routing_context = self._routing_context[session_id]
 
-        if route_decision.action == "visa_reply":
-            answer = self._build_visa_note(
-                routing_context,
-                route_decision,
-                force=True,
-            ).lstrip()
-            if not answer:
-                answer = self._domestic_visa_reply(route_decision.response_language)
-            answer += self._visa_route_closing(route_decision.response_language)
-            self._save_turn(session_id, question, answer)
-            return answer
+    #     # Nhận ĐÚNG context đó
+    #     # Trả về route decision || update routing context
+    #     route_decision = await self.query_router.route(
+    #         pipeline_question,
+    #         history,
+    #         routing_context,
+    #     )
 
-        prepared = await self._prepare_generation(
-            pipeline_question,
-            history,
-            route_decision,
-        )
-        if prepared.get("clarification_reply"):
-            answer = prepared["clarification_reply"]
-            self._pending_timing_question[session_id] = prepared["search_question"]
-            self._save_turn(session_id, question, answer)
-            return answer
+    #     self._log_route_decision(route_decision)
 
-        self._pending_timing_question.pop(session_id, None)
-        try:
-            result = await self.llm.ainvoke(prepared["messages"])
-            answer = result.content
-        except (TimeoutError, asyncio.TimeoutError) as exc:
-            print(
-                f"[RAGInference] LLM response failed: {type(exc).__name__}: {exc}",
-                flush=True,
-            )
-            answer = self._timeout_reply(route_decision.response_language)
+    #     if route_decision.action in {"fast_reply", "ask_country"}:
+    #         answer = self._build_fast_reply(route_decision)
+    #         print(f"\n[Query Router] Fast reply ({route_decision.intent}): {answer}")
+    #         self._save_turn(session_id, question, answer)
+    #         return answer
 
-        if prepared["execution_mode"] == "recommendation":
-            answer += self._build_recommendation_details(
-                prepared["places"],
-                route_decision.response_language,
-            )
-            answer += self._build_budget_details(
-                prepared["budget_summary"],
-                route_decision.response_language,
-            )
-        answer += self._build_visa_note(
-            routing_context,
-            route_decision,
-            trip_request=prepared["trip_request"],
-        )
-        answer += self._build_timing_advice(
-            prepared["trip_plan"],
-            route_decision.response_language,
-        )
-        answer += self._build_json_block(
-            prepared["trip_plan"],
-            route_decision.response_language,
-        )
+    #     if route_decision.action == "visa_reply":
+    #         answer = self._build_visa_note(
+    #             routing_context,
+    #             route_decision,
+    #             force=True,
+    #         ).lstrip()
+    #         if not answer:
+    #             answer = self._domestic_visa_reply(route_decision.response_language)
+    #         answer += self._visa_route_closing(route_decision.response_language)
+    #         self._save_turn(session_id, question, answer)
+    #         return answer
 
-        print(f"\n [{self.model_info_core}]: {answer}")
-        self._save_turn(session_id, question, answer)
-        return answer
+    #     prepared = await self.pare_generation(
+    #         pipeline_question,
+    #         history,
+    #         route_decision,
+    #     )
+    #     if prepared.get("clarification_reply"):
+    #         answer = prepared["clarification_reply"]
+    #         self._pending_timing_question[session_id] = prepared["search_question"]
+    #         self._save_turn(session_id, question, answer)
+    #         return answer
+
+    #     self._pending_timing_question.pop(session_id, None)
+    #     try:
+    #         result = await self.llm.ainvoke(prepared["messages"])
+    #         answer = result.content
+    #     except (TimeoutError, asyncio.TimeoutError) as exc:
+    #         print(
+    #             f"[RAGInference] LLM response failed: {type(exc).__name__}: {exc}",
+    #             flush=True,
+    #         )
+    #         answer = self._timeout_reply(route_decision.response_language)
+
+    #     if prepared["execution_mode"] == "recommendation":
+    #         answer += self._build_recommendation_details(
+    #             prepared["places"],
+    #             route_decision.response_language,
+    #         )
+    #         answer += self._build_budget_details(
+    #             prepared["budget_summary"],
+    #             route_decision.response_language,
+    #         )
+    #     answer += self._build_visa_note(
+    #         routing_context,
+    #         route_decision,
+    #         trip_request=prepared["trip_request"],
+    #     )
+    #     answer += self._build_timing_advice(
+    #         prepared["trip_plan"],
+    #         route_decision.response_language,
+    #     )
+    #     answer += self._build_json_block(
+    #         prepared["trip_plan"],
+    #         route_decision.response_language,
+    #     )
+
+    #     print(f"\n [{self.model_info_core}]: {answer}")
+    #     self._save_turn(session_id, question, answer)
+    #     return answer
 
     async def predict_stream(
         self,
@@ -897,6 +936,8 @@ class RAGInference:
             else question
         )
         routing_context = self._routing_context[session_id]
+
+        # Router quyết định nhánh sẽ chạy
         route_decision = await self.query_router.route(
             pipeline_question,
             history,
@@ -904,6 +945,8 @@ class RAGInference:
         )
         self._log_route_decision(route_decision)
 
+        # [route action]
+        # Return sớm => Ko run full pipeline (LLM core || Orchestrator)
         if route_decision.action in {"fast_reply", "ask_country"}:
             full_answer = self._build_fast_reply(route_decision)
             print(
@@ -913,6 +956,8 @@ class RAGInference:
             self._save_turn(session_id, question, full_answer)
             return
 
+        # [route action]
+        # Dùng để tư vấn về Visa => End request => Ko run full pipeline
         if route_decision.action == "visa_reply":
             full_answer = self._build_visa_note(
                 routing_context,

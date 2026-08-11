@@ -1,18 +1,19 @@
 """
 recommend/base_recommender.py
 Abstract base class cho tất cả các chiến lược Recommend.
-Áp dụng Strategy Pattern — dễ swap giữa content-based, location-based, hybrid.
+Dễ swap giữa content-based, location-based, hybrid.
 """
 
 from abc import ABC, abstractmethod
+
 from src.schemas import Place, TripRequest
 
 
 class BaseRecommender(ABC):
     """
-    Interface chung cho mọi recommender.
-    Input : danh sách Place (đã qua Reranker) + TripRequest
-    Output: danh sách Place đã được score & sắp xếp
+    - Interface chung cho mọi recommender.
+    - Input : danh sách Place (đã qua Reranker) + TripRequest
+    - Output: danh sách Place đã được score & sắp xếp
     """
 
     @abstractmethod
