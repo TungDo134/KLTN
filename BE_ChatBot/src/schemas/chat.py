@@ -6,6 +6,8 @@ class ChatRequest(BaseModel):
     prompt: str
     conversationSessionId: str = "default"
     conversation_id: str | None = None
+    retrieval_vector_weight: float = Field(default=0.6, ge=0.0, le=1.0)
+    recommendation_content_weight: float = Field(default=0.6, ge=0.0, le=1.0)
 
 
 class ChatResponse(BaseModel):

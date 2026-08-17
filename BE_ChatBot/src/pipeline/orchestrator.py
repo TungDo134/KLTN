@@ -71,6 +71,8 @@ class TripOrchestrator:
         raw_query: str,
         mode: Literal["recommendation", "trip_planning"] = "trip_planning",
         response_language: str = "vi",
+        retrieval_vector_weight: float = 0.6,
+        recommendation_content_weight: float = 0.6,
     ) -> dict:
         """
         Chay pipeline du lich theo execution mode.
@@ -80,6 +82,35 @@ class TripOrchestrator:
         """
         if mode not in {"recommendation", "trip_planning"}:
             raise ValueError(f"Unsupported orchestrator mode: {mode}")
+
+        bm25_weight = 1.0 - retrieval_vector_weight
+        location_weight = 1.0 - recommendation_content_weight
+        weight_mode = (
+            "DEFAULT"
+            if retrieval_vector_weight == 0.6
+            and recommendation_content_weight == 0.6
+            else "CUSTOM"
+        )
+
+        if hasattr(self.retriever, "retriever"):
+            self.retriever.retriever.weights = [
+                retrieval_vector_weight,
+                bm25_weight,
+            ]
+        self.recommender.content_weight = recommendation_content_weight
+        self.recommender.location_weight = location_weight
+
+        print("\n========== USER WEIGHT SETTINGS ==========")
+        print(
+            f"[Retrieval] Vector: {retrieval_vector_weight:.2f} | "
+            f"BM25: {bm25_weight:.2f}"
+        )
+        print(
+            f"[Recommendation] Content: {recommendation_content_weight:.2f} | "
+            f"Location: {location_weight:.2f}"
+        )
+        print(f"[Mode] {weight_mode}")
+        print("==========================================")
 
         # ============================================================
         #                      BƯỚC 1: PHÂN TÍCH CÂU

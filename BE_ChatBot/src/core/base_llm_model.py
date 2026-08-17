@@ -159,11 +159,11 @@ class _GeminiLLM:
 class _GroqLLM:
     """
     - Wrap ChatGroq — Groq Cloud API.
-    - Default model: llama-3.1-8b-instant
+    - Default model: openai/gpt-oss-20b
     - Expect: Rewrite standalone for history chat - Multi Query
     """
 
-    DEFAULT_MODEL = "llama-3.1-8b-instant"
+    DEFAULT_MODEL = "openai/gpt-oss-20b"
 
     @staticmethod
     def build(

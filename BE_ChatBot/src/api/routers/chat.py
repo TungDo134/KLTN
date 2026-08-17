@@ -111,7 +111,12 @@ async def chat_stream(
         yield f"event: meta\ndata: {meta}\n\n"
 
         full_response = ""
-        async for token in engine.predict_stream(request.prompt, conversation_id):
+        async for token in engine.predict_stream(
+            request.prompt,
+            conversation_id,
+            retrieval_vector_weight=request.retrieval_vector_weight,
+            recommendation_content_weight=request.recommendation_content_weight,
+        ):
             full_response += token
             yield f"data: {json.dumps(token, ensure_ascii=False)}\n\n"
 

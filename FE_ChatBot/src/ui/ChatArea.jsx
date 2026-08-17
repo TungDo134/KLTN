@@ -7,6 +7,11 @@ import { fetchMessages } from "../services/conversationApi";
 import { getStoredAuthUser } from "../services/authApi";
 import extractJsonFromText from "../helper/extractJsonFromText";
 
+const DEFAULT_WEIGHT_SETTINGS = {
+  retrievalVector: 60,
+  recommendationContent: 60,
+};
+
 function stripJsonObject(text) {
   const firstBrace = text.indexOf("{");
   if (firstBrace === -1) return text;
@@ -53,6 +58,9 @@ function ChatArea() {
   const [loading, setLoading] = useState(false);
   const [conversationId, setConversationId] = useState(null);
   const [currentUser, setCurrentUser] = useState(() => getStoredAuthUser());
+  const [weightSettings, setWeightSettings] = useState(
+    DEFAULT_WEIGHT_SETTINGS,
+  );
   const bottomRef = useRef(null);
   const navigate = useNavigate();
   const { conversationId: routeConversationId } = useParams();
@@ -117,6 +125,7 @@ function ChatArea() {
       const res = await chatApi.sendMessageStream(
         text,
         conversationId,
+        weightSettings,
         (chunk, fullTextSoFar) => {
           // Tắt loading khi nhận ký tự đầu tiên
           setLoading(false);
@@ -290,7 +299,12 @@ function ChatArea() {
 
             {/* Input */}
             <div className="w-full relative max-w-200">
-              <ChatInput onSend={handleSend} isEmptyState={true} />
+              <ChatInput
+                onSend={handleSend}
+                isEmptyState={true}
+                weightSettings={weightSettings}
+                onWeightSettingsChange={setWeightSettings}
+              />
             </div>
           </div>
         </div>
@@ -322,6 +336,8 @@ function ChatArea() {
                 onSend={handleSend}
                 disabled={loading}
                 isEmptyState={false}
+                weightSettings={weightSettings}
+                onWeightSettingsChange={setWeightSettings}
               />
               <p className="text-center text-[12px] sm:text-[11px] text-(--color-text-subtle) mt-2 sm:mt-3">
                 Mellow là trí tuệ nhân tạo (AI) và có thể mắc sai sót. Vui lòng

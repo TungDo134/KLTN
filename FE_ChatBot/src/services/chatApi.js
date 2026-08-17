@@ -46,7 +46,13 @@ const readStream = async (response, onProgress, onMeta) => {
 };
 
 const chatApi = {
-  sendMessageStream: async (prompt, conversationId, onProgress, onMeta) => {
+  sendMessageStream: async (
+    prompt,
+    conversationId,
+    weightSettings,
+    onProgress,
+    onMeta,
+  ) => {
     const token = localStorage.getItem("access_token");
 
     const response = await fetch(`${BASE_URL}/chat/stream`, {
@@ -58,6 +64,9 @@ const chatApi = {
       body: JSON.stringify({
         prompt,
         conversation_id: conversationId || null,
+        retrieval_vector_weight: weightSettings.retrievalVector / 100,
+        recommendation_content_weight:
+          weightSettings.recommendationContent / 100,
       }),
     });
 
