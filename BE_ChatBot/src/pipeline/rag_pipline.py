@@ -291,7 +291,7 @@ def create_vector_store(
         existing_count = 0
         is_new_db = True
 
-    # Lọc chunk trùng dựa theo source + content
+    # Lọc chunk trùng dựa theo place_id + 100 ký tự đầu của page_content
     # Lọc theo tên file != theo chunk
     if existing_count > 0:
         existing_sources = set(

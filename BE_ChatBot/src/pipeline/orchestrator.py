@@ -449,26 +449,26 @@ class TripOrchestrator:
                     rating_reason += f" từ {formatted_rating_count} lượt đánh giá"
             reasons.append(rating_reason + ".")
 
-        distance = getattr(place, "distance_to_candidate_centroid_km", None)
-        location_score = getattr(place, "location_recommend_score", 0)
+        # distance = getattr(place, "distance_to_candidate_centroid_km", None)
+        # location_score = getattr(place, "location_recommend_score", 0)
         # Only describe proximity for the nearer half of the candidate-distance range.
-        if distance is not None and location_score >= 0.5:
-            if language == "en":
-                reasons.append(
-                    "Located about "
-                    f"{distance:.1f} km from the candidate cluster center, "
-                    "making it easier to combine with nearby places."
-                )
-            else:
-                formatted_distance = f"{distance:.1f}".replace(".", ",")
-                reasons.append(
-                    f"Cách trung tâm thành phố khoảng {formatted_distance} km, "
-                    "thuận tiện kết hợp với các địa điểm lân cận."
-                )
+        # if distance is not None and location_score >= 0.5:
+        #     if language == "en":
+        #         reasons.append(
+        #             "Located about "
+        #             f"{distance:.1f} km from the average location of the candidate places, "
+        #             "making it easier to combine with nearby places."
+        #         )
+        #     else:
+        #         formatted_distance = f"{distance:.1f}".replace(".", ",")
+        #         reasons.append(
+        #             f"Cách khu vực tập trung của các địa điểm được đề xuất khoảng {formatted_distance} km, "
+        #             "thuận tiện kết hợp với các địa điểm lân cận."
+        #         )
 
         return {
             "name": getattr(place, "name", ""),
-            "recommendation_reasons": reasons[:3],
+            "recommendation_reasons": reasons[:2],
         }
 
     def _trip_plan_to_dict(
