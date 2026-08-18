@@ -800,7 +800,7 @@ LLM_MODEL=gemma4:cloud
 OLLAMA_API_KEY=<secret>
 
 REWRITE_LLM_PROVIDER=groq
-REWRITE_LLM_MODEL=llama-3.1-8b-instant
+REWRITE_LLM_MODEL=openai/gpt-oss-20b
 GROQ_API_KEY=<secret>
 
 RERANKER_PROVIDER=cohere

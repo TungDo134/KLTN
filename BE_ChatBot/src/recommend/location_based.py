@@ -21,7 +21,10 @@ from src.schemas import Place, TripRequest
 class LocationBasedRecommender(BaseRecommender):
     def score(self, places: list[Place], request: TripRequest) -> list[Place]:
         """
-        Tinh `raw location` dua tren khoang cach toi centroid
+        - Tinh `raw location` dua tren khoang cach toi centroid
+        - location_score:
+            - Gần centroid -> location_score cao
+            - Xa centroid  -> location_score thấp
         """
         if not places:
             return places
@@ -43,7 +46,9 @@ class LocationBasedRecommender(BaseRecommender):
 
     def _compute_centroid(self, places: list[Place]) -> tuple[float, float]:
         """
-        Tinh `toa do trung binh` cua tap places
+        ### Tinh `toa do trung binh` cua tap places
+        centroid_lat = tổng latitude / tổng số địa điểm
+        centroid_lng = tổng longitude / số địa điểm
         """
         lat_mean = sum(place.lat for place in places) / len(places)
         lng_mean = sum(place.lng for place in places) / len(places)
@@ -51,7 +56,8 @@ class LocationBasedRecommender(BaseRecommender):
 
     def _haversine(self, lat1: float, lng1: float, lat2: float, lng2: float) -> float:
         """
-        -  Haversine: Khoảng cách đường chim bay giữa hai tọa độ trên bề mặt Trái Đất
+        - Haversine: Khoảng cách đường chim bay giữa hai tọa độ trên bề mặt Trái Đất
+        - dùng tọa độ trung tâm (_compute_centroid) để tính ~ địa điểm cách trung tâm nhóm bn km.
         - VD:
             - (lat1, lng1) ----- khoảng cách km ----- (lat2, lng2)
         """

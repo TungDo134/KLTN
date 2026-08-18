@@ -375,6 +375,45 @@ class RAGInference:
             response_language,
         )
 
+    @staticmethod
+    def _build_weight_note(
+        retrieval_vector_weight: float,
+        recommendation_content_weight: float,
+        response_language: str = "vi",
+    ) -> str:
+        vector_percent = round(retrieval_vector_weight * 100)
+        bm25_percent = 100 - vector_percent
+        content_percent = round(recommendation_content_weight * 100)
+        location_percent = 100 - content_percent
+        is_default = vector_percent == 60 and content_percent == 60
+
+        if response_language == "en":
+            opening = (
+                "the system used the default balance:"
+                if is_default
+                else "the system considered"
+            )
+            return (
+                f"\n\n> ⚙️ To create this suggestion, {opening} "
+                f"{vector_percent}% of the question's meaning and {bm25_percent}% "
+                f"of its keywords; when selecting places, it considered "
+                f"{content_percent}% fit with your needs and {location_percent}% "
+                "proximity between places."
+            )
+
+        opening = (
+            "hệ thống sử dụng mức cân bằng mặc định:"
+            if is_default
+            else "hệ thống cân nhắc"
+        )
+        return (
+            f"\n\n> ⚙️ Để tạo gợi ý này, {opening} {vector_percent}% ý nghĩa "
+            f"câu hỏi và {bm25_percent}% từ khóa; "
+            f"khi chọn địa điểm, hệ thống cân nhắc {content_percent}% mức độ "
+            f"phù hợp với nhu cầu và {location_percent}% mức độ gần nhau giữa "
+            "các địa điểm."
+        )
+
     def _build_recommendation_details(
         self,
         places: list,
@@ -713,6 +752,8 @@ class RAGInference:
         question: str,
         history: list,
         route_decision: RouteDecision,
+        retrieval_vector_weight: float = 0.6,
+        recommendation_content_weight: float = 0.6,
     ) -> dict:
         effective_question = route_decision.resolved_question or question
 
@@ -760,6 +801,8 @@ class RAGInference:
             search_question,
             mode=mode,
             response_language=route_decision.response_language,
+            retrieval_vector_weight=retrieval_vector_weight,
+            recommendation_content_weight=recommendation_content_weight,
         )
         clarification_reply = orch_res.get("clarification_reply")
         if clarification_reply:
@@ -923,6 +966,8 @@ class RAGInference:
         self,
         question: str,
         session_id: str = "default",
+        retrieval_vector_weight: float = 0.6,
+        recommendation_content_weight: float = 0.6,
     ):
         """
         - Stream phản hồi kết hợp với việc giữ session id
@@ -977,6 +1022,8 @@ class RAGInference:
             pipeline_question,
             history,
             route_decision,
+            retrieval_vector_weight=retrieval_vector_weight,
+            recommendation_content_weight=recommendation_content_weight,
         )
         if prepared.get("clarification_reply"):
             full_answer = prepared["clarification_reply"]
@@ -1037,6 +1084,15 @@ class RAGInference:
         if timing_advice:
             full_answer += timing_advice
             yield timing_advice
+
+        if prepared["execution_mode"] in {"recommendation", "trip_planning"}:
+            weight_note = self._build_weight_note(
+                retrieval_vector_weight,
+                recommendation_content_weight,
+                route_decision.response_language,
+            )
+            full_answer += weight_note
+            yield weight_note
 
         json_block = self._build_json_block(
             prepared["trip_plan"],
