@@ -1,523 +1,619 @@
-# Vietnam Travel ChatBot - RAG + LLM + React
+# Vietnam Travel ChatBot
 
-## Tổng quan
+Vietnam Travel ChatBot là hệ thống trợ lý du lịch Việt Nam được xây dựng cho
+đồ án khóa luận tốt nghiệp. Hệ thống kết hợp RAG, LLM, gợi ý địa điểm và lập
+lịch trình để trả lời câu hỏi du lịch bằng tiếng Việt hoặc tiếng Anh, đồng thời
+hỗ trợ đăng nhập, lưu hội thoại và hiển thị lịch trình trực quan trên web.
 
-Dự án này là chatbot tư vấn du lịch Việt Nam, được xây dựng quanh backend Retrieval-Augmented Generation (RAG) và frontend React. Runtime đang hoạt động hiện tại là một **history-aware RAG chatbot**:
+Luồng chạy được hỗ trợ trực tiếp trong repository là:
 
 ```text
-User question
- -> FastAPI /chat
- -> RAGInference
- -> optional history-aware query rewrite
- -> Multi-query hybrid retrieval
- -> Cross-encoder reranking
- -> LLM answer generation
- -> React / Gradio response
+React/Vite chạy local
+    -> FastAPI chạy trong Docker
+    -> PostgreSQL chạy trên máy host
+    -> ChromaDB seed trong image và các dịch vụ AI được backend gọi qua API
 ```
 
-Repository cũng có các module khung cho recommendation, route planning và crawler/ingestion workflow. Các module này quan trọng cho hướng phát triển của dự án, nhưng hiện chưa được nối hoàn chỉnh vào runtime.
+> Repository hiện chưa có Dockerfile cho frontend hoặc `docker-compose.yml`.
+> Vì vậy, phần “Chạy bằng Docker” bên dưới dùng Docker cho backend và chạy
+> frontend bằng Node.js trên máy host.
 
-## Trạng thái hiện tại
+## Mục lục
 
-| Khu vực               | Trạng thái              | Ghi chú                                                                            |
-| --------------------- | ----------------------- | ---------------------------------------------------------------------------------- |
-| FastAPI backend       | Đang hoạt động          | Endpoint chính là `POST /chat`.                                                    |
-| RAG retrieval         | Đang hoạt động          | Dùng ChromaDB, vector search, BM25, multi-query retrieval và cross-encoder rerank. |
-| Chat history          | Đang hoạt động          | `RAGInference` lưu lịch sử hội thoại ngắn trong memory theo session.               |
-| React frontend        | Đang hoạt động          | Vite + React UI gọi backend `/chat`.                                               |
-| Place data ingestion  | Đang dùng               | Dữ liệu JSON trong `places_data` đã được ingest vào Chroma.                        |
-| Recommendation module | Skeleton                | Class đã có, các method vẫn đang`TODO/pass`.                                       |
-| Planning module       | Skeleton                | Graph/route/schedule facade đã có, các method vẫn đang `TODO/pass`.                |
-| Crawler module        | Skeleton / data support | Cấu trúc folder và data đã có, nhiều crawler/validator/ingest method vẫn là TODO.  |
+- [Tính năng chính](#tính-năng-chính)
+- [Kiến trúc hệ thống](#kiến-trúc-hệ-thống)
+- [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+- [Dữ liệu](#dữ-liệu)
+- [Cấu trúc repository](#cấu-trúc-repository)
+- [Chạy dự án bằng Docker](#chạy-dự-án-bằng-docker)
+- [Demo end-to-end](#demo-end-to-end)
+- [Các thao tác Docker thường dùng](#các-thao-tác-docker-thường-dùng)
+- [Chạy toàn bộ dự án ở local](#chạy-toàn-bộ-dự-án-ở-local)
+- [API chính](#api-chính)
+- [Đánh giá hệ thống](#đánh-giá-hệ-thống)
+- [Xử lý lỗi thường gặp](#xử-lý-lỗi-thường-gặp)
+- [Giới hạn hiện tại](#giới-hạn-hiện-tại)
+- [Tài liệu liên quan](#tài-liệu-liên-quan)
+- [Bảo mật](#bảo-mật)
+- [Giấy phép](#giấy-phép)
 
-## Tech Stack
+## Tính năng chính
 
-- Backend: FastAPI, LangChain, ChromaDB
-- LLM providers: mặc định dùng NVIDIA NIM, có adapter cho Groq, Gemini và Ollama
-- Retrieval: Chroma vector search + BM25 hybrid retriever
-- Reranking: HuggingFace CrossEncoder (`BAAI/bge-reranker-v2-m3`)
-- Frontend: React 19, Vite 7, TailwindCSS 4, Axios, ReactFlow
-- Data: place JSON files và document/text sources
+- Đăng nhập Google bằng Firebase Authentication và xác thực Firebase ID token
+  tại backend.
+- Phân loại truy vấn theo ngôn ngữ, ý định và hành động xử lý bằng
+  `QueryRouter`.
+- Trả lời hội thoại ngắn, câu hỏi ngoài phạm vi, câu hỏi du lịch tổng quát,
+  yêu cầu gợi ý và yêu cầu lập lịch trình theo các nhánh riêng.
+- RAG đa truy vấn với Hybrid Search gồm Vector Search và BM25; mặc định người
+  dùng có thể điều chỉnh cặp trọng số bổ sung `60/40`.
+- Rerank tài liệu, rerank theo metadata và đề xuất địa điểm theo điểm nội dung
+  kết hợp vị trí.
+- Lập lịch trình nhiều ngày từ các địa điểm được đề xuất, có xét thời lượng
+  tham quan, thời gian di chuyển ước tính và giới hạn kết thúc ngày.
+- Tư vấn thời tiết từ Open-Meteo trong phạm vi dự báo; dùng dữ liệu khí hậu
+  tổng quan khi chuyến đi nằm ngoài phạm vi này.
+- Tư vấn visa dựa trên quốc gia cấp hộ chiếu và dữ liệu visa có ghi ngày kiểm
+  tra cùng nguồn tham khảo trong repository.
+- Ước tính thời điểm khởi hành cho đường bộ hoặc chuyến bay, đồng thời hỏi lại
+  khi thiếu dữ liệu bắt buộc.
+- Hiển thị phí vào cửa và tổng hợp ngân sách với độ phủ dữ liệu rõ ràng; giá trị
+  phí chưa xác định không được xem là miễn phí.
+- Streaming câu trả lời qua Server-Sent Events (SSE).
+- Lưu người dùng, hội thoại và tin nhắn trong PostgreSQL; hỗ trợ xem lại, đổi
+  tên và xóa mềm hội thoại.
+- Hiển thị kết quả dưới dạng văn bản, timeline và mind map trên frontend.
+
+## Kiến trúc hệ thống
+
+```mermaid
+flowchart LR
+    U[Người dùng] --> FE[React + Vite]
+    FE --> FBA[Firebase Authentication]
+    FBA -->|ID token| API[FastAPI]
+    FE -->|REST + SSE| API
+    API --> DB[(PostgreSQL)]
+    API --> QR[QueryRouter]
+    QR -->|Trả lời nhanh / Visa| RESP[Phản hồi]
+    QR -->|Du lịch tổng quát| LLM[Core LLM]
+    QR -->|Gợi ý / Lập lịch| ORCH[TripOrchestrator]
+    ORCH --> RAG[Multi-query + Vector + BM25]
+    RAG --> CHROMA[(ChromaDB)]
+    RAG --> RR[Document + Metadata Rerank]
+    RR --> REC[Hybrid Recommender]
+    REC --> PLAN[Trip Planner]
+    PLAN --> LLM
+    LLM --> RESP
+    RESP -->|SSE tokens + trip JSON| FE
+```
+
+Luồng gợi ý/lập lịch chính:
+
+```text
+QueryAnalyzer
+    -> Multi-query Hybrid Retrieval
+    -> Document Reranker
+    -> chuyển Document thành Place
+    -> Metadata Reranker
+    -> Hybrid Recommender
+    -> Trip Planner (nếu là yêu cầu lập lịch)
+    -> LLM tạo câu trả lời
+    -> JSON có cấu trúc để frontend hiển thị
+```
+
+## Công nghệ sử dụng
+
+| Thành phần           | Công nghệ                                                       |
+| -------------------- | --------------------------------------------------------------- |
+| Frontend             | React 19.2.4, Vite 7.3.2, Tailwind CSS 4.2.1, Axios, React Flow |
+| Backend API          | Python 3.12, FastAPI, Uvicorn, Pydantic                         |
+| AI orchestration     | LangChain                                                       |
+| Vector database      | ChromaDB, collection `kltn_chatbot`                             |
+| Retrieval            | Google Embedding, Vector Search, BM25, Multi-query retrieval    |
+| Reranking            | Cohere API trong Docker; code cũng hỗ trợ Hugging Face local    |
+| Recommendation       | Metadata reranking, Content-based và Location-based scoring     |
+| Planning             | Weighted graph, Dijkstra, 2-opt local search và Scheduler       |
+| Authentication       | Firebase Authentication và Firebase Admin SDK                   |
+| Application database | PostgreSQL, SQLAlchemy                                          |
+| External data        | Open-Meteo, dữ liệu visa và dữ liệu thời gian di chuyển tĩnh    |
+| Deployment           | Docker cho backend; cấu hình tham khảo Railway và Netlify       |
+
+Baseline Docker đã được cấu hình theo các provider sau:
+
+| Vai trò                | Provider / model                       |
+| ---------------------- | -------------------------------------- |
+| Core LLM               | Ollama Cloud / `gemma4:cloud`          |
+| Rewrite và Multi-query | Groq / `openai/gpt-oss-20b`            |
+| Embedding              | Google / `models/gemini-embedding-001` |
+| Document reranker      | Cohere / `rerank-v3.5`                 |
+
+Codebase còn có adapter cho NVIDIA, Gemini, Ollama local và một số provider
+local khác. Tuy nhiên, khi dùng ChromaDB đã commit, cấu hình embedding phải giữ
+đúng `google / models/gemini-embedding-001` để khớp metadata của vector store.
+
+## Dữ liệu
+
+Repository chứa 600 địa điểm thuộc sáu khu vực, mỗi khu vực 100 địa điểm:
+
+- Đà Lạt
+- Đà Nẵng
+- Hà Nội
+- Thành phố Hồ Chí Minh
+- Nha Trang
+- Vũng Tàu
+
+Dữ liệu nguồn nằm tại `BE_ChatBot/src/source_data/places_data/`. Backend Docker
+truy xuất từ ChromaDB seed tại `BE_ChatBot/src/db/chroma_db/`, hiện có:
+
+```text
+Collection: kltn_chatbot
+Vectors: 600
+Dimension: 3072
+Embedding provider: google
+Embedding model: models/gemini-embedding-001
+```
+
+Các trường metadata chính gồm tên địa điểm, khu vực, loại, tags, tọa độ, rating,
+giờ mở/đóng cửa, thời lượng tham quan, thời điểm phù hợp và phí vào cửa nếu có.
 
 ## Cấu trúc repository
 
 ```text
 Project/
-├── AGENTS.md
 ├── README.md
+├── run_be_fe_local.ps1          # Chạy cả BE và FE trực tiếp trên Windows
 ├── BE_ChatBot/
+│   ├── Dockerfile
+│   ├── run_docker_be.ps1        # Build/recreate backend Docker
+│   ├── requirements.deploy.txt  # Dependency dành cho Docker/cloud
+│   ├── requirements.txt         # Dependency phát triển local đầy đủ
 │   ├── src/
-│   │   ├── api/
-│   │   │   ├── deps.py
-│   │   │   ├── deps_chat.py
-│   │   │   └── routers/
-│   │   │       ├── auth.py
-│   │   │       └── chat.py
-│   │   ├── core/
-│   │   │   ├── base_embed_model.py
-│   │   │   ├── base_llm_model.py
-│   │   │   ├── config.py
-│   │   │   ├── firebase.py
-│   │   │   ├── llm_container.py
-│   │   │   └── schemas.py
-│   │   ├── db/
-│   │   │   ├── base.py
-│   │   │   └── session.py
-│   │   ├── eval/
-│   │   ├── models/
-│   │   │   ├── conversation.py
-│   │   │   ├── message.py
-│   │   │   └── user.py
-│   │   ├── pipeline/
-│   │   │   ├── inference.py
-│   │   │   ├── orchestrator.py
-│   │   │   ├── query_analyzer.py
-│   │   │   ├── rag_pipline.py
-│   │   │   └── reranker.py
-│   │   ├── planning/
-│   │   │   ├── graph_builder.py
-│   │   │   ├── planner.py
-│   │   │   ├── route_optimizer.py
-│   │   │   └── scheduler.py
-│   │   ├── prompts/
-│   │   │   └── system_prompt.md
-│   │   ├── recommend/
-│   │   │   ├── base_recommender.py
-│   │   │   ├── content_based.py
-│   │   │   ├── hybrid_recommender.py
-│   │   │   └── location_based.py
-│   │   ├── repositories/
-│   │   │   ├── conversation_repository.py
-│   │   │   ├── message_repository.py
-│   │   │   └── user_repository.py
-│   │   ├── schemas/
-│   │   │   ├── auth.py
-│   │   │   └── chat.py
-│   │   ├── services/
-│   │   │   ├── auth_service.py
-│   │   │   └── conversation_service.py
-│   │   ├── source_data/
-│   │   │   ├── docs/
-│   │   │   └── places_data/
-│   │   ├── static/
-│   │   └── main.py
-│   ├── test/
-│   │   ├── Testing.py
-│   │   ├── test_db_connection.py
-│   │   └── test_db_insert.py
-│   ├── build_rag_vector_db.ipynb
-│   ├── Overview Schema Data.md
-│   ├── run.bat
-│   └── requirements.txt
+│   │   ├── api/                 # FastAPI routers và dependencies
+│   │   ├── core/                # Config, Firebase, LLM và embedding adapters
+│   │   ├── db/                  # PostgreSQL session, models và ChromaDB seed
+│   │   ├── eval/                # Benchmark dataset/retrieval/output
+│   │   ├── pipeline/            # Router, RAG, reranker, inference, orchestrator
+│   │   ├── planning/            # Graph, route optimizer và scheduler
+│   │   ├── recommend/           # Content/location/hybrid recommender
+│   │   ├── services/            # Weather, visa, timing và conversation services
+│   │   ├── source_data/         # Place, visa và travel-time data
+│   │   └── main.py              # FastAPI entrypoint
+│   └── test/                    # Test và manual smoke scripts
 ├── FE_ChatBot/
 │   ├── public/
-│   │   ├── favicon.ico
-│   │   ├── logo_KLTN.jpg
-│   │   ├── logo_KLTN_no_text.png
-│   │   └── _redirects
 │   ├── src/
-│   │   ├── api/
-│   │   ├── config/
-│   │   ├── features/
-│   │   │   ├── navigation/
-│   │   │   └── result-visualize/
-│   │   ├── helper/
-│   │   ├── services/
-│   │   │   ├── authApi.js
-│   │   │   └── chatApi.js
-│   │   ├── ui/
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   ├── README_FE.md
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
+│   │   ├── api/                 # Axios client
+│   │   ├── config/              # Firebase web config
+│   │   ├── features/            # Navigation và trực quan hóa kết quả
+│   │   ├── services/            # Auth, chat và conversation API
+│   │   └── ui/                  # Chat layout, input và message components
 │   ├── package.json
-│   └── vite.config.js
-├── CRAWL_DATA_CHATBOT/
-│   ├── crawlers/
-│   ├── data/
-│   │   ├── dataCrawl/
-│   │   └── places/
-│   ├── ingest/
-│   ├── utils/
-│   │   ├── clean_data/
-│   │   ├── enrich_data_region/
-│   │   ├── enrich_data_tag/
-│   │   └── enrich_data_type/
-│   ├── validators/
-│   ├── Flow_GetData.png
-│   ├── README_CRAWL_DATA_CHATBOT.md
-│   ├── config.py
-│   ├── data_pipeline.py
-│   ├── requirements.txt
-│   └── template.json
-└── ONBOARD_FLOW/
-    ├── chat_API_integration_flow.md
-    ├── implementation_plan_Persist Conversations & Messages vào DB.md
-    └── login_logout_flow.md
+│   └── package-lock.json
+└── CRAWL_DATA_CHATBOT/          # Thu thập, làm sạch, enrich và ingest dữ liệu
 ```
 
-### Architecture layers
+## Chạy dự án bằng Docker
 
-| Layer                       | Vai trò                                                                     | File nên đọc trước                                                                                                                      |
-| --------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Backend API                 | FastAPI entry points, routers, dependencies và HTTP schemas.                | `BE_ChatBot/src/main.py`, `BE_ChatBot/src/api/routers/chat.py`, `BE_ChatBot/src/schemas/chat.py`                                        |
-| Backend Core                | Config, database, models, repositories, services và adapter LLM dùng chung. | `BE_ChatBot/src/core/config.py`, `BE_ChatBot/src/core/base_llm_model.py`, `BE_ChatBot/src/core/llm_container.py`                        |
-| RAG Pipeline                | Query analysis, retrieval, reranking, inference và orchestration.           | `BE_ChatBot/src/pipeline/inference.py`, `BE_ChatBot/src/pipeline/orchestrator.py`, `BE_ChatBot/src/pipeline/rag_pipline.py`             |
-| Recommendation and Planning | Recommendation strategies và trip route planning modules.                   | `BE_ChatBot/src/recommend/hybrid_recommender.py`, `BE_ChatBot/src/planning/planner.py`, `BE_ChatBot/src/planning/route_optimizer.py`    |
-| Frontend                    | React/Vite client, UI shell, chat API client và result visualization.       | `FE_ChatBot/src/main.jsx`, `FE_ChatBot/src/App.jsx`, `FE_ChatBot/src/services/chatApi.js`                                               |
-| Data Crawl                  | Crawler, ingestion, validation và data enrichment code.                     | `CRAWL_DATA_CHATBOT/data_pipeline.py`, `CRAWL_DATA_CHATBOT/ingest/text_builder.py`, `CRAWL_DATA_CHATBOT/validators/schema_validator.py` |
-| Project Docs and Config     | README, requirements, scripts và project-level config.                      | `README.md`, `BE_ChatBot/requirements.txt`, `FE_ChatBot/package.json`                                                                   |
+### 1. Yêu cầu hệ thống
 
-### Guided tour cho người mới
+- Git.
+- Docker Desktop đang chạy Linux containers.
+- PostgreSQL đang chạy trên máy host tại port `5432`.
+- Node.js thỏa điều kiện của Vite: `^20.19.0` hoặc `>=22.12.0`.
+- Một Firebase project đã bật Google Sign-In.
+- API key cho Google Gemini, Groq, Ollama Cloud và Cohere theo baseline ở trên.
+- PowerShell để chạy script có sẵn.
 
-1. Đọc `README.md` để nắm scope travel chatbot, trạng thái từng module và cách chạy project.
-2. Theo backend API flow qua `BE_ChatBot/src/main.py`, `BE_ChatBot/src/api/routers/chat.py`, `BE_ChatBot/src/api/deps_chat.py` và `BE_ChatBot/src/schemas/chat.py`.
-3. Theo RAG pipeline qua `BE_ChatBot/src/pipeline/orchestrator.py`, `BE_ChatBot/src/pipeline/rag_pipline.py` và `BE_ChatBot/src/pipeline/inference.py`.
-4. Theo frontend client qua `FE_ChatBot/src/main.jsx`, `FE_ChatBot/src/App.jsx` và `FE_ChatBot/src/services/chatApi.js`.
-
-### Key concepts
-
-- Runtime chính hiện là history-aware RAG chatbot: API nhận prompt, `RAGInference` rewrite câu hỏi follow-up nếu cần, retrieve nhiều query, rerank bằng cross-encoder, rồi gọi LLM để sinh answer.
-- `TripOrchestrator` đã được thiết kế như điểm nối giữa RAG, recommendation, planning và generation, nhưng runtime hiện đang dừng ở bước trả về reranked documents.
-- Place data trong `BE_ChatBot/src/source_data/places_data/` là nguồn quan trọng cho câu trả lời du lịch; chất lượng answer phụ thuộc nhiều vào metadata, prompt và `RerankerConfig.TOP_N`.
-- Frontend tập trung quanh chat UI và API client; các view như text, bot result, mindmap, timeline phục vụ hiển thị kết quả từ backend.
-- Crawler/data pipeline là module hỗ trợ dữ liệu riêng, dùng để collect, validate, enrich và chuẩn bị place JSON trước khi ingest vào Chroma.
-
-### Complexity hotspots
-
-- `BE_ChatBot/src/pipeline/rag_pipline.py`: nhiều logic retrieval, Chroma, BM25, multi-query và rerank nằm chung một file.
-- `BE_ChatBot/src/pipeline/orchestrator.py`: là nơi nối các bước RAG và roadmap recommendation/planning, cần đọc kỹ trước khi đổi flow.
-- `BE_ChatBot/src/pipeline/reranker.py`: liên quan trực tiếp chất lượng document ranking.
-- `BE_ChatBot/build_rag_vector_db.ipynb` và `BE_ChatBot/src/eval/rag_eval.ipynb`: notebook dài, nên coi như công cụ vận hành/eval hơn là runtime chính.
-- Các file JSON lớn trong `BE_ChatBot/src/source_data/places_data/` và `CRAWL_DATA_CHATBOT/data/dataCrawl/`: tránh chỉnh tay nếu chưa có script kiểm tra schema.
-- `FE_ChatBot/src/ui/ChatArea.jsx`, `FE_ChatBot/src/features/navigation/Sidebar.jsx` và `FE_ChatBot/src/services/chatApi.js`: các điểm chính của frontend chat flow.
-
-## Flow runtime của backend
-
-### 1. FastAPI entry point
-
-`BE_ChatBot/src/main.py` tạo FastAPI app và khởi tạo `RAGInference` một lần trong lifespan của app.
-
-```text
-uvicorn src.main:app --reload
- -> lifespan()
- -> app.state.inference = RAGInference()
-```
-
-Endpoint API chính là:
-
-```text
-POST /chat
-body: { "prompt": "..." }
-response: { "response": "..." }
-```
-
-### 2. RAGInference
-
-`BE_ChatBot/src/pipeline/inference.py` là runtime coordinator hiện tại.
-
-Module này thực hiện các bước:
-
-1. Load main LLM.
-2. Load một rewrite LLM riêng.
-3. Tạo `TripOrchestrator`.
-4. Giữ chat history trong memory theo `session_id`.
-5. Rewrite câu hỏi follow-up thành câu hỏi standalone khi có history.
-6. Retrieve và rerank documents thông qua orchestrator.
-7. Build final prompt từ system prompt, history, retrieved context và câu hỏi gốc.
-8. Gọi main LLM và trả về answer.
-
-### 3. TripOrchestrator
-
-`BE_ChatBot/src/pipeline/orchestrator.py` được thiết kế để nối RAG, recommendation, planning và generation.
-
-Runtime path hiện tại là:
-
-```text
-raw_query
- -> QueryAnalyzer.extract(raw_query)
- -> MultiQueryRetriever.ainvoke(raw_query)
- -> CrossEncoderReranker.compress_documents(...)
- -> return reranked_docs
-```
-
-Điểm quan trọng: function hiện đang trả về `reranked_docs` sớm. Các bước bên dưới đã có trong comment/TODO nhưng chưa active `(rcm + graph plan)`:
-
-```text
-docs -> Place[]
- -> metadata Reranker
- -> HybridRecommender
- -> TripPlanner
- -> LLM trip-plan generation
-```
-
-### 4. RAG pipeline
-
-`BE_ChatBot/src/pipeline/rag_pipline.py` xử lý core retrieval logic:
-
-- `RAGStorage` load ChromaDB từ `PERSIST_DIRECTORY`.
-- `get_hybrid_retriever()` kết hợp:
-  - Chroma vector retriever
-  - BM25 retriever được build từ toàn bộ Chroma documents
-- `MultiQueryRetriever` yêu cầu LLM tạo query variations.
-- Duplicate documents được loại bỏ.
-- BGE cross-encoder rerank các retrieved documents.
-- `RerankerConfig.TOP_N` kiểm soát số documents được giữ lại sau rerank.
-
-Reranker model hiện tại là:
-
-```text
-BAAI/bge-reranker-v2-m3
-```
-
-## Nguồn dữ liệu
-
-### Document data
-
-`BE_ChatBot/src/source_data/docs/` chứa raw text/PDF-style `(UNUSED)`.
-
-### Place data
-
-`BE_ChatBot/src/source_data/places_data/` chứa các merged JSON place datasets, gồm:
-
-```text
-dalat_merged.json
-danang_merged.json
-hanoi_merged.json
-hcm_merged.json
-nhatrang_merged.json
-vungtau_merged.json
-```
-
-Các file này chứa place records với các field như:
-
-- `name`
-- `region`
-- `tags`
-- `rating`
-- `description`
-- opening hours / duration / fee metadata nếu có
-
-Dữ liệu này đã được ingest vào Chroma để test RAG. Vì nhiều generated descriptions có dạng template, chất lượng answer phụ thuộc khá nhiều vào metadata và reranker settings. Trong thực tế, `TOP_N` khoảng `5-8` thường cho câu trả lời gọn và sạch hơn so với việc trả về quá nhiều địa điểm tương tự nhau.
-
-## Recommendation và Planning modules
-
-Các module này là một phần của travel-planning pipeline dự kiến, hiện đang trong quá trình xây dựng.
-
-### Recommendation
-
-Files:
-
-- `BE_ChatBot/src/recommend/base_recommender.py`
-- `BE_ChatBot/src/recommend/content_based.py`
-- `BE_ChatBot/src/recommend/location_based.py`
-- `BE_ChatBot/src/recommend/hybrid_recommender.py`
-
-Flow dự kiến:
-
-```text
-Place[]
- -> ContentBasedRecommender
- -> LocationBasedRecommender
- -> HybridRecommender
- -> RecommendResult
-```
-
-Trạng thái hiện tại: phần lớn scoring methods vẫn là `TODO/pass`.
-
-### Planning
-
-Files:
-
-- `BE_ChatBot/src/planning/graph_builder.py`
-- `BE_ChatBot/src/planning/route_optimizer.py`
-- `BE_ChatBot/src/planning/scheduler.py`
-- `BE_ChatBot/src/planning/planner.py`
-
-Flow dự kiến:
-
-```text
-RecommendResult
- -> GraphBuilder.build()
- -> RouteOptimizer.optimize()
- -> Scheduler.schedule()
- -> TripPlan
-```
-
-Trạng thái hiện tại: facade và class structure đã có, nhưng các method chính vẫn là `TODO/pass`.
-
-## Crawler / Data Pipeline
-
-`CRAWL_DATA_CHATBOT` là một data-support module riêng, được thiết kế để collect, validate, transform và ingest place data.
-
-Flow dự kiến:
-
-```text
-Crawler
- -> schema validation
- -> text_builder
- -> ChromaDB ingestion
- -> BE_ChatBot RAG retrieval
-```
-
-Trạng thái hiện tại: chưa up code implement, nhưng data trong `CRAWL_DATA_CHATBOT/data/dataCrawl` đã xài được.
-
-## Cài đặt
-
-### Backend
+Kiểm tra nhanh:
 
 ```powershell
-cd D:\KLTN\Project\BE_ChatBot
-python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r requirements.txt
+docker version
+Test-NetConnection localhost -Port 5432
+node --version
+npm --version
 ```
 
-Tạo file `.env` trong `BE_ChatBot/`:
+### 2. Clone repository
+
+```powershell
+git clone <repository-url>
+cd <repository-folder>
+```
+
+### 3. Tạo database PostgreSQL
+
+Tạo database qua `psql`, pgAdmin hoặc công cụ PostgreSQL tương đương:
+
+```sql
+CREATE DATABASE kltn_chatbot_deploy;
+```
+
+Script Docker chỉ kết nối tới database đã có; script không tự tạo database.
+
+### 4. Cấu hình backend
+
+Tạo file `BE_ChatBot/.env`. Mẫu sau khớp với ChromaDB và bộ dependency Docker
+đã commit:
 
 ```env
-NVIDIA_API_KEY=nvapi-...
-HF_TOKEN=hf_...
+# PostgreSQL
+# Dùng khi chạy backend trực tiếp trên Windows (không bắt buộc cho Docker)
+DATABASE_URL=postgresql+psycopg2://postgres:<password>@localhost:5432/kltn
 
-LLM_PROVIDER=nvidia
-REWRITE_LLM_PROVIDER=groq
+# Bắt buộc đối với run_docker_be.ps1
+DOCKER_DATABASE_URL=postgresql+psycopg2://postgres:<password>@host.docker.internal:5432/kltn_chatbot_deploy
+SQL_ECHO=false
 
+# URL frontend được CORS cho phép
+FRONTEND_URL=http://localhost:5173
+
+# Dữ liệu và prompt
 PERSIST_DIRECTORY=src/db/chroma_db
-SOURCE_DATA=src/source_data/docs
-JSON_DATA_DIR=src/source_data/places_data
 SYSTEM_PROMPT=src/prompts/system_prompt.md
 
-FRONTEND_URL=http://localhost:5173
+# Embedding phải khớp ChromaDB đã commit
+EMBEDDING_PROVIDER=google
+EMBEDDING_MODEL=models/gemini-embedding-001
+GEMINI_API_KEY=<your-gemini-api-key>
+
+# Core LLM
+LLM_PROVIDER=ollama_cloud
+LLM_MODEL=gemma4:cloud
+OLLAMA_API_KEY=<your-ollama-api-key>
+
+# Rewrite và Multi-query
+REWRITE_LLM_PROVIDER=groq
+REWRITE_LLM_MODEL=openai/gpt-oss-20b
+GROQ_API_KEY=<your-groq-api-key>
+
+# Document reranker dành cho Docker
+RERANKER_PROVIDER=cohere
+RERANKER_MODEL_NAME=rerank-v3.5
+RERANKER_TOP_N=20
+COHERE_API_KEY=<your-cohere-api-key>
+
+# Dùng khi chạy backend trực tiếp trên Windows
+FIREBASE_CREDENTIALS_PATH=config/firebase-service-account.json
 ```
 
-Hãy chỉnh lại các path cho khớp với Chroma/data folders trên máy của bạn.
-
-### Chạy backend
-
-Chạy từ folder `BE_ChatBot/`:
-
-```powershell
-uvicorn src.main:app --reload
-```
-
-Không chạy trực tiếp bằng `python src/main.py`. `main.py` dùng package imports, nên direct execution có thể gây lỗi:
+Tải Firebase Admin service account từ Firebase Console và đặt tại:
 
 ```text
-ImportError: attempted relative import with no known parent package
+BE_ChatBot/config/firebase-service-account.json
 ```
 
-### Frontend
+`run_docker_be.ps1` đọc file này và truyền nội dung vào container thông qua
+`FIREBASE_CREDENTIALS_JSON`; không cần tự minify JSON hoặc export biến đó.
+
+> Không commit `.env` hoặc Firebase service account. Hai loại file này đã được
+> cấu hình trong `.gitignore` và `.dockerignore`.
+
+### 5. Build và chạy backend Docker
+
+Từ thư mục gốc repository:
 
 ```powershell
-cd D:\KLTN\Project\FE_ChatBot
-npm install
+cd .\BE_ChatBot
+powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1 -Build
+```
+
+Script sẽ:
+
+1. Build image `be-chatbot:railway-free`.
+2. Xóa container `be-chatbot-deploy` cũ nếu tồn tại.
+3. Đọc `DOCKER_DATABASE_URL` và chuyển host local thành
+   `host.docker.internal` khi cần.
+4. Đưa Firebase credentials vào environment của container.
+5. Chạy backend ở port `8000` với giới hạn `1 CPU` và `512 MB RAM`.
+
+Theo dõi quá trình khởi động:
+
+```powershell
+docker logs -f --tail 100 be-chatbot-deploy
+```
+
+Backend sẵn sàng khi log có `Application startup complete`.
+
+### 6. Khởi tạo bảng database
+
+Chạy một lần sau khi tạo database mới:
+
+```powershell
+docker exec be-chatbot-deploy python -m src.db.init_db
+```
+
+Kết quả mong đợi:
+
+```text
+Database tables initialized successfully
+```
+
+Lệnh dùng `create_all`, nên chạy lại không xóa bảng hoặc dữ liệu hiện có.
+
+### 7. Kiểm tra backend
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
+```
+
+Kết quả mong đợi:
+
+```text
+status
+------
+ok
+```
+
+Tài liệu API:
+
+- Swagger UI: <http://127.0.0.1:8000/docs>
+- ReDoc: <http://127.0.0.1:8000/redoc>
+
+### 8. Cấu hình frontend
+
+Tạo file `FE_ChatBot/.env`:
+
+```env
+VITE_FASTAPI_URL=http://127.0.0.1:8000
+
+VITE_FIREBASE_API_KEY=<your-firebase-web-api-key>
+VITE_FIREBASE_AUTH_DOMAIN=<your-project>.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=<your-project-id>
+VITE_FIREBASE_STORAGE_BUCKET=<your-storage-bucket>
+VITE_FIREBASE_MESSAGING_SENDER_ID=<your-messaging-sender-id>
+VITE_FIREBASE_APP_ID=<your-app-id>
+```
+
+Firebase Web App của frontend và Firebase Admin service account của backend
+phải thuộc cùng Firebase project.
+
+### 9. Cài dependency và chạy frontend
+
+Mở PowerShell khác tại thư mục gốc repository:
+
+```powershell
+cd .\FE_ChatBot
+npm ci
 npm run dev
 ```
 
-Frontend URL mặc định:
+Mở <http://localhost:5173>, đăng nhập Google và gửi một truy vấn du lịch.
+
+## Demo end-to-end
+
+> **Điều kiện bắt buộc:** Phải khởi động thành công cả backend và frontend
+> trước khi thực hiện demo. Backend phải trả `status: ok` tại
+> <http://127.0.0.1:8000/health> và frontend phải truy cập được tại
+> <http://localhost:5173>.
+
+Sau khi đăng nhập Google trên frontend, nhập nguyên văn truy vấn sau vào khung
+chat:
 
 ```text
-http://localhost:5173
+Lập lịch trình khám phá Đà Lạt 2 ngày từ 02/09/2026, ưu tiên biển, cảnh đẹp và ẩm thực, ngân sách 3 triệu đồng, xuất phát từ Thành phố Hồ Chí Minh bằng máy bay; ngày đầu tôi muốn có mặt và bắt đầu tham quan điểm đầu tiên lúc 10:00, chuyến bay khởi hành lúc 06:00, thời gian ra sân bay là 45 phút, thời gian bay 80 phút.
 ```
 
-## API
+Demo này cần luồng end-to-end vì frontend gửi Firebase ID token và nhận phản
+hồi SSE từ backend; backend tiếp tục xử lý truy vấn, truy xuất ChromaDB, gọi các
+provider AI và lưu hội thoại vào PostgreSQL.
 
-### Chat
+## Các thao tác Docker thường dùng
 
-```http
-POST http://127.0.0.1:8000/chat
-Content-Type: application/json
-```
+| Trường hợp                                                          | Lệnh tại `BE_ChatBot/`                                                |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Lần đầu chạy hoặc backend/Dockerfile/dependency thay đổi            | `powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1 -Build` |
+| Chỉ đổi `.env`, Firebase credentials, port hoặc giới hạn tài nguyên | `powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1`        |
+| Không có thay đổi và container chỉ đang dừng                        | `docker start be-chatbot-deploy`                                      |
+| Dừng nhưng giữ container                                            | `docker stop be-chatbot-deploy`                                       |
+| Xóa container nhưng giữ image và PostgreSQL                         | `docker rm -f be-chatbot-deploy`                                      |
+| Xem log                                                             | `docker logs -f --tail 100 be-chatbot-deploy`                         |
+| Xem tài nguyên                                                      | `docker stats be-chatbot-deploy --no-stream`                          |
 
-Request:
+`docker restart` không đọc lại `.env` và container đang chạy không tự cập nhật
+source code. Dùng script không có `-Build` để tạo lại container khi chỉ đổi cấu
+hình; dùng `-Build` khi image cần chứa code hoặc artifact mới.
 
-```json
-{
-  "prompt": "Ở Đà Lạt có địa điểm nào phù hợp để chill hoặc thư giãn?"
-}
-```
+## Chạy toàn bộ dự án ở local
 
-Response:
+Cách này dành cho phát triển và không dùng Docker cho backend.
 
-```json
-{
-  "response": "..."
-}
-```
-
-### Docs
-
-```text
-http://127.0.0.1:8000/docs
-http://127.0.0.1:8000/redoc
-```
-
-## Câu hỏi test RAG gợi ý
-
-Dùng các câu sau để kiểm tra Chroma retrieval và reranking có hoạt động ổn trên `places_data` không:
-
-```text
-Ở Đà Lạt có địa điểm nào phù hợp để chill hoặc thư giãn?
-Trả về tối đa 5 địa điểm, mỗi địa điểm gồm tên, tags, rating và lý do ngắn dựa trên dữ liệu.
-```
-
-```text
-Tôi muốn đi Hà Nội để tham quan các địa điểm văn hóa hoặc tâm linh, có gợi ý nào không?
-```
-
-```text
-Ở Nha Trang có những địa điểm biển hoặc nơi tham quan nổi bật nào?
-```
-
-Nếu model bắt đầu tự thêm các mô tả giàu chi tiết nhưng không tồn tại trong source data, hãy siết generation prompt:
-
-```text
-Chỉ dùng thông tin có trong dữ liệu. Không tự thêm chi tiết ngoài context.
-```
-
-## Lỗi thường gặp
-
-### `ImportError: attempted relative import with no known parent package`
-
-Chạy backend bằng Uvicorn từ folder `BE_ChatBot/`:
+### 1. Chuẩn bị backend
 
 ```powershell
-cd D:\KLTN\Project\BE_ChatBot
-uvicorn src.main:app --reload
+cd .\BE_ChatBot
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m src.db.init_db
 ```
 
-### `PERSIST_DIRECTORY environment variable is not set`
+`DATABASE_URL` và `FIREBASE_CREDENTIALS_PATH` trong `BE_ChatBot/.env` phải trỏ
+đến database và service account local hợp lệ.
 
-Kiểm tra `.env` và đảm bảo `PERSIST_DIRECTORY` trỏ đúng tới ChromaDB folder.
+### 2. Chuẩn bị frontend
 
-### CUDA requirement
+```powershell
+cd ..\FE_ChatBot
+npm ci
+```
 
-Một số backend modules hiện đang yêu cầu CUDA:
+### 3. Chạy BE và FE
 
-- `core/base_embed_model.py`
-- `pipeline/rag_pipline.py`
+Từ thư mục gốc repository:
 
-Nếu CUDA không khả dụng, import/runtime có thể fail sớm. Hoặc chạy trên môi trường có CUDA, hoặc chỉnh lại device logic trước khi dùng CPU.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_be_fe_local.ps1
+```
 
-### Repetitive RAG answers
+Script chờ backend trả `/health`, sau đó khởi động Vite. Nhấn `Ctrl+C` để dừng
+các tiến trình do script tạo.
 
-Nếu câu trả lời lặp lại nhiều địa điểm tương tự nhau:
+## API chính
 
-- giảm `RerankerConfig.TOP_N`
-- yêu cầu trả về tối đa 5 places
-- yêu cầu model hiển thị `name`, `tags` và `rating`
-- tránh yêu cầu model diễn giải dài nếu descriptions trong data có dạng template
+Ngoại trừ `/health` và trang tài liệu API, các endpoint nghiệp vụ đều yêu cầu:
 
-## Ghi chú phát triển
+```http
+Authorization: Bearer <firebase-id-token>
+```
 
-- Graph và onboarding context được generate bằng Understand Anything trong `.understand-anything/`.
-- `BE_ChatBot/src/contex_kltn.md` có vẻ là tài liệu giải thích thủ công/onboarding cho backend flow.
-- Hiện dự án đang ưu tiên chất lượng RAG answer hơn là complete planning automation.
-- Giữ README khớp với code đã implement. Recommendation/planning modules khá tiềm năng, nhưng nên tiếp tục được document như roadmap cho tới khi các TODO methods được implement và nối vào `TripOrchestrator.run()`.
+| Method   | Endpoint                       | Chức năng                                    |
+| -------- | ------------------------------ | -------------------------------------------- |
+| `GET`    | `/health`                      | Kiểm tra backend                             |
+| `POST`   | `/auth/firebase-login`         | Xác thực ID token và tạo/cập nhật người dùng |
+| `GET`    | `/auth/me`                     | Lấy thông tin người dùng hiện tại            |
+| `POST`   | `/chat`                        | Trả câu trả lời hoàn chỉnh                   |
+| `POST`   | `/chat/stream`                 | Stream câu trả lời bằng SSE                  |
+| `GET`    | `/conversations`               | Lấy danh sách hội thoại                      |
+| `GET`    | `/conversations/{id}/messages` | Lấy tin nhắn của một hội thoại               |
+| `PATCH`  | `/conversations/{id}/title`    | Đổi tên hội thoại                            |
+| `DELETE` | `/conversations/{id}`          | Xóa mềm hội thoại                            |
 
-## License
+Ví dụ body cho `/chat` hoặc `/chat/stream`:
 
-Dự án phục vụ mục đích học thuật / khóa luận tốt nghiệp.
+```json
+{
+  "prompt": "Lập lịch trình Đà Nẵng 3 ngày cho tôi",
+  "conversation_id": null,
+  "retrieval_vector_weight": 0.6,
+  "recommendation_content_weight": 0.6
+}
+```
+
+Hai trọng số nhận giá trị từ `0.0` đến `1.0`:
+
+- `retrieval_vector_weight`: phần Vector Search; phần BM25 được tính bằng
+  `1 - retrieval_vector_weight`.
+- `recommendation_content_weight`: phần Content-based; phần Location-based
+  được tính bằng `1 - recommendation_content_weight`.
+
+`/chat/stream` gửi event `meta` chứa `conversation_id`, tiếp theo là các token
+SSE và kết thúc bằng `[DONE]`.
+
+## Đánh giá hệ thống
+
+Bộ benchmark trong `BE_ChatBot/src/eval/` gồm:
+
+- Dataset Coverage trên 600 địa điểm.
+- Retrieval Quality với Precision@K, Recall@5, nDCG@5, latency và mức cải thiện
+  sau rerank.
+- Output Validity với kiểm tra số ngày, đúng khu vực, độ đầy đủ của field và
+  end-to-end latency.
+
+Kiểm tra tĩnh, không gọi LLM, Chroma hoặc reranker:
+
+```powershell
+cd .\BE_ChatBot
+python -m src.eval.self_check
+```
+
+Đo riêng Dataset Coverage, không gọi LLM:
+
+```powershell
+python -m src.eval.dataset.coverage
+```
+
+Các benchmark retrieval/output có thể gọi API bên ngoài và tiêu tốn quota. Xem
+hướng dẫn đầy đủ tại `BE_ChatBot/src/eval/README.md` trước khi chạy.
+
+## Xử lý lỗi thường gặp
+
+### `Docker Desktop chua san sang`
+
+Mở Docker Desktop, chờ engine sẵn sàng rồi chạy:
+
+```powershell
+docker info
+```
+
+### `Khong tim thay image be-chatbot:railway-free`
+
+Build image ở lần chạy đầu:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_docker_be.ps1 -Build
+```
+
+### Backend không kết nối được PostgreSQL
+
+Kiểm tra PostgreSQL, port, database và credentials:
+
+```powershell
+Test-NetConnection localhost -Port 5432
+```
+
+Trong container, host phải là `host.docker.internal`, không phải `localhost`.
+Đảm bảo database `kltn_chatbot_deploy` đã tồn tại.
+
+### `ChromaDB embedding configuration does not match .env`
+
+ChromaDB đã commit dùng:
+
+```env
+EMBEDDING_PROVIDER=google
+EMBEDDING_MODEL=models/gemini-embedding-001
+```
+
+Khôi phục đúng hai giá trị này và tạo lại container. Chỉ rebuild ChromaDB bằng
+`BE_ChatBot/utils/build_rag_vector_db.ipynb` khi chủ động thay embedding model.
+
+### Frontend báo `VITE_FASTAPI_URL not found`
+
+Tạo `FE_ChatBot/.env`, đặt `VITE_FASTAPI_URL=http://127.0.0.1:8000`, rồi khởi
+động lại Vite.
+
+### Lỗi CORS
+
+Truy cập frontend bằng <http://localhost:5173>. Script Docker đặt
+`FRONTEND_URL=http://localhost:5173`; origin khác sẽ không được CORS cho phép.
+
+### API trả `401 Missing bearer token`
+
+Đăng nhập Google trên frontend hoặc gửi Firebase ID token hợp lệ trong header
+`Authorization: Bearer ...`.
+
+### Firebase login thất bại
+
+Kiểm tra:
+
+- Google Sign-In đã được bật trong Firebase Authentication.
+- Firebase Web App và service account cùng project.
+- `BE_ChatBot/config/firebase-service-account.json` tồn tại.
+- Các biến `VITE_FIREBASE_*` đã được khai báo và Vite đã được restart.
+
+## Giới hạn hiện tại
+
+- Tập dữ liệu địa điểm tập trung ở sáu khu vực đã liệt kê, không đại diện cho
+  toàn bộ Việt Nam.
+- Dự báo thời tiết thời gian thực phụ thuộc Open-Meteo và chỉ áp dụng trong
+  phạm vi tối đa 16 ngày; thời gian xa hơn dùng profile khí hậu tĩnh.
+- Thời gian di chuyển và thời điểm khởi hành là giá trị ước tính từ profile tĩnh,
+  tọa độ/Haversine và dữ liệu cấu hình, không phải ETA giao thông thời gian thực.
+- Thuật toán lập tuyến dùng heuristic và local search; kết quả không được xem là
+  tối ưu toàn cục.
+- Phí vào cửa có độ phủ một phần. Giá trị chưa xác định là “chưa phân loại”,
+  không phải miễn phí và không đủ để kết luận toàn bộ chuyến đi phù hợp ngân sách.
+- Nội dung visa chỉ mang tính tham khảo theo dữ liệu đã lưu; người dùng cần kiểm
+  tra lại với cơ quan ngoại giao chính thức trước chuyến đi.
+- Các provider AI bên ngoài có thể gặp giới hạn quota, rate limit hoặc lỗi mạng.
+
+## Tài liệu liên quan
+
+- [Workflow BE Docker + FE local](BE_ChatBot/Workflow%20BE%20Docker_FE%20local.md)
+- [Kế hoạch triển khai Railway/Netlify](BE_ChatBot/DEPLOYMENT_PLAN.md)
+- [Tài liệu benchmark](BE_ChatBot/src/eval/README.md)
+- [Báo cáo benchmark hiện có](BE_ChatBot/src/eval/outputs/benchmark_report.md)
+- [Luồng đăng nhập/đăng xuất](ONBOARD_FLOW/login_logout_flow.md)
+- [Luồng tích hợp Chat API](ONBOARD_FLOW/chat_API_integration_flow.md)
+- [Data crawler](CRAWL_DATA_CHATBOT/README_CRAWL_DATA_CHATBOT.md)
+
+## Bảo mật
+
+- Không commit `.env`, API key, access token hoặc Firebase service account.
+- Không đưa secret vào issue, log, screenshot hoặc tài liệu benchmark.
+- Frontend lưu Firebase ID token trong `localStorage`; tránh sử dụng token lấy
+  từ môi trường production cho mục đích kiểm thử công khai.
+- Khi chia sẻ cấu hình, chỉ chia sẻ tên provider/model và dùng placeholder cho
+  mọi credentials.
+
+## Giấy phép
+
+Dự án được xây dựng phục vụ mục đích học thuật và khóa luận tốt nghiệp.
